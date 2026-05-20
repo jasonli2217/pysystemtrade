@@ -5,6 +5,7 @@ __pycache__
 *.pyc
 *.pyo
 .tox
+.python-version
 dist
 build
 private
@@ -24,7 +25,9 @@ restats
 
 # venv
 env/
-venv/
+.venv/
+.uv/
+.vscode/
 
 # libreoffice
 .~lock.*
