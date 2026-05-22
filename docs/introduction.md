@@ -1,4 +1,4 @@
-
+****
 
 Here is a whistle-stop tour of what pysystemtrade can currently do. You'll probably want to read the [users guide](backtesting.md) after this.
 Notice that you will see different results than shown here, as you will be using more up-to-date data.
