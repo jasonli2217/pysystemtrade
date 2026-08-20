@@ -1,0 +1,3676 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysdata/config/defaults.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "get_system_defaults_dict",
+          "startLine": 16,
+          "endLine": 27,
+          "params": [
+            "filename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_system_defaults_dict",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_system_defaults_dict",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_system_defaults_dict",
+          "callee": "open",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_system_defaults_dict",
+          "callee": "yaml.load",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/config/production_config.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 5,
+      "functions": [
+        {
+          "name": "get_production_config",
+          "startLine": 4,
+          "endLine": 8,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_production_config",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_production_config",
+          "callee": "Config.default_config",
+          "lineNumber": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_capital_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "csvCapitalData",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [
+            "__init__",
+            "write_backup_df_of_all_capital"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvCapitalData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 12
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 13
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 13
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 16
+        },
+        {
+          "caller": "write_backup_df_of_all_capital",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 21
+        },
+        {
+          "caller": "write_backup_df_of_all_capital",
+          "callee": "capital_data.to_csv",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_contract_position_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "csvContractPositionData",
+          "startLine": 11,
+          "endLine": 40,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "_write_updated_position_series_for_contract_object",
+            "_filename_given_contract"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvContractPositionData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "pd.DataFrame",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "self._filename_given_contract",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "position_df.to_csv",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_filename_given_contract",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_futures_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "csvFuturesContractData",
+          "startLine": 8,
+          "endLine": 77,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "_filename_for_instrument_code",
+            "write_contract_list_as_df",
+            "get_list_of_contract_dates_for_instrument_code",
+            "get_all_contract_objects_for_instrument_code",
+            "_delete_contract_data_without_any_warning_be_careful",
+            "is_contract_in_data",
+            "_add_contract_object_without_checking_for_existing_entry",
+            "_get_contract_data_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvFuturesContractData",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 22
+        },
+        {
+          "caller": "_filename_for_instrument_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 34
+        },
+        {
+          "caller": "write_contract_list_as_df",
+          "callee": "x.expiry_date.as_str",
+          "lineNumber": 41
+        },
+        {
+          "caller": "write_contract_list_as_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 45
+        },
+        {
+          "caller": "write_contract_list_as_df",
+          "callee": "dict",
+          "lineNumber": 46
+        },
+        {
+          "caller": "write_contract_list_as_df",
+          "callee": "self._filename_for_instrument_code",
+          "lineNumber": 52
+        },
+        {
+          "caller": "write_contract_list_as_df",
+          "callee": "df.to_csv",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_all_contract_objects_for_instrument_code",
+          "callee": "NotImplementedError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_delete_contract_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 64
+        },
+        {
+          "caller": "is_contract_in_data",
+          "callee": "NotImplementedError",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_add_contract_object_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_get_contract_data_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_historic_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "from_list_of_orders_to_df",
+          "startLine": 13,
+          "endLine": 26,
+          "params": [
+            "list_of_orders"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "csvStrategyHistoricOrdersData",
+          "startLine": 29,
+          "endLine": 45,
+          "methods": [
+            "__init__",
+            "write_orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "csvContractHistoricOrdersData",
+          "startLine": 48,
+          "endLine": 64,
+          "methods": [
+            "__init__",
+            "write_orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "csvBrokerHistoricOrdersData",
+          "startLine": 67,
+          "endLine": 83,
+          "methods": [
+            "__init__",
+            "write_orders"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "from_list_of_orders_to_df",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "csvStrategyHistoricOrdersData",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "csvContractHistoricOrdersData",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "csvBrokerHistoricOrdersData",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_list_of_orders_to_df",
+          "callee": "order.as_dict",
+          "lineNumber": 14
+        },
+        {
+          "caller": "from_list_of_orders_to_df",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "from_list_of_orders_to_df",
+          "callee": "list",
+          "lineNumber": 16
+        },
+        {
+          "caller": "from_list_of_orders_to_df",
+          "callee": "list_as_dict[-1].keys",
+          "lineNumber": 16
+        },
+        {
+          "caller": "from_list_of_orders_to_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 36
+        },
+        {
+          "caller": "write_orders",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 41
+        },
+        {
+          "caller": "write_orders",
+          "callee": "from_list_of_orders_to_df",
+          "lineNumber": 44
+        },
+        {
+          "caller": "write_orders",
+          "callee": "df.to_csv",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 52
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 52
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 55
+        },
+        {
+          "caller": "write_orders",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 60
+        },
+        {
+          "caller": "write_orders",
+          "callee": "from_list_of_orders_to_df",
+          "lineNumber": 63
+        },
+        {
+          "caller": "write_orders",
+          "callee": "df.to_csv",
+          "lineNumber": 64
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 69
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 71
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 71
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 74
+        },
+        {
+          "caller": "write_orders",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 79
+        },
+        {
+          "caller": "write_orders",
+          "callee": "from_list_of_orders_to_df",
+          "lineNumber": 82
+        },
+        {
+          "caller": "write_orders",
+          "callee": "df.to_csv",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_instrument_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "get_instrument_with_meta_data_object",
+          "startLine": 110,
+          "endLine": 125,
+          "params": [
+            "all_instrument_data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_meta_data_dict_for_instrument",
+          "startLine": 128,
+          "endLine": 138,
+          "params": [
+            "config_for_this_instrument",
+            "config_items"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "csvFuturesInstrumentData",
+          "startLine": 17,
+          "endLine": 107,
+          "methods": [
+            "__init__",
+            "get_list_of_instruments",
+            "_get_instrument_data_without_checking",
+            "_delete_instrument_data_without_any_warning_be_careful",
+            "_add_instrument_data_without_checking_for_existing_entry",
+            "write_all_instrument_data_from_df",
+            "get_all_instrument_data_as_df",
+            "_instrument_csv_as_df",
+            "_load_and_store_instrument_csv_as_df",
+            "config_file",
+            "__repr__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvFuturesInstrumentData",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "get_instrument_with_meta_data_object",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "get_meta_data_dict_for_instrument",
+          "line": 128,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "list",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.get_all_instrument_data_as_df",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_get_instrument_data_without_checking",
+          "callee": "self.get_all_instrument_data_as_df",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_get_instrument_data_without_checking",
+          "callee": "get_instrument_with_meta_data_object",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_delete_instrument_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_add_instrument_data_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 58
+        },
+        {
+          "caller": "write_all_instrument_data_from_df",
+          "callee": "instrument_data_as_df.to_csv",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "self._instrument_csv_as_df",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_instrument_csv_as_df",
+          "callee": "getattr",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_instrument_csv_as_df",
+          "callee": "self._load_and_store_instrument_csv_as_df",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_load_and_store_instrument_csv_as_df",
+          "callee": "pd.read_csv",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_load_and_store_instrument_csv_as_df",
+          "callee": "Exception",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_load_and_store_instrument_csv_as_df",
+          "callee": "config_data.drop",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_load_and_store_instrument_csv_as_df",
+          "callee": "Exception",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_instrument_with_meta_data_object",
+          "callee": "get_meta_data_dict_for_instrument",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get_instrument_with_meta_data_object",
+          "callee": "futuresInstrument",
+          "lineNumber": 120
+        },
+        {
+          "caller": "get_instrument_with_meta_data_object",
+          "callee": "instrumentMetaData.from_dict",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_instrument_with_meta_data_object",
+          "callee": "futuresInstrumentWithMetaData",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_meta_data_dict_for_instrument",
+          "callee": "dict",
+          "lineNumber": 131
+        },
+        {
+          "caller": "get_meta_data_dict_for_instrument",
+          "callee": "getattr",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_optimal_position.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "csvOptimalPositionData",
+          "startLine": 11,
+          "endLine": 45,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "write_optimal_position_as_df_for_instrument_strategy_without_checking",
+            "_filename_given_instrument_strategy"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvOptimalPositionData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 23
+        },
+        {
+          "caller": "write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "callee": "self._filename_given_instrument_strategy",
+          "lineNumber": 35
+        },
+        {
+          "caller": "write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "callee": "optimal_positions_as_df.to_csv",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_filename_given_instrument_strategy",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_roll_state_storage.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "csvRollStateData",
+          "startLine": 7,
+          "endLine": 28,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "write_all_instrument_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvRollStateData",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 13
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 19
+        },
+        {
+          "caller": "write_all_instrument_data",
+          "callee": "instrument_data.to_csv",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_spread_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "csvSpreadCostData",
+          "startLine": 15,
+          "endLine": 72,
+          "methods": [
+            "__init__",
+            "config_file",
+            "delete_spread_cost",
+            "update_spread_cost",
+            "get_spread_cost",
+            "get_spread_costs_as_series",
+            "write_all_instrument_spreads",
+            "get_list_of_instruments"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvSpreadCostData",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 30
+        },
+        {
+          "caller": "delete_spread_cost",
+          "callee": "Exception",
+          "lineNumber": 38
+        },
+        {
+          "caller": "update_spread_cost",
+          "callee": "Exception",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "self._get_spread_cost_if_series_provided",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_spread_costs_as_series",
+          "callee": "pd.read_csv",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get_spread_costs_as_series",
+          "callee": "Exception",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_spread_costs_as_series",
+          "callee": "Exception",
+          "lineNumber": 61
+        },
+        {
+          "caller": "write_all_instrument_spreads",
+          "callee": "pd.DataFrame",
+          "lineNumber": 66
+        },
+        {
+          "caller": "write_all_instrument_spreads",
+          "callee": "spread_cost_as_df.to_csv",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.get_spread_costs_as_series",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "list",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "all_data_as_series.keys",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_spreads.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "csvSpreadsForInstrumentData",
+          "startLine": 18,
+          "endLine": 78,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "get_list_of_instruments",
+            "_get_spreads_without_checking",
+            "_delete_spreads_without_any_warning_be_careful",
+            "_add_spreads_without_checking_for_existing_entry",
+            "_filename_given_instrument_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvSpreadsForInstrumentData",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "files_with_extension_in_pathname",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "pd_readcsv",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "spreadsForInstrument",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "pd.Series",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "spreadsForInstrument",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_delete_spreads_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "spreads.to_csv",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_filename_given_instrument_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_strategy_position_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "csvStrategyPositionData",
+          "startLine": 11,
+          "endLine": 44,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "_write_updated_position_series_for_instrument_strategy_object",
+            "_filename_given_instrument_strategy"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvStrategyPositionData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_write_updated_position_series_for_instrument_strategy_object",
+          "callee": "pd.DataFrame",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_write_updated_position_series_for_instrument_strategy_object",
+          "callee": "self._filename_given_instrument_strategy",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_write_updated_position_series_for_instrument_strategy_object",
+          "callee": "position_df.to_csv",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_filename_given_instrument_strategy",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 112,
+      "classes": [
+        {
+          "name": "futuresContractData",
+          "startLine": 11,
+          "endLine": 137,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "__getitem__",
+            "get_contract_object",
+            "delete_contract_data",
+            "delete_all_contracts_for_instrument",
+            "add_contract_data",
+            "get_list_of_contract_dates_for_instrument_code",
+            "get_all_contract_objects_for_instrument_code",
+            "_get_contract_data_without_checking",
+            "_delete_contract_data_without_any_warning_be_careful",
+            "get_list_of_all_instruments_with_contracts",
+            "is_contract_in_data",
+            "_add_contract_object_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresContractData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_contract_object",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_contract_object",
+          "callee": "self.is_contract_in_data",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_contract_object",
+          "callee": "self._get_contract_data_without_checking",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_contract_object",
+          "callee": "ContractNotFound",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_contract_data",
+          "callee": "self.is_contract_in_data",
+          "lineNumber": 53
+        },
+        {
+          "caller": "delete_contract_data",
+          "callee": "self._delete_contract_data_without_any_warning_be_careful",
+          "lineNumber": 54
+        },
+        {
+          "caller": "delete_contract_data",
+          "callee": "self.log.info",
+          "lineNumber": 57
+        },
+        {
+          "caller": "delete_contract_data",
+          "callee": "self.log.warning",
+          "lineNumber": 63
+        },
+        {
+          "caller": "delete_contract_data",
+          "callee": "self.log.error",
+          "lineNumber": 65
+        },
+        {
+          "caller": "delete_all_contracts_for_instrument",
+          "callee": "Exception",
+          "lineNumber": 74
+        },
+        {
+          "caller": "delete_all_contracts_for_instrument",
+          "callee": "self.get_list_of_contract_dates_for_instrument_code",
+          "lineNumber": 78
+        },
+        {
+          "caller": "delete_all_contracts_for_instrument",
+          "callee": "self.delete_contract_data",
+          "lineNumber": 82
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 90
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "self.is_contract_in_data",
+          "lineNumber": 92
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "self.log.warning",
+          "lineNumber": 96
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "self._add_contract_object_without_checking_for_existing_entry",
+          "lineNumber": 103
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "self.log.info",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_add_contract_object_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/instruments.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 123,
+      "classes": [
+        {
+          "name": "futuresInstrumentData",
+          "startLine": 16,
+          "endLine": 156,
+          "methods": [
+            "__repr__",
+            "__init__",
+            "keys",
+            "__getitem__",
+            "update_slippage_costs",
+            "update_meta_data",
+            "get_all_instrument_data_as_list_of_instrument_objects",
+            "get_all_instrument_data_as_df",
+            "get_instrument_data",
+            "delete_instrument_data",
+            "is_code_in_data",
+            "add_instrument_data",
+            "get_list_of_instruments",
+            "_get_instrument_data_without_checking",
+            "_delete_instrument_data_without_any_warning_be_careful",
+            "_add_instrument_data_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresInstrumentData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 28
+        },
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_instrument_data",
+          "lineNumber": 34
+        },
+        {
+          "caller": "update_slippage_costs",
+          "callee": "self.update_meta_data",
+          "lineNumber": 37
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "self.get_instrument_data",
+          "lineNumber": 42
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "getattr",
+          "lineNumber": 45
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "Exception",
+          "lineNumber": 47
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "setattr",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "self.add_instrument_data",
+          "lineNumber": 52
+        },
+        {
+          "caller": "update_meta_data",
+          "callee": "self.log.debug",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_all_instrument_data_as_list_of_instrument_objects",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 61
+        },
+        {
+          "caller": "get_all_instrument_data_as_list_of_instrument_objects",
+          "callee": "self.get_instrument_data",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_all_instrument_data_as_list_of_instrument_objects",
+          "callee": "listOfFuturesInstrumentWithMetaData",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "self.get_all_instrument_data_as_list_of_instrument_objects",
+          "lineNumber": 82
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "list_of_instrument_objects.as_df",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_instrument_data",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_instrument_data",
+          "callee": "self._get_instrument_data_without_checking",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_instrument_data",
+          "callee": "futuresInstrumentWithMetaData.create_empty",
+          "lineNumber": 94
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self.log.debug",
+          "lineNumber": 97
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 100
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self._delete_instrument_data_without_any_warning_be_careful",
+          "lineNumber": 101
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self.log.info",
+          "lineNumber": 104
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self.log.warning",
+          "lineNumber": 108
+        },
+        {
+          "caller": "delete_instrument_data",
+          "callee": "self.log.error",
+          "lineNumber": 110
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 115
+        },
+        {
+          "caller": "add_instrument_data",
+          "callee": "self.log.debug",
+          "lineNumber": 127
+        },
+        {
+          "caller": "add_instrument_data",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 129
+        },
+        {
+          "caller": "add_instrument_data",
+          "callee": "self.log.error",
+          "lineNumber": 133
+        },
+        {
+          "caller": "add_instrument_data",
+          "callee": "self._add_instrument_data_without_checking_for_existing_entry",
+          "lineNumber": 138
+        },
+        {
+          "caller": "add_instrument_data",
+          "callee": "self.log.info",
+          "lineNumber": 140
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_get_instrument_data_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_delete_instrument_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_add_instrument_data_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/spread_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "spreadCostData",
+          "startLine": 8,
+          "endLine": 41,
+          "methods": [
+            "__init__",
+            "delete_spread_cost",
+            "update_spread_cost",
+            "get_list_of_instruments",
+            "get_spread_cost",
+            "get_spread_costs_as_series",
+            "_get_spread_cost_if_series_provided",
+            "_get_spread_costs_as_series_if_individual_spreads_provided"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "spreadCostData",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 9
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 10
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 10
+        },
+        {
+          "caller": "_get_spread_cost_if_series_provided",
+          "callee": "self.get_spread_costs_as_series",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_get_spread_cost_if_series_provided",
+          "callee": "all_data.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_get_spread_costs_as_series_if_individual_spreads_provided",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_get_spread_costs_as_series_if_individual_spreads_provided",
+          "callee": "pd.Series",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_get_spread_costs_as_series_if_individual_spreads_provided",
+          "callee": "self.get_spread_cost",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/spreads.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 80,
+      "classes": [
+        {
+          "name": "spreadsForInstrumentData",
+          "startLine": 7,
+          "endLine": 101,
+          "methods": [
+            "__repr__",
+            "keys",
+            "add_spread_entry",
+            "get_spreads",
+            "__getitem__",
+            "delete_spreads",
+            "is_code_in_data",
+            "add_spreads",
+            "_add_spreads_without_checking_for_existing_entry",
+            "get_list_of_instruments",
+            "_delete_spreads_without_any_warning_be_careful",
+            "_get_spreads_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "spreadsForInstrumentData",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 19
+        },
+        {
+          "caller": "add_spread_entry",
+          "callee": "self.get_spreads",
+          "lineNumber": 22
+        },
+        {
+          "caller": "add_spread_entry",
+          "callee": "existing_spreads.add_spread",
+          "lineNumber": 23
+        },
+        {
+          "caller": "add_spread_entry",
+          "callee": "self.add_spreads",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_spreads",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_spreads",
+          "callee": "self._get_spreads_without_checking",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_spreads",
+          "callee": "spreadsForInstrument",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_spreads",
+          "lineNumber": 35
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 39
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self._delete_spreads_without_any_warning_be_careful",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self.log.info",
+          "lineNumber": 41
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self.log.warning",
+          "lineNumber": 48
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self.log.error",
+          "lineNumber": 53
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 59
+        },
+        {
+          "caller": "add_spreads",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 70
+        },
+        {
+          "caller": "add_spreads",
+          "callee": "self.log.error",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add_spreads",
+          "callee": "self._add_spreads_without_checking_for_existing_entry",
+          "lineNumber": 80
+        },
+        {
+          "caller": "add_spreads",
+          "callee": "self.log.info",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_delete_spreads_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_IB_client_id.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "mongoIbBrokerClientIdData",
+          "startLine": 10,
+          "endLine": 47,
+          "methods": [
+            "__init__",
+            "mongo_data",
+            "_repr__",
+            "_get_list_of_clientids",
+            "_lock_clientid",
+            "release_clientid"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoIbBrokerClientIdData",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 22
+        },
+        {
+          "caller": "_repr__",
+          "callee": "str",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_get_list_of_clientids",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_lock_clientid",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_lock_clientid",
+          "callee": "self.log.debug",
+          "lineNumber": 38
+        },
+        {
+          "caller": "release_clientid",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 46
+        },
+        {
+          "caller": "release_clientid",
+          "callee": "self.log.debug",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_futures_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 93,
+      "classes": [
+        {
+          "name": "mongoFuturesContractData",
+          "startLine": 16,
+          "endLine": 118,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "is_contract_in_data",
+            "_get_list_of_all_contract_keys",
+            "get_list_of_all_instruments_with_contracts",
+            "get_all_contract_objects_for_instrument_code",
+            "_get_all_contract_keys_for_instrument_code",
+            "get_list_of_contract_dates_for_instrument_code",
+            "_get_contract_data_without_checking",
+            "_get_contract_data_from_key_without_checking",
+            "_delete_contract_data_without_any_warning_be_careful",
+            "_add_contract_object_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoFuturesContractData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_contract_in_data",
+          "callee": "contract_key_from_code_and_id",
+          "lineNumber": 41
+        },
+        {
+          "caller": "is_contract_in_data",
+          "callee": "self.mongo_data.key_is_in_data",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_get_list_of_all_contract_keys",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_list_of_all_instruments_with_contracts",
+          "callee": "self._get_list_of_all_contract_keys",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_list_of_all_instruments_with_contracts",
+          "callee": "get_code_and_id_from_contract_key",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_list_of_all_instruments_with_contracts",
+          "callee": "list",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_list_of_all_instruments_with_contracts",
+          "callee": "set",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_all_contract_objects_for_instrument_code",
+          "callee": "self._get_all_contract_keys_for_instrument_code",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_all_contract_objects_for_instrument_code",
+          "callee": "self._get_contract_data_from_key_without_checking",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_all_contract_objects_for_instrument_code",
+          "callee": "listOfFuturesContracts",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_get_all_contract_keys_for_instrument_code",
+          "callee": "self._get_list_of_all_contract_keys",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_get_all_contract_keys_for_instrument_code",
+          "callee": "key_contains_instrument_code",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_list_of_contract_dates_for_instrument_code",
+          "callee": "self._get_all_contract_keys_for_instrument_code",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_list_of_contract_dates_for_instrument_code",
+          "callee": "get_code_and_id_from_contract_key",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_get_contract_data_without_checking",
+          "callee": "contract_key_from_code_and_id",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_get_contract_data_without_checking",
+          "callee": "self._get_contract_data_from_key_without_checking",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_get_contract_data_from_key_without_checking",
+          "callee": "self.mongo_data.get_result_dict_for_key_without_key_value",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_get_contract_data_from_key_without_checking",
+          "callee": "futuresContract.create_from_dict",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_delete_contract_data_without_any_warning_be_careful",
+          "callee": "contract_key_from_code_and_id",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_delete_contract_data_without_any_warning_be_careful",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_add_contract_object_without_checking_for_existing_entry",
+          "callee": "contract_object.as_dict",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_add_contract_object_without_checking_for_existing_entry",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_generic.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 282,
+      "nonEmptyLines": 222,
+      "classes": [
+        {
+          "name": "mongoDataWithSingleKey",
+          "startLine": 15,
+          "endLine": 157,
+          "methods": [
+            "__init__",
+            "init_mongo",
+            "__repr__",
+            "key_name",
+            "name",
+            "collection",
+            "get_list_of_keys",
+            "get_max_of_keys",
+            "get_list_of_values_for_dict_key",
+            "get_result_dict_for_key",
+            "get_result_dict_for_key_without_key_value",
+            "get_list_of_result_dict_for_custom_dict",
+            "key_is_in_data",
+            "delete_data_without_any_warning",
+            "delete_data_with_any_warning_for_custom_dict",
+            "add_data",
+            "_update_existing_data_with_cleaned_dict",
+            "_add_new_cleaned_dict"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoDataWithMultipleKeys",
+          "startLine": 160,
+          "endLine": 278,
+          "methods": [
+            "__init__",
+            "init_mongo",
+            "__repr__",
+            "name",
+            "get_list_of_all_dicts",
+            "get_result_dict_for_dict_keys",
+            "get_list_of_result_dicts_for_dict_keys",
+            "key_dict_is_in_data",
+            "add_data",
+            "_update_existing_data_with_cleaned_dict",
+            "_add_new_cleaned_dict",
+            "delete_data_without_any_warning"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoDataWithSingleKey",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "mongoDataWithMultipleKeys",
+          "line": 160,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "self.init_mongo",
+          "lineNumber": 22
+        },
+        {
+          "caller": "init_mongo",
+          "callee": "mongoConnection",
+          "lineNumber": 30
+        },
+        {
+          "caller": "init_mongo",
+          "callee": "self._mongo.create_index",
+          "lineNumber": 38
+        },
+        {
+          "caller": "name",
+          "callee": "clean_mongo_host",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_list_of_keys",
+          "callee": "self.collection.distinct",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_max_of_keys",
+          "callee": "self.collection.find_one",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_list_of_values_for_dict_key",
+          "callee": "self.collection.find",
+          "lineNumber": 77
+        },
+        {
+          "caller": "get_result_dict_for_key",
+          "callee": "self.collection.find_one",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_result_dict_for_key",
+          "callee": "missingData",
+          "lineNumber": 86
+        },
+        {
+          "caller": "get_result_dict_for_key",
+          "callee": "result_dict.pop",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get_result_dict_for_key_without_key_value",
+          "callee": "self.get_result_dict_for_key",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_result_dict_for_key_without_key_value",
+          "callee": "result_dict.pop",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_list_of_result_dict_for_custom_dict",
+          "callee": "self._mongo.collection.find",
+          "lineNumber": 101
+        },
+        {
+          "caller": "get_list_of_result_dict_for_custom_dict",
+          "callee": "dict_item.pop",
+          "lineNumber": 103
+        },
+        {
+          "caller": "key_is_in_data",
+          "callee": "self.get_result_dict_for_key",
+          "lineNumber": 109
+        },
+        {
+          "caller": "delete_data_without_any_warning",
+          "callee": "self.key_is_in_data",
+          "lineNumber": 118
+        },
+        {
+          "caller": "delete_data_without_any_warning",
+          "callee": "missingData",
+          "lineNumber": 119
+        },
+        {
+          "caller": "delete_data_without_any_warning",
+          "callee": "self.collection.remove",
+          "lineNumber": 121
+        },
+        {
+          "caller": "delete_data_with_any_warning_for_custom_dict",
+          "callee": "self.collection.remove",
+          "lineNumber": 124
+        },
+        {
+          "caller": "add_data",
+          "callee": "mongo_clean_ints",
+          "lineNumber": 128
+        },
+        {
+          "caller": "add_data",
+          "callee": "copy",
+          "lineNumber": 130
+        },
+        {
+          "caller": "add_data",
+          "callee": "self.key_is_in_data",
+          "lineNumber": 132
+        },
+        {
+          "caller": "add_data",
+          "callee": "self._update_existing_data_with_cleaned_dict",
+          "lineNumber": 134
+        },
+        {
+          "caller": "add_data",
+          "callee": "existingData",
+          "lineNumber": 136
+        },
+        {
+          "caller": "add_data",
+          "callee": "self._add_new_cleaned_dict",
+          "lineNumber": 142
+        },
+        {
+          "caller": "add_data",
+          "callee": "existingData",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_update_existing_data_with_cleaned_dict",
+          "callee": "self.collection.update_one",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_add_new_cleaned_dict",
+          "callee": "self.collection.insert_one",
+          "lineNumber": 157
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 174
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.init_mongo",
+          "lineNumber": 175
+        },
+        {
+          "caller": "init_mongo",
+          "callee": "mongoConnection",
+          "lineNumber": 183
+        },
+        {
+          "caller": "init_mongo",
+          "callee": "self._mongo.create_compound_index",
+          "lineNumber": 187
+        },
+        {
+          "caller": "init_mongo",
+          "callee": "self._log.error",
+          "lineNumber": 189
+        },
+        {
+          "caller": "name",
+          "callee": "clean_mongo_host",
+          "lineNumber": 201
+        },
+        {
+          "caller": "get_list_of_all_dicts",
+          "callee": "self._mongo.collection.find",
+          "lineNumber": 206
+        },
+        {
+          "caller": "get_list_of_all_dicts",
+          "callee": "dict_item.pop",
+          "lineNumber": 208
+        },
+        {
+          "caller": "get_result_dict_for_dict_keys",
+          "callee": "self._mongo.collection.find_one",
+          "lineNumber": 213
+        },
+        {
+          "caller": "get_result_dict_for_dict_keys",
+          "callee": "missingData",
+          "lineNumber": 215
+        },
+        {
+          "caller": "get_result_dict_for_dict_keys",
+          "callee": "result_dict.pop",
+          "lineNumber": 217
+        },
+        {
+          "caller": "get_list_of_result_dicts_for_dict_keys",
+          "callee": "self._mongo.collection.find",
+          "lineNumber": 222
+        },
+        {
+          "caller": "get_list_of_result_dicts_for_dict_keys",
+          "callee": "list",
+          "lineNumber": 227
+        },
+        {
+          "caller": "get_list_of_result_dicts_for_dict_keys",
+          "callee": "result_dict.pop",
+          "lineNumber": 228
+        },
+        {
+          "caller": "key_dict_is_in_data",
+          "callee": "self.get_result_dict_for_dict_keys",
+          "lineNumber": 234
+        },
+        {
+          "caller": "add_data",
+          "callee": "mongo_clean_ints",
+          "lineNumber": 248
+        },
+        {
+          "caller": "add_data",
+          "callee": "copy",
+          "lineNumber": 250
+        },
+        {
+          "caller": "add_data",
+          "callee": "self.key_dict_is_in_data",
+          "lineNumber": 252
+        },
+        {
+          "caller": "add_data",
+          "callee": "self._update_existing_data_with_cleaned_dict",
+          "lineNumber": 254
+        },
+        {
+          "caller": "add_data",
+          "callee": "existingData",
+          "lineNumber": 258
+        },
+        {
+          "caller": "add_data",
+          "callee": "str",
+          "lineNumber": 260
+        },
+        {
+          "caller": "add_data",
+          "callee": "self._add_new_cleaned_dict",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_update_existing_data_with_cleaned_dict",
+          "callee": "self._mongo.collection.update_one",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_add_new_cleaned_dict",
+          "callee": "dict_with_both_keys_and_data.update",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_add_new_cleaned_dict",
+          "callee": "dict_with_both_keys_and_data.update",
+          "lineNumber": 273
+        },
+        {
+          "caller": "_add_new_cleaned_dict",
+          "callee": "self._mongo.collection.insert_one",
+          "lineNumber": 275
+        },
+        {
+          "caller": "delete_data_without_any_warning",
+          "callee": "self._mongo.collection.remove",
+          "lineNumber": 278
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_lock_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "mongoLockData",
+          "startLine": 10,
+          "endLine": 51,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "_get_lock_for_instrument_no_checking",
+            "add_lock_for_instrument",
+            "remove_lock_for_instrument",
+            "get_list_of_locked_instruments"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoLockData",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_get_lock_for_instrument_no_checking",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 31
+        },
+        {
+          "caller": "add_lock_for_instrument",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 38
+        },
+        {
+          "caller": "remove_lock_for_instrument",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_list_of_locked_instruments",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_list_of_locked_instruments",
+          "callee": "self.is_instrument_locked",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_override.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "from_dict_to_override",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "result_dict"
+          ]
+        },
+        {
+          "name": "from_override_to_dict",
+          "startLine": 97,
+          "endLine": 101,
+          "params": [
+            "override"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "mongoOverrideData",
+          "startLine": 13,
+          "endLine": 88,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "_get_override_object_for_type_and_key",
+            "_update_override",
+            "_update_override_to_no_override",
+            "_update_other_type_of_override",
+            "_get_dict_of_items_with_overrides_for_type",
+            "_delete_all_overrides_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoOverrideData",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "from_dict_to_override",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "from_override_to_dict",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithMultipleKeys",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_get_override_object_for_type_and_key",
+          "callee": "self.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_get_override_object_for_type_and_key",
+          "callee": "self.default_override",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_get_override_object_for_type_and_key",
+          "callee": "from_dict_to_override",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_update_override",
+          "callee": "new_override_object.is_no_override",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_update_override",
+          "callee": "self._update_override_to_no_override",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_update_override",
+          "callee": "self._update_other_type_of_override",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_update_override_to_no_override",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_update_other_type_of_override",
+          "callee": "from_override_to_dict",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_update_other_type_of_override",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_get_dict_of_items_with_overrides_for_type",
+          "callee": "self.mongo_data.get_list_of_result_dicts_for_dict_keys",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_get_dict_of_items_with_overrides_for_type",
+          "callee": "dict",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_get_dict_of_items_with_overrides_for_type",
+          "callee": "from_dict_to_override",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_delete_all_overrides_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_delete_all_overrides_without_checking",
+          "callee": "self.mongo_data.get_list_of_all_dicts",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_delete_all_overrides_without_checking",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 88
+        },
+        {
+          "caller": "from_dict_to_override",
+          "callee": "Override.from_numeric_value",
+          "lineNumber": 93
+        },
+        {
+          "caller": "from_override_to_dict",
+          "callee": "override.as_numeric_value",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_position_limits.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 98,
+      "classes": [
+        {
+          "name": "mongoPositionLimitData",
+          "startLine": 21,
+          "endLine": 129,
+          "methods": [
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "get_all_instruments_with_limits",
+            "get_all_instrument_strategies_with_limits",
+            "delete_position_limit_for_instrument_strategy",
+            "delete_position_limit_for_instrument",
+            "_get_abs_position_limit_for_instrument_strategy",
+            "_get_abs_position_limit_for_instrument",
+            "set_position_limit_for_instrument_strategy",
+            "set_position_limit_for_instrument"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoPositionLimitData",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithMultipleKeys",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_all_instruments_with_limits",
+          "callee": "self.mongo_data.get_list_of_result_dicts_for_dict_keys",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_all_instrument_strategies_with_limits",
+          "callee": "self.mongo_data.get_list_of_result_dicts_for_dict_keys",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_all_instrument_strategies_with_limits",
+          "callee": "instrumentStrategy",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_all_instrument_strategies_with_limits",
+          "callee": "listOfInstrumentStrategies",
+          "lineNumber": 65
+        },
+        {
+          "caller": "delete_position_limit_for_instrument_strategy",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 80
+        },
+        {
+          "caller": "delete_position_limit_for_instrument",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_get_abs_position_limit_for_instrument_strategy",
+          "callee": "self.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_get_abs_position_limit_for_instrument",
+          "callee": "self.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 106
+        },
+        {
+          "caller": "set_position_limit_for_instrument_strategy",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 121
+        },
+        {
+          "caller": "set_position_limit_for_instrument",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_process_control.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "mongoControlProcessData",
+          "startLine": 12,
+          "endLine": 60,
+          "methods": [
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "get_list_of_process_names",
+            "_get_control_for_process_name_without_default",
+            "_modify_existing_control_for_process_name",
+            "_add_control_for_process_name",
+            "delete_control_for_process_name"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoControlProcessData",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_list_of_process_names",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_get_control_for_process_name_without_default",
+          "callee": "self.mongo_data.get_result_dict_for_key_without_key_value",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_get_control_for_process_name_without_default",
+          "callee": "controlProcess.from_dict",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_modify_existing_control_for_process_name",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_modify_existing_control_for_process_name",
+          "callee": "new_control_object.as_dict",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_add_control_for_process_name",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_add_control_for_process_name",
+          "callee": "new_control_object.as_dict",
+          "lineNumber": 56
+        },
+        {
+          "caller": "delete_control_for_process_name",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_roll_state_storage.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "mongoRollStateData",
+          "startLine": 10,
+          "endLine": 49,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "get_list_of_instruments",
+            "_get_roll_state_as_str_no_default",
+            "_set_roll_state_as_str_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoRollStateData",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_get_roll_state_as_str_no_default",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_set_roll_state_as_str_without_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_spread_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "_cost_value_from_dict",
+          "startLine": 77,
+          "endLine": 78,
+          "params": [
+            "result_dict"
+          ]
+        },
+        {
+          "name": "_dict_from_spread_cost",
+          "startLine": 81,
+          "endLine": 82,
+          "params": [
+            "spread_cost"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "mongoSpreadCostData",
+          "startLine": 13,
+          "endLine": 71,
+          "methods": [
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "delete_spread_cost",
+            "get_list_of_instruments",
+            "get_spread_costs_as_series",
+            "get_spread_cost",
+            "update_spread_cost"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoSpreadCostData",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "_cost_value_from_dict",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "_dict_from_spread_cost",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 32
+        },
+        {
+          "caller": "delete_spread_cost",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_spread_costs_as_series",
+          "callee": "self._get_spread_costs_as_series_if_individual_spreads_provided",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "self.mongo_data.get_result_dict_for_key_without_key_value",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "self.log.warning",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "_cost_value_from_dict",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "np.isnan",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "self.log.warning",
+          "lineNumber": 58
+        },
+        {
+          "caller": "update_spread_cost",
+          "callee": "_dict_from_spread_cost",
+          "lineNumber": 64
+        },
+        {
+          "caller": "update_spread_cost",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_close.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "mongoTemporaryCloseData",
+          "startLine": 13,
+          "endLine": 53,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "get_list_of_instruments",
+            "get_stored_position_limit_for_instrument",
+            "_add_stored_position_limit_without_checking",
+            "does_instrument_have_position_limit_stored",
+            "_delete_stored_position_limit_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoTemporaryCloseData",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 15
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_stored_position_limit_for_instrument",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_stored_position_limit_for_instrument",
+          "callee": "positionLimitForInstrument",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_add_stored_position_limit_without_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 46
+        },
+        {
+          "caller": "does_instrument_have_position_limit_stored",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_delete_stored_position_limit_without_checking",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_override.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "mongoTemporaryOverrideData",
+          "startLine": 16,
+          "endLine": 52,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "mongo_data",
+            "get_stored_override_for_instrument",
+            "_add_stored_override_without_checking",
+            "_delete_stored_override_without_checking",
+            "does_instrument_have_override_stored"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoTemporaryOverrideData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_stored_override_for_instrument",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_stored_override_for_instrument",
+          "callee": "from_dict_to_override",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_add_stored_override_without_checking",
+          "callee": "from_override_to_dict",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_add_stored_override_without_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_delete_stored_override_without_checking",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 49
+        },
+        {
+          "caller": "does_instrument_have_override_stored",
+          "callee": "self.mongo_data.key_is_in_data",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_trade_limits.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "_from_result_dict_to_isd",
+          "startLine": 107,
+          "endLine": 121,
+          "params": [
+            "result_dict"
+          ]
+        },
+        {
+          "name": "_from_trade_limit_dict_to_required_dict",
+          "startLine": 124,
+          "endLine": 136,
+          "params": [
+            "trade_limit_dict"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "mongoTradeLimitData",
+          "startLine": 20,
+          "endLine": 104,
+          "methods": [
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "_get_trade_limit_as_dict_or_missing_data",
+            "_get_old_style_trade_limit_as_dict_or_missing_data",
+            "_update_trade_limit_as_dict",
+            "_delete_old_style_data",
+            "_get_all_limit_keys"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoTradeLimitData",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_from_result_dict_to_isd",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "_from_trade_limit_dict_to_required_dict",
+          "line": 124,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithMultipleKeys",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_get_trade_limit_as_dict_or_missing_data",
+          "callee": "self.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_get_trade_limit_as_dict_or_missing_data",
+          "callee": "self._get_old_style_trade_limit_as_dict_or_missing_data",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_get_old_style_trade_limit_as_dict_or_missing_data",
+          "callee": "self.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_get_old_style_trade_limit_as_dict_or_missing_data",
+          "callee": "_from_trade_limit_dict_to_required_dict",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_update_trade_limit_as_dict",
+          "callee": "trade_limit_dict.pop",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_update_trade_limit_as_dict",
+          "callee": "trade_limit_dict.pop",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_update_trade_limit_as_dict",
+          "callee": "self._delete_old_style_data",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_update_trade_limit_as_dict",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_delete_old_style_data",
+          "callee": "instrumentStrategy.from_key",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_delete_old_style_data",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_get_all_limit_keys",
+          "callee": "self.mongo_data.get_list_of_all_dicts",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_get_all_limit_keys",
+          "callee": "_from_result_dict_to_isd",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_get_all_limit_keys",
+          "callee": "listOfInstrumentStrategyKeyAndDays",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_from_result_dict_to_isd",
+          "callee": "result_dict.keys",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_from_result_dict_to_isd",
+          "callee": "instrumentStrategy",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_from_result_dict_to_isd",
+          "callee": "instrumentStrategyKeyAndDays",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_from_trade_limit_dict_to_required_dict",
+          "callee": "trade_limit_dict.keys",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_from_trade_limit_dict_to_required_dict",
+          "callee": "instrumentStrategy",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_from_trade_limit_dict_to_required_dict",
+          "callee": "trade_limit_dict.pop",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_from_trade_limit_dict_to_required_dict",
+          "callee": "trade_limit_dict.pop",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_access.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ParquetAccess",
+          "startLine": 11,
+          "endLine": 60,
+          "methods": [
+            "__init__",
+            "get_all_identifiers_with_data_type",
+            "does_identifier_with_data_type_exist",
+            "delete_data_given_data_type_and_identifier",
+            "write_data_given_data_type_and_identifier",
+            "read_data_given_data_type_and_identifier"
+          ],
+          "properties": []
+        },
+        {
+          "name": "LocalAccessor",
+          "startLine": 63,
+          "endLine": 85,
+          "methods": [
+            "__init__",
+            "identifiers_for_type",
+            "get_filename_given_data_type_and_identifier",
+            "get_pathname_given_data_type"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ParquetAccess",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "LocalAccessor",
+          "line": 63,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "LocalAccessor",
+          "lineNumber": 20
+        },
+        {
+          "caller": "get_all_identifiers_with_data_type",
+          "callee": "self.accessor.identifiers_for_type",
+          "lineNumber": 23
+        },
+        {
+          "caller": "does_identifier_with_data_type_exist",
+          "callee": "self.accessor.get_filename_given_data_type_and_identifier",
+          "lineNumber": 28
+        },
+        {
+          "caller": "does_identifier_with_data_type_exist",
+          "callee": "Path(filename).exists",
+          "lineNumber": 31
+        },
+        {
+          "caller": "does_identifier_with_data_type_exist",
+          "callee": "Path",
+          "lineNumber": 31
+        },
+        {
+          "caller": "delete_data_given_data_type_and_identifier",
+          "callee": "self.accessor.get_filename_given_data_type_and_identifier",
+          "lineNumber": 36
+        },
+        {
+          "caller": "delete_data_given_data_type_and_identifier",
+          "callee": "Path(filename).unlink",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_data_given_data_type_and_identifier",
+          "callee": "Path",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_data_given_data_type_and_identifier",
+          "callee": "missingFile",
+          "lineNumber": 42
+        },
+        {
+          "caller": "write_data_given_data_type_and_identifier",
+          "callee": "self.accessor.get_filename_given_data_type_and_identifier",
+          "lineNumber": 47
+        },
+        {
+          "caller": "write_data_given_data_type_and_identifier",
+          "callee": "data_to_write.to_parquet",
+          "lineNumber": 50
+        },
+        {
+          "caller": "read_data_given_data_type_and_identifier",
+          "callee": "self.accessor.get_filename_given_data_type_and_identifier",
+          "lineNumber": 57
+        },
+        {
+          "caller": "read_data_given_data_type_and_identifier",
+          "callee": "pd.read_parquet",
+          "lineNumber": 60
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_resolved_pathname",
+          "lineNumber": 67
+        },
+        {
+          "caller": "identifiers_for_type",
+          "callee": "self.get_pathname_given_data_type",
+          "lineNumber": 70
+        },
+        {
+          "caller": "identifiers_for_type",
+          "callee": "files_with_extension_in_resolved_pathname",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_filename_given_data_type_and_identifier",
+          "callee": "self.get_pathname_given_data_type",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_filename_given_data_type_and_identifier",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 77
+        },
+        {
+          "caller": "get_pathname_given_data_type",
+          "callee": "Path",
+          "lineNumber": 83
+        },
+        {
+          "caller": "get_pathname_given_data_type",
+          "callee": "path.mkdir",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_pathname_given_data_type",
+          "callee": "str",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 4 · Forecast to Position — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 4 · Position Sizing</div>
+  <h1>Forecast to position: how a number becomes contracts</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> This is where an abstract forecast turns into a concrete
+    <em>"buy 14 contracts."</em> When you trade live, this is the number the system will try
+    to actually hold at your broker. Getting the sizing right is the difference between a
+    system that risks what you intend and one that blows up.
+  </div>
+
+  <h2>The one formula</h2>
+  <p>The <code>positionSize</code> stage answers: <em>given this forecast, how big a bet?</em></p>
+  <p style="text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:.95rem; color:var(--accent-2);">
+    subsystem position = (combined forecast ÷ 10) × average position
+  </p>
+  <ul>
+    <li><strong>forecast ÷ 10</strong> — a forecast of 10 is "average," so it means "hold the
+      average-size bet." A forecast of 20 means "double it"; −5 means "half, and short."</li>
+    <li><strong>average position</strong> — how many contracts equal an average-conviction bet,
+      set by <em>volatility targeting</em> (below).</li>
+  </ul>
+
+  <h2>Volatility targeting sets the "average position"</h2>
+  <p>Carver sizes every bet in <strong>risk units</strong>, not dollars. Your ch.15 config:</p>
+<pre><code>capital                = 250,000
+percentage_vol_target  = 20%          <span class="comment"># willing to risk 20% annualised</span>
+annual cash vol target = 50,000       <span class="comment"># = 20% of 250k</span>
+daily cash vol target  = 3,125        <span class="comment"># = 50,000 / 16 (sqrt of ~256 days)</span></code></pre>
+  <p>
+    The "average position" is then: <em>how many contracts of EUROSTX have a daily risk of
+    ~3,125?</em> The answer for EUROSTX is about <strong>9.8 contracts</strong>. That's the
+    bet size at forecast = 10. A riskier (more volatile) instrument would need
+    <em>fewer</em> contracts to reach the same risk — that's the whole point.
+  </p>
+
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    Volatility targeting is what makes each instrument contribute roughly <em>equal risk</em>.
+    Live, if one instrument suddenly gets a huge position, your first question is: did its
+    <em>volatility</em> drop (bigger average position) or its <em>forecast</em> spike? This
+    formula tells you exactly where to look.
+  </div>
+
+  <h2>Putting it together (EUROSTX)</h2>
+<pre><code>combined forecast   14.849
+        ÷ 10        = 1.4849       <span class="comment"># 1.48x an average bet</span>
+average position    × 9.813
+                    -------------
+subsystem position  = 14.57 contracts</code></pre>
+  <p>
+    "Subsystem" means <em>"if EUROSTX were the only thing you traded."</em> In
+    <a href="0005-portfolio.html">Lesson 5</a> we shrink this down to its share of the full
+    portfolio.
+  </p>
+
+  <h2>See it yourself (3 min)</h2>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_position.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+s = futures_system()
+I = "EUROSTX"
+
+combined = s.combForecast.get_combined_forecast(I)
+avg_pos  = s.positionSize.get_average_position_at_subsystem_level(I)
+subpos   = s.positionSize.get_subsystem_position(I)
+
+print("capital / vol target:", s.positionSize.get_notional_trading_capital(),
+      "/", s.positionSize.get_percentage_vol_target(), "%")
+print("combined forecast :", round(float(combined.iloc[-1]), 3))
+print("average position  :", round(float(avg_pos.iloc[-1]), 3), " (bet at forecast=10)")
+print("subsystem position:", round(float(subpos.iloc[-1]), 3),
+      " (= forecast/10 x avg)")
+</code></pre>
+  <p>Run: <code>uv run python _learning_sandbox/course/lessons/trace_position.py</code></p>
+
+  <h2>Check yourself</h2>
+  <div class="quiz" data-quiz='[
+    {"q":"A combined forecast of 20 produces a position of what, versus forecast 10?",
+     "options":["Exactly half the size","Exactly double the size","Exactly the same size","Exactly zero size"],
+     "correct":1,
+     "why":"Position scales linearly with forecast/10, so 20 is twice the average-size bet that a forecast of 10 gives."},
+    {"q":"For a MORE volatile instrument, the average position in contracts is what?",
+     "options":["Larger than a calm one","Smaller than a calm one","Same as a calm one","Always exactly ten"],
+     "correct":1,
+     "why":"Volatility targeting holds risk constant, so a more volatile instrument needs fewer contracts to reach the same cash risk target."},
+    {"q":"What does a subsystem position assume about the instrument?",
+     "options":["It is the only holding","It has no trading costs","It uses only carry","It is always shorted"],
+     "correct":0,
+     "why":"Subsystem position = the size if that instrument were the entire portfolio; portfolio weighting comes later in Lesson 5."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <strong>Systematic Trading</strong>, Robert Carver — <em>Chapter 9 (Volatility targeting &amp;
+    position sizing)</em>. Code: <a href="../../../systems/positionsizing.py">systems/positionsizing.py</a>.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    The "÷16" for daily vol, or how contracts map to cash risk (point value × FX), are great
+    follow-ups — just ask.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 4</span>
+    <span>Prev ← <a href="0003-combining-forecasts.html">Combining Forecasts</a> · Next → <a href="0005-portfolio.html">The Portfolio</a></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

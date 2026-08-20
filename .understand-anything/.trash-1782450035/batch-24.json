@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "config:sysdata/tests/custom_private_config/private_config.yaml",
+      "type": "config",
+      "name": "private_config.yaml",
+      "filePath": "sysdata/tests/custom_private_config/private_config.yaml",
+      "summary": "Test fixture private config overriding the Interactive Brokers client ID offset (ib_idoffset: 1000), used to verify custom private config loading in sysdata tests.",
+      "tags": ["configuration", "test", "broker", "interactive-brokers"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:sysdata/tests/custom_private_config/private_config_trading_hours.yaml",
+      "type": "config",
+      "name": "private_config_trading_hours.yaml",
+      "filePath": "sysdata/tests/custom_private_config/private_config_trading_hours.yaml",
+      "summary": "Test fixture defining custom trading hours (09:00-14:00) for the MET instrument, used to exercise private trading-hours config overrides.",
+      "tags": ["configuration", "test", "trading-hours", "instrument"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:sysdata/tests/custom_private_config/private_control_config.yaml",
+      "type": "config",
+      "name": "private_control_config.yaml",
+      "filePath": "sysdata/tests/custom_private_config/private_control_config.yaml",
+      "summary": "Test fixture for production process control, setting the run_stack_handler process start time to 01:00, used to validate custom private control config loading.",
+      "tags": ["configuration", "test", "process-control", "scheduling"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

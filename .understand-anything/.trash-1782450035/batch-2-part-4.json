@@ -1,0 +1,1684 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/tests/test_position_sizing.py",
+      "type": "file",
+      "name": "test_position_sizing.py",
+      "filePath": "systems/tests/test_position_sizing.py",
+      "summary": "Unit tests for the position sizing stage, covering vol scalars and subsystem positions.",
+      "tags": [
+        "test",
+        "unit-test",
+        "position-sizing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/tests/test_rawdata.py",
+      "type": "file",
+      "name": "test_rawdata.py",
+      "filePath": "systems/tests/test_rawdata.py",
+      "summary": "Unit tests for the base raw data stage outputs.",
+      "tags": [
+        "test",
+        "unit-test",
+        "raw-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/tests/testdata.py",
+      "type": "file",
+      "name": "testdata.py",
+      "filePath": "systems/tests/testdata.py",
+      "summary": "Shared test fixtures: factory helpers that build progressively richer system objects for stage-level unit tests.",
+      "tags": [
+        "test",
+        "fixture",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/tests/testfuturesrawdata.py",
+      "type": "file",
+      "name": "testfuturesrawdata.py",
+      "filePath": "systems/tests/testfuturesrawdata.py",
+      "summary": "Test fixtures and unit tests for the futures raw data stage.",
+      "tags": [
+        "test",
+        "fixture",
+        "raw-data"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/tools/autogroup.py",
+      "type": "file",
+      "name": "autogroup.py",
+      "filePath": "systems/tools/autogroup.py",
+      "summary": "Automatic hierarchical grouping of instruments into a weighted tree for portfolio construction, resolving config into grouping parameters and collapsed weights.",
+      "tags": [
+        "utility",
+        "portfolio",
+        "optimisation",
+        "clustering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/trading_rules.py",
+      "type": "file",
+      "name": "trading_rules.py",
+      "filePath": "systems/trading_rules.py",
+      "summary": "Defines the TradingRule abstraction wrapping a callable signal function with its data and arguments, plus helpers to build and vary rules from config.",
+      "tags": [
+        "data-model",
+        "trading-rule",
+        "framework",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:tests/test_examples.py",
+      "type": "file",
+      "name": "test_examples.py",
+      "filePath": "tests/test_examples.py",
+      "summary": "End-to-end example/regression tests that build full systems and assert on documented example outputs from the user guide.",
+      "tags": [
+        "test",
+        "integration-test",
+        "e2e",
+        "example"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/tests/test_position_sizing.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_position_sizing.py",
+      "lineRange": [
+        9,
+        140
+      ],
+      "summary": "Class Test defined in test_position_sizing.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/tests/test_rawdata.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_rawdata.py",
+      "lineRange": [
+        6,
+        53
+      ],
+      "summary": "Class Test defined in test_rawdata.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object",
+      "type": "function",
+      "name": "get_test_object",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        12,
+        19
+      ],
+      "summary": "Helper function get_test_object in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures",
+      "type": "function",
+      "name": "get_test_object_futures",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        22,
+        29
+      ],
+      "summary": "Builds a futures test system object for stage unit tests.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_rules",
+      "type": "function",
+      "name": "get_test_object_futures_with_rules",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        32,
+        40
+      ],
+      "summary": "Helper function get_test_object_futures_with_rules in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping",
+      "type": "function",
+      "name": "get_test_object_futures_with_rules_and_capping",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        43,
+        52
+      ],
+      "summary": "Helper function get_test_object_futures_with_rules_and_capping in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_comb_forecasts",
+      "type": "function",
+      "name": "get_test_object_futures_with_comb_forecasts",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        55,
+        65
+      ],
+      "summary": "Helper function get_test_object_futures_with_comb_forecasts in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing",
+      "type": "function",
+      "name": "get_test_object_futures_with_pos_sizing",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        68,
+        79
+      ],
+      "summary": "Helper function get_test_object_futures_with_pos_sizing in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_portfolios",
+      "type": "function",
+      "name": "get_test_object_futures_with_portfolios",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        82,
+        94
+      ],
+      "summary": "Helper function get_test_object_futures_with_portfolios in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping_estimate",
+      "type": "function",
+      "name": "get_test_object_futures_with_rules_and_capping_estimate",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        97,
+        107
+      ],
+      "summary": "Helper function get_test_object_futures_with_rules_and_capping_estimate in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing_estimates",
+      "type": "function",
+      "name": "get_test_object_futures_with_pos_sizing_estimates",
+      "filePath": "systems/tests/testdata.py",
+      "lineRange": [
+        110,
+        122
+      ],
+      "summary": "Helper function get_test_object_futures_with_pos_sizing_estimates in testdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tests/testfuturesrawdata.py:get_test_object_futures",
+      "type": "function",
+      "name": "get_test_object_futures",
+      "filePath": "systems/tests/testfuturesrawdata.py",
+      "lineRange": [
+        9,
+        16
+      ],
+      "summary": "Helper function get_test_object_futures in testfuturesrawdata.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tests/testfuturesrawdata.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/testfuturesrawdata.py",
+      "lineRange": [
+        19,
+        78
+      ],
+      "summary": "Class Test defined in testfuturesrawdata.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/tools/autogroup.py:calculate_autogroup_weights_given_parameters",
+      "type": "function",
+      "name": "calculate_autogroup_weights_given_parameters",
+      "filePath": "systems/tools/autogroup.py",
+      "lineRange": [
+        9,
+        34
+      ],
+      "summary": "Computes hierarchical group weights given autogrouping parameters.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tools/autogroup.py:_collapse_tree_of_weights",
+      "type": "function",
+      "name": "_collapse_tree_of_weights",
+      "filePath": "systems/tools/autogroup.py",
+      "lineRange": [
+        230,
+        242
+      ],
+      "summary": "Helper function _collapse_tree_of_weights in autogroup.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tools/autogroup.py:config_is_auto_group",
+      "type": "function",
+      "name": "config_is_auto_group",
+      "filePath": "systems/tools/autogroup.py",
+      "lineRange": [
+        250,
+        254
+      ],
+      "summary": "Helper function config_is_auto_group in autogroup.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/tools/autogroup.py:resolve_config_into_parameters_and_weights_for_autogrouping",
+      "type": "function",
+      "name": "resolve_config_into_parameters_and_weights_for_autogrouping",
+      "filePath": "systems/tools/autogroup.py",
+      "lineRange": [
+        257,
+        271
+      ],
+      "summary": "Resolves config into autogrouping parameters and collapsed instrument weights.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tools/autogroup.py:autoGroupPortfolioWeight",
+      "type": "class",
+      "name": "autoGroupPortfolioWeight",
+      "filePath": "systems/tools/autogroup.py",
+      "lineRange": [
+        37,
+        227
+      ],
+      "summary": "Builds a hierarchical tree of instrument groups and resolves it into portfolio weights.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_repr_trading_rule",
+      "type": "function",
+      "name": "_repr_trading_rule",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        173,
+        190
+      ],
+      "summary": "Helper function _repr_trading_rule in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_get_trading_rule_components_depending_on_rule_input",
+      "type": "function",
+      "name": "_get_trading_rule_components_depending_on_rule_input",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        265,
+        292
+      ],
+      "summary": "Helper function _get_trading_rule_components_depending_on_rule_input in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_already_a_trading_rule",
+      "type": "function",
+      "name": "_already_a_trading_rule",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        295,
+        296
+      ],
+      "summary": "Helper function _already_a_trading_rule in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_create_rule_from_existing_rule",
+      "type": "function",
+      "name": "_create_rule_from_existing_rule",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        299,
+        310
+      ],
+      "summary": "Helper function _create_rule_from_existing_rule in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_throw_warning_if_passed_rule_and_data",
+      "type": "function",
+      "name": "_throw_warning_if_passed_rule_and_data",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        313,
+        320
+      ],
+      "summary": "Helper function _throw_warning_if_passed_rule_and_data in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_create_rule_from_tuple",
+      "type": "function",
+      "name": "_create_rule_from_tuple",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        323,
+        336
+      ],
+      "summary": "Helper function _create_rule_from_tuple in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_create_rule_from_dict",
+      "type": "function",
+      "name": "_create_rule_from_dict",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        339,
+        356
+      ],
+      "summary": "Helper function _create_rule_from_dict in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_create_rule_from_passed_elements",
+      "type": "function",
+      "name": "_create_rule_from_passed_elements",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        359,
+        366
+      ],
+      "summary": "Helper function _create_rule_from_passed_elements in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:_separate_other_args",
+      "type": "function",
+      "name": "_separate_other_args",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        369,
+        405
+      ],
+      "summary": "Helper function _separate_other_args in trading_rules.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:create_variations_oneparameter",
+      "type": "function",
+      "name": "create_variations_oneparameter",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        408,
+        444
+      ],
+      "summary": "Generates trading-rule variations by sweeping a single parameter.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/trading_rules.py:create_variations",
+      "type": "function",
+      "name": "create_variations",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        447,
+        508
+      ],
+      "summary": "Generates trading-rule variations across multiple parameter combinations.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/trading_rules.py:TradingRule",
+      "type": "class",
+      "name": "TradingRule",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        21,
+        170
+      ],
+      "summary": "Wraps a signal function with its data references and arguments to form an evaluable trading rule.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/trading_rules.py:tradingRuleComponents",
+      "type": "class",
+      "name": "tradingRuleComponents",
+      "filePath": "systems/trading_rules.py",
+      "lineRange": [
+        193,
+        262
+      ],
+      "summary": "Value object holding the parsed function/data/args components of a trading rule.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_examples.py:data",
+      "type": "function",
+      "name": "data",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": "Helper function data in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:raw_data",
+      "type": "function",
+      "name": "raw_data",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        28,
+        29
+      ],
+      "summary": "Helper function raw_data in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:ewmac_8",
+      "type": "function",
+      "name": "ewmac_8",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        33,
+        34
+      ],
+      "summary": "Helper function ewmac_8 in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:ewmac_32",
+      "type": "function",
+      "name": "ewmac_32",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        38,
+        39
+      ],
+      "summary": "Helper function ewmac_32 in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:my_rules",
+      "type": "function",
+      "name": "my_rules",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        43,
+        44
+      ],
+      "summary": "Helper function my_rules in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:my_config",
+      "type": "function",
+      "name": "my_config",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        48,
+        59
+      ],
+      "summary": "Helper function my_config in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:fcs",
+      "type": "function",
+      "name": "fcs",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        63,
+        64
+      ],
+      "summary": "Helper function fcs in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:combiner",
+      "type": "function",
+      "name": "combiner",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        68,
+        69
+      ],
+      "summary": "Helper function combiner in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:possizer",
+      "type": "function",
+      "name": "possizer",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        73,
+        74
+      ],
+      "summary": "Helper function possizer in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:account",
+      "type": "function",
+      "name": "account",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        78,
+        79
+      ],
+      "summary": "Helper function account in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_examples.py:portfolio",
+      "type": "function",
+      "name": "portfolio",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        83,
+        84
+      ],
+      "summary": "Helper function portfolio in test_examples.py.",
+      "tags": [
+        "test",
+        "fixture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:tests/test_examples.py:TestExamples",
+      "type": "class",
+      "name": "TestExamples",
+      "filePath": "tests/test_examples.py",
+      "lineRange": [
+        87,
+        448
+      ],
+      "summary": "Class TestExamples defined in test_examples.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "class:systems/tests/test_position_sizing.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "class:systems/tests/test_position_sizing.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_rawdata.py",
+      "target": "class:systems/tests/test_rawdata.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_rawdata.py",
+      "target": "class:systems/tests/test_rawdata.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_comb_forecasts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_comb_forecasts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_portfolios",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_portfolios",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping_estimate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_rules_and_capping_estimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "function:systems/tests/testdata.py:get_test_object_futures_with_pos_sizing_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "function:systems/tests/testfuturesrawdata.py:get_test_object_futures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "function:systems/tests/testfuturesrawdata.py:get_test_object_futures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "class:systems/tests/testfuturesrawdata.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "class:systems/tests/testfuturesrawdata.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:calculate_autogroup_weights_given_parameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:calculate_autogroup_weights_given_parameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:_collapse_tree_of_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:_collapse_tree_of_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:config_is_auto_group",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:config_is_auto_group",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:resolve_config_into_parameters_and_weights_for_autogrouping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "function:systems/tools/autogroup.py:resolve_config_into_parameters_and_weights_for_autogrouping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "class:systems/tools/autogroup.py:autoGroupPortfolioWeight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "class:systems/tools/autogroup.py:autoGroupPortfolioWeight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_repr_trading_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_repr_trading_rule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_get_trading_rule_components_depending_on_rule_input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_get_trading_rule_components_depending_on_rule_input",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_already_a_trading_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_already_a_trading_rule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_existing_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_existing_rule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_throw_warning_if_passed_rule_and_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_throw_warning_if_passed_rule_and_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_tuple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_tuple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_passed_elements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_create_rule_from_passed_elements",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_separate_other_args",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:_separate_other_args",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:create_variations_oneparameter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:create_variations_oneparameter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:create_variations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "function:systems/trading_rules.py:create_variations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "class:systems/trading_rules.py:TradingRule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "class:systems/trading_rules.py:TradingRule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "class:systems/trading_rules.py:tradingRuleComponents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "class:systems/trading_rules.py:tradingRuleComponents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:raw_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:raw_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:ewmac_8",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:ewmac_8",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:ewmac_32",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:ewmac_32",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:my_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:my_rules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:my_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:my_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:fcs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:fcs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:combiner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:combiner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:possizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:possizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:account",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:account",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:portfolio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "function:tests/test_examples.py:portfolio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "class:tests/test_examples.py:TestExamples",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "class:tests/test_examples.py:TestExamples",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "file:sysdata/config/private_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_position_sizing.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_rawdata.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_rawdata.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testdata.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/testfuturesrawdata.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tools/autogroup.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:syscore/text.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:sysquant/estimators/vol.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/provided/example/simplesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/provided/futures_chapter15/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/provided/rules/ewmac.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_examples.py",
+      "target": "file:systems/trading_rules.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:systems/tests/test_forecasts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/trading_rules.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

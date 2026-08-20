@@ -10,6 +10,7 @@ dist
 build
 private
 restats
+site/
 
 # Coverage reports
 .coverage

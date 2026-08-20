@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 2 · The Forecast — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 2 · Forecasts</div>
+  <h1>The forecast up close: what +4, +10, +20 mean</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> Forecasts are the beating heart of Carver's system — every
+    position you'll ever hold traces back to one. When you trade live, you'll read these
+    numbers every day to sanity-check what the system wants to do. In
+    <a href="0001-the-pipeline.html">Lesson 1</a> you watched a raw <code>4.073</code>
+    become a capped <code>20.0</code>. This lesson explains that jump — for real, with the
+    exact code and numbers from your repo.
+  </div>
+
+  <h2>1 · What a forecast <em>is</em></h2>
+  <p>
+    A forecast is a single number expressing <strong>how strongly, and in which direction,
+    a rule wants to bet</strong>. Carver's key move: put every forecast on a
+    <strong>common scale</strong> so a "+10" always means the same thing —
+    <em>average conviction</em> — no matter which rule or instrument produced it.
+  </p>
+
+  <div class="pipeline">
+    <div class="stage"><div class="num" style="background:#1c6b3c">+</div><div class="body">
+      <p class="desc"><strong>Positive</strong> = go long. <strong>Negative</strong> = go short. <strong>Zero</strong> = flat.</p></div></div>
+    <div class="stage"><div class="num" style="background:#14507a">10</div><div class="body">
+      <p class="desc"><strong>±10</strong> = an <em>average</em>-strength bet (the whole system is calibrated so the typical absolute forecast is about 10).</p></div></div>
+    <div class="stage"><div class="num" style="background:#7a1705">20</div><div class="body">
+      <p class="desc"><strong>±20</strong> = the <em>maximum</em> allowed conviction. The forecast is capped here, however strong the signal.</p></div></div>
+  </div>
+
+  <h2>2 · EWMAC — the rule behind your number</h2>
+  <p>
+    <code>ewmac8_32</code> is a <strong>trend</strong> rule. It asks: <em>is the recent
+    average price above the longer-term average?</em> If yes, we're in an uptrend → positive
+    forecast. Here is the <strong>actual code</strong> from your repo
+    (<a href="../../../systems/provided/rules/ewmac.py">systems/provided/rules/ewmac.py</a>):
+  </p>
+<pre><code>def ewmac(price, vol, Lfast, Lslow):
+    fast_ewma = price.ewm(span=Lfast).mean()   <span class="comment"># 8-day average (reacts fast)</span>
+    slow_ewma = price.ewm(span=Lslow).mean()   <span class="comment"># 32-day average (reacts slow)</span>
+    raw_ewmac = fast_ewma - slow_ewma          <span class="comment"># gap between them = trend strength</span>
+    return raw_ewmac / vol.ffill()             <span class="comment"># divide by vol to normalise</span>
+</code></pre>
+  <p>Two ideas do all the work:</p>
+  <ul>
+    <li><strong>Fast minus slow.</strong> When price is rising, the 8-day average sits above
+      the 32-day average, so the gap is positive. Bigger gap = stronger trend.</li>
+    <li><strong>Divide by volatility.</strong> A 50-point gap means a lot for a calm market
+      and nothing for a wild one. Dividing by <code>vol</code> makes the number
+      <em>comparable</em> across instruments and across time. <em>(This is the same
+      risk-first thinking as stage 1 in Lesson 1.)</em></li>
+  </ul>
+
+  <h2>3 · Why scale? (raw → ×5.3)</h2>
+  <p>
+    The raw EWMAC number has an <strong>arbitrary size</strong> — for EUROSTX its long-run
+    average absolute value is only about <code>1.46</code>. Useless as a common language. So
+    each rule gets a fixed <strong>forecast scalar</strong> that multiplies it up to the
+    "average ≈ 10" scale. For <code>ewmac8_32</code> that scalar is
+    <strong>5.3</strong> (right there in your config:
+    <code>forecast_scalar: 5.3</code>). So your last value:
+  </p>
+<pre><code>raw 4.073  ×  scalar 5.3  =  scaled 21.6</code></pre>
+  <div class="callout">
+    <span class="tag">Honest nuance — "≈ 10", not exactly 10</span>
+    The scalar <code>5.3</code> is a <em>fixed</em> value Carver calibrated across many
+    instruments, so it targets an average of 10 <em>on average</em> — not per instrument.
+    On EUROSTX specifically the scaled average works out around <code>7.8</code>. That's
+    expected and fine. (An alternative mode <em>estimates</em> the scalar per instrument;
+    we'll meet that later.)
+  </div>
+
+  <h2>4 · Why cap? (21.6 → 20)</h2>
+  <p>
+    A scaled forecast of <code>21.6</code> is stronger than the <code>±20</code> maximum, so
+    <code>forecastScaleCap</code> <strong>clips it to 20</strong>. This is pure
+    <strong>risk control</strong>: no matter how euphoric a trend gets, no single rule is
+    allowed to bet more than <em>twice</em> average conviction. That's why Lesson 1's
+    "capped forecast" read exactly <code>20.0</code> — the raw signal wanted more, and the
+    cap said no.
+  </p>
+  <p style="text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:.92rem; color:var(--accent-2);">
+    raw 4.073 &nbsp;→&nbsp; <b>×5.3</b> &nbsp;→&nbsp; scaled 21.6 &nbsp;→&nbsp; <b>cap ±20</b> &nbsp;→&nbsp; capped 20.0
+  </p>
+
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    When you trade live, a screen will show you a <em>combined</em> forecast per instrument
+    (all rules blended — that's Lesson 3). Reading it fluently is your first line of defence:
+    a forecast near <code>±20</code> means "max conviction, expect a big position"; near
+    <code>0</code> means "flat, expect little or no position." If the position doesn't match
+    the forecast, something's wrong downstream — and you'll know where to look.
+  </div>
+
+  <h2>See it yourself (5 min)</h2>
+  <p>Prove the EWMAC formula to yourself — rebuild it by hand and watch it match pysystemtrade exactly, then watch the scale → cap chain:</p>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_forecast.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+s = futures_system()
+I, R = "EUROSTX", "ewmac8_32"
+
+price = s.rawdata.get_daily_prices(I)
+vol   = s.rawdata.daily_returns_volatility(I)
+
+<span class="comment"># EWMAC by hand — the whole rule in three lines</span>
+my_raw = (price.ewm(span=8).mean() - price.ewm(span=32).mean()) / vol
+
+pst_raw = s.rules.get_raw_forecast(I, R)
+scaled  = s.forecastScaleCap.get_scaled_forecast(I, R)
+capped  = s.forecastScaleCap.get_capped_forecast(I, R)
+
+print("my raw    :", round(float(my_raw.iloc[-1]), 3))
+print("pst raw   :", round(float(pst_raw.iloc[-1]), 3), "  <- should match!")
+print("scaled    :", round(float(scaled.iloc[-1]), 3), "  (raw x 5.3)")
+print("capped    :", round(float(capped.iloc[-1]), 3), "  (clipped at +/-20)")
+</code></pre>
+  <p>Run it: <code>uv run python _learning_sandbox/course/lessons/trace_forecast.py</code>.
+     Your hand-built forecast will match pysystemtrade to the decimal — <em>you now
+     understand this rule completely.</em></p>
+
+  <h2>Check yourself</h2>
+  <p>From memory — no scrolling up.</p>
+
+  <div class="quiz" data-quiz='[
+    {"q":"In EWMAC, why is the fast-minus-slow gap divided by volatility?",
+     "options":["To make it react much faster","To compare it across markets","To turn it into a percent","To remove the recent trend"],
+     "correct":1,
+     "why":"Dividing by vol normalises the gap so a forecast means the same thing on a calm market as on a wild one — comparable across instruments and time."},
+    {"q":"A raw forecast of 4.0 with a scalar of 5.3 gives a scaled value of about what?",
+     "options":["Roughly zero point eight","Roughly twenty one","Roughly nine point three","Roughly two hundred"],
+     "correct":1,
+     "why":"4.0 x 5.3 = 21.2. The scalar multiplies the arbitrary raw number up onto the shared average-10 scale."},
+    {"q":"Why does the system cap forecasts at plus or minus twenty?",
+     "options":["To speed the backtest up","To limit any single bet","To match the raw scale","To zero out weak trends"],
+     "correct":1,
+     "why":"Capping is risk control: no single rule may bet more than twice average conviction, however extreme the signal gets."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <strong>Systematic Trading</strong> by Robert Carver, <em>Chapter 7 (Forecasts)</em> — the
+    definitive treatment of scaling to 10 and capping at 20. In your repo, the code lives in
+    <a href="../../../systems/forecast_scale_cap.py">systems/forecast_scale_cap.py</a>.
+    Carver's blog also has a post on
+    <a href="https://qoppac.blogspot.com/2016/01/pysystemtrade.html">pysystemtrade forecasts</a>.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    Confused about EMAs, volatility, or why 10 and 20 specifically? Ask me — that's exactly
+    what I'm here for. A good question now saves a wrong live trade later.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 2</span>
+    <span>Prev ← <a href="0001-the-pipeline.html">The Pipeline</a> &nbsp;·&nbsp; Next → Lesson 3: <em>Combining forecasts (weights &amp; the FDM)</em></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

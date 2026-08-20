@@ -1,0 +1,1904 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "_learning_sandbox/chapter15.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 430,
+      "nonEmptyLines": 430,
+      "metrics": {}
+    },
+    {
+      "path": "_learning_sandbox/intro.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 2291,
+      "nonEmptyLines": 2291,
+      "metrics": {}
+    },
+    {
+      "path": ".coveragerc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 28,
+      "metrics": {}
+    },
+    {
+      "path": ".github/workflows/mlc_config.json",
+      "language": "json",
+      "fileCategory": "infra",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "replacementPatterns",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "dashboard/static/css/styles.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 137,
+      "nonEmptyLines": 125,
+      "metrics": {}
+    },
+    {
+      "path": "dashboard/static/js/update.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 558,
+      "nonEmptyLines": 539,
+      "functions": [
+        {
+          "name": "update_capital",
+          "startLine": 1,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "update_costs",
+          "startLine": 17,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "update_forex",
+          "startLine": 50,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "update_liquidity",
+          "startLine": 67,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "update_pandl",
+          "startLine": 99,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "update_processes",
+          "startLine": 127,
+          "endLine": 224,
+          "params": []
+        },
+        {
+          "name": "update_reconcile",
+          "startLine": 226,
+          "endLine": 286,
+          "params": []
+        },
+        {
+          "name": "update_risk",
+          "startLine": 288,
+          "endLine": 332,
+          "params": []
+        },
+        {
+          "name": "update_rolls",
+          "startLine": 334,
+          "endLine": 373,
+          "params": []
+        },
+        {
+          "name": "update_strategy",
+          "startLine": 375,
+          "endLine": 389,
+          "params": []
+        },
+        {
+          "name": "update_trades",
+          "startLine": 391,
+          "endLine": 476,
+          "params": []
+        },
+        {
+          "name": "roll_post",
+          "startLine": 478,
+          "endLine": 544,
+          "params": [
+            "instrument",
+            "state"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_capital",
+          "callee": "$.ajax",
+          "lineNumber": 2
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$('#capital-tl').html",
+          "lineNumber": 6
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$",
+          "lineNumber": 6
+        },
+        {
+          "caller": "update_capital",
+          "callee": "data['now'].toLocaleString",
+          "lineNumber": 6
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$('#capital-tl').addClass",
+          "lineNumber": 8
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$",
+          "lineNumber": 8
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$('#capital-tl').addClass",
+          "lineNumber": 10
+        },
+        {
+          "caller": "update_capital",
+          "callee": "$",
+          "lineNumber": 10
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs > div.loading\").show",
+          "lineNumber": 18
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 18
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs > table\").hide",
+          "lineNumber": 19
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 19
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$.ajax",
+          "lineNumber": 20
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$.each",
+          "lineNumber": 24
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs_table tbody\").append",
+          "lineNumber": 25
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 25
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$.each",
+          "lineNumber": 29
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs_detail_table tbody\").append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 30
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs > div.loading\").hide",
+          "lineNumber": 44
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 44
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$(\"#costs > table\").show",
+          "lineNumber": 45
+        },
+        {
+          "caller": "update_costs",
+          "callee": "$",
+          "lineNumber": 45
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$(\"#forex > div.loading\").show",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$(\"#forex > table\").hide",
+          "lineNumber": 52
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$",
+          "lineNumber": 52
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$.ajax",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$.each",
+          "lineNumber": 57
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$(\"#forex_table tbody\").append",
+          "lineNumber": 58
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$",
+          "lineNumber": 58
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$(\"#forex > div.loading\").hide",
+          "lineNumber": 60
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$",
+          "lineNumber": 60
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$(\"#forex > table\").show",
+          "lineNumber": 61
+        },
+        {
+          "caller": "update_forex",
+          "callee": "$",
+          "lineNumber": 61
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$(\"#liquidity > div.loading\").show",
+          "lineNumber": 68
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$",
+          "lineNumber": 68
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$(\"#liquidity > table\").hide",
+          "lineNumber": 69
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$",
+          "lineNumber": 69
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$.ajax",
+          "lineNumber": 70
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$.each",
+          "lineNumber": 74
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "vals[\"risk\"].toFixed",
+          "lineNumber": 83
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "vals[\"risk\"].toFixed",
+          "lineNumber": 85
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$(\"#liquidity_table tbody\").append",
+          "lineNumber": 87
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$",
+          "lineNumber": 87
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$(\"#liquidity > div.loading\").hide",
+          "lineNumber": 92
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$",
+          "lineNumber": 92
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$(\"#liquidity > table\").show",
+          "lineNumber": 93
+        },
+        {
+          "caller": "update_liquidity",
+          "callee": "$",
+          "lineNumber": 93
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl > div.loading\").show",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl > table\").hide",
+          "lineNumber": 101
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 101
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$.ajax",
+          "lineNumber": 102
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$.each",
+          "lineNumber": 106
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl_instrument_table tbody\").append",
+          "lineNumber": 107
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 107
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "v[\"pandl\"].toFixed",
+          "lineNumber": 108
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$.each",
+          "lineNumber": 111
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl_strategy_table tbody\").append",
+          "lineNumber": 112
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 112
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "v[\"pandl\"].toFixed",
+          "lineNumber": 113
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$.each",
+          "lineNumber": 116
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl_class_table tbody\").append",
+          "lineNumber": 117
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 117
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "v[\"pandl\"].toFixed",
+          "lineNumber": 118
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl > div.loading\").hide",
+          "lineNumber": 120
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 120
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$(\"#pandl > table\").show",
+          "lineNumber": 121
+        },
+        {
+          "caller": "update_pandl",
+          "callee": "$",
+          "lineNumber": 121
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes > div.loading\").show",
+          "lineNumber": 128
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 128
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes > table\").hide",
+          "lineNumber": 129
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 129
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$.ajax",
+          "lineNumber": 130
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$('#stack-tl').addClass",
+          "lineNumber": 135
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 135
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$('#stack-tl').addClass",
+          "lineNumber": 137
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 137
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$('#stack-tl').addClass",
+          "lineNumber": 139
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 139
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_status > tbody\").empty",
+          "lineNumber": 141
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 141
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_config tbody\").append",
+          "lineNumber": 142
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 142
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$.each",
+          "lineNumber": 147
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_status tbody\").append",
+          "lineNumber": 150
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 150
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_status tbody\").append",
+          "lineNumber": 163
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 163
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$.each",
+          "lineNumber": 182
+        },
+        {
+          "caller": "update_processes",
+          "callee": "now.getTime",
+          "lineNumber": 184
+        },
+        {
+          "caller": "update_processes",
+          "callee": "date.getTime",
+          "lineNumber": 184
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$.each",
+          "lineNumber": 192
+        },
+        {
+          "caller": "update_processes",
+          "callee": "most_recent_date.getTime",
+          "lineNumber": 195
+        },
+        {
+          "caller": "update_processes",
+          "callee": "date.getTime",
+          "lineNumber": 195
+        },
+        {
+          "caller": "update_processes",
+          "callee": "str.substring",
+          "lineNumber": 196
+        },
+        {
+          "caller": "update_processes",
+          "callee": "str.substring",
+          "lineNumber": 196
+        },
+        {
+          "caller": "update_processes",
+          "callee": "str.substring",
+          "lineNumber": 196
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_prices tbody\").append",
+          "lineNumber": 202
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 202
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes_prices tbody\").append",
+          "lineNumber": 209
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 209
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$('#prices-tl').removeClass(\"red orange green\").addClass",
+          "lineNumber": 218
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$('#prices-tl').removeClass",
+          "lineNumber": 218
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 218
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes > div.loading\").hide",
+          "lineNumber": 219
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 219
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$(\"#processes > table\").show",
+          "lineNumber": 220
+        },
+        {
+          "caller": "update_processes",
+          "callee": "$",
+          "lineNumber": 220
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconciliation > div.loading\").show",
+          "lineNumber": 227
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 227
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$.ajax",
+          "lineNumber": 228
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_strategy > tbody\").empty",
+          "lineNumber": 233
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 233
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_contract > tbody\").empty",
+          "lineNumber": 234
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 234
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_broker > tbody\").empty",
+          "lineNumber": 235
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 235
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$.each",
+          "lineNumber": 236
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "details['optimal']['lower_position'].toFixed",
+          "lineNumber": 239
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "details['optimal']['upper_position'].toFixed",
+          "lineNumber": 239
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_strategy tbody\").append",
+          "lineNumber": 245
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 245
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_strategy tbody\").append",
+          "lineNumber": 252
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 252
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$.each",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconcile_contract tbody\").append",
+          "lineNumber": 271
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 271
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$('#breaks-tl').addClass",
+          "lineNumber": 274
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 274
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$('#gateway-tl').addClass",
+          "lineNumber": 276
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 276
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$('#gateway-tl').addClass",
+          "lineNumber": 278
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 278
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconciliation > div.loading\").hide",
+          "lineNumber": 280
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 280
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#tab_reconciliation\").one",
+          "lineNumber": 281
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 281
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$(\"#reconciliation > table\").show",
+          "lineNumber": 282
+        },
+        {
+          "caller": "update_reconcile",
+          "callee": "$",
+          "lineNumber": 282
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk > div.loading\").show",
+          "lineNumber": 289
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 289
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk > table\").hide",
+          "lineNumber": 290
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 290
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$.ajax",
+          "lineNumber": 291
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$.each",
+          "lineNumber": 296
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$.each",
+          "lineNumber": 299
+        },
+        {
+          "caller": "update_risk",
+          "callee": "corr.toFixed",
+          "lineNumber": 300
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk_corr_table tbody\").append",
+          "lineNumber": 302
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 302
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk_corr_table tbody\").prepend",
+          "lineNumber": 304
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 304
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$.each",
+          "lineNumber": 306
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk_table tbody\").append",
+          "lineNumber": 307
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 307
+        },
+        {
+          "caller": "update_risk",
+          "callee": "(v['risk']).toFixed",
+          "lineNumber": 307
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$.each",
+          "lineNumber": 310
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk_details_table tbody\").append",
+          "lineNumber": 311
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 311
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"daily_price_stdev\"].toFixed",
+          "lineNumber": 312
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"annual_price_stdev\"].toFixed",
+          "lineNumber": 313
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"price\"].toFixed",
+          "lineNumber": 314
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"daily_perc_stdev\"].toFixed",
+          "lineNumber": 315
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"annual_perc_stdev\"].toFixed",
+          "lineNumber": 316
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"point_size_base\"].toFixed",
+          "lineNumber": 317
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"contract_exposure\"].toFixed",
+          "lineNumber": 318
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"daily_risk_per_contract\"].toFixed",
+          "lineNumber": 319
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"annual_risk_per_contract\"].toFixed",
+          "lineNumber": 320
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"position\"].toFixed",
+          "lineNumber": 321
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"capital\"].toFixed",
+          "lineNumber": 322
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"exposure_held_perc_capital\"].toFixed",
+          "lineNumber": 323
+        },
+        {
+          "caller": "update_risk",
+          "callee": "v[\"annual_risk_perc_capital\"].toFixed",
+          "lineNumber": 324
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk > div.loading\").hide",
+          "lineNumber": 327
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 327
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$(\"#risk > table\").show",
+          "lineNumber": 328
+        },
+        {
+          "caller": "update_risk",
+          "callee": "$",
+          "lineNumber": 328
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls > div.loading\").show",
+          "lineNumber": 335
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 335
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls > table\").hide",
+          "lineNumber": 336
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 336
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$.ajax",
+          "lineNumber": 337
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls_status > tbody\").empty",
+          "lineNumber": 341
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 341
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls_details > tbody\").empty",
+          "lineNumber": 342
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 342
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$.each",
+          "lineNumber": 344
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$.each",
+          "lineNumber": 346
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls_status tbody\").append",
+          "lineNumber": 349
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 349
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "parseFloat(details['relative_volume_fwd']).toFixed",
+          "lineNumber": 357
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "parseFloat",
+          "lineNumber": 357
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls-tl\").removeClass(\"red orange green\").addClass",
+          "lineNumber": 368
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls-tl\").removeClass",
+          "lineNumber": 368
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 368
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls > div.loading\").hide",
+          "lineNumber": 369
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 369
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$(\"#rolls > table\").show",
+          "lineNumber": 370
+        },
+        {
+          "caller": "update_rolls",
+          "callee": "$",
+          "lineNumber": 370
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$(\"#strategy > div.loading\").show",
+          "lineNumber": 376
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$",
+          "lineNumber": 376
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$(\"#strategy > table\").hide",
+          "lineNumber": 377
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$",
+          "lineNumber": 377
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$.ajax",
+          "lineNumber": 378
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$.each",
+          "lineNumber": 382
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$(\"#strategy > div.loading\").hide",
+          "lineNumber": 384
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$",
+          "lineNumber": 384
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$(\"#strategy > table\").show",
+          "lineNumber": 385
+        },
+        {
+          "caller": "update_strategy",
+          "callee": "$",
+          "lineNumber": 385
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades > div.loading\").show",
+          "lineNumber": 392
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 392
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades > table\").hide",
+          "lineNumber": 393
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 393
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.ajax",
+          "lineNumber": 394
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.each",
+          "lineNumber": 398
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades_overview_table\").append",
+          "lineNumber": 399
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 399
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.each",
+          "lineNumber": 409
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades_delay_table\").append",
+          "lineNumber": 410
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 410
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.each",
+          "lineNumber": 421
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades_slippage_table\").append",
+          "lineNumber": 422
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 422
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat(v[\"delay\"]).toPrecision",
+          "lineNumber": 433
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat",
+          "lineNumber": 433
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat(v[\"bid_ask\"]).toPrecision",
+          "lineNumber": 434
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat",
+          "lineNumber": 434
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat(v[\"execution\"]).toPrecision",
+          "lineNumber": 435
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat",
+          "lineNumber": 435
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat(v[\"versus_limit\"]).toPrecision",
+          "lineNumber": 436
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat",
+          "lineNumber": 436
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat(v[\"total_trading\"]).toPrecision",
+          "lineNumber": 438
+        },
+        {
+          "caller": "update_trades",
+          "callee": "parseFloat",
+          "lineNumber": 438
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.each",
+          "lineNumber": 441
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades_vol_slippage_table\").append",
+          "lineNumber": 442
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 442
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$.each",
+          "lineNumber": 456
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades_cash_slippage_table\").append",
+          "lineNumber": 457
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 457
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades > div.loading\").hide",
+          "lineNumber": 471
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 471
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$(\"#trades > table\").show",
+          "lineNumber": 472
+        },
+        {
+          "caller": "update_trades",
+          "callee": "$",
+          "lineNumber": 472
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls button\").each",
+          "lineNumber": 480
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 480
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls > div.loading\").show",
+          "lineNumber": 483
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 483
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices_single > tbody\").empty",
+          "lineNumber": 484
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 484
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices_multiple > tbody\").empty",
+          "lineNumber": 485
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 485
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$.ajax",
+          "lineNumber": 486
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices\").addClass",
+          "lineNumber": 492
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 492
+        },
+        {
+          "caller": "roll_post",
+          "callee": "update_rolls",
+          "lineNumber": 495
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices\").removeClass",
+          "lineNumber": 498
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 498
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_instrument_name\").text",
+          "lineNumber": 499
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 499
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$.each",
+          "lineNumber": 500
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices_single tbody\").append",
+          "lineNumber": 502
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 502
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$.each",
+          "lineNumber": 509
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices_multiple tbody\").append",
+          "lineNumber": 511
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 511
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_confirm\").remove",
+          "lineNumber": 525
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 525
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#roll_prices\").append",
+          "lineNumber": 526
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 526
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 527
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$.each",
+          "lineNumber": 531
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls_\" + instrument).find(\"td:eq(1)\").html",
+          "lineNumber": 534
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls_\" + instrument).find",
+          "lineNumber": 534
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 534
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls_\" + instrument).find(\"td:eq(9)\").html",
+          "lineNumber": 535
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls_\" + instrument).find",
+          "lineNumber": 535
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 535
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls button\").each",
+          "lineNumber": 538
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 538
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$(\"#rolls > div.loading\").hide",
+          "lineNumber": 541
+        },
+        {
+          "caller": "roll_post",
+          "callee": "$",
+          "lineNumber": 541
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "dashboard/templates/index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 281,
+      "nonEmptyLines": 267,
+      "metrics": {}
+    },
+    {
+      "path": "data/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "data/tools/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "data/tools/example use ContractComparison.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 915,
+      "nonEmptyLines": 915,
+      "metrics": {}
+    },
+    {
+      "path": "docs/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "docs/doc_generation/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "docs/gh-md-toc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 421,
+      "nonEmptyLines": 374,
+      "metrics": {}
+    },
+    {
+      "path": "docs/notebooks/introduction_with_fxdata.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 415,
+      "nonEmptyLines": 415,
+      "metrics": {}
+    },
+    {
+      "path": "examples/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "examples/introduction/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "examples/introduction/asimpletradingrule.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 254,
+      "nonEmptyLines": 254,
+      "metrics": {}
+    },
+    {
+      "path": "examples/introduction/prebakedsystems.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 48,
+      "metrics": {}
+    },
+    {
+      "path": "examples/introduction/simplesystem.ipynb",
+      "language": "ipynb",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 59,
+      "metrics": {}
+    },
+    {
+      "path": "examples/logging/logging_server.service",
+      "language": "service",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "metrics": {}
+    },
+    {
+      "path": "examples/production/private_config_example.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "broker_account",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "email_address",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "email_pwd",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "email_server",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "ib_ipaddress",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "ib_port",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "ib_idoffset",
+          "level": 1,
+          "line": 35
+        },
+        {
+          "heading": "mongo_host",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "mongo_db",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "MANIFEST.in",
+      "language": "in",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {}
+    },
+    {
+      "path": "setup.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "read",
+          "startLine": 21,
+          "endLine": 23,
+          "params": [
+            "fname"
+          ]
+        },
+        {
+          "name": "package_files",
+          "startLine": 26,
+          "endLine": 33,
+          "params": [
+            "directory",
+            "extension"
+          ]
+        },
+        {
+          "name": "dir_this_file",
+          "startLine": 36,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "read",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "package_files",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "dir_this_file",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "read",
+          "callee": "open(os.path.join(os.path.dirname(__file__), fname)).read",
+          "lineNumber": 23
+        },
+        {
+          "caller": "read",
+          "callee": "open",
+          "lineNumber": 23
+        },
+        {
+          "caller": "read",
+          "callee": "os.path.join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "read",
+          "callee": "os.path.dirname",
+          "lineNumber": 23
+        },
+        {
+          "caller": "package_files",
+          "callee": "os.walk",
+          "lineNumber": 28
+        },
+        {
+          "caller": "package_files",
+          "callee": "filename.split",
+          "lineNumber": 30
+        },
+        {
+          "caller": "package_files",
+          "callee": "paths.append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "package_files",
+          "callee": "os.path.join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "dir_this_file",
+          "callee": "os.path.dirname",
+          "lineNumber": 37
+        },
+        {
+          "caller": "dir_this_file",
+          "callee": "os.path.realpath",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

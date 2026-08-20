@@ -1,0 +1,183 @@
+{
+  "batchIndex": 26,
+  "files": [
+    {
+      "path": "_learning_sandbox/chapter15.ipynb",
+      "language": "ipynb",
+      "sizeLines": 430,
+      "fileCategory": "code"
+    },
+    {
+      "path": "_learning_sandbox/intro.ipynb",
+      "language": "ipynb",
+      "sizeLines": 2291,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".coveragerc",
+      "language": "unknown",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".github/workflows/mlc_config.json",
+      "language": "json",
+      "sizeLines": 8,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": "dashboard/static/css/styles.css",
+      "language": "css",
+      "sizeLines": 137,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "dashboard/static/js/update.js",
+      "language": "javascript",
+      "sizeLines": 558,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dashboard/templates/index.html",
+      "language": "html",
+      "sizeLines": 281,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "data/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "data/tools/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "data/tools/example use ContractComparison.ipynb",
+      "language": "ipynb",
+      "sizeLines": 915,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/doc_generation/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/gh-md-toc",
+      "language": "unknown",
+      "sizeLines": 421,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/notebooks/introduction_with_fxdata.ipynb",
+      "language": "ipynb",
+      "sizeLines": 415,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/introduction/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/introduction/asimpletradingrule.ipynb",
+      "language": "ipynb",
+      "sizeLines": 254,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/introduction/prebakedsystems.ipynb",
+      "language": "ipynb",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/introduction/simplesystem.ipynb",
+      "language": "ipynb",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/logging/logging_server.service",
+      "language": "service",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "examples/production/private_config_example.yaml",
+      "language": "yaml",
+      "sizeLines": 41,
+      "fileCategory": "config"
+    },
+    {
+      "path": "MANIFEST.in",
+      "language": "in",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "setup.py",
+      "language": "python",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "_learning_sandbox/chapter15.ipynb": [],
+    "_learning_sandbox/intro.ipynb": [],
+    ".coveragerc": [],
+    ".github/workflows/mlc_config.json": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "dashboard/static/css/styles.css": [],
+    "dashboard/static/js/update.js": [],
+    "dashboard/templates/index.html": [],
+    "data/__init__.py": [],
+    "data/tools/__init__.py": [],
+    "data/tools/example use ContractComparison.ipynb": [],
+    "docs/__init__.py": [],
+    "docs/doc_generation/__init__.py": [],
+    "docs/gh-md-toc": [],
+    "docs/notebooks/introduction_with_fxdata.ipynb": [],
+    "examples/__init__.py": [],
+    "examples/introduction/__init__.py": [],
+    "examples/introduction/asimpletradingrule.ipynb": [],
+    "examples/introduction/prebakedsystems.ipynb": [],
+    "examples/introduction/simplesystem.ipynb": [],
+    "examples/logging/logging_server.service": [],
+    "examples/production/private_config_example.yaml": [],
+    "MANIFEST.in": [],
+    "setup.py": []
+  },
+  "neighborMap": {}
+}

@@ -1,0 +1,1023 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/example/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/futures_chapter15/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/futures_chapter15/futuresconfig.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 137,
+      "nonEmptyLines": 136,
+      "sections": [
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "forecast_cap",
+          "level": 1,
+          "line": 71
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 75
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 80
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 84
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 85
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 86
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 90
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 97
+        },
+        {
+          "heading": "rule_groups",
+          "level": 1,
+          "line": 98
+        },
+        {
+          "heading": "style_groups",
+          "level": 1,
+          "line": 110
+        },
+        {
+          "heading": "countries",
+          "level": 1,
+          "line": 117
+        },
+        {
+          "heading": "asset_classes",
+          "level": 1,
+          "line": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "systems/provided/futures_chapter15/futuresestimateconfig.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 94,
+      "nonEmptyLines": 93,
+      "sections": [
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "use_forecast_scale_estimates",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "forecast_scalar_estimate",
+          "level": 1,
+          "line": 65
+        },
+        {
+          "heading": "use_forecast_weight_estimates",
+          "level": 1,
+          "line": 70
+        },
+        {
+          "heading": "use_forecast_div_mult_estimates",
+          "level": 1,
+          "line": 71
+        },
+        {
+          "heading": "rule_variations",
+          "level": 1,
+          "line": 74
+        },
+        {
+          "heading": "forecast_correlation_estimate",
+          "level": 1,
+          "line": 77
+        },
+        {
+          "heading": "use_instrument_weight_estimates",
+          "level": 1,
+          "line": 80
+        },
+        {
+          "heading": "use_instrument_div_mult_estimates",
+          "level": 1,
+          "line": 81
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 87
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 88
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 89
+        },
+        {
+          "heading": "instruments",
+          "level": 1,
+          "line": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "systems/provided/rob_system/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/rob_system/config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 7714,
+      "nonEmptyLines": 7714,
+      "sections": [
+        {
+          "heading": "use_forecast_weight_estimates",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "use_forecast_div_mult_estimates",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "use_instrument_weight_estimates",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "use_instrument_div_mult_estimates",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "use_forecast_scale_estimates",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "volatility_calculation",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "use_attenuation",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 59
+        },
+        {
+          "heading": "forecast_cap",
+          "level": 1,
+          "line": 342
+        },
+        {
+          "heading": "forecast_scalars",
+          "level": 1,
+          "line": 344
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 390
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 391
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 392
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 396
+        },
+        {
+          "heading": "risk_overlay",
+          "level": 1,
+          "line": 397
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 402
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 573
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 7544
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "systems/provided/rules/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/rules/_TO_DELETE_OLD.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "breakout",
+          "startLine": 6,
+          "endLine": 40,
+          "params": [
+            "price",
+            "lookback",
+            "smooth"
+          ]
+        },
+        {
+          "name": "short_bias",
+          "startLine": 43,
+          "endLine": 60,
+          "params": [
+            "price"
+          ]
+        },
+        {
+          "name": "long_bias",
+          "startLine": 63,
+          "endLine": 80,
+          "params": [
+            "price"
+          ]
+        },
+        {
+          "name": "relative_carry",
+          "startLine": 83,
+          "endLine": 98,
+          "params": [
+            "smoothed_carry_this_instrument",
+            "median_carry_for_asset_class"
+          ]
+        },
+        {
+          "name": "cross_sectional_mean_reversion",
+          "startLine": 101,
+          "endLine": 129,
+          "params": [
+            "normalised_price_this_instrument",
+            "normalised_price_for_asset_class",
+            "horizon",
+            "ewma_span"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "breakout",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "short_bias",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "long_bias",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "relative_carry",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "cross_sectional_mean_reversion",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "breakout",
+          "callee": "max",
+          "lineNumber": 23
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 23
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling(\n        lookback, min_periods=int(min(len(price), np.ceil(lookback / 2.0)))\n    ).max",
+          "lineNumber": 27
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling",
+          "lineNumber": 27
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "min",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "len",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling(\n        lookback, min_periods=int(min(len(price), np.ceil(lookback / 2.0)))\n    ).min",
+          "lineNumber": 30
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling",
+          "lineNumber": 30
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 31
+        },
+        {
+          "caller": "breakout",
+          "callee": "min",
+          "lineNumber": 31
+        },
+        {
+          "caller": "breakout",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 31
+        },
+        {
+          "caller": "breakout",
+          "callee": "output.ewm(span=smooth, min_periods=np.ceil(smooth / 2.0)).mean",
+          "lineNumber": 38
+        },
+        {
+          "caller": "breakout",
+          "callee": "output.ewm",
+          "lineNumber": 38
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 38
+        },
+        {
+          "caller": "short_bias",
+          "callee": "copy",
+          "lineNumber": 57
+        },
+        {
+          "caller": "long_bias",
+          "callee": "copy",
+          "lineNumber": 77
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "int",
+          "lineNumber": 116
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "max",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "normalised_price_this_instrument.ffill",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "normalised_price_for_asset_class.ffill",
+          "lineNumber": 122
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance.diff",
+          "lineNumber": 124
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "relative_return.rolling(horizon).mean",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "relative_return.rolling",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance_over_horizon.ewm(span=ewma_span).mean",
+          "lineNumber": 127
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance_over_horizon.ewm",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/rules/breakout.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "breakout",
+          "startLine": 4,
+          "endLine": 38,
+          "params": [
+            "price",
+            "lookback",
+            "smooth"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "breakout",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "breakout",
+          "callee": "max",
+          "lineNumber": 21
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 21
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling(\n        lookback, min_periods=int(min(len(price), np.ceil(lookback / 2.0)))\n    ).max",
+          "lineNumber": 25
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling",
+          "lineNumber": 25
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 26
+        },
+        {
+          "caller": "breakout",
+          "callee": "min",
+          "lineNumber": 26
+        },
+        {
+          "caller": "breakout",
+          "callee": "len",
+          "lineNumber": 26
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 26
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling(\n        lookback, min_periods=int(min(len(price), np.ceil(lookback / 2.0)))\n    ).min",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "price.rolling",
+          "lineNumber": 28
+        },
+        {
+          "caller": "breakout",
+          "callee": "int",
+          "lineNumber": 29
+        },
+        {
+          "caller": "breakout",
+          "callee": "min",
+          "lineNumber": 29
+        },
+        {
+          "caller": "breakout",
+          "callee": "len",
+          "lineNumber": 29
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 29
+        },
+        {
+          "caller": "breakout",
+          "callee": "output.ewm(span=smooth, min_periods=np.ceil(smooth / 2.0)).mean",
+          "lineNumber": 36
+        },
+        {
+          "caller": "breakout",
+          "callee": "output.ewm",
+          "lineNumber": 36
+        },
+        {
+          "caller": "breakout",
+          "callee": "np.ceil",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/rules/cs_mr.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "cross_sectional_mean_reversion",
+          "startLine": 1,
+          "endLine": 29,
+          "params": [
+            "normalised_price_this_instrument",
+            "normalised_price_for_asset_class",
+            "horizon",
+            "ewma_span"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cross_sectional_mean_reversion",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "int",
+          "lineNumber": 16
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "max",
+          "lineNumber": 18
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "normalised_price_this_instrument.ffill",
+          "lineNumber": 21
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "normalised_price_for_asset_class.ffill",
+          "lineNumber": 22
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance.diff",
+          "lineNumber": 24
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "relative_return.rolling(horizon).mean",
+          "lineNumber": 25
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "relative_return.rolling",
+          "lineNumber": 25
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance_over_horizon.ewm(span=ewma_span).mean",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cross_sectional_mean_reversion",
+          "callee": "outperformance_over_horizon.ewm",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/rules/rel_mom.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "relative_momentum",
+          "startLine": 4,
+          "endLine": 34,
+          "params": [
+            "normalised_price_this_instrument",
+            "normalised_price_for_asset_class",
+            "horizon",
+            "ewma_span"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "relative_momentum",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "relative_momentum",
+          "callee": "int",
+          "lineNumber": 19
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "max",
+          "lineNumber": 21
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "normalised_price_this_instrument.ffill",
+          "lineNumber": 24
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "normalised_price_for_asset_class.ffill",
+          "lineNumber": 25
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "outperformance.shift",
+          "lineNumber": 29
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "average_outperformance_over_horizon.ewm(span=ewma_span).mean",
+          "lineNumber": 32
+        },
+        {
+          "caller": "relative_momentum",
+          "callee": "average_outperformance_over_horizon.ewm",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/scalper/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/static_small_system_optimise/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/workhorse/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/tools/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/conftest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "pytest_addoption",
+          "startLine": 4,
+          "endLine": 7,
+          "params": [
+            "parser"
+          ]
+        },
+        {
+          "name": "pytest_configure",
+          "startLine": 10,
+          "endLine": 11,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "pytest_collection_modifyitems",
+          "startLine": 14,
+          "endLine": 21,
+          "params": [
+            "config",
+            "items"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pytest_addoption",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "pytest_configure",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "pytest_collection_modifyitems",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pytest_addoption",
+          "callee": "parser.addoption",
+          "lineNumber": 5
+        },
+        {
+          "caller": "pytest_configure",
+          "callee": "config.addinivalue_line",
+          "lineNumber": 11
+        },
+        {
+          "caller": "pytest_collection_modifyitems",
+          "callee": "config.getoption",
+          "lineNumber": 15
+        },
+        {
+          "caller": "pytest_collection_modifyitems",
+          "callee": "pytest.mark.skip",
+          "lineNumber": 18
+        },
+        {
+          "caller": "pytest_collection_modifyitems",
+          "callee": "item.add_marker",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_static.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "test_flake8",
+          "startLine": 10,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_flake8",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_flake8",
+          "callee": "subprocess.call",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

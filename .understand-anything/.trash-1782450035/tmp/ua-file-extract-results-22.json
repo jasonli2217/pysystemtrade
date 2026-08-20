@@ -1,0 +1,1300 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "_learning_sandbox/docs/accounts-stage-architecture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 364,
+      "nonEmptyLines": 246,
+      "sections": [
+        {
+          "heading": "Account Stage Architecture — `systems/accounts/`",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Layer 0 — `SystemStage` (the base)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Layer 1 — `accountInputs`",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Layer 2 — `accountCosts`",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Two Cost Components",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Pooling Logic",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Key Methods",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Layer 3 — `accountForecast`",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "How a Forecast Becomes a P&L",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "Weighting Methods",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Module-Level Standalone Functions",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "Two Parallel Buffering Classes",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "`accountBufferingSubSystemLevel`",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "`accountBufferingSystemLevel`",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "The Buffer Logic",
+          "level": 3,
+          "line": 169
+        },
+        {
+          "heading": "Layer 4 — `accountInstruments`",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Layer 4b — `accountPortfolio`",
+          "level": 2,
+          "line": 199
+        },
+        {
+          "heading": "Layer 4c — `accountWithMultiplier`",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "Layer 5a — `accountSubsystem`",
+          "level": 2,
+          "line": 224
+        },
+        {
+          "heading": "Layer 5b — `accountTradingRules`",
+          "level": 2,
+          "line": 236
+        },
+        {
+          "heading": "The Final Class — `Account`",
+          "level": 2,
+          "line": 254
+        },
+        {
+          "heading": "Supporting Types",
+          "level": 2,
+          "line": 269
+        },
+        {
+          "heading": "`pandl_calculators/`",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "`curves/`",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Full Inheritance Diagram",
+          "level": 2,
+          "line": 292
+        },
+        {
+          "heading": "What Each Layer Answers",
+          "level": 2,
+          "line": 317
+        },
+        {
+          "heading": "Common Usage Examples",
+          "level": 2,
+          "line": 330
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 28
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/basesystem-and-stage-line-by-line.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 508,
+      "nonEmptyLines": 377,
+      "sections": [
+        {
+          "heading": "`basesystem.py` and `stage.py` — Line by Line",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What These Two Files Do Together",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "`stage.py` — The `SystemStage` base class",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "`class SystemStage`",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "`name` property",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "`__repr__`",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "`methods()`",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "`system_init()` — the critical wiring method",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "`log` property",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "`parent` property",
+          "level": 3,
+          "line": 112
+        },
+        {
+          "heading": "`basesystem.py` — The `System` class",
+          "level": 2,
+          "line": 125
+        },
+        {
+          "heading": "Imports",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "`ALL_KEYNAME = \"all\"`",
+          "level": 3,
+          "line": 180
+        },
+        {
+          "heading": "`class System`",
+          "level": 3,
+          "line": 190
+        },
+        {
+          "heading": "`__init__()` — Construction",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "`_setup_stages()` — Stage Registration",
+          "level": 3,
+          "line": 252
+        },
+        {
+          "heading": "`__repr__`",
+          "level": 3,
+          "line": 288
+        },
+        {
+          "heading": "Properties",
+          "level": 3,
+          "line": 304
+        },
+        {
+          "heading": "`get_instrument_list()` — The Only Real Method on System",
+          "level": 3,
+          "line": 325
+        },
+        {
+          "heading": "`_get_raw_instrument_list_from_config()` — Where Does the List Come From?",
+          "level": 3,
+          "line": 358
+        },
+        {
+          "heading": "Instrument Filtering Methods",
+          "level": 3,
+          "line": 383
+        },
+        {
+          "heading": "Module-Level Functions at the Bottom",
+          "level": 3,
+          "line": 399
+        },
+        {
+          "heading": "How `System` and `SystemStage` Work Together — The Full Picture",
+          "level": 2,
+          "line": 443
+        },
+        {
+          "heading": "Typical Usage",
+          "level": 2,
+          "line": 475
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/codebase-architecture-part2.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 393,
+      "nonEmptyLines": 311,
+      "sections": [
+        {
+          "heading": "pysystemtrade — Architecture Reference Part 2",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Section 6: Broker Interface — `sysbrokers/`",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "6a. Abstract Broker Interfaces (`sysbrokers/*.py`)",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "6b. Interactive Brokers Implementation (`sysbrokers/IB/`)",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "6c. Connection Flow",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Section 7: Order Execution — `sysexecution/`",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "7a. Order Types — Three-Layer Order Model",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "7b. Order Stacks — Three Parallel Queues",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "7c. Stack Handler — The Order Processing Engine",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "7d. Execution Algorithms (`sysexecution/algos/`)",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "7e. Strategy Order Generators (`sysexecution/strategies/`)",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "7f. Other",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "Section 8: Production System — `sysproduction/`",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "8a. Daily Scheduled Processes (`run_*.py`)",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "8b. Data Update Scripts (`update_*.py`)",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "8c. Interactive Scripts (`interactive_*.py`)",
+          "level": 3,
+          "line": 185
+        },
+        {
+          "heading": "8d. Production Data Adapters (`sysproduction/data/`)",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "8e. Strategy Code (`sysproduction/strategy_code/`)",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "8f. Reporting (`sysproduction/reporting/`)",
+          "level": 3,
+          "line": 233
+        },
+        {
+          "heading": "Section 9: Process Control — `syscontrol/`",
+          "level": 2,
+          "line": 239
+        },
+        {
+          "heading": "Process Lifecycle",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Section 10: Logging — `syslogging/` + `syslogdiag/`",
+          "level": 2,
+          "line": 267
+        },
+        {
+          "heading": "`syslogging/` — Standard Python Logging",
+          "level": 3,
+          "line": 269
+        },
+        {
+          "heading": "`syslogdiag/` — Diagnostic Logging & Email Alerts",
+          "level": 3,
+          "line": 281
+        },
+        {
+          "heading": "Section 11: Configuration — `sysdata/config/`",
+          "level": 2,
+          "line": 296
+        },
+        {
+          "heading": "Config Merge Order (highest priority first)",
+          "level": 3,
+          "line": 307
+        },
+        {
+          "heading": "Section 12: Initialisation — `sysinit/`",
+          "level": 2,
+          "line": 317
+        },
+        {
+          "heading": "Full System Data Flow — Backtesting",
+          "level": 2,
+          "line": 329
+        },
+        {
+          "heading": "Full System Data Flow — Production (Daily)",
+          "level": 2,
+          "line": 342
+        },
+        {
+          "heading": "Quick Lookup: \"Where Is X Defined?\"",
+          "level": 2,
+          "line": 358
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/codebase-architecture-reference.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 307,
+      "nonEmptyLines": 237,
+      "sections": [
+        {
+          "heading": "pysystemtrade — Codebase Architecture Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Top-Level Folder Map",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Section 1: Core Utilities — `syscore/`",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Section 2: Domain Objects — `sysobjects/`",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Instruments & Contracts",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Prices",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Trading",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Section 3: Data Access Layer — `sysdata/`",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "3a. The Pattern",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "3b. Abstract Interfaces (`sysdata/futures/`)",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "3c. Backend Implementations",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "3d. What's Stored Where (Production)",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "3e. `dataBlob` — The Dependency Injection Container",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "3f. Sim Data — Backtesting Data Layer",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "3g. Production Data Adapters (`sysdata/production/`)",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "Section 4: Backtesting System — `systems/`",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "4a. Core Infrastructure",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "4b. Pipeline Stages (execution order)",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "4c. Supporting Files",
+          "level": 3,
+          "line": 226
+        },
+        {
+          "heading": "4d. Cache Decorators",
+          "level": 3,
+          "line": 236
+        },
+        {
+          "heading": "4e. Accounts Module (see [[accounts-stage-architecture]])",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "4f. Provided Systems (`systems/provided/`)",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "Section 5: Quantitative Engine — `sysquant/`",
+          "level": 2,
+          "line": 264
+        },
+        {
+          "heading": "Estimators (`sysquant/estimators/`)",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "Optimisation (`sysquant/optimisation/`)",
+          "level": 3,
+          "line": 284
+        },
+        {
+          "heading": "Other",
+          "level": 3,
+          "line": 297
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 26
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/installaltion.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 124,
+      "nonEmptyLines": 87,
+      "sections": [
+        {
+          "heading": "1. Ensure Python 3.10 is installed via uv",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "2. Create the virtual environment pinned to Python 3.10",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "3. Activate the virtual environment",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "4. Install in EDITABLE mode with development dependencies",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "If you download historical market data locally:",
+          "level": 1,
+          "line": 51
+        },
+        {
+          "heading": "Clone your fork",
+          "level": 1,
+          "line": 65
+        },
+        {
+          "heading": "Recreate the ultra-fast uv environment locally",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "Pull your latest personal scripts",
+          "level": 1,
+          "line": 78
+        },
+        {
+          "heading": "Should output: csvFuturesSimData object with 249 instruments",
+          "level": 1,
+          "line": 88
+        },
+        {
+          "heading": "Pull updates from the original repo",
+          "level": 1,
+          "line": 92
+        },
+        {
+          "heading": "Make sure you are on your local development branch",
+          "level": 1,
+          "line": 113
+        },
+        {
+          "heading": "Pull the latest code directly from the original project",
+          "level": 1,
+          "line": 116
+        },
+        {
+          "heading": "Update your fork on GitHub so your other computers can see the updates",
+          "level": 1,
+          "line": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/learning-plan-pysystemtrade.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 789,
+      "nonEmptyLines": 542,
+      "sections": [
+        {
+          "heading": "How to Use This Plan",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Phase 1: Get a Backtest Running (Days 1–3)",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Step 1.1 — Verify Your Environment",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "Step 1.2 — Run the Chapter 15 System",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 1.3 — Explore the Output",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Phase 2: Understand What You Just Ran (Days 4–10)",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Step 2.1 — Read the Architecture Overview",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Step 2.2 — Understand System and SystemStage",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "Step 2.3 — Understand Config",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Step 2.4 — Understand Data Flow (simData)",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "Step 2.5 — Trace One Forecast Through the Pipeline",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "Step 2.6 — Understand the Cache",
+          "level": 3,
+          "line": 230
+        },
+        {
+          "heading": "Phase 3: Understand Trading Rules (Days 11–16)",
+          "level": 2,
+          "line": 254
+        },
+        {
+          "heading": "Step 3.1 — Read the TradingRule Class",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "Step 3.2 — Read the Actual EWMAC Function",
+          "level": 3,
+          "line": 282
+        },
+        {
+          "heading": "Step 3.3 — Understand Forecast Scaling and Capping",
+          "level": 3,
+          "line": 313
+        },
+        {
+          "heading": "Step 3.4 — Understand Forecast Combination",
+          "level": 3,
+          "line": 341
+        },
+        {
+          "heading": "Step 3.5 — Understand Position Sizing",
+          "level": 3,
+          "line": 367
+        },
+        {
+          "heading": "Phase 4: Modify the Config (Days 17–22)",
+          "level": 2,
+          "line": 391
+        },
+        {
+          "heading": "Step 4.1 — Create Your Own Config",
+          "level": 3,
+          "line": 395
+        },
+        {
+          "heading": "Step 4.2 — Add/Remove Trading Rules",
+          "level": 3,
+          "line": 422
+        },
+        {
+          "heading": "Step 4.3 — Experiment with Weights",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "Phase 5: Understand Costs and P&L (Days 23–28)",
+          "level": 2,
+          "line": 465
+        },
+        {
+          "heading": "Step 5.1 — Explore P&L at Different Levels",
+          "level": 3,
+          "line": 469
+        },
+        {
+          "heading": "Step 5.2 — Understand SR Costs",
+          "level": 3,
+          "line": 507
+        },
+        {
+          "heading": "Phase 6: Write Your First Custom Rule (Days 29–35)",
+          "level": 2,
+          "line": 532
+        },
+        {
+          "heading": "Step 6.1 — Study Existing Rule Functions",
+          "level": 3,
+          "line": 536
+        },
+        {
+          "heading": "Step 6.2 — Write a Simple Momentum Rule",
+          "level": 3,
+          "line": 549
+        },
+        {
+          "heading": "Step 6.3 — Add Your Rule to the Config",
+          "level": 3,
+          "line": 567
+        },
+        {
+          "heading": "Step 6.4 — Add Multiple Variations",
+          "level": 3,
+          "line": 588
+        },
+        {
+          "heading": "Phase 7: Deep Dive — Python Patterns (Days 36–45)",
+          "level": 2,
+          "line": 596
+        },
+        {
+          "heading": "Step 7.1 — Inheritance in Practice",
+          "level": 3,
+          "line": 600
+        },
+        {
+          "heading": "Step 7.2 — Decorators in Practice",
+          "level": 3,
+          "line": 610
+        },
+        {
+          "heading": "Step 7.3 — Properties in Practice",
+          "level": 3,
+          "line": 620
+        },
+        {
+          "heading": "Phase 8: Data Management (Days 46–55)",
+          "level": 2,
+          "line": 628
+        },
+        {
+          "heading": "Step 8.1 — Understand CSV Data Layout",
+          "level": 3,
+          "line": 632
+        },
+        {
+          "heading": "Step 8.2 — Understand the Data Class Hierarchy",
+          "level": 3,
+          "line": 645
+        },
+        {
+          "heading": "Step 8.3 — Update Data from IB",
+          "level": 3,
+          "line": 661
+        },
+        {
+          "heading": "Phase 9: Production Setup (Days 56–75)",
+          "level": 2,
+          "line": 673
+        },
+        {
+          "heading": "Step 9.1 — Understand the Production Architecture",
+          "level": 3,
+          "line": 677
+        },
+        {
+          "heading": "Step 9.2 — Set Up MongoDB and Parquet Storage",
+          "level": 3,
+          "line": 688
+        },
+        {
+          "heading": "Step 9.3 — Set Up IB Connection",
+          "level": 3,
+          "line": 697
+        },
+        {
+          "heading": "Step 9.4 — Run Each Production Script Manually",
+          "level": 3,
+          "line": 711
+        },
+        {
+          "heading": "Step 9.5 — Set Up Cron/Scheduler",
+          "level": 3,
+          "line": 724
+        },
+        {
+          "heading": "Phase 10: Go Live (Days 76+)",
+          "level": 2,
+          "line": 730
+        },
+        {
+          "heading": "Step 10.1 — Paper Trade for 2+ Weeks",
+          "level": 3,
+          "line": 734
+        },
+        {
+          "heading": "Step 10.2 — Verify Everything",
+          "level": 3,
+          "line": 741
+        },
+        {
+          "heading": "Step 10.3 — Go Live",
+          "level": 3,
+          "line": 750
+        },
+        {
+          "heading": "Quick Reference: Which Phase Am I In?",
+          "level": 2,
+          "line": 756
+        },
+        {
+          "heading": "Companion Obsidian Notes",
+          "level": 2,
+          "line": 773
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 50
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/production-setup-macos.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 605,
+      "nonEmptyLines": 398,
+      "sections": [
+        {
+          "heading": "Setting Up a Production System on macOS",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "How the System Works (Big Picture)",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "macOS vs Linux: Key Differences",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "What You Need Before Starting",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Phase 1 — Install Prerequisites",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "1.1 Check Python Version",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "1.2 Install Dependencies with uv",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "1.3 Install MongoDB",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Phase 2 — Set Environment Variables",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "Phase 3 — Create Directory Structure",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "Phase 4 — Start MongoDB",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "4.1 Start the Service",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "4.2 Verify It's Running",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "4.3 No Configuration Needed",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Phase 5 — Configure `private_config.yaml`",
+          "level": 2,
+          "line": 190
+        },
+        {
+          "heading": "5.1 Create the File",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "5.2 Edit the File",
+          "level": 3,
+          "line": 201
+        },
+        {
+          "heading": "Phase 6 — Set Up IB Gateway for Paper Trading",
+          "level": 2,
+          "line": 233
+        },
+        {
+          "heading": "6.1 Download IB Gateway",
+          "level": 3,
+          "line": 235
+        },
+        {
+          "heading": "6.2 Log In to Paper Account",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "6.3 Enable API Access",
+          "level": 3,
+          "line": 246
+        },
+        {
+          "heading": "6.4 Keep IB Gateway Running",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "Phase 7 — Initialize Instrument & Price Data",
+          "level": 2,
+          "line": 266
+        },
+        {
+          "heading": "7.0 Seed MongoDB from Bundled CSV Files (Do This First!)",
+          "level": 3,
+          "line": 288
+        },
+        {
+          "heading": "7.1 Update Active Contracts",
+          "level": 3,
+          "line": 310
+        },
+        {
+          "heading": "7.2 Download Historical Futures Prices from IB",
+          "level": 3,
+          "line": 318
+        },
+        {
+          "heading": "7.3 Set Up Roll Calendars",
+          "level": 3,
+          "line": 328
+        },
+        {
+          "heading": "7.4 Build Multiple & Adjusted Price Series",
+          "level": 3,
+          "line": 338
+        },
+        {
+          "heading": "7.5 Verify Prices",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "Phase 8 — Initialize Capital",
+          "level": 2,
+          "line": 358
+        },
+        {
+          "heading": "Phase 9 — Run Your First Backtest (Production Mode)",
+          "level": 2,
+          "line": 373
+        },
+        {
+          "heading": "Phase 10 — Your Daily Manual Trading Workflow",
+          "level": 2,
+          "line": 391
+        },
+        {
+          "heading": "Morning: Check What Trades Are Needed",
+          "level": 3,
+          "line": 395
+        },
+        {
+          "heading": "Enter the Trades in IB",
+          "level": 3,
+          "line": 409
+        },
+        {
+          "heading": "Confirm the Fills",
+          "level": 3,
+          "line": 416
+        },
+        {
+          "heading": "Evening: Automatic Data Update (via cron)",
+          "level": 3,
+          "line": 426
+        },
+        {
+          "heading": "Phase 11 — Set Up Daily Scheduling with cron",
+          "level": 2,
+          "line": 432
+        },
+        {
+          "heading": "11.0 Find Your Virtual Environment's Python Path",
+          "level": 3,
+          "line": 439
+        },
+        {
+          "heading": "11.1 Open the crontab Editor",
+          "level": 3,
+          "line": 454
+        },
+        {
+          "heading": "11.2 Grant cron Full Disk Access (macOS Security)",
+          "level": 3,
+          "line": 491
+        },
+        {
+          "heading": "11.3 Check if cron is Working",
+          "level": 3,
+          "line": 498
+        },
+        {
+          "heading": "Phase 12 — Verify Everything Works",
+          "level": 2,
+          "line": 510
+        },
+        {
+          "heading": "Check MongoDB Has Data",
+          "level": 3,
+          "line": 514
+        },
+        {
+          "heading": "Check Parquet Files Exist",
+          "level": 3,
+          "line": 522
+        },
+        {
+          "heading": "Run the Full Diagnostics",
+          "level": 3,
+          "line": 530
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 544
+        },
+        {
+          "heading": "\"Cannot connect to MongoDB\"",
+          "level": 3,
+          "line": 546
+        },
+        {
+          "heading": "\"IB connection refused\"",
+          "level": 3,
+          "line": 553
+        },
+        {
+          "heading": "\"No prices found for instrument X\"",
+          "level": 3,
+          "line": 559
+        },
+        {
+          "heading": "\"Environment variable not found\"",
+          "level": 3,
+          "line": 569
+        },
+        {
+          "heading": "MongoDB collections are empty after Phase 7.0",
+          "level": 3,
+          "line": 573
+        },
+        {
+          "heading": "What's NOT Set Up Yet (Phase 2)",
+          "level": 2,
+          "line": 579
+        },
+        {
+          "heading": "Quick Reference: Daily Manual Workflow",
+          "level": 2,
+          "line": 591
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 53
+      }
+    },
+    {
+      "path": "_learning_sandbox/docs/systems-folder-overview.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 110,
+      "nonEmptyLines": 83,
+      "sections": [
+        {
+          "heading": "`systems/` Folder — Overview of All Scripts and Connections",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What is the `systems/` Folder?",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "File Map",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Core Infrastructure (start here)",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Pipeline Stages (in execution order)",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Supporting Files",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Subdirectories",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "How the Stages Connect",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Data Flow Diagram",
+          "level": 2,
+          "line": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    }
+  ]
+}

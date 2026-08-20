@@ -1,0 +1,569 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysproduction/linux/scripts/update_multiple_adjusted_prices",
+      "type": "file",
+      "name": "update_multiple_adjusted_prices",
+      "filePath": "sysproduction/linux/scripts/update_multiple_adjusted_prices",
+      "summary": "Bash launcher that sources the user profile and runs the sysproduction.update_multiple_adjusted_prices process via the 'p' Python-runner alias, used as a cron-scheduled production task.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple",
+      "languageNotes": "Thin wrapper using a shell alias 'p' to invoke a fully-qualified Python module path."
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_sampled_contracts",
+      "type": "file",
+      "name": "update_sampled_contracts",
+      "filePath": "sysproduction/linux/scripts/update_sampled_contracts",
+      "summary": "Bash launcher that runs the sysproduction.update_sampled_contracts production process for refreshing the set of sampled futures contracts.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_strategy_capital",
+      "type": "file",
+      "name": "update_strategy_capital",
+      "filePath": "sysproduction/linux/scripts/update_strategy_capital",
+      "summary": "Bash launcher that runs the sysproduction.update_strategy_capital process, allocating total account capital across trading strategies.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_strategy_orders",
+      "type": "file",
+      "name": "update_strategy_orders",
+      "filePath": "sysproduction/linux/scripts/update_strategy_orders",
+      "summary": "Bash launcher that runs the sysproduction.update_strategy_orders process to generate strategy-level orders for execution.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_system_backtests",
+      "type": "file",
+      "name": "update_system_backtests",
+      "filePath": "sysproduction/linux/scripts/update_system_backtests",
+      "summary": "Bash launcher that runs the sysproduction.update_system_backtests process, executing the nightly backtests that drive live position targets.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_total_capital",
+      "type": "file",
+      "name": "update_total_capital",
+      "filePath": "sysproduction/linux/scripts/update_total_capital",
+      "summary": "Bash launcher that runs the sysproduction.update_total_capital process to reconcile and record total account capital from the broker.",
+      "tags": ["script", "deployment", "ci-cd", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/reporting/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/reporting/__init__.py",
+      "summary": "Empty package initializer marking sysproduction.reporting as a Python package for production reporting modules.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/reporting/adhoc/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/reporting/adhoc/__init__.py",
+      "summary": "Empty package initializer marking sysproduction.reporting.adhoc as a Python package for ad-hoc report generators.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/reporting/data/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/reporting/data/__init__.py",
+      "summary": "Empty package initializer marking sysproduction.reporting.data as a Python package for reporting data-access helpers.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/strategy_code/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/strategy_code/__init__.py",
+      "summary": "Empty package initializer marking sysproduction.strategy_code as a Python package for production strategy-runner code.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/tests/test_controls.py",
+      "type": "file",
+      "name": "test_controls.py",
+      "filePath": "sysproduction/tests/test_controls.py",
+      "summary": "Empty placeholder test module for production process control logic; currently contains no test cases.",
+      "tags": ["test", "python-package", "placeholder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysquant/__init__.py",
+      "summary": "Empty package initializer marking sysquant as a Python package housing quantitative estimators and optimisation routines.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/estimators/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysquant/estimators/__init__.py",
+      "summary": "Empty package initializer marking sysquant.estimators as a Python package for statistical estimators (correlations, volatility, means).",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/estimators/tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysquant/estimators/tests/__init__.py",
+      "summary": "Empty package initializer marking sysquant.estimators.tests as a Python package for estimator unit tests.",
+      "tags": ["entry-point", "barrel", "python-package", "test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysquant/optimisation/__init__.py",
+      "summary": "Empty package initializer marking sysquant.optimisation as a Python package for portfolio weight optimisation code.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/full_handcrafting.py",
+      "type": "file",
+      "name": "full_handcrafting.py",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "summary": "Self-contained reference implementation of Rob Carver's full 'handcrafting' portfolio optimisation method, building hierarchical sub-portfolios via correlation clustering and assigning risk-target-adjusted weights with Sharpe-ratio uncertainty corrections. Explicitly a standalone teaching version, not the code wired into the live system.",
+      "tags": ["optimization", "portfolio", "data-pipeline", "statistics", "utility"],
+      "complexity": "complex",
+      "languageNotes": "Heavy numpy/pandas/scipy use: Fisher-transform correlation confidence intervals, hierarchical clustering (scipy.cluster.hierarchy), bootstrap SR-difference simulation, and constrained optimisation via scipy.optimize.minimize."
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysquant/optimisation/optimisers/__init__.py",
+      "summary": "Empty package initializer marking sysquant.optimisation.optimisers as a Python package for concrete optimiser implementations.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/__init__.py",
+      "summary": "Empty package initializer marking systems as the top-level Python package for the backtesting/trading system stages.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/accounts/__init__.py",
+      "summary": "Empty package initializer marking systems.accounts as a Python package for the P&L / accounting stage of the backtest.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/curves/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/accounts/curves/__init__.py",
+      "summary": "Empty package initializer marking systems.accounts.curves as a Python package for account-curve (returns time series) objects.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/accounts/order_simulator/__init__.py",
+      "summary": "Empty package initializer marking systems.accounts.order_simulator as a Python package for simulated-order-fill P&L logic.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/accounts/pandl_calculators/__init__.py",
+      "summary": "Empty package initializer marking systems.accounts.pandl_calculators as a Python package for profit-and-loss calculation engines.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/__init__.py",
+      "summary": "Empty package initializer marking systems.provided as a Python package containing ready-made example trading systems and rules.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/attenuate_vol/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/attenuate_vol/__init__.py",
+      "summary": "Empty package initializer marking systems.provided.attenuate_vol as a Python package for the volatility-attenuation example system.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/basic/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/basic/__init__.py",
+      "summary": "Empty package initializer marking systems.provided.basic as a Python package for the basic example trading system.",
+      "tags": ["entry-point", "barrel", "python-package"],
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:sysquant/optimisation/full_handcrafting.py:Portfolio",
+      "type": "class",
+      "name": "Portfolio",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [415, 1264],
+      "summary": "Core recursive handcrafting object that partitions instruments into correlation-clustered sub-portfolios, then computes volatility weights, cash weights, diversification multipliers and risk-target-scaled allocations across the resulting tree.",
+      "tags": ["portfolio", "optimization", "data-model", "recursion", "statistics"],
+      "complexity": "complex",
+      "languageNotes": "Uses recursive composition of child Portfolio objects plus cached_property-style accessor methods exposing volatility/cash weights and portfolio returns."
+    },
+    {
+      "id": "class:sysquant/optimisation/full_handcrafting.py:diagobject",
+      "type": "class",
+      "name": "diagobject",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [39, 44],
+      "summary": "Lightweight diagnostics container used to attach intermediate handcrafting calculation outputs for inspection and printing.",
+      "tags": ["data-model", "diagnostics", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:get_weights_using_uncertainty_method",
+      "type": "function",
+      "name": "get_weights_using_uncertainty_method",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [56, 71],
+      "summary": "Entry point for correlation-uncertainty-aware weighting: for small asset counts derives weights accounting for correlation estimation error, otherwise falls back to equal weights with a warning.",
+      "tags": ["optimization", "portfolio", "statistics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:optimised_weights_given_correlation_uncertainty",
+      "type": "function",
+      "name": "optimised_weights_given_correlation_uncertainty",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [74, 91],
+      "summary": "Computes average optimal weights across many sampled correlation matrices drawn from confidence intervals, capturing weight sensitivity to correlation estimation uncertainty.",
+      "tags": ["optimization", "statistics", "monte-carlo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:optimise_for_corr_matrix_with_uncertainty",
+      "type": "function",
+      "name": "optimise_for_corr_matrix_with_uncertainty",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [97, 107],
+      "summary": "Samples a correlation matrix from its confidence-interval distribution and returns the minimum-weighted optimal portfolio weights for that draw.",
+      "tags": ["optimization", "statistics", "sampling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:calculate_correlation_points_from_tuples",
+      "type": "function",
+      "name": "calculate_correlation_points_from_tuples",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [118, 129],
+      "summary": "Maps each labelled pairwise correlation to a confidence-interval point estimate using the Fisher-transform distribution given the number of data points.",
+      "tags": ["statistics", "correlation", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:get_fisher_confidence_point",
+      "type": "function",
+      "name": "get_fisher_confidence_point",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [151, 161],
+      "summary": "Returns a correlation value shifted to a given confidence-interval percentile in Fisher-transformed space, used to bound correlation estimation error.",
+      "tags": ["statistics", "correlation", "fisher-transform"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:three_asset_corr_matrix",
+      "type": "function",
+      "name": "three_asset_corr_matrix",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [188, 198],
+      "summary": "Builds a 3x3 correlation matrix from three labelled pairwise correlations for the canonical three-asset handcrafting building block.",
+      "tags": ["correlation", "utility", "portfolio"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:mini_bootstrap_ratio_given_SR_diff",
+      "type": "function",
+      "name": "mini_bootstrap_ratio_given_SR_diff",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [241, 286],
+      "summary": "Runs a small bootstrap simulation to estimate the relative weight ratio between assets given a Sharpe-ratio difference, average correlation, and data length, smoothing out estimation noise.",
+      "tags": ["statistics", "monte-carlo", "optimization", "sharpe-ratio"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:weights_given_SR_diff",
+      "type": "function",
+      "name": "weights_given_SR_diff",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [302, 339],
+      "summary": "Derives two-asset relative weights from a Sharpe-ratio difference and average correlation, choosing analytic or bootstrap estimation depending on confidence inputs.",
+      "tags": ["optimization", "statistics", "sharpe-ratio", "portfolio"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:boring_corr_matrix",
+      "type": "function",
+      "name": "boring_corr_matrix",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [350, 368],
+      "summary": "Constructs a simple correlation matrix with a constant off-diagonal correlation and unit diagonal of a given size, used as a default/placeholder correlation structure.",
+      "tags": ["correlation", "utility", "portfolio"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:adjust_weights_for_SR",
+      "type": "function",
+      "name": "adjust_weights_for_SR",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [390, 412],
+      "summary": "Rescales a set of portfolio weights to account for differing Sharpe ratios across assets, adjusting allocations toward higher-SR instruments given correlation and data length.",
+      "tags": ["optimization", "portfolio", "sharpe-ratio", "statistics"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:how_many_years_of_data_in_pd_series",
+      "type": "function",
+      "name": "how_many_years_of_data_in_pd_series",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1294, 1308],
+      "summary": "Estimates the span of a pandas Series in years from its index range, used to weight correlation/Sharpe confidence by available history.",
+      "tags": ["utility", "time-series", "statistics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:get_avg_corr",
+      "type": "function",
+      "name": "get_avg_corr",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1311, 1327],
+      "summary": "Computes the average off-diagonal pairwise correlation from a covariance/correlation matrix, used as a summary input to handcrafting weight calculations.",
+      "tags": ["correlation", "statistics", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:cluster_correlation_matrix",
+      "type": "function",
+      "name": "cluster_correlation_matrix",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1330, 1336],
+      "summary": "Partitions instruments into clusters of a maximum size from their correlation matrix using hierarchical clustering, forming the sub-portfolio tree.",
+      "tags": ["clustering", "correlation", "portfolio"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:optimise",
+      "type": "function",
+      "name": "optimise",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1339, 1369],
+      "summary": "Performs constrained mean-variance optimisation via scipy.optimize.minimize over a fixed covariance matrix and mean vector, returning fully-invested long-only weights that minimise negative Sharpe ratio.",
+      "tags": ["optimization", "mean-variance", "scipy", "portfolio"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:fix_sigma",
+      "type": "function",
+      "name": "fix_sigma",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1412, 1427],
+      "summary": "Sanitises a covariance matrix for optimisation by replacing invalid/NaN entries, ensuring scipy.optimize receives a well-formed positive matrix.",
+      "tags": ["optimization", "data-cleaning", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/full_handcrafting.py:un_fix_weights",
+      "type": "function",
+      "name": "un_fix_weights",
+      "filePath": "sysquant/optimisation/full_handcrafting.py",
+      "lineRange": [1394, 1409],
+      "summary": "Re-expands an optimised weight vector back over the original asset set, re-inserting zero weights for assets excluded during the optimisation fix-up step.",
+      "tags": ["optimization", "utility", "portfolio"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "class:sysquant/optimisation/full_handcrafting.py:Portfolio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "class:sysquant/optimisation/full_handcrafting.py:diagobject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:get_weights_using_uncertainty_method",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:optimised_weights_given_correlation_uncertainty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:optimise_for_corr_matrix_with_uncertainty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:calculate_correlation_points_from_tuples",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:get_fisher_confidence_point",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:three_asset_corr_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:mini_bootstrap_ratio_given_SR_diff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:weights_given_SR_diff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:boring_corr_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:adjust_weights_for_SR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:how_many_years_of_data_in_pd_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:get_avg_corr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:cluster_correlation_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:optimise",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:fix_sigma",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:un_fix_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "class:sysquant/optimisation/full_handcrafting.py:Portfolio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "class:sysquant/optimisation/full_handcrafting.py:diagobject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:get_weights_using_uncertainty_method",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/full_handcrafting.py",
+      "target": "function:sysquant/optimisation/full_handcrafting.py:optimise",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

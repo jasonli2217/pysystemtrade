@@ -1,0 +1,1164 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysexecution/orders/broker_orders.py",
+      "type": "file",
+      "name": "broker_orders.py",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "summary": "Broker order type, the brokerOrder class and factory helpers translating contract orders into broker orders and parsing broker fills.",
+      "tags": [
+        "data-model",
+        "order",
+        "broker",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/broker_orders.py:brokerOrder",
+      "type": "class",
+      "name": "brokerOrder",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "lineRange": [
+        61,
+        376
+      ],
+      "summary": "Concrete broker order capturing the order actually sent to the broker, including broker ids, algo info, fills and limit prices.",
+      "tags": [
+        "order",
+        "broker",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/broker_orders.py:brokerOrderType",
+      "type": "class",
+      "name": "brokerOrderType",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "lineRange": [
+        33,
+        44
+      ],
+      "summary": "Order-type descriptor for broker orders (market, limit, etc.).",
+      "tags": [
+        "order",
+        "broker",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/orders/broker_orders.py:brokerOrderWithParentInformation",
+      "type": "class",
+      "name": "brokerOrderWithParentInformation",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "lineRange": [
+        419,
+        441
+      ],
+      "summary": "Broker order enriched with parent contract/instrument order references for reporting.",
+      "tags": [
+        "order",
+        "broker",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/orders/broker_orders.py:create_new_broker_order_from_contract_order",
+      "type": "function",
+      "name": "create_new_broker_order_from_contract_order",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "lineRange": [
+        379,
+        415
+      ],
+      "summary": "Factory building a brokerOrder from a contract order, copying quantity, instrument and limit details for submission.",
+      "tags": [
+        "order",
+        "broker",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/orders/broker_orders.py:single_fill_from_broker_order",
+      "type": "function",
+      "name": "single_fill_from_broker_order",
+      "filePath": "sysexecution/orders/broker_orders.py",
+      "lineRange": [
+        444,
+        459
+      ],
+      "summary": "Extracts a single fill record from a broker order for downstream accounting.",
+      "tags": [
+        "order",
+        "broker",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/orders/contract_orders.py",
+      "type": "file",
+      "name": "contract_orders.py",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "summary": "Contract order type and class representing an order for a specific futures contract, plus helpers for resolving and splitting contract-order arguments.",
+      "tags": [
+        "data-model",
+        "order",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/contract_orders.py:contractOrder",
+      "type": "class",
+      "name": "contractOrder",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "lineRange": [
+        39,
+        298
+      ],
+      "summary": "Concrete contract-level order for a specific futures contract, holding quantity, limit price, algo allocation and parent instrument-order links.",
+      "tags": [
+        "order",
+        "data-model",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/contract_orders.py:contractOrderType",
+      "type": "class",
+      "name": "contractOrderType",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "lineRange": [
+        26,
+        28
+      ],
+      "summary": "Order-type descriptor for contract orders.",
+      "tags": [
+        "order",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/orders/contract_orders.py:contractOrderKeyArguments",
+      "type": "class",
+      "name": "contractOrderKeyArguments",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "lineRange": [
+        302,
+        320
+      ],
+      "summary": "Container of the key arguments needed to construct a contract order.",
+      "tags": [
+        "order",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/orders/contract_orders.py:from_contract_order_args_to_resolved_args",
+      "type": "function",
+      "name": "from_contract_order_args_to_resolved_args",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "lineRange": [
+        323,
+        335
+      ],
+      "summary": "Resolves raw contract-order arguments into a normalised argument set.",
+      "tags": [
+        "order",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/orders/contract_orders.py:split_contract_order_args",
+      "type": "function",
+      "name": "split_contract_order_args",
+      "filePath": "sysexecution/orders/contract_orders.py",
+      "lineRange": [
+        338,
+        359
+      ],
+      "summary": "Splits a combined contract-order argument string into structured components.",
+      "tags": [
+        "order",
+        "serialization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/orders/instrument_orders.py",
+      "type": "file",
+      "name": "instrument_orders.py",
+      "filePath": "sysexecution/orders/instrument_orders.py",
+      "summary": "Instrument order type and class representing a strategy's desired trade in an instrument before it is broken into contract orders.",
+      "tags": [
+        "data-model",
+        "order"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/instrument_orders.py:instrumentOrder",
+      "type": "class",
+      "name": "instrumentOrder",
+      "filePath": "sysexecution/orders/instrument_orders.py",
+      "lineRange": [
+        40,
+        242
+      ],
+      "summary": "Concrete instrument-level order capturing a strategy's desired trade in an instrument, with order type, limits and fill tracking.",
+      "tags": [
+        "order",
+        "data-model",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/instrument_orders.py:instrumentOrderType",
+      "type": "class",
+      "name": "instrumentOrderType",
+      "filePath": "sysexecution/orders/instrument_orders.py",
+      "lineRange": [
+        19,
+        29
+      ],
+      "summary": "Order-type descriptor for instrument orders (best, market, limit, etc.).",
+      "tags": [
+        "order",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/orders/list_of_orders.py",
+      "type": "file",
+      "name": "list_of_orders.py",
+      "filePath": "sysexecution/orders/list_of_orders.py",
+      "summary": "List container for order objects with aggregation helpers, including conservative trade calculation across orders with limits.",
+      "tags": [
+        "data-model",
+        "order",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/orders/list_of_orders.py:listOfOrders",
+      "type": "class",
+      "name": "listOfOrders",
+      "filePath": "sysexecution/orders/list_of_orders.py",
+      "lineRange": [
+        21,
+        120
+      ],
+      "summary": "List wrapper over order objects providing aggregation, filtering and fill-summary helpers.",
+      "tags": [
+        "order",
+        "data-model",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/orders/list_of_orders.py:listOfFillDatetime",
+      "type": "class",
+      "name": "listOfFillDatetime",
+      "filePath": "sysexecution/orders/list_of_orders.py",
+      "lineRange": [
+        14,
+        18
+      ],
+      "summary": "List of fill datetimes used to reason about order timing.",
+      "tags": [
+        "order",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/orders/list_of_orders.py:calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+      "type": "function",
+      "name": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+      "filePath": "sysexecution/orders/list_of_orders.py",
+      "lineRange": [
+        123,
+        140
+      ],
+      "summary": "Computes the most conservative net trade across a list of orders after applying each order's limit.",
+      "tags": [
+        "order",
+        "calculation",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/orders/named_order_objects.py",
+      "type": "file",
+      "name": "named_order_objects.py",
+      "filePath": "sysexecution/orders/named_order_objects.py",
+      "summary": "Defines named sentinel/constant order objects (e.g. missing order, no order id) shared across the execution layer.",
+      "tags": [
+        "type-definition",
+        "constants",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/stack_handler/additional_sampling.py",
+      "type": "file",
+      "name": "additional_sampling.py",
+      "filePath": "sysexecution/stack_handler/additional_sampling.py",
+      "summary": "Stack handler that triggers additional price sampling for instruments currently being traded, ensuring fresh prices during execution.",
+      "tags": [
+        "service",
+        "stack-handler",
+        "sampling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/stack_handler/additional_sampling.py:stackHandlerAdditionalSampling",
+      "type": "class",
+      "name": "stackHandlerAdditionalSampling",
+      "filePath": "sysexecution/stack_handler/additional_sampling.py",
+      "lineRange": [
+        8,
+        85
+      ],
+      "summary": "Stack handler component that samples extra prices for instruments with live orders to support execution algos.",
+      "tags": [
+        "stack-handler",
+        "sampling",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/stack_handler/additional_sampling.py:remove_ignored_instruments",
+      "type": "function",
+      "name": "remove_ignored_instruments",
+      "filePath": "sysexecution/stack_handler/additional_sampling.py",
+      "lineRange": [
+        88,
+        102
+      ],
+      "summary": "Filters out instruments flagged as ignored from the additional-sampling instrument list.",
+      "tags": [
+        "utility",
+        "sampling",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/stack_handler/balance_trades.py",
+      "type": "file",
+      "name": "balance_trades.py",
+      "filePath": "sysexecution/stack_handler/balance_trades.py",
+      "summary": "Stack handler that creates balancing trades to reconcile broker fills back through contract and instrument order stacks when positions drift.",
+      "tags": [
+        "service",
+        "stack-handler",
+        "reconciliation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/stack_handler/balance_trades.py:stackHandlerCreateBalanceTrades",
+      "type": "class",
+      "name": "stackHandlerCreateBalanceTrades",
+      "filePath": "sysexecution/stack_handler/balance_trades.py",
+      "lineRange": [
+        15,
+        163
+      ],
+      "summary": "Stack handler creating balance trades that push manual or external fills back up the order stacks to keep records consistent.",
+      "tags": [
+        "stack-handler",
+        "reconciliation",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/stack_handler/balance_trades.py:create_balance_contract_order_from_broker_order",
+      "type": "function",
+      "name": "create_balance_contract_order_from_broker_order",
+      "filePath": "sysexecution/stack_handler/balance_trades.py",
+      "lineRange": [
+        166,
+        182
+      ],
+      "summary": "Builds a balancing contract order from a broker order to reconcile the contract stack.",
+      "tags": [
+        "reconciliation",
+        "order",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/stack_handler/balance_trades.py:create_balance_instrument_order_from_contract_order",
+      "type": "function",
+      "name": "create_balance_instrument_order_from_contract_order",
+      "filePath": "sysexecution/stack_handler/balance_trades.py",
+      "lineRange": [
+        185,
+        197
+      ],
+      "summary": "Builds a balancing instrument order from a contract order to reconcile the instrument stack.",
+      "tags": [
+        "reconciliation",
+        "order",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "type": "file",
+      "name": "cancel_and_modify.py",
+      "filePath": "sysexecution/stack_handler/cancel_and_modify.py",
+      "summary": "Stack handler managing cancellation and modification of working broker orders, coordinating with execution algos to amend or pull live orders.",
+      "tags": [
+        "service",
+        "stack-handler",
+        "cancellation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/stack_handler/cancel_and_modify.py:stackHandlerCancelAndModify",
+      "type": "class",
+      "name": "stackHandlerCancelAndModify",
+      "filePath": "sysexecution/stack_handler/cancel_and_modify.py",
+      "lineRange": [
+        11,
+        129
+      ],
+      "summary": "Stack handler that cancels or modifies live broker orders and propagates the outcome through the order stacks.",
+      "tags": [
+        "stack-handler",
+        "cancellation",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/stack_handler/checks.py",
+      "type": "file",
+      "name": "checks.py",
+      "filePath": "sysexecution/stack_handler/checks.py",
+      "summary": "Stack handler performing consistency checks across the instrument, contract and broker order stacks to detect orphaned or mismatched orders.",
+      "tags": [
+        "service",
+        "stack-handler",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/stack_handler/checks.py:stackHandlerChecks",
+      "type": "class",
+      "name": "stackHandlerChecks",
+      "filePath": "sysexecution/stack_handler/checks.py",
+      "lineRange": [
+        12,
+        79
+      ],
+      "summary": "Stack handler running integrity checks across the order stacks to flag inconsistencies before/after execution.",
+      "tags": [
+        "stack-handler",
+        "validation",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrderType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrderWithParentInformation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "function:sysexecution/orders/broker_orders.py:create_new_broker_order_from_contract_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "function:sysexecution/orders/broker_orders.py:create_new_broker_order_from_contract_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "function:sysexecution/orders/broker_orders.py:single_fill_from_broker_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "function:sysexecution/orders/broker_orders.py:single_fill_from_broker_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrderType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "class:sysexecution/orders/broker_orders.py:brokerOrderWithParentInformation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrderType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrderKeyArguments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "function:sysexecution/orders/contract_orders.py:from_contract_order_args_to_resolved_args",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "function:sysexecution/orders/contract_orders.py:from_contract_order_args_to_resolved_args",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "function:sysexecution/orders/contract_orders.py:split_contract_order_args",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "function:sysexecution/orders/contract_orders.py:split_contract_order_args",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrderType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "class:sysexecution/orders/contract_orders.py:contractOrderKeyArguments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "class:sysexecution/orders/instrument_orders.py:instrumentOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "class:sysexecution/orders/instrument_orders.py:instrumentOrderType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "class:sysexecution/orders/instrument_orders.py:instrumentOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "class:sysexecution/orders/instrument_orders.py:instrumentOrderType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "class:sysexecution/orders/list_of_orders.py:listOfOrders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "class:sysexecution/orders/list_of_orders.py:listOfFillDatetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "function:sysexecution/orders/list_of_orders.py:calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "function:sysexecution/orders/list_of_orders.py:calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "class:sysexecution/orders/list_of_orders.py:listOfOrders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "class:sysexecution/stack_handler/additional_sampling.py:stackHandlerAdditionalSampling",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "function:sysexecution/stack_handler/additional_sampling.py:remove_ignored_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "function:sysexecution/stack_handler/additional_sampling.py:remove_ignored_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "class:sysexecution/stack_handler/additional_sampling.py:stackHandlerAdditionalSampling",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "class:sysexecution/stack_handler/balance_trades.py:stackHandlerCreateBalanceTrades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "function:sysexecution/stack_handler/balance_trades.py:create_balance_contract_order_from_broker_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "function:sysexecution/stack_handler/balance_trades.py:create_balance_contract_order_from_broker_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "function:sysexecution/stack_handler/balance_trades.py:create_balance_instrument_order_from_contract_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "function:sysexecution/stack_handler/balance_trades.py:create_balance_instrument_order_from_contract_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "class:sysexecution/stack_handler/balance_trades.py:stackHandlerCreateBalanceTrades",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "class:sysexecution/stack_handler/cancel_and_modify.py:stackHandlerCancelAndModify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "class:sysexecution/stack_handler/cancel_and_modify.py:stackHandlerCancelAndModify",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "class:sysexecution/stack_handler/checks.py:stackHandlerChecks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "class:sysexecution/stack_handler/checks.py:stackHandlerChecks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/broker_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/contract_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/instrument_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/list_of_orders.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/named_order_objects.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/additional_sampling.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/balance_trades.py",
+      "target": "file:sysexecution/stack_handler/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/cancel_and_modify.py",
+      "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:sysproduction/data/controls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/stack_handler/checks.py",
+      "target": "file:sysproduction/data/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysexecution/orders/instrument_orders.py:instrumentOrder",
+      "target": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/orders/contract_orders.py:contractOrder",
+      "target": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/orders/broker_orders.py:brokerOrder",
+      "target": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/orders/broker_orders.py:brokerOrderType",
+      "target": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/orders/contract_orders.py:contractOrderType",
+      "target": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/orders/instrument_orders.py:instrumentOrderType",
+      "target": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

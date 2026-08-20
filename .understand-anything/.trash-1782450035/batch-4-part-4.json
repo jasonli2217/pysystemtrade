@@ -1,0 +1,604 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "type": "file",
+   "name": "interactive_manual_check_fx_prices.py",
+   "filePath": "sysproduction/interactive_manual_check_fx_prices.py",
+   "summary": "Interactive CLI script for manually reviewing and confirming newly fetched FX prices before they are written to the database.",
+   "tags": [
+    "entry-point",
+    "cli",
+    "fx",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_manual_check_fx_prices.py:interactive_manual_check_fx_prices",
+   "type": "function",
+   "name": "interactive_manual_check_fx_prices",
+   "filePath": "sysproduction/interactive_manual_check_fx_prices.py",
+   "lineRange": [
+    18,
+    43
+   ],
+   "summary": "Function interactive manual check fx prices (26 lines).",
+   "tags": [
+    "entry-point",
+    "cli",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_manual_check_fx_prices.py:check_fx_ok_for_broker",
+   "type": "function",
+   "name": "check_fx_ok_for_broker",
+   "filePath": "sysproduction/interactive_manual_check_fx_prices.py",
+   "lineRange": [
+    46,
+    57
+   ],
+   "summary": "Function check fx ok for broker (12 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_manual_check_fx_prices.py:update_manual_check_fx_prices_for_code",
+   "type": "function",
+   "name": "update_manual_check_fx_prices_for_code",
+   "filePath": "sysproduction/interactive_manual_check_fx_prices.py",
+   "lineRange": [
+    60,
+    82
+   ],
+   "summary": "Function update manual check fx prices for code (23 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/interactive_update_capital_manual.py",
+   "type": "file",
+   "name": "interactive_update_capital_manual.py",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "summary": "Interactive CLI tool for manually managing trading capital: setting initial capital, updating from IB, applying delta adjustments, and deleting capital records.",
+   "tags": [
+    "entry-point",
+    "cli",
+    "capital",
+    "production"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:interactive_update_capital_manual",
+   "type": "function",
+   "name": "interactive_update_capital_manual",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    18,
+    48
+   ],
+   "summary": "Function interactive update capital manual (31 lines).",
+   "tags": [
+    "entry-point",
+    "cli",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:finished",
+   "type": "function",
+   "name": "finished",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    51,
+    52
+   ],
+   "summary": "Function finished (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:print_capital_and_get_user_input",
+   "type": "function",
+   "name": "print_capital_and_get_user_input",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    55,
+    86
+   ],
+   "summary": "Function print capital and get user input (32 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:setup_initial_capital",
+   "type": "function",
+   "name": "setup_initial_capital",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    89,
+    107
+   ],
+   "summary": "Function setup initial capital (19 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:get_initial_capital_values_from_user",
+   "type": "function",
+   "name": "get_initial_capital_values_from_user",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    110,
+    135
+   ],
+   "summary": "Function get initial capital values from user (26 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:update_capital_from_ib",
+   "type": "function",
+   "name": "update_capital_from_ib",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    141,
+    164
+   ],
+   "summary": "Function update capital from ib (24 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:get_broker_account_value",
+   "type": "function",
+   "name": "get_broker_account_value",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    167,
+    171
+   ],
+   "summary": "Function get broker account value (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:adjust_capital_for_delta",
+   "type": "function",
+   "name": "adjust_capital_for_delta",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    174,
+    185
+   ],
+   "summary": "Function adjust capital for delta (12 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:modify_any_value",
+   "type": "function",
+   "name": "modify_any_value",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    188,
+    208
+   ],
+   "summary": "Function modify any value (21 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:get_values_from_user_to_modify",
+   "type": "function",
+   "name": "get_values_from_user_to_modify",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    211,
+    238
+   ],
+   "summary": "Function get values from user to modify (28 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:delete_capital_since_time",
+   "type": "function",
+   "name": "delete_capital_since_time",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    241,
+    250
+   ],
+   "summary": "Function delete capital since time (10 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_capital_manual.py:delete_all_capital",
+   "type": "function",
+   "name": "delete_all_capital",
+   "filePath": "sysproduction/interactive_update_capital_manual.py",
+   "lineRange": [
+    253,
+    268
+   ],
+   "summary": "Function delete all capital (16 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:interactive_manual_check_fx_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:interactive_manual_check_fx_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:check_fx_ok_for_broker",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:check_fx_ok_for_broker",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:update_manual_check_fx_prices_for_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_fx_prices.py:update_manual_check_fx_prices_for_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:sysdata/tools/manual_price_checker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_fx_prices.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:interactive_update_capital_manual",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:interactive_update_capital_manual",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:finished",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:finished",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:print_capital_and_get_user_input",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:print_capital_and_get_user_input",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:setup_initial_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:setup_initial_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_initial_capital_values_from_user",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_initial_capital_values_from_user",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:update_capital_from_ib",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:update_capital_from_ib",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_broker_account_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_broker_account_value",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:adjust_capital_for_delta",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:adjust_capital_for_delta",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:modify_any_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:modify_any_value",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_values_from_user_to_modify",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:get_values_from_user_to_modify",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:delete_capital_since_time",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:delete_capital_since_time",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:delete_all_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "function:sysproduction/interactive_update_capital_manual.py:delete_all_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:syscore/interactive/date_input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:syscore/interactive/input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:sysobjects/production/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_capital_manual.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

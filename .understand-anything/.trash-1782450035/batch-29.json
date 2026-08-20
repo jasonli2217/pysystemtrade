@@ -1,0 +1,256 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysproduction/linux/scripts/p",
+      "type": "file",
+      "name": "p",
+      "filePath": "sysproduction/linux/scripts/p",
+      "summary": "Shared bash helper that sources the user profile and runs the production process launcher (run.py) against a Python module name passed as its argument.",
+      "tags": ["script", "entry-point", "launcher", "production"],
+      "complexity": "simple",
+      "languageNotes": "Bash shim invoked via dot-sourcing (. p <module>) by every sibling launcher script; uses $SCRIPT_PATH/run.py to dispatch the named module."
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/startup",
+      "type": "file",
+      "name": "startup",
+      "filePath": "sysproduction/linux/scripts/startup",
+      "summary": "Bash launcher that boots the production trading system by dispatching the sysproduction.startup.startup module through the p helper.",
+      "tags": ["script", "launcher", "startup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_systems",
+      "type": "file",
+      "name": "run_systems",
+      "filePath": "sysproduction/linux/scripts/run_systems",
+      "summary": "Bash launcher that triggers the daily backtest/system run by dispatching the sysproduction.run_systems.run_systems module.",
+      "tags": ["script", "launcher", "backtest", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_reports",
+      "type": "file",
+      "name": "run_reports",
+      "filePath": "sysproduction/linux/scripts/run_reports",
+      "summary": "Bash launcher that generates production reports by dispatching the sysproduction.run_reports.run_reports module.",
+      "tags": ["script", "launcher", "reporting", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_stack_handler",
+      "type": "file",
+      "name": "run_stack_handler",
+      "filePath": "sysproduction/linux/scripts/run_stack_handler",
+      "summary": "Bash launcher that runs the order stack handler process by dispatching the sysproduction.run_stack_handler.run_stack_handler module.",
+      "tags": ["script", "launcher", "order-stack", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_strategy_order_generator",
+      "type": "file",
+      "name": "run_strategy_order_generator",
+      "filePath": "sysproduction/linux/scripts/run_strategy_order_generator",
+      "summary": "Bash launcher that runs the strategy order generation process by dispatching the sysproduction.run_strategy_order_generator.run_strategy_order_generator module.",
+      "tags": ["script", "launcher", "order-generation", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_capital_update",
+      "type": "file",
+      "name": "run_capital_update",
+      "filePath": "sysproduction/linux/scripts/run_capital_update",
+      "summary": "Bash launcher that updates account capital by dispatching the sysproduction.run_capital_update.run_capital_update module.",
+      "tags": ["script", "launcher", "capital", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_backups",
+      "type": "file",
+      "name": "run_backups",
+      "filePath": "sysproduction/linux/scripts/run_backups",
+      "summary": "Bash launcher that runs the production backup process by dispatching the sysproduction.run_backups.run_backups module.",
+      "tags": ["script", "launcher", "backup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_cleaners",
+      "type": "file",
+      "name": "run_cleaners",
+      "filePath": "sysproduction/linux/scripts/run_cleaners",
+      "summary": "Bash launcher that runs the file/log cleaning process by dispatching the sysproduction.run_cleaners.run_cleaners module.",
+      "tags": ["script", "launcher", "cleanup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_daily_price_updates",
+      "type": "file",
+      "name": "run_daily_price_updates",
+      "filePath": "sysproduction/linux/scripts/run_daily_price_updates",
+      "summary": "Bash launcher that runs the daily price update process by dispatching the sysproduction.run_daily_price_updates.run_daily_price_updates module.",
+      "tags": ["script", "launcher", "price-update", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_daily_fx_and_contract_updates",
+      "type": "file",
+      "name": "run_daily_fx_and_contract_updates",
+      "filePath": "sysproduction/linux/scripts/run_daily_fx_and_contract_updates",
+      "summary": "Bash launcher that runs daily FX and contract updates by dispatching the sysproduction.run_daily_fx_and_contract_updates.run_daily_fx_and_contract_updates module.",
+      "tags": ["script", "launcher", "fx-update", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run_daily_update_multiple_adjusted_prices",
+      "type": "file",
+      "name": "run_daily_update_multiple_adjusted_prices",
+      "filePath": "sysproduction/linux/scripts/run_daily_update_multiple_adjusted_prices",
+      "summary": "Bash launcher that updates multiple and back-adjusted price series by dispatching the sysproduction.run_daily_update_multiple_adjusted_prices module.",
+      "tags": ["script", "launcher", "price-update", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_fx_prices",
+      "type": "file",
+      "name": "update_fx_prices",
+      "filePath": "sysproduction/linux/scripts/update_fx_prices",
+      "summary": "Bash launcher that updates FX spot prices by dispatching the sysproduction.update_fx_prices.update_fx_prices module.",
+      "tags": ["script", "launcher", "fx-update", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/update_historical_prices",
+      "type": "file",
+      "name": "update_historical_prices",
+      "filePath": "sysproduction/linux/scripts/update_historical_prices",
+      "summary": "Bash launcher that updates historical contract prices by dispatching the sysproduction.update_historical_prices.update_historical_prices module.",
+      "tags": ["script", "launcher", "price-update", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/backup_state_files",
+      "type": "file",
+      "name": "backup_state_files",
+      "filePath": "sysproduction/linux/scripts/backup_state_files",
+      "summary": "Bash launcher that backs up persisted state files by dispatching the sysproduction.backup_state_files.backup_state_files module.",
+      "tags": ["script", "launcher", "backup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/clean_truncate_backtest_states",
+      "type": "file",
+      "name": "clean_truncate_backtest_states",
+      "filePath": "sysproduction/linux/scripts/clean_truncate_backtest_states",
+      "summary": "Bash launcher that truncates old backtest state files by dispatching the sysproduction.clean_truncate_backtest_states module.",
+      "tags": ["script", "launcher", "cleanup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/clean_truncate_echo_files",
+      "type": "file",
+      "name": "clean_truncate_echo_files",
+      "filePath": "sysproduction/linux/scripts/clean_truncate_echo_files",
+      "summary": "Bash launcher that truncates old echo (stdout capture) files by dispatching the sysproduction.clean_truncate_echo_files module.",
+      "tags": ["script", "launcher", "cleanup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/clean_truncate_log_files",
+      "type": "file",
+      "name": "clean_truncate_log_files",
+      "filePath": "sysproduction/linux/scripts/clean_truncate_log_files",
+      "summary": "Bash launcher that truncates old log files by dispatching the sysproduction.clean_truncate_log_files module.",
+      "tags": ["script", "launcher", "cleanup", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_controls",
+      "type": "file",
+      "name": "interactive_controls",
+      "filePath": "sysproduction/linux/scripts/interactive_controls",
+      "summary": "Bash launcher for the interactive controls menu by dispatching the sysproduction.interactive_controls.interactive_controls module.",
+      "tags": ["script", "launcher", "interactive", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_diagnostics",
+      "type": "file",
+      "name": "interactive_diagnostics",
+      "filePath": "sysproduction/linux/scripts/interactive_diagnostics",
+      "summary": "Bash launcher for the interactive diagnostics menu by dispatching the sysproduction.interactive_diagnostics.interactive_diagnostics module.",
+      "tags": ["script", "launcher", "interactive", "diagnostics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_order_stack",
+      "type": "file",
+      "name": "interactive_order_stack",
+      "filePath": "sysproduction/linux/scripts/interactive_order_stack",
+      "summary": "Bash launcher for the interactive order stack menu by dispatching the sysproduction.interactive_order_stack.interactive_order_stack module.",
+      "tags": ["script", "launcher", "interactive", "order-stack"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_update_capital_manual",
+      "type": "file",
+      "name": "interactive_update_capital_manual",
+      "filePath": "sysproduction/linux/scripts/interactive_update_capital_manual",
+      "summary": "Bash launcher for manually updating capital interactively by dispatching the sysproduction.interactive_update_capital_manual module.",
+      "tags": ["script", "launcher", "interactive", "capital"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_update_roll_status",
+      "type": "file",
+      "name": "interactive_update_roll_status",
+      "filePath": "sysproduction/linux/scripts/interactive_update_roll_status",
+      "summary": "Bash launcher for interactively updating contract roll status by dispatching the sysproduction.interactive_update_roll_status module.",
+      "tags": ["script", "launcher", "interactive", "roll-status"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_manual_check_fx_prices",
+      "type": "file",
+      "name": "interactive_manual_check_fx_prices",
+      "filePath": "sysproduction/linux/scripts/interactive_manual_check_fx_prices",
+      "summary": "Bash launcher for the interactive manual check of FX prices by dispatching the sysproduction.interactive_manual_check_fx_prices module.",
+      "tags": ["script", "launcher", "interactive", "fx-prices"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/interactive_manual_check_historical_prices",
+      "type": "file",
+      "name": "interactive_manual_check_historical_prices",
+      "filePath": "sysproduction/linux/scripts/interactive_manual_check_historical_prices",
+      "summary": "Bash launcher for the interactive manual check of historical prices by dispatching the sysproduction.interactive_manual_check_historical_prices module.",
+      "tags": ["script", "launcher", "interactive", "price-check"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:sysproduction/linux/scripts/startup", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_systems", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_reports", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_stack_handler", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_strategy_order_generator", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_capital_update", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_backups", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_cleaners", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_daily_price_updates", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_daily_fx_and_contract_updates", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/run_daily_update_multiple_adjusted_prices", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/update_fx_prices", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/update_historical_prices", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/backup_state_files", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/clean_truncate_backtest_states", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/clean_truncate_echo_files", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/clean_truncate_log_files", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_controls", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_diagnostics", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_order_stack", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_update_capital_manual", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_update_roll_status", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_manual_check_fx_prices", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:sysproduction/linux/scripts/interactive_manual_check_historical_prices", "target": "file:sysproduction/linux/scripts/p", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}

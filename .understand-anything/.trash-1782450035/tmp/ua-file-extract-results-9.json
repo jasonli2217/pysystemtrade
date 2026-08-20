@@ -1,0 +1,4233 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysproduction/reporting/reconcile_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "reconcile_report",
+          "startLine": 16,
+          "endLine": 44,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "reconcile_report",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "reconcile_report",
+          "callee": "dataBlob",
+          "lineNumber": 24
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "reportingApi",
+          "lineNumber": 26
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 28
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "reporting_api.terse_header",
+          "lineNumber": 28
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "getattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "func",
+          "lineNumber": 40
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "reconcile_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/remove_markets_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "remove_markets_report",
+          "startLine": 12,
+          "endLine": 43,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "remove_markets_report",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "remove_markets_report",
+          "callee": "dataBlob",
+          "lineNumber": 16
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "reportingApi",
+          "lineNumber": 18
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 22
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "reporting_api.terse_header",
+          "lineNumber": 22
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 23
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "getattr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 38
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "func",
+          "lineNumber": 38
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "body_text",
+          "lineNumber": 39
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "remove_markets_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/report_configs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 138,
+      "classes": [
+        {
+          "name": "reportConfig",
+          "startLine": 6,
+          "endLine": 38,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "new_config_with_modified_output",
+            "new_config_with_modify_kwargs",
+            "modify_kwargs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "reportConfig",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 19
+        },
+        {
+          "caller": "new_config_with_modified_output",
+          "callee": "copy",
+          "lineNumber": 23
+        },
+        {
+          "caller": "new_config_with_modify_kwargs",
+          "callee": "copy",
+          "lineNumber": 29
+        },
+        {
+          "caller": "new_config_with_modify_kwargs",
+          "callee": "new_config.modify_kwargs",
+          "lineNumber": 30
+        },
+        {
+          "caller": "modify_kwargs",
+          "callee": "kwargs.keys",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/reporting/reporting_functions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 343,
+      "nonEmptyLines": 248,
+      "functions": [
+        {
+          "name": "run_report",
+          "startLine": 54,
+          "endLine": 64,
+          "params": [
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "run_report_with_data_blob",
+          "startLine": 67,
+          "endLine": 79,
+          "params": [
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "run_report_from_config",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "parse_report_results",
+          "startLine": 91,
+          "endLine": 104,
+          "params": [
+            "data",
+            "report_results"
+          ]
+        },
+        {
+          "name": "report_contains_figures",
+          "startLine": 107,
+          "endLine": 112,
+          "params": [
+            "report_results"
+          ]
+        },
+        {
+          "name": "parse_report_results_contains_text",
+          "startLine": 115,
+          "endLine": 137,
+          "params": [
+            "report_results"
+          ]
+        },
+        {
+          "name": "parse_table",
+          "startLine": 143,
+          "endLine": 156,
+          "params": [
+            "report_table"
+          ]
+        },
+        {
+          "name": "parse_body",
+          "startLine": 162,
+          "endLine": 164,
+          "params": [
+            "report_body"
+          ]
+        },
+        {
+          "name": "parse_header",
+          "startLine": 170,
+          "endLine": 174,
+          "params": [
+            "report_header"
+          ]
+        },
+        {
+          "name": "parse_report_results_contains_figures",
+          "startLine": 177,
+          "endLine": 196,
+          "params": [
+            "data",
+            "report_results"
+          ]
+        },
+        {
+          "name": "pandas_display_for_reports",
+          "startLine": 199,
+          "endLine": 202,
+          "params": []
+        },
+        {
+          "name": "output_report",
+          "startLine": 205,
+          "endLine": 221,
+          "params": [
+            "data",
+            "report_config",
+            "parsed_report"
+          ]
+        },
+        {
+          "name": "display_report",
+          "startLine": 224,
+          "endLine": 229,
+          "params": [
+            "parsed_report"
+          ]
+        },
+        {
+          "name": "display_pdf_report",
+          "startLine": 232,
+          "endLine": 241,
+          "params": [
+            "parsed_report"
+          ]
+        },
+        {
+          "name": "email_report",
+          "startLine": 244,
+          "endLine": 259,
+          "params": [
+            "parsed_report",
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "output_file_report",
+          "startLine": 262,
+          "endLine": 275,
+          "params": [
+            "parsed_report",
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "resolve_report_filename",
+          "startLine": 278,
+          "endLine": 285,
+          "params": [
+            "report_config",
+            "data"
+          ]
+        },
+        {
+          "name": "get_directory_for_reporting",
+          "startLine": 288,
+          "endLine": 292,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "write_text_report_to_file",
+          "startLine": 295,
+          "endLine": 297,
+          "params": [
+            "report_text",
+            "full_filename"
+          ]
+        },
+        {
+          "name": "_generate_temp_pdf_filename",
+          "startLine": 328,
+          "endLine": 343,
+          "params": [
+            "data",
+            "reporting_directory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ParsedReport",
+          "startLine": 34,
+          "endLine": 51,
+          "methods": [
+            "__init__",
+            "contains_pdf",
+            "text",
+            "pdf_filename"
+          ],
+          "properties": []
+        },
+        {
+          "name": "PdfOutputWithTempFileName",
+          "startLine": 300,
+          "endLine": 322,
+          "methods": [
+            "__init__",
+            "save_chart_close_and_return_figure",
+            "temp_file_name"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ParsedReport",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "run_report",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "run_report_with_data_blob",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "run_report_from_config",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "parse_report_results",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "report_contains_figures",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "parse_report_results_contains_text",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "parse_table",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "parse_body",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "parse_header",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "parse_report_results_contains_figures",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "pandas_display_for_reports",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "output_report",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "display_report",
+          "line": 224,
+          "isDefault": false
+        },
+        {
+          "name": "display_pdf_report",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "email_report",
+          "line": 244,
+          "isDefault": false
+        },
+        {
+          "name": "output_file_report",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_report_filename",
+          "line": 278,
+          "isDefault": false
+        },
+        {
+          "name": "get_directory_for_reporting",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "write_text_report_to_file",
+          "line": 295,
+          "isDefault": false
+        },
+        {
+          "name": "PdfOutputWithTempFileName",
+          "line": 300,
+          "isDefault": false
+        },
+        {
+          "name": "_generate_temp_pdf_filename",
+          "line": 328,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_report",
+          "callee": "pandas_display_for_reports",
+          "lineNumber": 60
+        },
+        {
+          "caller": "run_report",
+          "callee": "dataBlob",
+          "lineNumber": 62
+        },
+        {
+          "caller": "run_report",
+          "callee": "run_report_with_data_blob",
+          "lineNumber": 64
+        },
+        {
+          "caller": "run_report_with_data_blob",
+          "callee": "data.log.debug",
+          "lineNumber": 74
+        },
+        {
+          "caller": "run_report_with_data_blob",
+          "callee": "str",
+          "lineNumber": 74
+        },
+        {
+          "caller": "run_report_with_data_blob",
+          "callee": "run_report_from_config",
+          "lineNumber": 76
+        },
+        {
+          "caller": "run_report_with_data_blob",
+          "callee": "parse_report_results",
+          "lineNumber": 77
+        },
+        {
+          "caller": "run_report_with_data_blob",
+          "callee": "output_report",
+          "lineNumber": 79
+        },
+        {
+          "caller": "run_report_from_config",
+          "callee": "resolve_function",
+          "lineNumber": 83
+        },
+        {
+          "caller": "run_report_from_config",
+          "callee": "report_function",
+          "lineNumber": 86
+        },
+        {
+          "caller": "parse_report_results",
+          "callee": "report_contains_figures",
+          "lineNumber": 99
+        },
+        {
+          "caller": "parse_report_results",
+          "callee": "parse_report_results_contains_figures",
+          "lineNumber": 100
+        },
+        {
+          "caller": "parse_report_results",
+          "callee": "parse_report_results_contains_text",
+          "lineNumber": 102
+        },
+        {
+          "caller": "report_contains_figures",
+          "callee": "any",
+          "lineNumber": 108
+        },
+        {
+          "caller": "report_contains_figures",
+          "callee": "type",
+          "lineNumber": 109
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "isinstance",
+          "lineNumber": 124
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "parse_header",
+          "lineNumber": 125
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "isinstance",
+          "lineNumber": 126
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "parse_body",
+          "lineNumber": 127
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "isinstance",
+          "lineNumber": 128
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "parse_table",
+          "lineNumber": 129
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "str",
+          "lineNumber": 131
+        },
+        {
+          "caller": "parse_report_results_contains_text",
+          "callee": "ParsedReport",
+          "lineNumber": 135
+        },
+        {
+          "caller": "parse_table",
+          "callee": "str",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parse_table",
+          "callee": "centralise_text",
+          "lineNumber": 146
+        },
+        {
+          "caller": "parse_table",
+          "callee": "landing_strip_from_str",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parse_header",
+          "callee": "landing_strip",
+          "lineNumber": 171
+        },
+        {
+          "caller": "parse_header",
+          "callee": "centralise_text",
+          "lineNumber": 172
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "PdfMerger",
+          "lineNumber": 180
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "type",
+          "lineNumber": 183
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "data.log.critical",
+          "lineNumber": 184
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "Exception",
+          "lineNumber": 185
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "merger.append",
+          "lineNumber": 187
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "_generate_temp_pdf_filename",
+          "lineNumber": 189
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "merger.write",
+          "lineNumber": 191
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "merger.close",
+          "lineNumber": 192
+        },
+        {
+          "caller": "parse_report_results_contains_figures",
+          "callee": "ParsedReport",
+          "lineNumber": 194
+        },
+        {
+          "caller": "pandas_display_for_reports",
+          "callee": "pd.set_option",
+          "lineNumber": 200
+        },
+        {
+          "caller": "pandas_display_for_reports",
+          "callee": "pd.set_option",
+          "lineNumber": 201
+        },
+        {
+          "caller": "pandas_display_for_reports",
+          "callee": "pd.set_option",
+          "lineNumber": 202
+        },
+        {
+          "caller": "output_report",
+          "callee": "display_report",
+          "lineNumber": 212
+        },
+        {
+          "caller": "output_report",
+          "callee": "email_report",
+          "lineNumber": 214
+        },
+        {
+          "caller": "output_report",
+          "callee": "output_file_report",
+          "lineNumber": 216
+        },
+        {
+          "caller": "output_report",
+          "callee": "email_report",
+          "lineNumber": 218
+        },
+        {
+          "caller": "output_report",
+          "callee": "output_file_report",
+          "lineNumber": 219
+        },
+        {
+          "caller": "output_report",
+          "callee": "Exception",
+          "lineNumber": 221
+        },
+        {
+          "caller": "display_report",
+          "callee": "display_pdf_report",
+          "lineNumber": 227
+        },
+        {
+          "caller": "display_report",
+          "callee": "print",
+          "lineNumber": 229
+        },
+        {
+          "caller": "display_pdf_report",
+          "callee": "print",
+          "lineNumber": 234
+        },
+        {
+          "caller": "display_pdf_report",
+          "callee": "os.system",
+          "lineNumber": 237
+        },
+        {
+          "caller": "display_pdf_report",
+          "callee": "print",
+          "lineNumber": 239
+        },
+        {
+          "caller": "email_report",
+          "callee": "send_production_mail_msg_attachment",
+          "lineNumber": 248
+        },
+        {
+          "caller": "email_report",
+          "callee": "send_production_mail_msg",
+          "lineNumber": 254
+        },
+        {
+          "caller": "output_file_report",
+          "callee": "resolve_report_filename",
+          "lineNumber": 265
+        },
+        {
+          "caller": "output_file_report",
+          "callee": "shutil.copyfile",
+          "lineNumber": 269
+        },
+        {
+          "caller": "output_file_report",
+          "callee": "write_text_report_to_file",
+          "lineNumber": 271
+        },
+        {
+          "caller": "output_file_report",
+          "callee": "data.log.debug",
+          "lineNumber": 275
+        },
+        {
+          "caller": "resolve_report_filename",
+          "callee": "filename_with_spaces.replace",
+          "lineNumber": 280
+        },
+        {
+          "caller": "resolve_report_filename",
+          "callee": "get_directory_for_reporting",
+          "lineNumber": 281
+        },
+        {
+          "caller": "resolve_report_filename",
+          "callee": "get_resolved_pathname",
+          "lineNumber": 282
+        },
+        {
+          "caller": "resolve_report_filename",
+          "callee": "Path",
+          "lineNumber": 283
+        },
+        {
+          "caller": "resolve_report_filename",
+          "callee": "str",
+          "lineNumber": 285
+        },
+        {
+          "caller": "get_directory_for_reporting",
+          "callee": "production_config.get_element",
+          "lineNumber": 291
+        },
+        {
+          "caller": "write_text_report_to_file",
+          "callee": "open",
+          "lineNumber": 296
+        },
+        {
+          "caller": "write_text_report_to_file",
+          "callee": "f.write",
+          "lineNumber": 297
+        },
+        {
+          "caller": "__init__",
+          "callee": "_generate_temp_pdf_filename",
+          "lineNumber": 309
+        },
+        {
+          "caller": "save_chart_close_and_return_figure",
+          "callee": "PdfPages",
+          "lineNumber": 314
+        },
+        {
+          "caller": "save_chart_close_and_return_figure",
+          "callee": "export_pdf.savefig",
+          "lineNumber": 315
+        },
+        {
+          "caller": "save_chart_close_and_return_figure",
+          "callee": "plt.close",
+          "lineNumber": 317
+        },
+        {
+          "caller": "save_chart_close_and_return_figure",
+          "callee": "figure",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "get_directory_for_reporting",
+          "lineNumber": 332
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "get_resolved_pathname",
+          "lineNumber": 336
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "str",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "datetime_to_long",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "Path",
+          "lineNumber": 341
+        },
+        {
+          "caller": "_generate_temp_pdf_filename",
+          "callee": "str",
+          "lineNumber": 343
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 22,
+        "functionCount": 20,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysproduction/reporting/risk_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "risk_report",
+          "startLine": 6,
+          "endLine": 36,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "risk_report",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "risk_report",
+          "callee": "dataBlob",
+          "lineNumber": 11
+        },
+        {
+          "caller": "risk_report",
+          "callee": "reportingApi",
+          "lineNumber": 13
+        },
+        {
+          "caller": "risk_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 15
+        },
+        {
+          "caller": "risk_report",
+          "callee": "reporting_api.terse_header",
+          "lineNumber": 15
+        },
+        {
+          "caller": "risk_report",
+          "callee": "getattr",
+          "lineNumber": 31
+        },
+        {
+          "caller": "risk_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "risk_report",
+          "callee": "func",
+          "lineNumber": 32
+        },
+        {
+          "caller": "risk_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "risk_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/roll_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "roll_report",
+          "startLine": 13,
+          "endLine": 57,
+          "params": [
+            "data",
+            "instrument_code",
+            "reporting_api"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "roll_report",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "roll_report",
+          "callee": "reportingApi",
+          "lineNumber": 35
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "roll_report",
+          "callee": "reporting_api.terse_header",
+          "lineNumber": 39
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "roll_report",
+          "callee": "reporting_api.table_of_roll_data",
+          "lineNumber": 40
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "roll_report",
+          "callee": "body_text",
+          "lineNumber": 42
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "roll_report",
+          "callee": "body_text",
+          "lineNumber": 48
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "roll_report",
+          "callee": "body_text",
+          "lineNumber": 50
+        },
+        {
+          "caller": "roll_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "roll_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/slippage_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "slippage_report",
+          "startLine": 26,
+          "endLine": 52,
+          "params": [
+            "data",
+            "calendar_days_back",
+            "end_date",
+            "start_date"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "slippage_report",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "slippage_report",
+          "callee": "dataBlob",
+          "lineNumber": 33
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "reportingApi",
+          "lineNumber": 35
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "reporting_api.std_header",
+          "lineNumber": 44
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 46
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "reporting_api.table_of_slippage_comparison",
+          "lineNumber": 46
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "body_text",
+          "lineNumber": 47
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "reporting_api.table_of_slippage_comparison_tick_adjusted",
+          "lineNumber": 48
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "body_text",
+          "lineNumber": 49
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "slippage_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/status_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "status_report",
+          "startLine": 15,
+          "endLine": 53,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "status_report",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "status_report",
+          "callee": "dataBlob",
+          "lineNumber": 23
+        },
+        {
+          "caller": "status_report",
+          "callee": "reportingApi",
+          "lineNumber": 25
+        },
+        {
+          "caller": "status_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "status_report",
+          "callee": "reporting_api.terse_header",
+          "lineNumber": 27
+        },
+        {
+          "caller": "status_report",
+          "callee": "getattr",
+          "lineNumber": 48
+        },
+        {
+          "caller": "status_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "status_report",
+          "callee": "func",
+          "lineNumber": 49
+        },
+        {
+          "caller": "status_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 51
+        },
+        {
+          "caller": "status_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/strategies_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "strategy_report",
+          "startLine": 20,
+          "endLine": 39,
+          "params": [
+            "data",
+            "timestamp",
+            "strategy_name"
+          ]
+        },
+        {
+          "name": "get_strategies_report_output",
+          "startLine": 42,
+          "endLine": 54,
+          "params": [
+            "data",
+            "list_of_strategies",
+            "timestamp"
+          ]
+        },
+        {
+          "name": "get_output_for_single_strategy",
+          "startLine": 57,
+          "endLine": 69,
+          "params": [
+            "data",
+            "strategy_name",
+            "timestamp"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "strategy_report",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "get_strategies_report_output",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "get_output_for_single_strategy",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "strategy_report",
+          "callee": "dataBlob",
+          "lineNumber": 24
+        },
+        {
+          "caller": "strategy_report",
+          "callee": "get_list_of_strategies",
+          "lineNumber": 27
+        },
+        {
+          "caller": "strategy_report",
+          "callee": "print",
+          "lineNumber": 30
+        },
+        {
+          "caller": "strategy_report",
+          "callee": "get_strategies_report_output",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_strategies_report_output",
+          "callee": "get_output_for_single_strategy",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_strategies_report_output",
+          "callee": "formatted_output.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_strategies_report_output",
+          "callee": "print",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get_output_for_single_strategy",
+          "callee": "get_reporting_function_instance_for_strategy_name",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_output_for_single_strategy",
+          "callee": "dataBacktest",
+          "lineNumber": 61
+        },
+        {
+          "caller": "get_output_for_single_strategy",
+          "callee": "data_backtest.get_most_recent_backtest",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_output_for_single_strategy",
+          "callee": "data_backtest.load_backtest",
+          "lineNumber": 65
+        },
+        {
+          "caller": "get_output_for_single_strategy",
+          "callee": "strategy_reporting_function",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/trades_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "trades_report",
+          "startLine": 7,
+          "endLine": 49,
+          "params": [
+            "data",
+            "calendar_days_back",
+            "end_date",
+            "start_date"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "trades_report",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trades_report",
+          "callee": "dataBlob",
+          "lineNumber": 20
+        },
+        {
+          "caller": "trades_report",
+          "callee": "reportingApi",
+          "lineNumber": 22
+        },
+        {
+          "caller": "trades_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "trades_report",
+          "callee": "reporting_api.std_header",
+          "lineNumber": 30
+        },
+        {
+          "caller": "trades_report",
+          "callee": "getattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "trades_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "trades_report",
+          "callee": "func",
+          "lineNumber": 41
+        },
+        {
+          "caller": "trades_report",
+          "callee": "reporting_api.list_of_cash_summary_text",
+          "lineNumber": 44
+        },
+        {
+          "caller": "trades_report",
+          "callee": "formatted_output.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "trades_report",
+          "callee": "reporting_api.footer",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_capital_update.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "run_capital_update",
+          "startLine": 7,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_capital_update",
+          "startLine": 17,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_capital_update",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_capital_update",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_capital_update",
+          "callee": "dataBlob",
+          "lineNumber": 9
+        },
+        {
+          "caller": "run_capital_update",
+          "callee": "get_list_of_timer_functions_for_capital_update",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_capital_update",
+          "callee": "processToRun",
+          "lineNumber": 11
+        },
+        {
+          "caller": "run_capital_update",
+          "callee": "capital_process.run_process",
+          "lineNumber": 14
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_capital_update",
+          "callee": "dataBlob",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_capital_update",
+          "callee": "dataBlob",
+          "lineNumber": 19
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_capital_update",
+          "callee": "totalCapitalUpdate",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_capital_update",
+          "callee": "updateStrategyCapital",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_cleaners.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "run_cleaners",
+          "startLine": 8,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_cleaning",
+          "startLine": 18,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_cleaners",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_cleaning",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_cleaners",
+          "callee": "dataBlob",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_cleaners",
+          "callee": "get_list_of_timer_functions_for_cleaning",
+          "lineNumber": 11
+        },
+        {
+          "caller": "run_cleaners",
+          "callee": "processToRun",
+          "lineNumber": 12
+        },
+        {
+          "caller": "run_cleaners",
+          "callee": "cleaning_process.run_process",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "dataBlob",
+          "lineNumber": 19
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "dataBlob",
+          "lineNumber": 20
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "dataBlob",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "cleanTruncateBacktestStates",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "cleanTruncateLogFiles",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_cleaning",
+          "callee": "cleanTruncateEchoFiles",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_daily_fx_and_contract_updates.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "run_daily_fx_and_contract_updates",
+          "startLine": 8,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "startLine": 18,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_daily_fx_and_contract_updates",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_daily_fx_and_contract_updates",
+          "callee": "dataBlob",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_daily_fx_and_contract_updates",
+          "callee": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "lineNumber": 12
+        },
+        {
+          "caller": "run_daily_fx_and_contract_updates",
+          "callee": "processToRun",
+          "lineNumber": 14
+        },
+        {
+          "caller": "run_daily_fx_and_contract_updates",
+          "callee": "price_process.run_process",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "callee": "dataBlob",
+          "lineNumber": 19
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "callee": "dataBlob",
+          "lineNumber": 20
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "callee": "updateFxPrices",
+          "lineNumber": 22
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_fx_and_contract_update",
+          "callee": "updateSampledContracts",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_daily_price_updates.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "run_daily_price_updates",
+          "startLine": 7,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_price_update",
+          "startLine": 15,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_daily_price_updates",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_price_update",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_daily_price_updates",
+          "callee": "dataBlob",
+          "lineNumber": 9
+        },
+        {
+          "caller": "run_daily_price_updates",
+          "callee": "get_list_of_timer_functions_for_price_update",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_daily_price_updates",
+          "callee": "processToRun",
+          "lineNumber": 11
+        },
+        {
+          "caller": "run_daily_price_updates",
+          "callee": "price_process.run_process",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_price_update",
+          "callee": "dataBlob",
+          "lineNumber": 16
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_price_update",
+          "callee": "updateHistoricalPrices",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_reports.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "run_reports",
+          "startLine": 10,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_reports",
+          "startLine": 18,
+          "endLine": 29,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "runReport",
+          "startLine": 35,
+          "endLine": 45,
+          "methods": [
+            "__init__",
+            "run_generic_report"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_reports",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_reports",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "runReport",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_reports",
+          "callee": "dataBlob",
+          "lineNumber": 12
+        },
+        {
+          "caller": "run_reports",
+          "callee": "get_list_of_timer_functions_for_reports",
+          "lineNumber": 13
+        },
+        {
+          "caller": "run_reports",
+          "callee": "processToRun",
+          "lineNumber": 14
+        },
+        {
+          "caller": "run_reports",
+          "callee": "report_process.run_process",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "dataReports",
+          "lineNumber": 20
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "data_reports.get_report_configs_to_run",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "all_configs.items",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "dataBlob",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "runReport",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_reports",
+          "callee": "list_of_timer_names_and_functions.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "setattr",
+          "lineNumber": 41
+        },
+        {
+          "caller": "run_generic_report",
+          "callee": "run_report",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/run_stack_handler.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "run_stack_handler",
+          "startLine": 6,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_stack_handler",
+          "startLine": 14,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_stack_handler",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_stack_handler",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_stack_handler",
+          "callee": "dataBlob",
+          "lineNumber": 8
+        },
+        {
+          "caller": "run_stack_handler",
+          "callee": "get_list_of_timer_functions_for_stack_handler",
+          "lineNumber": 9
+        },
+        {
+          "caller": "run_stack_handler",
+          "callee": "processToRun",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_stack_handler",
+          "callee": "price_process.run_process",
+          "lineNumber": 11
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_stack_handler",
+          "callee": "dataBlob",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_stack_handler",
+          "callee": "stackHandler",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_strategy_order_generator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "run_strategy_order_generator",
+          "startLine": 23,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "strategy_order_function_to_be_renamed",
+          "startLine": 33,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "startLine": 37,
+          "endLine": 51,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_strategy_order_generator",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "strategy_order_function_to_be_renamed",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_strategy_order_generator",
+          "callee": "dataBlob",
+          "lineNumber": 24
+        },
+        {
+          "caller": "run_strategy_order_generator",
+          "callee": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "lineNumber": 26
+        },
+        {
+          "caller": "run_strategy_order_generator",
+          "callee": "processToRun",
+          "lineNumber": 29
+        },
+        {
+          "caller": "run_strategy_order_generator",
+          "callee": "system_process.run_process",
+          "lineNumber": 30
+        },
+        {
+          "caller": "strategy_order_function_to_be_renamed",
+          "callee": "self.run_strategy_method",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "callee": "get_list_of_strategies_for_process",
+          "lineNumber": 38
+        },
+        {
+          "caller": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "callee": "setattr",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "callee": "strategyRunner",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_list_of_strategy_order_timer_functions_for_strategies",
+          "callee": "list_of_timer_names_and_functions.append",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_systems.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "run_systems",
+          "startLine": 15,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "backtest_function_to_be_renamed",
+          "startLine": 25,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "get_list_of_backtest_timer_functions_for_strategies",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_systems",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "backtest_function_to_be_renamed",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_backtest_timer_functions_for_strategies",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_systems",
+          "callee": "dataBlob",
+          "lineNumber": 16
+        },
+        {
+          "caller": "run_systems",
+          "callee": "get_list_of_backtest_timer_functions_for_strategies",
+          "lineNumber": 18
+        },
+        {
+          "caller": "run_systems",
+          "callee": "processToRun",
+          "lineNumber": 21
+        },
+        {
+          "caller": "run_systems",
+          "callee": "system_process.run_process",
+          "lineNumber": 22
+        },
+        {
+          "caller": "backtest_function_to_be_renamed",
+          "callee": "self.run_strategy_method",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_list_of_backtest_timer_functions_for_strategies",
+          "callee": "get_list_of_strategies_for_process",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_list_of_backtest_timer_functions_for_strategies",
+          "callee": "setattr",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_list_of_backtest_timer_functions_for_strategies",
+          "callee": "strategyRunner",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_list_of_backtest_timer_functions_for_strategies",
+          "callee": "list_of_timer_names_and_functions.append",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/startup.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "startup",
+          "startLine": 7,
+          "endLine": 12,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "startup",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "startup",
+          "callee": "dataControlProcess",
+          "lineNumber": 8
+        },
+        {
+          "caller": "startup",
+          "callee": "data_controls.finish_all_processes",
+          "lineNumber": 9
+        },
+        {
+          "caller": "startup",
+          "callee": "dataBrokerClientIDs",
+          "lineNumber": 11
+        },
+        {
+          "caller": "startup",
+          "callee": "data_clientids.clear_all_clientids",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/strategy_code/report_system_classic.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 564,
+      "nonEmptyLines": 460,
+      "functions": [
+        {
+          "name": "report_system_classic",
+          "startLine": 16,
+          "endLine": 41,
+          "params": [
+            "data",
+            "backtest"
+          ]
+        },
+        {
+          "name": "report_system_classic_no_header_or_footer",
+          "startLine": 44,
+          "endLine": 176,
+          "params": [
+            "data",
+            "backtest",
+            "format_output"
+          ]
+        },
+        {
+          "name": "get_forecast_matrix",
+          "startLine": 179,
+          "endLine": 201,
+          "params": [
+            "data_backtest",
+            "stage_name",
+            "method_name"
+          ]
+        },
+        {
+          "name": "get_forecast_matrix_over_code",
+          "startLine": 204,
+          "endLine": 232,
+          "params": [
+            "data_backtest",
+            "stage_name",
+            "method_name"
+          ]
+        },
+        {
+          "name": "get_stage_breakdown_over_codes",
+          "startLine": 373,
+          "endLine": 383,
+          "params": [
+            "backtest",
+            "method_list"
+          ]
+        },
+        {
+          "name": "get_list_of_values_by_instrument_for_config",
+          "startLine": 386,
+          "endLine": 432,
+          "params": [
+            "backtest",
+            "config_for_method"
+          ]
+        },
+        {
+          "name": "get_current_position_df_for_instrument_code_list",
+          "startLine": 435,
+          "endLine": 445,
+          "params": [
+            "data_backtest",
+            "data",
+            "instrument_code_list"
+          ]
+        },
+        {
+          "name": "get_position_at_timestamp_df_for_instrument_code_list",
+          "startLine": 448,
+          "endLine": 460,
+          "params": [
+            "data_backtest",
+            "data",
+            "instrument_code_list"
+          ]
+        },
+        {
+          "name": "get_position_for_instrument_code_at_timestamp",
+          "startLine": 463,
+          "endLine": 488,
+          "params": [
+            "data_backtest",
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_current_position_for_instrument_code",
+          "startLine": 491,
+          "endLine": 502,
+          "params": [
+            "data_backtest",
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "calc_position_diags",
+          "startLine": 505,
+          "endLine": 512,
+          "params": [
+            "portfolio_positions_df",
+            "subystem_positions_df"
+          ]
+        },
+        {
+          "name": "risk_scaling_string",
+          "startLine": 515,
+          "endLine": 564,
+          "params": [
+            "backtest"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "report_system_classic",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "report_system_classic_no_header_or_footer",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "get_forecast_matrix",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "get_forecast_matrix_over_code",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "get_stage_breakdown_over_codes",
+          "line": 373,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_values_by_instrument_for_config",
+          "line": 386,
+          "isDefault": false
+        },
+        {
+          "name": "get_current_position_df_for_instrument_code_list",
+          "line": 435,
+          "isDefault": false
+        },
+        {
+          "name": "get_position_at_timestamp_df_for_instrument_code_list",
+          "line": 448,
+          "isDefault": false
+        },
+        {
+          "name": "get_position_for_instrument_code_at_timestamp",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "get_current_position_for_instrument_code",
+          "line": 491,
+          "isDefault": false
+        },
+        {
+          "name": "calc_position_diags",
+          "line": 505,
+          "isDefault": false
+        },
+        {
+          "name": "risk_scaling_string",
+          "line": 515,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "report_system_classic",
+          "callee": "header",
+          "lineNumber": 29
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "str",
+          "lineNumber": 31
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 31
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "format_output.append",
+          "lineNumber": 33
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "report_system_classic_no_header_or_footer",
+          "lineNumber": 35
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "format_output.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "report_system_classic",
+          "callee": "body_text",
+          "lineNumber": 39
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "risk_scaling_string",
+          "lineNumber": 54
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "body_text",
+          "lineNumber": 55
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "backtest.system.positionSize.get_vol_target_dict",
+          "lineNumber": 58
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "body_text",
+          "lineNumber": 59
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 61
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_stage_breakdown_over_codes",
+          "lineNumber": 64
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "vol_calc_df.round",
+          "lineNumber": 69
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 70
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 71
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_stage_breakdown_over_codes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "subystem_positions_df.round",
+          "lineNumber": 88
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 89
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_stage_breakdown_over_codes",
+          "lineNumber": 96
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "portfolio_positions_df.round",
+          "lineNumber": 105
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 106
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 110
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "calc_position_diags",
+          "lineNumber": 113
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "position_diags_df.round",
+          "lineNumber": 117
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 118
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 120
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_stage_breakdown_over_codes",
+          "lineNumber": 123
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_position_at_timestamp_df_for_instrument_code_list",
+          "lineNumber": 133
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_current_position_df_for_instrument_code_list",
+          "lineNumber": 136
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "pd.concat",
+          "lineNumber": 139
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "versus_buffers_and_positions_df.round",
+          "lineNumber": 142
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 143
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 147
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_forecast_matrix_over_code",
+          "lineNumber": 150
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "forecast_weights_df_as_perc.round",
+          "lineNumber": 154
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 155
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 158
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "get_forecast_matrix",
+          "lineNumber": 160
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "weighted_forecasts_df.round",
+          "lineNumber": 166
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 167
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 168
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "unweighted_forecasts_df.round",
+          "lineNumber": 170
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "table",
+          "lineNumber": 171
+        },
+        {
+          "caller": "report_system_classic_no_header_or_footer",
+          "callee": "format_output.append",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "data_backtest.system.get_instrument_list",
+          "lineNumber": 182
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "data_backtest.system.rules.trading_rules",
+          "lineNumber": 183
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "list",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "trading_rules.keys",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "from_marker_string_to_datetime",
+          "lineNumber": 186
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "getattr",
+          "lineNumber": 192
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "getattr",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "method(instrument_code, rule_name).ffill",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "method",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "value_dict[rule_name].append",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_forecast_matrix",
+          "callee": "pd.DataFrame",
+          "lineNumber": 199
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "data_backtest.system.get_instrument_list",
+          "lineNumber": 207
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "data_backtest.system.rules.trading_rules",
+          "lineNumber": 208
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "list",
+          "lineNumber": 209
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "trading_rules.keys",
+          "lineNumber": 209
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "from_marker_string_to_datetime",
+          "lineNumber": 211
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "getattr",
+          "lineNumber": 215
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "getattr",
+          "lineNumber": 216
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "method(instrument_code).ffill",
+          "lineNumber": 217
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "method",
+          "lineNumber": 217
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "value_row.get",
+          "lineNumber": 222
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "len",
+          "lineNumber": 225
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "pd.DataFrame",
+          "lineNumber": 229
+        },
+        {
+          "caller": "get_forecast_matrix_over_code",
+          "callee": "value_df.transpose",
+          "lineNumber": 230
+        },
+        {
+          "caller": "get_stage_breakdown_over_codes",
+          "callee": "get_list_of_values_by_instrument_for_config",
+          "lineNumber": 378
+        },
+        {
+          "caller": "get_stage_breakdown_over_codes",
+          "callee": "backtest.system.get_instrument_list",
+          "lineNumber": 380
+        },
+        {
+          "caller": "get_stage_breakdown_over_codes",
+          "callee": "pd.DataFrame",
+          "lineNumber": 381
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "backtest.system.get_instrument_list",
+          "lineNumber": 387
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "from_marker_string_to_datetime",
+          "lineNumber": 388
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "getattr",
+          "lineNumber": 390
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "getattr",
+          "lineNumber": 391
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method().ffill",
+          "lineNumber": 395
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method",
+          "lineNumber": 395
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "len",
+          "lineNumber": 398
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method(instrument_code)\n                .ffill",
+          "lineNumber": 406
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method",
+          "lineNumber": 406
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method(instrument_code).ffill",
+          "lineNumber": 413
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method",
+          "lineNumber": 413
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method",
+          "lineNumber": 420
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "len",
+          "lineNumber": 421
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method().ffill",
+          "lineNumber": 427
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "method",
+          "lineNumber": 427
+        },
+        {
+          "caller": "get_list_of_values_by_instrument_for_config",
+          "callee": "value_row.get",
+          "lineNumber": 429
+        },
+        {
+          "caller": "get_current_position_df_for_instrument_code_list",
+          "callee": "get_current_position_for_instrument_code",
+          "lineNumber": 439
+        },
+        {
+          "caller": "get_current_position_df_for_instrument_code_list",
+          "callee": "pd.DataFrame",
+          "lineNumber": 442
+        },
+        {
+          "caller": "get_position_at_timestamp_df_for_instrument_code_list",
+          "callee": "get_position_for_instrument_code_at_timestamp",
+          "lineNumber": 452
+        },
+        {
+          "caller": "get_position_at_timestamp_df_for_instrument_code_list",
+          "callee": "pd.DataFrame",
+          "lineNumber": 457
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "diagPositions",
+          "lineNumber": 464
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "instrumentStrategy",
+          "lineNumber": 467
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "diag_positions.get_position_series_for_instrument_strategy",
+          "lineNumber": 473
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "from_marker_string_to_datetime",
+          "lineNumber": 480
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "positions_over_time.ffill",
+          "lineNumber": 481
+        },
+        {
+          "caller": "get_position_for_instrument_code_at_timestamp",
+          "callee": "len",
+          "lineNumber": 484
+        },
+        {
+          "caller": "get_current_position_for_instrument_code",
+          "callee": "diagPositions",
+          "lineNumber": 492
+        },
+        {
+          "caller": "get_current_position_for_instrument_code",
+          "callee": "instrumentStrategy",
+          "lineNumber": 494
+        },
+        {
+          "caller": "get_current_position_for_instrument_code",
+          "callee": "diag_positions.get_current_position_for_instrument_strategy",
+          "lineNumber": 498
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_portfolio_risk_for_original_positions",
+          "lineNumber": 518
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_portfolio_risk_for_original_positions_with_shocked_vol",
+          "lineNumber": 524
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_sum_annualised_risk_for_original_positions",
+          "lineNumber": 530
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_leverage_for_original_position",
+          "lineNumber": 536
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_percentage_vol_target",
+          "lineNumber": 538
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.get_risk_scalar",
+          "lineNumber": 540
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "backtest_system_portfolio_stage.config.get_element_or_arg_not_supplied",
+          "lineNumber": 546
+        },
+        {
+          "caller": "risk_scaling_string",
+          "callee": "str",
+          "lineNumber": 554
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/strategy_code/report_system_dynamic_optimised.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "report_system_dynamic",
+          "startLine": 13,
+          "endLine": 37,
+          "params": [
+            "data",
+            "backtest"
+          ]
+        },
+        {
+          "name": "get_optimal_positions_table_as_df",
+          "startLine": 40,
+          "endLine": 90,
+          "params": [
+            "data",
+            "strategy_name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "report_system_dynamic",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "get_optimal_positions_table_as_df",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "report_system_dynamic",
+          "callee": "header",
+          "lineNumber": 19
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "str",
+          "lineNumber": 21
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 21
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "format_output.append",
+          "lineNumber": 23
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "get_optimal_positions_table_as_df",
+          "lineNumber": 25
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "table",
+          "lineNumber": 28
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "format_output.append",
+          "lineNumber": 29
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "report_system_classic_no_header_or_footer",
+          "lineNumber": 31
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "format_output.append",
+          "lineNumber": 35
+        },
+        {
+          "caller": "report_system_dynamic",
+          "callee": "body_text",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "dataOptimalPositions",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "data_optimal_positions.get_list_of_current_optimal_positions_for_strategy_name",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "list_of_positions.as_verbose_pd",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "subset_of_pd.round",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_optimal_positions_table_as_df",
+          "callee": "subset_of_pd.sort_values",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/strategy_code/strategy_allocation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "weighted_strategy_allocation",
+          "startLine": 35,
+          "endLine": 59,
+          "params": [
+            "data",
+            "capital_to_allocate",
+            "strategy_weights"
+          ]
+        },
+        {
+          "name": "strategy_weights_if_none_passed",
+          "startLine": 62,
+          "endLine": 72,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "weighted_strategy_allocation",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "strategy_weights_if_none_passed",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "weighted_strategy_allocation",
+          "callee": "strategy_weights_if_none_passed",
+          "lineNumber": 51
+        },
+        {
+          "caller": "weighted_strategy_allocation",
+          "callee": "sum",
+          "lineNumber": 53
+        },
+        {
+          "caller": "weighted_strategy_allocation",
+          "callee": "strategy_weights.values",
+          "lineNumber": 53
+        },
+        {
+          "caller": "weighted_strategy_allocation",
+          "callee": "strategy_weights.items",
+          "lineNumber": 55
+        },
+        {
+          "caller": "strategy_weights_if_none_passed",
+          "callee": "get_list_of_strategies_from_config",
+          "lineNumber": 63
+        },
+        {
+          "caller": "strategy_weights_if_none_passed",
+          "callee": "len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "strategy_weights_if_none_passed",
+          "callee": "data.log.warning",
+          "lineNumber": 66
+        },
+        {
+          "caller": "strategy_weights_if_none_passed",
+          "callee": "str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "strategy_weights_if_none_passed",
+          "callee": "dict",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/strategy_code/strategy_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "get_reporting_function_instance_for_strategy_name",
+          "startLine": 10,
+          "endLine": 17,
+          "params": [
+            "data",
+            "strategy_name"
+          ]
+        },
+        {
+          "name": "get_reporting_function_for_strategy_name",
+          "startLine": 20,
+          "endLine": 35,
+          "params": [
+            "data",
+            "strategy_name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_reporting_function_instance_for_strategy_name",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "get_reporting_function_for_strategy_name",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_reporting_function_instance_for_strategy_name",
+          "callee": "get_reporting_function_for_strategy_name",
+          "lineNumber": 13
+        },
+        {
+          "caller": "get_reporting_function_instance_for_strategy_name",
+          "callee": "resolve_function",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_reporting_function_for_strategy_name",
+          "callee": "diagStrategiesConfig",
+          "lineNumber": 22
+        },
+        {
+          "caller": "get_reporting_function_for_strategy_name",
+          "callee": "diag_strategy_config.get_strategy_config_dict_for_strategy",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_reporting_function_for_strategy_name",
+          "callee": "data.log.warning",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/update_fx_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "update_fx_prices",
+          "startLine": 14,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "update_fx_prices_with_data",
+          "startLine": 39,
+          "endLine": 52,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "update_fx_prices_for_code",
+          "startLine": 55,
+          "endLine": 68,
+          "params": [
+            "fx_code",
+            "data"
+          ]
+        },
+        {
+          "name": "report_fx_data_spike",
+          "startLine": 71,
+          "endLine": 80,
+          "params": [
+            "data",
+            "fx_code"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "updateFxPrices",
+          "startLine": 29,
+          "endLine": 36,
+          "methods": [
+            "__init__",
+            "update_fx_prices"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_fx_prices",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "updateFxPrices",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "update_fx_prices_with_data",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "update_fx_prices_for_code",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "report_fx_data_spike",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_fx_prices",
+          "callee": "dataBlob",
+          "lineNumber": 22
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "updateFxPrices",
+          "lineNumber": 23
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "update_fx_prices_object.update_fx_prices",
+          "lineNumber": 24
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "update_fx_prices_with_data",
+          "lineNumber": 36
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "dataBroker",
+          "lineNumber": 40
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "broker_fx_source.get_list_of_fxcodes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "data.log.debug",
+          "lineNumber": 44
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "str",
+          "lineNumber": 44
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "data.log.debug",
+          "lineNumber": 47
+        },
+        {
+          "caller": "update_fx_prices_with_data",
+          "callee": "update_fx_prices_for_code",
+          "lineNumber": 52
+        },
+        {
+          "caller": "update_fx_prices_for_code",
+          "callee": "dataBroker",
+          "lineNumber": 56
+        },
+        {
+          "caller": "update_fx_prices_for_code",
+          "callee": "dataCurrency",
+          "lineNumber": 57
+        },
+        {
+          "caller": "update_fx_prices_for_code",
+          "callee": "broker_fx_data.get_fx_prices",
+          "lineNumber": 59
+        },
+        {
+          "caller": "update_fx_prices_for_code",
+          "callee": "db_fx_data.update_fx_prices_and_return_rows_added",
+          "lineNumber": 60
+        },
+        {
+          "caller": "update_fx_prices_for_code",
+          "callee": "report_fx_data_spike",
+          "lineNumber": 65
+        },
+        {
+          "caller": "report_fx_data_spike",
+          "callee": "str",
+          "lineNumber": 74
+        },
+        {
+          "caller": "report_fx_data_spike",
+          "callee": "data.log.warning",
+          "lineNumber": 76
+        },
+        {
+          "caller": "report_fx_data_spike",
+          "callee": "send_production_mail_msg",
+          "lineNumber": 78
+        },
+        {
+          "caller": "report_fx_data_spike",
+          "callee": "str",
+          "lineNumber": 78
+        },
+        {
+          "caller": "report_fx_data_spike",
+          "callee": "data.log.warning",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/update_strategy_capital.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "update_strategy_capital",
+          "startLine": 14,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "get_total_current_capital",
+          "startLine": 73,
+          "endLine": 81,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "get_total_current_margin",
+          "startLine": 84,
+          "endLine": 92,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "call_allocation_function",
+          "startLine": 95,
+          "endLine": 105,
+          "params": [
+            "data",
+            "capital_to_allocate"
+          ]
+        },
+        {
+          "name": "get_strategy_allocation_config_dict",
+          "startLine": 108,
+          "endLine": 112,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "write_allocated_strategy_capital",
+          "startLine": 115,
+          "endLine": 125,
+          "params": [
+            "data",
+            "strategy_capital_dict"
+          ]
+        },
+        {
+          "name": "write_allocated_strategy_margin",
+          "startLine": 128,
+          "endLine": 138,
+          "params": [
+            "data",
+            "strategy_margin_dict"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "updateStrategyCapital",
+          "startLine": 27,
+          "endLine": 70,
+          "methods": [
+            "__init__",
+            "strategy_allocation",
+            "capital_strategy_allocation",
+            "margin_strategy_allocation"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_strategy_capital",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "updateStrategyCapital",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "get_total_current_capital",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "get_total_current_margin",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "call_allocation_function",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "get_strategy_allocation_config_dict",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "write_allocated_strategy_capital",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "write_allocated_strategy_margin",
+          "line": 128,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_strategy_capital",
+          "callee": "dataBlob",
+          "lineNumber": 20
+        },
+        {
+          "caller": "update_strategy_capital",
+          "callee": "updateStrategyCapital",
+          "lineNumber": 21
+        },
+        {
+          "caller": "update_strategy_capital",
+          "callee": "update_strategy_capital_object.strategy_allocation",
+          "lineNumber": 22
+        },
+        {
+          "caller": "strategy_allocation",
+          "callee": "self.capital_strategy_allocation",
+          "lineNumber": 32
+        },
+        {
+          "caller": "strategy_allocation",
+          "callee": "self.margin_strategy_allocation",
+          "lineNumber": 33
+        },
+        {
+          "caller": "capital_strategy_allocation",
+          "callee": "get_total_current_capital",
+          "lineNumber": 47
+        },
+        {
+          "caller": "capital_strategy_allocation",
+          "callee": "call_allocation_function",
+          "lineNumber": 48
+        },
+        {
+          "caller": "capital_strategy_allocation",
+          "callee": "write_allocated_strategy_capital",
+          "lineNumber": 51
+        },
+        {
+          "caller": "capital_strategy_allocation",
+          "callee": "self.data.log.critical",
+          "lineNumber": 54
+        },
+        {
+          "caller": "margin_strategy_allocation",
+          "callee": "get_total_current_margin",
+          "lineNumber": 61
+        },
+        {
+          "caller": "margin_strategy_allocation",
+          "callee": "call_allocation_function",
+          "lineNumber": 62
+        },
+        {
+          "caller": "margin_strategy_allocation",
+          "callee": "write_allocated_strategy_margin",
+          "lineNumber": 65
+        },
+        {
+          "caller": "margin_strategy_allocation",
+          "callee": "self.data.log.critical",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_total_current_capital",
+          "callee": "dataCapital",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_total_current_capital",
+          "callee": "data_capital.get_current_total_capital",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_total_current_capital",
+          "callee": "data.log.critical",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_total_current_margin",
+          "callee": "dataMargin",
+          "lineNumber": 85
+        },
+        {
+          "caller": "get_total_current_margin",
+          "callee": "data_margin.get_current_total_margin",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get_total_current_margin",
+          "callee": "data.log.critical",
+          "lineNumber": 89
+        },
+        {
+          "caller": "call_allocation_function",
+          "callee": "get_strategy_allocation_config_dict",
+          "lineNumber": 96
+        },
+        {
+          "caller": "call_allocation_function",
+          "callee": "strategy_allocation_config_dict.pop",
+          "lineNumber": 98
+        },
+        {
+          "caller": "call_allocation_function",
+          "callee": "resolve_function",
+          "lineNumber": 99
+        },
+        {
+          "caller": "call_allocation_function",
+          "callee": "strategy_allocation_function",
+          "lineNumber": 101
+        },
+        {
+          "caller": "get_strategy_allocation_config_dict",
+          "callee": "diagStrategiesConfig",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_strategy_allocation_config_dict",
+          "callee": "config.get_strategy_allocation_config_dict",
+          "lineNumber": 110
+        },
+        {
+          "caller": "get_strategy_allocation_config_dict",
+          "callee": "copy",
+          "lineNumber": 111
+        },
+        {
+          "caller": "write_allocated_strategy_capital",
+          "callee": "dataCapital",
+          "lineNumber": 116
+        },
+        {
+          "caller": "write_allocated_strategy_capital",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "write_allocated_strategy_capital",
+          "callee": "strategy_capital_dict.items",
+          "lineNumber": 118
+        },
+        {
+          "caller": "write_allocated_strategy_capital",
+          "callee": "capital_data.update_capital_value_for_strategy",
+          "lineNumber": 119
+        },
+        {
+          "caller": "write_allocated_strategy_capital",
+          "callee": "data.log.debug",
+          "lineNumber": 122
+        },
+        {
+          "caller": "write_allocated_strategy_margin",
+          "callee": "dataMargin",
+          "lineNumber": 129
+        },
+        {
+          "caller": "write_allocated_strategy_margin",
+          "callee": "strategy_margin_dict.items",
+          "lineNumber": 130
+        },
+        {
+          "caller": "write_allocated_strategy_margin",
+          "callee": "margin_data.add_strategy_margin_entry",
+          "lineNumber": 131
+        },
+        {
+          "caller": "write_allocated_strategy_margin",
+          "callee": "data.log.debug",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/update_strategy_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "update_strategy_orders",
+          "startLine": 13,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_strategy_orders",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_strategy_orders",
+          "callee": "dataBlob",
+          "lineNumber": 15
+        },
+        {
+          "caller": "update_strategy_orders",
+          "callee": "get_list_of_strategies_for_process",
+          "lineNumber": 16
+        },
+        {
+          "caller": "update_strategy_orders",
+          "callee": "print",
+          "lineNumber": 18
+        },
+        {
+          "caller": "update_strategy_orders",
+          "callee": "print_menu_of_values_and_get_response",
+          "lineNumber": 19
+        },
+        {
+          "caller": "update_strategy_orders",
+          "callee": "strategyRunner",
+          "lineNumber": 27
+        },
+        {
+          "caller": "update_strategy_orders",
+          "callee": "strategy_order_generator.run_strategy_method",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/update_system_backtests.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "update_system_backtests",
+          "startLine": 12,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_system_backtests",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_system_backtests",
+          "callee": "dataBlob",
+          "lineNumber": 14
+        },
+        {
+          "caller": "update_system_backtests",
+          "callee": "get_list_of_strategies_for_process",
+          "lineNumber": 15
+        },
+        {
+          "caller": "update_system_backtests",
+          "callee": "print",
+          "lineNumber": 17
+        },
+        {
+          "caller": "update_system_backtests",
+          "callee": "print_menu_of_values_and_get_response",
+          "lineNumber": 18
+        },
+        {
+          "caller": "update_system_backtests",
+          "callee": "strategyRunner",
+          "lineNumber": 26
+        },
+        {
+          "caller": "update_system_backtests",
+          "callee": "system_backtest_runner.run_strategy_method",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/update_total_capital.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "update_total_capital",
+          "startLine": 8,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "_update_capital_with_broker_account_value",
+          "startLine": 74,
+          "endLine": 92,
+          "params": [
+            "data",
+            "total_account_value_in_base_currency"
+          ]
+        },
+        {
+          "name": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "startLine": 95,
+          "endLine": 114,
+          "params": [
+            "data",
+            "total_account_value_in_base_currency"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "totalCapitalUpdate",
+          "startLine": 31,
+          "endLine": 71,
+          "methods": [
+            "__init__",
+            "update_total_capital",
+            "update_margin",
+            "update_capital"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_total_capital",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "totalCapitalUpdate",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_update_capital_with_broker_account_value",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "line": 95,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_total_capital",
+          "callee": "dataBlob",
+          "lineNumber": 24
+        },
+        {
+          "caller": "update_total_capital",
+          "callee": "totalCapitalUpdate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "update_total_capital",
+          "callee": "total_capital.update_total_capital",
+          "lineNumber": 26
+        },
+        {
+          "caller": "update_total_capital",
+          "callee": "self.update_capital",
+          "lineNumber": 36
+        },
+        {
+          "caller": "update_total_capital",
+          "callee": "self.update_margin",
+          "lineNumber": 37
+        },
+        {
+          "caller": "update_margin",
+          "callee": "dataMargin",
+          "lineNumber": 41
+        },
+        {
+          "caller": "update_margin",
+          "callee": "dataBroker",
+          "lineNumber": 42
+        },
+        {
+          "caller": "update_margin",
+          "callee": "broker_data.get_margin_used_in_base_currency",
+          "lineNumber": 46
+        },
+        {
+          "caller": "update_margin",
+          "callee": "log.debug",
+          "lineNumber": 47
+        },
+        {
+          "caller": "update_margin",
+          "callee": "margin_data.add_total_margin_entry",
+          "lineNumber": 50
+        },
+        {
+          "caller": "update_margin",
+          "callee": "margin_data.get_series_of_total_margin",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_margin",
+          "callee": "log.debug",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_margin",
+          "callee": "str",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_margin",
+          "callee": "margin_series.tail",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_capital",
+          "callee": "dataBroker",
+          "lineNumber": 57
+        },
+        {
+          "caller": "update_capital",
+          "callee": "broker_data.get_total_capital_value_in_base_currency",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_capital",
+          "callee": "data.log.debug",
+          "lineNumber": 64
+        },
+        {
+          "caller": "update_capital",
+          "callee": "_update_capital_with_broker_account_value",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value",
+          "callee": "dataCapital",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value",
+          "callee": "capital_data.check_for_total_capital_data",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value",
+          "callee": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value",
+          "callee": "log.critical",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value",
+          "callee": "capital_data.create_initial_capital",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "callee": "dataCapital",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "callee": "capital_data.update_and_return_total_capital_with_new_broker_account_value",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "callee": "log.critical",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_update_capital_with_broker_account_value_if_capital_data_exists",
+          "callee": "log.debug",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/from_returns.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "account_curve_from_returns",
+          "startLine": 13,
+          "endLine": 33,
+          "params": [
+            "returns",
+            "costs",
+            "capital"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithCashCostsAndFillsFromReturns",
+          "startLine": 36,
+          "endLine": 40,
+          "methods": [
+            "costs_pandl_in_points"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "account_curve_from_returns",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "pandlCalculationWithCashCostsAndFillsFromReturns",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "returns.dropna",
+          "lineNumber": 18
+        },
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "pd.Series",
+          "lineNumber": 20
+        },
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "pandlCalculationWithCashCostsAndFillsFromReturns",
+          "lineNumber": 22
+        },
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "returns.cumsum",
+          "lineNumber": 23
+        },
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "pd.Series",
+          "lineNumber": 24
+        },
+        {
+          "caller": "account_curve_from_returns",
+          "callee": "accountCurve",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

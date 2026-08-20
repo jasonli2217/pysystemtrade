@@ -1,0 +1,17 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {"path": "systems/provided/example/daily_with_order_simulation.yaml", "language": "yaml", "sizeLines": 28, "fileCategory": "config"},
+    {"path": "systems/provided/example/estimateexampleconfig.yaml", "language": "yaml", "sizeLines": 60, "fileCategory": "config"},
+    {"path": "systems/provided/example/exampleconfig.yaml", "language": "yaml", "sizeLines": 59, "fileCategory": "config"},
+    {"path": "systems/provided/example/hourly_with_order_simulator.yaml", "language": "yaml", "sizeLines": 28, "fileCategory": "config"},
+    {"path": "systems/provided/example/simplesystemconfig.yaml", "language": "yaml", "sizeLines": 28, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "systems/provided/example/daily_with_order_simulation.yaml": [],
+    "systems/provided/example/estimateexampleconfig.yaml": [],
+    "systems/provided/example/exampleconfig.yaml": [],
+    "systems/provided/example/hourly_with_order_simulator.yaml": [],
+    "systems/provided/example/simplesystemconfig.yaml": []
+  }
+}

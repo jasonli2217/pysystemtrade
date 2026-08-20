@@ -1,0 +1,4800 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 1572,
+    "filesWithImports": 497,
+    "totalEdges": 2721
+  },
+  "importMap": {
+    "_learning_sandbox/.DS_Store": [],
+    "_learning_sandbox/chapter15.ipynb": [],
+    "_learning_sandbox/chapter15.py": [
+      "systems/provided/futures_chapter15/basesystem.py"
+    ],
+    "_learning_sandbox/docs/accounts-stage-architecture.md": [],
+    "_learning_sandbox/docs/basesystem-and-stage-line-by-line.md": [],
+    "_learning_sandbox/docs/codebase-architecture-part2.md": [],
+    "_learning_sandbox/docs/codebase-architecture-reference.md": [],
+    "_learning_sandbox/docs/installaltion.md": [],
+    "_learning_sandbox/docs/learning-plan-pysystemtrade.md": [],
+    "_learning_sandbox/docs/production-setup-macos.md": [],
+    "_learning_sandbox/docs/systems-folder-overview.md": [],
+    "_learning_sandbox/intro.ipynb": [],
+    "_learning_sandbox/intro.py": [
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/basesystem.py",
+      "systems/forecasting.py",
+      "systems/provided/rules/ewmac.py"
+    ],
+    ".coveragerc": [],
+    ".DS_Store": [],
+    ".github/workflows/action.yml": [],
+    ".github/workflows/lint.yml": [],
+    ".github/workflows/mlc_config.json": [],
+    ".github/workflows/os-test.yml": [],
+    ".github/workflows/quick-test.yml": [],
+    ".github/workflows/slow-test.yml": [],
+    ".pre-commit-config.yaml": [],
+    ".travis.yml": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "AGENTS.md": [],
+    "CHANGELOG.md": [],
+    "CONTRIBUTING.md": [],
+    "dashboard/app.py": [
+      "syscontrol/list_running_pids.py",
+      "syscore/genutils.py",
+      "sysdata/config/control_config.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/interactive_update_roll_status.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/data/rolls.py"
+    ],
+    "dashboard/static/css/styles.css": [],
+    "dashboard/static/js/update.js": [],
+    "dashboard/templates/index.html": [],
+    "data/__init__.py": [],
+    "data/.DS_Store": [],
+    "data/futures/.DS_Store": [],
+    "data/futures/adjusted_prices_csv/AEX_mini.csv": [],
+    "data/futures/adjusted_prices_csv/AEX.csv": [],
+    "data/futures/adjusted_prices_csv/ALUMINIUM_LME.csv": [],
+    "data/futures/adjusted_prices_csv/ALUMINIUM.csv": [],
+    "data/futures/adjusted_prices_csv/AUD_micro.csv": [],
+    "data/futures/adjusted_prices_csv/AUD.csv": [],
+    "data/futures/adjusted_prices_csv/AUDJPY.csv": [],
+    "data/futures/adjusted_prices_csv/BB3M.csv": [],
+    "data/futures/adjusted_prices_csv/BBCOMM.csv": [],
+    "data/futures/adjusted_prices_csv/BITCOIN.csv": [],
+    "data/futures/adjusted_prices_csv/BOBL.csv": [],
+    "data/futures/adjusted_prices_csv/BONO.csv": [],
+    "data/futures/adjusted_prices_csv/BOVESPA.csv": [],
+    "data/futures/adjusted_prices_csv/BRE.csv": [],
+    "data/futures/adjusted_prices_csv/BRENT_W.csv": [],
+    "data/futures/adjusted_prices_csv/BRENT-LAST.csv": [],
+    "data/futures/adjusted_prices_csv/BTP.csv": [],
+    "data/futures/adjusted_prices_csv/BTP3.csv": [],
+    "data/futures/adjusted_prices_csv/BUND.csv": [],
+    "data/futures/adjusted_prices_csv/BUTTER.csv": [],
+    "data/futures/adjusted_prices_csv/BUXL.csv": [],
+    "data/futures/adjusted_prices_csv/CAC.csv": [],
+    "data/futures/adjusted_prices_csv/CAD_micro.csv": [],
+    "data/futures/adjusted_prices_csv/CAD.csv": [],
+    "data/futures/adjusted_prices_csv/CAD10.csv": [],
+    "data/futures/adjusted_prices_csv/CAD2.csv": [],
+    "data/futures/adjusted_prices_csv/CAD5.csv": [],
+    "data/futures/adjusted_prices_csv/CANOLA.csv": [],
+    "data/futures/adjusted_prices_csv/CH10.csv": [],
+    "data/futures/adjusted_prices_csv/CHEESE.csv": [],
+    "data/futures/adjusted_prices_csv/CHF_micro.csv": [],
+    "data/futures/adjusted_prices_csv/CHF.csv": [],
+    "data/futures/adjusted_prices_csv/CHFJPY.csv": [],
+    "data/futures/adjusted_prices_csv/CHINAA-CON.csv": [],
+    "data/futures/adjusted_prices_csv/CLP.csv": [],
+    "data/futures/adjusted_prices_csv/CNH-onshore.csv": [],
+    "data/futures/adjusted_prices_csv/CNH.csv": [],
+    "data/futures/adjusted_prices_csv/COAL-GEORDIE.csv": [],
+    "data/futures/adjusted_prices_csv/COAL.csv": [],
+    "data/futures/adjusted_prices_csv/COCOA_LDN.csv": [],
+    "data/futures/adjusted_prices_csv/COCOA.csv": [],
+    "data/futures/adjusted_prices_csv/COFFEE.csv": [],
+    "data/futures/adjusted_prices_csv/COPPER_LME.csv": [],
+    "data/futures/adjusted_prices_csv/COPPER-micro.csv": [],
+    "data/futures/adjusted_prices_csv/COPPER-mini.csv": [],
+    "data/futures/adjusted_prices_csv/COPPER.csv": [],
+    "data/futures/adjusted_prices_csv/CORN_mini.csv": [],
+    "data/futures/adjusted_prices_csv/CORN.csv": [],
+    "data/futures/adjusted_prices_csv/COTTON.csv": [],
+    "data/futures/adjusted_prices_csv/COTTON2.csv": [],
+    "data/futures/adjusted_prices_csv/CRUDE_ICE.csv": [],
+    "data/futures/adjusted_prices_csv/CRUDE_W_micro.csv": [],
+    "data/futures/adjusted_prices_csv/CRUDE_W_mini.csv": [],
+    "data/futures/adjusted_prices_csv/CRUDE_W.csv": [],
+    "data/futures/adjusted_prices_csv/CZK.csv": [],
+    "data/futures/adjusted_prices_csv/DAX.csv": [],
+    "data/futures/adjusted_prices_csv/DJSTX-SMALL.csv": [],
+    "data/futures/adjusted_prices_csv/DOW_mini.csv": [],
+    "data/futures/adjusted_prices_csv/DOW.csv": [],
+    "data/futures/adjusted_prices_csv/DX.csv": [],
+    "data/futures/adjusted_prices_csv/EPRA-EUROPE.csv": [],
+    "data/futures/adjusted_prices_csv/ETHANOL.csv": [],
+    "data/futures/adjusted_prices_csv/ETHER-micro.csv": [],
+    "data/futures/adjusted_prices_csv/ETHEREUM.csv": [],
+    "data/futures/adjusted_prices_csv/EU-AUTO.csv": [],
+    "data/futures/adjusted_prices_csv/EU-BANKS.csv": [],
+    "data/futures/adjusted_prices_csv/EU-BASIC.csv": [],
+    "data/futures/adjusted_prices_csv/EU-CHEM.csv": [],
+    "data/futures/adjusted_prices_csv/EU-CONSTRUCTION.csv": [],
+    "data/futures/adjusted_prices_csv/EU-DIV30.csv": [],
+    "data/futures/adjusted_prices_csv/EU-DJ-OIL.csv": [],
+    "data/futures/adjusted_prices_csv/EU-DJ-TECH.csv": [],
+    "data/futures/adjusted_prices_csv/EU-DJ-TELECOM.csv": [],
+    "data/futures/adjusted_prices_csv/EU-DJ-UTIL.csv": [],
+    "data/futures/adjusted_prices_csv/EU-FOOD.csv": [],
+    "data/futures/adjusted_prices_csv/EU-HEALTH.csv": [],
+    "data/futures/adjusted_prices_csv/EU-HOUSE.csv": [],
+    "data/futures/adjusted_prices_csv/EU-INSURE.csv": [],
+    "data/futures/adjusted_prices_csv/EU-MEDIA.csv": [],
+    "data/futures/adjusted_prices_csv/EU-MID.csv": [],
+    "data/futures/adjusted_prices_csv/EU-OIL.csv": [],
+    "data/futures/adjusted_prices_csv/EU-REALESTATE.csv": [],
+    "data/futures/adjusted_prices_csv/EU-RETAIL.csv": [],
+    "data/futures/adjusted_prices_csv/EU-TECH.csv": [],
+    "data/futures/adjusted_prices_csv/EU-TRAVEL.csv": [],
+    "data/futures/adjusted_prices_csv/EU-UTILS.csv": [],
+    "data/futures/adjusted_prices_csv/EUA.csv": [],
+    "data/futures/adjusted_prices_csv/EUR_micro.csv": [],
+    "data/futures/adjusted_prices_csv/EUR_mini.csv": [],
+    "data/futures/adjusted_prices_csv/EUR.csv": [],
+    "data/futures/adjusted_prices_csv/EURAUD.csv": [],
+    "data/futures/adjusted_prices_csv/EURCAD.csv": [],
+    "data/futures/adjusted_prices_csv/EURCHF.csv": [],
+    "data/futures/adjusted_prices_csv/EURIBOR-ICE.csv": [],
+    "data/futures/adjusted_prices_csv/EURIBOR.csv": [],
+    "data/futures/adjusted_prices_csv/EURO600.csv": [],
+    "data/futures/adjusted_prices_csv/EUROSTX-LARGE.csv": [],
+    "data/futures/adjusted_prices_csv/EUROSTX-SMALL.csv": [],
+    "data/futures/adjusted_prices_csv/EUROSTX.csv": [],
+    "data/futures/adjusted_prices_csv/EUROSTX200-LARGE.csv": [],
+    "data/futures/adjusted_prices_csv/FANG.csv": [],
+    "data/futures/adjusted_prices_csv/FED.csv": [],
+    "data/futures/adjusted_prices_csv/FEEDCOW.csv": [],
+    "data/futures/adjusted_prices_csv/FTSE100.csv": [],
+    "data/futures/adjusted_prices_csv/FTSE250.csv": [],
+    "data/futures/adjusted_prices_csv/FTSECHINAA.csv": [],
+    "data/futures/adjusted_prices_csv/FTSECHINAH.csv": [],
+    "data/futures/adjusted_prices_csv/FTSEINDO.csv": [],
+    "data/futures/adjusted_prices_csv/FTSETAIWAN.csv": [],
+    "data/futures/adjusted_prices_csv/FTSEVIET.csv": [],
+    "data/futures/adjusted_prices_csv/GAS_US_mini.csv": [],
+    "data/futures/adjusted_prices_csv/GAS_US.csv": [],
+    "data/futures/adjusted_prices_csv/GAS-LAST.csv": [],
+    "data/futures/adjusted_prices_csv/GAS-PEN.csv": [],
+    "data/futures/adjusted_prices_csv/GASOIL.csv": [],
+    "data/futures/adjusted_prices_csv/GASOILINE_ICE.csv": [],
+    "data/futures/adjusted_prices_csv/GASOILINE_micro.csv": [],
+    "data/futures/adjusted_prices_csv/GASOILINE.csv": [],
+    "data/futures/adjusted_prices_csv/GBP_micro.csv": [],
+    "data/futures/adjusted_prices_csv/GBP.csv": [],
+    "data/futures/adjusted_prices_csv/GBPCHF.csv": [],
+    "data/futures/adjusted_prices_csv/GBPEUR.csv": [],
+    "data/futures/adjusted_prices_csv/GBPJPY.csv": [],
+    "data/futures/adjusted_prices_csv/GICS.csv": [],
+    "data/futures/adjusted_prices_csv/GILT.csv": [],
+    "data/futures/adjusted_prices_csv/GOLD_micro.csv": [],
+    "data/futures/adjusted_prices_csv/GOLD-mini.csv": [],
+    "data/futures/adjusted_prices_csv/GOLD.csv": [],
+    "data/futures/adjusted_prices_csv/HANG_mini.csv": [],
+    "data/futures/adjusted_prices_csv/HANG.csv": [],
+    "data/futures/adjusted_prices_csv/HANGENT_mini.csv": [],
+    "data/futures/adjusted_prices_csv/HANGENT.csv": [],
+    "data/futures/adjusted_prices_csv/HANGTECH.csv": [],
+    "data/futures/adjusted_prices_csv/HEATOIL-ICE.csv": [],
+    "data/futures/adjusted_prices_csv/HEATOIL.csv": [],
+    "data/futures/adjusted_prices_csv/HIGHYIELD.csv": [],
+    "data/futures/adjusted_prices_csv/HOUSE-US.csv": [],
+    "data/futures/adjusted_prices_csv/IBEX_mini.csv": [],
+    "data/futures/adjusted_prices_csv/IBEX.csv": [],
+    "data/futures/adjusted_prices_csv/IG.csv": [],
+    "data/futures/adjusted_prices_csv/INR.csv": [],
+    "data/futures/adjusted_prices_csv/IRON.csv": [],
+    "data/futures/adjusted_prices_csv/IRS.csv": [],
+    "data/futures/adjusted_prices_csv/JGB-mini.csv": [],
+    "data/futures/adjusted_prices_csv/JGB-SGX-mini.csv": [],
+    "data/futures/adjusted_prices_csv/JGB.csv": [],
+    "data/futures/adjusted_prices_csv/JP-REALESTATE.csv": [],
+    "data/futures/adjusted_prices_csv/JPY_mini.csv": [],
+    "data/futures/adjusted_prices_csv/JPY.csv": [],
+    "data/futures/adjusted_prices_csv/KOSDAQ.csv": [],
+    "data/futures/adjusted_prices_csv/KOSPI_mini.csv": [],
+    "data/futures/adjusted_prices_csv/KOSPI.csv": [],
+    "data/futures/adjusted_prices_csv/KR10.csv": [],
+    "data/futures/adjusted_prices_csv/KR3.csv": [],
+    "data/futures/adjusted_prices_csv/KRWUSD_mini.csv": [],
+    "data/futures/adjusted_prices_csv/KRWUSD.csv": [],
+    "data/futures/adjusted_prices_csv/LEAD_LME.csv": [],
+    "data/futures/adjusted_prices_csv/LEANHOG.csv": [],
+    "data/futures/adjusted_prices_csv/LIVECOW.csv": [],
+    "data/futures/adjusted_prices_csv/LUMBER-new.csv": [],
+    "data/futures/adjusted_prices_csv/MIB.csv": [],
+    "data/futures/adjusted_prices_csv/MILK.csv": [],
+    "data/futures/adjusted_prices_csv/MILKDRY.csv": [],
+    "data/futures/adjusted_prices_csv/MILKWET.csv": [],
+    "data/futures/adjusted_prices_csv/MILLWHEAT.csv": [],
+    "data/futures/adjusted_prices_csv/MSCIASIA.csv": [],
+    "data/futures/adjusted_prices_csv/MSCIEAFA.csv": [],
+    "data/futures/adjusted_prices_csv/MSCIEMASIA.csv": [],
+    "data/futures/adjusted_prices_csv/MSCISING.csv": [],
+    "data/futures/adjusted_prices_csv/MSCITAIWAN.csv": [],
+    "data/futures/adjusted_prices_csv/MSCIWORLD.csv": [],
+    "data/futures/adjusted_prices_csv/MUMMY.csv": [],
+    "data/futures/adjusted_prices_csv/MXP.csv": [],
+    "data/futures/adjusted_prices_csv/NASDAQ_micro.csv": [],
+    "data/futures/adjusted_prices_csv/NASDAQ.csv": [],
+    "data/futures/adjusted_prices_csv/NICKEL_LME.csv": [],
+    "data/futures/adjusted_prices_csv/NIKKEI.csv": [],
+    "data/futures/adjusted_prices_csv/NIKKEI400.csv": [],
+    "data/futures/adjusted_prices_csv/NOK.csv": [],
+    "data/futures/adjusted_prices_csv/NZD.csv": [],
+    "data/futures/adjusted_prices_csv/OAT.csv": [],
+    "data/futures/adjusted_prices_csv/OATIES.csv": [],
+    "data/futures/adjusted_prices_csv/OJ.csv": [],
+    "data/futures/adjusted_prices_csv/OMX.csv": [],
+    "data/futures/adjusted_prices_csv/PALLAD.csv": [],
+    "data/futures/adjusted_prices_csv/PLAT.csv": [],
+    "data/futures/adjusted_prices_csv/PLN.csv": [],
+    "data/futures/adjusted_prices_csv/R1000.csv": [],
+    "data/futures/adjusted_prices_csv/REDWHEAT.csv": [],
+    "data/futures/adjusted_prices_csv/RICE.csv": [],
+    "data/futures/adjusted_prices_csv/ROBUSTA.csv": [],
+    "data/futures/adjusted_prices_csv/RUBBER.csv": [],
+    "data/futures/adjusted_prices_csv/RUR.csv": [],
+    "data/futures/adjusted_prices_csv/RUSSELL_mini.csv": [],
+    "data/futures/adjusted_prices_csv/RUSSELL.csv": [],
+    "data/futures/adjusted_prices_csv/SARONA.csv": [],
+    "data/futures/adjusted_prices_csv/SEK.csv": [],
+    "data/futures/adjusted_prices_csv/SGD_mini.csv": [],
+    "data/futures/adjusted_prices_csv/SGD.csv": [],
+    "data/futures/adjusted_prices_csv/SGX.csv": [],
+    "data/futures/adjusted_prices_csv/SHATZ.csv": [],
+    "data/futures/adjusted_prices_csv/SILVER.csv": [],
+    "data/futures/adjusted_prices_csv/SMI-MID.csv": [],
+    "data/futures/adjusted_prices_csv/SMI.csv": [],
+    "data/futures/adjusted_prices_csv/SOFR.csv": [],
+    "data/futures/adjusted_prices_csv/SONIA3.csv": [],
+    "data/futures/adjusted_prices_csv/SOYBEAN_mini.csv": [],
+    "data/futures/adjusted_prices_csv/SOYBEAN.csv": [],
+    "data/futures/adjusted_prices_csv/SOYMEAL.csv": [],
+    "data/futures/adjusted_prices_csv/SOYOIL.csv": [],
+    "data/futures/adjusted_prices_csv/SP400.csv": [],
+    "data/futures/adjusted_prices_csv/SP500_micro.csv": [],
+    "data/futures/adjusted_prices_csv/SP500.csv": [],
+    "data/futures/adjusted_prices_csv/SPI200.csv": [],
+    "data/futures/adjusted_prices_csv/STEEL.csv": [],
+    "data/futures/adjusted_prices_csv/SUGAR_WHITE.csv": [],
+    "data/futures/adjusted_prices_csv/SUGAR11.csv": [],
+    "data/futures/adjusted_prices_csv/SUGAR16.csv": [],
+    "data/futures/adjusted_prices_csv/SWISSLEAD.csv": [],
+    "data/futures/adjusted_prices_csv/TIN_LME.csv": [],
+    "data/futures/adjusted_prices_csv/TOPIX.csv": [],
+    "data/futures/adjusted_prices_csv/TWD-mini.csv": [],
+    "data/futures/adjusted_prices_csv/TWD.csv": [],
+    "data/futures/adjusted_prices_csv/US-DISCRETE.csv": [],
+    "data/futures/adjusted_prices_csv/US-ENERGY.csv": [],
+    "data/futures/adjusted_prices_csv/US-FINANCE.csv": [],
+    "data/futures/adjusted_prices_csv/US-HEALTH.csv": [],
+    "data/futures/adjusted_prices_csv/US-INDUSTRY.csv": [],
+    "data/futures/adjusted_prices_csv/US-MATERIAL.csv": [],
+    "data/futures/adjusted_prices_csv/US-PROPERTY.csv": [],
+    "data/futures/adjusted_prices_csv/US-REALESTATE.csv": [],
+    "data/futures/adjusted_prices_csv/US-STAPLES.csv": [],
+    "data/futures/adjusted_prices_csv/US-TECH.csv": [],
+    "data/futures/adjusted_prices_csv/US-UTILS.csv": [],
+    "data/futures/adjusted_prices_csv/US10.csv": [],
+    "data/futures/adjusted_prices_csv/US10U.csv": [],
+    "data/futures/adjusted_prices_csv/US2.csv": [],
+    "data/futures/adjusted_prices_csv/US20.csv": [],
+    "data/futures/adjusted_prices_csv/US3.csv": [],
+    "data/futures/adjusted_prices_csv/US30.csv": [],
+    "data/futures/adjusted_prices_csv/US5.csv": [],
+    "data/futures/adjusted_prices_csv/V2X.csv": [],
+    "data/futures/adjusted_prices_csv/VIX_mini.csv": [],
+    "data/futures/adjusted_prices_csv/VIX.csv": [],
+    "data/futures/adjusted_prices_csv/VNKI.csv": [],
+    "data/futures/adjusted_prices_csv/WHEAT_ICE.csv": [],
+    "data/futures/adjusted_prices_csv/WHEAT_mini.csv": [],
+    "data/futures/adjusted_prices_csv/WHEAT.csv": [],
+    "data/futures/adjusted_prices_csv/WHEY.csv": [],
+    "data/futures/adjusted_prices_csv/YENEUR.csv": [],
+    "data/futures/adjusted_prices_csv/ZAR.csv": [],
+    "data/futures/adjusted_prices_csv/ZINC_LME.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/BTC_SPREAD.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/BTC_SPREAD2_BIDOFFER.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/BTC_SPREAD2.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/BTC_SPREADBIDOFFER.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/ETH_SPREAD_BIDOFFER.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/ETH_SPREAD.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/ETH_SPREAD2.csv": [],
+    "data/futures/crypto_spread_roll_calendars_csv/ETH_SPREAD2BIDOFFER.csv": [],
+    "data/futures/csvconfig/instrumentconfig.csv": [],
+    "data/futures/csvconfig/rollconfig.csv": [],
+    "data/futures/csvconfig/spreadcosts.csv": [],
+    "data/futures/fx_prices_csv/AUDUSD.csv": [],
+    "data/futures/fx_prices_csv/CADUSD.csv": [],
+    "data/futures/fx_prices_csv/CHFUSD.csv": [],
+    "data/futures/fx_prices_csv/CNHUSD.csv": [],
+    "data/futures/fx_prices_csv/EURUSD.csv": [],
+    "data/futures/fx_prices_csv/GBPUSD.csv": [],
+    "data/futures/fx_prices_csv/HKDUSD.csv": [],
+    "data/futures/fx_prices_csv/JPYUSD.csv": [],
+    "data/futures/fx_prices_csv/KRWUSD.csv": [],
+    "data/futures/fx_prices_csv/MXPUSD.csv": [],
+    "data/futures/fx_prices_csv/SEKUSD.csv": [],
+    "data/futures/fx_prices_csv/SGDUSD.csv": [],
+    "data/futures/multiple_prices_csv/AEX_mini.csv": [],
+    "data/futures/multiple_prices_csv/AEX.csv": [],
+    "data/futures/multiple_prices_csv/ALUMINIUM_LME.csv": [],
+    "data/futures/multiple_prices_csv/ALUMINIUM.csv": [],
+    "data/futures/multiple_prices_csv/AUD_micro.csv": [],
+    "data/futures/multiple_prices_csv/AUD.csv": [],
+    "data/futures/multiple_prices_csv/AUDJPY.csv": [],
+    "data/futures/multiple_prices_csv/BB3M.csv": [],
+    "data/futures/multiple_prices_csv/BBCOMM.csv": [],
+    "data/futures/multiple_prices_csv/BITCOIN.csv": [],
+    "data/futures/multiple_prices_csv/BOBL.csv": [],
+    "data/futures/multiple_prices_csv/BONO.csv": [],
+    "data/futures/multiple_prices_csv/BOVESPA.csv": [],
+    "data/futures/multiple_prices_csv/BRE.csv": [],
+    "data/futures/multiple_prices_csv/BRENT_W.csv": [],
+    "data/futures/multiple_prices_csv/BRENT-LAST.csv": [],
+    "data/futures/multiple_prices_csv/BTP.csv": [],
+    "data/futures/multiple_prices_csv/BTP3.csv": [],
+    "data/futures/multiple_prices_csv/BUND.csv": [],
+    "data/futures/multiple_prices_csv/BUTTER.csv": [],
+    "data/futures/multiple_prices_csv/BUXL.csv": [],
+    "data/futures/multiple_prices_csv/CAC.csv": [],
+    "data/futures/multiple_prices_csv/CAD_micro.csv": [],
+    "data/futures/multiple_prices_csv/CAD.csv": [],
+    "data/futures/multiple_prices_csv/CAD10.csv": [],
+    "data/futures/multiple_prices_csv/CAD2.csv": [],
+    "data/futures/multiple_prices_csv/CAD5.csv": [],
+    "data/futures/multiple_prices_csv/CANOLA.csv": [],
+    "data/futures/multiple_prices_csv/CH10.csv": [],
+    "data/futures/multiple_prices_csv/CHEESE.csv": [],
+    "data/futures/multiple_prices_csv/CHF_micro.csv": [],
+    "data/futures/multiple_prices_csv/CHF.csv": [],
+    "data/futures/multiple_prices_csv/CHFJPY.csv": [],
+    "data/futures/multiple_prices_csv/CHINAA-CON.csv": [],
+    "data/futures/multiple_prices_csv/CLP.csv": [],
+    "data/futures/multiple_prices_csv/CNH-onshore.csv": [],
+    "data/futures/multiple_prices_csv/CNH.csv": [],
+    "data/futures/multiple_prices_csv/COAL-GEORDIE.csv": [],
+    "data/futures/multiple_prices_csv/COAL.csv": [],
+    "data/futures/multiple_prices_csv/COCOA_LDN.csv": [],
+    "data/futures/multiple_prices_csv/COCOA.csv": [],
+    "data/futures/multiple_prices_csv/COFFEE.csv": [],
+    "data/futures/multiple_prices_csv/COPPER_LME.csv": [],
+    "data/futures/multiple_prices_csv/COPPER-micro.csv": [],
+    "data/futures/multiple_prices_csv/COPPER-mini.csv": [],
+    "data/futures/multiple_prices_csv/COPPER.csv": [],
+    "data/futures/multiple_prices_csv/CORN_mini.csv": [],
+    "data/futures/multiple_prices_csv/CORN.csv": [],
+    "data/futures/multiple_prices_csv/COTTON.csv": [],
+    "data/futures/multiple_prices_csv/COTTON2.csv": [],
+    "data/futures/multiple_prices_csv/CRUDE_ICE.csv": [],
+    "data/futures/multiple_prices_csv/CRUDE_W_micro.csv": [],
+    "data/futures/multiple_prices_csv/CRUDE_W_mini.csv": [],
+    "data/futures/multiple_prices_csv/CRUDE_W.csv": [],
+    "data/futures/multiple_prices_csv/CZK.csv": [],
+    "data/futures/multiple_prices_csv/DAX.csv": [],
+    "data/futures/multiple_prices_csv/DJSTX-SMALL.csv": [],
+    "data/futures/multiple_prices_csv/DOW_mini.csv": [],
+    "data/futures/multiple_prices_csv/DOW.csv": [],
+    "data/futures/multiple_prices_csv/DX.csv": [],
+    "data/futures/multiple_prices_csv/EPRA-EUROPE.csv": [],
+    "data/futures/multiple_prices_csv/ETHANOL.csv": [],
+    "data/futures/multiple_prices_csv/ETHER-micro.csv": [],
+    "data/futures/multiple_prices_csv/ETHEREUM.csv": [],
+    "data/futures/multiple_prices_csv/EU-AUTO.csv": [],
+    "data/futures/multiple_prices_csv/EU-BANKS.csv": [],
+    "data/futures/multiple_prices_csv/EU-BASIC.csv": [],
+    "data/futures/multiple_prices_csv/EU-CHEM.csv": [],
+    "data/futures/multiple_prices_csv/EU-CONSTRUCTION.csv": [],
+    "data/futures/multiple_prices_csv/EU-DIV30.csv": [],
+    "data/futures/multiple_prices_csv/EU-DJ-OIL.csv": [],
+    "data/futures/multiple_prices_csv/EU-DJ-TECH.csv": [],
+    "data/futures/multiple_prices_csv/EU-DJ-TELECOM.csv": [],
+    "data/futures/multiple_prices_csv/EU-DJ-UTIL.csv": [],
+    "data/futures/multiple_prices_csv/EU-FOOD.csv": [],
+    "data/futures/multiple_prices_csv/EU-HEALTH.csv": [],
+    "data/futures/multiple_prices_csv/EU-HOUSE.csv": [],
+    "data/futures/multiple_prices_csv/EU-INSURE.csv": [],
+    "data/futures/multiple_prices_csv/EU-MEDIA.csv": [],
+    "data/futures/multiple_prices_csv/EU-MID.csv": [],
+    "data/futures/multiple_prices_csv/EU-OIL.csv": [],
+    "data/futures/multiple_prices_csv/EU-REALESTATE.csv": [],
+    "data/futures/multiple_prices_csv/EU-RETAIL.csv": [],
+    "data/futures/multiple_prices_csv/EU-TECH.csv": [],
+    "data/futures/multiple_prices_csv/EU-TRAVEL.csv": [],
+    "data/futures/multiple_prices_csv/EU-UTILS.csv": [],
+    "data/futures/multiple_prices_csv/EUA.csv": [],
+    "data/futures/multiple_prices_csv/EUR_micro.csv": [],
+    "data/futures/multiple_prices_csv/EUR_mini.csv": [],
+    "data/futures/multiple_prices_csv/EUR.csv": [],
+    "data/futures/multiple_prices_csv/EURAUD.csv": [],
+    "data/futures/multiple_prices_csv/EURCAD.csv": [],
+    "data/futures/multiple_prices_csv/EURCHF.csv": [],
+    "data/futures/multiple_prices_csv/EURIBOR-ICE.csv": [],
+    "data/futures/multiple_prices_csv/EURIBOR.csv": [],
+    "data/futures/multiple_prices_csv/EURO600.csv": [],
+    "data/futures/multiple_prices_csv/EUROSTX-LARGE.csv": [],
+    "data/futures/multiple_prices_csv/EUROSTX-SMALL.csv": [],
+    "data/futures/multiple_prices_csv/EUROSTX.csv": [],
+    "data/futures/multiple_prices_csv/EUROSTX200-LARGE.csv": [],
+    "data/futures/multiple_prices_csv/FANG.csv": [],
+    "data/futures/multiple_prices_csv/FED.csv": [],
+    "data/futures/multiple_prices_csv/FEEDCOW.csv": [],
+    "data/futures/multiple_prices_csv/FTSE100.csv": [],
+    "data/futures/multiple_prices_csv/FTSE250.csv": [],
+    "data/futures/multiple_prices_csv/FTSECHINAA.csv": [],
+    "data/futures/multiple_prices_csv/FTSECHINAH.csv": [],
+    "data/futures/multiple_prices_csv/FTSEINDO.csv": [],
+    "data/futures/multiple_prices_csv/FTSETAIWAN.csv": [],
+    "data/futures/multiple_prices_csv/FTSEVIET.csv": [],
+    "data/futures/multiple_prices_csv/GAS_US_mini.csv": [],
+    "data/futures/multiple_prices_csv/GAS_US.csv": [],
+    "data/futures/multiple_prices_csv/GAS-LAST.csv": [],
+    "data/futures/multiple_prices_csv/GAS-PEN.csv": [],
+    "data/futures/multiple_prices_csv/GASOIL.csv": [],
+    "data/futures/multiple_prices_csv/GASOILINE_ICE.csv": [],
+    "data/futures/multiple_prices_csv/GASOILINE_micro.csv": [],
+    "data/futures/multiple_prices_csv/GASOILINE.csv": [],
+    "data/futures/multiple_prices_csv/GBP_micro.csv": [],
+    "data/futures/multiple_prices_csv/GBP.csv": [],
+    "data/futures/multiple_prices_csv/GBPCHF.csv": [],
+    "data/futures/multiple_prices_csv/GBPEUR.csv": [],
+    "data/futures/multiple_prices_csv/GBPJPY.csv": [],
+    "data/futures/multiple_prices_csv/GICS.csv": [],
+    "data/futures/multiple_prices_csv/GILT.csv": [],
+    "data/futures/multiple_prices_csv/GOLD_micro.csv": [],
+    "data/futures/multiple_prices_csv/GOLD-mini.csv": [],
+    "data/futures/multiple_prices_csv/GOLD.csv": [],
+    "data/futures/multiple_prices_csv/HANG_mini.csv": [],
+    "data/futures/multiple_prices_csv/HANG.csv": [],
+    "data/futures/multiple_prices_csv/HANGENT_mini.csv": [],
+    "data/futures/multiple_prices_csv/HANGENT.csv": [],
+    "data/futures/multiple_prices_csv/HANGTECH.csv": [],
+    "data/futures/multiple_prices_csv/HEATOIL-ICE.csv": [],
+    "data/futures/multiple_prices_csv/HEATOIL.csv": [],
+    "data/futures/multiple_prices_csv/HIGHYIELD.csv": [],
+    "data/futures/multiple_prices_csv/HOUSE-US.csv": [],
+    "data/futures/multiple_prices_csv/IBEX_mini.csv": [],
+    "data/futures/multiple_prices_csv/IBEX.csv": [],
+    "data/futures/multiple_prices_csv/IG.csv": [],
+    "data/futures/multiple_prices_csv/INR.csv": [],
+    "data/futures/multiple_prices_csv/IRON.csv": [],
+    "data/futures/multiple_prices_csv/IRS.csv": [],
+    "data/futures/multiple_prices_csv/JGB-mini.csv": [],
+    "data/futures/multiple_prices_csv/JGB-SGX-mini.csv": [],
+    "data/futures/multiple_prices_csv/JGB.csv": [],
+    "data/futures/multiple_prices_csv/JP-REALESTATE.csv": [],
+    "data/futures/multiple_prices_csv/JPY_mini.csv": [],
+    "data/futures/multiple_prices_csv/JPY.csv": [],
+    "data/futures/multiple_prices_csv/KOSDAQ.csv": [],
+    "data/futures/multiple_prices_csv/KOSPI_mini.csv": [],
+    "data/futures/multiple_prices_csv/KOSPI.csv": [],
+    "data/futures/multiple_prices_csv/KR10.csv": [],
+    "data/futures/multiple_prices_csv/KR3.csv": [],
+    "data/futures/multiple_prices_csv/KRWUSD_mini.csv": [],
+    "data/futures/multiple_prices_csv/KRWUSD.csv": [],
+    "data/futures/multiple_prices_csv/LEAD_LME.csv": [],
+    "data/futures/multiple_prices_csv/LEANHOG.csv": [],
+    "data/futures/multiple_prices_csv/LIVECOW.csv": [],
+    "data/futures/multiple_prices_csv/LUMBER-new.csv": [],
+    "data/futures/multiple_prices_csv/MIB.csv": [],
+    "data/futures/multiple_prices_csv/MILK.csv": [],
+    "data/futures/multiple_prices_csv/MILKDRY.csv": [],
+    "data/futures/multiple_prices_csv/MILKWET.csv": [],
+    "data/futures/multiple_prices_csv/MILLWHEAT.csv": [],
+    "data/futures/multiple_prices_csv/MSCIASIA.csv": [],
+    "data/futures/multiple_prices_csv/MSCIEAFA.csv": [],
+    "data/futures/multiple_prices_csv/MSCIEMASIA.csv": [],
+    "data/futures/multiple_prices_csv/MSCISING.csv": [],
+    "data/futures/multiple_prices_csv/MSCITAIWAN.csv": [],
+    "data/futures/multiple_prices_csv/MSCIWORLD.csv": [],
+    "data/futures/multiple_prices_csv/MUMMY.csv": [],
+    "data/futures/multiple_prices_csv/MXP.csv": [],
+    "data/futures/multiple_prices_csv/NASDAQ_micro.csv": [],
+    "data/futures/multiple_prices_csv/NASDAQ.csv": [],
+    "data/futures/multiple_prices_csv/NICKEL_LME.csv": [],
+    "data/futures/multiple_prices_csv/NIKKEI.csv": [],
+    "data/futures/multiple_prices_csv/NIKKEI400.csv": [],
+    "data/futures/multiple_prices_csv/NOK.csv": [],
+    "data/futures/multiple_prices_csv/NZD.csv": [],
+    "data/futures/multiple_prices_csv/OAT.csv": [],
+    "data/futures/multiple_prices_csv/OATIES.csv": [],
+    "data/futures/multiple_prices_csv/OJ.csv": [],
+    "data/futures/multiple_prices_csv/OMX.csv": [],
+    "data/futures/multiple_prices_csv/PALLAD.csv": [],
+    "data/futures/multiple_prices_csv/PLAT.csv": [],
+    "data/futures/multiple_prices_csv/PLN.csv": [],
+    "data/futures/multiple_prices_csv/R1000.csv": [],
+    "data/futures/multiple_prices_csv/REDWHEAT.csv": [],
+    "data/futures/multiple_prices_csv/RICE.csv": [],
+    "data/futures/multiple_prices_csv/ROBUSTA.csv": [],
+    "data/futures/multiple_prices_csv/RUBBER.csv": [],
+    "data/futures/multiple_prices_csv/RUR.csv": [],
+    "data/futures/multiple_prices_csv/RUSSELL_mini.csv": [],
+    "data/futures/multiple_prices_csv/RUSSELL.csv": [],
+    "data/futures/multiple_prices_csv/SARONA.csv": [],
+    "data/futures/multiple_prices_csv/SEK.csv": [],
+    "data/futures/multiple_prices_csv/SGD_mini.csv": [],
+    "data/futures/multiple_prices_csv/SGD.csv": [],
+    "data/futures/multiple_prices_csv/SGX.csv": [],
+    "data/futures/multiple_prices_csv/SHATZ.csv": [],
+    "data/futures/multiple_prices_csv/SILVER.csv": [],
+    "data/futures/multiple_prices_csv/SMI-MID.csv": [],
+    "data/futures/multiple_prices_csv/SMI.csv": [],
+    "data/futures/multiple_prices_csv/SOFR.csv": [],
+    "data/futures/multiple_prices_csv/SONIA3.csv": [],
+    "data/futures/multiple_prices_csv/SOYBEAN_mini.csv": [],
+    "data/futures/multiple_prices_csv/SOYBEAN.csv": [],
+    "data/futures/multiple_prices_csv/SOYMEAL.csv": [],
+    "data/futures/multiple_prices_csv/SOYOIL.csv": [],
+    "data/futures/multiple_prices_csv/SP400.csv": [],
+    "data/futures/multiple_prices_csv/SP500_micro.csv": [],
+    "data/futures/multiple_prices_csv/SP500.csv": [],
+    "data/futures/multiple_prices_csv/SPI200.csv": [],
+    "data/futures/multiple_prices_csv/STEEL.csv": [],
+    "data/futures/multiple_prices_csv/SUGAR_WHITE.csv": [],
+    "data/futures/multiple_prices_csv/SUGAR11.csv": [],
+    "data/futures/multiple_prices_csv/SUGAR16.csv": [],
+    "data/futures/multiple_prices_csv/SWISSLEAD.csv": [],
+    "data/futures/multiple_prices_csv/TIN_LME.csv": [],
+    "data/futures/multiple_prices_csv/TOPIX.csv": [],
+    "data/futures/multiple_prices_csv/TWD-mini.csv": [],
+    "data/futures/multiple_prices_csv/TWD.csv": [],
+    "data/futures/multiple_prices_csv/US-DISCRETE.csv": [],
+    "data/futures/multiple_prices_csv/US-ENERGY.csv": [],
+    "data/futures/multiple_prices_csv/US-FINANCE.csv": [],
+    "data/futures/multiple_prices_csv/US-HEALTH.csv": [],
+    "data/futures/multiple_prices_csv/US-INDUSTRY.csv": [],
+    "data/futures/multiple_prices_csv/US-MATERIAL.csv": [],
+    "data/futures/multiple_prices_csv/US-PROPERTY.csv": [],
+    "data/futures/multiple_prices_csv/US-REALESTATE.csv": [],
+    "data/futures/multiple_prices_csv/US-STAPLES.csv": [],
+    "data/futures/multiple_prices_csv/US-TECH.csv": [],
+    "data/futures/multiple_prices_csv/US-UTILS.csv": [],
+    "data/futures/multiple_prices_csv/US10.csv": [],
+    "data/futures/multiple_prices_csv/US10U.csv": [],
+    "data/futures/multiple_prices_csv/US2.csv": [],
+    "data/futures/multiple_prices_csv/US20.csv": [],
+    "data/futures/multiple_prices_csv/US3.csv": [],
+    "data/futures/multiple_prices_csv/US30.csv": [],
+    "data/futures/multiple_prices_csv/US5.csv": [],
+    "data/futures/multiple_prices_csv/V2X.csv": [],
+    "data/futures/multiple_prices_csv/VIX_mini.csv": [],
+    "data/futures/multiple_prices_csv/VIX.csv": [],
+    "data/futures/multiple_prices_csv/VNKI.csv": [],
+    "data/futures/multiple_prices_csv/WHEAT_ICE.csv": [],
+    "data/futures/multiple_prices_csv/WHEAT_mini.csv": [],
+    "data/futures/multiple_prices_csv/WHEAT.csv": [],
+    "data/futures/multiple_prices_csv/WHEY.csv": [],
+    "data/futures/multiple_prices_csv/YENEUR.csv": [],
+    "data/futures/multiple_prices_csv/ZAR.csv": [],
+    "data/futures/multiple_prices_csv/ZINC_LME.csv": [],
+    "data/futures/roll_calendars_csv/AEX_mini.csv": [],
+    "data/futures/roll_calendars_csv/AEX.csv": [],
+    "data/futures/roll_calendars_csv/ALUMINIUM_LME.csv": [],
+    "data/futures/roll_calendars_csv/ALUMINIUM.csv": [],
+    "data/futures/roll_calendars_csv/AUD_micro.csv": [],
+    "data/futures/roll_calendars_csv/AUD.csv": [],
+    "data/futures/roll_calendars_csv/AUDJPY.csv": [],
+    "data/futures/roll_calendars_csv/BB3M.csv": [],
+    "data/futures/roll_calendars_csv/BBCOMM.csv": [],
+    "data/futures/roll_calendars_csv/BEL20.csv": [],
+    "data/futures/roll_calendars_csv/BITCOIN.csv": [],
+    "data/futures/roll_calendars_csv/BITCOIN#1.csv": [],
+    "data/futures/roll_calendars_csv/BITCOIN#2.csv": [],
+    "data/futures/roll_calendars_csv/BITCOIN#3.csv": [],
+    "data/futures/roll_calendars_csv/BOBL.csv": [],
+    "data/futures/roll_calendars_csv/BONO.csv": [],
+    "data/futures/roll_calendars_csv/BOVESPA.csv": [],
+    "data/futures/roll_calendars_csv/BRE.csv": [],
+    "data/futures/roll_calendars_csv/BRENT_W.csv": [],
+    "data/futures/roll_calendars_csv/BRENT-LAST.csv": [],
+    "data/futures/roll_calendars_csv/BRENT.csv": [],
+    "data/futures/roll_calendars_csv/BTP.csv": [],
+    "data/futures/roll_calendars_csv/BTP3.csv": [],
+    "data/futures/roll_calendars_csv/BUND.csv": [],
+    "data/futures/roll_calendars_csv/BUTTER.csv": [],
+    "data/futures/roll_calendars_csv/BUXL.csv": [],
+    "data/futures/roll_calendars_csv/CAC.csv": [],
+    "data/futures/roll_calendars_csv/CAD_micro.csv": [],
+    "data/futures/roll_calendars_csv/CAD.csv": [],
+    "data/futures/roll_calendars_csv/CAD10.csv": [],
+    "data/futures/roll_calendars_csv/CAD2.csv": [],
+    "data/futures/roll_calendars_csv/CAD5.csv": [],
+    "data/futures/roll_calendars_csv/CANOLA.csv": [],
+    "data/futures/roll_calendars_csv/CH10.csv": [],
+    "data/futures/roll_calendars_csv/CHEESE.csv": [],
+    "data/futures/roll_calendars_csv/CHF_micro.csv": [],
+    "data/futures/roll_calendars_csv/CHF.csv": [],
+    "data/futures/roll_calendars_csv/CHFJPY.csv": [],
+    "data/futures/roll_calendars_csv/CHINAA-CON.csv": [],
+    "data/futures/roll_calendars_csv/CLP.csv": [],
+    "data/futures/roll_calendars_csv/CNH-onshore.csv": [],
+    "data/futures/roll_calendars_csv/CNH.csv": [],
+    "data/futures/roll_calendars_csv/COAL-GEORDIE.csv": [],
+    "data/futures/roll_calendars_csv/COAL.csv": [],
+    "data/futures/roll_calendars_csv/COCOA_LDN.csv": [],
+    "data/futures/roll_calendars_csv/COCOA.csv": [],
+    "data/futures/roll_calendars_csv/COFFEE.csv": [],
+    "data/futures/roll_calendars_csv/COPPER_LME.csv": [],
+    "data/futures/roll_calendars_csv/COPPER-micro.csv": [],
+    "data/futures/roll_calendars_csv/COPPER-mini.csv": [],
+    "data/futures/roll_calendars_csv/COPPER.csv": [],
+    "data/futures/roll_calendars_csv/CORN_mini.csv": [],
+    "data/futures/roll_calendars_csv/CORN.csv": [],
+    "data/futures/roll_calendars_csv/COTTON2.csv": [],
+    "data/futures/roll_calendars_csv/CRUDE_ICE.csv": [],
+    "data/futures/roll_calendars_csv/CRUDE_W_mini.csv": [],
+    "data/futures/roll_calendars_csv/CRUDE_W.csv": [],
+    "data/futures/roll_calendars_csv/CZK.csv": [],
+    "data/futures/roll_calendars_csv/DAX.csv": [],
+    "data/futures/roll_calendars_csv/DJSTX-SMALL.csv": [],
+    "data/futures/roll_calendars_csv/DOW_mini.csv": [],
+    "data/futures/roll_calendars_csv/DOW.csv": [],
+    "data/futures/roll_calendars_csv/DX.csv": [],
+    "data/futures/roll_calendars_csv/EDOLLAR.csv": [],
+    "data/futures/roll_calendars_csv/EDOLLAR#1.csv": [],
+    "data/futures/roll_calendars_csv/EDOLLAR#2.csv": [],
+    "data/futures/roll_calendars_csv/EDOLLAR#3.csv": [],
+    "data/futures/roll_calendars_csv/EPRA-EUROPE.csv": [],
+    "data/futures/roll_calendars_csv/ETHANOL.csv": [],
+    "data/futures/roll_calendars_csv/ETHER-micro.csv": [],
+    "data/futures/roll_calendars_csv/ETHEREUM.csv": [],
+    "data/futures/roll_calendars_csv/ETHEREUM#1.csv": [],
+    "data/futures/roll_calendars_csv/ETHEREUM#2.csv": [],
+    "data/futures/roll_calendars_csv/ETHEREUM#3.csv": [],
+    "data/futures/roll_calendars_csv/EU-AUTO.csv": [],
+    "data/futures/roll_calendars_csv/EU-BANKS.csv": [],
+    "data/futures/roll_calendars_csv/EU-BASIC.csv": [],
+    "data/futures/roll_calendars_csv/EU-CHEM.csv": [],
+    "data/futures/roll_calendars_csv/EU-CONSTRUCTION.csv": [],
+    "data/futures/roll_calendars_csv/EU-DIV30.csv": [],
+    "data/futures/roll_calendars_csv/EU-DJ-OIL.csv": [],
+    "data/futures/roll_calendars_csv/EU-DJ-TECH.csv": [],
+    "data/futures/roll_calendars_csv/EU-DJ-TELECOM.csv": [],
+    "data/futures/roll_calendars_csv/EU-DJ-UTIL.csv": [],
+    "data/futures/roll_calendars_csv/EU-FOOD.csv": [],
+    "data/futures/roll_calendars_csv/EU-HEALTH.csv": [],
+    "data/futures/roll_calendars_csv/EU-HOUSE.csv": [],
+    "data/futures/roll_calendars_csv/EU-INSURE.csv": [],
+    "data/futures/roll_calendars_csv/EU-MEDIA.csv": [],
+    "data/futures/roll_calendars_csv/EU-MID.csv": [],
+    "data/futures/roll_calendars_csv/EU-OIL.csv": [],
+    "data/futures/roll_calendars_csv/EU-REALESTATE.csv": [],
+    "data/futures/roll_calendars_csv/EU-RETAIL.csv": [],
+    "data/futures/roll_calendars_csv/EU-TECH.csv": [],
+    "data/futures/roll_calendars_csv/EU-TRAVEL.csv": [],
+    "data/futures/roll_calendars_csv/EU-UTILS.csv": [],
+    "data/futures/roll_calendars_csv/EUA.csv": [],
+    "data/futures/roll_calendars_csv/EUR_mini.csv": [],
+    "data/futures/roll_calendars_csv/EUR.csv": [],
+    "data/futures/roll_calendars_csv/EURAUD.csv": [],
+    "data/futures/roll_calendars_csv/EURCAD.csv": [],
+    "data/futures/roll_calendars_csv/EURCHF.csv": [],
+    "data/futures/roll_calendars_csv/EURIBOR-ICE.csv": [],
+    "data/futures/roll_calendars_csv/EURIBOR.csv": [],
+    "data/futures/roll_calendars_csv/EURO600.csv": [],
+    "data/futures/roll_calendars_csv/EUROSTX-LARGE.csv": [],
+    "data/futures/roll_calendars_csv/EUROSTX-SMALL.csv": [],
+    "data/futures/roll_calendars_csv/EUROSTX.csv": [],
+    "data/futures/roll_calendars_csv/EUROSTX200-LARGE.csv": [],
+    "data/futures/roll_calendars_csv/FANG.csv": [],
+    "data/futures/roll_calendars_csv/FED.csv": [],
+    "data/futures/roll_calendars_csv/FEEDCOW.csv": [],
+    "data/futures/roll_calendars_csv/FTSE100.csv": [],
+    "data/futures/roll_calendars_csv/FTSE250.csv": [],
+    "data/futures/roll_calendars_csv/FTSECHINAA.csv": [],
+    "data/futures/roll_calendars_csv/FTSECHINAH.csv": [],
+    "data/futures/roll_calendars_csv/FTSEINDO.csv": [],
+    "data/futures/roll_calendars_csv/FTSETAIWAN.csv": [],
+    "data/futures/roll_calendars_csv/FTSEVIET.csv": [],
+    "data/futures/roll_calendars_csv/GAS_US_mini.csv": [],
+    "data/futures/roll_calendars_csv/GAS_US.csv": [],
+    "data/futures/roll_calendars_csv/GAS-LAST.csv": [],
+    "data/futures/roll_calendars_csv/GAS-PEN.csv": [],
+    "data/futures/roll_calendars_csv/GASOIL.csv": [],
+    "data/futures/roll_calendars_csv/GASOILINE_ICE.csv": [],
+    "data/futures/roll_calendars_csv/GASOILINE_micro.csv": [],
+    "data/futures/roll_calendars_csv/GASOILINE.csv": [],
+    "data/futures/roll_calendars_csv/GBP_micro.csv": [],
+    "data/futures/roll_calendars_csv/GBP.csv": [],
+    "data/futures/roll_calendars_csv/GBPCHF.csv": [],
+    "data/futures/roll_calendars_csv/GBPEUR.csv": [],
+    "data/futures/roll_calendars_csv/GBPJPY.csv": [],
+    "data/futures/roll_calendars_csv/GICS.csv": [],
+    "data/futures/roll_calendars_csv/GILT.csv": [],
+    "data/futures/roll_calendars_csv/GOLD_micro.csv": [],
+    "data/futures/roll_calendars_csv/GOLD-mini.csv": [],
+    "data/futures/roll_calendars_csv/GOLD.csv": [],
+    "data/futures/roll_calendars_csv/HANG_mini.csv": [],
+    "data/futures/roll_calendars_csv/HANG.csv": [],
+    "data/futures/roll_calendars_csv/HANGENT_mini.csv": [],
+    "data/futures/roll_calendars_csv/HANGENT_mini.csv~": [],
+    "data/futures/roll_calendars_csv/HANGENT.csv": [],
+    "data/futures/roll_calendars_csv/HANGTECH.csv": [],
+    "data/futures/roll_calendars_csv/HEATOIL-ICE.csv": [],
+    "data/futures/roll_calendars_csv/HEATOIL-mini.csv": [],
+    "data/futures/roll_calendars_csv/HEATOIL.csv": [],
+    "data/futures/roll_calendars_csv/HIGHYIELD.csv": [],
+    "data/futures/roll_calendars_csv/HOUSE-US.csv": [],
+    "data/futures/roll_calendars_csv/IBEX_mini.csv": [],
+    "data/futures/roll_calendars_csv/IBEX.csv": [],
+    "data/futures/roll_calendars_csv/IG.csv": [],
+    "data/futures/roll_calendars_csv/INR-micro.csv": [],
+    "data/futures/roll_calendars_csv/INR.csv": [],
+    "data/futures/roll_calendars_csv/IRON.csv": [],
+    "data/futures/roll_calendars_csv/IRS.csv": [],
+    "data/futures/roll_calendars_csv/JGB-mini.csv": [],
+    "data/futures/roll_calendars_csv/JGB-SGX-mini.csv": [],
+    "data/futures/roll_calendars_csv/JGB.csv": [],
+    "data/futures/roll_calendars_csv/JP-REALESTATE.csv": [],
+    "data/futures/roll_calendars_csv/JPY_micro.csv": [],
+    "data/futures/roll_calendars_csv/JPY_mini.csv": [],
+    "data/futures/roll_calendars_csv/JPY.csv": [],
+    "data/futures/roll_calendars_csv/KOSDAQ.csv": [],
+    "data/futures/roll_calendars_csv/KOSPI_mini.csv": [],
+    "data/futures/roll_calendars_csv/KOSPI.csv": [],
+    "data/futures/roll_calendars_csv/KR10.csv": [],
+    "data/futures/roll_calendars_csv/KR3.csv": [],
+    "data/futures/roll_calendars_csv/KRWUSD_mini.csv": [],
+    "data/futures/roll_calendars_csv/KRWUSD.csv": [],
+    "data/futures/roll_calendars_csv/LEAD_LME.csv": [],
+    "data/futures/roll_calendars_csv/LEANHOG.csv": [],
+    "data/futures/roll_calendars_csv/LIVECOW.csv": [],
+    "data/futures/roll_calendars_csv/LUMBER-new.csv": [],
+    "data/futures/roll_calendars_csv/LUMBER.csv": [],
+    "data/futures/roll_calendars_csv/MIB.csv": [],
+    "data/futures/roll_calendars_csv/MID-DAX.csv": [],
+    "data/futures/roll_calendars_csv/MILK.csv": [],
+    "data/futures/roll_calendars_csv/MILKDRY.csv": [],
+    "data/futures/roll_calendars_csv/MILKWET.csv": [],
+    "data/futures/roll_calendars_csv/MILLWHEAT.csv": [],
+    "data/futures/roll_calendars_csv/MSCIASIA.csv": [],
+    "data/futures/roll_calendars_csv/MSCIEAFA.csv": [],
+    "data/futures/roll_calendars_csv/MSCIEMASIA.csv": [],
+    "data/futures/roll_calendars_csv/MSCISING.csv": [],
+    "data/futures/roll_calendars_csv/MSCITAIWAN.csv": [],
+    "data/futures/roll_calendars_csv/MSCIWORLD.csv": [],
+    "data/futures/roll_calendars_csv/MUMMY.csv": [],
+    "data/futures/roll_calendars_csv/MXP.csv": [],
+    "data/futures/roll_calendars_csv/NASDAQ_micro.csv": [],
+    "data/futures/roll_calendars_csv/NASDAQ.csv": [],
+    "data/futures/roll_calendars_csv/NICKEL_LME.csv": [],
+    "data/futures/roll_calendars_csv/NIFTY-IN.csv": [],
+    "data/futures/roll_calendars_csv/NIFTY.csv": [],
+    "data/futures/roll_calendars_csv/NIKKEI.csv": [],
+    "data/futures/roll_calendars_csv/NIKKEI400.csv": [],
+    "data/futures/roll_calendars_csv/NOK.csv": [],
+    "data/futures/roll_calendars_csv/NZD.csv": [],
+    "data/futures/roll_calendars_csv/OAT.csv": [],
+    "data/futures/roll_calendars_csv/OATIES.csv": [],
+    "data/futures/roll_calendars_csv/OJ.csv": [],
+    "data/futures/roll_calendars_csv/OMX.csv": [],
+    "data/futures/roll_calendars_csv/PALLAD.csv": [],
+    "data/futures/roll_calendars_csv/PLAT.csv": [],
+    "data/futures/roll_calendars_csv/PLN.csv": [],
+    "data/futures/roll_calendars_csv/R1000_mini.csv": [],
+    "data/futures/roll_calendars_csv/R1000.csv": [],
+    "data/futures/roll_calendars_csv/RAPESEED.csv": [],
+    "data/futures/roll_calendars_csv/REDWHEAT.csv": [],
+    "data/futures/roll_calendars_csv/RICE.csv": [],
+    "data/futures/roll_calendars_csv/ROBUSTA.csv": [],
+    "data/futures/roll_calendars_csv/RUBBER.csv": [],
+    "data/futures/roll_calendars_csv/RUR.csv": [],
+    "data/futures/roll_calendars_csv/RUSSELL.csv": [],
+    "data/futures/roll_calendars_csv/SARONA.csv": [],
+    "data/futures/roll_calendars_csv/SARONA.csv~": [],
+    "data/futures/roll_calendars_csv/SEK.csv": [],
+    "data/futures/roll_calendars_csv/SGD_mini.csv": [],
+    "data/futures/roll_calendars_csv/SGD.csv": [],
+    "data/futures/roll_calendars_csv/SGX.csv": [],
+    "data/futures/roll_calendars_csv/SHATZ.csv": [],
+    "data/futures/roll_calendars_csv/SILVER-mini.csv": [],
+    "data/futures/roll_calendars_csv/SILVER.csv": [],
+    "data/futures/roll_calendars_csv/SMI-MID.csv": [],
+    "data/futures/roll_calendars_csv/SMI.csv": [],
+    "data/futures/roll_calendars_csv/SOFR.csv": [],
+    "data/futures/roll_calendars_csv/SONIA3.csv": [],
+    "data/futures/roll_calendars_csv/SOYBEAN_mini.csv": [],
+    "data/futures/roll_calendars_csv/SOYBEAN.csv": [],
+    "data/futures/roll_calendars_csv/SOYMEAL.csv": [],
+    "data/futures/roll_calendars_csv/SOYOIL.csv": [],
+    "data/futures/roll_calendars_csv/SP400.csv": [],
+    "data/futures/roll_calendars_csv/SP500_micro.csv": [],
+    "data/futures/roll_calendars_csv/SP500.csv": [],
+    "data/futures/roll_calendars_csv/SPI200.csv": [],
+    "data/futures/roll_calendars_csv/STEEL.csv": [],
+    "data/futures/roll_calendars_csv/SUGAR_WHITE.csv": [],
+    "data/futures/roll_calendars_csv/SUGAR11.csv": [],
+    "data/futures/roll_calendars_csv/SUGAR16.csv": [],
+    "data/futures/roll_calendars_csv/SWISSLEAD.csv": [],
+    "data/futures/roll_calendars_csv/TIN_LME.csv": [],
+    "data/futures/roll_calendars_csv/TOPIX.csv": [],
+    "data/futures/roll_calendars_csv/TWD-mini.csv": [],
+    "data/futures/roll_calendars_csv/TWD.csv": [],
+    "data/futures/roll_calendars_csv/US-DISCRETE.csv": [],
+    "data/futures/roll_calendars_csv/US-ENERGY.csv": [],
+    "data/futures/roll_calendars_csv/US-FINANCE.csv": [],
+    "data/futures/roll_calendars_csv/US-HEALTH.csv": [],
+    "data/futures/roll_calendars_csv/US-INDUSTRY.csv": [],
+    "data/futures/roll_calendars_csv/US-MATERIAL.csv": [],
+    "data/futures/roll_calendars_csv/US-PROPERTY.csv": [],
+    "data/futures/roll_calendars_csv/US-REALESTATE.csv": [],
+    "data/futures/roll_calendars_csv/US-STAPLES.csv": [],
+    "data/futures/roll_calendars_csv/US-TECH.csv": [],
+    "data/futures/roll_calendars_csv/US-UTILS.csv": [],
+    "data/futures/roll_calendars_csv/US10.csv": [],
+    "data/futures/roll_calendars_csv/US10U.csv": [],
+    "data/futures/roll_calendars_csv/US2.csv": [],
+    "data/futures/roll_calendars_csv/US20.csv": [],
+    "data/futures/roll_calendars_csv/US3.csv": [],
+    "data/futures/roll_calendars_csv/US30.csv": [],
+    "data/futures/roll_calendars_csv/US5.csv": [],
+    "data/futures/roll_calendars_csv/USIRS10.csv": [],
+    "data/futures/roll_calendars_csv/USIRS2ERIS.csv": [],
+    "data/futures/roll_calendars_csv/USIRS2ERIS.csv~": [],
+    "data/futures/roll_calendars_csv/USIRS5ERIS.csv": [],
+    "data/futures/roll_calendars_csv/V2X.csv": [],
+    "data/futures/roll_calendars_csv/VIX_mini.csv": [],
+    "data/futures/roll_calendars_csv/VIX.csv": [],
+    "data/futures/roll_calendars_csv/VIX#1.csv": [],
+    "data/futures/roll_calendars_csv/VIX#2.csv": [],
+    "data/futures/roll_calendars_csv/VIX#3.csv": [],
+    "data/futures/roll_calendars_csv/VNKI.csv": [],
+    "data/futures/roll_calendars_csv/WHEAT_ICE.csv": [],
+    "data/futures/roll_calendars_csv/WHEAT_mini.csv": [],
+    "data/futures/roll_calendars_csv/WHEAT.csv": [],
+    "data/futures/roll_calendars_csv/WHEY.csv": [],
+    "data/futures/roll_calendars_csv/YENEUR.csv": [],
+    "data/futures/roll_calendars_csv/ZAR.csv": [],
+    "data/futures/roll_calendars_csv/ZINC_LME.csv": [],
+    "data/test/adjusted_prices_csv/AEX.csv": [],
+    "data/test/adjusted_prices_csv/AUD.csv": [],
+    "data/test/adjusted_prices_csv/BOBL.csv": [],
+    "data/test/adjusted_prices_csv/BTP.csv": [],
+    "data/test/adjusted_prices_csv/BUND.csv": [],
+    "data/test/adjusted_prices_csv/CAC.csv": [],
+    "data/test/adjusted_prices_csv/COPPER.csv": [],
+    "data/test/adjusted_prices_csv/CORN.csv": [],
+    "data/test/adjusted_prices_csv/CRUDE_W.csv": [],
+    "data/test/adjusted_prices_csv/EDOLLAR.csv": [],
+    "data/test/adjusted_prices_csv/EUR.csv": [],
+    "data/test/adjusted_prices_csv/EUROSTX.csv": [],
+    "data/test/adjusted_prices_csv/GAS_US.csv": [],
+    "data/test/adjusted_prices_csv/GBP.csv": [],
+    "data/test/adjusted_prices_csv/GOLD.csv": [],
+    "data/test/adjusted_prices_csv/JPY.csv": [],
+    "data/test/adjusted_prices_csv/KOSPI.csv": [],
+    "data/test/adjusted_prices_csv/KR10.csv": [],
+    "data/test/adjusted_prices_csv/KR3.csv": [],
+    "data/test/adjusted_prices_csv/LEANHOG.csv": [],
+    "data/test/adjusted_prices_csv/LIVECOW.csv": [],
+    "data/test/adjusted_prices_csv/MXP.csv": [],
+    "data/test/adjusted_prices_csv/NASDAQ.csv": [],
+    "data/test/adjusted_prices_csv/NZD.csv": [],
+    "data/test/adjusted_prices_csv/OAT.csv": [],
+    "data/test/adjusted_prices_csv/PALLAD.csv": [],
+    "data/test/adjusted_prices_csv/PLAT.csv": [],
+    "data/test/adjusted_prices_csv/SHATZ.csv": [],
+    "data/test/adjusted_prices_csv/SMI.csv": [],
+    "data/test/adjusted_prices_csv/SOYBEAN.csv": [],
+    "data/test/adjusted_prices_csv/SP500.csv": [],
+    "data/test/adjusted_prices_csv/US10.csv": [],
+    "data/test/adjusted_prices_csv/US2.csv": [],
+    "data/test/adjusted_prices_csv/US20.csv": [],
+    "data/test/adjusted_prices_csv/US5.csv": [],
+    "data/test/adjusted_prices_csv/V2X.csv": [],
+    "data/test/adjusted_prices_csv/VIX.csv": [],
+    "data/test/adjusted_prices_csv/WHEAT.csv": [],
+    "data/test/csvconfig/instrumentconfig.csv": [],
+    "data/tools/__init__.py": [],
+    "data/tools/contract_comparison.py": [
+      "sysobjects/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "data/tools/example use ContractComparison.ipynb": [],
+    "docs/__init__.py": [],
+    "docs/.DS_Store": [],
+    "docs/backtesting.md": [],
+    "docs/dashboard_and_monitor.md": [],
+    "docs/data.md": [],
+    "docs/doc_generation/__init__.py": [],
+    "docs/doc_generation/list_of_futures_product_pages_generator.py": [
+      "docs/doc_generation/symbol_product_page_map.py",
+      "syscore/fileutils.py"
+    ],
+    "docs/doc_generation/symbol_product_page_map.py": [],
+    "docs/gh-md-toc": [],
+    "docs/IB.md": [],
+    "docs/installation.md": [],
+    "docs/instruments.md": [],
+    "docs/introduction.md": [],
+    "docs/list_of_futures_product_pages.md": [],
+    "docs/notebooks/introduction_with_fxdata.ipynb": [],
+    "docs/production_strategy_changes.md": [],
+    "docs/production.md": [],
+    "examples/__init__.py": [],
+    "examples/data/subscription_test.py": [
+      "sysbrokers/IB/config/ib_instrument_config.py"
+    ],
+    "examples/introduction/__init__.py": [],
+    "examples/introduction/asimpletradingrule.ipynb": [],
+    "examples/introduction/asimpletradingrule.py": [
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/account_forecast.py"
+    ],
+    "examples/introduction/estimatedsystem.pck": [],
+    "examples/introduction/prebakedsystems.ipynb": [],
+    "examples/introduction/prebakedsystems.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/provided/example/simplesystem.py",
+      "systems/provided/futures_chapter15/basesystem.py",
+      "systems/provided/futures_chapter15/estimatedsystem.py"
+    ],
+    "examples/introduction/simplesystem.ipynb": [],
+    "examples/introduction/simplesystem.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/rules/ewmac.py",
+      "systems/rawdata.py",
+      "systems/trading_rules.py"
+    ],
+    "examples/logging/logging_server.service": [],
+    "examples/logging/poc.py": [
+      "syslogging/logger.py"
+    ],
+    "examples/production/example_of_custom_run_system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysproduction/data/sim_data.py",
+      "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/risk.py"
+    ],
+    "examples/production/private_config_example.yaml": [],
+    "MANIFEST.in": [],
+    "pyproject.toml": [],
+    "README.md": [],
+    "requirements.txt": [],
+    "setup.py": [],
+    "sysbrokers/__init__.py": [],
+    "sysbrokers/broker_capital_data.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_contract_commission_data.py": [
+      "sysdata/data_blob.py",
+      "sysdata/futures/contracts.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_contract_position_data.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysbrokers/broker_execution_stack.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/broker_factory.py": [
+      "sysbrokers/IB/ib_broker_commissions.py",
+      "sysbrokers/IB/ib_capital_data.py",
+      "sysbrokers/IB/ib_contract_position_data.py",
+      "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_fx_handling.py",
+      "sysbrokers/IB/ib_Fx_prices_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_orders.py",
+      "sysbrokers/IB/ib_static_data.py",
+      "syscore/objects.py",
+      "sysdata/data_blob.py"
+    ],
+    "sysbrokers/broker_futures_contract_data.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/contracts.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysbrokers/broker_futures_contract_price_data.py": [
+      "syscore/dateutils.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/tick_data.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysbrokers/broker_fx_handling.py": [
+      "sysbrokers/broker_trade.py",
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/broker_fx_prices_data.py": [
+      "sysdata/data_blob.py",
+      "sysdata/fx/spotfx.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_instrument_data.py": [
+      "sysdata/data_blob.py",
+      "sysdata/futures/instruments.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/broker_static_data.py": [
+      "sysdata/base_data.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/broker_trade.py": [],
+    "sysbrokers/IB/__init__.py": [],
+    "sysbrokers/IB/client/__init__.py": [],
+    "sysbrokers/IB/client/ib_accounting_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "syscore/constants.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/client/ib_client_id.py": [
+      "sysbrokers/IB/ib_connection_defaults.py",
+      "syscore/constants.py",
+      "sysdata/production/broker_client_id.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/client/ib_client.py": [
+      "sysbrokers/IB/config/ib_instrument_config.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "syscore/cache.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/client/ib_contracts_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_instruments.py",
+      "sysbrokers/IB/ib_trading_hours.py",
+      "syscore/cache.py",
+      "syscore/exceptions.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysbrokers/IB/client/ib_fx_client.py": [
+      "sysbrokers/IB/client/ib_price_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_positions.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py"
+    ],
+    "sysbrokers/IB/client/ib_orders_client.py": [
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_positions.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysbrokers/IB/client/ib_positions_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/constants.py"
+    ],
+    "sysbrokers/IB/client/ib_price_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysbrokers/IB/config/__init__.py": [],
+    "sysbrokers/IB/config/ib_config_futures.csv": [],
+    "sysbrokers/IB/config/ib_config_spot_FX.csv": [],
+    "sysbrokers/IB/config/ib_fx_config.py": [
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/config/ib_instrument_config.py": [
+      "sysbrokers/IB/ib_instruments.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syscore/genutils.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysbrokers/IB/ib_broker_commissions.py": [
+      "sysbrokers/broker_contract_commission_data.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_orders.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/broker_orders.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_capital_data.py": [
+      "sysbrokers/broker_capital_data.py",
+      "sysbrokers/IB/client/ib_accounting_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_config_trading_hours.yaml": [],
+    "sysbrokers/IB/ib_connection_defaults.py": [
+      "syscore/constants.py",
+      "sysdata/config/production_config.py"
+    ],
+    "sysbrokers/IB/ib_connection.py": [
+      "sysbrokers/IB/ib_connection_defaults.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/config/production_config.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_contract_position_data.py": [
+      "sysbrokers/broker_contract_position_data.py",
+      "sysbrokers/IB/client/ib_positions_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysbrokers/IB/ib_contracts.py": [
+      "sysbrokers/IB/ib_instruments.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/genutils.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysbrokers/IB/ib_futures_contract_price_data.py": [
+      "sysbrokers/broker_futures_contract_price_data.py",
+      "sysbrokers/IB/client/ib_price_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/tick_data.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysbrokers/IB/ib_futures_contracts_data.py": [
+      "sysbrokers/broker_futures_contract_data.py",
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysbrokers/IB/ib_fx_handling.py": [
+      "sysbrokers/broker_fx_handling.py",
+      "sysbrokers/IB/client/ib_fx_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_Fx_prices_data.py": [
+      "sysbrokers/broker_fx_prices_data.py",
+      "sysbrokers/IB/client/ib_fx_client.py",
+      "sysbrokers/IB/config/ib_fx_config.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_instruments_data.py": [
+      "sysbrokers/broker_instrument_data.py",
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/config/ib_instrument_config.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_instruments.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_instruments.py": [
+      "sysobjects/instruments.py"
+    ],
+    "sysbrokers/IB/ib_orders.py": [
+      "sysbrokers/broker_execution_stack.py",
+      "sysbrokers/IB/client/ib_orders_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_positions.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysbrokers/IB/ib_static_data.py": [
+      "sysbrokers/broker_static_data.py",
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_trading_hours.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/private_config.py",
+      "sysdata/config/production_config.py",
+      "sysdata/production/trading_hours.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysbrokers/IB/ib_translate_broker_order_objects.py": [
+      "sysbrokers/broker_trade.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "syscontrol/__init__.py": [],
+    "syscontrol/control_config.yaml": [],
+    "syscontrol/list_running_pids.py": [
+      "syscore/exceptions.py",
+      "sysdata/config/production_config.py"
+    ],
+    "syscontrol/monitor.py": [
+      "syscontrol/list_running_pids.py",
+      "syscore/dateutils.py",
+      "syscore/fileutils.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "syscontrol/report_process_status.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py"
+    ],
+    "syscontrol/run_process.py": [
+      "syscontrol/report_process_status.py",
+      "syscontrol/timer_functions.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "syscontrol/strategy_tools.py": [
+      "syscore/objects.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "syscontrol/timer_functions.py": [
+      "syscontrol/report_process_status.py",
+      "syscontrol/timer_parameters.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "syscontrol/timer_parameters.py": [],
+    "syscore/__init__.py": [],
+    "syscore/cache.py": [
+      "syscore/exceptions.py"
+    ],
+    "syscore/capital.py": [
+      "syscore/pandas/__init__.py",
+      "systems/basesystem.py"
+    ],
+    "syscore/constants.py": [],
+    "syscore/dateutils.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/exceptions.py": [],
+    "syscore/fileutils.py": [
+      "syscore/__init__.py",
+      "syscore/dateutils.py"
+    ],
+    "syscore/genutils.py": [],
+    "syscore/interactive/__init__.py": [],
+    "syscore/interactive/date_input.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "syscore/interactive/display.py": [
+      "syscore/maths.py",
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/interactive/input.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py"
+    ],
+    "syscore/interactive/menus.py": [
+      "syscore/interactive/input.py"
+    ],
+    "syscore/interactive/progress_bar.py": [],
+    "syscore/interactive/run_functions.py": [
+      "syscore/interactive/input.py"
+    ],
+    "syscore/maths.py": [],
+    "syscore/objects.py": [],
+    "syscore/pandas/__init__.py": [],
+    "syscore/pandas/find_data.py": [
+      "syscore/constants.py",
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/pandas/frequency.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/pdutils.py"
+    ],
+    "syscore/pandas/full_merge_with_replacement.py": [
+      "syscore/constants.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "syscore/pandas/pdutils.py"
+    ],
+    "syscore/pandas/list_of_df.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/pdutils.py"
+    ],
+    "syscore/pandas/merge_data_keeping_past_data.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/pdutils.py"
+    ],
+    "syscore/pandas/merge_data_with_label_column.py": [
+      "syscore/constants.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/full_merge_with_replacement.py"
+    ],
+    "syscore/pandas/pdutils.py": [
+      "syscore/constants.py",
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/pandas/strategy_functions.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/__init__.py",
+      "syscore/pandas/pdutils.py"
+    ],
+    "syscore/tests/__init__.py": [],
+    "syscore/tests/price.test.data.csv": [],
+    "syscore/tests/pricetestdata_min_period.csv": [],
+    "syscore/tests/pricetestdata_vol_floor.csv": [],
+    "syscore/tests/pricetestdata_zero_vol.csv": [],
+    "syscore/tests/pricetestdata.csv": [],
+    "syscore/tests/test_algos.py": [
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/vol.py"
+    ],
+    "syscore/tests/test_correlation.py": [
+      "systems/basesystem.py",
+      "systems/tests/testdata.py"
+    ],
+    "syscore/tests/test_dateutils.py": [
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/tests/test_fileutils.py": [
+      "syscore/fileutils.py"
+    ],
+    "syscore/tests/test_pdutils.py": [
+      "syscore/pandas/__init__.py"
+    ],
+    "syscore/tests/test.py": [
+      "systems/provided/futures_chapter15/basesystem.py"
+    ],
+    "syscore/text.py": [
+      "syscore/constants.py"
+    ],
+    "sysdata/__init__.py": [],
+    "sysdata/_DEPRECATED/__init__.py": [],
+    "sysdata/_DEPRECATED/mongo_log.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysdata/mongodb/mongo_connection.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/_DEPRECATED/database_log.py",
+      "syslogdiag/log_entry.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/objects.py",
+      "sysdata/base_data.py",
+      "syslogdiag/log_to_screen.py"
+    ],
+    "sysdata/arctic/__init__.py": [],
+    "sysdata/arctic/arctic_adjusted_prices.py": [
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/futures/adjusted_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/arctic/arctic_capital.py": [
+      "syscore/exceptions.py",
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/arctic/arctic_connection.py": [
+      "sysdata/arctic/__init__.py",
+      "sysdata/mongodb/mongo_connection.py"
+    ],
+    "sysdata/arctic/arctic_futures_per_contract_prices.py": [
+      "syscore/dateutils.py",
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/arctic/arctic_historic_contract_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/arctic/arctic_historic_strategy_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/arctic/arctic_multiple_prices.py": [
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/futures/multiple_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysdata/arctic/arctic_optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/arctic/arctic_spotfx_prices.py": [
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/fx/spotfx.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/arctic/arctic_spreads.py": [
+      "sysdata/arctic/arctic_connection.py",
+      "sysdata/futures/spreads.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/base_data.py": [
+      "syslogging/logger.py"
+    ],
+    "sysdata/config/__init__.py": [],
+    "sysdata/config/configdata.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "sysdata/config/defaults.py",
+      "sysdata/config/fill_config_dict_with_defaults.py",
+      "sysdata/config/private_config.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/config/control_config.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/configdata.py",
+      "sysdata/config/private_config.py"
+    ],
+    "sysdata/config/defaults.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py"
+    ],
+    "sysdata/config/defaults.yaml": [],
+    "sysdata/config/fill_config_dict_with_defaults.py": [],
+    "sysdata/config/instruments.py": [
+      "sysdata/config/configdata.py"
+    ],
+    "sysdata/config/private_config.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py"
+    ],
+    "sysdata/config/production_config.py": [
+      "sysdata/config/configdata.py"
+    ],
+    "sysdata/csv/__init__.py": [],
+    "sysdata/csv/csv_adjusted_prices.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/adjusted_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/csv/csv_capital_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_contract_position_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/csv/csv_futures_contract_prices.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/csv/csv_futures_contracts.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/futures/contracts.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_historic_orders.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_orders.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_instrument_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/futures/instruments.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysdata/csv/csv_multiple_prices.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/genutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/multiple_prices.py",
+      "syslogging/logger.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysdata/csv/csv_optimal_position.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/csv/csv_roll_calendars.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/roll_calendars.py",
+      "syslogging/logger.py",
+      "sysobjects/roll_calendars.py"
+    ],
+    "sysdata/csv/csv_roll_parameters.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/futures/rolls_parameters.py",
+      "syslogging/logger.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysdata/csv/csv_roll_state_storage.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/roll_state.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_spot_fx.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/fx/spotfx.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/csv/csv_spread_costs.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/futures/spread_costs.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_spreads.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/spreads.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/csv/csv_strategy_position_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/data_blob.py": [
+      "sysbrokers/IB/ib_connection.py",
+      "syscore/constants.py",
+      "syscore/objects.py",
+      "syscore/text.py",
+      "sysdata/config/production_config.py",
+      "sysdata/mongodb/mongo_connection.py",
+      "sysdata/mongodb/mongo_IB_client_id.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/futures/__init__.py": [],
+    "sysdata/futures/adjusted_prices.py": [
+      "sysdata/base_data.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/futures/contracts.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/futures/futures_per_contract_prices.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/futures/instruments.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysdata/futures/multiple_prices.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysdata/futures/roll_calendars.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/roll_calendars.py"
+    ],
+    "sysdata/futures/rolls_parameters.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysdata/futures/spread_costs.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/futures/spreads.py": [
+      "sysdata/base_data.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/fx/spotfx.py": [
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/mongodb/__init__.py": [],
+    "sysdata/mongodb/mongo_connection.py": [
+      "syscore/constants.py",
+      "sysdata/config/production_config.py"
+    ],
+    "sysdata/mongodb/mongo_futures_contracts.py": [
+      "syscore/constants.py",
+      "sysdata/futures/contracts.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/mongodb/mongo_generic.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_connection.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_historic_orders.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/historic_orders.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/mongodb/mongo_IB_client_id.py": [
+      "sysbrokers/IB/client/ib_client_id.py",
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_lock_data.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/locks.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_margin.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/margin.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_order_stack.py": [
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/contract_order_stack.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_override.py": [
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/override.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/mongodb/mongo_position_limits.py": [
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/position_limits.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/mongodb/mongo_process_control.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/process_control_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py"
+    ],
+    "sysdata/mongodb/mongo_roll_state_storage.py": [
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/roll_state.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_spread_costs.py": [
+      "syscore/exceptions.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_temporary_close.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/temporary_close.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py"
+    ],
+    "sysdata/mongodb/mongo_temporary_override.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/mongodb/mongo_override.py",
+      "sysdata/production/temporary_override.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/mongodb/mongo_trade_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/trade_limits.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/mongodb/tests/test_mongodb.py": [
+      "sysdata/mongodb/mongo_connection.py"
+    ],
+    "sysdata/parquet/__init__.py": [],
+    "sysdata/parquet/parquet_access.py": [
+      "syscore/exceptions.py",
+      "syscore/fileutils.py"
+    ],
+    "sysdata/parquet/parquet_adjusted_prices.py": [
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/parquet/parquet_capital.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/parquet/parquet_futures_per_contract_prices.py": [
+      "syscore/dateutils.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/parquet/parquet_historic_contract_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/parquet/parquet_historic_strategy_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_multiple_prices.py": [
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysdata/parquet/parquet_optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_spotfx_prices.py": [
+      "sysdata/fx/spotfx.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/parquet/parquet_spreads.py": [
+      "sysdata/futures/spreads.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/production/__init__.py": [],
+    "sysdata/production/broker_client_id.py": [
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/capital.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/capital.py"
+    ],
+    "sysdata/production/historic_contract_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysdata/production/historic_orders.py": [
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "syslogging/logger.py",
+      "sysobjects/fills.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/historic_strategy_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/locks.py": [
+      "syscore/exceptions.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/margin.py": [
+      "syscore/exceptions.py"
+    ],
+    "sysdata/production/optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/position_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/process_control_data.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py"
+    ],
+    "sysdata/production/roll_state.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/roll_state.py"
+    ],
+    "sysdata/production/temporary_close.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py"
+    ],
+    "sysdata/production/temporary_override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/production/trade_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/trade_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/trading_hours.py": [
+      "syscore/fileutils.py",
+      "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py"
+    ],
+    "sysdata/sim/__init__.py": [],
+    "sysdata/sim/csv_futures_sim_data.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/csv/csv_spot_fx.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/data_blob.py",
+      "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/sim/csv_futures_sim_test_data.py": [
+      "syscore/dateutils.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/csv/csv_spot_fx.py",
+      "sysdata/data_blob.py",
+      "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/sim/db_futures_sim_data.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/sim/futures_sim_data_with_data_blob.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/futures/instruments.py",
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/futures/rolls_parameters.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/fx/spotfx.py",
+      "sysdata/sim/futures_sim_data.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/instruments.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/sim/futures_sim_data.py": [
+      "syscore/exceptions.py",
+      "sysdata/sim/sim_data.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/instruments.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysdata/sim/sim_data.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/objects.py",
+      "syscore/pandas/frequency.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/tests/custom_private_config/private_config_trading_hours.yaml": [],
+    "sysdata/tests/custom_private_config/private_config.yaml": [],
+    "sysdata/tests/custom_private_config/private_control_config.yaml": [],
+    "sysdata/tests/test_config.py": [
+      "sysbrokers/IB/ib_trading_hours.py",
+      "sysdata/config/configdata.py",
+      "sysdata/config/control_config.py",
+      "sysdata/config/private_config.py"
+    ],
+    "sysdata/tools/__init__.py": [],
+    "sysdata/tools/cleaner.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/input.py",
+      "sysdata/data_blob.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/tools/manual_price_checker.py": [
+      "syscore/constants.py",
+      "syscore/pandas/full_merge_with_replacement.py",
+      "syscore/pandas/merge_data_keeping_past_data.py"
+    ],
+    "sysexecution/__init__.py": [],
+    "sysexecution/algos/__init__.py": [],
+    "sysexecution/algos/algo_adaptive.py": [
+      "sysexecution/algos/algo_market.py",
+      "sysexecution/orders/broker_orders.py"
+    ],
+    "sysexecution/algos/algo_limit_orders.py": [
+      "sysexecution/algos/algo.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py"
+    ],
+    "sysexecution/algos/algo_market.py": [
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/common_functions.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysexecution/algos/algo_original_best.py": [
+      "syscore/exceptions.py",
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/common_functions.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysexecution/algos/algo_snaps.py": [
+      "sysexecution/algos/algo_market.py",
+      "sysexecution/orders/broker_orders.py"
+    ],
+    "sysexecution/algos/algo.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "sysproduction/data/broker.py"
+    ],
+    "sysexecution/algos/allocate_algo_to_order.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysexecution/algos/common_functions.py": [
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysproduction/data/broker.py"
+    ],
+    "sysexecution/order_stacks/__init__.py": [],
+    "sysexecution/order_stacks/broker_order_stack.py": [
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py"
+    ],
+    "sysexecution/order_stacks/contract_order_stack.py": [
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysexecution/order_stacks/instrument_order_stack.py": [
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysexecution/order_stacks/order_stack.py": [
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py"
+    ],
+    "sysexecution/orders/__init__.py": [],
+    "sysexecution/orders/base_orders.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysexecution/orders/broker_orders.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/fills.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysexecution/orders/contract_orders.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysexecution/orders/instrument_orders.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysexecution/orders/list_of_orders.py": [
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysexecution/orders/named_order_objects.py": [
+      "syscore/constants.py"
+    ],
+    "sysexecution/stack_handler/__init__.py": [],
+    "sysexecution/stack_handler/additional_sampling.py": [
+      "syscore/exceptions.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysexecution/stack_handler/balance_trades.py": [
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/fills.py"
+    ],
+    "sysexecution/stack_handler/cancel_and_modify.py": [
+      "syscore/genutils.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/stackHandlerCore.py"
+    ],
+    "sysexecution/stack_handler/checks.py": [
+      "syscore/constants.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysexecution/stack_handler/completed_orders.py": [
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysproduction/data/orders.py"
+    ],
+    "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py": [
+      "syscore/objects.py",
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/fills.py",
+      "sysproduction/data/controls.py"
+    ],
+    "sysexecution/stack_handler/fills.py": [
+      "syscore/exceptions.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/completed_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysexecution/stack_handler/roll_orders.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/stack_handler/spawn_children_from_instrument_orders.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/roll_orders.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/stack_handler/stack_handler.py": [
+      "sysexecution/stack_handler/additional_sampling.py",
+      "sysexecution/stack_handler/cancel_and_modify.py",
+      "sysexecution/stack_handler/checks.py",
+      "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+      "sysexecution/stack_handler/roll_orders.py",
+      "sysexecution/stack_handler/spawn_children_from_instrument_orders.py"
+    ],
+    "sysexecution/stack_handler/stackHandlerCore.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/strategies/__init__.py": [],
+    "sysexecution/strategies/classic_buffered_positions.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/strategies/strategy_order_handling.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/optimal_positions.py"
+    ],
+    "sysexecution/strategies/dynamic_optimised_positions.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/strategies/strategy_order_handling.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py"
+    ],
+    "sysexecution/strategies/strategy_order_handling.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "syslogging/logger.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysexecution/tests/__init__.py": [],
+    "sysexecution/tests/test_trade_qty.py": [],
+    "sysexecution/tick_data.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py"
+    ],
+    "sysexecution/trade_qty.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysinit/__init__.py": [],
+    "sysinit/configtools/csvweights_to_yaml.py": [],
+    "sysinit/futures/__init__.py": [],
+    "sysinit/futures/adhoc/update_provided_multiple_prices.py": [
+      "syscore/interactive/input.py",
+      "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/adjustedprices_from_db_multiple_to_db.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysobjects/adjusted_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/barchart_futures_contract_prices.py": [
+      "syscore/dateutils.py",
+      "syscore/fileutils.py",
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysinit/futures/contract_prices_from_csv_to_db.py"
+    ],
+    "sysinit/futures/build_multiple_prices_from_raw_data.py": [
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py"
+    ],
+    "sysinit/futures/build_roll_calendars.py": [
+      "syscore/exceptions.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/roll_parameters_with_price_data.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysinit/futures/check_instrument_lists.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "systems/provided/rob_system/run_system.py"
+    ],
+    "sysinit/futures/clone_data_for_instrument.py": [
+      "syscore/dateutils.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/clone_large_to_small_contracts.py": [
+      "sysinit/futures/clone_data_for_instrument.py"
+    ],
+    "sysinit/futures/contract_prices_from_csv_to_db.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py",
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/contract_prices_from_split_freq_csv_to_db.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py",
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/create_hourly_and_daily.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/get_prices_and_contract_details_from_ib.py": [
+      "syscore/dateutils.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py"
+    ],
+    "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysinit/futures/build_roll_calendars.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/repocsv_adjusted_prices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/repocsv_multiple_prices.py": [
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/repocsv_spotfx_prices.py": [
+      "sysdata/csv/csv_spot_fx.py",
+      "sysproduction/data/currency_data.py"
+    ],
+    "sysinit/futures/repocsv_spread_costs.py": [
+      "syscore/genutils.py",
+      "syscore/interactive/input.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/mongodb/mongo_spread_costs.py"
+    ],
+    "sysinit/futures/roll_parameters_csv_mongo.py": [],
+    "sysinit/futures/rollcalendars_from_db_multipleprices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysobjects/roll_calendars.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/rollcalendars_from_db_prices_to_csv.py": [
+      "syscore/constants.py",
+      "syscore/interactive/input.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/futures/rolls_parameters.py",
+      "sysobjects/roll_calendars.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/rollcalendars_from_providedcsv_prices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysobjects/roll_calendars.py"
+    ],
+    "sysinit/futures/safely_modify_roll_parameters.py": [
+      "syscore/interactive/input.py",
+      "sysdata/data_blob.py",
+      "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/seed_price_data_from_IB.py": [
+      "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/update_historical_prices.py"
+    ],
+    "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py": [
+      "sysdata/csv/csv_spot_fx.py",
+      "sysproduction/data/currency_data.py"
+    ],
+    "sysinit/futures/spotfx_from_db_to_csv.py": [
+      "sysdata/csv/csv_spot_fx.py",
+      "sysproduction/data/currency_data.py"
+    ],
+    "sysinit/futures/strategy_transfer.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/stack_handler/balance_trades.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/tests/__init__.py": [],
+    "sysinit/futures/tests/price/AUD_20180300.csv": [],
+    "sysinit/futures/tests/price/AUD_20180600.csv": [],
+    "sysinit/futures/tests/price/AUD_20180900.csv": [],
+    "sysinit/futures/tests/price/AUD_20181200.csv": [],
+    "sysinit/futures/tests/price/AUD_20190300.csv": [],
+    "sysinit/futures/tests/price/AUD_20190600.csv": [],
+    "sysinit/futures/tests/price/AUD_20190900.csv": [],
+    "sysinit/futures/tests/price/AUD_20191200.csv": [],
+    "sysinit/futures/tests/roll_cal/AUD.csv": [],
+    "sysinit/futures/tests/test_sysinit_futures.py": [
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysinit/futures/rollcalendars_from_db_prices_to_csv.py"
+    ],
+    "sysinit/transfer/__init__.py": [],
+    "sysinit/transfer/backup_arctic_to_parquet.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/input.py",
+      "sysdata/arctic/arctic_adjusted_prices.py",
+      "sysdata/arctic/arctic_capital.py",
+      "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_multiple_prices.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysdata/arctic/arctic_spotfx_prices.py",
+      "sysdata/arctic/arctic_spreads.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_futures_contracts.py",
+      "sysdata/mongodb/mongo_historic_orders.py",
+      "sysdata/mongodb/mongo_roll_state_storage.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_capital.py",
+      "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_historic_contract_positions.py",
+      "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_optimal_positions.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/parquet/parquet_spreads.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/directories.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysinit/transfer/positions_from_timed_storage_to_arctic.py": [
+      "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "syslogdiag/__init__.py": [],
+    "syslogdiag/_DEPRECATED/__init__.py": [],
+    "syslogdiag/_DEPRECATED/database_log.py": [
+      "sysdata/base_data.py",
+      "syslogdiag/log_to_screen.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/email_control.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "syslogdiag/email_via_db_interface.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syscore/interactive/display.py",
+      "syslogdiag/emailing.py",
+      "syslogdiag/mongo_email_control.py"
+    ],
+    "syslogdiag/emailing.py": [
+      "sysdata/config/production_config.py"
+    ],
+    "syslogdiag/log_entry.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "syslogdiag/log_to_file.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogdiag/log_entry.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/log_to_screen.py": [
+      "syslogdiag/log_entry.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/mongo_email_control.py": [
+      "syscore/dateutils.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/email_control.py",
+      "syslogging/logger.py"
+    ],
+    "syslogdiag/pst_logger.py": [
+      "syscore/constants.py",
+      "syslogdiag/log_entry.py"
+    ],
+    "syslogging/__init__.py": [],
+    "syslogging/adapter.py": [
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogging/filters.py": [],
+    "syslogging/handlers.py": [
+      "syslogdiag/emailing.py"
+    ],
+    "syslogging/logger.py": [
+      "syscore/fileutils.py",
+      "syslogging/__init__.py",
+      "syslogging/adapter.py",
+      "syslogging/filters.py",
+      "syslogging/pyyaml_env.py"
+    ],
+    "syslogging/logging_prod.yaml": [],
+    "syslogging/logging_sim.yaml": [],
+    "syslogging/pyyaml_env.py": [],
+    "syslogging/server.py": [
+      "syslogging/handlers.py",
+      "syslogging/logger.py"
+    ],
+    "syslogging/tests/logging_tests.py": [
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysobjects/__init__.py": [],
+    "sysobjects/adjusted_prices.py": [
+      "syscore/pandas/full_merge_with_replacement.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysobjects/carry_data.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/pdutils.py",
+      "syscore/pandas/strategy_functions.py"
+    ],
+    "sysobjects/contract_dates_and_expiries.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/contracts.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysobjects/dict_of_futures_per_contract_prices.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysobjects/dict_of_named_futures_per_contract_prices.py": [
+      "syscore/pandas/merge_data_with_label_column.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysobjects/fills.py": [
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysobjects/futures_per_contract_prices.py": [
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/full_merge_with_replacement.py",
+      "syscore/pandas/merge_data_keeping_past_data.py"
+    ],
+    "sysobjects/instruments.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/multiple_prices.py": [
+      "syscore/exceptions.py",
+      "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py"
+    ],
+    "sysobjects/production/__init__.py": [],
+    "sysobjects/production/backtest_storage.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syscore/interactive/menus.py",
+      "syscore/interactive/run_functions.py"
+    ],
+    "sysobjects/production/capital.py": [],
+    "sysobjects/production/optimal_positions.py": [
+      "sysobjects/production/positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/override.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysobjects/production/position_limits.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/positions.py": [
+      "syscore/genutils.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/process_control.py": [
+      "syscontrol/list_running_pids.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py"
+    ],
+    "sysobjects/production/roll_state.py": [],
+    "sysobjects/production/trade_limits.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/tradeable_object.py": [
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysobjects/production/trading_hours/__init__.py": [],
+    "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py": [
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py": [
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysobjects/production/trading_hours/trading_hours_any_day.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysobjects/production/trading_hours/trading_hours.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py": [
+      "sysobjects/production/trading_hours/trading_hours_any_day.py"
+    ],
+    "sysobjects/roll_calendars.py": [
+      "sysinit/futures/build_roll_calendars.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysobjects/roll_parameters_with_price_data.py": [
+      "syscore/exceptions.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysobjects/rolls.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysobjects/spot_fx_prices.py": [
+      "syscore/pandas/full_merge_with_replacement.py",
+      "syscore/pandas/merge_data_keeping_past_data.py"
+    ],
+    "sysobjects/spreads.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py"
+    ],
+    "sysproduction/__init__.py": [],
+    "sysproduction/_DEPRECATED/__init__.py": [],
+    "sysproduction/_DEPRECATED/logs.py": [
+      "sysdata/_DEPRECATED/mongo_log.py",
+      "sysdata/data_blob.py",
+      "syslogdiag/_DEPRECATED/database_log.py",
+      "sysproduction/data/generic_production_data.py"
+    ],
+    "sysproduction/backup_db_to_csv.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/config/production_config.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_capital_data.py",
+      "sysdata/csv/csv_contract_position_data.py",
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysdata/csv/csv_futures_contracts.py",
+      "sysdata/csv/csv_historic_orders.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_optimal_position.py",
+      "sysdata/csv/csv_roll_state_storage.py",
+      "sysdata/csv/csv_spot_fx.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/csv/csv_spreads.py",
+      "sysdata/csv/csv_strategy_position_data.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/directories.py",
+      "sysproduction/data/production_data_objects.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/backup_mongo_data_as_dump.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/backup_parquet_data_to_remote.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/backup_state_files.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/clean_truncate_backtest_states.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/backtest.py"
+    ],
+    "sysproduction/clean_truncate_echo_files.py": [
+      "syscore/fileutils.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/clean_truncate_log_files.py": [
+      "sysdata/data_blob.py",
+      "sysproduction/_DEPRECATED/logs.py"
+    ],
+    "sysproduction/data/__init__.py": [],
+    "sysproduction/data/backtest.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/fileutils.py",
+      "syscore/interactive/menus.py",
+      "syscore/objects.py",
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/backtest_storage.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/data/broker.py": [
+      "sysbrokers/broker_capital_data.py",
+      "sysbrokers/broker_contract_commission_data.py",
+      "sysbrokers/broker_contract_position_data.py",
+      "sysbrokers/broker_execution_stack.py",
+      "sysbrokers/broker_factory.py",
+      "sysbrokers/broker_futures_contract_data.py",
+      "sysbrokers/broker_futures_contract_price_data.py",
+      "sysbrokers/broker_fx_handling.py",
+      "sysbrokers/broker_fx_prices_data.py",
+      "sysbrokers/broker_instrument_data.py",
+      "sysbrokers/broker_static_data.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/data/capital.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_margin.py",
+      "sysdata/production/capital.py",
+      "sysdata/production/margin.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py",
+      "systems/accounts/from_returns.py"
+    ],
+    "sysproduction/data/config.py": [
+      "sysdata/config/production_config.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysproduction/data/contracts.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/contracts.py",
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/futures/rolls_parameters.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/control_process.py": [
+      "syscontrol/timer_parameters.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "sysdata/config/control_config.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/process_control_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/controls.py": [
+      "syscore/exceptions.py",
+      "sysdata/config/instruments.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_IB_client_id.py",
+      "sysdata/mongodb/mongo_lock_data.py",
+      "sysdata/mongodb/mongo_override.py",
+      "sysdata/mongodb/mongo_position_limits.py",
+      "sysdata/mongodb/mongo_temporary_close.py",
+      "sysdata/mongodb/mongo_temporary_override.py",
+      "sysdata/mongodb/mongo_trade_limits.py",
+      "sysdata/production/broker_client_id.py",
+      "sysdata/production/locks.py",
+      "sysdata/production/override.py",
+      "sysdata/production/position_limits.py",
+      "sysdata/production/temporary_close.py",
+      "sysdata/production/temporary_override.py",
+      "sysdata/production/trade_limits.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/data/currency_data.py": [
+      "syscore/constants.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysdata/fx/spotfx.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/directories.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "sysproduction/data/backtest.py"
+    ],
+    "sysproduction/data/generic_production_data.py": [
+      "syscore/cache.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py"
+    ],
+    "sysproduction/data/instruments.py": [
+      "sysdata/data_blob.py",
+      "sysdata/futures/instruments.py",
+      "sysdata/futures/spread_costs.py",
+      "sysobjects/instruments.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/optimal_positions.py": [
+      "sysdata/data_blob.py",
+      "sysdata/production/optimal_positions.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/orders.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/historic_orders.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/contract_order_stack.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysobjects/fills.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/historic_contract_positions.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "sysdata/production/roll_state.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/roll_state.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/prices.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/futures/spreads.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/spreads.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/production_data_objects.py": [
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/mongodb/mongo_futures_contracts.py",
+      "sysdata/mongodb/mongo_historic_orders.py",
+      "sysdata/mongodb/mongo_order_stack.py",
+      "sysdata/mongodb/mongo_process_control.py",
+      "sysdata/mongodb/mongo_roll_state_storage.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_capital.py",
+      "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_historic_contract_positions.py",
+      "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_optimal_positions.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/parquet/parquet_spreads.py"
+    ],
+    "sysproduction/data/reports.py": [
+      "syscore/exceptions.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/reporting/report_configs.py"
+    ],
+    "sysproduction/data/risk.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/objects.py",
+      "syscore/pandas/frequency.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysproduction/data/sim_data.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/strategies.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/data/tools/__init__.py": [],
+    "sysproduction/data/volumes.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/interactive_controls.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysinit/futures/safely_modify_roll_parameters.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/process_control.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/backup_db_to_csv.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/data/volume.py"
+    ],
+    "sysproduction/interactive_diagnostics.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/date_input.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/list_of_orders.py",
+      "syslogdiag/email_via_db_interface.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/roll_state.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysproduction/data/backtest.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py",
+      "sysproduction/reporting/strategies_report.py"
+    ],
+    "sysproduction/interactive_manual_check_fx_prices.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/manual_price_checker.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/currency_data.py"
+    ],
+    "sysproduction/interactive_manual_check_historical_prices.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/update_historical_prices.py"
+    ],
+    "sysproduction/interactive_order_stack.py": [
+      "sysbrokers/IB/ib_connection.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/date_input.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/balance_trades.py",
+      "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+      "sysexecution/stack_handler/stack_handler.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/interactive_update_capital_manual.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/date_input.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/capital.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/capital.py"
+    ],
+    "sysproduction/interactive_update_roll_status.py": [
+      "syscore/constants.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/data/rolls.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/linux/crontab": [],
+    "sysproduction/linux/scripts/__init__.py": [],
+    "sysproduction/linux/scripts/backup_db_to_csv": [],
+    "sysproduction/linux/scripts/backup_mongo_data_as_dump": [],
+    "sysproduction/linux/scripts/backup_parquet_to_remote": [],
+    "sysproduction/linux/scripts/backup_state_files": [],
+    "sysproduction/linux/scripts/clean_truncate_backtest_states": [],
+    "sysproduction/linux/scripts/clean_truncate_echo_files": [],
+    "sysproduction/linux/scripts/clean_truncate_log_files": [],
+    "sysproduction/linux/scripts/interactive_controls": [],
+    "sysproduction/linux/scripts/interactive_diagnostics": [],
+    "sysproduction/linux/scripts/interactive_manual_check_fx_prices": [],
+    "sysproduction/linux/scripts/interactive_manual_check_historical_prices": [],
+    "sysproduction/linux/scripts/interactive_order_stack": [],
+    "sysproduction/linux/scripts/interactive_update_capital_manual": [],
+    "sysproduction/linux/scripts/interactive_update_roll_status": [],
+    "sysproduction/linux/scripts/p": [],
+    "sysproduction/linux/scripts/run_backups": [],
+    "sysproduction/linux/scripts/run_capital_update": [],
+    "sysproduction/linux/scripts/run_cleaners": [],
+    "sysproduction/linux/scripts/run_daily_fx_and_contract_updates": [],
+    "sysproduction/linux/scripts/run_daily_price_updates": [],
+    "sysproduction/linux/scripts/run_daily_update_multiple_adjusted_prices": [],
+    "sysproduction/linux/scripts/run_reports": [],
+    "sysproduction/linux/scripts/run_stack_handler": [],
+    "sysproduction/linux/scripts/run_strategy_order_generator": [],
+    "sysproduction/linux/scripts/run_systems": [],
+    "sysproduction/linux/scripts/run.py": [
+      "syscore/interactive/run_functions.py"
+    ],
+    "sysproduction/linux/scripts/startup": [],
+    "sysproduction/linux/scripts/update_fx_prices": [],
+    "sysproduction/linux/scripts/update_historical_prices": [],
+    "sysproduction/linux/scripts/update_multiple_adjusted_prices": [],
+    "sysproduction/linux/scripts/update_sampled_contracts": [],
+    "sysproduction/linux/scripts/update_strategy_capital": [],
+    "sysproduction/linux/scripts/update_strategy_orders": [],
+    "sysproduction/linux/scripts/update_system_backtests": [],
+    "sysproduction/linux/scripts/update_total_capital": [],
+    "sysproduction/reporting/__init__.py": [],
+    "sysproduction/reporting/account_curve_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/reporting/adhoc/__init__.py": [],
+    "sysproduction/reporting/adhoc/dynamic_optimisation.py": [
+      "sysdata/data_blob.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/strategies.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysproduction/reporting/adhoc/instrument_list.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/reporting/data/costs.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/adhoc/static_system.py": [
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "systems/provided/rob_system/run_system.py",
+      "systems/provided/static_small_system_optimise/optimise_small_system.py"
+    ],
+    "sysproduction/reporting/adhoc/trading_rule_pandl.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/formatting.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py",
+      "systems/provided/rob_system/run_system.py"
+    ],
+    "sysproduction/reporting/api.py": [
+      "syscore/cache.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/reporting/data/commissions.py",
+      "sysproduction/reporting/data/costs.py",
+      "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "sysproduction/reporting/data/pandl.py",
+      "sysproduction/reporting/data/positions.py",
+      "sysproduction/reporting/data/pricechanges.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/data/rolls.py",
+      "sysproduction/reporting/data/status.py",
+      "sysproduction/reporting/data/trades.py",
+      "sysproduction/reporting/data/volume.py",
+      "sysproduction/reporting/formatting.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/commissions_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/costs_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/data/__init__.py": [],
+    "sysproduction/reporting/data/commissions.py": [
+      "sysdata/config/instruments.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py"
+    ],
+    "sysproduction/reporting/data/constants.py": [],
+    "sysproduction/reporting/data/costs.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysproduction/reporting/data/trades.py"
+    ],
+    "sysproduction/reporting/data/duplicate_remove_markets.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysdata/config/instruments.py",
+      "sysproduction/data/config.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysproduction/reporting/data/costs.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/data/volume.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/data/pandl.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "systems/accounts/pandl_calculators/pandl_using_fills.py"
+    ],
+    "sysproduction/reporting/data/positions.py": [
+      "sysproduction/data/broker.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/reporting/data/pricechanges.py": [
+      "syscore/cache.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysproduction/reporting/data/risk.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "syscore/pandas/frequency.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysquant/estimators/clustering_correlations.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysproduction/reporting/data/rolls.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/instruments.py",
+      "sysobjects/multiple_prices.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/volumes.py"
+    ],
+    "sysproduction/reporting/data/status.py": [
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/reporting/data/trades.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/reporting/data/risk.py"
+    ],
+    "sysproduction/reporting/data/volume.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/reporting/data/risk.py"
+    ],
+    "sysproduction/reporting/duplicate_market_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/formatting.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "sysproduction/reporting/instrument_risk_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/liquidity_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/market_monitor_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/minimum_capital_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/pandl_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/reporting/reconcile_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/reporting/remove_markets_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/report_configs.py": [
+      "sysobjects/production/roll_state.py"
+    ],
+    "sysproduction/reporting/reporting_functions.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/fileutils.py",
+      "syscore/interactive/display.py",
+      "syscore/objects.py",
+      "sysdata/data_blob.py",
+      "syslogdiag/email_via_db_interface.py",
+      "sysproduction/reporting/report_configs.py"
+    ],
+    "sysproduction/reporting/risk_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/reporting/roll_report.py": [
+      "sysobjects/production/roll_state.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/slippage_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/status_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/reporting/strategies_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/backtest.py",
+      "sysproduction/data/strategies.py",
+      "sysproduction/strategy_code/strategy_report.py"
+    ],
+    "sysproduction/reporting/trades_report.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/reporting/api.py"
+    ],
+    "sysproduction/run_backups.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/backup_db_to_csv.py",
+      "sysproduction/backup_mongo_data_as_dump.py",
+      "sysproduction/backup_parquet_data_to_remote.py",
+      "sysproduction/backup_state_files.py"
+    ],
+    "sysproduction/run_capital_update.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/update_strategy_capital.py",
+      "sysproduction/update_total_capital.py"
+    ],
+    "sysproduction/run_cleaners.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/clean_truncate_backtest_states.py",
+      "sysproduction/clean_truncate_echo_files.py",
+      "sysproduction/clean_truncate_log_files.py"
+    ],
+    "sysproduction/run_daily_fx_and_contract_updates.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/update_fx_prices.py",
+      "sysproduction/update_sampled_contracts.py"
+    ],
+    "sysproduction/run_daily_price_updates.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/update_historical_prices.py"
+    ],
+    "sysproduction/run_daily_update_multiple_adjusted_prices.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/update_multiple_adjusted_prices.py"
+    ],
+    "sysproduction/run_reports.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/reports.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/run_stack_handler.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysexecution/stack_handler/stack_handler.py"
+    ],
+    "sysproduction/run_strategy_order_generator.py": [
+      "syscontrol/run_process.py",
+      "syscontrol/strategy_tools.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/update_strategy_orders.py"
+    ],
+    "sysproduction/run_systems.py": [
+      "syscontrol/run_process.py",
+      "syscontrol/strategy_tools.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/update_system_backtests.py"
+    ],
+    "sysproduction/startup.py": [
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/controls.py"
+    ],
+    "sysproduction/strategy_code/__init__.py": [],
+    "sysproduction/strategy_code/report_system_classic.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysobjects/production/backtest_storage.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/strategy_code/report_system_dynamic_optimised.py": [
+      "sysdata/data_blob.py",
+      "sysobjects/production/backtest_storage.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/reporting/reporting_functions.py",
+      "sysproduction/strategy_code/report_system_classic.py"
+    ],
+    "sysproduction/strategy_code/run_dynamic_optimised_system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/sim_data.py",
+      "sysproduction/strategy_code/run_system_classic.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/rawdata.py",
+      "systems/risk.py"
+    ],
+    "sysproduction/strategy_code/run_system_classic.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/config/configdata.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/backtest.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/sim_data.py",
+      "systems/basesystem.py",
+      "systems/provided/futures_chapter15/basesystem.py"
+    ],
+    "sysproduction/strategy_code/strategy_allocation.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/strategy_code/strategy_report.py": [
+      "syscore/objects.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/tests/test_controls.py": [],
+    "sysproduction/update_fx_prices.py": [
+      "syscore/constants.py",
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "sysdata/data_blob.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogging/logger.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/currency_data.py"
+    ],
+    "sysproduction/update_historical_prices.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysdata/tools/manual_price_checker.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysproduction/update_multiple_adjusted_prices.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysproduction/update_sampled_contracts.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysproduction/update_strategy_capital.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/objects.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/update_strategy_orders.py": [
+      "syscontrol/strategy_tools.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysexecution/strategies/strategy_order_handling.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "sysproduction/update_system_backtests.py": [
+      "syscontrol/strategy_tools.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/control_process.py"
+    ],
+    "sysproduction/update_total_capital.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/capital.py"
+    ],
+    "sysquant/__init__.py": [],
+    "sysquant/estimators/__init__.py": [],
+    "sysquant/estimators/clustering_correlations.py": [
+      "syscore/genutils.py",
+      "sysquant/estimators/correlations.py"
+    ],
+    "sysquant/estimators/correlation_estimator.py": [
+      "syscore/constants.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/exponential_correlation.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/correlation_over_time.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/correlations.py": [
+      "syscore/constants.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/covariance.py": [
+      "syscore/constants.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/estimators/diversification_multipliers.py": [
+      "sysquant/estimators/correlations.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/estimators/estimates.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/frequency.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py"
+    ],
+    "sysquant/estimators/exponential_correlation.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/forecast_scalar.py": [
+      "syscore/genutils.py"
+    ],
+    "sysquant/estimators/generic_estimator.py": [
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/mean_estimator.py": [
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/pooled_correlation.py": [
+      "syscore/pandas/list_of_df.py",
+      "sysquant/estimators/correlation_over_time.py",
+      "sysquant/estimators/correlations.py"
+    ],
+    "sysquant/estimators/stdev_estimator.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/tests/__init__.py": [],
+    "sysquant/estimators/tests/test_mean_estimator.py": [
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/turnover.py": [
+      "sysquant/returns.py"
+    ],
+    "sysquant/estimators/vol.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py"
+    ],
+    "sysquant/fitting_dates.py": [
+      "syscore/pandas/list_of_df.py"
+    ],
+    "sysquant/optimisation/__init__.py": [],
+    "sysquant/optimisation/cleaning.py": [
+      "syscore/pandas/pdutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/full_handcrafting.py": [],
+    "sysquant/optimisation/generic_optimiser.py": [
+      "syslogging/logger.py",
+      "sysquant/optimisation/optimise_over_time.py",
+      "sysquant/optimisation/pre_processing.py",
+      "sysquant/optimisation/SR_adjustment.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/optimise_over_time.py": [
+      "syscore/interactive/progress_bar.py",
+      "syslogging/logger.py",
+      "sysquant/fitting_dates.py",
+      "sysquant/optimisation/portfolio_optimiser.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/optimisers/__init__.py": [],
+    "sysquant/optimisation/optimisers/call_optimiser.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/equal_weights.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/optimisers/one_period.py",
+      "sysquant/optimisation/optimisers/shrinkage.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/equal_weights.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/handcraft.py": [
+      "sysquant/estimators/clustering_correlations.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/diversification_multipliers.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/SR_adjustment.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/one_period.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/shrinkage.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/portfolio_optimiser.py": [
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/fitting_dates.py",
+      "sysquant/optimisation/cleaning.py",
+      "sysquant/optimisation/optimisers/call_optimiser.py",
+      "sysquant/optimisation/weights.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/pre_processing.py": [
+      "sysquant/estimators/turnover.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/shared.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/SR_adjustment.py": [
+      "sysquant/estimators/correlations.py",
+      "sysquant/optimisation/shared.py"
+    ],
+    "sysquant/optimisation/weights.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/find_data.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/stdev_estimator.py"
+    ],
+    "sysquant/portfolio_risk.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/returns.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/pandas/list_of_df.py",
+      "systems/accounts/curves/account_curve_group.py"
+    ],
+    "systems/__init__.py": [],
+    "systems/accounts/__init__.py": [],
+    "systems/accounts/account_buffering_subsystem.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/account_costs.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_buffering_system.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/account_buffering_subsystem.py",
+      "systems/accounts/account_inputs.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_costs.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/maths.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/turnover.py",
+      "systems/accounts/account_inputs.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_forecast.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/account_costs.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_inputs.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysobjects/instruments.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_instruments.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/account_buffering_system.py",
+      "systems/accounts/account_costs.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_portfolio.py": [
+      "systems/accounts/account_instruments.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_subsystem.py": [
+      "systems/accounts/account_buffering_subsystem.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_trading_rules.py": [
+      "syscore/constants.py",
+      "systems/accounts/account_forecast.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/curves/nested_account_curve_group.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_with_multiplier.py": [
+      "syscore/objects.py",
+      "syscore/pandas/pdutils.py",
+      "systems/accounts/account_buffering_system.py",
+      "systems/accounts/account_portfolio.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/accounts_stage.py": [
+      "systems/accounts/account_subsystem.py",
+      "systems/accounts/account_trading_rules.py",
+      "systems/accounts/account_with_multiplier.py"
+    ],
+    "systems/accounts/curves/__init__.py": [],
+    "systems/accounts/curves/account_curve_analysis.py": [
+      "systems/accounts/curves/account_curve.py"
+    ],
+    "systems/accounts/curves/account_curve_group.py": [
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/curves/stats_dict.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/account_curve.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/dict_of_account_curves.py": [
+      "systems/accounts/pandl_calculators/pandl_calculation_dict.py"
+    ],
+    "systems/accounts/curves/nested_account_curve_group.py": [
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/stats_dict.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/from_returns.py": [
+      "syscore/constants.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py"
+    ],
+    "systems/accounts/order_simulator/__init__.py": [],
+    "systems/accounts/order_simulator/account_curve_order_simulator.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/fills_and_orders.py": [
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/simple_orders.py"
+    ],
+    "systems/accounts/order_simulator/hourly_limit_orders.py": [
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/accounts/order_simulator/fills_and_orders.py",
+      "systems/accounts/order_simulator/hourly_market_orders.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/accounts/order_simulator/simple_orders.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/hourly_market_orders.py": [
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/pandl_order_simulator.py": [
+      "syscore/cache.py",
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/fills_and_orders.py",
+      "systems/accounts/order_simulator/simple_orders.py"
+    ],
+    "systems/accounts/order_simulator/simple_orders.py": [
+      "syscore/pandas/pdutils.py"
+    ],
+    "systems/accounts/pandl_calculators/__init__.py": [],
+    "systems/accounts/pandl_calculators/pandl_calculation_dict.py": [
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_calculation.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_cash_costs.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysobjects/fills.py",
+      "sysobjects/instruments.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "systems/accounts/pandl_calculators/pandl_using_fills.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_generic_costs.py": [
+      "systems/accounts/pandl_calculators/pandl_calculation.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_SR_cost.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_using_fills.py": [
+      "syscore/constants.py",
+      "sysobjects/fills.py",
+      "systems/accounts/pandl_calculators/pandl_calculation.py"
+    ],
+    "systems/accounts/tests/test_accounts.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_test_data.py",
+      "systems/provided/futures_chapter15/basesystem.py"
+    ],
+    "systems/basesystem.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/config/instruments.py",
+      "sysdata/sim/sim_data.py",
+      "syslogging/logger.py",
+      "systems/system_cache.py",
+      "systems/tools/autogroup.py"
+    ],
+    "systems/buffering.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "syslogging/logger.py"
+    ],
+    "systems/diagoutput.py": [
+      "syscore/dateutils.py",
+      "systems/forecast_mapping.py"
+    ],
+    "systems/forecast_combine.py": [
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/list_of_df.py",
+      "syscore/pandas/pdutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysdata/config/configdata.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/turnover.py",
+      "sysquant/optimisation/pre_processing.py",
+      "sysquant/returns.py",
+      "systems/forecast_mapping.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/stage.py",
+      "systems/system_cache.py",
+      "systems/tools/autogroup.py"
+    ],
+    "systems/forecast_mapping.py": [
+      "syscore/genutils.py"
+    ],
+    "systems/forecast_scale_cap.py": [
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "sysdata/config/configdata.py",
+      "systems/basesystem.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/forecasting.py": [
+      "syscore/constants.py",
+      "systems/stage.py",
+      "systems/system_cache.py",
+      "systems/trading_rules.py"
+    ],
+    "systems/portfolio.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/pdutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysdata/config/configdata.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/estimators/turnover.py",
+      "sysquant/optimisation/pre_processing.py",
+      "sysquant/optimisation/weights.py",
+      "sysquant/portfolio_risk.py",
+      "sysquant/returns.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/basesystem.py",
+      "systems/buffering.py",
+      "systems/positionsizing.py",
+      "systems/risk_overlay.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/positionsizing.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/buffering.py",
+      "systems/forecast_combine.py",
+      "systems/rawdata.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/__init__.py": [],
+    "systems/provided/attenuate_vol/__init__.py": [],
+    "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py": [
+      "syscore/pandas/pdutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "systems/forecast_scale_cap.py"
+    ],
+    "systems/provided/basic/__init__.py": [],
+    "systems/provided/basic/system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/__init__.py": [],
+    "systems/provided/dynamic_small_system_optimise/accounts_stage.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/buffering.py": [],
+    "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py": [
+      "syscore/constants.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/set_up_constraints.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/greedy_algo.py": [],
+    "systems/provided/dynamic_small_system_optimise/optimisation.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "systems/provided/dynamic_small_system_optimise/greedy_algo.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py": [
+      "syscore/constants.py",
+      "syscore/interactive/progress_bar.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/portfolio.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/set_up_constraints.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "systems/provided/example/__init__.py": [],
+    "systems/provided/example/daily_with_order_simulation.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/example/daily_with_order_simulation.yaml": [],
+    "systems/provided/example/estimateexampleconfig.yaml": [],
+    "systems/provided/example/exampleconfig.yaml": [],
+    "systems/provided/example/hourly_with_order_simulation.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "systems/accounts/order_simulator/hourly_market_orders.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/example/hourly_with_order_simulator.yaml": [],
+    "systems/provided/example/simplesystem.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/example/simplesystemconfig.yaml": [],
+    "systems/provided/futures_chapter15/__init__.py": [],
+    "systems/provided/futures_chapter15/basesystem.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/futures_chapter15/estimatedsystem.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/futures_chapter15/futuresconfig.yaml": [],
+    "systems/provided/futures_chapter15/futuresestimateconfig.yaml": [],
+    "systems/provided/rob_system/__init__.py": [],
+    "systems/provided/rob_system/config.yaml": [],
+    "systems/provided/rob_system/rawdata.py": [
+      "syscore/dateutils.py",
+      "systems/rawdata.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/rob_system/run_system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/provided/rob_system/rawdata.py",
+      "systems/risk.py"
+    ],
+    "systems/provided/rules/__init__.py": [],
+    "systems/provided/rules/_TO_DELETE_OLD.py": [],
+    "systems/provided/rules/accel.py": [
+      "systems/provided/rules/ewmac.py"
+    ],
+    "systems/provided/rules/breakout.py": [],
+    "systems/provided/rules/carry.py": [],
+    "systems/provided/rules/cs_mr.py": [],
+    "systems/provided/rules/ewmac.py": [
+      "sysquant/estimators/vol.py"
+    ],
+    "systems/provided/rules/factors.py": [
+      "sysquant/estimators/vol.py"
+    ],
+    "systems/provided/rules/mr_wings.py": [
+      "systems/provided/rules/ewmac.py"
+    ],
+    "systems/provided/rules/rel_mom.py": [],
+    "systems/provided/scalper/__init__.py": [],
+    "systems/provided/scalper/broker.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/common_functions.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "systems/provided/scalper/components.py",
+      "systems/provided/scalper/configuration.py"
+    ],
+    "systems/provided/scalper/components.py": [
+      "syscore/constants.py",
+      "systems/provided/scalper/configuration.py"
+    ],
+    "systems/provided/scalper/configuration.py": [
+      "syscore/dateutils.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "systems/provided/scalper/entry.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "systems/provided/scalper/broker.py",
+      "systems/provided/scalper/components.py",
+      "systems/provided/scalper/configuration.py"
+    ],
+    "systems/provided/static_small_system_optimise/__init__.py": [],
+    "systems/provided/static_small_system_optimise/optimise_small_system.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/shared.py"
+    ],
+    "systems/provided/workhorse/__init__.py": [],
+    "systems/rawdata.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/futures_sim_data.py",
+      "sysobjects/carry_data.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/risk_overlay.py": [],
+    "systems/risk.py": [
+      "syscore/pandas/list_of_df.py",
+      "sysquant/optimisation/weights.py",
+      "systems/portfolio.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/stage.py": [
+      "syscore/objects.py",
+      "syslogging/logger.py",
+      "systems/basesystem.py"
+    ],
+    "systems/system_cache.py": [
+      "syscore/fileutils.py"
+    ],
+    "systems/tests/__init__.py": [],
+    "systems/tests/tempcachefile.pck": [],
+    "systems/tests/test_base_systems.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/basesystem.py",
+      "systems/stage.py"
+    ],
+    "systems/tests/test_cache.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/basesystem.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/tests/test_forecast_combine.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_forecast_scale_cap.py": [
+      "systems/basesystem.py",
+      "systems/forecast_scale_cap.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_forecasts.py": [
+      "sysdata/config/configdata.py",
+      "systems/basesystem.py",
+      "systems/forecasting.py",
+      "systems/provided/rules/carry.py",
+      "systems/provided/rules/ewmac.py",
+      "systems/rawdata.py",
+      "systems/tests/testdata.py",
+      "systems/trading_rules.py"
+    ],
+    "systems/tests/test_mp_optimise_over_time.py": [
+      "sysdata/config/configdata.py",
+      "sysquant/optimisation/optimise_over_time.py",
+      "sysquant/returns.py"
+    ],
+    "systems/tests/test_portfolio.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/portfolio.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_position_sizing.py": [
+      "sysdata/config/private_config.py",
+      "systems/basesystem.py",
+      "systems/positionsizing.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_rawdata.py": [
+      "systems/basesystem.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/testdata.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/tests/testfuturesrawdata.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/basesystem.py",
+      "systems/rawdata.py"
+    ],
+    "systems/tools/__init__.py": [],
+    "systems/tools/autogroup.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py"
+    ],
+    "systems/trading_rules.py": [
+      "syscore/constants.py",
+      "syscore/objects.py",
+      "syscore/pandas/strategy_functions.py",
+      "syscore/text.py"
+    ],
+    "tests/conftest.py": [],
+    "tests/test_examples.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/example/simplesystem.py",
+      "systems/provided/futures_chapter15/basesystem.py",
+      "systems/provided/rules/ewmac.py",
+      "systems/rawdata.py",
+      "systems/trading_rules.py"
+    ],
+    "tests/test_static.py": [],
+    "tox.ini": []
+  }
+}

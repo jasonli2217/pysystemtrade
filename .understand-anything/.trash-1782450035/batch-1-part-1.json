@@ -1,0 +1,732 @@
+{
+ "nodes": [
+  {
+   "id": "file:_learning_sandbox/chapter15.py",
+   "type": "file",
+   "name": "chapter15.py",
+   "filePath": "_learning_sandbox/chapter15.py",
+   "summary": "Learning-sandbox script that imports the chapter 15 prebaked futures system for hands-on experimentation.",
+   "tags": [
+    "example",
+    "sandbox",
+    "entry-point"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:_learning_sandbox/intro.py",
+   "type": "file",
+   "name": "intro.py",
+   "filePath": "_learning_sandbox/intro.py",
+   "summary": "Introductory learning script that wires up CSV sim data, EWMAC rules and a base system to demonstrate the framework end to end.",
+   "tags": [
+    "example",
+    "sandbox",
+    "tutorial"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:examples/introduction/prebakedsystems.py",
+   "type": "file",
+   "name": "prebakedsystems.py",
+   "filePath": "examples/introduction/prebakedsystems.py",
+   "summary": "Demonstrates loading several prebaked example/chapter-15 systems from CSV data to show ready-made configurations.",
+   "tags": [
+    "example",
+    "tutorial",
+    "entry-point"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:examples/introduction/simplesystem.py",
+   "type": "file",
+   "name": "simplesystem.py",
+   "filePath": "examples/introduction/simplesystem.py",
+   "summary": "Step-by-step worked example building a simple trading system stage by stage (rules, scaling, combining, position sizing, portfolio).",
+   "tags": [
+    "example",
+    "tutorial",
+    "walkthrough"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:examples/production/example_of_custom_run_system.py",
+   "type": "file",
+   "name": "example_of_custom_run_system.py",
+   "filePath": "examples/production/example_of_custom_run_system.py",
+   "summary": "Production example showing how to assemble and run a custom carry/trend dynamic optimised futures system using production sim data.",
+   "tags": [
+    "example",
+    "production",
+    "system-assembly"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysbrokers/IB/ib_trading_hours.py",
+   "type": "file",
+   "name": "ib_trading_hours.py",
+   "filePath": "sysbrokers/IB/ib_trading_hours.py",
+   "summary": "Parses Interactive Brokers contract trading-hours strings and computes GMT/timezone offsets into structured trading-hour objects.",
+   "tags": [
+    "broker",
+    "interactive-brokers",
+    "parsing",
+    "trading-hours"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/objects.py",
+   "type": "file",
+   "name": "objects.py",
+   "filePath": "syscore/objects.py",
+   "summary": "Low-level reflection helpers for resolving functions and data methods by name and inspecting object attributes.",
+   "tags": [
+    "utility",
+    "reflection",
+    "core"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/tests/test.py",
+   "type": "file",
+   "name": "test.py",
+   "filePath": "syscore/tests/test.py",
+   "summary": "Trivial smoke-test stub importing the chapter 15 base system.",
+   "tags": [
+    "test"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/tests/test_correlation.py",
+   "type": "file",
+   "name": "test_correlation.py",
+   "filePath": "syscore/tests/test_correlation.py",
+   "summary": "Unit tests covering forecast correlation matrix estimation behaviour (pooling, frequency, exponent, min periods, cleaning).",
+   "tags": [
+    "test",
+    "correlation",
+    "estimation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:examples/production/example_of_custom_run_system.py:production_carry_trend_dynamic_system",
+   "type": "function",
+   "name": "production_carry_trend_dynamic_system",
+   "filePath": "examples/production/example_of_custom_run_system.py",
+   "lineRange": [
+    35,
+    55
+   ],
+   "summary": "Builds a production carry/trend dynamic system from a config file, production sim data and trading capital.",
+   "tags": [
+    "factory",
+    "system-assembly",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:examples/production/example_of_custom_run_system.py:futures_system",
+   "type": "function",
+   "name": "futures_system",
+   "filePath": "examples/production/example_of_custom_run_system.py",
+   "lineRange": [
+    76,
+    93
+   ],
+   "summary": "Assembles the System object by attaching all required stages for the dynamic optimised futures system.",
+   "tags": [
+    "factory",
+    "system-assembly"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysbrokers/IB/ib_trading_hours.py:get_trading_hours_from_contract_details",
+   "type": "function",
+   "name": "get_trading_hours_from_contract_details",
+   "filePath": "sysbrokers/IB/ib_trading_hours.py",
+   "lineRange": [
+    35,
+    49
+   ],
+   "summary": "Extracts and parses trading hours from IB contract details, applying timezone adjustment.",
+   "tags": [
+    "parsing",
+    "trading-hours",
+    "interactive-brokers"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_hours_string",
+   "type": "function",
+   "name": "parse_trading_hours_string",
+   "filePath": "sysbrokers/IB/ib_trading_hours.py",
+   "lineRange": [
+    56,
+    72
+   ],
+   "summary": "Splits a full IB trading-hours string by day and parses each day into trading-hour ranges.",
+   "tags": [
+    "parsing",
+    "trading-hours"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_for_day",
+   "type": "function",
+   "name": "parse_trading_for_day",
+   "filePath": "sysbrokers/IB/ib_trading_hours.py",
+   "lineRange": [
+    75,
+    99
+   ],
+   "summary": "Parses a single day's IB trading-hours phrase into start/end datetimes, handling closed days.",
+   "tags": [
+    "parsing",
+    "trading-hours"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysbrokers/IB/ib_trading_hours.py:get_time_difference",
+   "type": "function",
+   "name": "get_time_difference",
+   "filePath": "sysbrokers/IB/ib_trading_hours.py",
+   "lineRange": [
+    124,
+    152
+   ],
+   "summary": "Maps an IB timezone identifier to a GMT offset using the configured base offset.",
+   "tags": [
+    "timezone",
+    "utility"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/objects.py:resolve_function",
+   "type": "function",
+   "name": "resolve_function",
+   "filePath": "syscore/objects.py",
+   "lineRange": [
+    29,
+    67
+   ],
+   "summary": "Resolves a callable from either a function object or a dotted module path string via importlib.",
+   "tags": [
+    "reflection",
+    "utility"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/objects.py:resolve_data_method",
+   "type": "function",
+   "name": "resolve_data_method",
+   "filePath": "syscore/objects.py",
+   "lineRange": [
+    70,
+    89
+   ],
+   "summary": "Resolves a data method on an object by walking a dotted attribute path.",
+   "tags": [
+    "reflection",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/objects.py:hasallattr",
+   "type": "function",
+   "name": "hasallattr",
+   "filePath": "syscore/objects.py",
+   "lineRange": [
+    102,
+    117
+   ],
+   "summary": "Returns True only if an object has every attribute in the supplied list.",
+   "tags": [
+    "reflection",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:syscore/tests/test_correlation.py:Test",
+   "type": "class",
+   "name": "Test",
+   "filePath": "syscore/tests/test_correlation.py",
+   "lineRange": [
+    16,
+    143
+   ],
+   "summary": "TestCase exercising forecast correlation matrix estimation across pooling, frequency and cleaning options.",
+   "tags": [
+    "test",
+    "correlation"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "function:examples/production/example_of_custom_run_system.py:production_carry_trend_dynamic_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "function:examples/production/example_of_custom_run_system.py:production_carry_trend_dynamic_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "function:examples/production/example_of_custom_run_system.py:futures_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "function:examples/production/example_of_custom_run_system.py:futures_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:get_trading_hours_from_contract_details",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:get_trading_hours_from_contract_details",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_hours_string",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_hours_string",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_for_day",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:parse_trading_for_day",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:get_time_difference",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "function:sysbrokers/IB/ib_trading_hours.py:get_time_difference",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:resolve_function",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:resolve_function",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:resolve_data_method",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:resolve_data_method",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:hasallattr",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/objects.py",
+   "target": "function:syscore/objects.py:hasallattr",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/tests/test_correlation.py",
+   "target": "class:syscore/tests/test_correlation.py:Test",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/tests/test_correlation.py",
+   "target": "class:syscore/tests/test_correlation.py:Test",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:_learning_sandbox/chapter15.py",
+   "target": "file:systems/provided/futures_chapter15/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:_learning_sandbox/intro.py",
+   "target": "file:sysdata/sim/csv_futures_sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:_learning_sandbox/intro.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:_learning_sandbox/intro.py",
+   "target": "file:systems/forecasting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:_learning_sandbox/intro.py",
+   "target": "file:systems/provided/rules/ewmac.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/prebakedsystems.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/prebakedsystems.py",
+   "target": "file:sysdata/sim/csv_futures_sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/prebakedsystems.py",
+   "target": "file:systems/provided/example/simplesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/prebakedsystems.py",
+   "target": "file:systems/provided/futures_chapter15/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/prebakedsystems.py",
+   "target": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:sysdata/sim/csv_futures_sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/accounts/accounts_stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/forecast_combine.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/forecast_scale_cap.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/forecasting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/portfolio.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/positionsizing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/provided/rules/ewmac.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/rawdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/simplesystem.py",
+   "target": "file:systems/trading_rules.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:sysproduction/data/sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/forecast_combine.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/forecasting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/portfolio.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/positionsizing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/production/example_of_custom_run_system.py",
+   "target": "file:systems/risk.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "file:sysdata/config/private_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "file:sysdata/production/trading_hours.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/IB/ib_trading_hours.py",
+   "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test.py",
+   "target": "file:systems/provided/futures_chapter15/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_correlation.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_correlation.py",
+   "target": "file:systems/tests/testdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

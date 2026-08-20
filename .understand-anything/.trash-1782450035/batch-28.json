@@ -1,0 +1,355 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysexecution/strategies/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/strategies/__init__.py",
+      "summary": "Empty package marker that makes sysexecution/strategies an importable Python package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/tests/__init__.py",
+      "summary": "Empty package marker for the sysexecution test package.",
+      "tags": ["entry-point", "package-marker", "test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/tests/test_trade_qty.py",
+      "type": "file",
+      "name": "test_trade_qty.py",
+      "filePath": "sysexecution/tests/test_trade_qty.py",
+      "summary": "Doctest-driven test suite validating trade-quantity sizing logic, including proportional reduction of multi-leg spread trades so the smallest leg respects a maximum size constraint.",
+      "tags": ["test", "validation", "trade-sizing", "doctest"],
+      "complexity": "complex",
+      "languageNotes": "Tests are written entirely as Python doctests embedded in function docstrings rather than as pytest assertions."
+    },
+    {
+      "id": "file:sysinit/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysinit/__init__.py",
+      "summary": "Empty package marker for the sysinit initialization/setup package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/configtools/csvweights_to_yaml.py",
+      "type": "file",
+      "name": "csvweights_to_yaml.py",
+      "filePath": "sysinit/configtools/csvweights_to_yaml.py",
+      "summary": "Configuration utility that reads instrument weights, forecast weights, and forecast mappings from CSV files and converts them into YAML blocks that can be pasted into a system config.",
+      "tags": ["utility", "config", "serialization", "data-pipeline"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysinit/futures/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysinit/futures/__init__.py",
+      "summary": "Empty package marker for the sysinit/futures setup package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/roll_parameters_csv_mongo.py",
+      "type": "file",
+      "name": "roll_parameters_csv_mongo.py",
+      "filePath": "sysinit/futures/roll_parameters_csv_mongo.py",
+      "summary": "Empty placeholder module intended for importing futures roll parameters from CSV into MongoDB; currently contains no code.",
+      "tags": ["utility", "placeholder", "futures"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysinit/futures/tests/__init__.py",
+      "summary": "Empty package marker for the sysinit/futures test package.",
+      "tags": ["entry-point", "package-marker", "test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/transfer/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysinit/transfer/__init__.py",
+      "summary": "Empty package marker for the sysinit/transfer data-transfer package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogdiag/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syslogdiag/__init__.py",
+      "summary": "Empty package marker for the syslogdiag logging-diagnostics package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogdiag/_DEPRECATED/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syslogdiag/_DEPRECATED/__init__.py",
+      "summary": "Empty package marker for the deprecated syslogdiag subpackage retained for backward compatibility.",
+      "tags": ["entry-point", "package-marker", "deprecated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:syslogging/logging_prod.yaml",
+      "type": "config",
+      "name": "logging_prod.yaml",
+      "filePath": "syslogging/logging_prod.yaml",
+      "summary": "Production logging configuration defining formatters, handlers, and log levels for the live trading system's diagnostic output.",
+      "tags": ["configuration", "logging", "monitoring", "production"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:syslogging/logging_sim.yaml",
+      "type": "config",
+      "name": "logging_sim.yaml",
+      "filePath": "syslogging/logging_sim.yaml",
+      "summary": "Simulation/backtest logging configuration with lighter handlers and levels suited to research and backtesting runs.",
+      "tags": ["configuration", "logging", "monitoring", "backtest"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysobjects/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysobjects/__init__.py",
+      "summary": "Empty package marker for the sysobjects core domain-objects package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysobjects/production/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysobjects/production/__init__.py",
+      "summary": "Empty package marker for the sysobjects/production domain-objects subpackage.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysobjects/production/trading_hours/__init__.py",
+      "summary": "Empty package marker for the trading_hours domain-objects subpackage.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/__init__.py",
+      "summary": "Empty package marker for the sysproduction live-trading orchestration package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/_DEPRECATED/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/_DEPRECATED/__init__.py",
+      "summary": "Empty package marker for the deprecated sysproduction subpackage retained for backward compatibility.",
+      "tags": ["entry-point", "package-marker", "deprecated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/data/__init__.py",
+      "summary": "Empty package marker for the sysproduction/data blob/data-access package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/tools/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/data/tools/__init__.py",
+      "summary": "Empty package marker for the sysproduction/data/tools subpackage.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/crontab",
+      "type": "file",
+      "name": "crontab",
+      "filePath": "sysproduction/linux/crontab",
+      "summary": "Crontab schedule for the live production system, sequencing weekday jobs for the stack handler, capital updates, price/FX updates, system runs, order generation, cleaners, backups, and reports, plus boot-time MongoDB and startup tasks.",
+      "tags": ["ci-cd", "scheduling", "production", "orchestration", "deployment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysproduction/linux/scripts/__init__.py",
+      "summary": "Empty package marker for the sysproduction/linux/scripts package.",
+      "tags": ["entry-point", "package-marker", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/backup_db_to_csv",
+      "type": "file",
+      "name": "backup_db_to_csv",
+      "filePath": "sysproduction/linux/scripts/backup_db_to_csv",
+      "summary": "Bash wrapper that sources the user profile and invokes the sysproduction.backup_db_to_csv routine to export the production database to CSV.",
+      "tags": ["script", "backup", "deployment", "database"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/backup_mongo_data_as_dump",
+      "type": "file",
+      "name": "backup_mongo_data_as_dump",
+      "filePath": "sysproduction/linux/scripts/backup_mongo_data_as_dump",
+      "summary": "Bash wrapper that sources the user profile and invokes the sysproduction.backup_mongo_data_as_dump routine to dump MongoDB data.",
+      "tags": ["script", "backup", "deployment", "database"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/backup_parquet_to_remote",
+      "type": "file",
+      "name": "backup_parquet_to_remote",
+      "filePath": "sysproduction/linux/scripts/backup_parquet_to_remote",
+      "summary": "Bash wrapper that sources the user profile and invokes the sysproduction.backup_parquet_data_to_remote routine to sync Parquet data to a remote store.",
+      "tags": ["script", "backup", "deployment", "data-pipeline"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/tests/test_trade_qty.py:_doc_tests1",
+      "type": "function",
+      "name": "_doc_tests1",
+      "filePath": "sysexecution/tests/test_trade_qty.py",
+      "lineRange": [1, 86],
+      "summary": "Doctest container exercising proportional trade-size reduction for single-leg trades against a maximum-size limit.",
+      "tags": ["test", "doctest", "trade-sizing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/tests/test_trade_qty.py:_doc_tests2",
+      "type": "function",
+      "name": "_doc_tests2",
+      "filePath": "sysexecution/tests/test_trade_qty.py",
+      "lineRange": [89, 265],
+      "summary": "Doctest container covering multi-leg trade-quantity reduction so the smallest leg respects the maximum allowable size.",
+      "tags": ["test", "doctest", "trade-sizing"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/tests/test_trade_qty.py:_doctests3",
+      "type": "function",
+      "name": "_doctests3",
+      "filePath": "sysexecution/tests/test_trade_qty.py",
+      "lineRange": [268, 420],
+      "summary": "Doctest container validating additional edge cases in trade-quantity calculation and sign handling.",
+      "tags": ["test", "doctest", "trade-sizing"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysinit/configtools/csvweights_to_yaml.py:instr_weights_csv_to_yaml",
+      "type": "function",
+      "name": "instr_weights_csv_to_yaml",
+      "filePath": "sysinit/configtools/csvweights_to_yaml.py",
+      "lineRange": [11, 35],
+      "summary": "Reads an instrument-weights CSV file and writes the equivalent YAML block for inclusion in a system config.",
+      "tags": ["utility", "serialization", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/configtools/csvweights_to_yaml.py:forecast_weights_by_instrument_csv_to_yaml",
+      "type": "function",
+      "name": "forecast_weights_by_instrument_csv_to_yaml",
+      "filePath": "sysinit/configtools/csvweights_to_yaml.py",
+      "lineRange": [38, 69],
+      "summary": "Reads a per-instrument forecast-weights CSV and emits the corresponding nested YAML configuration.",
+      "tags": ["utility", "serialization", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/configtools/csvweights_to_yaml.py:forecast_mapping_csv_to_yaml",
+      "type": "function",
+      "name": "forecast_mapping_csv_to_yaml",
+      "filePath": "sysinit/configtools/csvweights_to_yaml.py",
+      "lineRange": [72, 107],
+      "summary": "Reads a forecast-mapping CSV and converts it into a YAML mapping block for the system configuration.",
+      "tags": ["utility", "serialization", "config"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysexecution/tests/test_trade_qty.py",
+      "target": "function:sysexecution/tests/test_trade_qty.py:_doc_tests1",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/tests/test_trade_qty.py",
+      "target": "function:sysexecution/tests/test_trade_qty.py:_doc_tests2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/tests/test_trade_qty.py",
+      "target": "function:sysexecution/tests/test_trade_qty.py:_doctests3",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/configtools/csvweights_to_yaml.py",
+      "target": "function:sysinit/configtools/csvweights_to_yaml.py:instr_weights_csv_to_yaml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/configtools/csvweights_to_yaml.py",
+      "target": "function:sysinit/configtools/csvweights_to_yaml.py:forecast_weights_by_instrument_csv_to_yaml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/configtools/csvweights_to_yaml.py",
+      "target": "function:sysinit/configtools/csvweights_to_yaml.py:forecast_mapping_csv_to_yaml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/linux/crontab",
+      "target": "file:sysproduction/linux/scripts/backup_db_to_csv",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysproduction/linux/crontab",
+      "target": "file:sysproduction/linux/scripts/backup_mongo_data_as_dump",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysproduction/linux/crontab",
+      "target": "file:sysproduction/linux/scripts/backup_parquet_to_remote",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

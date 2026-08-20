@@ -1,0 +1,953 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/stage.py",
+      "type": "file",
+      "name": "stage.py",
+      "filePath": "systems/stage.py",
+      "summary": "Base SystemStage class defining the common interface, naming, logging and parent-system wiring shared by every stage in the system pipeline.",
+      "tags": [
+        "base-class",
+        "stage",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/system_cache.py",
+      "type": "file",
+      "name": "system_cache.py",
+      "filePath": "systems/system_cache.py",
+      "summary": "Memoisation cache infrastructure for system stages: cache reference objects, the systemCache store, and decorators that key cached stage outputs by instrument and arguments.",
+      "tags": [
+        "service",
+        "caching",
+        "framework",
+        "decorator"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/tests/test_base_systems.py",
+      "type": "file",
+      "name": "test_base_systems.py",
+      "filePath": "systems/tests/test_base_systems.py",
+      "summary": "Unit tests for base System and SystemStage construction and wiring.",
+      "tags": [
+        "test",
+        "unit-test",
+        "stage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/tests/test_cache.py",
+      "type": "file",
+      "name": "test_cache.py",
+      "filePath": "systems/tests/test_cache.py",
+      "summary": "Unit tests for the system cache: keying, invalidation, partial flushing and stage access decorators.",
+      "tags": [
+        "test",
+        "unit-test",
+        "caching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/tests/test_forecast_combine.py",
+      "type": "file",
+      "name": "test_forecast_combine.py",
+      "filePath": "systems/tests/test_forecast_combine.py",
+      "summary": "Unit tests for the forecast combination stage, including weights and forecast diversification.",
+      "tags": [
+        "test",
+        "unit-test",
+        "forecast"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/tests/test_forecast_scale_cap.py",
+      "type": "file",
+      "name": "test_forecast_scale_cap.py",
+      "filePath": "systems/tests/test_forecast_scale_cap.py",
+      "summary": "Unit tests for the forecast scaling and capping stage.",
+      "tags": [
+        "test",
+        "unit-test",
+        "forecast"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/tests/test_forecasts.py",
+      "type": "file",
+      "name": "test_forecasts.py",
+      "filePath": "systems/tests/test_forecasts.py",
+      "summary": "Unit tests for the forecasting stage and trading-rule evaluation.",
+      "tags": [
+        "test",
+        "unit-test",
+        "forecast"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/tests/test_mp_optimise_over_time.py",
+      "type": "file",
+      "name": "test_mp_optimise_over_time.py",
+      "filePath": "systems/tests/test_mp_optimise_over_time.py",
+      "summary": "Unit tests for the multi-period optimise-over-time estimator.",
+      "tags": [
+        "test",
+        "unit-test",
+        "optimisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/tests/test_portfolio.py",
+      "type": "file",
+      "name": "test_portfolio.py",
+      "filePath": "systems/tests/test_portfolio.py",
+      "summary": "Unit tests for the portfolio stage that aggregates subsystem positions into instrument positions.",
+      "tags": [
+        "test",
+        "unit-test",
+        "portfolio"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/stage.py:SystemStage",
+      "type": "class",
+      "name": "SystemStage",
+      "filePath": "systems/stage.py",
+      "lineRange": [
+        6,
+        53
+      ],
+      "summary": "Abstract base for all system stages, providing naming, logging and parent-system access.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/system_cache.py:resolve_args_to_code_and_key",
+      "type": "function",
+      "name": "resolve_args_to_code_and_key",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        643,
+        683
+      ],
+      "summary": "Resolves positional args into a cache code and key string.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/system_cache.py:resolve_kwargs_to_str",
+      "type": "function",
+      "name": "resolve_kwargs_to_str",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        686,
+        706
+      ],
+      "summary": "Serialises keyword args into a deterministic cache key fragment.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/system_cache.py:null_decorator",
+      "type": "function",
+      "name": "null_decorator",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        710,
+        714
+      ],
+      "summary": "Helper function null_decorator in system_cache.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/system_cache.py:stage_access_cache_decorator",
+      "type": "function",
+      "name": "stage_access_cache_decorator",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        718,
+        749
+      ],
+      "summary": "Decorator caching stage method outputs keyed by instrument and arguments.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/system_cache.py:base_system_cache",
+      "type": "function",
+      "name": "base_system_cache",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        753,
+        785
+      ],
+      "summary": "Decorator registering a cached system-level computation.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/system_cache.py:cacheRef",
+      "type": "class",
+      "name": "cacheRef",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        30,
+        67
+      ],
+      "summary": "Immutable reference identifying a cached computation by stage, method and key.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/system_cache.py:listOfCacheRefs",
+      "type": "class",
+      "name": "listOfCacheRefs",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        70,
+        115
+      ],
+      "summary": "Collection helper for filtering and flushing groups of cache references.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/system_cache.py:cacheElement",
+      "type": "class",
+      "name": "cacheElement",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        118,
+        141
+      ],
+      "summary": "Wrapper holding a single cached value and its protection flag.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/system_cache.py:systemCache",
+      "type": "class",
+      "name": "systemCache",
+      "filePath": "systems/system_cache.py",
+      "lineRange": [
+        144,
+        640
+      ],
+      "summary": "Central memoisation store mapping cache references to computed stage outputs.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/tests/test_base_systems.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_base_systems.py",
+      "lineRange": [
+        13,
+        34
+      ],
+      "summary": "Class Test defined in test_base_systems.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tests/test_cache.py:testStage1",
+      "type": "class",
+      "name": "testStage1",
+      "filePath": "systems/tests/test_cache.py",
+      "lineRange": [
+        10,
+        43
+      ],
+      "summary": "Class testStage1 defined in test_cache.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/tests/test_cache.py:testStage2",
+      "type": "class",
+      "name": "testStage2",
+      "filePath": "systems/tests/test_cache.py",
+      "lineRange": [
+        46,
+        62
+      ],
+      "summary": "Class testStage2 defined in test_cache.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tests/test_cache.py:TestCache",
+      "type": "class",
+      "name": "TestCache",
+      "filePath": "systems/tests/test_cache.py",
+      "lineRange": [
+        66,
+        314
+      ],
+      "summary": "Class TestCache defined in test_cache.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/tests/test_forecast_combine.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_forecast_combine.py",
+      "lineRange": [
+        10,
+        268
+      ],
+      "summary": "Class Test defined in test_forecast_combine.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/tests/test_forecast_scale_cap.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_forecast_scale_cap.py",
+      "lineRange": [
+        9,
+        139
+      ],
+      "summary": "Class Test defined in test_forecast_scale_cap.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/tests/test_forecasts.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_forecasts.py",
+      "lineRange": [
+        20,
+        228
+      ],
+      "summary": "Class Test defined in test_forecasts.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tests/test_mp_optimise_over_time.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_mp_optimise_over_time.py",
+      "lineRange": [
+        17,
+        67
+      ],
+      "summary": "Class Test defined in test_mp_optimise_over_time.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/tests/test_portfolio.py:Test",
+      "type": "class",
+      "name": "Test",
+      "filePath": "systems/tests/test_portfolio.py",
+      "lineRange": [
+        10,
+        154
+      ],
+      "summary": "Class Test defined in test_portfolio.py.",
+      "tags": [
+        "test",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/stage.py",
+      "target": "class:systems/stage.py:SystemStage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "class:systems/stage.py:SystemStage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:resolve_args_to_code_and_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:resolve_args_to_code_and_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:resolve_kwargs_to_str",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:resolve_kwargs_to_str",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:null_decorator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:null_decorator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:stage_access_cache_decorator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:stage_access_cache_decorator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:base_system_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "function:systems/system_cache.py:base_system_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:cacheRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:cacheRef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:listOfCacheRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:listOfCacheRefs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:cacheElement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:cacheElement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:systemCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "class:systems/system_cache.py:systemCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "class:systems/tests/test_base_systems.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "class:systems/tests/test_base_systems.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:testStage1",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:testStage1",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:testStage2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:testStage2",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:TestCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "class:systems/tests/test_cache.py:TestCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_forecast_combine.py",
+      "target": "class:systems/tests/test_forecast_combine.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_forecast_combine.py",
+      "target": "class:systems/tests/test_forecast_combine.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_forecast_scale_cap.py",
+      "target": "class:systems/tests/test_forecast_scale_cap.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_forecast_scale_cap.py",
+      "target": "class:systems/tests/test_forecast_scale_cap.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "class:systems/tests/test_forecasts.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "class:systems/tests/test_forecasts.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_mp_optimise_over_time.py",
+      "target": "class:systems/tests/test_mp_optimise_over_time.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_mp_optimise_over_time.py",
+      "target": "class:systems/tests/test_mp_optimise_over_time.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "class:systems/tests/test_portfolio.py:Test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "class:systems/tests/test_portfolio.py:Test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "file:sysdata/sim/sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_base_systems.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "file:sysdata/sim/sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_cache.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_combine.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_combine.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_combine.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_scale_cap.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_scale_cap.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecast_scale_cap.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/provided/rules/carry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/provided/rules/ewmac.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_forecasts.py",
+      "target": "file:systems/trading_rules.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_mp_optimise_over_time.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_mp_optimise_over_time.py",
+      "target": "file:sysquant/optimisation/optimise_over_time.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_mp_optimise_over_time.py",
+      "target": "file:sysquant/returns.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/tests/test_portfolio.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "file:systems/tests/test_base_systems.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/stage.py",
+      "target": "file:systems/tests/test_cache.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/system_cache.py",
+      "target": "file:systems/tests/test_cache.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

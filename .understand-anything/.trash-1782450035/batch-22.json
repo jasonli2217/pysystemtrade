@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "document:_learning_sandbox/docs/accounts-stage-architecture.md",
+      "type": "document",
+      "name": "accounts-stage-architecture.md",
+      "filePath": "_learning_sandbox/docs/accounts-stage-architecture.md",
+      "summary": "Learning note dissecting the layered architecture of the systems/accounts/ backtest stage, from the SystemStage base through accountInputs, accountCosts, accountForecast, and portfolio P&L aggregation.",
+      "tags": ["documentation", "architecture", "accounting", "backtesting", "learning-note"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/basesystem-and-stage-line-by-line.md",
+      "type": "document",
+      "name": "basesystem-and-stage-line-by-line.md",
+      "filePath": "_learning_sandbox/docs/basesystem-and-stage-line-by-line.md",
+      "summary": "Line-by-line walkthrough of systems/basesystem.py (the System container) and systems/stage.py (the SystemStage base class), explaining the stage-wiring mechanism via system_init.",
+      "tags": ["documentation", "architecture", "code-walkthrough", "systems", "learning-note"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/codebase-architecture-part2.md",
+      "type": "document",
+      "name": "codebase-architecture-part2.md",
+      "filePath": "_learning_sandbox/docs/codebase-architecture-part2.md",
+      "summary": "Second part of the architecture reference covering the live-trading side: the sysbrokers/ broker interface (Interactive Brokers) and the sysexecution/ order model, order stacks, stack handler, and execution algorithms.",
+      "tags": ["documentation", "architecture", "reference", "execution", "broker"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/codebase-architecture-reference.md",
+      "type": "document",
+      "name": "codebase-architecture-reference.md",
+      "filePath": "_learning_sandbox/docs/codebase-architecture-reference.md",
+      "summary": "Top-level architecture reference mapping the major package folders (syscore, sysobjects, sysdata) and explaining the data-access pattern with abstract interfaces and backend implementations.",
+      "tags": ["documentation", "architecture", "reference", "overview", "data-access"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/installaltion.md",
+      "type": "document",
+      "name": "installaltion.md",
+      "filePath": "_learning_sandbox/docs/installaltion.md",
+      "summary": "Step-by-step installation guide using uv to create a Python 3.10 virtual environment, install pysystemtrade in editable mode, and sync a personal fork with the upstream project.",
+      "tags": ["documentation", "installation", "setup", "uv", "getting-started"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/learning-plan-pysystemtrade.md",
+      "type": "document",
+      "name": "learning-plan-pysystemtrade.md",
+      "filePath": "_learning_sandbox/docs/learning-plan-pysystemtrade.md",
+      "summary": "Structured multi-phase self-study plan for learning pysystemtrade, beginning with running the Chapter 15 backtest system and progressively exploring forecasts, trading rules, and system output.",
+      "tags": ["documentation", "learning-plan", "tutorial", "backtesting", "getting-started"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/production-setup-macos.md",
+      "type": "document",
+      "name": "production-setup-macos.md",
+      "filePath": "_learning_sandbox/docs/production-setup-macos.md",
+      "summary": "Comprehensive guide to running a pysystemtrade live production system on macOS, covering prerequisites, MongoDB installation via Homebrew, environment variables, and macOS-versus-Linux differences.",
+      "tags": ["documentation", "production", "deployment", "macos", "setup"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:_learning_sandbox/docs/systems-folder-overview.md",
+      "type": "document",
+      "name": "systems-folder-overview.md",
+      "filePath": "_learning_sandbox/docs/systems-folder-overview.md",
+      "summary": "High-level map of the systems/ folder listing core infrastructure, pipeline stages in execution order, supporting files, and how the backtest stages connect to one another.",
+      "tags": ["documentation", "architecture", "overview", "systems", "pipeline"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:_learning_sandbox/docs/codebase-architecture-reference.md",
+      "target": "document:_learning_sandbox/docs/codebase-architecture-part2.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/systems-folder-overview.md",
+      "target": "document:_learning_sandbox/docs/basesystem-and-stage-line-by-line.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/systems-folder-overview.md",
+      "target": "document:_learning_sandbox/docs/accounts-stage-architecture.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/learning-plan-pysystemtrade.md",
+      "target": "document:_learning_sandbox/docs/installaltion.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/learning-plan-pysystemtrade.md",
+      "target": "document:_learning_sandbox/docs/systems-folder-overview.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/production-setup-macos.md",
+      "target": "document:_learning_sandbox/docs/installaltion.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:_learning_sandbox/docs/accounts-stage-architecture.md",
+      "target": "document:_learning_sandbox/docs/basesystem-and-stage-line-by-line.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

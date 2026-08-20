@@ -1,0 +1,1073 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysbrokers/IB/ib_orders.py",
+      "type": "file",
+      "name": "ib_orders.py",
+      "filePath": "sysbrokers/IB/ib_orders.py",
+      "summary": "Implements the Interactive Brokers execution stack: submits, modifies, cancels and tracks broker orders, wrapping IB trade objects with control objects for live order management.",
+      "tags": [
+        "service",
+        "api-handler",
+        "execution",
+        "broker",
+        "order-management"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Bridges pysystemtrade's broker order stack abstraction to the IB ib_async API."
+    },
+    {
+      "id": "file:sysbrokers/IB/ib_positions.py",
+      "type": "file",
+      "name": "ib_positions.py",
+      "filePath": "sysbrokers/IB/ib_positions.py",
+      "summary": "Translates raw Interactive Brokers position and account-summary data into pysystemtrade position dictionaries, resolving stock, future and cash positions and buy/sell signs.",
+      "tags": [
+        "broker",
+        "serialization",
+        "positions",
+        "utility",
+        "fx"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/IB/ib_static_data.py",
+      "type": "file",
+      "name": "ib_static_data.py",
+      "filePath": "sysbrokers/IB/ib_static_data.py",
+      "summary": "Provides broker-level static data (client id, account, broker name) for the Interactive Brokers connection via a thin data adapter class.",
+      "tags": [
+        "broker",
+        "data-model",
+        "static-data",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "type": "file",
+      "name": "ib_translate_broker_order_objects.py",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "summary": "Translation layer converting Interactive Brokers trade, order, contract and fill objects into pysystemtrade broker order objects, including combo/spread leg handling and fill aggregation.",
+      "tags": [
+        "broker",
+        "serialization",
+        "order-management",
+        "translation",
+        "execution"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Heavy use of namedtuples to package IB trade/order/contract/fill metadata."
+    },
+    {
+      "id": "file:sysbrokers/broker_capital_data.py",
+      "type": "file",
+      "name": "broker_capital_data.py",
+      "filePath": "sysbrokers/broker_capital_data.py",
+      "summary": "Abstract base data class defining the broker capital interface for retrieving account value and excess liquidity across currencies.",
+      "tags": [
+        "broker",
+        "data-model",
+        "abstract-base",
+        "capital"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_factory.py",
+      "type": "file",
+      "name": "broker_factory.py",
+      "filePath": "sysbrokers/broker_factory.py",
+      "summary": "Factory that assembles the list of broker data classes (currently Interactive Brokers) used to build a data blob from configuration.",
+      "tags": [
+        "factory",
+        "broker",
+        "configuration",
+        "dependency-injection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_futures_contract_data.py",
+      "type": "file",
+      "name": "broker_futures_contract_data.py",
+      "filePath": "sysbrokers/broker_futures_contract_data.py",
+      "summary": "Abstract base class for broker futures contract data, defining expiry, tick size, trading-hours and tradeability checks that concrete brokers must implement.",
+      "tags": [
+        "broker",
+        "data-model",
+        "abstract-base",
+        "futures-contract",
+        "trading-hours"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/broker_fx_handling.py",
+      "type": "file",
+      "name": "broker_fx_handling.py",
+      "filePath": "sysbrokers/broker_fx_handling.py",
+      "summary": "Abstract base class defining the broker FX handling interface for querying FX balances and placing FX market orders.",
+      "tags": [
+        "broker",
+        "data-model",
+        "abstract-base",
+        "fx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_fx_prices_data.py",
+      "type": "file",
+      "name": "broker_fx_prices_data.py",
+      "filePath": "sysbrokers/broker_fx_prices_data.py",
+      "summary": "Abstract base data class for broker FX prices, defining the FX-code listing and price retrieval/update interface that concrete brokers override.",
+      "tags": [
+        "broker",
+        "data-model",
+        "abstract-base",
+        "fx",
+        "price-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_trade.py",
+      "type": "file",
+      "name": "broker_trade.py",
+      "filePath": "sysbrokers/broker_trade.py",
+      "summary": "Minimal placeholder base class representing a generic broker trade object, subclassed by broker-specific trade implementations.",
+      "tags": [
+        "broker",
+        "data-model",
+        "abstract-base",
+        "trade"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syscore/cache.py",
+      "type": "file",
+      "name": "cache.py",
+      "filePath": "syscore/cache.py",
+      "summary": "Generic per-object memoization cache that stores and retrieves method results keyed by function name and arguments, used to avoid recomputation in system stages.",
+      "tags": [
+        "utility",
+        "cache",
+        "memoization",
+        "performance"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/ib_orders.py:ibOrderWithControls",
+      "type": "class",
+      "name": "ibOrderWithControls",
+      "filePath": "sysbrokers/IB/ib_orders.py",
+      "lineRange": [
+        30,
+        87
+      ],
+      "summary": "Wraps an IB trade-with-contract object alongside the derived broker order, providing refresh, limit-price and update helpers used during live order tracking.",
+      "tags": [
+        "broker",
+        "order-management",
+        "wrapper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/ib_orders.py:ibExecutionStackData",
+      "type": "class",
+      "name": "ibExecutionStackData",
+      "filePath": "sysbrokers/IB/ib_orders.py",
+      "lineRange": [
+        90,
+        505
+      ],
+      "summary": "IB execution stack adapter that places, modifies, cancels and queries broker orders, matching database orders to live IB control orders.",
+      "tags": [
+        "broker",
+        "execution",
+        "api-handler",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysbrokers/IB/ib_positions.py:from_ib_positions_to_dict",
+      "type": "function",
+      "name": "from_ib_positions_to_dict",
+      "filePath": "sysbrokers/IB/ib_positions.py",
+      "lineRange": [
+        53,
+        86
+      ],
+      "summary": "Converts raw IB positions into a dictionary keyed by asset class, dispatching to per-asset resolver functions.",
+      "tags": [
+        "broker",
+        "serialization",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:ibBrokerOrder",
+      "type": "class",
+      "name": "ibBrokerOrder",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "lineRange": [
+        49,
+        172
+      ],
+      "summary": "Broker order subclass that constructs a pysystemtrade broker order from an IB trade object, resolving quantities, fills and combo prices.",
+      "tags": [
+        "broker",
+        "order-management",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:tradeWithContract",
+      "type": "class",
+      "name": "tradeWithContract",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "lineRange": [
+        24,
+        46
+      ],
+      "summary": "Container pairing an IB trade object with its contract-and-legs metadata for downstream order translation.",
+      "tags": [
+        "broker",
+        "data-model",
+        "wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:create_broker_order_from_trade_with_contract",
+      "type": "function",
+      "name": "create_broker_order_from_trade_with_contract",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "lineRange": [
+        175,
+        198
+      ],
+      "summary": "Builds a pysystemtrade broker order from an IB trade-with-contract, extracting trade info and assigning a temporary id.",
+      "tags": [
+        "broker",
+        "order-management",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_totals_from_fill_data",
+      "type": "function",
+      "name": "extract_totals_from_fill_data",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "lineRange": [
+        212,
+        269
+      ],
+      "summary": "Aggregates fill data across contract ids into total filled quantities and average fill prices for a multi-leg trade.",
+      "tags": [
+        "broker",
+        "execution",
+        "aggregation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_single_fill",
+      "type": "function",
+      "name": "extract_single_fill",
+      "filePath": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "lineRange": [
+        476,
+        524
+      ],
+      "summary": "Parses a single IB execution/fill into a structured namedtuple with sign, price, quantity and localized timestamp.",
+      "tags": [
+        "broker",
+        "execution",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/broker_capital_data.py:brokerCapitalData",
+      "type": "class",
+      "name": "brokerCapitalData",
+      "filePath": "sysbrokers/broker_capital_data.py",
+      "lineRange": [
+        10,
+        27
+      ],
+      "summary": "Abstract broker capital data interface exposing account value and excess liquidity across currencies.",
+      "tags": [
+        "broker",
+        "abstract-base",
+        "capital"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/broker_factory.py:get_broker_class_list",
+      "type": "function",
+      "name": "get_broker_class_list",
+      "filePath": "sysbrokers/broker_factory.py",
+      "lineRange": [
+        16,
+        34
+      ],
+      "summary": "Resolves the configured broker name into the corresponding list of broker data classes used to assemble a data blob.",
+      "tags": [
+        "factory",
+        "broker",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/broker_futures_contract_data.py:brokerFuturesContractData",
+      "type": "class",
+      "name": "brokerFuturesContractData",
+      "filePath": "sysbrokers/broker_futures_contract_data.py",
+      "lineRange": [
+        11,
+        85
+      ],
+      "summary": "Abstract base defining the broker futures-contract data interface, including tradeability and trading-hours-left checks plus unimplemented contract CRUD hooks.",
+      "tags": [
+        "broker",
+        "abstract-base",
+        "futures-contract",
+        "trading-hours"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/broker_fx_handling.py:brokerFxHandlingData",
+      "type": "class",
+      "name": "brokerFxHandlingData",
+      "filePath": "sysbrokers/broker_fx_handling.py",
+      "lineRange": [
+        10,
+        29
+      ],
+      "summary": "Abstract broker FX handling interface for retrieving FX balances and placing FX market orders.",
+      "tags": [
+        "broker",
+        "abstract-base",
+        "fx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/broker_fx_prices_data.py:brokerFxPricesData",
+      "type": "class",
+      "name": "brokerFxPricesData",
+      "filePath": "sysbrokers/broker_fx_prices_data.py",
+      "lineRange": [
+        7,
+        32
+      ],
+      "summary": "Abstract base for broker FX price data defining the FX-code listing and price retrieval/update interface.",
+      "tags": [
+        "broker",
+        "abstract-base",
+        "fx",
+        "price-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syscore/cache.py:Cache",
+      "type": "class",
+      "name": "Cache",
+      "filePath": "syscore/cache.py",
+      "lineRange": [
+        11,
+        59
+      ],
+      "summary": "Memoization cache that computes a method result on first call and returns the stored value thereafter, keyed by function name and arguments.",
+      "tags": [
+        "utility",
+        "cache",
+        "memoization"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "class:sysbrokers/IB/ib_orders.py:ibOrderWithControls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "class:sysbrokers/IB/ib_orders.py:ibOrderWithControls",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "class:sysbrokers/IB/ib_orders.py:ibExecutionStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "class:sysbrokers/IB/ib_orders.py:ibExecutionStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_positions.py",
+      "target": "function:sysbrokers/IB/ib_positions.py:from_ib_positions_to_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_positions.py",
+      "target": "function:sysbrokers/IB/ib_positions.py:from_ib_positions_to_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:ibBrokerOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:ibBrokerOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:tradeWithContract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "class:sysbrokers/IB/ib_translate_broker_order_objects.py:tradeWithContract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:create_broker_order_from_trade_with_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:create_broker_order_from_trade_with_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_totals_from_fill_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_totals_from_fill_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_single_fill",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "function:sysbrokers/IB/ib_translate_broker_order_objects.py:extract_single_fill",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "class:sysbrokers/broker_capital_data.py:brokerCapitalData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "class:sysbrokers/broker_capital_data.py:brokerCapitalData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "function:sysbrokers/broker_factory.py:get_broker_class_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "function:sysbrokers/broker_factory.py:get_broker_class_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "class:sysbrokers/broker_futures_contract_data.py:brokerFuturesContractData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "class:sysbrokers/broker_futures_contract_data.py:brokerFuturesContractData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "class:sysbrokers/broker_fx_handling.py:brokerFxHandlingData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "class:sysbrokers/broker_fx_handling.py:brokerFxHandlingData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "class:sysbrokers/broker_fx_prices_data.py:brokerFxPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "class:sysbrokers/broker_fx_prices_data.py:brokerFxPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/cache.py",
+      "target": "class:syscore/cache.py:Cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/cache.py",
+      "target": "class:syscore/cache.py:Cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/broker_execution_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/IB/ib_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/IB/ib_futures_contracts_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/IB/ib_instruments_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:sysexecution/tick_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_positions.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_positions.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_positions.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_static_data.py",
+      "target": "file:sysbrokers/broker_static_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_static_data.py",
+      "target": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_static_data.py",
+      "target": "file:sysbrokers/IB/ib_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_static_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_static_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysbrokers/broker_trade.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysbrokers/IB/ib_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "file:sysdata/production/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_capital_data.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_broker_commissions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_capital_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_contract_position_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_futures_contract_price_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_futures_contracts_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_fx_handling.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_instruments_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysbrokers/IB/ib_static_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_factory.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:sysdata/futures/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_data.py",
+      "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "file:sysbrokers/broker_trade.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_handling.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "file:sysdata/fx/spotfx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_fx_prices_data.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/cache.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

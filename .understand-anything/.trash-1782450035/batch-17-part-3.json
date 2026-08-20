@@ -1,0 +1,2207 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysobjects/rolls.py",
+      "type": "file",
+      "name": "rolls.py",
+      "filePath": "sysobjects/rolls.py",
+      "summary": "Defines roll cycles, roll parameters, and contract-date-with-roll-parameters objects that drive contract chain iteration and roll-date calculation.",
+      "tags": [
+        "data-model",
+        "roll-cycle",
+        "roll-parameters",
+        "futures",
+        "domain-object"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysproduction/data/contracts.py",
+      "type": "file",
+      "name": "contracts.py",
+      "filePath": "sysproduction/data/contracts.py",
+      "summary": "Production data-access layer (dataContracts) wrapping contract, multiple-price, and roll-parameter DB stores, with interactive contract-selection helpers.",
+      "tags": [
+        "data-access",
+        "production",
+        "contracts",
+        "futures",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysproduction/data/prices.py",
+      "type": "file",
+      "name": "prices.py",
+      "filePath": "sysproduction/data/prices.py",
+      "summary": "Production data-access layer (diagPrices/updatePrices) for reading and writing adjusted, multiple, and per-contract futures prices plus spreads.",
+      "tags": [
+        "data-access",
+        "production",
+        "prices",
+        "futures",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysproduction/linux/scripts/run.py",
+      "type": "file",
+      "name": "run.py",
+      "filePath": "sysproduction/linux/scripts/run.py",
+      "summary": "Command-line entry point that resolves a named production function via interactive menus and executes it.",
+      "tags": [
+        "entry-point",
+        "script",
+        "production",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "type": "file",
+      "name": "run_daily_update_multiple_adjusted_prices.py",
+      "filePath": "sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "summary": "Scheduled production process that runs the daily update of multiple and adjusted prices as a timed timer function.",
+      "tags": [
+        "production",
+        "scheduler",
+        "prices",
+        "process",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "type": "file",
+      "name": "update_multiple_adjusted_prices.py",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "summary": "Production routine that recalculates and persists updated multiple and adjusted prices for each instrument from fresh per-contract data.",
+      "tags": [
+        "production",
+        "prices",
+        "update",
+        "data-pipeline",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/update_sampled_contracts.py",
+      "type": "file",
+      "name": "update_sampled_contracts.py",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "summary": "Production routine that maintains the set of sampled contracts per instrument, adding new contracts, updating expiries, and flagging expired ones.",
+      "tags": [
+        "production",
+        "contracts",
+        "sampling",
+        "update",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/rolls.py:rollCycle",
+      "type": "class",
+      "name": "rollCycle",
+      "filePath": "sysobjects/rolls.py",
+      "lineRange": [
+        12,
+        178
+      ],
+      "summary": "Represents a futures roll cycle (months) with iteration helpers over month tuples.",
+      "tags": [
+        "data-model",
+        "roll-cycle",
+        "futures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/rolls.py:rollParameters",
+      "type": "class",
+      "name": "rollParameters",
+      "filePath": "sysobjects/rolls.py",
+      "lineRange": [
+        184,
+        277
+      ],
+      "summary": "Holds an instrument's roll configuration: priced/hold cycles, offsets, and carry settings.",
+      "tags": [
+        "data-model",
+        "roll-parameters",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/rolls.py:contractDateWithRollParameters",
+      "type": "class",
+      "name": "contractDateWithRollParameters",
+      "filePath": "sysobjects/rolls.py",
+      "lineRange": [
+        280,
+        448
+      ],
+      "summary": "Combines a contract date with roll parameters to compute next/previous priced, held, and carry contracts.",
+      "tags": [
+        "domain-object",
+        "roll-parameters",
+        "contract-chain"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/data/contracts.py:get_valid_contract_object_from_user",
+      "type": "function",
+      "name": "get_valid_contract_object_from_user",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        280,
+        294
+      ],
+      "summary": "Interactively prompts the user to select a valid contract object for an instrument.",
+      "tags": [
+        "interactive",
+        "contracts",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/contracts.py:get_valid_instrument_code_and_contractid_from_user",
+      "type": "function",
+      "name": "get_valid_instrument_code_and_contractid_from_user",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        297,
+        337
+      ],
+      "summary": "Interactively obtains a valid instrument code and contract ID pair from the user.",
+      "tags": [
+        "interactive",
+        "contracts",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/contracts.py:get_dates_to_choose_from",
+      "type": "function",
+      "name": "get_dates_to_choose_from",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        340,
+        360
+      ],
+      "summary": "Returns the list of available contract dates a user can choose from for an instrument.",
+      "tags": [
+        "contracts",
+        "production",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/contracts.py:label_up_contracts_with_date_list",
+      "type": "function",
+      "name": "label_up_contracts_with_date_list",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        369,
+        395
+      ],
+      "summary": "Annotates a contract date list with labels marking priced/forward/carry roles.",
+      "tags": [
+        "contracts",
+        "labelling",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/contracts.py:label_up_current_contracts",
+      "type": "function",
+      "name": "label_up_current_contracts",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        398,
+        424
+      ],
+      "summary": "Labels the current priced, forward, and carry contracts for display.",
+      "tags": [
+        "contracts",
+        "labelling",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysproduction/data/contracts.py:dataContracts",
+      "type": "class",
+      "name": "dataContracts",
+      "filePath": "sysproduction/data/contracts.py",
+      "lineRange": [
+        32,
+        277
+      ],
+      "summary": "Production data-access facade over contract, multiple-price, and roll-parameter DB stores.",
+      "tags": [
+        "data-access",
+        "production",
+        "contracts"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_valid_instrument_code_from_user",
+      "type": "function",
+      "name": "get_valid_instrument_code_from_user",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        378,
+        413
+      ],
+      "summary": "Interactively prompts the user to choose a valid instrument code from available sources.",
+      "tags": [
+        "interactive",
+        "prices",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_list_of_instruments",
+      "type": "function",
+      "name": "get_list_of_instruments",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        416,
+        434
+      ],
+      "summary": "Returns the list of instruments available from the chosen price source.",
+      "tags": [
+        "prices",
+        "production",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:recent_average_price",
+      "type": "function",
+      "name": "recent_average_price",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        437,
+        445
+      ],
+      "summary": "Helper function recent_average_price in prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_current_price_of_instrument",
+      "type": "function",
+      "name": "get_current_price_of_instrument",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        448,
+        455
+      ],
+      "summary": "Helper function get_current_price_of_instrument in prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_price_series",
+      "type": "function",
+      "name": "get_price_series",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        458,
+        462
+      ],
+      "summary": "Helper function get_price_series in prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_current_price_series",
+      "type": "function",
+      "name": "get_current_price_series",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        465,
+        469
+      ],
+      "summary": "Helper function get_current_price_series in prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:get_cash_cost_in_base_for_instrument",
+      "type": "function",
+      "name": "get_cash_cost_in_base_for_instrument",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        472,
+        486
+      ],
+      "summary": "Computes an instrument's cash trading cost expressed in the base currency.",
+      "tags": [
+        "prices",
+        "costs",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:last_currency_fx",
+      "type": "function",
+      "name": "last_currency_fx",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        489,
+        495
+      ],
+      "summary": "Helper function last_currency_fx in prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/prices.py:modify_price_when_contract_has_changed",
+      "type": "function",
+      "name": "modify_price_when_contract_has_changed",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        498,
+        525
+      ],
+      "summary": "Adjusts a price when the underlying priced contract has rolled to a new contract date.",
+      "tags": [
+        "prices",
+        "roll",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysproduction/data/prices.py:diagPrices",
+      "type": "class",
+      "name": "diagPrices",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        50,
+        242
+      ],
+      "summary": "Read-only production diagnostics interface for adjusted, multiple, and per-contract prices and spreads.",
+      "tags": [
+        "data-access",
+        "production",
+        "prices"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysproduction/data/prices.py:updatePrices",
+      "type": "class",
+      "name": "updatePrices",
+      "filePath": "sysproduction/data/prices.py",
+      "lineRange": [
+        245,
+        372
+      ],
+      "summary": "Write interface for persisting adjusted, multiple, per-contract prices and spreads in production.",
+      "tags": [
+        "data-access",
+        "production",
+        "prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/linux/scripts/run.py:resolve_func",
+      "type": "function",
+      "name": "resolve_func",
+      "filePath": "sysproduction/linux/scripts/run.py",
+      "lineRange": [
+        17,
+        47
+      ],
+      "summary": "Resolves a named production function reference into a callable, prompting interactively when ambiguous.",
+      "tags": [
+        "entry-point",
+        "cli",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:run_daily_update_multiple_adjusted_prices",
+      "type": "function",
+      "name": "run_daily_update_multiple_adjusted_prices",
+      "filePath": "sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "lineRange": [
+        7,
+        12
+      ],
+      "summary": "Helper function run_daily_update_multiple_adjusted_prices in run_daily_update_multiple_adjusted_prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:get_list_of_timer_functions_for_price_update",
+      "type": "function",
+      "name": "get_list_of_timer_functions_for_price_update",
+      "filePath": "sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "Builds the timer-function list driving the scheduled multiple/adjusted price update process.",
+      "tags": [
+        "scheduler",
+        "prices",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices",
+      "type": "function",
+      "name": "update_multiple_adjusted_prices",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        37,
+        73
+      ],
+      "summary": "Top-level production routine updating multiple and adjusted prices for all instruments.",
+      "tags": [
+        "production",
+        "prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_with_data",
+      "type": "function",
+      "name": "update_multiple_adjusted_prices_with_data",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        85,
+        101
+      ],
+      "summary": "Updates multiple and adjusted prices for one instrument using an existing data blob.",
+      "tags": [
+        "production",
+        "prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_for_instrument",
+      "type": "function",
+      "name": "update_multiple_adjusted_prices_for_instrument",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        104,
+        131
+      ],
+      "summary": "Computes and persists new multiple and adjusted prices for a single instrument.",
+      "tags": [
+        "production",
+        "prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:calc_updated_multiple_prices",
+      "type": "function",
+      "name": "calc_updated_multiple_prices",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        134,
+        151
+      ],
+      "summary": "Calculates the updated multiple-price series for an instrument from fresh contract prices.",
+      "tags": [
+        "production",
+        "multiple-prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:calc_update_adjusted_prices",
+      "type": "function",
+      "name": "calc_update_adjusted_prices",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        154,
+        174
+      ],
+      "summary": "Calculates updated adjusted prices from updated multiple prices for an instrument.",
+      "tags": [
+        "production",
+        "adjusted-prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:get_dict_of_new_prices_and_contractid",
+      "type": "function",
+      "name": "get_dict_of_new_prices_and_contractid",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        177,
+        206
+      ],
+      "summary": "Fetches new per-contract prices tagged with contract IDs for the priced/forward/carry contracts.",
+      "tags": [
+        "production",
+        "prices",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_multiple_adjusted_prices.py:update_with_new_prices",
+      "type": "function",
+      "name": "update_with_new_prices",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        209,
+        222
+      ],
+      "summary": "Writes updated multiple and adjusted prices back to the database.",
+      "tags": [
+        "production",
+        "prices",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysproduction/update_multiple_adjusted_prices.py:updateMultipleAdjustedPrices",
+      "type": "class",
+      "name": "updateMultipleAdjustedPrices",
+      "filePath": "sysproduction/update_multiple_adjusted_prices.py",
+      "lineRange": [
+        76,
+        82
+      ],
+      "summary": "Process wrapper exposing the multiple/adjusted price update as a runnable production object.",
+      "tags": [
+        "production",
+        "prices",
+        "process"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_sampled_contracts",
+      "type": "function",
+      "name": "update_sampled_contracts",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        17,
+        64
+      ],
+      "summary": "Top-level routine maintaining the sampled-contract set across all instruments.",
+      "tags": [
+        "production",
+        "contracts",
+        "sampling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_with_data",
+      "type": "function",
+      "name": "update_active_contracts_with_data",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        76,
+        86
+      ],
+      "summary": "Helper function update_active_contracts_with_data in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_for_instrument",
+      "type": "function",
+      "name": "update_active_contracts_for_instrument",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        89,
+        104
+      ],
+      "summary": "Updates the sampled/active contract set for a single instrument.",
+      "tags": [
+        "production",
+        "contracts",
+        "sampling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_contract_chain",
+      "type": "function",
+      "name": "get_contract_chain",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        107,
+        115
+      ],
+      "summary": "Builds the chain of contracts that should be sampled for an instrument.",
+      "tags": [
+        "production",
+        "contracts",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_with_roll_parameters",
+      "type": "function",
+      "name": "get_furthest_out_contract_with_roll_parameters",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        118,
+        128
+      ],
+      "summary": "Helper function get_furthest_out_contract_with_roll_parameters in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_date",
+      "type": "function",
+      "name": "get_furthest_out_contract_date",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        131,
+        139
+      ],
+      "summary": "Helper function get_furthest_out_contract_date in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:create_furthest_out_contract_with_roll_parameters_from_contract_date",
+      "type": "function",
+      "name": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        142,
+        152
+      ],
+      "summary": "Helper function create_furthest_out_contract_with_roll_parameters_from_contract_date in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain",
+      "type": "function",
+      "name": "create_contract_object_chain",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        155,
+        163
+      ],
+      "summary": "Helper function create_contract_object_chain in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:create_contract_date_chain",
+      "type": "function",
+      "name": "create_contract_date_chain",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        166,
+        177
+      ],
+      "summary": "Helper function create_contract_date_chain in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain_from_contract_date_chain",
+      "type": "function",
+      "name": "create_contract_object_chain_from_contract_date_chain",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        180,
+        194
+      ],
+      "summary": "Helper function create_contract_object_chain_from_contract_date_chain in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_contract_database_with_contract_chain",
+      "type": "function",
+      "name": "update_contract_database_with_contract_chain",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        197,
+        220
+      ],
+      "summary": "Reconciles the DB contract set with the required contract chain, adding or flagging contracts.",
+      "tags": [
+        "production",
+        "contracts",
+        "sampling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_list_of_currently_sampling_contracts_in_db",
+      "type": "function",
+      "name": "get_list_of_currently_sampling_contracts_in_db",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        223,
+        232
+      ],
+      "summary": "Helper function get_list_of_currently_sampling_contracts_in_db in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:add_missing_contracts_to_database",
+      "type": "function",
+      "name": "add_missing_contracts_to_database",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        235,
+        247
+      ],
+      "summary": "Helper function add_missing_contracts_to_database in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:add_missing_or_not_sampling_contract_to_database",
+      "type": "function",
+      "name": "add_missing_or_not_sampling_contract_to_database",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        250,
+        264
+      ],
+      "summary": "Helper function add_missing_or_not_sampling_contract_to_database in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:mark_existing_contract_as_sampling",
+      "type": "function",
+      "name": "mark_existing_contract_as_sampling",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        267,
+        277
+      ],
+      "summary": "Helper function mark_existing_contract_as_sampling in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:add_new_contract_with_sampling_on",
+      "type": "function",
+      "name": "add_new_contract_with_sampling_on",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        280,
+        294
+      ],
+      "summary": "Helper function add_new_contract_with_sampling_on in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_expiries_and_sampling_status_for_contracts",
+      "type": "function",
+      "name": "update_expiries_and_sampling_status_for_contracts",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        297,
+        318
+      ],
+      "summary": "Helper function update_expiries_and_sampling_status_for_contracts in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_expiry_and_sampling_status_for_contract",
+      "type": "function",
+      "name": "update_expiry_and_sampling_status_for_contract",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        321,
+        384
+      ],
+      "summary": "Updates a contract's expiry date and sampling flag based on broker data and chain membership.",
+      "tags": [
+        "production",
+        "contracts",
+        "expiry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_contract_expiry_from_broker",
+      "type": "function",
+      "name": "get_contract_expiry_from_broker",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        387,
+        395
+      ],
+      "summary": "Helper function get_contract_expiry_from_broker in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:update_contract_object_with_new_expiry_date",
+      "type": "function",
+      "name": "update_contract_object_with_new_expiry_date",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        398,
+        411
+      ],
+      "summary": "Helper function update_contract_object_with_new_expiry_date in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:check_key_contracts_have_not_expired",
+      "type": "function",
+      "name": "check_key_contracts_have_not_expired",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        414,
+        431
+      ],
+      "summary": "Checks that key (priced/forward/carry) contracts for an instrument have not expired.",
+      "tags": [
+        "production",
+        "contracts",
+        "expiry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:get_list_of_key_contract_ids",
+      "type": "function",
+      "name": "get_list_of_key_contract_ids",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        434,
+        439
+      ],
+      "summary": "Helper function get_list_of_key_contract_ids in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/update_sampled_contracts.py:has_contract_expired",
+      "type": "function",
+      "name": "has_contract_expired",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        442,
+        449
+      ],
+      "summary": "Helper function has_contract_expired in update_sampled_contracts.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysproduction/update_sampled_contracts.py:updateSampledContracts",
+      "type": "class",
+      "name": "updateSampledContracts",
+      "filePath": "sysproduction/update_sampled_contracts.py",
+      "lineRange": [
+        67,
+        73
+      ],
+      "summary": "Process wrapper exposing sampled-contract maintenance as a runnable production object.",
+      "tags": [
+        "production",
+        "contracts",
+        "process"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:rollCycle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:rollCycle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:rollParameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:rollParameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:contractDateWithRollParameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "class:sysobjects/rolls.py:contractDateWithRollParameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_valid_contract_object_from_user",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_valid_contract_object_from_user",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_valid_instrument_code_and_contractid_from_user",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_valid_instrument_code_and_contractid_from_user",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_dates_to_choose_from",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:get_dates_to_choose_from",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:label_up_contracts_with_date_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:label_up_contracts_with_date_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:label_up_current_contracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "function:sysproduction/data/contracts.py:label_up_current_contracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "class:sysproduction/data/contracts.py:dataContracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "class:sysproduction/data/contracts.py:dataContracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_valid_instrument_code_from_user",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_valid_instrument_code_from_user",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_list_of_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_list_of_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:recent_average_price",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:recent_average_price",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_current_price_of_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_current_price_of_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_price_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_price_series",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_current_price_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_current_price_series",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_cash_cost_in_base_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:get_cash_cost_in_base_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:last_currency_fx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:last_currency_fx",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:modify_price_when_contract_has_changed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "function:sysproduction/data/prices.py:modify_price_when_contract_has_changed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "class:sysproduction/data/prices.py:diagPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "class:sysproduction/data/prices.py:diagPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "class:sysproduction/data/prices.py:updatePrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "class:sysproduction/data/prices.py:updatePrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/linux/scripts/run.py",
+      "target": "function:sysproduction/linux/scripts/run.py:resolve_func",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/linux/scripts/run.py",
+      "target": "function:sysproduction/linux/scripts/run.py:resolve_func",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:run_daily_update_multiple_adjusted_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:run_daily_update_multiple_adjusted_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:get_list_of_timer_functions_for_price_update",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/run_daily_update_multiple_adjusted_prices.py:get_list_of_timer_functions_for_price_update",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_with_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_with_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_multiple_adjusted_prices_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:calc_updated_multiple_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:calc_updated_multiple_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:calc_update_adjusted_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:calc_update_adjusted_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:get_dict_of_new_prices_and_contractid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:get_dict_of_new_prices_and_contractid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_with_new_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "function:sysproduction/update_multiple_adjusted_prices.py:update_with_new_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "class:sysproduction/update_multiple_adjusted_prices.py:updateMultipleAdjustedPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "class:sysproduction/update_multiple_adjusted_prices.py:updateMultipleAdjustedPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_sampled_contracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_sampled_contracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_with_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_with_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_active_contracts_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_contract_chain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_contract_chain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_with_roll_parameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_with_roll_parameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_furthest_out_contract_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_furthest_out_contract_with_roll_parameters_from_contract_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_furthest_out_contract_with_roll_parameters_from_contract_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_date_chain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_date_chain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain_from_contract_date_chain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:create_contract_object_chain_from_contract_date_chain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_contract_database_with_contract_chain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_contract_database_with_contract_chain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_list_of_currently_sampling_contracts_in_db",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_list_of_currently_sampling_contracts_in_db",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_missing_contracts_to_database",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_missing_contracts_to_database",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_missing_or_not_sampling_contract_to_database",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_missing_or_not_sampling_contract_to_database",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:mark_existing_contract_as_sampling",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:mark_existing_contract_as_sampling",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_new_contract_with_sampling_on",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:add_new_contract_with_sampling_on",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_expiries_and_sampling_status_for_contracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_expiries_and_sampling_status_for_contracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_expiry_and_sampling_status_for_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_expiry_and_sampling_status_for_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_contract_expiry_from_broker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_contract_expiry_from_broker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_contract_object_with_new_expiry_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:update_contract_object_with_new_expiry_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:check_key_contracts_have_not_expired",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:check_key_contracts_have_not_expired",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_list_of_key_contract_ids",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:get_list_of_key_contract_ids",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:has_contract_expired",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "function:sysproduction/update_sampled_contracts.py:has_contract_expired",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "class:sysproduction/update_sampled_contracts.py:updateSampledContracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "class:sysproduction/update_sampled_contracts.py:updateSampledContracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/rolls.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysdata/futures/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysdata/futures/rolls_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysproduction/data/generic_production_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/contracts.py",
+      "target": "file:sysproduction/data/production_data_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysdata/futures/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysdata/futures/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysdata/futures/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysobjects/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysproduction/data/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysproduction/data/currency_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysproduction/data/generic_production_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/prices.py",
+      "target": "file:sysproduction/data/production_data_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/linux/scripts/run.py",
+      "target": "file:syscore/interactive/run_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "file:syscontrol/run_process.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "target": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_multiple_adjusted_prices.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/update_sampled_contracts.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

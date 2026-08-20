@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "config:.pre-commit-config.yaml",
+      "type": "config",
+      "name": ".pre-commit-config.yaml",
+      "filePath": ".pre-commit-config.yaml",
+      "summary": "Pre-commit hook configuration that registers the Black code formatter to run automatically on staged Python files before each commit.",
+      "tags": ["configuration", "pre-commit", "formatting", "code-quality"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.travis.yml",
+      "type": "config",
+      "name": ".travis.yml",
+      "filePath": ".travis.yml",
+      "summary": "Legacy Travis CI configuration defining the Python build matrix, dependency install, test script, and coverage upload steps for continuous integration.",
+      "tags": ["configuration", "ci-cd", "build-system", "testing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Repository guidelines for AI coding agents, covering project structure, build/test commands, coding style, testing, and commit conventions.",
+      "tags": ["documentation", "development", "guidelines", "ai-policy"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": "CHANGELOG.md",
+      "summary": "Comprehensive release notes spanning version 0.0.1 through 1.8.2, documenting features, fixes, and breaking changes across the project's history.",
+      "tags": ["documentation", "changelog", "release-notes", "versioning"],
+      "complexity": "complex",
+      "languageNotes": "94 version sections in reverse-chronological order tracking the full evolution of the backtesting and trading engine."
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Contributor guide describing the AI policy, repository setup, git branching model, unit testing, and Black linting requirements for the project.",
+      "tags": ["documentation", "development", "contributing", "guidelines"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview introducing pysystemtrade as Rob Carver's open-source systematic futures backtesting and trading engine, with history, documentation links, dependencies, and installation instructions.",
+      "tags": ["documentation", "entry-point", "overview"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pyproject.toml",
+      "type": "config",
+      "name": "pyproject.toml",
+      "filePath": "pyproject.toml",
+      "summary": "Primary project metadata and build configuration declaring package info, runtime dependencies (pandas, ib_async, pymongo, pyarrow), pytest test paths with doctest options, and Black formatting rules.",
+      "tags": ["configuration", "build-system", "dependencies", "packaging"],
+      "complexity": "moderate",
+      "languageNotes": "Setuptools-based build with pinned scientific-stack dependencies and an extensive pytest testpaths whitelist enabling --doctest-modules across selected packages."
+    },
+    {
+      "id": "document:requirements.txt",
+      "type": "document",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "Pinned Python dependency list mirroring the runtime requirements for installing the project via pip.",
+      "tags": ["dependencies", "configuration", "packaging"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tox.ini",
+      "type": "config",
+      "name": "tox.ini",
+      "filePath": "tox.ini",
+      "summary": "Tox configuration defining isolated test environments and commands used to run the project's test suite across Python versions.",
+      "tags": ["configuration", "testing", "ci-cd", "build-system"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "config:pyproject.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:pyproject.toml",
+      "target": "config:tox.ini",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.pre-commit-config.yaml",
+      "target": "config:pyproject.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:requirements.txt",
+      "target": "config:pyproject.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "config:pyproject.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "document:CONTRIBUTING.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

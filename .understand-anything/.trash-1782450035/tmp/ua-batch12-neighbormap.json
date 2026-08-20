@@ -1,0 +1,3886 @@
+{
+  "sysexecution/stack_handler/completed_orders.py": [
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    }
+  ],
+  "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py": [
+    {
+      "path": "syscore/objects.py",
+      "batchIndex": 1,
+      "symbols": [
+        "get_methods",
+        "resolve_function",
+        "resolve_data_method",
+        "_recursively_get_attr_within_list",
+        "hasallattr",
+        "get_class_name"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/algo.py",
+      "batchIndex": 11,
+      "symbols": [
+        "benchmarkPriceCollection",
+        "Algo"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/allocate_algo_to_order.py",
+      "batchIndex": 11,
+      "symbols": [
+        "get_list_of_algos",
+        "allocate_algo_to_list_of_contract_orders",
+        "AlgoConfig",
+        "get_algo_allocation_config",
+        "check_and_if_required_allocate_algo_to_single_contract_order",
+        "already_has_algo_allocated",
+        "algo_allocation_is_overridden_for_instrument",
+        "allocate_algo_for_specific_instrument_with_override",
+        "allocate_market_algo",
+        "allocate_for_best_execution_no_limit",
+        "allocate_for_limit_order",
+        "allocate_default_algo"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderStackData",
+        "orderWithControls"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/instrument_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "zeroOrderException",
+        "instrumentOrderStackData",
+        "calculate_existing_trades_and_remainder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    }
+  ],
+  "sysexecution/stack_handler/fills.py": [
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradeQuantity",
+        "listOfTradeQuantity",
+        "change_trade_size_proportionally_to_meet_abs_qty_limit",
+        "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+        "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+        "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/balance_trades.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerCreateBalanceTrades",
+        "create_balance_contract_order_from_broker_order",
+        "create_balance_instrument_order_from_contract_order"
+      ]
+    }
+  ],
+  "sysexecution/stack_handler/roll_orders.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/genutils.py",
+      "batchIndex": 14,
+      "symbols": [
+        "new_removing_existing",
+        "list_intersection",
+        "list_difference",
+        "list_union",
+        "get_unique_list",
+        "get_unique_list_slow",
+        "round_significant_figures",
+        "flatten_list",
+        "str2Bool",
+        "str_of_int",
+        "same_sign",
+        "sign",
+        "return_another_value_if_nan",
+        "are_dicts_equal",
+        "quickTimer",
+        "if_empty_string_return_object",
+        "if_object_matches_return_empty_string",
+        "transfer_object_attributes",
+        "highest_common_factor_for_list",
+        "divide_list_of_ints_by_highest_common_factor",
+        "list_of_ints_with_highest_common_factor_positive_first",
+        "np_convert",
+        "intersection_intervals"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/allocate_algo_to_order.py",
+      "batchIndex": 11,
+      "symbols": [
+        "get_list_of_algos",
+        "allocate_algo_to_list_of_contract_orders",
+        "AlgoConfig",
+        "get_algo_allocation_config",
+        "check_and_if_required_allocate_algo_to_single_contract_order",
+        "already_has_algo_allocated",
+        "algo_allocation_is_overridden_for_instrument",
+        "allocate_algo_for_specific_instrument_with_override",
+        "allocate_market_algo",
+        "allocate_for_best_execution_no_limit",
+        "allocate_for_limit_order",
+        "allocate_default_algo"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/instrument_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "zeroOrderException",
+        "instrumentOrderStackData",
+        "calculate_existing_trades_and_remainder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysobjects/production/roll_state.py",
+      "batchIndex": 3,
+      "symbols": [
+        "is_double_sided_trade_roll_state",
+        "is_roll_state_requiring_order_generation",
+        "is_type_of_active_rolling_roll_state",
+        "explain_roll_state_str",
+        "name_of_roll_state",
+        "complete_roll_state",
+        "allowable_roll_state_from_current_and_position"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysexecution/stack_handler/spawn_children_from_instrument_orders.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/genutils.py",
+      "batchIndex": 14,
+      "symbols": [
+        "new_removing_existing",
+        "list_intersection",
+        "list_difference",
+        "list_union",
+        "get_unique_list",
+        "get_unique_list_slow",
+        "round_significant_figures",
+        "flatten_list",
+        "str2Bool",
+        "str_of_int",
+        "same_sign",
+        "sign",
+        "return_another_value_if_nan",
+        "are_dicts_equal",
+        "quickTimer",
+        "if_empty_string_return_object",
+        "if_object_matches_return_empty_string",
+        "transfer_object_attributes",
+        "highest_common_factor_for_list",
+        "divide_list_of_ints_by_highest_common_factor",
+        "list_of_ints_with_highest_common_factor_positive_first",
+        "np_convert",
+        "intersection_intervals"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/allocate_algo_to_order.py",
+      "batchIndex": 11,
+      "symbols": [
+        "get_list_of_algos",
+        "allocate_algo_to_list_of_contract_orders",
+        "AlgoConfig",
+        "get_algo_allocation_config",
+        "check_and_if_required_allocate_algo_to_single_contract_order",
+        "already_has_algo_allocated",
+        "algo_allocation_is_overridden_for_instrument",
+        "allocate_algo_for_specific_instrument_with_override",
+        "allocate_market_algo",
+        "allocate_for_best_execution_no_limit",
+        "allocate_for_limit_order",
+        "allocate_default_algo"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "missingOrder",
+        "lockedOrder",
+        "failureWithRollback",
+        "orderStackData"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/base_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "overFilledOrder",
+        "orderType",
+        "Order",
+        "resolve_inputs_to_order",
+        "resolve_orderid",
+        "resolve_parent",
+        "resolve_multi_leg_price_to_single_price"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradeQuantity",
+        "listOfTradeQuantity",
+        "change_trade_size_proportionally_to_meet_abs_qty_limit",
+        "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+        "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+        "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysexecution/stack_handler/stackHandlerCore.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "missingOrder",
+        "lockedOrder",
+        "failureWithRollback",
+        "orderStackData"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/base_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "overFilledOrder",
+        "orderType",
+        "Order",
+        "resolve_inputs_to_order",
+        "resolve_orderid",
+        "resolve_parent",
+        "resolve_multi_leg_price_to_single_price"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/additional_sampling.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerAdditionalSampling",
+        "remove_ignored_instruments"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/cancel_and_modify.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerCancelAndModify"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerChecks"
+      ]
+    }
+  ],
+  "sysexecution/stack_handler/stack_handler.py": [
+    {
+      "path": "sysexecution/stack_handler/additional_sampling.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerAdditionalSampling",
+        "remove_ignored_instruments"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/cancel_and_modify.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerCancelAndModify"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerChecks"
+      ]
+    },
+    {
+      "path": "sysproduction/run_stack_handler.py",
+      "batchIndex": 9,
+      "symbols": [
+        "run_stack_handler",
+        "get_list_of_timer_functions_for_stack_handler"
+      ]
+    }
+  ],
+  "sysexecution/strategies/classic_buffered_positions.py": [
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "batchIndex": 8,
+      "symbols": [
+        "tradeableObject",
+        "listOfInstrumentStrategies",
+        "instrumentStrategy",
+        "futuresContractStrategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/optimal_positions.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataOptimalPositions",
+        "remove_raw_strategies",
+        "is_not_raw_strategy",
+        "is_raw_strategy",
+        "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+        "is_not_raw_optimal_position_and_instrument_strategy",
+        "is_not_raw_instrument_strategy",
+        "instrument_strategy_with_raw_tag",
+        "strategy_name_with_raw_tag",
+        "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+      ]
+    }
+  ],
+  "sysexecution/strategies/strategy_order_handling.py": [
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/instrument_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "zeroOrderException",
+        "instrumentOrderStackData",
+        "calculate_existing_trades_and_remainder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "syslogging/logger.py",
+      "batchIndex": 8,
+      "symbols": [
+        "get_logger",
+        "_configure_logging",
+        "_configure_sim",
+        "_configure_prod",
+        "_get_log_server_config",
+        "_check_log_server"
+      ]
+    },
+    {
+      "path": "sysobjects/production/roll_state.py",
+      "batchIndex": 3,
+      "symbols": [
+        "is_double_sided_trade_roll_state",
+        "is_roll_state_requiring_order_generation",
+        "is_type_of_active_rolling_roll_state",
+        "explain_roll_state_str",
+        "name_of_roll_state",
+        "complete_roll_state",
+        "allowable_roll_state_from_current_and_position"
+      ]
+    },
+    {
+      "path": "sysproduction/data/instruments.py",
+      "batchIndex": 14,
+      "symbols": [
+        "updateSpreadCosts",
+        "diagInstruments",
+        "get_block_size"
+      ]
+    },
+    {
+      "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "batchIndex": 14,
+      "symbols": [
+        "orderGeneratorForDynamicPositions",
+        "calculate_optimised_positions_data",
+        "dataForObjectiveInstance",
+        "get_data_for_objective_instance",
+        "get_maximum_position_contracts",
+        "get_maximum_position_contracts_for_instrument_strategy",
+        "get_per_contract_values",
+        "calculate_costs_per_portfolio_weight",
+        "get_cost_per_notional_weight_as_proportion_of_capital",
+        "get_constraints",
+        "get_no_trade_keys",
+        "get_reduce_only_keys",
+        "get_override_for_instrument_strategy",
+        "get_covariance_matrix_for_instrument_returns_for_optimisation",
+        "get_correlation_matrix_with_shrinkage",
+        "get_speed_control",
+        "get_config_parameters",
+        "get_objective_instance",
+        "get_optimised_positions_data_dict_given_optimisation",
+        "get_positions_given_weights",
+        "get_weights_given_positions",
+        "get_optimal_position_entry_with_calcs_for_code",
+        "write_optimised_positions_data",
+        "write_optimised_positions_data_for_code",
+        "list_of_trades_given_optimised_and_actual_positions",
+        "trade_given_optimal_and_actual_positions"
+      ]
+    },
+    {
+      "path": "sysproduction/update_strategy_orders.py",
+      "batchIndex": 9,
+      "symbols": [
+        "update_strategy_orders"
+      ]
+    }
+  ],
+  "sysexecution/tick_data.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/genutils.py",
+      "batchIndex": 14,
+      "symbols": [
+        "new_removing_existing",
+        "list_intersection",
+        "list_difference",
+        "list_union",
+        "get_unique_list",
+        "get_unique_list_slow",
+        "round_significant_figures",
+        "flatten_list",
+        "str2Bool",
+        "str_of_int",
+        "same_sign",
+        "sign",
+        "return_another_value_if_nan",
+        "are_dicts_equal",
+        "quickTimer",
+        "if_empty_string_return_object",
+        "if_object_matches_return_empty_string",
+        "transfer_object_attributes",
+        "highest_common_factor_for_list",
+        "divide_list_of_ints_by_highest_common_factor",
+        "list_of_ints_with_highest_common_factor_positive_first",
+        "np_convert",
+        "intersection_intervals"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_futures_contract_price_data.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "batchIndex": 18,
+      "symbols": [
+        "ibTickerObject",
+        "ibFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysbrokers/IB/ib_orders.py",
+      "batchIndex": 19,
+      "symbols": [
+        "ibOrderWithControls",
+        "ibExecutionStackData",
+        "add_trade_info_to_broker_order",
+        "match_control_order_on_permid",
+        "match_control_order_from_dict"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/algo_original_best.py",
+      "batchIndex": 11,
+      "symbols": [
+        "algoOriginalBest"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/algo.py",
+      "batchIndex": 11,
+      "symbols": [
+        "benchmarkPriceCollection",
+        "Algo"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderStackData",
+        "orderWithControls"
+      ]
+    }
+  ],
+  "sysinit/futures/get_prices_and_contract_details_from_ib.py": [
+    {
+      "path": "syscore/dateutils.py",
+      "batchIndex": 10,
+      "symbols": [
+        "calculate_start_and_end_dates",
+        "_resolve_end_date_given_period_and_explicit_end_date",
+        "_resolve_start_date_given_end_date_calendar_days_and_period",
+        "n_days_ago",
+        "get_date_from_period_and_end_date",
+        "calculate_previous_date_from_period_with_char_number",
+        "calculate_starting_day_of_current_year",
+        "calculate_starting_day_of_current_uk_tax_year",
+        "calculate_starting_day_of_current_month",
+        "calculate_starting_day_of_current_quarter",
+        "preceeding_midnight_of_datetime",
+        "preceeding_midnight_of_date",
+        "following_one_second_before_midnight_of_datetime",
+        "following_one_second_before_midnight_of_date",
+        "from_config_frequency_pandas_resample",
+        "from_frequency_to_times_per_year",
+        "from_config_frequency_to_frequency",
+        "month_from_contract_letter",
+        "contract_month_from_number",
+        "datetime_to_long",
+        "long_to_datetime",
+        "date_as_short_pattern_or_question_if_missing",
+        "create_datetime_marker_string",
+        "from_marker_string_to_datetime",
+        "time_to_string",
+        "time_from_string",
+        "replace_midnight_with_notional_closing_time",
+        "check_time_matches_closing_time_to_second",
+        "strip_timezone_fromdatetime",
+        "generate_equal_dates_within_year",
+        "_calculate_first_date_for_equal_dates",
+        "get_approx_vol_scalar_versus_daily_vol_for_period"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    }
+  ],
+  "sysinit/futures/seed_price_data_from_IB.py": [
+    {
+      "path": "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "batchIndex": 18,
+      "symbols": [
+        "ibTickerObject",
+        "ibFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "syscore/dateutils.py",
+      "batchIndex": 10,
+      "symbols": [
+        "calculate_start_and_end_dates",
+        "_resolve_end_date_given_period_and_explicit_end_date",
+        "_resolve_start_date_given_end_date_calendar_days_and_period",
+        "n_days_ago",
+        "get_date_from_period_and_end_date",
+        "calculate_previous_date_from_period_with_char_number",
+        "calculate_starting_day_of_current_year",
+        "calculate_starting_day_of_current_uk_tax_year",
+        "calculate_starting_day_of_current_month",
+        "calculate_starting_day_of_current_quarter",
+        "preceeding_midnight_of_datetime",
+        "preceeding_midnight_of_date",
+        "following_one_second_before_midnight_of_datetime",
+        "following_one_second_before_midnight_of_date",
+        "from_config_frequency_pandas_resample",
+        "from_frequency_to_times_per_year",
+        "from_config_frequency_to_frequency",
+        "month_from_contract_letter",
+        "contract_month_from_number",
+        "datetime_to_long",
+        "long_to_datetime",
+        "date_as_short_pattern_or_question_if_missing",
+        "create_datetime_marker_string",
+        "from_marker_string_to_datetime",
+        "time_to_string",
+        "time_from_string",
+        "replace_midnight_with_notional_closing_time",
+        "check_time_matches_closing_time_to_second",
+        "strip_timezone_fromdatetime",
+        "generate_equal_dates_within_year",
+        "_calculate_first_date_for_equal_dates",
+        "get_approx_vol_scalar_versus_daily_vol_for_period"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysinit/futures/strategy_transfer.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/balance_trades.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerCreateBalanceTrades",
+        "create_balance_contract_order_from_broker_order",
+        "create_balance_instrument_order_from_contract_order"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysobjects/futures_per_contract_prices.py": [
+    {
+      "path": "syscore/pandas/frequency.py",
+      "batchIndex": 10,
+      "symbols": [
+        "closing_date_rows_in_pd_object",
+        "intraday_date_rows_in_pd_object",
+        "get_intraday_pdf_at_frequency",
+        "merge_data_with_different_freq",
+        "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+        "resample_prices_to_business_day_index",
+        "how_many_times_a_year_is_pd_frequency",
+        "interpolate_data_during_day",
+        "interpolate_for_a_single_day",
+        "reindex_last_monthly_include_first_date",
+        "infer_frequency",
+        "infer_frequency_approx",
+        "_probably_daily_freq",
+        "_probably_hourly_freq",
+        "average_time_delta_for_time_series"
+      ]
+    },
+    {
+      "path": "syscore/pandas/full_merge_with_replacement.py",
+      "batchIndex": 10,
+      "symbols": [
+        "full_merge_of_existing_data",
+        "full_merge_of_existing_data_no_checks",
+        "full_merge_of_data_with_both_old_and_new",
+        "full_merge_of_existing_dataframe",
+        "full_merge_of_existing_series"
+      ]
+    },
+    {
+      "path": "syscore/pandas/merge_data_keeping_past_data.py",
+      "batchIndex": 10,
+      "symbols": [
+        "merge_newer_data",
+        "mergeStatus",
+        "mergeError",
+        "mergingDataWithStatus",
+        "merge_newer_data_no_checks",
+        "_merge_newer_data_no_checks_if_both_old_and_new",
+        "spike_check_merged_data",
+        "_find_first_spike_in_data",
+        "_get_data_to_check",
+        "_calculate_change_in_vol_normalised_units",
+        "_calculate_change_in_daily_units",
+        "_get_relevant_period_in_vol_normalised_units_to_check",
+        "_check_for_spikes_in_change_in_vol_normalised_units"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_futures_contract_price_data.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "batchIndex": 18,
+      "symbols": [
+        "ibTickerObject",
+        "ibFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "batchIndex": 5,
+      "symbols": [
+        "arcticFuturesContractPriceData",
+        "from_key_to_freq_and_contract",
+        "from_contract_and_freq_to_key",
+        "from_tuple_to_key"
+      ]
+    },
+    {
+      "path": "sysdata/csv/csv_futures_contract_prices.py",
+      "batchIndex": 10,
+      "symbols": [
+        "ConfigCsvFuturesPrices",
+        "csvFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysdata/futures/futures_per_contract_prices.py",
+      "batchIndex": 16,
+      "symbols": [
+        "futuresContractPriceData"
+      ]
+    },
+    {
+      "path": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "batchIndex": 7,
+      "symbols": [
+        "parquetFuturesContractPriceData",
+        "from_key_to_freq_and_contract",
+        "from_contract_and_freq_to_key",
+        "from_tuple_to_key"
+      ]
+    },
+    {
+      "path": "sysdata/tools/cleaner.py",
+      "batchIndex": 11,
+      "symbols": [
+        "apply_price_cleaning",
+        "get_config_for_price_filtering",
+        "interactively_get_config_overrides_for_cleaning"
+      ]
+    },
+    {
+      "path": "sysinit/futures/contract_prices_from_split_freq_csv_to_db.py",
+      "batchIndex": 10,
+      "symbols": [
+        "init_db_with_split_freq_csv_prices_for_code",
+        "write_prices_for_contract_at_frequency"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysproduction/data/broker.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/dateutils.py",
+      "batchIndex": 10,
+      "symbols": [
+        "calculate_start_and_end_dates",
+        "_resolve_end_date_given_period_and_explicit_end_date",
+        "_resolve_start_date_given_end_date_calendar_days_and_period",
+        "n_days_ago",
+        "get_date_from_period_and_end_date",
+        "calculate_previous_date_from_period_with_char_number",
+        "calculate_starting_day_of_current_year",
+        "calculate_starting_day_of_current_uk_tax_year",
+        "calculate_starting_day_of_current_month",
+        "calculate_starting_day_of_current_quarter",
+        "preceeding_midnight_of_datetime",
+        "preceeding_midnight_of_date",
+        "following_one_second_before_midnight_of_datetime",
+        "following_one_second_before_midnight_of_date",
+        "from_config_frequency_pandas_resample",
+        "from_frequency_to_times_per_year",
+        "from_config_frequency_to_frequency",
+        "month_from_contract_letter",
+        "contract_month_from_number",
+        "datetime_to_long",
+        "long_to_datetime",
+        "date_as_short_pattern_or_question_if_missing",
+        "create_datetime_marker_string",
+        "from_marker_string_to_datetime",
+        "time_to_string",
+        "time_from_string",
+        "replace_midnight_with_notional_closing_time",
+        "check_time_matches_closing_time_to_second",
+        "strip_timezone_fromdatetime",
+        "generate_equal_dates_within_year",
+        "_calculate_first_date_for_equal_dates",
+        "get_approx_vol_scalar_versus_daily_vol_for_period"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysproduction/interactive_diagnostics.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_diagnostics",
+        "not_defined",
+        "backtest_plot",
+        "backtest_python",
+        "backtest_print",
+        "backtest_html",
+        "roll_report",
+        "pandl_report",
+        "status_report",
+        "trade_report",
+        "reconcile_report",
+        "strategy_report",
+        "risk_report",
+        "cost_report",
+        "slippage_report",
+        "commission_report",
+        "liquidity_report",
+        "instrument_risk_report",
+        "min_capital_report",
+        "duplicate_market_report",
+        "remove_markets_report",
+        "market_monitor_report",
+        "account_curve_report",
+        "email_or_print_or_file",
+        "retrieve_emails",
+        "individual_prices",
+        "multiple_prices",
+        "adjusted_prices",
+        "fx_prices",
+        "spreads",
+        "capital_strategy",
+        "total_current_capital",
+        "optimal_positions",
+        "get_valid_code_from_list",
+        "actual_instrument_position",
+        "actual_contract_position",
+        "list_of_instrument_orders",
+        "get_order_pd",
+        "list_of_contract_orders",
+        "list_of_broker_orders",
+        "view_individual_order",
+        "view_instrument_config",
+        "view_contract_config",
+        "print_trading_hours_for_all_instruments",
+        "display_a_dict_of_trading_hours",
+        "nice_print_list_of_trading_hours",
+        "nice_print_trading_hours",
+        "get_trading_hours_for_all_instruments",
+        "check_trading_hours",
+        "check_trading_hours_one_day",
+        "get_trading_hours_for_instrument"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysproduction/data/control_process.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataControlProcess",
+        "diagControlProcess",
+        "get_list_of_strategies_for_process",
+        "get_strategy_class_object_config"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_controls.py",
+      "batchIndex": 14,
+      "symbols": [
+        "parametersForAutoPopulation",
+        "interactive_controls",
+        "view_trade_limits",
+        "change_limit_for_instrument",
+        "reset_limit_for_instrument",
+        "reset_all_limits",
+        "change_limit_for_instrument_strategy",
+        "reset_limit_for_instrument_strategy",
+        "auto_populate_limits",
+        "set_trade_limit_for_instrument",
+        "calc_trade_limit_for_instrument",
+        "get_auto_population_parameters",
+        "get_maximum_position_at_max_forecast",
+        "get_standardised_position_for_risk",
+        "get_maximum_position_given_leverage_limit",
+        "get_maximum_position_given_risk_concentration_limit",
+        "get_max_position_give_volume_limit",
+        "view_position_limit",
+        "change_position_limit_for_instrument",
+        "change_position_limit_for_instrument_strategy",
+        "auto_populate_position_limits",
+        "set_position_limit_for_instrument",
+        "get_max_rounded_position_for_instrument",
+        "view_overrides",
+        "update_strategy_override",
+        "update_instrument_override",
+        "update_strategy_instrument_override",
+        "get_override_object_from_user",
+        "delete_all_overrides_in_db",
+        "clear_used_client_ids",
+        "view_process_controls",
+        "get_dict_of_process_controls",
+        "change_process_control_status",
+        "change_global_process_control_status",
+        "get_valid_status_for_process",
+        "change_process_given_int",
+        "get_process_name",
+        "view_process_config",
+        "finish_process",
+        "finish_all_processes",
+        "auto_update_spread_costs",
+        "get_slippage_data",
+        "get_list_of_changes_to_make_to_slippage",
+        "get_filter_size_for_slippage",
+        "calculate_mult_factor_from_cost_row",
+        "print_data_with_multiplier",
+        "make_changes_to_slippage_in_db",
+        "backup_slippage_from_db_to_csv",
+        "check_price_multipliers_consistent",
+        "check_price_multipliers_consistent_for_instrument",
+        "delete_instrument_from_prices",
+        "not_defined"
+      ]
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradeQuantity",
+        "listOfTradeQuantity",
+        "change_trade_size_proportionally_to_meet_abs_qty_limit",
+        "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+        "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+        "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysobjects/spot_fx_prices.py",
+      "batchIndex": 19,
+      "symbols": [
+        "fxPrices",
+        "listOfCurrencyValues",
+        "get_fx_tuple_from_code"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysproduction/data/currency_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataCurrency",
+        "get_list_of_fxcodes",
+        "get_valid_fx_code_from_user"
+      ]
+    },
+    {
+      "path": "sysobjects/contract_dates_and_expiries.py",
+      "batchIndex": 17,
+      "symbols": [
+        "needSingleLegDate",
+        "from_contract_numbers_to_contract_string",
+        "expiryDate",
+        "singleContractDate",
+        "listOfContractDateStr",
+        "contractDate",
+        "resolve_date_string_into_list_of_single_contract_dates",
+        "get_contract_date_object_list_from_dict",
+        "get_contract_date_object_list_from_date_str_and_expiry_date",
+        "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+        "resolve_date_string_into_list_of_date_str",
+        "resolve_expiry_date_into_list_of_expiry_dates",
+        "create_contract_date_from_old_style_dict",
+        "contract_given_tuple"
+      ]
+    },
+    {
+      "path": "sysobjects/instruments.py",
+      "batchIndex": 19,
+      "symbols": [
+        "futuresInstrument",
+        "_zero_if_nan",
+        "_string_if_nan",
+        "instrumentMetaData",
+        "futuresInstrumentWithMetaData",
+        "listOfFuturesInstrumentWithMetaData",
+        "assetClassesAndInstruments",
+        "instrumentCosts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/generic_production_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "productionDataLayerGeneric"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderStackData",
+        "orderWithControls"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/costs.py",
+      "batchIndex": 14,
+      "symbols": [
+        "get_current_configured_spread_cost",
+        "get_SR_cost_calculation_for_instrument",
+        "adjust_df_costs_show_ticks",
+        "get_series_of_tick_values",
+        "get_tick_value_for_instrument_code",
+        "get_combined_df_of_costs",
+        "best_estimate_from_cost_data",
+        "get_average_half_spread_from_sampling",
+        "get_average_sampled_half_spread_and_count_for_instrument",
+        "get_costs_from_slippage",
+        "order_count_by_instrument",
+        "get_average_half_spread_by_instrument_from_raw_slippage",
+        "get_table_of_SR_costs"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/algo.py",
+      "batchIndex": 11,
+      "symbols": [
+        "benchmarkPriceCollection",
+        "Algo"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_factory.py",
+      "batchIndex": 19,
+      "symbols": [
+        "get_broker_class_list",
+        "get_ib_class_list"
+      ]
+    },
+    {
+      "path": "dashboard/app.py",
+      "batchIndex": 3,
+      "symbols": [
+        "get_data",
+        "get_reporting_api",
+        "cleanup_data",
+        "dict_of_df_to_dict",
+        "index",
+        "capital",
+        "costs",
+        "forex",
+        "liquidity",
+        "pandl",
+        "processes",
+        "reconcile",
+        "rolls",
+        "rolls_post",
+        "risk",
+        "trades",
+        "strategy",
+        "visible_on_lan"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_futures_contract_price_data.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerFuturesContractPriceData"
+      ]
+    },
+    {
+      "path": "sysobjects/production/positions.py",
+      "batchIndex": 8,
+      "symbols": [
+        "Position",
+        "instrumentPosition",
+        "instrumentStrategyPosition",
+        "contractPosition",
+        "listOfPositions",
+        "listOfInstrumentPositions",
+        "listOfPositionsWithInstruments",
+        "listOfInstrumentStrategyPositions",
+        "listOfContractPositions",
+        "sum_for_instrument",
+        "sum_for_contract",
+        "_position_for_code_in_list",
+        "_position_for_contract_in_list"
+      ]
+    },
+    {
+      "path": "sysobjects/production/trading_hours/trading_hours.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradingHours",
+        "listOfTradingHours",
+        "split_trading_hours_across_two_weekdays"
+      ]
+    },
+    {
+      "path": "sysproduction/update_sampled_contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "update_sampled_contracts",
+        "updateSampledContracts",
+        "update_active_contracts_with_data",
+        "update_active_contracts_for_instrument",
+        "get_contract_chain",
+        "get_furthest_out_contract_with_roll_parameters",
+        "get_furthest_out_contract_date",
+        "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+        "create_contract_object_chain",
+        "create_contract_date_chain",
+        "create_contract_object_chain_from_contract_date_chain",
+        "update_contract_database_with_contract_chain",
+        "get_list_of_currently_sampling_contracts_in_db",
+        "add_missing_contracts_to_database",
+        "add_missing_or_not_sampling_contract_to_database",
+        "mark_existing_contract_as_sampling",
+        "add_new_contract_with_sampling_on",
+        "update_expiries_and_sampling_status_for_contracts",
+        "update_expiry_and_sampling_status_for_contract",
+        "get_contract_expiry_from_broker",
+        "update_contract_object_with_new_expiry_date",
+        "check_key_contracts_have_not_expired",
+        "get_list_of_key_contract_ids",
+        "has_contract_expired"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_futures_contract_data.py",
+      "batchIndex": 19,
+      "symbols": [
+        "brokerFuturesContractData"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_update_capital_manual.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_update_capital_manual",
+        "finished",
+        "print_capital_and_get_user_input",
+        "setup_initial_capital",
+        "get_initial_capital_values_from_user",
+        "update_capital_from_ib",
+        "get_broker_account_value",
+        "adjust_capital_for_delta",
+        "modify_any_value",
+        "get_values_from_user_to_modify",
+        "delete_capital_since_time",
+        "delete_all_capital"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_execution_stack.py",
+      "batchIndex": 3,
+      "symbols": [
+        "brokerExecutionStackData"
+      ]
+    },
+    {
+      "path": "sysdata/tools/cleaner.py",
+      "batchIndex": 11,
+      "symbols": [
+        "apply_price_cleaning",
+        "get_config_for_price_filtering",
+        "interactively_get_config_overrides_for_cleaning"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/adhoc/instrument_list.py",
+      "batchIndex": 14,
+      "symbols": [
+        "instrument_list_report",
+        "instrument_results_as_pd_df_row"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/commissions.py",
+      "batchIndex": 4,
+      "symbols": [
+        "filter_tradeable_instruments_for_commission_report",
+        "df_of_configure_and_broker_block_cost_sorted_by_index",
+        "df_of_configure_and_broker_block_cost_sorted_by_diff",
+        "update_valid_and_missing_costs_for_instrument_code",
+        "update_missing_values_with_currencies_and_errors",
+        "update_valid_costs",
+        "create_df_in_commission_report",
+        "get_instrument_list",
+        "get_current_configured_block_costs",
+        "get_configured_block_cost_for_instrument",
+        "get_broker_block_costs",
+        "get_series_of_priced_contracts",
+        "get_costs_given_priced_contracts",
+        "get_block_cost_for_single_contract"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/trades.py",
+      "batchIndex": 14,
+      "symbols": [
+        "get_recent_broker_orders",
+        "create_raw_slippage_df",
+        "get_tuple_object_from_order_id",
+        "raw_slippage_row",
+        "price_calculations_for_order_row",
+        "price_slippage",
+        "create_cash_slippage_df",
+        "cash_slippage_row",
+        "cash_calculations_for_slippage_row",
+        "create_vol_norm_slippage_df",
+        "vol_slippage_row",
+        "vol_calculations_for_slippage_row",
+        "get_last_annual_vol_for_slippage_row",
+        "get_stats_for_slippage_groups",
+        "create_delay_df",
+        "delay_row",
+        "delay_calculations_for_order_row",
+        "delay_calc",
+        "get_recent_trades_from_db_as_terse_df",
+        "get_broker_trades_as_terse_df"
+      ]
+    },
+    {
+      "path": "sysproduction/update_fx_prices.py",
+      "batchIndex": 9,
+      "symbols": [
+        "update_fx_prices",
+        "updateFxPrices",
+        "update_fx_prices_with_data",
+        "update_fx_prices_for_code",
+        "report_fx_data_spike"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_capital_data.py",
+      "batchIndex": 19,
+      "symbols": [
+        "brokerCapitalData"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_contract_commission_data.py",
+      "batchIndex": 5,
+      "symbols": [
+        "brokerFuturesContractCommissionData"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_contract_position_data.py",
+      "batchIndex": 5,
+      "symbols": [
+        "brokerContractPositionData"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_fx_handling.py",
+      "batchIndex": 19,
+      "symbols": [
+        "brokerFxHandlingData"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/common_functions.py",
+      "batchIndex": 11,
+      "symbols": [
+        "post_trade_processing",
+        "cancel_order",
+        "check_current_limit_price_at_inside_spread"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerChecks"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_fx_prices_data.py",
+      "batchIndex": 19,
+      "symbols": [
+        "brokerFxPricesData"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_manual_check_fx_prices.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_manual_check_fx_prices",
+        "check_fx_ok_for_broker",
+        "update_manual_check_fx_prices_for_code"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_instrument_data.py",
+      "batchIndex": 5,
+      "symbols": [
+        "brokerFuturesInstrumentData"
+      ]
+    },
+    {
+      "path": "sysbrokers/broker_static_data.py",
+      "batchIndex": 5,
+      "symbols": [
+        "brokerStaticData"
+      ]
+    },
+    {
+      "path": "sysproduction/update_total_capital.py",
+      "batchIndex": 9,
+      "symbols": [
+        "update_total_capital",
+        "totalCapitalUpdate",
+        "_update_capital_with_broker_account_value",
+        "_update_capital_with_broker_account_value_if_capital_data_exists"
+      ]
+    }
+  ],
+  "sysproduction/data/controls.py": [
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "sysdata/config/instruments.py",
+      "batchIndex": 1,
+      "symbols": [
+        "get_list_of_bad_instruments_in_config",
+        "get_list_of_untradeable_instruments_in_config",
+        "get_list_of_ignored_instruments_in_config",
+        "get_config_of_excluded_instruments",
+        "generate_matching_duplicate_dict",
+        "get_duplicate_dict_entry",
+        "get_entry_for_key_in_dict",
+        "get_duplicate_list_of_instruments_to_remove_from_config"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_IB_client_id.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoIbBrokerClientIdData"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_lock_data.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoLockData"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_override.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoOverrideData",
+        "from_dict_to_override",
+        "from_override_to_dict"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_position_limits.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoPositionLimitData"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_close.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoTemporaryCloseData"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_override.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoTemporaryOverrideData"
+      ]
+    },
+    {
+      "path": "sysdata/mongodb/mongo_trade_limits.py",
+      "batchIndex": 6,
+      "symbols": [
+        "mongoTradeLimitData",
+        "_from_result_dict_to_isd",
+        "_from_trade_limit_dict_to_required_dict"
+      ]
+    },
+    {
+      "path": "sysdata/production/broker_client_id.py",
+      "batchIndex": 7,
+      "symbols": [
+        "brokerClientIdData",
+        "get_next_id_from_current_list",
+        "get_next_id_from_current_list_and_full_set"
+      ]
+    },
+    {
+      "path": "sysdata/production/locks.py",
+      "batchIndex": 7,
+      "symbols": [
+        "lockData"
+      ]
+    },
+    {
+      "path": "sysdata/production/override.py",
+      "batchIndex": 7,
+      "symbols": [
+        "overrideData",
+        "_key_from_instrument_strategy"
+      ]
+    },
+    {
+      "path": "sysdata/production/position_limits.py",
+      "batchIndex": 7,
+      "symbols": [
+        "positionLimitData"
+      ]
+    },
+    {
+      "path": "sysdata/production/temporary_close.py",
+      "batchIndex": 7,
+      "symbols": [
+        "temporaryCloseData"
+      ]
+    },
+    {
+      "path": "sysdata/production/temporary_override.py",
+      "batchIndex": 7,
+      "symbols": [
+        "temporaryOverrideData"
+      ]
+    },
+    {
+      "path": "sysdata/production/trade_limits.py",
+      "batchIndex": 7,
+      "symbols": [
+        "instrumentStrategyKeyAndDays",
+        "listOfInstrumentStrategyKeyAndDays",
+        "tradeLimitData",
+        "instrument_strategy_for_instrument_only"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradeQuantity",
+        "listOfTradeQuantity",
+        "change_trade_size_proportionally_to_meet_abs_qty_limit",
+        "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+        "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+        "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysobjects/production/override.py",
+      "batchIndex": 8,
+      "symbols": [
+        "lookup_value_and_return_float_or_object",
+        "Override",
+        "_apply_float_override",
+        "_apply_reduce_only",
+        "_apply_no_trading"
+      ]
+    },
+    {
+      "path": "sysobjects/production/position_limits.py",
+      "batchIndex": 8,
+      "symbols": [
+        "positionLimit",
+        "positionLimitForInstrument",
+        "positionLimitForStrategyInstrument",
+        "positionLimitAndPosition",
+        "apply_position_limit_to_order",
+        "apply_position_limit_to_single_leg_trade"
+      ]
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "batchIndex": 8,
+      "symbols": [
+        "tradeableObject",
+        "listOfInstrumentStrategies",
+        "instrumentStrategy",
+        "futuresContractStrategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/config.py",
+      "batchIndex": 8,
+      "symbols": [
+        "remove_stale_instruments_and_strategies_from_list_of_instrument_strategies",
+        "remove_stale_instruments_from_list_of_instrument_strategies",
+        "remove_stale_instruments_from_list_of_instruments",
+        "remove_stale_strategies_from_list_of_instrument_strategies",
+        "get_list_of_stale_instruments",
+        "get_list_of_stale_instruments_given_config",
+        "get_list_of_stale_strategies"
+      ]
+    },
+    {
+      "path": "sysproduction/data/generic_production_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "productionDataLayerGeneric"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerChecks"
+      ]
+    },
+    {
+      "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "batchIndex": 14,
+      "symbols": [
+        "orderGeneratorForDynamicPositions",
+        "calculate_optimised_positions_data",
+        "dataForObjectiveInstance",
+        "get_data_for_objective_instance",
+        "get_maximum_position_contracts",
+        "get_maximum_position_contracts_for_instrument_strategy",
+        "get_per_contract_values",
+        "calculate_costs_per_portfolio_weight",
+        "get_cost_per_notional_weight_as_proportion_of_capital",
+        "get_constraints",
+        "get_no_trade_keys",
+        "get_reduce_only_keys",
+        "get_override_for_instrument_strategy",
+        "get_covariance_matrix_for_instrument_returns_for_optimisation",
+        "get_correlation_matrix_with_shrinkage",
+        "get_speed_control",
+        "get_config_parameters",
+        "get_objective_instance",
+        "get_optimised_positions_data_dict_given_optimisation",
+        "get_positions_given_weights",
+        "get_weights_given_positions",
+        "get_optimal_position_entry_with_calcs_for_code",
+        "write_optimised_positions_data",
+        "write_optimised_positions_data_for_code",
+        "list_of_trades_given_optimised_and_actual_positions",
+        "trade_given_optimal_and_actual_positions"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_controls.py",
+      "batchIndex": 14,
+      "symbols": [
+        "parametersForAutoPopulation",
+        "interactive_controls",
+        "view_trade_limits",
+        "change_limit_for_instrument",
+        "reset_limit_for_instrument",
+        "reset_all_limits",
+        "change_limit_for_instrument_strategy",
+        "reset_limit_for_instrument_strategy",
+        "auto_populate_limits",
+        "set_trade_limit_for_instrument",
+        "calc_trade_limit_for_instrument",
+        "get_auto_population_parameters",
+        "get_maximum_position_at_max_forecast",
+        "get_standardised_position_for_risk",
+        "get_maximum_position_given_leverage_limit",
+        "get_maximum_position_given_risk_concentration_limit",
+        "get_max_position_give_volume_limit",
+        "view_position_limit",
+        "change_position_limit_for_instrument",
+        "change_position_limit_for_instrument_strategy",
+        "auto_populate_position_limits",
+        "set_position_limit_for_instrument",
+        "get_max_rounded_position_for_instrument",
+        "view_overrides",
+        "update_strategy_override",
+        "update_instrument_override",
+        "update_strategy_instrument_override",
+        "get_override_object_from_user",
+        "delete_all_overrides_in_db",
+        "clear_used_client_ids",
+        "view_process_controls",
+        "get_dict_of_process_controls",
+        "change_process_control_status",
+        "change_global_process_control_status",
+        "get_valid_status_for_process",
+        "change_process_given_int",
+        "get_process_name",
+        "view_process_config",
+        "finish_process",
+        "finish_all_processes",
+        "auto_update_spread_costs",
+        "get_slippage_data",
+        "get_list_of_changes_to_make_to_slippage",
+        "get_filter_size_for_slippage",
+        "calculate_mult_factor_from_cost_row",
+        "print_data_with_multiplier",
+        "make_changes_to_slippage_in_db",
+        "backup_slippage_from_db_to_csv",
+        "check_price_multipliers_consistent",
+        "check_price_multipliers_consistent_for_instrument",
+        "delete_instrument_from_prices",
+        "not_defined"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_update_roll_status.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_update_roll_status",
+        "get_rolling_master_function",
+        "RollDataWithStateReporting",
+        "update_roll_status_manual_cycle",
+        "update_roll_status_auto_cycle_manual_decide",
+        "update_roll_status_auto_cycle_manual_confirm",
+        "update_roll_status_full_auto",
+        "get_days_ahead_to_consider_when_auto_cycling",
+        "get_list_of_instruments_to_auto_cycle",
+        "include_instrument_in_auto_cycle",
+        "days_until_earliest_expiry",
+        "autoRollParameters",
+        "get_auto_roll_parameters",
+        "get_auto_roll_parameters_potentially_using_default",
+        "default_auto_roll_parameters",
+        "describe_roll_rules_from_parameters",
+        "describe_action_for_default_roll_state_if_undecided",
+        "describe_action_for_auto_roll_expired",
+        "auto_selected_roll_state_instrument",
+        "suggest_roll_state_for_instrument",
+        "check_if_forward_liquid",
+        "check_if_getting_close_to_desired_roll_date",
+        "check_if_expired_and_auto_rolling_expired",
+        "warn_not_rolling",
+        "manually_report_and_update_roll_state_for_code",
+        "manually_update_roll_state_for_code",
+        "run_roll_report",
+        "get_roll_state_required",
+        "setup_roll_data_with_state_reporting",
+        "modify_roll_state",
+        "roll_state_was_no_open_now_something_else",
+        "roll_state_is_now_no_open",
+        "state_change_to_roll_adjusted_prices",
+        "roll_adjusted_and_multiple_prices",
+        "get_roll_adjusted_multiple_prices_object",
+        "_get_roll_adjusted_multiple_prices_object_ffill_option",
+        "check_trading_limits_for_roll_state",
+        "calculate_abs_trades_required_for_roll",
+        "get_remaining_trades_possible_today_in_contracts_for_instrument"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/status.py",
+      "batchIndex": 4,
+      "symbols": [
+        "get_overrides_in_db_as_df",
+        "get_all_overrides_as_df",
+        "get_trade_limits_as_df",
+        "get_list_of_trade_limits",
+        "get_trade_limit_tuple",
+        "get_process_status_list_for_all_processes_as_df",
+        "get_control_config_list_for_all_processes_as_df",
+        "get_control_status_list_for_all_processes_as_df",
+        "get_control_data_list_for_all_methods_as_df",
+        "get_control_status_list_for_all_methods_as_df",
+        "get_last_price_updates_as_df",
+        "get_last_optimal_position_updates_as_df",
+        "get_list_of_last_price_updates",
+        "get_list_of_last_futures_price_updates",
+        "get_last_futures_price_update_for_instrument",
+        "get_list_of_last_fx_price_updates",
+        "get_last_fx_price_update_for_code",
+        "get_list_of_last_position_updates",
+        "get_list_of_position_updates_for_strategy",
+        "get_last_position_update_for_strategy_instrument",
+        "get_control_config_list_for_all_processes",
+        "get_process_status_list_for_all_processes",
+        "get_control_config_dict_for_process_name",
+        "get_process_status_dict_for_process_name",
+        "get_control_data_list_for_all_methods",
+        "get_control_data_for_single_ordinary_method",
+        "get_method_names_and_process_names",
+        "get_list_of_all_processes",
+        "get_methods_dict",
+        "get_list_of_position_locks",
+        "get_position_limits_as_df",
+        "get_strategy_instrument_limits_as_df",
+        "get_instrument_limits_as_df",
+        "df_from_list_of_limits_and_positions"
+      ]
+    },
+    {
+      "path": "sysproduction/startup.py",
+      "batchIndex": 9,
+      "symbols": [
+        "startup"
+      ]
+    }
+  ],
+  "sysproduction/data/orders.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysdata/production/historic_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "genericOrdersData",
+        "strategyHistoricOrdersData",
+        "contractHistoricOrdersData",
+        "brokerHistoricOrdersData"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderStackData",
+        "orderWithControls"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/contract_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderStackData"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/instrument_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "zeroOrderException",
+        "instrumentOrderStackData",
+        "calculate_existing_trades_and_remainder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "listOfFillDatetime",
+        "listOfOrders",
+        "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysobjects/fills.py",
+      "batchIndex": 10,
+      "symbols": [
+        "Fill",
+        "is_empty_fill",
+        "empty_fill",
+        "ListOfFills",
+        "_list_of_fills_from_position_series_and_prices",
+        "_get_valid_trades_and_aligned_prices",
+        "fill_from_order"
+      ]
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "batchIndex": 8,
+      "symbols": [
+        "tradeableObject",
+        "listOfInstrumentStrategies",
+        "instrumentStrategy",
+        "futuresContractStrategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/production_data_objects.py",
+      "batchIndex": 8,
+      "symbols": [
+        "get_class_for_data_type"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_diagnostics.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_diagnostics",
+        "not_defined",
+        "backtest_plot",
+        "backtest_python",
+        "backtest_print",
+        "backtest_html",
+        "roll_report",
+        "pandl_report",
+        "status_report",
+        "trade_report",
+        "reconcile_report",
+        "strategy_report",
+        "risk_report",
+        "cost_report",
+        "slippage_report",
+        "commission_report",
+        "liquidity_report",
+        "instrument_risk_report",
+        "min_capital_report",
+        "duplicate_market_report",
+        "remove_markets_report",
+        "market_monitor_report",
+        "account_curve_report",
+        "email_or_print_or_file",
+        "retrieve_emails",
+        "individual_prices",
+        "multiple_prices",
+        "adjusted_prices",
+        "fx_prices",
+        "spreads",
+        "capital_strategy",
+        "total_current_capital",
+        "optimal_positions",
+        "get_valid_code_from_list",
+        "actual_instrument_position",
+        "actual_contract_position",
+        "list_of_instrument_orders",
+        "get_order_pd",
+        "list_of_contract_orders",
+        "list_of_broker_orders",
+        "view_individual_order",
+        "view_instrument_config",
+        "view_contract_config",
+        "print_trading_hours_for_all_instruments",
+        "display_a_dict_of_trading_hours",
+        "nice_print_list_of_trading_hours",
+        "nice_print_trading_hours",
+        "get_trading_hours_for_all_instruments",
+        "check_trading_hours",
+        "check_trading_hours_one_day",
+        "get_trading_hours_for_instrument"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/trades.py",
+      "batchIndex": 14,
+      "symbols": [
+        "get_recent_broker_orders",
+        "create_raw_slippage_df",
+        "get_tuple_object_from_order_id",
+        "raw_slippage_row",
+        "price_calculations_for_order_row",
+        "price_slippage",
+        "create_cash_slippage_df",
+        "cash_slippage_row",
+        "cash_calculations_for_slippage_row",
+        "create_vol_norm_slippage_df",
+        "vol_slippage_row",
+        "vol_calculations_for_slippage_row",
+        "get_last_annual_vol_for_slippage_row",
+        "get_stats_for_slippage_groups",
+        "create_delay_df",
+        "delay_row",
+        "delay_calculations_for_order_row",
+        "delay_calc",
+        "get_recent_trades_from_db_as_terse_df",
+        "get_broker_trades_as_terse_df"
+      ]
+    }
+  ],
+  "sysproduction/data/positions.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysdata/production/historic_contract_positions.py",
+      "batchIndex": 7,
+      "symbols": [
+        "contractPositionData",
+        "any_positions_since_start_date",
+        "_infer_position_at_start"
+      ]
+    },
+    {
+      "path": "sysdata/production/historic_strategy_positions.py",
+      "batchIndex": 7,
+      "symbols": [
+        "strategyPositionData"
+      ]
+    },
+    {
+      "path": "sysdata/production/roll_state.py",
+      "batchIndex": 7,
+      "symbols": [
+        "rollStateData"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "batchIndex": 19,
+      "symbols": [
+        "tradeQuantity",
+        "listOfTradeQuantity",
+        "change_trade_size_proportionally_to_meet_abs_qty_limit",
+        "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+        "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+        "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysobjects/production/positions.py",
+      "batchIndex": 8,
+      "symbols": [
+        "Position",
+        "instrumentPosition",
+        "instrumentStrategyPosition",
+        "contractPosition",
+        "listOfPositions",
+        "listOfInstrumentPositions",
+        "listOfPositionsWithInstruments",
+        "listOfInstrumentStrategyPositions",
+        "listOfContractPositions",
+        "sum_for_instrument",
+        "sum_for_contract",
+        "_position_for_code_in_list",
+        "_position_for_contract_in_list"
+      ]
+    },
+    {
+      "path": "sysobjects/production/roll_state.py",
+      "batchIndex": 3,
+      "symbols": [
+        "is_double_sided_trade_roll_state",
+        "is_roll_state_requiring_order_generation",
+        "is_type_of_active_rolling_roll_state",
+        "explain_roll_state_str",
+        "name_of_roll_state",
+        "complete_roll_state",
+        "allowable_roll_state_from_current_and_position"
+      ]
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "batchIndex": 8,
+      "symbols": [
+        "tradeableObject",
+        "listOfInstrumentStrategies",
+        "instrumentStrategy",
+        "futuresContractStrategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/generic_production_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "productionDataLayerGeneric"
+      ]
+    },
+    {
+      "path": "sysproduction/data/production_data_objects.py",
+      "batchIndex": 8,
+      "symbols": [
+        "get_class_for_data_type"
+      ]
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerChecks"
+      ]
+    },
+    {
+      "path": "sysproduction/data/optimal_positions.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataOptimalPositions",
+        "remove_raw_strategies",
+        "is_not_raw_strategy",
+        "is_raw_strategy",
+        "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+        "is_not_raw_optimal_position_and_instrument_strategy",
+        "is_not_raw_instrument_strategy",
+        "instrument_strategy_with_raw_tag",
+        "strategy_name_with_raw_tag",
+        "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+      ]
+    },
+    {
+      "path": "sysproduction/data/strategies.py",
+      "batchIndex": 4,
+      "symbols": [
+        "diagStrategiesConfig",
+        "get_list_of_strategies",
+        "get_list_of_strategies_from_config",
+        "get_list_of_strategies_from_positions",
+        "get_list_of_strategies_from_optimal_positions",
+        "get_valid_strategy_name_from_user"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_diagnostics.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_diagnostics",
+        "not_defined",
+        "backtest_plot",
+        "backtest_python",
+        "backtest_print",
+        "backtest_html",
+        "roll_report",
+        "pandl_report",
+        "status_report",
+        "trade_report",
+        "reconcile_report",
+        "strategy_report",
+        "risk_report",
+        "cost_report",
+        "slippage_report",
+        "commission_report",
+        "liquidity_report",
+        "instrument_risk_report",
+        "min_capital_report",
+        "duplicate_market_report",
+        "remove_markets_report",
+        "market_monitor_report",
+        "account_curve_report",
+        "email_or_print_or_file",
+        "retrieve_emails",
+        "individual_prices",
+        "multiple_prices",
+        "adjusted_prices",
+        "fx_prices",
+        "spreads",
+        "capital_strategy",
+        "total_current_capital",
+        "optimal_positions",
+        "get_valid_code_from_list",
+        "actual_instrument_position",
+        "actual_contract_position",
+        "list_of_instrument_orders",
+        "get_order_pd",
+        "list_of_contract_orders",
+        "list_of_broker_orders",
+        "view_individual_order",
+        "view_instrument_config",
+        "view_contract_config",
+        "print_trading_hours_for_all_instruments",
+        "display_a_dict_of_trading_hours",
+        "nice_print_list_of_trading_hours",
+        "nice_print_trading_hours",
+        "get_trading_hours_for_all_instruments",
+        "check_trading_hours",
+        "check_trading_hours_one_day",
+        "get_trading_hours_for_instrument"
+      ]
+    },
+    {
+      "path": "sysproduction/interactive_update_roll_status.py",
+      "batchIndex": 4,
+      "symbols": [
+        "interactive_update_roll_status",
+        "get_rolling_master_function",
+        "RollDataWithStateReporting",
+        "update_roll_status_manual_cycle",
+        "update_roll_status_auto_cycle_manual_decide",
+        "update_roll_status_auto_cycle_manual_confirm",
+        "update_roll_status_full_auto",
+        "get_days_ahead_to_consider_when_auto_cycling",
+        "get_list_of_instruments_to_auto_cycle",
+        "include_instrument_in_auto_cycle",
+        "days_until_earliest_expiry",
+        "autoRollParameters",
+        "get_auto_roll_parameters",
+        "get_auto_roll_parameters_potentially_using_default",
+        "default_auto_roll_parameters",
+        "describe_roll_rules_from_parameters",
+        "describe_action_for_default_roll_state_if_undecided",
+        "describe_action_for_auto_roll_expired",
+        "auto_selected_roll_state_instrument",
+        "suggest_roll_state_for_instrument",
+        "check_if_forward_liquid",
+        "check_if_getting_close_to_desired_roll_date",
+        "check_if_expired_and_auto_rolling_expired",
+        "warn_not_rolling",
+        "manually_report_and_update_roll_state_for_code",
+        "manually_update_roll_state_for_code",
+        "run_roll_report",
+        "get_roll_state_required",
+        "setup_roll_data_with_state_reporting",
+        "modify_roll_state",
+        "roll_state_was_no_open_now_something_else",
+        "roll_state_is_now_no_open",
+        "state_change_to_roll_adjusted_prices",
+        "roll_adjusted_and_multiple_prices",
+        "get_roll_adjusted_multiple_prices_object",
+        "_get_roll_adjusted_multiple_prices_object_ffill_option",
+        "check_trading_limits_for_roll_state",
+        "calculate_abs_trades_required_for_roll",
+        "get_remaining_trades_possible_today_in_contracts_for_instrument"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/api.py",
+      "batchIndex": 4,
+      "symbols": [
+        "reportingApi",
+        "get_liquidity_report_data",
+        "filter_data_for_delays_and_return_table",
+        "filter_data_for_delays",
+        "filter_data_for_max_value_and_return_table",
+        "filter_data_for_max_value"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/risk.py",
+      "batchIndex": 14,
+      "symbols": [
+        "get_margin_usage",
+        "get_current_capital",
+        "get_current_margin",
+        "minimum_capital_table",
+        "from_risk_table_to_min_capital",
+        "get_instrument_risk_table",
+        "get_risk_data_for_instrument",
+        "portfolioRisks",
+        "get_pd_series_of_risk_by_asset_class",
+        "get_risk_for_asset_class",
+        "get_dict_of_asset_classes_for_instrument_list",
+        "get_perc_of_capital_position_size_all_strategies",
+        "get_portfolio_risk_across_strategies",
+        "get_df_annualised_risk_as_perc_of_capital_per_instrument_across_strategies",
+        "get_annualised_perc_of_capital_risk_of_positions_held_for_instruments_across_strategies",
+        "get_portfolio_risk_for_strategy",
+        "get_perc_of_capital_position_size_across_instruments_for_strategy",
+        "get_correlation_matrix_all_instruments",
+        "get_correlation_matrix_for_instruments",
+        "cluster_correlation_matrix",
+        "get_current_annualised_stdev_for_instrument",
+        "get_current_daily_stdev_for_instrument",
+        "get_list_of_positions_for_strategy_as_perc_of_capital",
+        "get_instruments_with_positions",
+        "get_instruments_with_positions_all_strategies",
+        "get_perc_of_capital_position_size_for_instrument",
+        "get_perc_of_capital_position_size_for_instrument_across_strategies",
+        "total_capital",
+        "get_notional_exposure_in_base_currency_for_instrument",
+        "get_notional_exposure_in_base_currency_for_instrument_across_strategies",
+        "get_base_currency_risk_held_for_instrument_across_strategies",
+        "get_base_currency_risk_per_lot_for_instrument",
+        "get_current_position_for_instrument_code",
+        "get_current_position_for_instrument_code_across_strategies",
+        "sorted_clean_df",
+        "get_asset_classes_for_instrument_list",
+        "calculate_dict_of_beta_loadings_by_asset_class_given_weights",
+        "calculate_dict_of_beta_loadings_per_instrument",
+        "calculate_beta_loadings_across_asset_classes",
+        "calculate_beta_loading_for_asset_class",
+        "get_beta_for_instrument_list",
+        "last_years_perc_returns_for_list_of_instruments",
+        "get_equally_weighted_returns_across_asset_classes",
+        "get_historical_portfolio_returns_with_fixed_current_weights",
+        "get_equally_weighted_returns_for_asset_class",
+        "calculate_equal_returns_to_avg_vol",
+        "dict_of_beta_by_instrument",
+        "beta_for_instrument",
+        "dict_of_portfolio_beta_by_asset_class",
+        "portfolio_beta_for_asset_class"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/data/rolls.py",
+      "batchIndex": 4,
+      "symbols": [
+        "get_roll_data_for_instrument",
+        "relative_volume_in_forward_contract_versus_price",
+        "relative_volume_in_forward_contract_and_price",
+        "volume_contracts_in_forward_contract",
+        "rollingAdjustedAndMultiplePrices",
+        "compare_old_and_new_prices",
+        "update_multiple_prices_on_roll",
+        "get_final_matched_price_from_contract_object",
+        "get_or_infer_latest_price",
+        "infer_latest_price",
+        "last_price_data_with_matched_contracts",
+        "infer_price_from_matched_price_data",
+        "rollback_adjustment"
+      ]
+    },
+    {
+      "path": "sysproduction/strategy_code/report_system_classic.py",
+      "batchIndex": 9,
+      "symbols": [
+        "report_system_classic",
+        "report_system_classic_no_header_or_footer",
+        "get_forecast_matrix",
+        "get_forecast_matrix_over_code",
+        "get_stage_breakdown_over_codes",
+        "get_list_of_values_by_instrument_for_config",
+        "get_current_position_df_for_instrument_code_list",
+        "get_position_at_timestamp_df_for_instrument_code_list",
+        "get_position_for_instrument_code_at_timestamp",
+        "get_current_position_for_instrument_code",
+        "calc_position_diags",
+        "risk_scaling_string"
+      ]
+    }
+  ],
+  "sysproduction/interactive_manual_check_historical_prices.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysdata/tools/cleaner.py",
+      "batchIndex": 11,
+      "symbols": [
+        "apply_price_cleaning",
+        "get_config_for_price_filtering",
+        "interactively_get_config_overrides_for_cleaning"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "sysproduction/interactive_order_stack.py": [
+    {
+      "path": "sysbrokers/IB/ib_connection.py",
+      "batchIndex": 18,
+      "symbols": [
+        "connectionIB",
+        "get_broker_account"
+      ]
+    },
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/interactive/date_input.py",
+      "batchIndex": 3,
+      "symbols": [
+        "get_report_dates",
+        "get_datetime_input",
+        "_create_input_string_for_datetime_input",
+        "_get_input_for_datetime_prompt",
+        "_resolve_datetime_input_str"
+      ]
+    },
+    {
+      "path": "syscore/interactive/display.py",
+      "batchIndex": 3,
+      "symbols": [
+        "print_with_landing_strips_around",
+        "landing_strip_around_string",
+        "landing_strip_from_str",
+        "landing_strip",
+        "centralise_text",
+        "measure_width",
+        "calculate_multiplication_factor_for_nice_repr_of_value",
+        "set_pd_print_options"
+      ]
+    },
+    {
+      "path": "syscore/interactive/input.py",
+      "batchIndex": 16,
+      "symbols": [
+        "true_if_answer_is_yes",
+        "get_input_from_user_and_convert_to_type",
+        "_get_input_and_check_type",
+        "_convert_type_or_throw_expection",
+        "input_field_names_for_named_tuple",
+        "override_tuple_fields",
+        "named_tuple_as_dict"
+      ]
+    },
+    {
+      "path": "syscore/interactive/menus.py",
+      "batchIndex": 3,
+      "symbols": [
+        "interactiveMenu",
+        "print_menu_of_values_and_get_response",
+        "_get_index_of_default_option",
+        "_list_menu_to_dict_menu",
+        "print_menu_and_get_desired_option_index",
+        "_resolve_default_for_dict_of_menu_options",
+        "_print_options_menu"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/allocate_algo_to_order.py",
+      "batchIndex": 11,
+      "symbols": [
+        "get_list_of_algos",
+        "allocate_algo_to_list_of_contract_orders",
+        "AlgoConfig",
+        "get_algo_allocation_config",
+        "check_and_if_required_allocate_algo_to_single_contract_order",
+        "already_has_algo_allocated",
+        "algo_allocation_is_overridden_for_instrument",
+        "allocate_algo_for_specific_instrument_with_override",
+        "allocate_market_algo",
+        "allocate_for_best_execution_no_limit",
+        "allocate_for_limit_order",
+        "allocate_default_algo"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "instrumentOrderType",
+        "instrumentOrder"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysexecution/stack_handler/balance_trades.py",
+      "batchIndex": 11,
+      "symbols": [
+        "stackHandlerCreateBalanceTrades",
+        "create_balance_contract_order_from_broker_order",
+        "create_balance_instrument_order_from_contract_order"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/optimal_positions.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataOptimalPositions",
+        "remove_raw_strategies",
+        "is_not_raw_strategy",
+        "is_raw_strategy",
+        "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+        "is_not_raw_optimal_position_and_instrument_strategy",
+        "is_not_raw_instrument_strategy",
+        "instrument_strategy_with_raw_tag",
+        "strategy_name_with_raw_tag",
+        "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    },
+    {
+      "path": "sysproduction/data/strategies.py",
+      "batchIndex": 4,
+      "symbols": [
+        "diagStrategiesConfig",
+        "get_list_of_strategies",
+        "get_list_of_strategies_from_config",
+        "get_list_of_strategies_from_positions",
+        "get_list_of_strategies_from_optimal_positions",
+        "get_valid_strategy_name_from_user"
+      ]
+    }
+  ],
+  "sysproduction/reporting/data/pandl.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "batchIndex": 8,
+      "symbols": [
+        "tradeableObject",
+        "listOfInstrumentStrategies",
+        "instrumentStrategy",
+        "futuresContractStrategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/capital.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataCapital",
+        "dataMargin",
+        "capital_for_strategy"
+      ]
+    },
+    {
+      "path": "sysproduction/data/currency_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataCurrency",
+        "get_list_of_fxcodes",
+        "get_valid_fx_code_from_user"
+      ]
+    },
+    {
+      "path": "sysproduction/data/instruments.py",
+      "batchIndex": 14,
+      "symbols": [
+        "updateSpreadCosts",
+        "diagInstruments",
+        "get_block_size"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "batchIndex": 13,
+      "symbols": [
+        "pandlCalculationWithFills",
+        "merge_fill_prices_with_prices",
+        "unique_trades_df",
+        "infer_positions_from_fills"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/api.py",
+      "batchIndex": 4,
+      "symbols": [
+        "reportingApi",
+        "get_liquidity_report_data",
+        "filter_data_for_delays_and_return_table",
+        "filter_data_for_delays",
+        "filter_data_for_max_value_and_return_table",
+        "filter_data_for_max_value"
+      ]
+    }
+  ],
+  "sysproduction/reporting/data/positions.py": [
+    {
+      "path": "sysproduction/data/optimal_positions.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataOptimalPositions",
+        "remove_raw_strategies",
+        "is_not_raw_strategy",
+        "is_raw_strategy",
+        "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+        "is_not_raw_optimal_position_and_instrument_strategy",
+        "is_not_raw_instrument_strategy",
+        "instrument_strategy_with_raw_tag",
+        "strategy_name_with_raw_tag",
+        "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+        "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+      ]
+    },
+    {
+      "path": "sysproduction/reporting/api.py",
+      "batchIndex": 4,
+      "symbols": [
+        "reportingApi",
+        "get_liquidity_report_data",
+        "filter_data_for_delays_and_return_table",
+        "filter_data_for_delays",
+        "filter_data_for_max_value_and_return_table",
+        "filter_data_for_max_value"
+      ]
+    }
+  ],
+  "sysproduction/update_historical_prices.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/dateutils.py",
+      "batchIndex": 10,
+      "symbols": [
+        "calculate_start_and_end_dates",
+        "_resolve_end_date_given_period_and_explicit_end_date",
+        "_resolve_start_date_given_end_date_calendar_days_and_period",
+        "n_days_ago",
+        "get_date_from_period_and_end_date",
+        "calculate_previous_date_from_period_with_char_number",
+        "calculate_starting_day_of_current_year",
+        "calculate_starting_day_of_current_uk_tax_year",
+        "calculate_starting_day_of_current_month",
+        "calculate_starting_day_of_current_quarter",
+        "preceeding_midnight_of_datetime",
+        "preceeding_midnight_of_date",
+        "following_one_second_before_midnight_of_datetime",
+        "following_one_second_before_midnight_of_date",
+        "from_config_frequency_pandas_resample",
+        "from_frequency_to_times_per_year",
+        "from_config_frequency_to_frequency",
+        "month_from_contract_letter",
+        "contract_month_from_number",
+        "datetime_to_long",
+        "long_to_datetime",
+        "date_as_short_pattern_or_question_if_missing",
+        "create_datetime_marker_string",
+        "from_marker_string_to_datetime",
+        "time_to_string",
+        "time_from_string",
+        "replace_midnight_with_notional_closing_time",
+        "check_time_matches_closing_time_to_second",
+        "strip_timezone_fromdatetime",
+        "generate_equal_dates_within_year",
+        "_calculate_first_date_for_equal_dates",
+        "get_approx_vol_scalar_versus_daily_vol_for_period"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/pandas/frequency.py",
+      "batchIndex": 10,
+      "symbols": [
+        "closing_date_rows_in_pd_object",
+        "intraday_date_rows_in_pd_object",
+        "get_intraday_pdf_at_frequency",
+        "merge_data_with_different_freq",
+        "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+        "resample_prices_to_business_day_index",
+        "how_many_times_a_year_is_pd_frequency",
+        "interpolate_data_during_day",
+        "interpolate_for_a_single_day",
+        "reindex_last_monthly_include_first_date",
+        "infer_frequency",
+        "infer_frequency_approx",
+        "_probably_daily_freq",
+        "_probably_hourly_freq",
+        "average_time_delta_for_time_series"
+      ]
+    },
+    {
+      "path": "syscore/pandas/merge_data_keeping_past_data.py",
+      "batchIndex": 10,
+      "symbols": [
+        "merge_newer_data",
+        "mergeStatus",
+        "mergeError",
+        "mergingDataWithStatus",
+        "merge_newer_data_no_checks",
+        "_merge_newer_data_no_checks_if_both_old_and_new",
+        "spike_check_merged_data",
+        "_find_first_spike_in_data",
+        "_get_data_to_check",
+        "_calculate_change_in_vol_normalised_units",
+        "_calculate_change_in_daily_units",
+        "_get_relevant_period_in_vol_normalised_units_to_check",
+        "_check_for_spikes_in_change_in_vol_normalised_units"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysdata/tools/cleaner.py",
+      "batchIndex": 11,
+      "symbols": [
+        "apply_price_cleaning",
+        "get_config_for_price_filtering",
+        "interactively_get_config_overrides_for_cleaning"
+      ]
+    },
+    {
+      "path": "sysdata/tools/manual_price_checker.py",
+      "batchIndex": 10,
+      "symbols": [
+        "manual_price_checker",
+        "_show_last_bit_of_data",
+        "_get_new_value",
+        "_adjust_old_and_new_data",
+        "_adjust_delta_columns",
+        "_resolve_and_check_columns"
+      ]
+    },
+    {
+      "path": "syslogdiag/email_via_db_interface.py",
+      "batchIndex": 3,
+      "symbols": [
+        "send_production_mail_msg_attachment",
+        "send_production_mail_msg",
+        "send_email_and_record_date_or_store_on_fail",
+        "can_we_send_this_email_now",
+        "store_and_warn_email",
+        "have_we_sent_warning_email_for_this_subject",
+        "check_if_sent_in_last_day",
+        "send_warning_email",
+        "get_time_last_email_sent_with_this_subject",
+        "record_date_of_email_send",
+        "get_time_last_warning_email_sent_with_this_subject",
+        "record_date_of_email_warning_send",
+        "store_message",
+        "retrieve_and_delete_stored_messages",
+        "dataEmailControl",
+        "get_storage_filename"
+      ]
+    },
+    {
+      "path": "syslogging/logger.py",
+      "batchIndex": 8,
+      "symbols": [
+        "get_logger",
+        "_configure_logging",
+        "_configure_sim",
+        "_configure_prod",
+        "_get_log_server_config",
+        "_check_log_server"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/instruments.py",
+      "batchIndex": 14,
+      "symbols": [
+        "updateSpreadCosts",
+        "diagInstruments",
+        "get_block_size"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    },
+    {
+      "path": "sysproduction/run_daily_price_updates.py",
+      "batchIndex": 9,
+      "symbols": [
+        "run_daily_price_updates",
+        "get_list_of_timer_functions_for_price_update"
+      ]
+    }
+  ],
+  "systems/provided/scalper/broker.py": [
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/algo.py",
+      "batchIndex": 11,
+      "symbols": [
+        "benchmarkPriceCollection",
+        "Algo"
+      ]
+    },
+    {
+      "path": "sysexecution/algos/common_functions.py",
+      "batchIndex": 11,
+      "symbols": [
+        "post_trade_processing",
+        "cancel_order",
+        "check_current_limit_price_at_inside_spread"
+      ]
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderStackData",
+        "orderWithControls"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "brokerOrderType",
+        "brokerOrder",
+        "create_new_broker_order_from_contract_order",
+        "brokerOrderWithParentInformation",
+        "single_fill_from_broker_order"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "batchIndex": 11,
+      "symbols": [
+        "contractOrderType",
+        "contractOrder",
+        "contractOrderKeyArguments",
+        "from_contract_order_args_to_resolved_args",
+        "split_contract_order_args"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    }
+  ],
+  "systems/provided/scalper/components.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    }
+  ],
+  "systems/provided/scalper/configuration.py": [
+    {
+      "path": "syscore/dateutils.py",
+      "batchIndex": 10,
+      "symbols": [
+        "calculate_start_and_end_dates",
+        "_resolve_end_date_given_period_and_explicit_end_date",
+        "_resolve_start_date_given_end_date_calendar_days_and_period",
+        "n_days_ago",
+        "get_date_from_period_and_end_date",
+        "calculate_previous_date_from_period_with_char_number",
+        "calculate_starting_day_of_current_year",
+        "calculate_starting_day_of_current_uk_tax_year",
+        "calculate_starting_day_of_current_month",
+        "calculate_starting_day_of_current_quarter",
+        "preceeding_midnight_of_datetime",
+        "preceeding_midnight_of_date",
+        "following_one_second_before_midnight_of_datetime",
+        "following_one_second_before_midnight_of_date",
+        "from_config_frequency_pandas_resample",
+        "from_frequency_to_times_per_year",
+        "from_config_frequency_to_frequency",
+        "month_from_contract_letter",
+        "contract_month_from_number",
+        "datetime_to_long",
+        "long_to_datetime",
+        "date_as_short_pattern_or_question_if_missing",
+        "create_datetime_marker_string",
+        "from_marker_string_to_datetime",
+        "time_to_string",
+        "time_from_string",
+        "replace_midnight_with_notional_closing_time",
+        "check_time_matches_closing_time_to_second",
+        "strip_timezone_fromdatetime",
+        "generate_equal_dates_within_year",
+        "_calculate_first_date_for_equal_dates",
+        "get_approx_vol_scalar_versus_daily_vol_for_period"
+      ]
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ],
+  "systems/provided/scalper/entry.py": [
+    {
+      "path": "syscore/constants.py",
+      "batchIndex": 3,
+      "symbols": [
+        "named_object",
+        "status"
+      ]
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "batchIndex": 19,
+      "symbols": [
+        "missingInstrument",
+        "missingContract",
+        "missingData",
+        "missingFile",
+        "marketClosed",
+        "fillExceedsTrade",
+        "existingData",
+        "orderCannotBeModified",
+        "ContractNotFound"
+      ]
+    },
+    {
+      "path": "syscore/interactive/progress_bar.py",
+      "batchIndex": 14,
+      "symbols": [
+        "progressBar",
+        "_display_progress_bar",
+        "_construct_timing_string"
+      ]
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "batchIndex": 3,
+      "symbols": [
+        "dataBlob",
+        "identifying_name"
+      ]
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "batchIndex": 11,
+      "symbols": []
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "batchIndex": 8,
+      "symbols": [
+        "parametersForFuturesContract",
+        "contract_key_from_code_and_id",
+        "contract_from_code_and_id",
+        "contract_from_key",
+        "futuresContract",
+        "_resolve_args_for_futures_contract",
+        "key_contains_instrument_code",
+        "get_contract_key_from_code_and_id",
+        "get_code_and_id_from_contract_key",
+        "listOfFuturesContracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "batchIndex": 17,
+      "symbols": [
+        "dataContracts",
+        "get_valid_contract_object_from_user",
+        "get_valid_instrument_code_and_contractid_from_user",
+        "get_dates_to_choose_from",
+        "label_up_contracts_with_date_list",
+        "label_up_current_contracts"
+      ]
+    },
+    {
+      "path": "sysproduction/data/currency_data.py",
+      "batchIndex": 4,
+      "symbols": [
+        "dataCurrency",
+        "get_list_of_fxcodes",
+        "get_valid_fx_code_from_user"
+      ]
+    },
+    {
+      "path": "sysproduction/data/instruments.py",
+      "batchIndex": 14,
+      "symbols": [
+        "updateSpreadCosts",
+        "diagInstruments",
+        "get_block_size"
+      ]
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "batchIndex": 17,
+      "symbols": [
+        "diagPrices",
+        "updatePrices",
+        "get_valid_instrument_code_from_user",
+        "get_list_of_instruments",
+        "recent_average_price",
+        "get_current_price_of_instrument",
+        "get_price_series",
+        "get_current_price_series",
+        "get_cash_cost_in_base_for_instrument",
+        "last_currency_fx",
+        "modify_price_when_contract_has_changed"
+      ]
+    }
+  ]
+}

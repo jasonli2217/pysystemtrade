@@ -1,0 +1,1077 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "type": "file",
+      "name": "mongo_position_by_contract_TO_DEPRECATE.py",
+      "filePath": "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "summary": "Deprecated MongoDB store for historic positions held per futures contract.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions",
+        "data-store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "type": "file",
+      "name": "mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "filePath": "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "summary": "Deprecated MongoDB store for historic positions held per instrument strategy.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions",
+        "data-store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "type": "file",
+      "name": "mongo_timed_storage_TO_DEPRECATE.py",
+      "filePath": "sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "summary": "Deprecated MongoDB base class for time-stamped list-of-entries storage.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "timeseries",
+        "data-store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "type": "file",
+      "name": "timed_storage_TO_DEPRECATE.py",
+      "filePath": "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "summary": "Deprecated abstract framework for storing ordered lists of time-stamped entry objects.",
+      "tags": [
+        "deprecated",
+        "data-store",
+        "timeseries",
+        "abstract-class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysdata/arctic/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/arctic/__init__.py",
+      "summary": "Empty package initializer for the Arctic data-store package.",
+      "tags": [
+        "package-init",
+        "barrel",
+        "data-store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_capital.py",
+      "type": "file",
+      "name": "arctic_capital.py",
+      "filePath": "sysdata/arctic/arctic_capital.py",
+      "summary": "Arctic-backed store for per-strategy trading capital time-series.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "capital",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_connection.py",
+      "type": "file",
+      "name": "arctic_connection.py",
+      "filePath": "sysdata/arctic/arctic_connection.py",
+      "summary": "Low-level Arctic connection wrapper providing read/write/delete over a MongoDB-backed Arctic library.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "connection",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "type": "file",
+      "name": "arctic_futures_per_contract_prices.py",
+      "filePath": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "summary": "Arctic-backed store for per-contract futures prices at multiple sampling frequencies.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "prices",
+        "futures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "type": "file",
+      "name": "arctic_historic_contract_positions.py",
+      "filePath": "sysdata/arctic/arctic_historic_contract_positions.py",
+      "summary": "Arctic-backed store for historic positions held per futures contract.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "type": "file",
+      "name": "arctic_historic_strategy_positions.py",
+      "filePath": "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "summary": "Arctic-backed store for historic positions held per instrument strategy.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "type": "file",
+      "name": "arctic_optimal_positions.py",
+      "filePath": "sysdata/arctic/arctic_optimal_positions.py",
+      "summary": "Arctic-backed store for optimal position targets per instrument strategy.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "type": "file",
+      "name": "arctic_spotfx_prices.py",
+      "filePath": "sysdata/arctic/arctic_spotfx_prices.py",
+      "summary": "Arctic-backed store for spot FX price time-series by currency code.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "fx-prices",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_spreads.py",
+      "type": "file",
+      "name": "arctic_spreads.py",
+      "filePath": "sysdata/arctic/arctic_spreads.py",
+      "summary": "Arctic-backed store for instrument bid/ask spread cost time-series.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "spreads",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/base_data.py",
+      "type": "file",
+      "name": "base_data.py",
+      "filePath": "sysdata/base_data.py",
+      "summary": "Abstract baseData base class providing logging and dict-style access for all data-store subclasses.",
+      "tags": [
+        "abstract-class",
+        "data-store",
+        "base-class",
+        "foundation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py:mongoContractPositionData",
+      "type": "class",
+      "name": "mongoContractPositionData",
+      "filePath": "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "lineRange": [
+        9,
+        28
+      ],
+      "summary": "Deprecated MongoDB store for historic per-contract positions.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py:mongoStrategyPositionData",
+      "type": "class",
+      "name": "mongoStrategyPositionData",
+      "filePath": "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "lineRange": [
+        9,
+        22
+      ],
+      "summary": "Deprecated MongoDB store for historic per-strategy positions.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py:mongoListOfEntriesData",
+      "type": "class",
+      "name": "mongoListOfEntriesData",
+      "filePath": "sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "lineRange": [
+        10,
+        41
+      ],
+      "summary": "Deprecated MongoDB base class for time-stamped list-of-entries collections.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "timeseries",
+        "base-class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:classWithListOfEntriesAsListOfDicts",
+      "type": "class",
+      "name": "classWithListOfEntriesAsListOfDicts",
+      "filePath": "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "lineRange": [
+        18,
+        30
+      ],
+      "summary": "Deprecated container converting a list of time-stamped entries to/from lists of dicts.",
+      "tags": [
+        "deprecated",
+        "data-model",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:classStrWithListOfEntriesAsListOfDicts",
+      "type": "class",
+      "name": "classStrWithListOfEntriesAsListOfDicts",
+      "filePath": "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "lineRange": [
+        33,
+        54
+      ],
+      "summary": "Deprecated string-keyed variant of the list-of-entries container with class metadata.",
+      "tags": [
+        "deprecated",
+        "data-model",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:listOfEntriesData",
+      "type": "class",
+      "name": "listOfEntriesData",
+      "filePath": "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "lineRange": [
+        57,
+        242
+      ],
+      "summary": "Deprecated abstract data-store managing ordered, time-stamped entry series keyed by argument dicts.",
+      "tags": [
+        "deprecated",
+        "data-store",
+        "timeseries",
+        "abstract-class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:get_empty_series_for_timed_entry",
+      "type": "function",
+      "name": "get_empty_series_for_timed_entry",
+      "filePath": "sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "lineRange": [
+        245,
+        249
+      ],
+      "summary": "Returns an empty pandas series shaped for storing a timed-entry class.",
+      "tags": [
+        "deprecated",
+        "timeseries",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_capital.py:arcticCapitalData",
+      "type": "class",
+      "name": "arcticCapitalData",
+      "filePath": "sysdata/arctic/arctic_capital.py",
+      "lineRange": [
+        11,
+        47
+      ],
+      "summary": "Arctic-backed store reading and writing per-strategy capital time-series.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "capital"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_connection.py:arcticData",
+      "type": "class",
+      "name": "arcticData",
+      "filePath": "sysdata/arctic/arctic_connection.py",
+      "lineRange": [
+        13,
+        64
+      ],
+      "summary": "Thin wrapper over an Arctic library exposing read/write/delete/has-keyname operations.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "connection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_futures_per_contract_prices.py:arcticFuturesContractPriceData",
+      "type": "class",
+      "name": "arcticFuturesContractPriceData",
+      "filePath": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "lineRange": [
+        22,
+        198
+      ],
+      "summary": "Arctic-backed store for merged and per-frequency futures prices keyed by contract object.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "prices",
+        "futures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "function",
+      "name": "from_key_to_freq_and_contract",
+      "filePath": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "lineRange": [
+        201,
+        213
+      ],
+      "summary": "Parses an Arctic key string into its frequency and contract components.",
+      "tags": [
+        "arctic",
+        "key-encoding",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "function",
+      "name": "from_contract_and_freq_to_key",
+      "filePath": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "lineRange": [
+        216,
+        224
+      ],
+      "summary": "Builds an Arctic key string from a contract object and sampling frequency.",
+      "tags": [
+        "arctic",
+        "key-encoding",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_historic_contract_positions.py:arcticContractPositionData",
+      "type": "class",
+      "name": "arcticContractPositionData",
+      "filePath": "sysdata/arctic/arctic_historic_contract_positions.py",
+      "lineRange": [
+        14,
+        61
+      ],
+      "summary": "Arctic-backed store for historic positions held per futures contract.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_historic_strategy_positions.py:arcticStrategyPositionData",
+      "type": "class",
+      "name": "arcticStrategyPositionData",
+      "filePath": "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "lineRange": [
+        16,
+        61
+      ],
+      "summary": "Arctic-backed store for historic positions held per instrument strategy.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_optimal_positions.py:arcticOptimalPositionData",
+      "type": "class",
+      "name": "arcticOptimalPositionData",
+      "filePath": "sysdata/arctic/arctic_optimal_positions.py",
+      "lineRange": [
+        21,
+        64
+      ],
+      "summary": "Arctic-backed store for optimal position targets per instrument strategy.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_spotfx_prices.py:arcticFxPricesData",
+      "type": "class",
+      "name": "arcticFxPricesData",
+      "filePath": "sysdata/arctic/arctic_spotfx_prices.py",
+      "lineRange": [
+        10,
+        55
+      ],
+      "summary": "Arctic-backed store for spot FX price series keyed by currency code.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "fx-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_spreads.py:arcticSpreadsForInstrumentData",
+      "type": "class",
+      "name": "arcticSpreadsForInstrumentData",
+      "filePath": "sysdata/arctic/arctic_spreads.py",
+      "lineRange": [
+        11,
+        54
+      ],
+      "summary": "Arctic-backed store for instrument spread-cost time-series.",
+      "tags": [
+        "data-store",
+        "arctic",
+        "spreads"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/base_data.py:baseData",
+      "type": "class",
+      "name": "baseData",
+      "filePath": "sysdata/base_data.py",
+      "lineRange": [
+        4,
+        70
+      ],
+      "summary": "Abstract base class providing logging and dict-style key access shared by all data-store classes.",
+      "tags": [
+        "abstract-class",
+        "data-store",
+        "base-class"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py:mongoContractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py:mongoStrategyPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py:mongoListOfEntriesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:classWithListOfEntriesAsListOfDicts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:classStrWithListOfEntriesAsListOfDicts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:listOfEntriesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "function:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:get_empty_series_for_timed_entry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "function:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:get_empty_series_for_timed_entry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "class:sysdata/arctic/arctic_capital.py:arcticCapitalData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "class:sysdata/arctic/arctic_capital.py:arcticCapitalData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_connection.py",
+      "target": "class:sysdata/arctic/arctic_connection.py:arcticData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_connection.py",
+      "target": "class:sysdata/arctic/arctic_connection.py:arcticData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "class:sysdata/arctic/arctic_futures_per_contract_prices.py:arcticFuturesContractPriceData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "class:sysdata/arctic/arctic_futures_per_contract_prices.py:arcticFuturesContractPriceData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "function:sysdata/arctic/arctic_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "class:sysdata/arctic/arctic_historic_contract_positions.py:arcticContractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "class:sysdata/arctic/arctic_historic_contract_positions.py:arcticContractPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "class:sysdata/arctic/arctic_historic_strategy_positions.py:arcticStrategyPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "class:sysdata/arctic/arctic_historic_strategy_positions.py:arcticStrategyPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "class:sysdata/arctic/arctic_optimal_positions.py:arcticOptimalPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "class:sysdata/arctic/arctic_optimal_positions.py:arcticOptimalPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "class:sysdata/arctic/arctic_spotfx_prices.py:arcticFxPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "class:sysdata/arctic/arctic_spotfx_prices.py:arcticFxPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "class:sysdata/arctic/arctic_spreads.py:arcticSpreadsForInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "class:sysdata/arctic/arctic_spreads.py:arcticSpreadsForInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/base_data.py",
+      "target": "class:sysdata/base_data.py:baseData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/base_data.py",
+      "target": "class:sysdata/base_data.py:baseData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_timed_storage_TO_DEPRECATE.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "file:sysdata/production/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_capital.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_connection.py",
+      "target": "file:sysdata/arctic/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_connection.py",
+      "target": "file:sysdata/mongodb/mongo_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:sysdata/futures/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "file:sysdata/production/historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "file:sysdata/production/historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "file:sysdata/production/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "file:sysdata/fx/spotfx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "file:sysdata/futures/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_spreads.py",
+      "target": "file:sysobjects/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/base_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysdata/_DEPRECATED/timed_storage_TO_DEPRECATE.py:listOfEntriesData",
+      "target": "class:sysdata/base_data.py:baseData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

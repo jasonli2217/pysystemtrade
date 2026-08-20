@@ -1,0 +1,1306 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "type": "file",
+   "name": "dynamic_optimisation.py",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "summary": "Ad-hoc report and plotting module for dynamic optimisation: scatter plots, beta loadings, and optimised-versus-unrounded weight comparisons.",
+   "tags": [
+    "reporting",
+    "optimisation",
+    "plotting",
+    "adhoc"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_notional_risk_target",
+   "type": "function",
+   "name": "get_notional_risk_target",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    35,
+    37
+   ],
+   "summary": "Function get notional risk target (3 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_graphical",
+   "type": "function",
+   "name": "dynamic_optimisation_graphical",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    40,
+    51
+   ],
+   "summary": "Function dynamic optimisation graphical (12 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_figures_for_DO",
+   "type": "function",
+   "name": "get_figures_for_DO",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    54,
+    91
+   ],
+   "summary": "Function get figures for DO (38 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_data_for_scatter_plot",
+   "type": "function",
+   "name": "get_data_for_scatter_plot",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    94,
+    122
+   ],
+   "summary": "Function get data for scatter plot (29 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_for_asset_class",
+   "type": "function",
+   "name": "plot_scatter_for_asset_class",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    125,
+    127
+   ],
+   "summary": "Function plot scatter for asset class (3 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_names_only",
+   "type": "function",
+   "name": "plot_scatter_names_only",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    130,
+    137
+   ],
+   "summary": "Function plot scatter names only (8 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_colors_only",
+   "type": "function",
+   "name": "plot_scatter_colors_only",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    140,
+    153
+   ],
+   "summary": "Function plot scatter colors only (14 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_unrounded_weights",
+   "type": "function",
+   "name": "get_unrounded_weights",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    156,
+    161
+   ],
+   "summary": "Function get unrounded weights (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimised_weights",
+   "type": "function",
+   "name": "get_optimised_weights",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    164,
+    169
+   ],
+   "summary": "Function get optimised weights (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_item_from_optimised_weights_list",
+   "type": "function",
+   "name": "get_item_from_optimised_weights_list",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    172,
+    185
+   ],
+   "summary": "Function get item from optimised weights list (14 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimal_position_objects_as_list",
+   "type": "function",
+   "name": "get_optimal_position_objects_as_list",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    188,
+    195
+   ],
+   "summary": "Function get optimal position objects as list (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:instrument_codes_from_optimal_positions_as_list",
+   "type": "function",
+   "name": "instrument_codes_from_optimal_positions_as_list",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    198,
+    199
+   ],
+   "summary": "Function instrument codes from optimal positions as list (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_standard_deviations_for_instrument_list",
+   "type": "function",
+   "name": "get_standard_deviations_for_instrument_list",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    202,
+    215
+   ],
+   "summary": "Function get standard deviations for instrument list (14 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_betas_to_plot",
+   "type": "function",
+   "name": "get_pd_df_of_betas_to_plot",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    218,
+    256
+   ],
+   "summary": "Function get pd df of betas to plot (39 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_beta_loadings",
+   "type": "function",
+   "name": "get_pd_df_of_beta_loadings",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    259,
+    284
+   ],
+   "summary": "Function get pd df of beta loadings (26 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_text",
+   "type": "function",
+   "name": "dynamic_optimisation_text",
+   "filePath": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "lineRange": [
+    287,
+    300
+   ],
+   "summary": "Function dynamic optimisation text (14 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/adhoc/static_system.py",
+   "type": "file",
+   "name": "static_system.py",
+   "filePath": "sysproduction/reporting/adhoc/static_system.py",
+   "summary": "Ad-hoc report rendering static system backtest results scaled for available capital.",
+   "tags": [
+    "reporting",
+    "backtest",
+    "adhoc",
+    "report"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/static_system.py:static_system_adhoc_report",
+   "type": "function",
+   "name": "static_system_adhoc_report",
+   "filePath": "sysproduction/reporting/adhoc/static_system.py",
+   "lineRange": [
+    20,
+    63
+   ],
+   "summary": "Function static system adhoc report (44 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/static_system.py:static_system_results_for_capital",
+   "type": "function",
+   "name": "static_system_results_for_capital",
+   "filePath": "sysproduction/reporting/adhoc/static_system.py",
+   "lineRange": [
+    66,
+    81
+   ],
+   "summary": "Function static system results for capital (16 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "type": "file",
+   "name": "trading_rule_pandl.py",
+   "filePath": "sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "summary": "Ad-hoc report computing and plotting per-trading-rule P&L grouped by rule family.",
+   "tags": [
+    "reporting",
+    "pandl",
+    "trading-rule",
+    "adhoc"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:trading_rule_pandl_adhoc_report",
+   "type": "function",
+   "name": "trading_rule_pandl_adhoc_report",
+   "filePath": "sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "lineRange": [
+    28,
+    73
+   ],
+   "summary": "Function trading rule pandl adhoc report (46 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:get_figure_for_rule_group",
+   "type": "function",
+   "name": "get_figure_for_rule_group",
+   "filePath": "sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "lineRange": [
+    76,
+    105
+   ],
+   "summary": "Function get figure for rule group (30 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/api.py",
+   "type": "file",
+   "name": "api.py",
+   "filePath": "sysproduction/reporting/api.py",
+   "summary": "Central reporting API: the reportingApi class assembles every production report's tables, figures, and body text from underlying data sources.",
+   "tags": [
+    "service",
+    "reporting",
+    "api-handler",
+    "aggregator"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/api.py:get_liquidity_report_data",
+   "type": "function",
+   "name": "get_liquidity_report_data",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    1200,
+    1204
+   ],
+   "summary": "Function get liquidity report data (5 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/api.py:filter_data_for_delays_and_return_table",
+   "type": "function",
+   "name": "filter_data_for_delays_and_return_table",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    1207,
+    1221
+   ],
+   "summary": "Function filter data for delays and return table (15 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/api.py:filter_data_for_delays",
+   "type": "function",
+   "name": "filter_data_for_delays",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    1224,
+    1234
+   ],
+   "summary": "Function filter data for delays (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/api.py:filter_data_for_max_value_and_return_table",
+   "type": "function",
+   "name": "filter_data_for_max_value_and_return_table",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    1237,
+    1246
+   ],
+   "summary": "Function filter data for max value and return table (10 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/api.py:filter_data_for_max_value",
+   "type": "function",
+   "name": "filter_data_for_max_value",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    1249,
+    1255
+   ],
+   "summary": "Function filter data for max value (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/reporting/api.py:reportingApi",
+   "type": "class",
+   "name": "reportingApi",
+   "filePath": "sysproduction/reporting/api.py",
+   "lineRange": [
+    100,
+    1197
+   ],
+   "summary": "Class reportingApi with 124 methods (1098 lines).",
+   "tags": [
+    "service",
+    "reporting",
+    "api-handler"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/reporting/commissions_report.py",
+   "type": "file",
+   "name": "commissions_report.py",
+   "filePath": "sysproduction/reporting/commissions_report.py",
+   "summary": "Report generator that builds the commissions report comparing configured and broker block costs.",
+   "tags": [
+    "reporting",
+    "commissions",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/commissions_report.py:commissions_report",
+   "type": "function",
+   "name": "commissions_report",
+   "filePath": "sysproduction/reporting/commissions_report.py",
+   "lineRange": [
+    14,
+    31
+   ],
+   "summary": "Function commissions report (18 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/costs_report.py",
+   "type": "file",
+   "name": "costs_report.py",
+   "filePath": "sysproduction/reporting/costs_report.py",
+   "summary": "Report generator producing the trading costs (SR cost) report.",
+   "tags": [
+    "reporting",
+    "costs",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/costs_report.py:costs_report",
+   "type": "function",
+   "name": "costs_report",
+   "filePath": "sysproduction/reporting/costs_report.py",
+   "lineRange": [
+    12,
+    37
+   ],
+   "summary": "Function costs report (26 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_notional_risk_target",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_notional_risk_target",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_graphical",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_graphical",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_figures_for_DO",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_figures_for_DO",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_data_for_scatter_plot",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_data_for_scatter_plot",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_for_asset_class",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_for_asset_class",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_names_only",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_names_only",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_colors_only",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:plot_scatter_colors_only",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_unrounded_weights",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_unrounded_weights",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimised_weights",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimised_weights",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_item_from_optimised_weights_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_item_from_optimised_weights_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimal_position_objects_as_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_optimal_position_objects_as_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:instrument_codes_from_optimal_positions_as_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:instrument_codes_from_optimal_positions_as_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_standard_deviations_for_instrument_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_standard_deviations_for_instrument_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_betas_to_plot",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_betas_to_plot",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_beta_loadings",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:get_pd_df_of_beta_loadings",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_text",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "function:sysproduction/reporting/adhoc/dynamic_optimisation.py:dynamic_optimisation_text",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysproduction/reporting/data/risk.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysquant/estimators/stdev_estimator.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/dynamic_optimisation.py",
+   "target": "file:sysquant/optimisation/weights.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "function:sysproduction/reporting/adhoc/static_system.py:static_system_adhoc_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "function:sysproduction/reporting/adhoc/static_system.py:static_system_adhoc_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "function:sysproduction/reporting/adhoc/static_system.py:static_system_results_for_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "function:sysproduction/reporting/adhoc/static_system.py:static_system_results_for_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:sysquant/estimators/correlation_estimator.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:systems/provided/rob_system/run_system.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/static_system.py",
+   "target": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:trading_rule_pandl_adhoc_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:trading_rule_pandl_adhoc_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:get_figure_for_rule_group",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "function:sysproduction/reporting/adhoc/trading_rule_pandl.py:get_figure_for_rule_group",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:sysproduction/reporting/formatting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/adhoc/trading_rule_pandl.py",
+   "target": "file:systems/provided/rob_system/run_system.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:get_liquidity_report_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:get_liquidity_report_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_delays_and_return_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_delays_and_return_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_delays",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_delays",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_max_value_and_return_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_max_value_and_return_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_max_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "function:sysproduction/reporting/api.py:filter_data_for_max_value",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "class:sysproduction/reporting/api.py:reportingApi",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "class:sysproduction/reporting/api.py:reportingApi",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:syscore/cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/commissions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/costs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/pandl.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/pricechanges.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/risk.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/rolls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/trades.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/data/volume.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/formatting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/api.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "function:sysproduction/reporting/commissions_report.py:commissions_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "function:sysproduction/reporting/commissions_report.py:commissions_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/commissions_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "function:sysproduction/reporting/costs_report.py:costs_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "function:sysproduction/reporting/costs_report.py:costs_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/costs_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

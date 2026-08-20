@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/IB.md",
+      "type": "document",
+      "name": "IB.md",
+      "filePath": "docs/IB.md",
+      "summary": "Guide to connecting pysystemtrade to Interactive Brokers, covering Gateway/TWS setup, establishing a broker connection, and a reference of the IB data source, client, and connection objects.",
+      "tags": ["documentation", "broker", "interactive-brokers", "integration", "reference"],
+      "complexity": "moderate",
+      "languageNotes": "Mixes setup walkthrough with an API object reference describing the brokers.ib package structure (data source, client, connection objects)."
+    },
+    {
+      "id": "document:docs/backtesting.md",
+      "type": "document",
+      "name": "backtesting.md",
+      "filePath": "docs/backtesting.md",
+      "summary": "Comprehensive 'How do I?' guide to the simulation engine, covering trading rules, building standard and parameter-estimating futures backtests, configuration, stages, and inspecting results across the systems framework.",
+      "tags": ["documentation", "backtesting", "simulation", "trading-rules", "configuration"],
+      "complexity": "complex",
+      "languageNotes": "Very large (4670 lines) cookbook-style reference organized as ~178 task-oriented headings spanning the entire sysquant/systems simulation stack."
+    },
+    {
+      "id": "document:docs/dashboard_and_monitor.md",
+      "type": "document",
+      "name": "dashboard_and_monitor.md",
+      "filePath": "docs/dashboard_and_monitor.md",
+      "summary": "Short guide to the web dashboard and system monitor used in production, including handling of crashed processes and running a remote dashboard/monitor.",
+      "tags": ["documentation", "dashboard", "monitoring", "production", "operations"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/data.md",
+      "type": "document",
+      "name": "data.md",
+      "filePath": "docs/data.md",
+      "summary": "End-to-end guide to the futures data workflow (instrument config, roll calendars, multiple and back-adjusted prices, FX data) and an overview of the data storage object hierarchy and directory structure.",
+      "tags": ["documentation", "data", "futures-data", "storage", "workflow"],
+      "complexity": "complex",
+      "languageNotes": "Two-part structure: a hands-on data ingestion workflow followed by an architectural overview of the sysdata storage and access object hierarchy."
+    },
+    {
+      "id": "document:docs/installation.md",
+      "type": "document",
+      "name": "installation.md",
+      "filePath": "docs/installation.md",
+      "summary": "Installation guide for pysystemtrade describing project file layout and two environment-setup paths (pyenv + venv, or uv), plus a verification test.",
+      "tags": ["documentation", "installation", "setup", "environment", "getting-started"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/instruments.md",
+      "type": "document",
+      "name": "instruments.md",
+      "filePath": "docs/instruments.md",
+      "summary": "Explains the different instrument sets used across sampling, simulation, and production, how the instrument list is defined and customised, and constraints like reduce-only and exclusion of 'bad' markets.",
+      "tags": ["documentation", "instruments", "configuration", "production", "data"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/introduction.md",
+      "type": "document",
+      "name": "introduction.md",
+      "filePath": "docs/introduction.md",
+      "summary": "Beginner-friendly introduction that builds up from a simple trading rule to a complete pre-baked system, demonstrating config from dictionaries and files along the way.",
+      "tags": ["documentation", "introduction", "getting-started", "trading-rules", "tutorial"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/list_of_futures_product_pages.md",
+      "type": "document",
+      "name": "list_of_futures_product_pages.md",
+      "filePath": "docs/list_of_futures_product_pages.md",
+      "summary": "Reference list of futures product pages (exchange/product links) used as a lookup when adding or configuring tradable instruments.",
+      "tags": ["documentation", "reference", "futures", "instruments", "data"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/production.md",
+      "type": "document",
+      "name": "production.md",
+      "filePath": "docs/production.md",
+      "summary": "Definitive guide to running pysystemtrade as a live production system, covering data flow, broker linkage, data storage and backup, logging and reporting, and position/order management at instrument and contract level.",
+      "tags": ["documentation", "production", "live-trading", "operations", "deployment"],
+      "complexity": "complex",
+      "languageNotes": "Largest production reference (4074 lines, ~122 sections) spanning the full sysproduction stack from quick start to order management and reconciliation."
+    },
+    {
+      "id": "document:docs/production_strategy_changes.md",
+      "type": "document",
+      "name": "production_strategy_changes.md",
+      "filePath": "docs/production_strategy_changes.md",
+      "summary": "Step-by-step runbook for changing a live strategy: adding instruments, creating custom strategy classes, updating config and capital, transferring positions, adjusting limits, and restarting processes.",
+      "tags": ["documentation", "production", "runbook", "strategy", "operations"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/introduction.md",
+      "target": "document:docs/backtesting.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/backtesting.md",
+      "target": "document:docs/data.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/backtesting.md",
+      "target": "document:docs/instruments.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/production.md",
+      "target": "document:docs/dashboard_and_monitor.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/production.md",
+      "target": "document:docs/production_strategy_changes.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/production.md",
+      "target": "document:docs/IB.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/IB.md",
+      "target": "document:docs/data.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/data.md",
+      "target": "document:docs/instruments.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/installation.md",
+      "target": "document:docs/introduction.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/production_strategy_changes.md",
+      "target": "document:docs/instruments.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

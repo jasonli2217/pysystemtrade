@@ -1,0 +1,1189 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/futures/spreads.py",
+      "type": "file",
+      "name": "spreads.py",
+      "filePath": "sysdata/futures/spreads.py",
+      "summary": "Abstract base data class defining the interface for storing and retrieving inter-market spread time series by instrument.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "spreads",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/spreads.py:spreadsForInstrumentData",
+      "type": "class",
+      "name": "spreadsForInstrumentData",
+      "filePath": "sysdata/futures/spreads.py",
+      "lineRange": [
+        7,
+        101
+      ],
+      "summary": "Abstract base class defining the spread time-series storage interface.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "spreads",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "type": "file",
+      "name": "mongo_IB_client_id.py",
+      "filePath": "sysdata/mongodb/mongo_IB_client_id.py",
+      "summary": "MongoDB-backed store managing Interactive Brokers client-id allocation, locking and releasing client ids for connections.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "interactive-brokers",
+        "locking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_IB_client_id.py:mongoIbBrokerClientIdData",
+      "type": "class",
+      "name": "mongoIbBrokerClientIdData",
+      "filePath": "sysdata/mongodb/mongo_IB_client_id.py",
+      "lineRange": [
+        10,
+        47
+      ],
+      "summary": "MongoDB store managing IB client-id allocation and locking.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "interactive-brokers",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "type": "file",
+      "name": "mongo_futures_contracts.py",
+      "filePath": "sysdata/mongodb/mongo_futures_contracts.py",
+      "summary": "MongoDB implementation of the futures-contract data store, persisting contract objects keyed by instrument and contract date.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "futures",
+        "contracts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_futures_contracts.py:mongoFuturesContractData",
+      "type": "class",
+      "name": "mongoFuturesContractData",
+      "filePath": "sysdata/mongodb/mongo_futures_contracts.py",
+      "lineRange": [
+        16,
+        118
+      ],
+      "summary": "MongoDB store persisting futures contract objects keyed by instrument and date.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "futures",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "file",
+      "name": "mongo_generic.py",
+      "filePath": "sysdata/mongodb/mongo_generic.py",
+      "summary": "Generic MongoDB access layer providing single-key and multi-key document collection wrappers used by all Mongo data stores.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "abstraction",
+        "crud"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithSingleKey",
+      "type": "class",
+      "name": "mongoDataWithSingleKey",
+      "filePath": "sysdata/mongodb/mongo_generic.py",
+      "lineRange": [
+        15,
+        157
+      ],
+      "summary": "Generic MongoDB collection wrapper keyed by a single field, providing CRUD over documents.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "abstraction",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithMultipleKeys",
+      "type": "class",
+      "name": "mongoDataWithMultipleKeys",
+      "filePath": "sysdata/mongodb/mongo_generic.py",
+      "lineRange": [
+        160,
+        278
+      ],
+      "summary": "Generic MongoDB collection wrapper keyed by multiple fields, providing CRUD over documents.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "abstraction",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_lock_data.py",
+      "type": "file",
+      "name": "mongo_lock_data.py",
+      "filePath": "sysdata/mongodb/mongo_lock_data.py",
+      "summary": "MongoDB-backed store for per-instrument trading locks, adding, removing, and listing locked instruments.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "locking",
+        "instruments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_lock_data.py:mongoLockData",
+      "type": "class",
+      "name": "mongoLockData",
+      "filePath": "sysdata/mongodb/mongo_lock_data.py",
+      "lineRange": [
+        10,
+        51
+      ],
+      "summary": "MongoDB store for per-instrument trading locks.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "locking",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_override.py",
+      "type": "file",
+      "name": "mongo_override.py",
+      "filePath": "sysdata/mongodb/mongo_override.py",
+      "summary": "MongoDB store for instrument/strategy trading overrides, persisting override objects as Mongo documents.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "overrides",
+        "trading"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_override.py:mongoOverrideData",
+      "type": "class",
+      "name": "mongoOverrideData",
+      "filePath": "sysdata/mongodb/mongo_override.py",
+      "lineRange": [
+        13,
+        88
+      ],
+      "summary": "MongoDB store for instrument/strategy trading overrides.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "overrides",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_position_limits.py",
+      "type": "file",
+      "name": "mongo_position_limits.py",
+      "filePath": "sysdata/mongodb/mongo_position_limits.py",
+      "summary": "MongoDB-backed store for absolute position limits at instrument and instrument-strategy granularity.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "position-limits",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_position_limits.py:mongoPositionLimitData",
+      "type": "class",
+      "name": "mongoPositionLimitData",
+      "filePath": "sysdata/mongodb/mongo_position_limits.py",
+      "lineRange": [
+        21,
+        129
+      ],
+      "summary": "MongoDB store for absolute position limits at instrument and strategy level.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "position-limits",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_process_control.py",
+      "type": "file",
+      "name": "mongo_process_control.py",
+      "filePath": "sysdata/mongodb/mongo_process_control.py",
+      "summary": "MongoDB store for production process-control state, tracking the run status of named live trading processes.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "process-control",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_process_control.py:mongoControlProcessData",
+      "type": "class",
+      "name": "mongoControlProcessData",
+      "filePath": "sysdata/mongodb/mongo_process_control.py",
+      "lineRange": [
+        12,
+        60
+      ],
+      "summary": "MongoDB store for production process-control run status.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "process-control",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "type": "file",
+      "name": "mongo_roll_state_storage.py",
+      "filePath": "sysdata/mongodb/mongo_roll_state_storage.py",
+      "summary": "MongoDB-backed store for futures roll states keyed by instrument code.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "roll-state",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_roll_state_storage.py:mongoRollStateData",
+      "type": "class",
+      "name": "mongoRollStateData",
+      "filePath": "sysdata/mongodb/mongo_roll_state_storage.py",
+      "lineRange": [
+        10,
+        49
+      ],
+      "summary": "MongoDB store for futures roll states keyed by instrument.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "roll-state",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "type": "file",
+      "name": "mongo_spread_costs.py",
+      "filePath": "sysdata/mongodb/mongo_spread_costs.py",
+      "summary": "MongoDB implementation of the spread-cost data store, persisting per-instrument spread costs as documents.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "spread-costs",
+        "trading"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_spread_costs.py:mongoSpreadCostData",
+      "type": "class",
+      "name": "mongoSpreadCostData",
+      "filePath": "sysdata/mongodb/mongo_spread_costs.py",
+      "lineRange": [
+        13,
+        71
+      ],
+      "summary": "MongoDB store for per-instrument spread costs.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "spread-costs",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "type": "file",
+      "name": "mongo_temporary_close.py",
+      "filePath": "sysdata/mongodb/mongo_temporary_close.py",
+      "summary": "MongoDB store for temporary instrument closes, persisting stored position limits used when temporarily flattening positions.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "position-limits",
+        "risk"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_temporary_close.py:mongoTemporaryCloseData",
+      "type": "class",
+      "name": "mongoTemporaryCloseData",
+      "filePath": "sysdata/mongodb/mongo_temporary_close.py",
+      "lineRange": [
+        13,
+        53
+      ],
+      "summary": "MongoDB store for temporary instrument closes and stored position limits.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "position-limits",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "type": "file",
+      "name": "mongo_temporary_override.py",
+      "filePath": "sysdata/mongodb/mongo_temporary_override.py",
+      "summary": "MongoDB store for temporary instrument overrides, persisting stored override state for short-term intervention.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "overrides",
+        "trading"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_temporary_override.py:mongoTemporaryOverrideData",
+      "type": "class",
+      "name": "mongoTemporaryOverrideData",
+      "filePath": "sysdata/mongodb/mongo_temporary_override.py",
+      "lineRange": [
+        16,
+        52
+      ],
+      "summary": "MongoDB store for temporary instrument override state.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "overrides",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "type": "file",
+      "name": "mongo_trade_limits.py",
+      "filePath": "sysdata/mongodb/mongo_trade_limits.py",
+      "summary": "MongoDB-backed store for trade-volume limits per instrument-strategy, tracking cumulative trades within rolling periods.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "trade-limits",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_trade_limits.py:mongoTradeLimitData",
+      "type": "class",
+      "name": "mongoTradeLimitData",
+      "filePath": "sysdata/mongodb/mongo_trade_limits.py",
+      "lineRange": [
+        20,
+        104
+      ],
+      "summary": "MongoDB store for rolling trade-volume limits per instrument-strategy.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "trade-limits",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/mongodb/mongo_trade_limits.py:_from_result_dict_to_isd",
+      "type": "function",
+      "name": "_from_result_dict_to_isd",
+      "filePath": "sysdata/mongodb/mongo_trade_limits.py",
+      "lineRange": [
+        107,
+        121
+      ],
+      "summary": "Reconstructs an instrument-strategy trade-limit object from a Mongo result dictionary.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/mongodb/mongo_trade_limits.py:_from_trade_limit_dict_to_required_dict",
+      "type": "function",
+      "name": "_from_trade_limit_dict_to_required_dict",
+      "filePath": "sysdata/mongodb/mongo_trade_limits.py",
+      "lineRange": [
+        124,
+        136
+      ],
+      "summary": "Maps a trade-limit object into the dictionary shape required for Mongo storage.",
+      "tags": [
+        "data-store",
+        "mongodb",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_access.py",
+      "type": "file",
+      "name": "parquet_access.py",
+      "filePath": "sysdata/parquet/parquet_access.py",
+      "summary": "Low-level Parquet access layer providing read/write/delete of typed data frames identified by data-type and identifier, with a local-filesystem accessor.",
+      "tags": [
+        "data-store",
+        "parquet",
+        "filesystem",
+        "io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_access.py:ParquetAccess",
+      "type": "class",
+      "name": "ParquetAccess",
+      "filePath": "sysdata/parquet/parquet_access.py",
+      "lineRange": [
+        11,
+        60
+      ],
+      "summary": "Parquet access layer for typed read/write/delete of data frames by identifier.",
+      "tags": [
+        "data-store",
+        "parquet",
+        "filesystem",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_access.py:LocalAccessor",
+      "type": "class",
+      "name": "LocalAccessor",
+      "filePath": "sysdata/parquet/parquet_access.py",
+      "lineRange": [
+        63,
+        85
+      ],
+      "summary": "Local-filesystem accessor resolving Parquet file paths by data type and identifier.",
+      "tags": [
+        "data-store",
+        "parquet",
+        "filesystem",
+        "class"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/futures/spreads.py",
+      "target": "class:sysdata/futures/spreads.py:spreadsForInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/spreads.py",
+      "target": "class:sysdata/futures/spreads.py:spreadsForInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "class:sysdata/mongodb/mongo_IB_client_id.py:mongoIbBrokerClientIdData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "class:sysdata/mongodb/mongo_IB_client_id.py:mongoIbBrokerClientIdData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "class:sysdata/mongodb/mongo_futures_contracts.py:mongoFuturesContractData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "class:sysdata/mongodb/mongo_futures_contracts.py:mongoFuturesContractData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithSingleKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithSingleKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithMultipleKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "class:sysdata/mongodb/mongo_generic.py:mongoDataWithMultipleKeys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "class:sysdata/mongodb/mongo_lock_data.py:mongoLockData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "class:sysdata/mongodb/mongo_lock_data.py:mongoLockData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "class:sysdata/mongodb/mongo_override.py:mongoOverrideData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "class:sysdata/mongodb/mongo_override.py:mongoOverrideData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "class:sysdata/mongodb/mongo_position_limits.py:mongoPositionLimitData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "class:sysdata/mongodb/mongo_position_limits.py:mongoPositionLimitData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "class:sysdata/mongodb/mongo_process_control.py:mongoControlProcessData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "class:sysdata/mongodb/mongo_process_control.py:mongoControlProcessData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "target": "class:sysdata/mongodb/mongo_roll_state_storage.py:mongoRollStateData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "target": "class:sysdata/mongodb/mongo_roll_state_storage.py:mongoRollStateData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "class:sysdata/mongodb/mongo_spread_costs.py:mongoSpreadCostData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "class:sysdata/mongodb/mongo_spread_costs.py:mongoSpreadCostData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "class:sysdata/mongodb/mongo_temporary_close.py:mongoTemporaryCloseData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "class:sysdata/mongodb/mongo_temporary_close.py:mongoTemporaryCloseData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "class:sysdata/mongodb/mongo_temporary_override.py:mongoTemporaryOverrideData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "class:sysdata/mongodb/mongo_temporary_override.py:mongoTemporaryOverrideData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "class:sysdata/mongodb/mongo_trade_limits.py:mongoTradeLimitData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "class:sysdata/mongodb/mongo_trade_limits.py:mongoTradeLimitData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "function:sysdata/mongodb/mongo_trade_limits.py:_from_result_dict_to_isd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "function:sysdata/mongodb/mongo_trade_limits.py:_from_result_dict_to_isd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "function:sysdata/mongodb/mongo_trade_limits.py:_from_trade_limit_dict_to_required_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "function:sysdata/mongodb/mongo_trade_limits.py:_from_trade_limit_dict_to_required_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "class:sysdata/parquet/parquet_access.py:ParquetAccess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "class:sysdata/parquet/parquet_access.py:ParquetAccess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "class:sysdata/parquet/parquet_access.py:LocalAccessor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "class:sysdata/parquet/parquet_access.py:LocalAccessor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/spreads.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/spreads.py",
+      "target": "file:sysobjects/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "file:sysbrokers/IB/client/ib_client_id.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_IB_client_id.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "file:sysdata/futures/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "file:sysdata/mongodb/mongo_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_generic.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "file:sysdata/production/locks.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_lock_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "file:sysdata/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_override.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "file:sysdata/production/position_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_position_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "file:sysdata/production/process_control_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_process_control.py",
+      "target": "file:sysobjects/production/process_control.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "target": "file:sysdata/production/roll_state.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "file:sysdata/futures/spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "file:sysdata/production/temporary_close.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_close.py",
+      "target": "file:sysobjects/production/position_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:sysdata/mongodb/mongo_override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:sysdata/production/temporary_override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_temporary_override.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "file:sysdata/production/trade_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_trade_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_access.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

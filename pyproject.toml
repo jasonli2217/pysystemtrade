@@ -96,3 +96,8 @@ testpaths = [
 line-length = 88
 target-version = ["py310"]
 required-version = "23.11.0"
+
+[dependency-groups]
+docs = [
+    "mkdocs-material>=9.7.7",
+]

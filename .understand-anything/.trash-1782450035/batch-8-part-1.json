@@ -1,0 +1,833 @@
+{
+  "nodes": [
+    {
+      "id": "file:syslogdiag/log_to_screen.py",
+      "type": "file",
+      "name": "log_to_screen.py",
+      "filePath": "syslogdiag/log_to_screen.py",
+      "summary": "Defines the legacy logtoscreen logger that prints log messages to stdout and tracks sequential log ids, used as a simple console logger in older code paths.",
+      "tags": [
+        "logging",
+        "console",
+        "legacy",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogdiag/mongo_email_control.py",
+      "type": "file",
+      "name": "mongo_email_control.py",
+      "filePath": "syslogdiag/mongo_email_control.py",
+      "summary": "MongoDB-backed store recording when emails and warning emails were last sent for a given subject, used to throttle repeated production alert emails.",
+      "tags": [
+        "logging",
+        "email",
+        "mongodb",
+        "throttling",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:syslogdiag/pst_logger.py",
+      "type": "file",
+      "name": "pst_logger.py",
+      "filePath": "syslogdiag/pst_logger.py",
+      "summary": "Legacy attribute-aware base logger (pst_logger) and a no-op nullLog, providing message levels, attribute merging, and duplicate-message suppression for the older logging system.",
+      "tags": [
+        "logging",
+        "legacy",
+        "data-model",
+        "throttling"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:syslogging/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syslogging/__init__.py",
+      "summary": "Package marker re-exporting get_logger as the public entry point for the modern syslogging package.",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogging/adapter.py",
+      "type": "file",
+      "name": "adapter.py",
+      "filePath": "syslogging/adapter.py",
+      "summary": "DynamicAttributeLogger, a logging.LoggerAdapter that merges per-call attributes into log records and validates against disallowed attribute names.",
+      "tags": [
+        "logging",
+        "adapter",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogging/filters.py",
+      "type": "file",
+      "name": "filters.py",
+      "filePath": "syslogging/filters.py",
+      "summary": "IBFilter logging filter that suppresses noisy Interactive Brokers connection messages by name and message prefix.",
+      "tags": [
+        "logging",
+        "filter",
+        "interactive-brokers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syslogging/handlers.py",
+      "type": "file",
+      "name": "handlers.py",
+      "filePath": "syslogging/handlers.py",
+      "summary": "Custom logging handlers: an SMTP email handler, an in-memory most-recent-record buffer, and a socket stream handler that unpickles and re-dispatches remote log records.",
+      "tags": [
+        "logging",
+        "handler",
+        "email",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:syslogging/logger.py",
+      "type": "file",
+      "name": "logger.py",
+      "filePath": "syslogging/logger.py",
+      "summary": "Core of the modern logging system: get_logger factory plus sim/prod configuration helpers wiring up handlers, filters, and the optional remote log server.",
+      "tags": [
+        "logging",
+        "factory",
+        "configuration",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:syslogging/pyyaml_env.py",
+      "type": "file",
+      "name": "pyyaml_env.py",
+      "filePath": "syslogging/pyyaml_env.py",
+      "summary": "parse_config helper that loads a YAML file while resolving ${ENV_VAR} placeholders (with type tags and defaults) from environment variables.",
+      "tags": [
+        "configuration",
+        "yaml",
+        "environment",
+        "parsing"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Registers a custom PyYAML implicit resolver and constructor to expand environment variables at load time."
+    },
+    {
+      "id": "file:syslogging/server.py",
+      "type": "file",
+      "name": "server.py",
+      "filePath": "syslogging/server.py",
+      "summary": "Standalone TCP logging server (LogRecordSocketReceiver) that receives pickled log records over a socket and writes them to rotating files, runnable as a CLI process.",
+      "tags": [
+        "logging",
+        "server",
+        "networking",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogdiag/log_to_screen.py:logtoscreen",
+      "type": "class",
+      "name": "logtoscreen",
+      "filePath": "syslogdiag/log_to_screen.py",
+      "lineRange": [
+        5,
+        62
+      ],
+      "summary": "Simple console logger that prints messages and maintains an incrementing in-memory log id.",
+      "tags": [
+        "logging",
+        "console",
+        "legacy"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogdiag/mongo_email_control.py:mongoEmailControlData",
+      "type": "class",
+      "name": "mongoEmailControlData",
+      "filePath": "syslogdiag/mongo_email_control.py",
+      "lineRange": [
+        27,
+        80
+      ],
+      "summary": "Mongo-backed store recording and retrieving the last time a given email subject (normal or warning) was sent, for alert throttling.",
+      "tags": [
+        "logging",
+        "email",
+        "mongodb",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogdiag/pst_logger.py:pst_logger",
+      "type": "class",
+      "name": "pst_logger",
+      "filePath": "syslogdiag/pst_logger.py",
+      "lineRange": [
+        44,
+        305
+      ],
+      "summary": "Legacy base logger managing log attributes, logging levels, message levels, and recent-duplicate suppression.",
+      "tags": [
+        "logging",
+        "legacy",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:syslogdiag/pst_logger.py:nullLog",
+      "type": "class",
+      "name": "nullLog",
+      "filePath": "syslogdiag/pst_logger.py",
+      "lineRange": [
+        325,
+        352
+      ],
+      "summary": "No-op logger implementing the pst_logger interface without emitting anything.",
+      "tags": [
+        "logging",
+        "null-object",
+        "legacy"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/pst_logger.py:get_update_attributes_list",
+      "type": "function",
+      "name": "get_update_attributes_list",
+      "filePath": "syslogdiag/pst_logger.py",
+      "lineRange": [
+        308,
+        312
+      ],
+      "summary": "Merges parent and new attribute dicts, returning the combined attribute mapping.",
+      "tags": [
+        "logging",
+        "utility",
+        "attributes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/pst_logger.py:get_list_of_disallowed_attributes",
+      "type": "function",
+      "name": "get_list_of_disallowed_attributes",
+      "filePath": "syslogdiag/pst_logger.py",
+      "lineRange": [
+        315,
+        322
+      ],
+      "summary": "Returns the subset of supplied attribute keys that are not permitted as log attributes.",
+      "tags": [
+        "logging",
+        "validation",
+        "attributes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogging/adapter.py:DynamicAttributeLogger",
+      "type": "class",
+      "name": "DynamicAttributeLogger",
+      "filePath": "syslogging/adapter.py",
+      "lineRange": [
+        6,
+        63
+      ],
+      "summary": "LoggerAdapter that merges per-call and persistent attributes into log records with configurable merge modes and validation.",
+      "tags": [
+        "logging",
+        "adapter",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogging/filters.py:IBFilter",
+      "type": "class",
+      "name": "IBFilter",
+      "filePath": "syslogging/filters.py",
+      "lineRange": [
+        4,
+        24
+      ],
+      "summary": "Logging filter dropping Interactive Brokers wrapper messages identified by logger name and message prefix.",
+      "tags": [
+        "logging",
+        "filter",
+        "interactive-brokers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogging/handlers.py:PstSMTPHandler",
+      "type": "class",
+      "name": "PstSMTPHandler",
+      "filePath": "syslogging/handlers.py",
+      "lineRange": [
+        9,
+        23
+      ],
+      "summary": "Logging handler that sends each emitted record as an email via the project's mailer.",
+      "tags": [
+        "logging",
+        "handler",
+        "email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogging/handlers.py:MostRecentHandler",
+      "type": "class",
+      "name": "MostRecentHandler",
+      "filePath": "syslogging/handlers.py",
+      "lineRange": [
+        26,
+        44
+      ],
+      "summary": "Logging handler keeping a bounded deque of the most recent log records in memory.",
+      "tags": [
+        "logging",
+        "handler",
+        "buffer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogging/handlers.py:LogRecordStreamHandler",
+      "type": "class",
+      "name": "LogRecordStreamHandler",
+      "filePath": "syslogging/handlers.py",
+      "lineRange": [
+        47,
+        89
+      ],
+      "summary": "Socket request handler that reads length-prefixed pickled log records and re-dispatches them to the local logging system.",
+      "tags": [
+        "logging",
+        "handler",
+        "networking",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogging/logger.py:get_logger",
+      "type": "function",
+      "name": "get_logger",
+      "filePath": "syslogging/logger.py",
+      "lineRange": [
+        16,
+        73
+      ],
+      "summary": "Factory returning a DynamicAttributeLogger configured with attributes, triggering one-time sim/prod logging setup.",
+      "tags": [
+        "logging",
+        "factory",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogging/logger.py:_configure_prod",
+      "type": "function",
+      "name": "_configure_prod",
+      "filePath": "syslogging/logger.py",
+      "lineRange": [
+        100,
+        127
+      ],
+      "summary": "Loads the production logging YAML config, checks the remote log server, and applies dictConfig or falls back to sim config.",
+      "tags": [
+        "logging",
+        "configuration",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogging/logger.py:_configure_sim",
+      "type": "function",
+      "name": "_configure_sim",
+      "filePath": "syslogging/logger.py",
+      "lineRange": [
+        84,
+        97
+      ],
+      "summary": "Configures basic stream-based logging with the IB filter for simulation/backtest runs.",
+      "tags": [
+        "logging",
+        "configuration",
+        "simulation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogging/logger.py:_check_log_server",
+      "type": "function",
+      "name": "_check_log_server",
+      "filePath": "syslogging/logger.py",
+      "lineRange": [
+        135,
+        144
+      ],
+      "summary": "Probes the configured log server host/port to verify the remote logging socket is reachable.",
+      "tags": [
+        "logging",
+        "networking",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogging/pyyaml_env.py:parse_config",
+      "type": "function",
+      "name": "parse_config",
+      "filePath": "syslogging/pyyaml_env.py",
+      "lineRange": [
+        8,
+        117
+      ],
+      "summary": "Loads a YAML config file and expands ${VAR} environment-variable references, supporting type tags and default values.",
+      "tags": [
+        "configuration",
+        "yaml",
+        "environment",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogging/server.py:LogRecordSocketReceiver",
+      "type": "class",
+      "name": "LogRecordSocketReceiver",
+      "filePath": "syslogging/server.py",
+      "lineRange": [
+        13,
+        53
+      ],
+      "summary": "Threaded TCP server that receives pickled log records and serves until signalled to stop.",
+      "tags": [
+        "logging",
+        "server",
+        "networking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogging/server.py:logging_server",
+      "type": "function",
+      "name": "logging_server",
+      "filePath": "syslogging/server.py",
+      "lineRange": [
+        56,
+        120
+      ],
+      "summary": "Parses CLI args and runs the logging server, wiring rotating-file and most-recent handlers.",
+      "tags": [
+        "logging",
+        "server",
+        "entry-point",
+        "cli"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:syslogdiag/log_to_screen.py",
+      "target": "class:syslogdiag/log_to_screen.py:logtoscreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/log_to_screen.py",
+      "target": "class:syslogdiag/log_to_screen.py:logtoscreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "class:syslogdiag/mongo_email_control.py:mongoEmailControlData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "class:syslogdiag/mongo_email_control.py:mongoEmailControlData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "class:syslogdiag/pst_logger.py:pst_logger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "class:syslogdiag/pst_logger.py:pst_logger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "class:syslogdiag/pst_logger.py:nullLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "class:syslogdiag/pst_logger.py:nullLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "function:syslogdiag/pst_logger.py:get_update_attributes_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "function:syslogdiag/pst_logger.py:get_update_attributes_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "function:syslogdiag/pst_logger.py:get_list_of_disallowed_attributes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "function:syslogdiag/pst_logger.py:get_list_of_disallowed_attributes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/adapter.py",
+      "target": "class:syslogging/adapter.py:DynamicAttributeLogger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/adapter.py",
+      "target": "class:syslogging/adapter.py:DynamicAttributeLogger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/filters.py",
+      "target": "class:syslogging/filters.py:IBFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/filters.py",
+      "target": "class:syslogging/filters.py:IBFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:PstSMTPHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:PstSMTPHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:MostRecentHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:MostRecentHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:LogRecordStreamHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "class:syslogging/handlers.py:LogRecordStreamHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:get_logger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:get_logger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_configure_prod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_configure_prod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_configure_sim",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_configure_sim",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_check_log_server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "function:syslogging/logger.py:_check_log_server",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/pyyaml_env.py",
+      "target": "function:syslogging/pyyaml_env.py:parse_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/pyyaml_env.py",
+      "target": "function:syslogging/pyyaml_env.py:parse_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "class:syslogging/server.py:LogRecordSocketReceiver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "class:syslogging/server.py:LogRecordSocketReceiver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "function:syslogging/server.py:logging_server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "function:syslogging/server.py:logging_server",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/log_to_screen.py",
+      "target": "file:syslogdiag/log_entry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_screen.py",
+      "target": "file:syslogdiag/pst_logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "file:syslogdiag/email_control.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/mongo_email_control.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/pst_logger.py",
+      "target": "file:syslogdiag/log_entry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/adapter.py",
+      "target": "file:syslogdiag/pst_logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/handlers.py",
+      "target": "file:syslogdiag/emailing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syslogging/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syslogging/adapter.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syslogging/filters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syslogging/pyyaml_env.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "file:syslogging/handlers.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/server.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/logger.py",
+      "target": "file:syslogging/tests/logging_tests.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

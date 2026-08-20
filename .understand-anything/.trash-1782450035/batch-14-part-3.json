@@ -1,0 +1,857 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysquant/estimators/correlations.py",
+      "type": "file",
+      "name": "correlations.py",
+      "filePath": "sysquant/estimators/correlations.py",
+      "summary": "Core correlation data structures and cleaning logic: the correlationEstimate matrix wrapper, a time-indexed CorrelationList, and routines to clean/shrink/floor correlation matrices.",
+      "tags": [
+        "estimation",
+        "correlation",
+        "data-model",
+        "cleaning"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Central correlation abstraction imported by most estimators and risk modules in the batch."
+    },
+    {
+      "id": "class:sysquant/estimators/correlations.py:correlationEstimate",
+      "type": "class",
+      "name": "correlationEstimate",
+      "filePath": "sysquant/estimators/correlations.py",
+      "lineRange": [
+        16,
+        261
+      ],
+      "summary": "Wrapper around a correlation matrix with pandas/numpy conversion, key handling, and boring/missing-data checks.",
+      "tags": [
+        "correlation",
+        "data-model",
+        "matrix"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/correlations.py:CorrelationList",
+      "type": "class",
+      "name": "CorrelationList",
+      "filePath": "sysquant/estimators/correlations.py",
+      "lineRange": [
+        433,
+        456
+      ],
+      "summary": "Time-indexed list of correlation estimates supporting lookup of the most recent matrix before a date.",
+      "tags": [
+        "correlation",
+        "data-model",
+        "time-series"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/estimators/correlations.py:clean_correlation",
+      "type": "function",
+      "name": "clean_correlation",
+      "filePath": "sysquant/estimators/correlations.py",
+      "lineRange": [
+        303,
+        378
+      ],
+      "summary": "Replaces missing/invalid correlation entries with sensible defaults so the matrix is usable downstream.",
+      "tags": [
+        "correlation",
+        "cleaning",
+        "data-quality"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/estimators/correlations.py:modify_correlation",
+      "type": "function",
+      "name": "modify_correlation",
+      "filePath": "sysquant/estimators/correlations.py",
+      "lineRange": [
+        459,
+        473
+      ],
+      "summary": "Applies flooring-at-zero, shrinkage, and clipping transformations to a correlation matrix.",
+      "tags": [
+        "correlation",
+        "shrinkage",
+        "cleaning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/correlations.py:create_boring_corr_matrix",
+      "type": "function",
+      "name": "create_boring_corr_matrix",
+      "filePath": "sysquant/estimators/correlations.py",
+      "lineRange": [
+        264,
+        281
+      ],
+      "summary": "Constructs a uniform off-diagonal correlation matrix used as a fallback when no data is available.",
+      "tags": [
+        "correlation",
+        "fallback"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/covariance.py",
+      "type": "file",
+      "name": "covariance.py",
+      "filePath": "sysquant/estimators/covariance.py",
+      "summary": "Covariance estimate type plus helpers to build covariance from stdev and correlation and to compute annualised portfolio risk.",
+      "tags": [
+        "estimation",
+        "covariance",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/covariance.py:covarianceEstimate",
+      "type": "class",
+      "name": "covarianceEstimate",
+      "filePath": "sysquant/estimators/covariance.py",
+      "lineRange": [
+        9,
+        24
+      ],
+      "summary": "Covariance matrix type exposing cleaning, shrinkage and missing-data helpers.",
+      "tags": [
+        "covariance",
+        "data-model",
+        "risk"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "function",
+      "name": "covariance_from_stdev_and_correlation",
+      "filePath": "sysquant/estimators/covariance.py",
+      "lineRange": [
+        27,
+        46
+      ],
+      "summary": "Builds a covariance estimate by combining a correlation matrix with a stdev estimate.",
+      "tags": [
+        "covariance",
+        "correlation",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/covariance.py:get_annualised_risk",
+      "type": "function",
+      "name": "get_annualised_risk",
+      "filePath": "sysquant/estimators/covariance.py",
+      "lineRange": [
+        49,
+        64
+      ],
+      "summary": "Computes annualised portfolio standard deviation from weights, stdevs and a covariance matrix.",
+      "tags": [
+        "risk",
+        "covariance",
+        "portfolio"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/diversification_multipliers.py",
+      "type": "file",
+      "name": "diversification_multipliers.py",
+      "filePath": "sysquant/estimators/diversification_multipliers.py",
+      "summary": "Computes diversification multipliers from a time series of correlation matrices and weights, with an EWMA-smoothed single-period calculation.",
+      "tags": [
+        "estimation",
+        "diversification",
+        "correlation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/diversification_multipliers.py:diversification_multiplier_from_list",
+      "type": "function",
+      "name": "diversification_multiplier_from_list",
+      "filePath": "sysquant/estimators/diversification_multipliers.py",
+      "lineRange": [
+        9,
+        72
+      ],
+      "summary": "Builds an EWMA-smoothed time series of diversification multipliers from a correlation list and weights.",
+      "tags": [
+        "diversification",
+        "correlation",
+        "time-series"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/estimators/diversification_multipliers.py:diversification_mult_single_period",
+      "type": "function",
+      "name": "diversification_mult_single_period",
+      "filePath": "sysquant/estimators/diversification_multipliers.py",
+      "lineRange": [
+        75,
+        96
+      ],
+      "summary": "Computes a single-period diversification multiplier from a correlation matrix and weights, capped at a maximum.",
+      "tags": [
+        "diversification",
+        "correlation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/estimates.py",
+      "type": "file",
+      "name": "estimates.py",
+      "filePath": "sysquant/estimators/estimates.py",
+      "summary": "Estimates container bundling means, stdevs and a correlation matrix, with equalisation and shrinkage transforms used in portfolio optimisation.",
+      "tags": [
+        "estimation",
+        "data-model",
+        "optimisation",
+        "shrinkage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "class",
+      "name": "Estimates",
+      "filePath": "sysquant/estimators/estimates.py",
+      "lineRange": [
+        13,
+        107
+      ],
+      "summary": "Container for mean/stdev/correlation estimates exposing equalisation, shrinkage and subsetting for optimisation inputs.",
+      "tags": [
+        "data-model",
+        "estimation",
+        "optimisation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/estimators/estimates.py:equalise_estimates",
+      "type": "function",
+      "name": "equalise_estimates",
+      "filePath": "sysquant/estimators/estimates.py",
+      "lineRange": [
+        110,
+        147
+      ],
+      "summary": "Optionally equalises Sharpe ratios and/or vols across assets to reduce estimation error in optimisation.",
+      "tags": [
+        "shrinkage",
+        "estimation",
+        "optimisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/estimates.py:shrink_SR_with_lists",
+      "type": "function",
+      "name": "shrink_SR_with_lists",
+      "filePath": "sysquant/estimators/estimates.py",
+      "lineRange": [
+        234,
+        261
+      ],
+      "summary": "Shrinks per-asset Sharpe ratios toward a target SR using mean/stdev lists.",
+      "tags": [
+        "shrinkage",
+        "sharpe-ratio"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/estimates.py:vol_equaliser",
+      "type": "function",
+      "name": "vol_equaliser",
+      "filePath": "sysquant/estimators/estimates.py",
+      "lineRange": [
+        183,
+        207
+      ],
+      "summary": "Rescales means so all assets share a common volatility level.",
+      "tags": [
+        "equalisation",
+        "volatility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/exponential_correlation.py",
+      "type": "file",
+      "name": "exponential_correlation.py",
+      "filePath": "sysquant/estimators/exponential_correlation.py",
+      "summary": "Exponentially-weighted correlation estimator that produces per-fit-period correlation matrices and a results object for date-based lookup.",
+      "tags": [
+        "estimation",
+        "correlation",
+        "ewma"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelation",
+      "type": "class",
+      "name": "exponentialCorrelation",
+      "filePath": "sysquant/estimators/exponential_correlation.py",
+      "lineRange": [
+        14,
+        137
+      ],
+      "summary": "EWMA correlation estimator that computes raw correlations per fit period with cleaning/shrinkage/flooring options.",
+      "tags": [
+        "correlation",
+        "ewma",
+        "estimation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelationResults",
+      "type": "class",
+      "name": "exponentialCorrelationResults",
+      "filePath": "sysquant/estimators/exponential_correlation.py",
+      "lineRange": [
+        140,
+        177
+      ],
+      "summary": "Holds raw EWMA correlations and returns the last valid correlation matrix for a given date.",
+      "tags": [
+        "correlation",
+        "ewma",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/forecast_scalar.py",
+      "type": "file",
+      "name": "forecast_scalar.py",
+      "filePath": "sysquant/estimators/forecast_scalar.py",
+      "summary": "Computes a rolling forecast scalar so that the cross-sectional average absolute forecast hits a target level.",
+      "tags": [
+        "estimation",
+        "forecast",
+        "scaling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/forecast_scalar.py:forecast_scalar",
+      "type": "function",
+      "name": "forecast_scalar",
+      "filePath": "sysquant/estimators/forecast_scalar.py",
+      "lineRange": [
+        8,
+        50
+      ],
+      "summary": "Calculates a rolling scalar that normalises forecasts to a target average absolute value.",
+      "tags": [
+        "forecast",
+        "scaling",
+        "estimation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/generic_estimator.py",
+      "type": "file",
+      "name": "generic_estimator.py",
+      "filePath": "sysquant/estimators/generic_estimator.py",
+      "summary": "Generic estimation framework: base Estimate type plus exponential and generic estimator classes that drive per-fit-period or whole-dataset estimation, subclassed by the correlation estimators.",
+      "tags": [
+        "estimation",
+        "framework",
+        "base-class"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Defines the estimator inheritance hierarchy reused by correlation and other estimators."
+    },
+    {
+      "id": "class:sysquant/estimators/generic_estimator.py:genericEstimator",
+      "type": "class",
+      "name": "genericEstimator",
+      "filePath": "sysquant/estimators/generic_estimator.py",
+      "lineRange": [
+        94,
+        156
+      ],
+      "summary": "Base estimator orchestrating per-period or exponential estimation, with hooks subclasses override.",
+      "tags": [
+        "framework",
+        "estimation",
+        "base-class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/generic_estimator.py:exponentialEstimator",
+      "type": "class",
+      "name": "exponentialEstimator",
+      "filePath": "sysquant/estimators/generic_estimator.py",
+      "lineRange": [
+        30,
+        91
+      ],
+      "summary": "Estimator variant that maintains exponentially-weighted calculations across the dataset.",
+      "tags": [
+        "framework",
+        "estimation",
+        "ewma"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/generic_estimator.py:Estimate",
+      "type": "class",
+      "name": "Estimate",
+      "filePath": "sysquant/estimators/generic_estimator.py",
+      "lineRange": [
+        6,
+        27
+      ],
+      "summary": "Base estimate value type with key-ordered conversion and missing-data helpers.",
+      "tags": [
+        "data-model",
+        "estimation",
+        "base-class"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/diversification_multipliers.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/diversification_multipliers.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/forecast_scalar.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "class:sysquant/estimators/correlations.py:correlationEstimate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "class:sysquant/estimators/correlations.py:correlationEstimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "class:sysquant/estimators/correlations.py:CorrelationList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "class:sysquant/estimators/correlations.py:CorrelationList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:clean_correlation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:clean_correlation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:modify_correlation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:modify_correlation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:create_boring_corr_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlations.py",
+      "target": "function:sysquant/estimators/correlations.py:create_boring_corr_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "class:sysquant/estimators/covariance.py:covarianceEstimate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "class:sysquant/estimators/covariance.py:covarianceEstimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "function:sysquant/estimators/covariance.py:get_annualised_risk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/covariance.py",
+      "target": "function:sysquant/estimators/covariance.py:get_annualised_risk",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/diversification_multipliers.py",
+      "target": "function:sysquant/estimators/diversification_multipliers.py:diversification_multiplier_from_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/diversification_multipliers.py",
+      "target": "function:sysquant/estimators/diversification_multipliers.py:diversification_mult_single_period",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:equalise_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:equalise_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:shrink_SR_with_lists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:shrink_SR_with_lists",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:vol_equaliser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/estimates.py",
+      "target": "function:sysquant/estimators/estimates.py:vol_equaliser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelationResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/exponential_correlation.py",
+      "target": "class:sysquant/estimators/exponential_correlation.py:exponentialCorrelationResults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/forecast_scalar.py",
+      "target": "function:sysquant/estimators/forecast_scalar.py:forecast_scalar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:genericEstimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:genericEstimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:exponentialEstimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:exponentialEstimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:Estimate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/generic_estimator.py",
+      "target": "class:sysquant/estimators/generic_estimator.py:Estimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

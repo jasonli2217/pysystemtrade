@@ -1,0 +1,308 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysquant/estimators/mean_estimator.py",
+      "language": "python",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/pooled_correlation.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/stdev_estimator.py",
+      "language": "python",
+      "sizeLines": 215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/tests/test_mean_estimator.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/fitting_dates.py",
+      "language": "python",
+      "sizeLines": 224,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/SR_adjustment.py",
+      "language": "python",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/cleaning.py",
+      "language": "python",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/equal_weights.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/handcraft.py",
+      "language": "python",
+      "sizeLines": 250,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/one_period.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/shrinkage.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/portfolio_optimiser.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/shared.py",
+      "language": "python",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/weights.py",
+      "language": "python",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/portfolio_risk.py",
+      "language": "python",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/diagoutput.py",
+      "language": "python",
+      "sizeLines": 400,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/forecast_mapping.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "language": "python",
+      "sizeLines": 339,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "language": "python",
+      "sizeLines": 399,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "language": "python",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "language": "python",
+      "sizeLines": 315,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysquant/estimators/mean_estimator.py": [
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/pooled_correlation.py": [
+      "syscore/pandas/list_of_df.py",
+      "sysquant/estimators/correlation_over_time.py",
+      "sysquant/estimators/correlations.py"
+    ],
+    "sysquant/estimators/stdev_estimator.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/tests/test_mean_estimator.py": [
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/fitting_dates.py": [
+      "syscore/pandas/list_of_df.py"
+    ],
+    "sysquant/optimisation/SR_adjustment.py": [
+      "sysquant/estimators/correlations.py",
+      "sysquant/optimisation/shared.py"
+    ],
+    "sysquant/optimisation/cleaning.py": [
+      "syscore/pandas/pdutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/call_optimiser.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/equal_weights.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/optimisers/one_period.py",
+      "sysquant/optimisation/optimisers/shrinkage.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/equal_weights.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/handcraft.py": [
+      "sysquant/estimators/clustering_correlations.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/diversification_multipliers.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/SR_adjustment.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/one_period.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/shrinkage.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/portfolio_optimiser.py": [
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/fitting_dates.py",
+      "sysquant/optimisation/cleaning.py",
+      "sysquant/optimisation/optimisers/call_optimiser.py",
+      "sysquant/optimisation/weights.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/shared.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/weights.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/find_data.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/stdev_estimator.py"
+    ],
+    "sysquant/portfolio_risk.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "systems/diagoutput.py": [
+      "syscore/dateutils.py",
+      "systems/forecast_mapping.py"
+    ],
+    "systems/forecast_mapping.py": [
+      "syscore/genutils.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/buffering.py": [],
+    "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py": [
+      "syscore/constants.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/set_up_constraints.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/greedy_algo.py": [],
+    "systems/provided/dynamic_small_system_optimise/optimisation.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "systems/provided/dynamic_small_system_optimise/greedy_algo.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py": [
+      "syscore/constants.py",
+      "syscore/interactive/progress_bar.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/portfolio.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/set_up_constraints.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "systems/provided/static_small_system_optimise/optimise_small_system.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/shared.py"
+    ]
+  }
+}

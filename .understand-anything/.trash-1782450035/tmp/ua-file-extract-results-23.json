@@ -1,0 +1,2372 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/IB.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 299,
+      "nonEmptyLines": 194,
+      "sections": [
+        {
+          "heading": "Preliminaries",
+          "level": 1,
+          "line": 48
+        },
+        {
+          "heading": "Getting started with interactive brokers",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Gateway / TWS",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "ib_async library",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "IBC",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Launching and configuring the Gateway",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Making a connection",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Reference",
+          "level": 1,
+          "line": 98
+        },
+        {
+          "heading": "Classes and object references",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Data source objects",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "FX Data",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "Futures price data",
+          "level": 3,
+          "line": 140
+        },
+        {
+          "heading": "Capital data",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Contracts data",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "Instruments data",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Orders data",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Position data",
+          "level": 3,
+          "line": 210
+        },
+        {
+          "heading": "Client objects",
+          "level": 2,
+          "line": 220
+        },
+        {
+          "heading": "Connection objects",
+          "level": 2,
+          "line": 245
+        },
+        {
+          "heading": "Creating and closing connection objects",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "Using connections",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Make multiple connections",
+          "level": 3,
+          "line": 293
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "docs/backtesting.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 4670,
+      "nonEmptyLines": 3314,
+      "sections": [
+        {
+          "heading": "How do I?",
+          "level": 1,
+          "line": 198
+        },
+        {
+          "heading": "How do I.... Experiment with a single trading rule and instrument",
+          "level": 2,
+          "line": 212
+        },
+        {
+          "heading": "How do I....Create a standard futures backtest",
+          "level": 2,
+          "line": 216
+        },
+        {
+          "heading": "How do I....Create a futures backtest which estimates parameters",
+          "level": 2,
+          "line": 228
+        },
+        {
+          "heading": "How do I....See intermediate results from a backtest",
+          "level": 2,
+          "line": 242
+        },
+        {
+          "heading": "How do I....See how profitable a backtest was",
+          "level": 2,
+          "line": 255
+        },
+        {
+          "heading": "How do I....Change backtest parameters",
+          "level": 2,
+          "line": 269
+        },
+        {
+          "heading": "Option 1: Change the configuration file",
+          "level": 3,
+          "line": 289
+        },
+        {
+          "heading": "Option 2: Change the configuration object; create a new system",
+          "level": 3,
+          "line": 307
+        },
+        {
+          "heading": "Option 3: Change the configuration object within an existing system (not recommended - advanced)",
+          "level": 3,
+          "line": 335
+        },
+        {
+          "heading": "Option 4: Create a private config file",
+          "level": 3,
+          "line": 362
+        },
+        {
+          "heading": "Option 5: Change the project defaults (definitely not recommended)",
+          "level": 3,
+          "line": 367
+        },
+        {
+          "heading": "How do I....Run a backtest on a different set of instruments",
+          "level": 2,
+          "line": 372
+        },
+        {
+          "heading": "Change instruments: Change the configuration file",
+          "level": 3,
+          "line": 379
+        },
+        {
+          "heading": "Change instruments: Change the configuration object",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "How do I.... run the backtest only on more recent data",
+          "level": 2,
+          "line": 485
+        },
+        {
+          "heading": "How do I....Run a backtest on all available instruments",
+          "level": 2,
+          "line": 497
+        },
+        {
+          "heading": "How do I.... Exclude some instruments from the backtest",
+          "level": 2,
+          "line": 501
+        },
+        {
+          "heading": "How do I.... Exclude some instruments from having positive instrument weights",
+          "level": 2,
+          "line": 505
+        },
+        {
+          "heading": "How do I....Create my own trading rule",
+          "level": 2,
+          "line": 510
+        },
+        {
+          "heading": "Writing the function",
+          "level": 3,
+          "line": 515
+        },
+        {
+          "heading": "Adding the trading rule to a configuration",
+          "level": 3,
+          "line": 547
+        },
+        {
+          "heading": "How do I....Use different data or instruments",
+          "level": 2,
+          "line": 659
+        },
+        {
+          "heading": "How do I... Save my work",
+          "level": 2,
+          "line": 702
+        },
+        {
+          "heading": "Guide",
+          "level": 1,
+          "line": 731
+        },
+        {
+          "heading": "Data",
+          "level": 2,
+          "line": 744
+        },
+        {
+          "heading": "Using the standard data objects",
+          "level": 3,
+          "line": 748
+        },
+        {
+          "heading": "Generic data objects",
+          "level": 4,
+          "line": 755
+        },
+        {
+          "heading": "The csvFuturesSimData object",
+          "level": 4,
+          "line": 812
+        },
+        {
+          "heading": "The dbFuturesSimData object",
+          "level": 4,
+          "line": 869
+        },
+        {
+          "heading": "Setting up MongoDB and Parquet",
+          "level": 5,
+          "line": 874
+        },
+        {
+          "heading": "Using dbFuturesSimData",
+          "level": 5,
+          "line": 887
+        },
+        {
+          "heading": "Arctic",
+          "level": 4,
+          "line": 903
+        },
+        {
+          "heading": "Backtesting with Arctic instead of Parquet",
+          "level": 5,
+          "line": 913
+        },
+        {
+          "heading": "Creating your own data objects",
+          "level": 3,
+          "line": 931
+        },
+        {
+          "heading": "The Data() class",
+          "level": 4,
+          "line": 945
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 964
+        },
+        {
+          "heading": "Creating a configuration object",
+          "level": 3,
+          "line": 969
+        },
+        {
+          "heading": "1) Creating a configuration object with a dictionary",
+          "level": 4,
+          "line": 978
+        },
+        {
+          "heading": "2) Creating a configuration object from a file",
+          "level": 4,
+          "line": 989
+        },
+        {
+          "heading": "3) Creating a configuration object from a pre-baked system",
+          "level": 4,
+          "line": 1023
+        },
+        {
+          "heading": "4) Creating a configuration object from a list",
+          "level": 4,
+          "line": 1036
+        },
+        {
+          "heading": "5) Creating configuration files from CSV files",
+          "level": 4,
+          "line": 1051
+        },
+        {
+          "heading": "Project defaults and private configuration",
+          "level": 3,
+          "line": 1064
+        },
+        {
+          "heading": "Handling defaults when you change certain functions",
+          "level": 4,
+          "line": 1075
+        },
+        {
+          "heading": "How the defaults and private configuration work",
+          "level": 4,
+          "line": 1080
+        },
+        {
+          "heading": "Viewing configuration parameters",
+          "level": 3,
+          "line": 1126
+        },
+        {
+          "heading": "Modifying configuration parameters",
+          "level": 3,
+          "line": 1137
+        },
+        {
+          "heading": "Using configuration in a system",
+          "level": 3,
+          "line": 1190
+        },
+        {
+          "heading": "Including your own configuration options",
+          "level": 3,
+          "line": 1201
+        },
+        {
+          "heading": "Saving configurations",
+          "level": 3,
+          "line": 1237
+        },
+        {
+          "heading": "Modifying the configuration class",
+          "level": 3,
+          "line": 1279
+        },
+        {
+          "heading": "System",
+          "level": 2,
+          "line": 1284
+        },
+        {
+          "heading": "Pre-baked systems",
+          "level": 3,
+          "line": 1289
+        },
+        {
+          "heading": "Futures system for chapter 15",
+          "level": 4,
+          "line": 1314
+        },
+        {
+          "heading": "Estimated system for chapter 15",
+          "level": 4,
+          "line": 1340
+        },
+        {
+          "heading": "Using the system object",
+          "level": 3,
+          "line": 1378
+        },
+        {
+          "heading": "Accessing child stages, data, and config within a system",
+          "level": 4,
+          "line": 1382
+        },
+        {
+          "heading": "System methods",
+          "level": 4,
+          "line": 1413
+        },
+        {
+          "heading": "System Caching and pickling",
+          "level": 3,
+          "line": 1432
+        },
+        {
+          "heading": "Pickling and unpickling saved cache data",
+          "level": 3,
+          "line": 1491
+        },
+        {
+          "heading": "Advanced caching",
+          "level": 3,
+          "line": 1543
+        },
+        {
+          "heading": "Advanced Caching when backtesting.",
+          "level": 4,
+          "line": 1591
+        },
+        {
+          "heading": "Advanced caching behaviour with a live trading system",
+          "level": 4,
+          "line": 1642
+        },
+        {
+          "heading": "Very advanced: Caching in new or modified code",
+          "level": 3,
+          "line": 1660
+        },
+        {
+          "heading": "Creating a new 'pre-baked' system",
+          "level": 3,
+          "line": 1735
+        },
+        {
+          "heading": "Changing or making a new System class",
+          "level": 3,
+          "line": 1785
+        },
+        {
+          "heading": "Stages",
+          "level": 2,
+          "line": 1790
+        },
+        {
+          "heading": "Stage 'wiring'",
+          "level": 3,
+          "line": 1847
+        },
+        {
+          "heading": "Writing new stages",
+          "level": 3,
+          "line": 1893
+        },
+        {
+          "heading": "Specific stages",
+          "level": 3,
+          "line": 1915
+        },
+        {
+          "heading": "Stage: Raw data",
+          "level": 3,
+          "line": 1929
+        },
+        {
+          "heading": "Using the standard RawData class",
+          "level": 4,
+          "line": 1938
+        },
+        {
+          "heading": "Volatility calculation",
+          "level": 5,
+          "line": 1948
+        },
+        {
+          "heading": "New or modified raw data classes",
+          "level": 4,
+          "line": 1994
+        },
+        {
+          "heading": "Stage: Rules",
+          "level": 3,
+          "line": 2007
+        },
+        {
+          "heading": "Data and data arguments",
+          "level": 4,
+          "line": 2100
+        },
+        {
+          "heading": "The Rules class, and specifying lists of trading rules",
+          "level": 3,
+          "line": 2161
+        },
+        {
+          "heading": "Creating lists of rules from a configuration object",
+          "level": 4,
+          "line": 2165
+        },
+        {
+          "heading": "Interactively passing a list of trading rules",
+          "level": 4,
+          "line": 2236
+        },
+        {
+          "heading": "Creating variations on a single trading rule",
+          "level": 4,
+          "line": 2270
+        },
+        {
+          "heading": "Using a newly created Rules() instance",
+          "level": 4,
+          "line": 2308
+        },
+        {
+          "heading": "Passing trading rules to a pre-baked system function",
+          "level": 4,
+          "line": 2326
+        },
+        {
+          "heading": "Changing the trading rules in a system on the fly (advanced)",
+          "level": 4,
+          "line": 2341
+        },
+        {
+          "heading": "Stage: Forecast scale and cap",
+          "level": 3,
+          "line": 2389
+        },
+        {
+          "heading": "Using fixed weights",
+          "level": 4,
+          "line": 2400
+        },
+        {
+          "heading": "Calculating estimated forecasting scaling on the fly",
+          "level": 4,
+          "line": 2433
+        },
+        {
+          "heading": "Pooled forecast scale estimate (default)",
+          "level": 5,
+          "line": 2443
+        },
+        {
+          "heading": "Individual instrument forecast scale estimate",
+          "level": 5,
+          "line": 2456
+        },
+        {
+          "heading": "Stage: Forecast combine",
+          "level": 3,
+          "line": 2462
+        },
+        {
+          "heading": "Using fixed weights and multipliers",
+          "level": 4,
+          "line": 2469
+        },
+        {
+          "heading": "Using estimated weights and diversification multiplier",
+          "level": 4,
+          "line": 2517
+        },
+        {
+          "heading": "Estimating the forecast weights",
+          "level": 5,
+          "line": 2524
+        },
+        {
+          "heading": "Removing expensive trading rules",
+          "level": 5,
+          "line": 2529
+        },
+        {
+          "heading": "Estimating the forecast diversification multiplier",
+          "level": 5,
+          "line": 2533
+        },
+        {
+          "heading": "Forecast mapping",
+          "level": 4,
+          "line": 2537
+        },
+        {
+          "heading": "Stage: Position scaling",
+          "level": 3,
+          "line": 2608
+        },
+        {
+          "heading": "Using the standard PositionSizing class",
+          "level": 4,
+          "line": 2612
+        },
+        {
+          "heading": "Stage: Creating portfolios",
+          "level": 3,
+          "line": 2627
+        },
+        {
+          "heading": "Using fixed weights and instrument diversification multiplier(/systems/portfolio.py)",
+          "level": 4,
+          "line": 2634
+        },
+        {
+          "heading": "Using estimated weights and instrument diversification multiplier(/systems/portfolio.py)",
+          "level": 4,
+          "line": 2653
+        },
+        {
+          "heading": "Estimating the instrument weights",
+          "level": 5,
+          "line": 2657
+        },
+        {
+          "heading": "Using an estimated forecast diversification multiplier",
+          "level": 5,
+          "line": 2661
+        },
+        {
+          "heading": "Buffering and position inertia",
+          "level": 4,
+          "line": 2665
+        },
+        {
+          "heading": "Capital correction",
+          "level": 4,
+          "line": 2703
+        },
+        {
+          "heading": "Stage: Accounting",
+          "level": 3,
+          "line": 2708
+        },
+        {
+          "heading": "Using the standard Account class",
+          "level": 4,
+          "line": 2712
+        },
+        {
+          "heading": "`accountCurve`",
+          "level": 4,
+          "line": 2783
+        },
+        {
+          "heading": "`accountCurveGroup` in more detail",
+          "level": 4,
+          "line": 2857
+        },
+        {
+          "heading": "A nested `accountCurveGroup`",
+          "level": 4,
+          "line": 2937
+        },
+        {
+          "heading": "Weighted and unweighted account curve groups",
+          "level": 5,
+          "line": 2957
+        },
+        {
+          "heading": "Testing account curves",
+          "level": 4,
+          "line": 3015
+        },
+        {
+          "heading": "Costs",
+          "level": 4,
+          "line": 3026
+        },
+        {
+          "heading": "Processes",
+          "level": 1,
+          "line": 3079
+        },
+        {
+          "heading": "File names",
+          "level": 2,
+          "line": 3083
+        },
+        {
+          "heading": "Logging",
+          "level": 2,
+          "line": 3164
+        },
+        {
+          "heading": "Basic logging",
+          "level": 3,
+          "line": 3166
+        },
+        {
+          "heading": "Advanced logging",
+          "level": 3,
+          "line": 3203
+        },
+        {
+          "heading": "Optimisation",
+          "level": 2,
+          "line": 3246
+        },
+        {
+          "heading": "The optimisation function, and data",
+          "level": 3,
+          "line": 3252
+        },
+        {
+          "heading": "Removing expensive assets (forecast weights only)",
+          "level": 3,
+          "line": 3265
+        },
+        {
+          "heading": "Pooling gross returns (forecast weights only)",
+          "level": 3,
+          "line": 3279
+        },
+        {
+          "heading": "Working out net costs (both instrument and forecast weights)",
+          "level": 3,
+          "line": 3294
+        },
+        {
+          "heading": "Time periods",
+          "level": 3,
+          "line": 3305
+        },
+        {
+          "heading": "Moment estimation",
+          "level": 3,
+          "line": 3316
+        },
+        {
+          "heading": "Methods",
+          "level": 3,
+          "line": 3346
+        },
+        {
+          "heading": "Equal weights",
+          "level": 4,
+          "line": 3350
+        },
+        {
+          "heading": "One period (not recommend)",
+          "level": 4,
+          "line": 3363
+        },
+        {
+          "heading": "Bootstrapping (recommended, but slow)",
+          "level": 4,
+          "line": 3376
+        },
+        {
+          "heading": "Shrinkage (okay, but tricky to calibrate)",
+          "level": 4,
+          "line": 3380
+        },
+        {
+          "heading": "Handcrafting (recommended)",
+          "level": 4,
+          "line": 3396
+        },
+        {
+          "heading": "Post processing",
+          "level": 3,
+          "line": 3407
+        },
+        {
+          "heading": "Estimating correlations and diversification multipliers",
+          "level": 2,
+          "line": 3422
+        },
+        {
+          "heading": "Specifying weights as hierarchy",
+          "level": 2,
+          "line": 3469
+        },
+        {
+          "heading": "Hierarchical forecast weight example",
+          "level": 3,
+          "line": 3473
+        },
+        {
+          "heading": "Hierarchical instrument weight example",
+          "level": 3,
+          "line": 3576
+        },
+        {
+          "heading": "Capital correction - varying capital",
+          "level": 2,
+          "line": 3909
+        },
+        {
+          "heading": "Reference",
+          "level": 1,
+          "line": 3938
+        },
+        {
+          "heading": "Table of standard system.data and system.stage methods",
+          "level": 2,
+          "line": 3941
+        },
+        {
+          "heading": "Explanation of columns",
+          "level": 3,
+          "line": 3952
+        },
+        {
+          "heading": "System object",
+          "level": 3,
+          "line": 3978
+        },
+        {
+          "heading": "Data object",
+          "level": 3,
+          "line": 3986
+        },
+        {
+          "heading": "Raw data stage",
+          "level": 3,
+          "line": 4002
+        },
+        {
+          "heading": "Trading rules stage (chapter 7 of book)",
+          "level": 3,
+          "line": 4022
+        },
+        {
+          "heading": "Forecast scaling and capping stage (chapter 7 of book)",
+          "level": 3,
+          "line": 4031
+        },
+        {
+          "heading": "Combine forecasts stage (chapter 8 of book)",
+          "level": 3,
+          "line": 4044
+        },
+        {
+          "heading": "Position sizing stage (chapters 9 and 10 of book)",
+          "level": 3,
+          "line": 4060
+        },
+        {
+          "heading": "Portfolio stage (chapter 11 of book)",
+          "level": 3,
+          "line": 4078
+        },
+        {
+          "heading": "Accounting stage",
+          "level": 3,
+          "line": 4096
+        },
+        {
+          "heading": "Configuration options",
+          "level": 2,
+          "line": 4156
+        },
+        {
+          "heading": "Raw data",
+          "level": 3,
+          "line": 4197
+        },
+        {
+          "heading": "Calculating volatility",
+          "level": 4,
+          "line": 4199
+        },
+        {
+          "heading": "Rules stage",
+          "level": 3,
+          "line": 4229
+        },
+        {
+          "heading": "Trading rules",
+          "level": 4,
+          "line": 4231
+        },
+        {
+          "heading": "Forecast scaling and capping stage",
+          "level": 3,
+          "line": 4261
+        },
+        {
+          "heading": "Forecast scalar (fixed)",
+          "level": 4,
+          "line": 4277
+        },
+        {
+          "heading": "Forecast scalar (estimated)",
+          "level": 4,
+          "line": 4311
+        },
+        {
+          "heading": "Forecast cap (fixed - all classes)",
+          "level": 4,
+          "line": 4343
+        },
+        {
+          "heading": "Forecast combination stage",
+          "level": 3,
+          "line": 4360
+        },
+        {
+          "heading": "Forecast weights (fixed)",
+          "level": 4,
+          "line": 4391
+        },
+        {
+          "heading": "Forecast weights (estimated)",
+          "level": 4,
+          "line": 4426
+        },
+        {
+          "heading": "List of trading rules to get forecasts for",
+          "level": 5,
+          "line": 4430
+        },
+        {
+          "heading": "Parameters for estimating forecast weights",
+          "level": 5,
+          "line": 4465
+        },
+        {
+          "heading": "Forecast diversification multiplier (fixed)",
+          "level": 4,
+          "line": 4470
+        },
+        {
+          "heading": "Forecast diversification multiplier (estimated)",
+          "level": 4,
+          "line": 4499
+        },
+        {
+          "heading": "Forecast mapping config",
+          "level": 5,
+          "line": 4504
+        },
+        {
+          "heading": "Position sizing stage",
+          "level": 3,
+          "line": 4526
+        },
+        {
+          "heading": "Capital scaling parameters",
+          "level": 4,
+          "line": 4528
+        },
+        {
+          "heading": "Portfolio combination stage",
+          "level": 3,
+          "line": 4549
+        },
+        {
+          "heading": "Instrument weights (fixed)",
+          "level": 4,
+          "line": 4571
+        },
+        {
+          "heading": "Instrument weights (estimated)",
+          "level": 4,
+          "line": 4591
+        },
+        {
+          "heading": "Instrument diversification multiplier (fixed)",
+          "level": 4,
+          "line": 4596
+        },
+        {
+          "heading": "Instrument diversification multiplier (estimated)",
+          "level": 4,
+          "line": 4611
+        },
+        {
+          "heading": "Buffering",
+          "level": 4,
+          "line": 4616
+        },
+        {
+          "heading": "Accounting stage config",
+          "level": 3,
+          "line": 4628
+        },
+        {
+          "heading": "Buffering config",
+          "level": 4,
+          "line": 4630
+        },
+        {
+          "heading": "Costs config",
+          "level": 4,
+          "line": 4641
+        },
+        {
+          "heading": "Capital correction config",
+          "level": 4,
+          "line": 4660
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 178
+      }
+    },
+    {
+      "path": "docs/dashboard_and_monitor.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 70,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "Web Dashboard",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "System monitor",
+          "level": 1,
+          "line": 36
+        },
+        {
+          "heading": "Handling of crashed processes",
+          "level": 1,
+          "line": 47
+        },
+        {
+          "heading": "Running a remote dashboard or monitor",
+          "level": 1,
+          "line": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/data.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1034,
+      "nonEmptyLines": 694,
+      "sections": [
+        {
+          "heading": "Part 1: A futures data workflow",
+          "level": 1,
+          "line": 84
+        },
+        {
+          "heading": "A note on data storage",
+          "level": 2,
+          "line": 103
+        },
+        {
+          "heading": "Note on outdated shipped CSV data",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "Instrument configuration and spread costs",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Roll parameter configuration",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "'RollOffsetDays'",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "'ExpiryOffset'",
+          "level": 3,
+          "line": 152
+        },
+        {
+          "heading": "'CarryOffset'",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "Getting historical data for individual futures contracts",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "Getting data from the broker (Interactive brokers)",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Getting data from an external data source (Barchart)",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "Getting data from an external data source (Norgate Data)",
+          "level": 3,
+          "line": 235
+        },
+        {
+          "heading": "Roll calendars",
+          "level": 2,
+          "line": 239
+        },
+        {
+          "heading": "Generate a roll calendar from actual futures prices",
+          "level": 3,
+          "line": 269
+        },
+        {
+          "heading": "Calculate the roll calendar",
+          "level": 4,
+          "line": 285
+        },
+        {
+          "heading": "Checks",
+          "level": 4,
+          "line": 311
+        },
+        {
+          "heading": "Manually editing roll calendars",
+          "level": 4,
+          "line": 330
+        },
+        {
+          "heading": "Roll calendars from existing 'multiple prices' CSV files",
+          "level": 3,
+          "line": 335
+        },
+        {
+          "heading": "Roll calendars shipped in CSV files",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "Creating and storing multiple prices",
+          "level": 2,
+          "line": 351
+        },
+        {
+          "heading": "Creating multiple prices from contract prices",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "Writing multiple prices from CSV to database",
+          "level": 3,
+          "line": 372
+        },
+        {
+          "heading": "Updating shipped multiple prices",
+          "level": 3,
+          "line": 379
+        },
+        {
+          "heading": "Creating and storing back adjusted prices",
+          "level": 2,
+          "line": 466
+        },
+        {
+          "heading": "Changing the stitching method",
+          "level": 3,
+          "line": 471
+        },
+        {
+          "heading": "Getting and storing FX data",
+          "level": 2,
+          "line": 476
+        },
+        {
+          "heading": "Updating the data",
+          "level": 2,
+          "line": 495
+        },
+        {
+          "heading": "Finished!",
+          "level": 2,
+          "line": 506
+        },
+        {
+          "heading": "Part 2: Overview of futures data in pysystemtrade",
+          "level": 1,
+          "line": 512
+        },
+        {
+          "heading": "Hierarchy of data storage and access objects",
+          "level": 2,
+          "line": 526
+        },
+        {
+          "heading": "Directory structure (not the whole package! Just related to data objects, storage and interfaces)",
+          "level": 2,
+          "line": 631
+        },
+        {
+          "heading": "Part 3: Storing and representing futures data",
+          "level": 1,
+          "line": 650
+        },
+        {
+          "heading": "Futures data objects and their generic data storage objects",
+          "level": 2,
+          "line": 652
+        },
+        {
+          "heading": "Instruments",
+          "level": 3,
+          "line": 654
+        },
+        {
+          "heading": "Contract dates and expiries",
+          "level": 3,
+          "line": 660
+        },
+        {
+          "heading": "Roll cycles",
+          "level": 3,
+          "line": 673
+        },
+        {
+          "heading": "Roll parameters",
+          "level": 3,
+          "line": 680
+        },
+        {
+          "heading": "Contract date with roll parameters",
+          "level": 3,
+          "line": 690
+        },
+        {
+          "heading": "Futures contracts",
+          "level": 3,
+          "line": 696
+        },
+        {
+          "heading": "Prices for individual futures contracts",
+          "level": 3,
+          "line": 703
+        },
+        {
+          "heading": "Final prices for individual futures contracts",
+          "level": 3,
+          "line": 712
+        },
+        {
+          "heading": "Named futures contract dicts",
+          "level": 3,
+          "line": 717
+        },
+        {
+          "heading": "Roll calendar data object",
+          "level": 3,
+          "line": 728
+        },
+        {
+          "heading": "Multiple prices",
+          "level": 3,
+          "line": 739
+        },
+        {
+          "heading": "Adjusted prices",
+          "level": 3,
+          "line": 747
+        },
+        {
+          "heading": "Spot FX data",
+          "level": 3,
+          "line": 768
+        },
+        {
+          "heading": "Data storage objects for specific sources",
+          "level": 2,
+          "line": 774
+        },
+        {
+          "heading": "CSV data files",
+          "level": 3,
+          "line": 778
+        },
+        {
+          "heading": "MongoDB",
+          "level": 3,
+          "line": 785
+        },
+        {
+          "heading": "Specifying a MongoDB connection",
+          "level": 4,
+          "line": 793
+        },
+        {
+          "heading": "add import",
+          "level": 1,
+          "line": 984
+        },
+        {
+          "heading": "change the mapping for FX_DATA at line 70",
+          "level": 1,
+          "line": 987
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 52
+      }
+    },
+    {
+      "path": "docs/installation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 352,
+      "nonEmptyLines": 279,
+      "sections": [
+        {
+          "heading": "Installation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Introduction",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "project files",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Option 1: pyenv + venv",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "pyenv",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "venv",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "dependencies",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Option 2: uv",
+          "level": 2,
+          "line": 183
+        },
+        {
+          "heading": "dependencies",
+          "level": 3,
+          "line": 266
+        },
+        {
+          "heading": "test",
+          "level": 2,
+          "line": 339
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/instruments.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 651,
+      "nonEmptyLines": 475,
+      "sections": [
+        {
+          "heading": "Different instrument sets",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "The global superset of all instruments",
+          "level": 1,
+          "line": 49
+        },
+        {
+          "heading": "The list of instruments we are sampling",
+          "level": 1,
+          "line": 53
+        },
+        {
+          "heading": "Instruments we have adjusted prices for, used for simulation and production system backtest raw data",
+          "level": 1,
+          "line": 57
+        },
+        {
+          "heading": "Instruments used for simulation and production system backtests",
+          "level": 1,
+          "line": 71
+        },
+        {
+          "heading": "The global list of instruments, when defined",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Always excluded",
+          "level": 2,
+          "line": 118
+        },
+        {
+          "heading": "Duplicated instruments",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "Ignored instruments",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Excluded for optimisation",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "Untradeable",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Bad markets",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "Automatically excluded",
+          "level": 3,
+          "line": 318
+        },
+        {
+          "heading": "Customising the list of 'all instruments' and 'excluded for optimisation'",
+          "level": 2,
+          "line": 323
+        },
+        {
+          "heading": "Operating in production environment",
+          "level": 1,
+          "line": 349
+        },
+        {
+          "heading": "A note about configuration",
+          "level": 2,
+          "line": 353
+        },
+        {
+          "heading": "Reduce only and other constraints in static systems",
+          "level": 2,
+          "line": 359
+        },
+        {
+          "heading": "Reduce only and other constraints in dynamic systems",
+          "level": 2,
+          "line": 430
+        },
+        {
+          "heading": "Deciding which are 'bad' markets",
+          "level": 1,
+          "line": 438
+        },
+        {
+          "heading": "Check slippage costs are accurate",
+          "level": 2,
+          "line": 448
+        },
+        {
+          "heading": "Get list of bad markets",
+          "level": 2,
+          "line": 511
+        },
+        {
+          "heading": "Deciding which duplicate instruments to use",
+          "level": 1,
+          "line": 557
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "docs/introduction.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 747,
+      "nonEmptyLines": 538,
+      "sections": [
+        {
+          "heading": "A simple trading rule",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "A simple system",
+          "level": 2,
+          "line": 188
+        },
+        {
+          "heading": "Getting config from dictionaries and files",
+          "level": 2,
+          "line": 632
+        },
+        {
+          "heading": "A simple pre-baked system",
+          "level": 2,
+          "line": 663
+        },
+        {
+          "heading": "A complete pre-baked system",
+          "level": 2,
+          "line": 703
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/list_of_futures_product_pages.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 69,
+      "nonEmptyLines": 67,
+      "sections": [
+        {
+          "heading": "List of futures product pages",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/production.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 4074,
+      "nonEmptyLines": 2811,
+      "sections": [
+        {
+          "heading": "Quick start guide",
+          "level": 1,
+          "line": 248
+        },
+        {
+          "heading": "Production system data flow",
+          "level": 1,
+          "line": 327
+        },
+        {
+          "heading": "Overview of a production system",
+          "level": 1,
+          "line": 372
+        },
+        {
+          "heading": "Implementation options",
+          "level": 2,
+          "line": 388
+        },
+        {
+          "heading": "Automation options",
+          "level": 3,
+          "line": 394
+        },
+        {
+          "heading": "Machines, containers and clouds",
+          "level": 3,
+          "line": 409
+        },
+        {
+          "heading": "Backup machine",
+          "level": 3,
+          "line": 425
+        },
+        {
+          "heading": "Multiple systems",
+          "level": 3,
+          "line": 429
+        },
+        {
+          "heading": "Code and configuration management",
+          "level": 2,
+          "line": 445
+        },
+        {
+          "heading": "Managing your separate directories of code and configuration",
+          "level": 3,
+          "line": 454
+        },
+        {
+          "heading": "Managing your private directory",
+          "level": 3,
+          "line": 458
+        },
+        {
+          "heading": "Custom private directory",
+          "level": 3,
+          "line": 503
+        },
+        {
+          "heading": "Finalise your backtest configuration",
+          "level": 2,
+          "line": 519
+        },
+        {
+          "heading": "Linking to a broker",
+          "level": 2,
+          "line": 545
+        },
+        {
+          "heading": "Other data sources",
+          "level": 2,
+          "line": 559
+        },
+        {
+          "heading": "Data storage",
+          "level": 2,
+          "line": 571
+        },
+        {
+          "heading": "Arctic",
+          "level": 3,
+          "line": 584
+        },
+        {
+          "heading": "Using Arctic in production instead of Parquet",
+          "level": 4,
+          "line": 588
+        },
+        {
+          "heading": "Data backup",
+          "level": 2,
+          "line": 620
+        },
+        {
+          "heading": "MongoDB data",
+          "level": 3,
+          "line": 622
+        },
+        {
+          "heading": "Parquet data",
+          "level": 3,
+          "line": 662
+        },
+        {
+          "heading": "MongoDB / CSV data",
+          "level": 3,
+          "line": 674
+        },
+        {
+          "heading": "Echos, Logging, diagnostics and reporting",
+          "level": 2,
+          "line": 686
+        },
+        {
+          "heading": "Echos: stdout output",
+          "level": 3,
+          "line": 695
+        },
+        {
+          "heading": "Cleaning old echo files",
+          "level": 4,
+          "line": 708
+        },
+        {
+          "heading": "Logging",
+          "level": 3,
+          "line": 714
+        },
+        {
+          "heading": "socket",
+          "level": 3,
+          "line": 731
+        },
+        {
+          "heading": "socket server as a service",
+          "level": 4,
+          "line": 764
+        },
+        {
+          "heading": "console",
+          "level": 3,
+          "line": 798
+        },
+        {
+          "heading": "email",
+          "level": 3,
+          "line": 802
+        },
+        {
+          "heading": "Adding logging to your code",
+          "level": 4,
+          "line": 807
+        },
+        {
+          "heading": "Examples",
+          "level": 4,
+          "line": 815
+        },
+        {
+          "heading": "Cleaning old logs",
+          "level": 4,
+          "line": 852
+        },
+        {
+          "heading": "Echos",
+          "level": 5,
+          "line": 854
+        },
+        {
+          "heading": "Logs",
+          "level": 5,
+          "line": 867
+        },
+        {
+          "heading": "psysystemtrade reports",
+          "level": 3,
+          "line": 872
+        },
+        {
+          "heading": "Positions and order levels",
+          "level": 1,
+          "line": 904
+        },
+        {
+          "heading": "Instrument level",
+          "level": 2,
+          "line": 916
+        },
+        {
+          "heading": "Contract level",
+          "level": 2,
+          "line": 925
+        },
+        {
+          "heading": "Broker level",
+          "level": 2,
+          "line": 940
+        },
+        {
+          "heading": "The journey of an order",
+          "level": 1,
+          "line": 952
+        },
+        {
+          "heading": "Optimal positions",
+          "level": 2,
+          "line": 962
+        },
+        {
+          "heading": "Optimal position for roll orders",
+          "level": 3,
+          "line": 983
+        },
+        {
+          "heading": "Strategy order handling",
+          "level": 2,
+          "line": 989
+        },
+        {
+          "heading": "Instrument orders in detail:",
+          "level": 3,
+          "line": 1014
+        },
+        {
+          "heading": "Strategy order handling for roll orders",
+          "level": 3,
+          "line": 1039
+        },
+        {
+          "heading": "Overrides",
+          "level": 3,
+          "line": 1045
+        },
+        {
+          "heading": "Stack handler",
+          "level": 2,
+          "line": 1052
+        },
+        {
+          "heading": "Contract order creation",
+          "level": 2,
+          "line": 1056
+        },
+        {
+          "heading": "Contract order creation - normal orders",
+          "level": 3,
+          "line": 1058
+        },
+        {
+          "heading": "Contract order creation - passive roll status",
+          "level": 3,
+          "line": 1089
+        },
+        {
+          "heading": "Instrument and contract order creation - active roll orders",
+          "level": 3,
+          "line": 1098
+        },
+        {
+          "heading": "Manual trades",
+          "level": 2,
+          "line": 1155
+        },
+        {
+          "heading": "Broker order creation and execution",
+          "level": 2,
+          "line": 1160
+        },
+        {
+          "heading": "Before an order is traded",
+          "level": 3,
+          "line": 1168
+        },
+        {
+          "heading": "Trading algos",
+          "level": 3,
+          "line": 1183
+        },
+        {
+          "heading": "Pre-order preparation in the trading algo.",
+          "level": 3,
+          "line": 1189
+        },
+        {
+          "heading": "Broker order characteristics",
+          "level": 3,
+          "line": 1198
+        },
+        {
+          "heading": "Order execution in the sysbroker code",
+          "level": 3,
+          "line": 1237
+        },
+        {
+          "heading": "Adding the broker trade to the database",
+          "level": 3,
+          "line": 1252
+        },
+        {
+          "heading": "Managing the trade",
+          "level": 3,
+          "line": 1259
+        },
+        {
+          "heading": "After execution: fills and completions",
+          "level": 2,
+          "line": 1279
+        },
+        {
+          "heading": "Fills and completions",
+          "level": 2,
+          "line": 1289
+        },
+        {
+          "heading": "Broker order fills",
+          "level": 3,
+          "line": 1293
+        },
+        {
+          "heading": "An aside, what happens if fills happen later?",
+          "level": 3,
+          "line": 1299
+        },
+        {
+          "heading": "Contract order fills and position updates",
+          "level": 3,
+          "line": 1321
+        },
+        {
+          "heading": "Instrument order fills and position updates",
+          "level": 3,
+          "line": 1339
+        },
+        {
+          "heading": "Single contract order / single leg",
+          "level": 4,
+          "line": 1346
+        },
+        {
+          "heading": "Single contract order / multiple legs (eg spread trade)",
+          "level": 4,
+          "line": 1358
+        },
+        {
+          "heading": "Multiple contract orders",
+          "level": 4,
+          "line": 1368
+        },
+        {
+          "heading": "Order completions",
+          "level": 3,
+          "line": 1385
+        },
+        {
+          "heading": "Order deactivation",
+          "level": 4,
+          "line": 1397
+        },
+        {
+          "heading": "Adding to historic order databases",
+          "level": 4,
+          "line": 1406
+        },
+        {
+          "heading": "End of day stack shut down process",
+          "level": 2,
+          "line": 1413
+        },
+        {
+          "heading": "Historic order tables and trade reporting",
+          "level": 2,
+          "line": 1423
+        },
+        {
+          "heading": "Scripts",
+          "level": 1,
+          "line": 1452
+        },
+        {
+          "heading": "Script calling",
+          "level": 2,
+          "line": 1468
+        },
+        {
+          "heading": "Script naming convention",
+          "level": 2,
+          "line": 1491
+        },
+        {
+          "heading": "Run processes",
+          "level": 2,
+          "line": 1504
+        },
+        {
+          "heading": "Core production system components",
+          "level": 2,
+          "line": 1520
+        },
+        {
+          "heading": "Get spot FX data from interactive brokers, write to Parquet (Daily)",
+          "level": 3,
+          "line": 1524
+        },
+        {
+          "heading": "Update sampled contracts (Daily)",
+          "level": 3,
+          "line": 1547
+        },
+        {
+          "heading": "Update futures contract historical price data (Daily)",
+          "level": 3,
+          "line": 1565
+        },
+        {
+          "heading": "A note on market data subscriptions",
+          "level": 4,
+          "line": 1595
+        },
+        {
+          "heading": "Set times when different regions download prices",
+          "level": 4,
+          "line": 1615
+        },
+        {
+          "heading": "Update multiple and adjusted prices (Daily)",
+          "level": 3,
+          "line": 1637
+        },
+        {
+          "heading": "Update capital and P&L by polling brokerage account",
+          "level": 3,
+          "line": 1660
+        },
+        {
+          "heading": "Allocate capital to strategies",
+          "level": 3,
+          "line": 1682
+        },
+        {
+          "heading": "Run updated backtest systems for one or more strategies",
+          "level": 3,
+          "line": 1700
+        },
+        {
+          "heading": "Generate orders for each strategy",
+          "level": 3,
+          "line": 1747
+        },
+        {
+          "heading": "Execute orders",
+          "level": 3,
+          "line": 1785
+        },
+        {
+          "heading": "Interactive scripts to modify data",
+          "level": 2,
+          "line": 1822
+        },
+        {
+          "heading": "Manual check of futures contract historical price data",
+          "level": 3,
+          "line": 1824
+        },
+        {
+          "heading": "Manual check of FX price data",
+          "level": 3,
+          "line": 1857
+        },
+        {
+          "heading": "Interactively modify capital values",
+          "level": 3,
+          "line": 1877
+        },
+        {
+          "heading": "Interactively roll adjusted prices",
+          "level": 3,
+          "line": 1903
+        },
+        {
+          "heading": "Manually input instrument codes and manually decide when to roll",
+          "level": 4,
+          "line": 1926
+        },
+        {
+          "heading": "Cycle through instrument codes automatically, but manually decide when to roll",
+          "level": 4,
+          "line": 1946
+        },
+        {
+          "heading": "Cycle through instrument codes automatically, auto decide when to roll, manually confirm rolls",
+          "level": 4,
+          "line": 1950
+        },
+        {
+          "heading": "Cycle through instrument codes automatically, auto decide when to roll, automatically roll",
+          "level": 4,
+          "line": 1974
+        },
+        {
+          "heading": "Menu driven interactive scripts",
+          "level": 2,
+          "line": 1978
+        },
+        {
+          "heading": "Interactive controls",
+          "level": 3,
+          "line": 1988
+        },
+        {
+          "heading": "Trade limits",
+          "level": 4,
+          "line": 2003
+        },
+        {
+          "heading": "Position limits",
+          "level": 4,
+          "line": 2014
+        },
+        {
+          "heading": "Trade control / override",
+          "level": 4,
+          "line": 2026
+        },
+        {
+          "heading": "Broker client IDs",
+          "level": 4,
+          "line": 2043
+        },
+        {
+          "heading": "Process control & monitoring",
+          "level": 4,
+          "line": 2047
+        },
+        {
+          "heading": "View processes",
+          "level": 5,
+          "line": 2054
+        },
+        {
+          "heading": "Change status of process",
+          "level": 5,
+          "line": 2073
+        },
+        {
+          "heading": "Global status change",
+          "level": 5,
+          "line": 2081
+        },
+        {
+          "heading": "Mark as close",
+          "level": 5,
+          "line": 2086
+        },
+        {
+          "heading": "Mark all dead processes as close",
+          "level": 5,
+          "line": 2092
+        },
+        {
+          "heading": "View process configuration",
+          "level": 5,
+          "line": 2096
+        },
+        {
+          "heading": "Update configuration",
+          "level": 4,
+          "line": 2100
+        },
+        {
+          "heading": "Interactive diagnostics",
+          "level": 3,
+          "line": 2109
+        },
+        {
+          "heading": "Backtest objects",
+          "level": 4,
+          "line": 2124
+        },
+        {
+          "heading": "Output choice",
+          "level": 5,
+          "line": 2128
+        },
+        {
+          "heading": "Choice of strategy and backtest",
+          "level": 5,
+          "line": 2137
+        },
+        {
+          "heading": "Choose stage / method / arguments",
+          "level": 5,
+          "line": 2141
+        },
+        {
+          "heading": "Alternative Python code",
+          "level": 5,
+          "line": 2145
+        },
+        {
+          "heading": "Instrument configuration",
+          "level": 4,
+          "line": 2156
+        },
+        {
+          "heading": "View instrument configuration data",
+          "level": 5,
+          "line": 2158
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 122
+      }
+    },
+    {
+      "path": "docs/production_strategy_changes.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 224,
+      "nonEmptyLines": 124,
+      "sections": [
+        {
+          "heading": "Steps to follow",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Set up any new instruments and get their prices sampling",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Create custom classes to run the strategy",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Create a run_system to run the strategy backtest",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Create an order creation class",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Create a reporting class",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Update configuration files",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Update strategy capital",
+          "level": 1,
+          "line": 114
+        },
+        {
+          "heading": "Check the production backtest will run",
+          "level": 1,
+          "line": 119
+        },
+        {
+          "heading": "Transfer positions between strategies",
+          "level": 1,
+          "line": 124
+        },
+        {
+          "heading": "Run any strategy backtests that will be closing or reducing in capital",
+          "level": 1,
+          "line": 135
+        },
+        {
+          "heading": "Ensure position and trade limits are appropriate",
+          "level": 1,
+          "line": 140
+        },
+        {
+          "heading": "Manually generate instrument orders",
+          "level": 1,
+          "line": 145
+        },
+        {
+          "heading": "Run reports",
+          "level": 1,
+          "line": 151
+        },
+        {
+          "heading": "Restart processes",
+          "level": 1,
+          "line": 157
+        },
+        {
+          "heading": "Clean up",
+          "level": 1,
+          "line": 165
+        },
+        {
+          "heading": "Implementing specific strategies",
+          "level": 1,
+          "line": 171
+        },
+        {
+          "heading": "Vanilla classic strategy",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "Dynamic optimisation strategy",
+          "level": 2,
+          "line": 179
+        },
+        {
+          "heading": "Ignore instruments",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "Set shadow cost",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "Strategy backtest output of optimal positions",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "Ensure position and trade limits are appropriate",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "Ensure any 'don't trade'  or 'reduce only' flags are in place",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Actual optimal positions",
+          "level": 3,
+          "line": 215
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    }
+  ]
+}

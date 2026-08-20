@@ -1,0 +1,6069 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysdata/parquet/parquet_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "parquetFuturesAdjustedPricesData",
+          "startLine": 13,
+          "endLine": 74,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "get_list_of_instruments",
+            "_get_adjusted_prices_without_checking",
+            "_delete_adjusted_prices_without_any_warning_be_careful",
+            "_add_adjusted_prices_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetFuturesAdjustedPricesData",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "raw_price_df.squeeze",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "adjusted_price_data_aspd.astype",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_capital.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "parquetCapitalData",
+          "startLine": 11,
+          "endLine": 69,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "_get_list_of_strategies_with_capital_including_total",
+            "get_capital_pd_df_for_strategy",
+            "_delete_all_capital_for_strategy_no_checking",
+            "update_capital_pd_df_for_strategy"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetCapitalData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_get_list_of_strategies_with_capital_including_total",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_capital_pd_df_for_strategy",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_capital_pd_df_for_strategy",
+          "callee": "missingData",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_delete_all_capital_for_strategy_no_checking",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_delete_all_capital_for_strategy_no_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_capital_pd_df_for_strategy",
+          "callee": "len",
+          "lineNumber": 61
+        },
+        {
+          "caller": "update_capital_pd_df_for_strategy",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 234,
+      "nonEmptyLines": 187,
+      "functions": [
+        {
+          "name": "from_key_to_freq_and_contract",
+          "startLine": 205,
+          "endLine": 217,
+          "params": [
+            "keyname"
+          ]
+        },
+        {
+          "name": "from_contract_and_freq_to_key",
+          "startLine": 220,
+          "endLine": 230,
+          "params": [
+            "contract",
+            "frequency"
+          ]
+        },
+        {
+          "name": "from_tuple_to_key",
+          "startLine": 233,
+          "endLine": 234,
+          "params": [
+            "keytuple"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "parquetFuturesContractPriceData",
+          "startLine": 19,
+          "endLine": 202,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "_get_merged_prices_for_contract_object_no_checking",
+            "_get_prices_at_frequency_for_contract_object_no_checking",
+            "_write_merged_prices_for_contract_object_no_checking",
+            "_write_prices_at_frequency_for_contract_object_no_checking",
+            "get_contracts_with_merged_price_data",
+            "get_contracts_with_price_data_for_frequency",
+            "has_merged_price_data_for_contract",
+            "has_price_data_for_contract_at_frequency",
+            "_get_contract_and_frequencies_with_price_data",
+            "_all_keynames_in_library",
+            "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+            "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetFuturesContractPriceData",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "from_key_to_freq_and_contract",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "from_contract_and_freq_to_key",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "from_tuple_to_key",
+          "line": 233,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_get_merged_prices_for_contract_object_no_checking",
+          "callee": "self._get_prices_at_frequency_for_contract_object_no_checking",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "from_contract_and_freq_to_key",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "futuresContractPrices",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_write_merged_prices_for_contract_object_no_checking",
+          "callee": "self._write_prices_at_frequency_for_contract_object_no_checking",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "from_contract_and_freq_to_key",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "pd.DataFrame",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "self.log.debug",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "len",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "str",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "str",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 108
+        },
+        {
+          "caller": "get_contracts_with_merged_price_data",
+          "callee": "self.get_contracts_with_price_data_for_frequency",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_contracts_with_price_data_for_frequency",
+          "callee": "self._get_contract_and_frequencies_with_price_data",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_contracts_with_price_data_for_frequency",
+          "callee": "listOfFuturesContracts",
+          "lineNumber": 136
+        },
+        {
+          "caller": "has_merged_price_data_for_contract",
+          "callee": "self.has_price_data_for_contract_at_frequency",
+          "lineNumber": 143
+        },
+        {
+          "caller": "has_price_data_for_contract_at_frequency",
+          "callee": "from_contract_and_freq_to_key",
+          "lineNumber": 150
+        },
+        {
+          "caller": "has_price_data_for_contract_at_frequency",
+          "callee": "self.parquet.does_identifier_with_data_type_exist",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_get_contract_and_frequencies_with_price_data",
+          "callee": "self._all_keynames_in_library",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_get_contract_and_frequencies_with_price_data",
+          "callee": "from_key_to_freq_and_contract",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_all_keynames_in_library",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+          "callee": "self._delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "from_contract_and_freq_to_key",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "str",
+          "lineNumber": 199
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 200
+        },
+        {
+          "caller": "from_key_to_freq_and_contract",
+          "callee": "keyname.split",
+          "lineNumber": 206
+        },
+        {
+          "caller": "from_key_to_freq_and_contract",
+          "callee": "len",
+          "lineNumber": 207
+        },
+        {
+          "caller": "from_key_to_freq_and_contract",
+          "callee": "contract_str.split",
+          "lineNumber": 214
+        },
+        {
+          "caller": "from_key_to_freq_and_contract",
+          "callee": "futuresContract",
+          "lineNumber": 215
+        },
+        {
+          "caller": "from_contract_and_freq_to_key",
+          "callee": "from_tuple_to_key",
+          "lineNumber": 228
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_contract_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "from_contract_to_key",
+          "startLine": 77,
+          "endLine": 78,
+          "params": [
+            "contract"
+          ]
+        },
+        {
+          "name": "from_key_to_contract",
+          "startLine": 81,
+          "endLine": 83,
+          "params": [
+            "key"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "parquetContractPositionData",
+          "startLine": 15,
+          "endLine": 74,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "_write_updated_position_series_for_contract_object",
+            "_delete_position_series_for_contract_object_without_checking",
+            "get_position_as_series_for_contract_object",
+            "get_list_of_contracts"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetContractPositionData",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "from_contract_to_key",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "from_key_to_contract",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "from_contract_to_key",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "pd.DataFrame",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_write_updated_position_series_for_contract_object",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_delete_position_series_for_contract_object_without_checking",
+          "callee": "from_contract_to_key",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_delete_position_series_for_contract_object_without_checking",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_position_as_series_for_contract_object",
+          "callee": "from_contract_to_key",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get_position_as_series_for_contract_object",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 59
+        },
+        {
+          "caller": "get_list_of_contracts",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 69
+        },
+        {
+          "caller": "get_list_of_contracts",
+          "callee": "from_key_to_contract",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_list_of_contracts",
+          "callee": "listOfFuturesContracts",
+          "lineNumber": 74
+        },
+        {
+          "caller": "from_contract_to_key",
+          "callee": "str",
+          "lineNumber": 78
+        },
+        {
+          "caller": "from_contract_to_key",
+          "callee": "str",
+          "lineNumber": 78
+        },
+        {
+          "caller": "from_key_to_contract",
+          "callee": "key.split",
+          "lineNumber": 82
+        },
+        {
+          "caller": "from_key_to_contract",
+          "callee": "futuresContract",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "parquetStrategyPositionData",
+          "startLine": 16,
+          "endLine": 75,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "get_list_of_instrument_strategies",
+            "_write_updated_position_series_for_instrument_strategy_object",
+            "_delete_position_series_for_instrument_strategy_object_without_checking",
+            "get_position_as_series_for_instrument_strategy_object"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetStrategyPositionData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 22
+        },
+        {
+          "caller": "get_list_of_instrument_strategies",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_list_of_instrument_strategies",
+          "callee": "instrumentStrategy.from_key",
+          "lineNumber": 38
+        },
+        {
+          "caller": "get_list_of_instrument_strategies",
+          "callee": "listOfInstrumentStrategies",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_write_updated_position_series_for_instrument_strategy_object",
+          "callee": "pd.DataFrame",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_write_updated_position_series_for_instrument_strategy_object",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_delete_position_series_for_instrument_strategy_object_without_checking",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_position_as_series_for_instrument_strategy_object",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_optimal_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "parquetOptimalPositionData",
+          "startLine": 16,
+          "endLine": 70,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "get_list_of_instrument_strategies_with_optimal_position",
+            "get_optimal_position_as_df_for_instrument_strategy",
+            "write_optimal_position_as_df_for_instrument_strategy_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetOptimalPositionData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 22
+        },
+        {
+          "caller": "get_list_of_instrument_strategies_with_optimal_position",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_list_of_instrument_strategies_with_optimal_position",
+          "callee": "instrumentStrategy.from_key",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_list_of_instrument_strategies_with_optimal_position",
+          "callee": "listOfInstrumentStrategies",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_optimal_position_as_df_for_instrument_strategy",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 52
+        },
+        {
+          "caller": "write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_spotfx_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "parquetFxPricesData",
+          "startLine": 11,
+          "endLine": 68,
+          "methods": [
+            "__init__",
+            "parquet",
+            "__repr__",
+            "get_list_of_fxcodes",
+            "_get_fx_prices_without_checking",
+            "_delete_fx_prices_without_any_warning_be_careful",
+            "_add_fx_prices_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetFxPricesData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 19
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "fxPrices",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_delete_fx_prices_without_any_warning_be_careful",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_delete_fx_prices_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_delete_fx_prices_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "fx_price_data_aspd.astype",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_spreads.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "parquetSpreadsForInstrumentData",
+          "startLine": 12,
+          "endLine": 69,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "get_list_of_instruments",
+            "_get_spreads_without_checking",
+            "_delete_spreads_without_any_warning_be_careful",
+            "_add_spreads_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetSpreadsForInstrumentData",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_get_spreads_without_checking",
+          "callee": "spreadsForInstrument",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_delete_spreads_without_any_warning_be_careful",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_delete_spreads_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_delete_spreads_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "spreads_as_pd.astype",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_add_spreads_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/broker_client_id.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "get_next_id_from_current_list",
+          "startLine": 106,
+          "endLine": 117,
+          "params": [
+            "current_list_of_ids",
+            "id_offset"
+          ]
+        },
+        {
+          "name": "get_next_id_from_current_list_and_full_set",
+          "startLine": 120,
+          "endLine": 129,
+          "params": [
+            "current_list_of_ids",
+            "full_set_of_available_ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "brokerClientIdData",
+          "startLine": 6,
+          "endLine": 103,
+          "methods": [
+            "__init__",
+            "idoffset",
+            "__repr__",
+            "return_valid_client_id",
+            "_is_clientid_used",
+            "_get_and_lock_next_clientid",
+            "_get_list_of_clientids",
+            "_lock_clientid",
+            "clear_all_clientids",
+            "release_clientid"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "brokerClientIdData",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "get_next_id_from_current_list",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "get_next_id_from_current_list_and_full_set",
+          "line": 120,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 16
+        },
+        {
+          "caller": "return_valid_client_id",
+          "callee": "self._get_and_lock_next_clientid",
+          "lineNumber": 35
+        },
+        {
+          "caller": "return_valid_client_id",
+          "callee": "self._is_clientid_used",
+          "lineNumber": 38
+        },
+        {
+          "caller": "return_valid_client_id",
+          "callee": "self._get_and_lock_next_clientid",
+          "lineNumber": 41
+        },
+        {
+          "caller": "return_valid_client_id",
+          "callee": "self._lock_clientid",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_is_clientid_used",
+          "callee": "self._get_list_of_clientids",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_get_and_lock_next_clientid",
+          "callee": "self._get_list_of_clientids",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_get_and_lock_next_clientid",
+          "callee": "get_next_id_from_current_list",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_get_and_lock_next_clientid",
+          "callee": "self._lock_clientid",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_get_list_of_clientids",
+          "callee": "NotImplementedError",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_lock_clientid",
+          "callee": "NotImplementedError",
+          "lineNumber": 81
+        },
+        {
+          "caller": "clear_all_clientids",
+          "callee": "self._get_list_of_clientids",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clear_all_clientids",
+          "callee": "self.log.warning",
+          "lineNumber": 90
+        },
+        {
+          "caller": "clear_all_clientids",
+          "callee": "self.release_clientid",
+          "lineNumber": 94
+        },
+        {
+          "caller": "release_clientid",
+          "callee": "NotImplementedError",
+          "lineNumber": 103
+        },
+        {
+          "caller": "get_next_id_from_current_list",
+          "callee": "len",
+          "lineNumber": 107
+        },
+        {
+          "caller": "get_next_id_from_current_list",
+          "callee": "set",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_next_id_from_current_list",
+          "callee": "range",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_next_id_from_current_list",
+          "callee": "max",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_next_id_from_current_list",
+          "callee": "get_next_id_from_current_list_and_full_set",
+          "lineNumber": 113
+        },
+        {
+          "caller": "get_next_id_from_current_list_and_full_set",
+          "callee": "set",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_next_id_from_current_list_and_full_set",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "get_next_id_from_current_list_and_full_set",
+          "callee": "max",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_next_id_from_current_list_and_full_set",
+          "callee": "min",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/capital.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 516,
+      "nonEmptyLines": 397,
+      "functions": [
+        {
+          "name": "df_to_series",
+          "startLine": 219,
+          "endLine": 225,
+          "params": [
+            "x"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "capitalData",
+          "startLine": 29,
+          "endLine": 216,
+          "methods": [
+            "get_current_total_capital",
+            "get_current_broker_account_value",
+            "get_current_maximum_capital_value",
+            "get_current_pandl_account",
+            "get_total_capital_pd_series",
+            "get_broker_account_value_pd_series",
+            "get_maximum_account_value_pd_series",
+            "get_profit_and_loss_account_pd_series",
+            "add_global_capital_entries",
+            "create_initial_capital",
+            "delete_recent_capital",
+            "delete_all_global_capital",
+            "get_df_of_all_global_capital",
+            "update_df_of_all_global_capital",
+            "get_current_capital_for_strategy",
+            "update_capital_value_for_strategy",
+            "delete_recent_capital_for_strategy",
+            "delete_all_capital_for_strategy",
+            "get_list_of_strategies_with_capital",
+            "_get_list_of_strategies_with_capital_including_total",
+            "get_capital_pd_df_for_strategy",
+            "_delete_all_capital_for_strategy_no_checking",
+            "update_capital_pd_df_for_strategy"
+          ],
+          "properties": []
+        },
+        {
+          "name": "totalCapitalCalculationData",
+          "startLine": 228,
+          "endLine": 516,
+          "methods": [
+            "__init__",
+            "capital_data",
+            "calc_method",
+            "__repr__",
+            "get_percentage_returns_as_pd",
+            "get_daily_returns",
+            "get_daily_profit_and_loss",
+            "check_for_total_capital_data",
+            "get_current_total_capital",
+            "get_current_broker_account",
+            "get_current_maximum_capital",
+            "get_total_capital",
+            "get_current_accumulated_pandl",
+            "get_profit_and_loss_account",
+            "get_maximum_account",
+            "get_df_of_all_global_capital",
+            "update_and_return_total_capital_with_new_broker_account_value",
+            "_init_capital_updater",
+            "_get_prev_broker_account_value",
+            "_update_capital_data_after_pandl_event",
+            "adjust_broker_account_for_delta",
+            "modify_account_values",
+            "create_initial_capital",
+            "delete_recent_capital",
+            "delete_all_global_capital"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "capitalData",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "df_to_series",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "totalCapitalCalculationData",
+          "line": 228,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_current_total_capital",
+          "callee": "self.get_total_capital_pd_series",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_current_total_capital",
+          "callee": "float",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_current_broker_account_value",
+          "callee": "self.get_broker_account_value_pd_series",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_current_broker_account_value",
+          "callee": "float",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_current_maximum_capital_value",
+          "callee": "self.get_maximum_account_value_pd_series",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_current_maximum_capital_value",
+          "callee": "float",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get_current_pandl_account",
+          "callee": "self.get_profit_and_loss_account_pd_series",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_current_pandl_account",
+          "callee": "float",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get_total_capital_pd_series",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_broker_account_value_pd_series",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_maximum_account_value_pd_series",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_profit_and_loss_account_pd_series",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 62
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "pd.DataFrame",
+          "lineNumber": 95
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 98
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "Exception",
+          "lineNumber": 100
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "pd.concat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "updated_capital_df.ffill",
+          "lineNumber": 103
+        },
+        {
+          "caller": "add_global_capital_entries",
+          "callee": "self.update_df_of_all_global_capital",
+          "lineNumber": 105
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 116
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "pd.DataFrame",
+          "lineNumber": 124
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "self.update_df_of_all_global_capital",
+          "lineNumber": 126
+        },
+        {
+          "caller": "delete_recent_capital",
+          "callee": "self.delete_recent_capital_for_strategy",
+          "lineNumber": 129
+        },
+        {
+          "caller": "delete_all_global_capital",
+          "callee": "self.delete_all_capital_for_strategy",
+          "lineNumber": 134
+        },
+        {
+          "caller": "get_df_of_all_global_capital",
+          "callee": "self.get_capital_pd_df_for_strategy",
+          "lineNumber": 140
+        },
+        {
+          "caller": "update_df_of_all_global_capital",
+          "callee": "self.update_capital_pd_df_for_strategy",
+          "lineNumber": 146
+        },
+        {
+          "caller": "get_current_capital_for_strategy",
+          "callee": "self.get_capital_pd_df_for_strategy",
+          "lineNumber": 152
+        },
+        {
+          "caller": "get_current_capital_for_strategy",
+          "callee": "float",
+          "lineNumber": 153
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 164
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "pd.Series",
+          "lineNumber": 166
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "self.get_capital_pd_df_for_strategy",
+          "lineNumber": 169
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "pd.concat",
+          "lineNumber": 173
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "df_to_series",
+          "lineNumber": 174
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "self.update_capital_pd_df_for_strategy",
+          "lineNumber": 177
+        },
+        {
+          "caller": "update_capital_value_for_strategy",
+          "callee": "capital_series.to_frame",
+          "lineNumber": 177
+        },
+        {
+          "caller": "delete_recent_capital_for_strategy",
+          "callee": "self.get_capital_pd_df_for_strategy",
+          "lineNumber": 182
+        },
+        {
+          "caller": "delete_recent_capital_for_strategy",
+          "callee": "self.update_capital_pd_df_for_strategy",
+          "lineNumber": 185
+        },
+        {
+          "caller": "delete_all_capital_for_strategy",
+          "callee": "self._delete_all_capital_for_strategy_no_checking",
+          "lineNumber": 191
+        },
+        {
+          "caller": "delete_all_capital_for_strategy",
+          "callee": "Exception",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_list_of_strategies_with_capital",
+          "callee": "self._get_list_of_strategies_with_capital_including_total",
+          "lineNumber": 196
+        },
+        {
+          "caller": "get_list_of_strategies_with_capital",
+          "callee": "list_of_strategies.remove",
+          "lineNumber": 198
+        },
+        {
+          "caller": "df_to_series",
+          "callee": "len",
+          "lineNumber": 220
+        },
+        {
+          "caller": "df_to_series",
+          "callee": "pd.Series",
+          "lineNumber": 221
+        },
+        {
+          "caller": "df_to_series",
+          "callee": "float",
+          "lineNumber": 221
+        },
+        {
+          "caller": "df_to_series",
+          "callee": "x.squeeze",
+          "lineNumber": 223
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 251
+        },
+        {
+          "caller": "get_percentage_returns_as_pd",
+          "callee": "self.get_total_capital",
+          "lineNumber": 270
+        },
+        {
+          "caller": "get_percentage_returns_as_pd",
+          "callee": "self.get_daily_returns",
+          "lineNumber": 271
+        },
+        {
+          "caller": "get_percentage_returns_as_pd",
+          "callee": "total_capital.reindex(daily_returns.index).ffill",
+          "lineNumber": 272
+        },
+        {
+          "caller": "get_percentage_returns_as_pd",
+          "callee": "total_capital.reindex",
+          "lineNumber": 272
+        },
+        {
+          "caller": "get_daily_returns",
+          "callee": "self.get_daily_profit_and_loss",
+          "lineNumber": 279
+        },
+        {
+          "caller": "get_daily_returns",
+          "callee": "daily_pandl.diff",
+          "lineNumber": 280
+        },
+        {
+          "caller": "get_daily_profit_and_loss",
+          "callee": "self.get_profit_and_loss_account",
+          "lineNumber": 284
+        },
+        {
+          "caller": "get_daily_profit_and_loss",
+          "callee": "pandl.resample(\"1B\").last",
+          "lineNumber": 285
+        },
+        {
+          "caller": "get_daily_profit_and_loss",
+          "callee": "pandl.resample",
+          "lineNumber": 285
+        },
+        {
+          "caller": "check_for_total_capital_data",
+          "callee": "self.get_df_of_all_global_capital",
+          "lineNumber": 291
+        },
+        {
+          "caller": "check_for_total_capital_data",
+          "callee": "len",
+          "lineNumber": 292
+        },
+        {
+          "caller": "get_current_total_capital",
+          "callee": "self.capital_data.get_current_total_capital",
+          "lineNumber": 299
+        },
+        {
+          "caller": "get_current_broker_account",
+          "callee": "self.capital_data.get_current_broker_account_value",
+          "lineNumber": 302
+        },
+        {
+          "caller": "get_current_maximum_capital",
+          "callee": "self.capital_data.get_current_maximum_capital_value",
+          "lineNumber": 305
+        },
+        {
+          "caller": "get_total_capital",
+          "callee": "self.capital_data.get_total_capital_pd_series",
+          "lineNumber": 308
+        },
+        {
+          "caller": "get_current_accumulated_pandl",
+          "callee": "self.capital_data.get_current_pandl_account",
+          "lineNumber": 311
+        },
+        {
+          "caller": "get_profit_and_loss_account",
+          "callee": "self.capital_data.get_profit_and_loss_account_pd_series",
+          "lineNumber": 314
+        },
+        {
+          "caller": "get_maximum_account",
+          "callee": "self.capital_data.get_maximum_account_value_pd_series",
+          "lineNumber": 317
+        },
+        {
+          "caller": "get_df_of_all_global_capital",
+          "callee": "self.capital_data.get_df_of_all_global_capital",
+          "lineNumber": 320
+        },
+        {
+          "caller": "update_and_return_total_capital_with_new_broker_account_value",
+          "callee": "self._init_capital_updater",
+          "lineNumber": 340
+        },
+        {
+          "caller": "update_and_return_total_capital_with_new_broker_account_value",
+          "callee": "capital_updater.check_pandl_size",
+          "lineNumber": 341
+        },
+        {
+          "caller": "update_and_return_total_capital_with_new_broker_account_value",
+          "callee": "capital_updater.calculate_new_total_and_max_capital_given_pandl",
+          "lineNumber": 343
+        },
+        {
+          "caller": "update_and_return_total_capital_with_new_broker_account_value",
+          "callee": "self._update_capital_data_after_pandl_event",
+          "lineNumber": 345
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "self._get_prev_broker_account_value",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "Exception",
+          "lineNumber": 356
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "self.capital_data.get_current_maximum_capital_value",
+          "lineNumber": 358
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "self.capital_data.get_current_total_capital",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "self.capital_data.get_current_pandl_account",
+          "lineNumber": 360
+        },
+        {
+          "caller": "_init_capital_updater",
+          "callee": "totalCapitalUpdater",
+          "lineNumber": 362
+        },
+        {
+          "caller": "_get_prev_broker_account_value",
+          "callee": "self.capital_data.get_current_broker_account_value",
+          "lineNumber": 374
+        },
+        {
+          "caller": "_update_capital_data_after_pandl_event",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 382
+        },
+        {
+          "caller": "_update_capital_data_after_pandl_event",
+          "callee": "self.modify_account_values",
+          "lineNumber": 389
+        },
+        {
+          "caller": "adjust_broker_account_for_delta",
+          "callee": "self.capital_data.get_current_broker_account_value",
+          "lineNumber": 411
+        },
+        {
+          "caller": "adjust_broker_account_for_delta",
+          "callee": "self._capital_data.log.warning",
+          "lineNumber": 414
+        },
+        {
+          "caller": "adjust_broker_account_for_delta",
+          "callee": "self.modify_account_values",
+          "lineNumber": 422
+        },
+        {
+          "caller": "modify_account_values",
+          "callee": "self.capital_data.log.warning",
+          "lineNumber": 443
+        },
+        {
+          "caller": "modify_account_values",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 445
+        },
+        {
+          "caller": "modify_account_values",
+          "callee": "self.capital_data.add_global_capital_entries",
+          "lineNumber": 447
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "self.delete_all_global_capital",
+          "lineNumber": 477
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 488
+        },
+        {
+          "caller": "create_initial_capital",
+          "callee": "self.capital_data.create_initial_capital",
+          "lineNumber": 490
+        },
+        {
+          "caller": "delete_recent_capital",
+          "callee": "self._capital_data.log.warning",
+          "lineNumber": 508
+        },
+        {
+          "caller": "delete_recent_capital",
+          "callee": "Exception",
+          "lineNumber": 509
+        },
+        {
+          "caller": "delete_recent_capital",
+          "callee": "self.capital_data.delete_recent_capital",
+          "lineNumber": 511
+        },
+        {
+          "caller": "delete_all_global_capital",
+          "callee": "self.capital_data.delete_all_global_capital",
+          "lineNumber": 514
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysdata/production/historic_contract_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 312,
+      "nonEmptyLines": 259,
+      "functions": [
+        {
+          "name": "any_positions_since_start_date",
+          "startLine": 265,
+          "endLine": 297,
+          "params": [
+            "position_series",
+            "start_date",
+            "end_date"
+          ]
+        },
+        {
+          "name": "_infer_position_at_start",
+          "startLine": 300,
+          "endLine": 312,
+          "params": [
+            "position_series",
+            "start_date"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "contractPositionData",
+          "startLine": 13,
+          "endLine": 262,
+          "methods": [
+            "__repr__",
+            "get_current_position_for_contract_object",
+            "update_position_for_contract_object",
+            "delete_last_position_for_contract_object",
+            "get_list_of_instruments_with_any_position",
+            "get_list_of_instruments_with_current_positions",
+            "get_list_of_contract_date_str_with_any_position_for_instrument",
+            "get_list_of_contract_date_str_with_any_position_for_instrument_in_date_range",
+            "get_all_current_positions_as_df",
+            "get_all_current_positions_as_list_with_contract_objects",
+            "get_list_of_contracts_for_instrument_code",
+            "any_positions_for_contract_in_date_range",
+            "_update_position_for_contract_object_with_date_supplied",
+            "_update_position_for_contract_object_with_date_and_existing_data",
+            "_delete_last_position_for_contract_object_without_checking",
+            "_delete_last_position_for_contract_object_without_checking_with_current_data",
+            "any_current_position_for_contract",
+            "overwrite_position_series_for_contract_object_without_checking",
+            "_write_updated_position_series_for_contract_object",
+            "_delete_position_series_for_contract_object_without_checking",
+            "get_position_as_series_for_contract_object",
+            "get_list_of_contracts"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "contractPositionData",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "any_positions_since_start_date",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "_infer_position_at_start",
+          "line": 300,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_current_position_for_contract_object",
+          "callee": "self.get_position_as_series_for_contract_object",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_current_position_for_contract_object",
+          "callee": "len",
+          "lineNumber": 34
+        },
+        {
+          "caller": "update_position_for_contract_object",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 46
+        },
+        {
+          "caller": "update_position_for_contract_object",
+          "callee": "self._update_position_for_contract_object_with_date_supplied",
+          "lineNumber": 48
+        },
+        {
+          "caller": "delete_last_position_for_contract_object",
+          "callee": "self._delete_last_position_for_contract_object_without_checking",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_list_of_instruments_with_any_position",
+          "callee": "self.get_list_of_contracts",
+          "lineNumber": 61
+        },
+        {
+          "caller": "get_list_of_instruments_with_any_position",
+          "callee": "list_of_contracts.unique_list_of_instrument_codes",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_list_of_instruments_with_current_positions",
+          "callee": "self.get_all_current_positions_as_list_with_contract_objects",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_list_of_instruments_with_current_positions",
+          "callee": "list_of_current_positions.unique_list_of_instruments",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_list_of_contract_date_str_with_any_position_for_instrument",
+          "callee": "self.get_list_of_contracts_for_instrument_code",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_list_of_contract_date_str_with_any_position_for_instrument",
+          "callee": "list_of_contracts.list_of_dates",
+          "lineNumber": 79
+        },
+        {
+          "caller": "get_list_of_contract_date_str_with_any_position_for_instrument_in_date_range",
+          "callee": "self.get_list_of_contracts_for_instrument_code",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get_list_of_contract_date_str_with_any_position_for_instrument_in_date_range",
+          "callee": "self.any_positions_for_contract_in_date_range",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_all_current_positions_as_df",
+          "callee": "self.get_all_current_positions_as_list_with_contract_objects().as_pd_df",
+          "lineNumber": 108
+        },
+        {
+          "caller": "get_all_current_positions_as_df",
+          "callee": "self.get_all_current_positions_as_list_with_contract_objects",
+          "lineNumber": 108
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "self.get_list_of_contracts",
+          "lineNumber": 115
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "self.get_current_position_for_contract_object",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "contractPosition",
+          "lineNumber": 122
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "current_positions.append",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "listOfContractPositions",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_list_of_contracts_for_instrument_code",
+          "callee": "self.get_list_of_contracts",
+          "lineNumber": 133
+        },
+        {
+          "caller": "get_list_of_contracts_for_instrument_code",
+          "callee": "list_of_contracts.contracts_in_list_for_instrument_code",
+          "lineNumber": 135
+        },
+        {
+          "caller": "any_positions_for_contract_in_date_range",
+          "callee": "self.get_position_as_series_for_contract_object",
+          "lineNumber": 147
+        },
+        {
+          "caller": "any_positions_for_contract_in_date_range",
+          "callee": "any_positions_since_start_date",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_supplied",
+          "callee": "pd.Series",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_supplied",
+          "callee": "self.get_position_as_series_for_contract_object",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_supplied",
+          "callee": "self._update_position_for_contract_object_with_date_and_existing_data",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_supplied",
+          "callee": "self._write_updated_position_series_for_contract_object",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_and_existing_data",
+          "callee": "self.log.critical",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_and_existing_data",
+          "callee": "Exception",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_and_existing_data",
+          "callee": "current_series._append",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_update_position_for_contract_object_with_date_and_existing_data",
+          "callee": "self._write_updated_position_series_for_contract_object",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking",
+          "callee": "self.get_position_as_series_for_contract_object",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking",
+          "callee": "self._delete_last_position_for_contract_object_without_checking_with_current_data",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking",
+          "callee": "str",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking_with_current_data",
+          "callee": "current_series.drop",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking_with_current_data",
+          "callee": "len",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking_with_current_data",
+          "callee": "self._delete_position_series_for_contract_object_without_checking",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_delete_last_position_for_contract_object_without_checking_with_current_data",
+          "callee": "self._write_updated_position_series_for_contract_object",
+          "lineNumber": 227
+        },
+        {
+          "caller": "any_current_position_for_contract",
+          "callee": "self.get_current_position_for_contract_object",
+          "lineNumber": 232
+        },
+        {
+          "caller": "overwrite_position_series_for_contract_object_without_checking",
+          "callee": "self._write_updated_position_series_for_contract_object",
+          "lineNumber": 241
+        },
+        {
+          "caller": "any_positions_since_start_date",
+          "callee": "len",
+          "lineNumber": 283
+        },
+        {
+          "caller": "any_positions_since_start_date",
+          "callee": "_infer_position_at_start",
+          "lineNumber": 288
+        },
+        {
+          "caller": "any_positions_since_start_date",
+          "callee": "len",
+          "lineNumber": 292
+        },
+        {
+          "caller": "_infer_position_at_start",
+          "callee": "len",
+          "lineNumber": 304
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/historic_strategy_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 214,
+      "classes": [
+        {
+          "name": "strategyPositionData",
+          "startLine": 19,
+          "endLine": 252,
+          "methods": [
+            "__repr__",
+            "get_current_position_for_instrument_strategy_object",
+            "update_position_for_instrument_strategy_object",
+            "get_list_of_strategies_and_instruments_with_positions",
+            "get_list_of_instruments_for_strategy_with_position",
+            "get_list_of_strategies_with_positions",
+            "delete_last_position_for_instrument_strategy_object",
+            "get_all_current_positions_as_df",
+            "get_all_current_positions_as_list_with_instrument_objects",
+            "_delete_last_position_for_instrument_strategy_object_without_checking",
+            "_delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+            "_update_position_for_instrument_strategy_object_with_date",
+            "_update_position_for_instrument_strategy_object_with_date_and_existing_data",
+            "overwrite_position_series_for_instrument_strategy_without_checking",
+            "_write_updated_position_series_for_instrument_strategy_object",
+            "_delete_position_series_for_instrument_strategy_object_without_checking",
+            "get_list_of_instrument_strategies",
+            "get_position_as_series_for_instrument_strategy_object"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "strategyPositionData",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_current_position_for_instrument_strategy_object",
+          "callee": "self.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_current_position_for_instrument_strategy_object",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 53
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "self._update_position_for_instrument_strategy_object_with_date",
+          "lineNumber": 56
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "self.log.critical",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "update_position_for_instrument_strategy_object",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_list_of_strategies_and_instruments_with_positions",
+          "callee": "self.get_list_of_instrument_strategies",
+          "lineNumber": 70
+        },
+        {
+          "caller": "get_list_of_strategies_and_instruments_with_positions",
+          "callee": "self.get_current_position_for_instrument_strategy_object",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_list_of_strategies_and_instruments_with_positions",
+          "callee": "listOfInstrumentStrategies",
+          "lineNumber": 82
+        },
+        {
+          "caller": "get_list_of_instruments_for_strategy_with_position",
+          "callee": "self.get_list_of_strategies_and_instruments_with_positions",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_list_of_instruments_for_strategy_with_position",
+          "callee": "list_of_instrument_strategies.get_list_of_instruments_for_strategy",
+          "lineNumber": 97
+        },
+        {
+          "caller": "get_list_of_strategies_with_positions",
+          "callee": "self.get_list_of_strategies_and_instruments_with_positions",
+          "lineNumber": 106
+        },
+        {
+          "caller": "get_list_of_strategies_with_positions",
+          "callee": "list_of_instrument_strategies.get_list_of_strategies",
+          "lineNumber": 110
+        },
+        {
+          "caller": "delete_last_position_for_instrument_strategy_object",
+          "callee": "self._delete_last_position_for_instrument_strategy_object_without_checking",
+          "lineNumber": 118
+        },
+        {
+          "caller": "delete_last_position_for_instrument_strategy_object",
+          "callee": "self.log.warning",
+          "lineNumber": 122
+        },
+        {
+          "caller": "get_all_current_positions_as_df",
+          "callee": "self.get_all_current_positions_as_list_with_instrument_objects().as_pd_df",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_all_current_positions_as_df",
+          "callee": "self.get_all_current_positions_as_list_with_instrument_objects",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_instrument_objects",
+          "callee": "self.get_list_of_instrument_strategies",
+          "lineNumber": 138
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_instrument_objects",
+          "callee": "self.get_current_position_for_instrument_strategy_object",
+          "lineNumber": 141
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_instrument_objects",
+          "callee": "instrumentStrategyPosition",
+          "lineNumber": 146
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_instrument_objects",
+          "callee": "current_positions.append",
+          "lineNumber": 147
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_instrument_objects",
+          "callee": "listOfInstrumentStrategyPositions",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking",
+          "callee": "self.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking",
+          "callee": "self._delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking",
+          "callee": "str",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+          "callee": "current_series.drop",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+          "callee": "len",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+          "callee": "self._delete_position_series_for_instrument_strategy_object_without_checking",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_delete_last_position_for_instrument_strategy_object_without_checking_with_current_data",
+          "callee": "self._write_updated_position_series_for_instrument_strategy_object",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date",
+          "callee": "pd.Series",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date",
+          "callee": "self.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date",
+          "callee": "self._update_position_for_instrument_strategy_object_with_date_and_existing_data",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date",
+          "callee": "self._write_updated_position_series_for_instrument_strategy_object",
+          "lineNumber": 206
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date_and_existing_data",
+          "callee": "self.log.critical",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date_and_existing_data",
+          "callee": "Exception",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date_and_existing_data",
+          "callee": "current_series._append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_update_position_for_instrument_strategy_object_with_date_and_existing_data",
+          "callee": "self._write_updated_position_series_for_instrument_strategy_object",
+          "lineNumber": 225
+        },
+        {
+          "caller": "overwrite_position_series_for_instrument_strategy_without_checking",
+          "callee": "self._write_updated_position_series_for_instrument_strategy_object",
+          "lineNumber": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/locks.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "lockData",
+          "startLine": 8,
+          "endLine": 36,
+          "methods": [
+            "__init__",
+            "is_instrument_locked",
+            "get_lock_for_instrument",
+            "add_lock_for_instrument",
+            "remove_lock_for_instrument",
+            "get_list_of_locked_instruments",
+            "_get_lock_for_instrument_no_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "lockData",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 9
+        },
+        {
+          "caller": "is_instrument_locked",
+          "callee": "self.get_lock_for_instrument",
+          "lineNumber": 13
+        },
+        {
+          "caller": "get_lock_for_instrument",
+          "callee": "self._get_lock_for_instrument_no_checking",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/optimal_positions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 187,
+      "nonEmptyLines": 151,
+      "classes": [
+        {
+          "name": "optimalPositionData",
+          "startLine": 28,
+          "endLine": 187,
+          "methods": [
+            "__repr__",
+            "get_list_of_optimal_positions_for_strategy",
+            "get_list_of_optimal_positions",
+            "get_list_of_optimal_positions_given_list_of_instrument_strategies",
+            "get_instrument_strategy_and_optimal_position",
+            "get_list_of_instruments_for_strategy_with_optimal_position",
+            "list_of_strategies_with_optimal_position",
+            "get_list_of_instrument_strategies_for_strategy_with_optimal_position",
+            "get_current_optimal_position_for_instrument_strategy",
+            "update_optimal_position_for_instrument_strategy",
+            "get_list_of_instrument_strategies_with_optimal_position",
+            "get_optimal_position_as_df_for_instrument_strategy",
+            "write_optimal_position_as_df_for_instrument_strategy_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "optimalPositionData",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_list_of_optimal_positions_for_strategy",
+          "callee": "self.get_list_of_instrument_strategies_for_strategy_with_optimal_position",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_list_of_optimal_positions_for_strategy",
+          "callee": "self.get_list_of_optimal_positions_given_list_of_instrument_strategies",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_list_of_optimal_positions",
+          "callee": "self.get_list_of_instrument_strategies_with_optimal_position",
+          "lineNumber": 59
+        },
+        {
+          "caller": "get_list_of_optimal_positions",
+          "callee": "self.get_list_of_optimal_positions_given_list_of_instrument_strategies",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_list_of_optimal_positions_given_list_of_instrument_strategies",
+          "callee": "self.get_instrument_strategy_and_optimal_position",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_list_of_optimal_positions_given_list_of_instrument_strategies",
+          "callee": "listOfOptimalPositionsAcrossInstrumentStrategies",
+          "lineNumber": 79
+        },
+        {
+          "caller": "get_instrument_strategy_and_optimal_position",
+          "callee": "self.get_current_optimal_position_for_instrument_strategy",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get_instrument_strategy_and_optimal_position",
+          "callee": "instrumentStrategyAndOptimalPosition",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_list_of_instruments_for_strategy_with_optimal_position",
+          "callee": "self.get_list_of_instrument_strategies_with_optimal_position",
+          "lineNumber": 102
+        },
+        {
+          "caller": "get_list_of_instruments_for_strategy_with_optimal_position",
+          "callee": "list_of_instrument_strategies.get_list_of_instruments_for_strategy",
+          "lineNumber": 106
+        },
+        {
+          "caller": "list_of_strategies_with_optimal_position",
+          "callee": "self.get_list_of_instrument_strategies_with_optimal_position",
+          "lineNumber": 115
+        },
+        {
+          "caller": "list_of_strategies_with_optimal_position",
+          "callee": "list_of_instrument_strategies.get_list_of_strategies",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_list_of_instrument_strategies_for_strategy_with_optimal_position",
+          "callee": "self.get_list_of_instrument_strategies_with_optimal_position",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_list_of_instrument_strategies_for_strategy_with_optimal_position",
+          "callee": "list_of_instrument_strategies.get_list_of_instrument_strategies_for_strategy",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_current_optimal_position_for_instrument_strategy",
+          "callee": "self.get_optimal_position_as_df_for_instrument_strategy",
+          "lineNumber": 138
+        },
+        {
+          "caller": "get_current_optimal_position_for_instrument_strategy",
+          "callee": "from_df_row_to_optimal_position",
+          "lineNumber": 142
+        },
+        {
+          "caller": "update_optimal_position_for_instrument_strategy",
+          "callee": "self.get_optimal_position_as_df_for_instrument_strategy",
+          "lineNumber": 153
+        },
+        {
+          "caller": "update_optimal_position_for_instrument_strategy",
+          "callee": "add_optimal_position_entry_row_to_positions_as_df",
+          "lineNumber": 158
+        },
+        {
+          "caller": "update_optimal_position_for_instrument_strategy",
+          "callee": "position_entry.as_df_row",
+          "lineNumber": 165
+        },
+        {
+          "caller": "update_optimal_position_for_instrument_strategy",
+          "callee": "self.write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "lineNumber": 167
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/override.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "_key_from_instrument_strategy",
+          "startLine": 115,
+          "endLine": 116,
+          "params": [
+            "instrument_strategy"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "overrideData",
+          "startLine": 16,
+          "endLine": 112,
+          "methods": [
+            "__init__",
+            "default_override",
+            "get_cumulative_override_for_instrument_strategy",
+            "_get_override_for_strategy",
+            "_get_override_for_instrument_strategy",
+            "get_override_for_instrument",
+            "update_override_for_strategy",
+            "update_override_for_instrument_strategy",
+            "update_override_for_instrument",
+            "get_dict_of_all_overrides",
+            "delete_all_overrides",
+            "_get_dict_of_strategies_with_overrides",
+            "_get_dict_of_strategy_instrument_with_overrides",
+            "_get_dict_of_instruments_with_overrides",
+            "_delete_all_overrides_without_checking",
+            "_update_override",
+            "_get_override_object_for_type_and_key",
+            "_get_dict_of_items_with_overrides_for_type"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "overrideData",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_key_from_instrument_strategy",
+          "line": 115,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_cumulative_override_for_instrument_strategy",
+          "callee": "self._get_override_for_strategy",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_cumulative_override_for_instrument_strategy",
+          "callee": "self.get_override_for_instrument",
+          "lineNumber": 29
+        },
+        {
+          "caller": "get_cumulative_override_for_instrument_strategy",
+          "callee": "self._get_override_for_instrument_strategy",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_get_override_for_strategy",
+          "callee": "self._get_override_object_for_type_and_key",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_get_override_for_instrument_strategy",
+          "callee": "_key_from_instrument_strategy",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_get_override_for_instrument_strategy",
+          "callee": "self._get_override_object_for_type_and_key",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get_override_for_instrument",
+          "callee": "self._get_override_object_for_type_and_key",
+          "lineNumber": 54
+        },
+        {
+          "caller": "update_override_for_strategy",
+          "callee": "self._update_override",
+          "lineNumber": 59
+        },
+        {
+          "caller": "update_override_for_instrument_strategy",
+          "callee": "_key_from_instrument_strategy",
+          "lineNumber": 64
+        },
+        {
+          "caller": "update_override_for_instrument_strategy",
+          "callee": "self._update_override",
+          "lineNumber": 65
+        },
+        {
+          "caller": "update_override_for_instrument",
+          "callee": "self._update_override",
+          "lineNumber": 70
+        },
+        {
+          "caller": "get_dict_of_all_overrides",
+          "callee": "self._get_dict_of_strategies_with_overrides",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_dict_of_all_overrides",
+          "callee": "self._get_dict_of_strategy_instrument_with_overrides",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_dict_of_all_overrides",
+          "callee": "self._get_dict_of_instruments_with_overrides",
+          "lineNumber": 77
+        },
+        {
+          "caller": "delete_all_overrides",
+          "callee": "self._delete_all_overrides_without_checking",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_get_dict_of_strategies_with_overrides",
+          "callee": "self._get_dict_of_items_with_overrides_for_type",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_dict_of_strategy_instrument_with_overrides",
+          "callee": "self._get_dict_of_items_with_overrides_for_type",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_get_dict_of_instruments_with_overrides",
+          "callee": "self._get_dict_of_items_with_overrides_for_type",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/position_limits.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "positionLimitData",
+          "startLine": 23,
+          "endLine": 98,
+          "methods": [
+            "__init__",
+            "get_position_limit_object_for_instrument_strategy",
+            "get_position_limit_object_for_instrument",
+            "_get_abs_position_limit_for_instrument_strategy",
+            "_get_abs_position_limit_for_instrument",
+            "get_all_instruments_with_limits",
+            "get_all_instrument_strategies_with_limits",
+            "set_position_limit_for_instrument_strategy",
+            "set_position_limit_for_instrument",
+            "delete_position_limit_for_instrument_strategy",
+            "delete_position_limit_for_instrument"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "positionLimitData",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument_strategy",
+          "callee": "self._get_abs_position_limit_for_instrument_strategy",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument_strategy",
+          "callee": "positionLimitForStrategyInstrument.no_limit",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument_strategy",
+          "callee": "positionLimitForStrategyInstrument",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument",
+          "callee": "self._get_abs_position_limit_for_instrument",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument",
+          "callee": "positionLimitForInstrument.no_limit",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_position_limit_object_for_instrument",
+          "callee": "positionLimitForInstrument",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/process_control_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 210,
+      "nonEmptyLines": 167,
+      "classes": [
+        {
+          "name": "controlProcessData",
+          "startLine": 15,
+          "endLine": 210,
+          "methods": [
+            "__init__",
+            "get_dict_of_control_processes",
+            "get_list_of_process_names",
+            "get_control_for_process_name",
+            "_get_control_for_process_name_without_default",
+            "_update_control_for_process_name",
+            "_add_control_for_process_name",
+            "_modify_existing_control_for_process_name",
+            "delete_control_for_process_name",
+            "check_if_okay_to_start_process",
+            "start_process",
+            "check_if_should_pause_process",
+            "check_if_pid_running_and_if_not_finish_all_processes",
+            "check_if_pid_running_and_if_not_finish",
+            "finish_all_processes",
+            "finish_process",
+            "check_if_process_status_stopped",
+            "has_process_finished_in_last_day",
+            "change_status_to_stop",
+            "change_status_to_go",
+            "change_status_to_no_run",
+            "change_status_to_pause",
+            "log_start_run_for_method",
+            "log_end_run_for_method",
+            "when_method_last_started",
+            "when_method_last_ended",
+            "method_currently_running"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "controlProcessData",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_dict_of_control_processes",
+          "callee": "self.get_list_of_process_names",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_dict_of_control_processes",
+          "callee": "dict",
+          "lineNumber": 22
+        },
+        {
+          "caller": "get_dict_of_control_processes",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_dict_of_control_processes",
+          "callee": "dictOfControlProcesses",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_list_of_process_names",
+          "callee": "list",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_list_of_process_names",
+          "callee": "self._control_store.keys",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_control_for_process_name",
+          "callee": "self._get_control_for_process_name_without_default",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_control_for_process_name",
+          "callee": "controlProcess",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_get_control_for_process_name_without_default",
+          "callee": "missingData",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_update_control_for_process_name",
+          "callee": "self._get_control_for_process_name_without_default",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_update_control_for_process_name",
+          "callee": "self._add_control_for_process_name",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_update_control_for_process_name",
+          "callee": "self._modify_existing_control_for_process_name",
+          "lineNumber": 58
+        },
+        {
+          "caller": "check_if_okay_to_start_process",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 79
+        },
+        {
+          "caller": "check_if_okay_to_start_process",
+          "callee": "original_process.check_if_okay_to_start_process",
+          "lineNumber": 80
+        },
+        {
+          "caller": "start_process",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 90
+        },
+        {
+          "caller": "start_process",
+          "callee": "original_process.start_process",
+          "lineNumber": 91
+        },
+        {
+          "caller": "start_process",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check_if_should_pause_process",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 98
+        },
+        {
+          "caller": "check_if_should_pause_process",
+          "callee": "original_process.check_if_should_pause",
+          "lineNumber": 99
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish_all_processes",
+          "callee": "self.get_list_of_process_names",
+          "lineNumber": 104
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish_all_processes",
+          "callee": "self.check_if_pid_running_and_if_not_finish",
+          "lineNumber": 106
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 113
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "original_process.check_if_pid_running_and_if_not_finish_return_status",
+          "lineNumber": 115
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "self.log.critical",
+          "lineNumber": 118
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 122
+        },
+        {
+          "caller": "finish_all_processes",
+          "callee": "self.get_list_of_process_names",
+          "lineNumber": 125
+        },
+        {
+          "caller": "finish_all_processes",
+          "callee": "self.finish_process",
+          "lineNumber": 128
+        },
+        {
+          "caller": "finish_process",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 140
+        },
+        {
+          "caller": "finish_process",
+          "callee": "original_process.finish_process",
+          "lineNumber": 141
+        },
+        {
+          "caller": "finish_process",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 142
+        },
+        {
+          "caller": "check_if_process_status_stopped",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 150
+        },
+        {
+          "caller": "check_if_process_status_stopped",
+          "callee": "original_process.check_if_process_status_stopped",
+          "lineNumber": 151
+        },
+        {
+          "caller": "has_process_finished_in_last_day",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 161
+        },
+        {
+          "caller": "has_process_finished_in_last_day",
+          "callee": "original_process.has_process_finished_in_last_day",
+          "lineNumber": 162
+        },
+        {
+          "caller": "change_status_to_stop",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 167
+        },
+        {
+          "caller": "change_status_to_stop",
+          "callee": "original_process.change_status_to_stop",
+          "lineNumber": 168
+        },
+        {
+          "caller": "change_status_to_stop",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 169
+        },
+        {
+          "caller": "change_status_to_go",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 172
+        },
+        {
+          "caller": "change_status_to_go",
+          "callee": "original_process.change_status_to_go",
+          "lineNumber": 173
+        },
+        {
+          "caller": "change_status_to_go",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 174
+        },
+        {
+          "caller": "change_status_to_no_run",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 177
+        },
+        {
+          "caller": "change_status_to_no_run",
+          "callee": "original_process.change_status_to_no_run",
+          "lineNumber": 178
+        },
+        {
+          "caller": "change_status_to_no_run",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 179
+        },
+        {
+          "caller": "change_status_to_pause",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 182
+        },
+        {
+          "caller": "change_status_to_pause",
+          "callee": "original_process.change_status_to_pause",
+          "lineNumber": 183
+        },
+        {
+          "caller": "change_status_to_pause",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 184
+        },
+        {
+          "caller": "log_start_run_for_method",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 187
+        },
+        {
+          "caller": "log_start_run_for_method",
+          "callee": "original_process.log_start_run_for_method",
+          "lineNumber": 188
+        },
+        {
+          "caller": "log_start_run_for_method",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 189
+        },
+        {
+          "caller": "log_end_run_for_method",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 192
+        },
+        {
+          "caller": "log_end_run_for_method",
+          "callee": "original_process.log_end_run_for_method",
+          "lineNumber": 193
+        },
+        {
+          "caller": "log_end_run_for_method",
+          "callee": "self._update_control_for_process_name",
+          "lineNumber": 194
+        },
+        {
+          "caller": "when_method_last_started",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 199
+        },
+        {
+          "caller": "when_method_last_started",
+          "callee": "original_process.when_method_last_started",
+          "lineNumber": 200
+        },
+        {
+          "caller": "when_method_last_ended",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 205
+        },
+        {
+          "caller": "when_method_last_ended",
+          "callee": "original_process.when_method_last_ended",
+          "lineNumber": 206
+        },
+        {
+          "caller": "method_currently_running",
+          "callee": "self.get_control_for_process_name",
+          "lineNumber": 209
+        },
+        {
+          "caller": "method_currently_running",
+          "callee": "original_process.method_currently_running",
+          "lineNumber": 210
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/roll_state.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "rollStateData",
+          "startLine": 11,
+          "endLine": 50,
+          "methods": [
+            "__init__",
+            "get_name_of_roll_state",
+            "get_roll_state",
+            "set_roll_state",
+            "get_list_of_instruments",
+            "_set_roll_state_as_str_without_checking",
+            "_get_roll_state_as_str_no_default"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollStateData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "get_name_of_roll_state",
+          "callee": "self.get_roll_state",
+          "lineNumber": 20
+        },
+        {
+          "caller": "get_name_of_roll_state",
+          "callee": "name_of_roll_state",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_roll_state",
+          "callee": "self._get_roll_state_as_str_no_default",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_roll_state",
+          "callee": "self.set_roll_state",
+          "lineNumber": 29
+        },
+        {
+          "caller": "set_roll_state",
+          "callee": "name_of_roll_state",
+          "lineNumber": 36
+        },
+        {
+          "caller": "set_roll_state",
+          "callee": "self._set_roll_state_as_str_without_checking",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_set_roll_state_as_str_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_get_roll_state_as_str_no_default",
+          "callee": "NotImplementedError",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/temporary_close.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "temporaryCloseData",
+          "startLine": 7,
+          "endLine": 50,
+          "methods": [
+            "__init__",
+            "add_stored_position_limit",
+            "get_stored_position_limit_for_instrument",
+            "clear_stored_position_limit_for_instrument",
+            "_add_stored_position_limit_without_checking",
+            "does_instrument_have_position_limit_stored",
+            "_delete_stored_position_limit_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "temporaryCloseData",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "add_stored_position_limit",
+          "callee": "self.does_instrument_have_position_limit_stored",
+          "lineNumber": 22
+        },
+        {
+          "caller": "add_stored_position_limit",
+          "callee": "Exception",
+          "lineNumber": 25
+        },
+        {
+          "caller": "add_stored_position_limit",
+          "callee": "self._add_stored_position_limit_without_checking",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_stored_position_limit_for_instrument",
+          "callee": "NotImplementedError",
+          "lineNumber": 35
+        },
+        {
+          "caller": "clear_stored_position_limit_for_instrument",
+          "callee": "self.does_instrument_have_position_limit_stored",
+          "lineNumber": 38
+        },
+        {
+          "caller": "clear_stored_position_limit_for_instrument",
+          "callee": "self._delete_stored_position_limit_without_checking",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_add_stored_position_limit_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 44
+        },
+        {
+          "caller": "does_instrument_have_position_limit_stored",
+          "callee": "NotImplementedError",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_delete_stored_position_limit_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/temporary_override.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "temporaryOverrideData",
+          "startLine": 7,
+          "endLine": 49,
+          "methods": [
+            "__init__",
+            "add_stored_override",
+            "get_stored_override_for_instrument",
+            "clear_stored_override_for_instrument",
+            "_add_stored_override_without_checking",
+            "does_instrument_have_override_stored",
+            "_delete_stored_override_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "temporaryOverrideData",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "add_stored_override",
+          "callee": "self.does_instrument_have_override_stored",
+          "lineNumber": 22
+        },
+        {
+          "caller": "add_stored_override",
+          "callee": "Exception",
+          "lineNumber": 23
+        },
+        {
+          "caller": "add_stored_override",
+          "callee": "self._add_stored_override_without_checking",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_stored_override_for_instrument",
+          "callee": "NotImplementedError",
+          "lineNumber": 34
+        },
+        {
+          "caller": "clear_stored_override_for_instrument",
+          "callee": "self.does_instrument_have_override_stored",
+          "lineNumber": 37
+        },
+        {
+          "caller": "clear_stored_override_for_instrument",
+          "callee": "self._delete_stored_override_without_checking",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_add_stored_override_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 43
+        },
+        {
+          "caller": "does_instrument_have_override_stored",
+          "callee": "NotImplementedError",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_delete_stored_override_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/trade_limits.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "instrument_strategy_for_instrument_only",
+          "startLine": 219,
+          "endLine": 220,
+          "params": [
+            "instrument_code"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "instrumentStrategyKeyAndDays",
+          "startLine": 19,
+          "endLine": 27,
+          "methods": [
+            "from_trade_limit"
+          ],
+          "properties": [
+            "instrument_strategy_key",
+            "period_days"
+          ]
+        },
+        {
+          "name": "listOfInstrumentStrategyKeyAndDays",
+          "startLine": 30,
+          "endLine": 39,
+          "methods": [
+            "for_given_instrument_strategy"
+          ],
+          "properties": []
+        },
+        {
+          "name": "tradeLimitData",
+          "startLine": 42,
+          "endLine": 216,
+          "methods": [
+            "__init__",
+            "no_limit",
+            "what_trade_is_possible_for_instrument",
+            "what_trade_is_possible_for_instrument_strategy",
+            "add_trade",
+            "remove_trade",
+            "_get_list_of_all_relevant_trade_limits",
+            "get_trade_limits_for_instrument",
+            "get_trade_limits_for_instrument_strategy",
+            "_update_list_of_trade_limits",
+            "update_instrument_limit_with_new_limit",
+            "update_instrument_strategy_limit_with_new_limit",
+            "reset_all_limits",
+            "reset_instrument_limit",
+            "reset_strategy_limit_all_instruments",
+            "reset_instrument_strategy_limit",
+            "get_all_limits",
+            "_get_trade_limit_object_from_isd_key",
+            "_get_trade_limit_object",
+            "_update_trade_limit_object",
+            "_get_trade_limit_as_dict_or_missing_data",
+            "_update_trade_limit_as_dict",
+            "_get_all_limit_keys"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "instrumentStrategyKeyAndDays",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "listOfInstrumentStrategyKeyAndDays",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "tradeLimitData",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "instrument_strategy_for_instrument_only",
+          "line": 219,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_trade_limit",
+          "callee": "instrumentStrategyKeyAndDays",
+          "lineNumber": 25
+        },
+        {
+          "caller": "for_given_instrument_strategy",
+          "callee": "listOfInstrumentStrategyKeyAndDays",
+          "lineNumber": 39
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 43
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 44
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 44
+        },
+        {
+          "caller": "no_limit",
+          "callee": "tradeLimit",
+          "lineNumber": 49
+        },
+        {
+          "caller": "what_trade_is_possible_for_instrument",
+          "callee": "self.get_trade_limits_for_instrument",
+          "lineNumber": 58
+        },
+        {
+          "caller": "what_trade_is_possible_for_instrument",
+          "callee": "combined_list.what_trade_is_possible",
+          "lineNumber": 59
+        },
+        {
+          "caller": "what_trade_is_possible_for_instrument_strategy",
+          "callee": "self._get_list_of_all_relevant_trade_limits",
+          "lineNumber": 66
+        },
+        {
+          "caller": "what_trade_is_possible_for_instrument_strategy",
+          "callee": "combined_list.what_trade_is_possible",
+          "lineNumber": 67
+        },
+        {
+          "caller": "add_trade",
+          "callee": "self._get_list_of_all_relevant_trade_limits",
+          "lineNumber": 72
+        },
+        {
+          "caller": "add_trade",
+          "callee": "combined_list.add_trade",
+          "lineNumber": 73
+        },
+        {
+          "caller": "add_trade",
+          "callee": "self._update_list_of_trade_limits",
+          "lineNumber": 74
+        },
+        {
+          "caller": "remove_trade",
+          "callee": "self._get_list_of_all_relevant_trade_limits",
+          "lineNumber": 77
+        },
+        {
+          "caller": "remove_trade",
+          "callee": "combined_list.remove_trade",
+          "lineNumber": 78
+        },
+        {
+          "caller": "remove_trade",
+          "callee": "self._update_list_of_trade_limits",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_get_list_of_all_relevant_trade_limits",
+          "callee": "self.get_trade_limits_for_instrument",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_get_list_of_all_relevant_trade_limits",
+          "callee": "self.get_trade_limits_for_instrument_strategy",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_list_of_all_relevant_trade_limits",
+          "callee": "listOfTradeLimits",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_trade_limits_for_instrument",
+          "callee": "instrument_strategy_for_instrument_only",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_trade_limits_for_instrument",
+          "callee": "listOfTradeLimits",
+          "lineNumber": 102
+        },
+        {
+          "caller": "get_trade_limits_for_instrument",
+          "callee": "self.get_trade_limits_for_instrument_strategy",
+          "lineNumber": 103
+        },
+        {
+          "caller": "get_trade_limits_for_instrument_strategy",
+          "callee": "self._get_all_limit_keys",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_trade_limits_for_instrument_strategy",
+          "callee": "all_keys.for_given_instrument_strategy",
+          "lineNumber": 110
+        },
+        {
+          "caller": "get_trade_limits_for_instrument_strategy",
+          "callee": "self._get_trade_limit_object_from_isd_key",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_trade_limits_for_instrument_strategy",
+          "callee": "listOfTradeLimits",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_update_list_of_trade_limits",
+          "callee": "self._update_trade_limit_object",
+          "lineNumber": 120
+        },
+        {
+          "caller": "update_instrument_limit_with_new_limit",
+          "callee": "instrument_strategy_for_instrument_only",
+          "lineNumber": 134
+        },
+        {
+          "caller": "update_instrument_limit_with_new_limit",
+          "callee": "self.update_instrument_strategy_limit_with_new_limit",
+          "lineNumber": 135
+        },
+        {
+          "caller": "update_instrument_strategy_limit_with_new_limit",
+          "callee": "self._get_trade_limit_object",
+          "lineNumber": 142
+        },
+        {
+          "caller": "update_instrument_strategy_limit_with_new_limit",
+          "callee": "trade_limit.update_limit",
+          "lineNumber": 143
+        },
+        {
+          "caller": "update_instrument_strategy_limit_with_new_limit",
+          "callee": "self._update_trade_limit_object",
+          "lineNumber": 144
+        },
+        {
+          "caller": "reset_all_limits",
+          "callee": "self.get_all_limits",
+          "lineNumber": 147
+        },
+        {
+          "caller": "reset_all_limits",
+          "callee": "self.reset_instrument_strategy_limit",
+          "lineNumber": 149
+        },
+        {
+          "caller": "reset_instrument_limit",
+          "callee": "instrument_strategy_for_instrument_only",
+          "lineNumber": 155
+        },
+        {
+          "caller": "reset_instrument_limit",
+          "callee": "self.reset_instrument_strategy_limit",
+          "lineNumber": 156
+        },
+        {
+          "caller": "reset_instrument_strategy_limit",
+          "callee": "self._get_trade_limit_object",
+          "lineNumber": 166
+        },
+        {
+          "caller": "reset_instrument_strategy_limit",
+          "callee": "trade_limit.reset",
+          "lineNumber": 168
+        },
+        {
+          "caller": "reset_instrument_strategy_limit",
+          "callee": "self._update_trade_limit_object",
+          "lineNumber": 169
+        },
+        {
+          "caller": "get_all_limits",
+          "callee": "self._get_all_limit_keys",
+          "lineNumber": 172
+        },
+        {
+          "caller": "get_all_limits",
+          "callee": "self._get_trade_limit_object_from_isd_key",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_all_limits",
+          "callee": "listOfTradeLimits",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_get_trade_limit_object_from_isd_key",
+          "callee": "instrumentStrategy.from_key",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_get_trade_limit_object_from_isd_key",
+          "callee": "self._get_trade_limit_object",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_get_trade_limit_object",
+          "callee": "self._get_trade_limit_as_dict_or_missing_data",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_get_trade_limit_object",
+          "callee": "self.no_limit",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_get_trade_limit_object",
+          "callee": "tradeLimit.from_dict",
+          "lineNumber": 199
+        },
+        {
+          "caller": "_update_trade_limit_object",
+          "callee": "trade_limit_object.as_dict",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_update_trade_limit_object",
+          "callee": "self._update_trade_limit_as_dict",
+          "lineNumber": 205
+        },
+        {
+          "caller": "instrument_strategy_for_instrument_only",
+          "callee": "instrumentStrategy",
+          "lineNumber": 220
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysinit/futures/repocsv_spread_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "copy_spread_costs_from_csv_to_mongo",
+          "startLine": 13,
+          "endLine": 40,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "process_new_instruments",
+          "startLine": 43,
+          "endLine": 64,
+          "params": [
+            "data_in",
+            "data_out",
+            "new_instruments"
+          ]
+        },
+        {
+          "name": "process_modified_instruments",
+          "startLine": 67,
+          "endLine": 102,
+          "params": [
+            "data_in",
+            "data_out",
+            "modified_instruments"
+          ]
+        },
+        {
+          "name": "process_deleted_instruments",
+          "startLine": 105,
+          "endLine": 120,
+          "params": [
+            "data_out",
+            "deleted_instruments"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "copy_spread_costs_from_csv_to_mongo",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "process_new_instruments",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "process_modified_instruments",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "process_deleted_instruments",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "mongoSpreadCostData",
+          "lineNumber": 14
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "csvSpreadCostData",
+          "lineNumber": 15
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "print",
+          "lineNumber": 17
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "str",
+          "lineNumber": 17
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "str",
+          "lineNumber": 17
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "data_in.get_list_of_instruments",
+          "lineNumber": 19
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "data_out.get_list_of_instruments",
+          "lineNumber": 20
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "new_removing_existing",
+          "lineNumber": 22
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "process_new_instruments",
+          "lineNumber": 30
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "process_deleted_instruments",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copy_spread_costs_from_csv_to_mongo",
+          "callee": "process_modified_instruments",
+          "lineNumber": 38
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "print",
+          "lineNumber": 49
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "str",
+          "lineNumber": 49
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "data_in.get_spread_cost",
+          "lineNumber": 55
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 57
+        },
+        {
+          "caller": "process_new_instruments",
+          "callee": "data_out.update_spread_cost",
+          "lineNumber": 64
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "data_in.get_spread_cost",
+          "lineNumber": 72
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "data_out.get_spread_cost",
+          "lineNumber": 73
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "actually_modified_instruments.append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "print",
+          "lineNumber": 82
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "str",
+          "lineNumber": 84
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 86
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "data_in.get_spread_cost",
+          "lineNumber": 91
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "data_out.get_spread_cost",
+          "lineNumber": 92
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 95
+        },
+        {
+          "caller": "process_modified_instruments",
+          "callee": "data_out.update_spread_cost",
+          "lineNumber": 102
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "print",
+          "lineNumber": 109
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "str",
+          "lineNumber": 109
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 110
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 114
+        },
+        {
+          "caller": "process_deleted_instruments",
+          "callee": "data_out.delete_spread_cost",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 540,
+      "nonEmptyLines": 456,
+      "functions": [
+        {
+          "name": "backup_arctic_to_parquet",
+          "startLine": 55,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "get_data_blob",
+          "startLine": 95,
+          "endLine": 138,
+          "params": [
+            "logname"
+          ]
+        },
+        {
+          "name": "backup_adj_to_parquet",
+          "startLine": 143,
+          "endLine": 146,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_adj_to_parquet_for_instrument",
+          "startLine": 149,
+          "endLine": 169,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "backup_futures_contract_prices_to_parquet",
+          "startLine": 173,
+          "endLine": 180,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_futures_contract_prices_for_instrument_to_parquet",
+          "startLine": 183,
+          "endLine": 194,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "backup_futures_contract_prices_for_contract_to_parquet",
+          "startLine": 197,
+          "endLine": 246,
+          "params": [
+            "data",
+            "futures_contract"
+          ]
+        },
+        {
+          "name": "backup_multiple_to_parquet",
+          "startLine": 249,
+          "endLine": 252,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_multiple_to_parquet_for_instrument",
+          "startLine": 255,
+          "endLine": 273,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "backup_fx_to_parquet",
+          "startLine": 277,
+          "endLine": 293,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_spreads_to_parquet",
+          "startLine": 296,
+          "endLine": 299,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_spreads_to_parquet_for_instrument",
+          "startLine": 302,
+          "endLine": 317,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "backup_contract_position_data",
+          "startLine": 320,
+          "endLine": 360,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_strategy_position_data",
+          "startLine": 363,
+          "endLine": 401,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_historical_orders",
+          "startLine": 404,
+          "endLine": 427,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_capital",
+          "startLine": 430,
+          "endLine": 460,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_optimal_positions",
+          "startLine": 463,
+          "endLine": 496,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_spread_cost_data",
+          "startLine": 499,
+          "endLine": 500,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_roll_state_data",
+          "startLine": 503,
+          "endLine": 513,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_contract_data",
+          "startLine": 516,
+          "endLine": 529,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "backup_csv_dump",
+          "startLine": 532,
+          "endLine": 536,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "backup_arctic_to_parquet",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "get_data_blob",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "backup_adj_to_parquet",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "backup_adj_to_parquet_for_instrument",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "backup_futures_contract_prices_to_parquet",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "backup_futures_contract_prices_for_instrument_to_parquet",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "backup_futures_contract_prices_for_contract_to_parquet",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "backup_multiple_to_parquet",
+          "line": 249,
+          "isDefault": false
+        },
+        {
+          "name": "backup_multiple_to_parquet_for_instrument",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "backup_fx_to_parquet",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "backup_spreads_to_parquet",
+          "line": 296,
+          "isDefault": false
+        },
+        {
+          "name": "backup_spreads_to_parquet_for_instrument",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "backup_contract_position_data",
+          "line": 320,
+          "isDefault": false
+        },
+        {
+          "name": "backup_strategy_position_data",
+          "line": 363,
+          "isDefault": false
+        },
+        {
+          "name": "backup_historical_orders",
+          "line": 404,
+          "isDefault": false
+        },
+        {
+          "name": "backup_capital",
+          "line": 430,
+          "isDefault": false
+        },
+        {
+          "name": "backup_optimal_positions",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "backup_spread_cost_data",
+          "line": 499,
+          "isDefault": false
+        },
+        {
+          "name": "backup_roll_state_data",
+          "line": 503,
+          "isDefault": false
+        },
+        {
+          "name": "backup_contract_data",
+          "line": 516,
+          "isDefault": false
+        },
+        {
+          "name": "backup_csv_dump",
+          "line": 532,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "get_data_blob",
+          "lineNumber": 56
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "log.debug",
+          "lineNumber": 59
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_futures_contract_prices_to_parquet",
+          "lineNumber": 62
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 64
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_fx_to_parquet",
+          "lineNumber": 66
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_multiple_to_parquet",
+          "lineNumber": 69
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 70
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_adj_to_parquet",
+          "lineNumber": 72
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 73
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_strategy_position_data",
+          "lineNumber": 75
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 76
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_contract_position_data",
+          "lineNumber": 78
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 80
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_capital",
+          "lineNumber": 82
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 83
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_spreads_to_parquet",
+          "lineNumber": 85
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 86
+        },
+        {
+          "caller": "backup_arctic_to_parquet",
+          "callee": "backup_optimal_positions",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get_data_blob",
+          "callee": "dataBlob",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_data_blob",
+          "callee": "data.add_class_list",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_data_blob",
+          "callee": "data.add_class_list",
+          "lineNumber": 118
+        },
+        {
+          "caller": "backup_adj_to_parquet",
+          "callee": "data.arctic_futures_adjusted_prices.get_list_of_instruments",
+          "lineNumber": 144
+        },
+        {
+          "caller": "backup_adj_to_parquet",
+          "callee": "backup_adj_to_parquet_for_instrument",
+          "lineNumber": 146
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.arctic_futures_adjusted_prices.get_adjusted_prices",
+          "lineNumber": 150
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_adjusted_prices.get_adjusted_prices",
+          "lineNumber": 153
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 154
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 154
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.log.warning",
+          "lineNumber": 155
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_adjusted_prices.add_adjusted_prices",
+          "lineNumber": 158
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_adjusted_prices.get_adjusted_prices",
+          "lineNumber": 161
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.log.debug",
+          "lineNumber": 162
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "str",
+          "lineNumber": 164
+        },
+        {
+          "caller": "backup_adj_to_parquet_for_instrument",
+          "callee": "data.log.warning",
+          "lineNumber": 167
+        },
+        {
+          "caller": "backup_futures_contract_prices_to_parquet",
+          "callee": "data.arctic_futures_contract_price.get_list_of_instrument_codes_with_merged_price_data",
+          "lineNumber": 175
+        },
+        {
+          "caller": "backup_futures_contract_prices_to_parquet",
+          "callee": "backup_futures_contract_prices_for_instrument_to_parquet",
+          "lineNumber": 178
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_instrument_to_parquet",
+          "callee": "data.arctic_futures_contract_price.contracts_with_merged_price_data_for_instrument_code",
+          "lineNumber": 186
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_instrument_to_parquet",
+          "callee": "backup_futures_contract_prices_for_contract_to_parquet",
+          "lineNumber": 191
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.arctic_futures_contract_price.get_merged_prices_for_contract_object",
+          "lineNumber": 201
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.parquet_futures_contract_price.get_merged_prices_for_contract_object",
+          "lineNumber": 206
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "len",
+          "lineNumber": 210
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "len",
+          "lineNumber": 210
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.log.warning",
+          "lineNumber": 211
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.parquet_futures_contract_price.write_merged_prices_for_contract_object",
+          "lineNumber": 214
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.parquet_futures_contract_price.get_merged_prices_for_contract_object",
+          "lineNumber": 220
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.log.debug",
+          "lineNumber": 224
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "str",
+          "lineNumber": 226
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.arctic_futures_contract_price.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 230
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.parquet_futures_contract_price.write_prices_at_frequency_for_contract_object",
+          "lineNumber": 234
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.parquet_futures_contract_price.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 240
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "data.log.debug",
+          "lineNumber": 243
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "str",
+          "lineNumber": 245
+        },
+        {
+          "caller": "backup_futures_contract_prices_for_contract_to_parquet",
+          "callee": "str",
+          "lineNumber": 245
+        },
+        {
+          "caller": "backup_multiple_to_parquet",
+          "callee": "data.arctic_futures_multiple_prices.get_list_of_instruments",
+          "lineNumber": 250
+        },
+        {
+          "caller": "backup_multiple_to_parquet",
+          "callee": "backup_multiple_to_parquet_for_instrument",
+          "lineNumber": 252
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.arctic_futures_multiple_prices.get_multiple_prices",
+          "lineNumber": 256
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_multiple_prices.get_multiple_prices",
+          "lineNumber": 259
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 262
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 262
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.log.warning",
+          "lineNumber": 263
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_multiple_prices.add_multiple_prices",
+          "lineNumber": 266
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.parquet_futures_multiple_prices.get_multiple_prices",
+          "lineNumber": 269
+        },
+        {
+          "caller": "backup_multiple_to_parquet_for_instrument",
+          "callee": "data.log.debug",
+          "lineNumber": 270
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.arctic_fx_prices.get_list_of_fxcodes",
+          "lineNumber": 278
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.arctic_fx_prices.get_fx_prices",
+          "lineNumber": 280
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.parquet_fx_prices.get_fx_prices",
+          "lineNumber": 281
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "len",
+          "lineNumber": 282
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "len",
+          "lineNumber": 282
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.log.debug",
+          "lineNumber": 283
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.parquet_fx_prices.add_fx_prices",
+          "lineNumber": 286
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.parquet_fx_prices.get_fx_prices",
+          "lineNumber": 289
+        },
+        {
+          "caller": "backup_fx_to_parquet",
+          "callee": "data.log.debug",
+          "lineNumber": 290
+        },
+        {
+          "caller": "backup_spreads_to_parquet",
+          "callee": "data.arctic_spreads_for_instrument.get_list_of_instruments",
+          "lineNumber": 297
+        },
+        {
+          "caller": "backup_spreads_to_parquet",
+          "callee": "backup_spreads_to_parquet_for_instrument",
+          "lineNumber": 299
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.arctic_spreads_for_instrument.get_spreads",
+          "lineNumber": 303
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.parquet_spreads_for_instrument.get_spreads",
+          "lineNumber": 304
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 306
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "len",
+          "lineNumber": 306
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.log.debug",
+          "lineNumber": 307
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.parquet_spreads_for_instrument.add_spreads",
+          "lineNumber": 310
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.parquet_spreads_for_instrument.get_spreads",
+          "lineNumber": 313
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "data.log.debug",
+          "lineNumber": 314
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "str",
+          "lineNumber": 316
+        },
+        {
+          "caller": "backup_spreads_to_parquet_for_instrument",
+          "callee": "str",
+          "lineNumber": 316
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.arctic_contract_position.get_list_of_instruments_with_any_position",
+          "lineNumber": 322
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.arctic_contract_position.get_list_of_contracts_for_instrument_code",
+          "lineNumber": 326
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.arctic_contract_position.get_position_as_series_for_contract_object",
+          "lineNumber": 332
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "print",
+          "lineNumber": 336
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.parquet_contract_position.get_position_as_series_for_contract_object",
+          "lineNumber": 340
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "len",
+          "lineNumber": 346
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "len",
+          "lineNumber": 346
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.log.debug",
+          "lineNumber": 347
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.parquet_contract_position.overwrite_position_series_for_contract_object_without_checking",
+          "lineNumber": 350
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.parquet_contract_position.get_position_as_series_for_contract_object",
+          "lineNumber": 353
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "data.log.debug",
+          "lineNumber": 357
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "str",
+          "lineNumber": 359
+        },
+        {
+          "caller": "backup_contract_position_data",
+          "callee": "str",
+          "lineNumber": 359
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "get_list_of_strategies",
+          "lineNumber": 364
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.arctic_contract_position.get_list_of_instruments_with_any_position",
+          "lineNumber": 366
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "instrumentStrategy",
+          "lineNumber": 370
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.arctic_strategy_position.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 374
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.parquet_strategy_position.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 381
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "len",
+          "lineNumber": 386
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "len",
+          "lineNumber": 386
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.log.debug",
+          "lineNumber": 387
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.parquet_strategy_position.overwrite_position_series_for_instrument_strategy_without_checking",
+          "lineNumber": 390
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.parquet_strategy_position.get_position_as_series_for_instrument_strategy_object",
+          "lineNumber": 394
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "data.log.debug",
+          "lineNumber": 398
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "str",
+          "lineNumber": 400
+        },
+        {
+          "caller": "backup_strategy_position_data",
+          "callee": "str",
+          "lineNumber": 400
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 405
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_strategy_historic_orders.get_order_with_orderid",
+          "lineNumber": 407
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_strategy_historic_orders.get_list_of_order_ids",
+          "lineNumber": 408
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.csv_strategy_historic_orders.write_orders",
+          "lineNumber": 410
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 411
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 413
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_contract_historic_orders.get_order_with_orderid",
+          "lineNumber": 415
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_contract_historic_orders.get_list_of_order_ids",
+          "lineNumber": 416
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.csv_contract_historic_orders.write_orders",
+          "lineNumber": 418
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 419
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 421
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_broker_historic_orders.get_order_with_orderid",
+          "lineNumber": 423
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.mongo_broker_historic_orders.get_list_of_order_ids",
+          "lineNumber": 424
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.csv_broker_historic_orders.write_orders",
+          "lineNumber": 426
+        },
+        {
+          "caller": "backup_historical_orders",
+          "callee": "data.log.debug",
+          "lineNumber": 427
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.arctic_capital._get_list_of_strategies_with_capital_including_total",
+          "lineNumber": 432
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.arctic_capital.get_capital_pd_df_for_strategy",
+          "lineNumber": 435
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.parquet_capital.get_capital_pd_df_for_strategy",
+          "lineNumber": 439
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "len",
+          "lineNumber": 445
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "len",
+          "lineNumber": 445
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.log.debug",
+          "lineNumber": 446
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.parquet_capital.update_capital_pd_df_for_strategy",
+          "lineNumber": 449
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "data.parquet_capital.get_capital_pd_df_for_strategy",
+          "lineNumber": 452
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "print",
+          "lineNumber": 455
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "str",
+          "lineNumber": 457
+        },
+        {
+          "caller": "backup_capital",
+          "callee": "str",
+          "lineNumber": 457
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.arctic_optimal_position.get_list_of_instrument_strategies_with_optimal_position",
+          "lineNumber": 465
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.arctic_optimal_position.get_optimal_position_as_df_for_instrument_strategy",
+          "lineNumber": 470
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.parquet_optimal_position.get_optimal_position_as_df_for_instrument_strategy",
+          "lineNumber": 477
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "len",
+          "lineNumber": 483
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "len",
+          "lineNumber": 483
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.log.debug",
+          "lineNumber": 484
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.parquet_optimal_position.write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "lineNumber": 486
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.parquet_optimal_position.get_optimal_position_as_df_for_instrument_strategy",
+          "lineNumber": 489
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "data.log.debug",
+          "lineNumber": 493
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "str",
+          "lineNumber": 495
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "str",
+          "lineNumber": 495
+        },
+        {
+          "caller": "backup_optimal_positions",
+          "callee": "str",
+          "lineNumber": 495
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "data.mongo_roll_state.get_list_of_instruments",
+          "lineNumber": 504
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "data.mongo_roll_state.get_name_of_roll_state",
+          "lineNumber": 507
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "roll_state_list.append",
+          "lineNumber": 508
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "pd.DataFrame",
+          "lineNumber": 510
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "data.csv_roll_state.write_all_instrument_data",
+          "lineNumber": 512
+        },
+        {
+          "caller": "backup_roll_state_data",
+          "callee": "data.log.debug",
+          "lineNumber": 513
+        },
+        {
+          "caller": "backup_contract_data",
+          "callee": "data.mongo_futures_contract.get_list_of_all_instruments_with_contracts",
+          "lineNumber": 518
+        },
+        {
+          "caller": "backup_contract_data",
+          "callee": "data.mongo_futures_contract.get_all_contract_objects_for_instrument_code",
+          "lineNumber": 522
+        },
+        {
+          "caller": "backup_contract_data",
+          "callee": "data.csv_futures_contract.write_contract_list_as_df",
+          "lineNumber": 526
+        },
+        {
+          "caller": "backup_contract_data",
+          "callee": "data.log.debug",
+          "lineNumber": 529
+        },
+        {
+          "caller": "backup_csv_dump",
+          "callee": "get_csv_dump_dir",
+          "lineNumber": 533
+        },
+        {
+          "caller": "backup_csv_dump",
+          "callee": "get_csv_backup_directory",
+          "lineNumber": 534
+        },
+        {
+          "caller": "backup_csv_dump",
+          "callee": "data.log.debug",
+          "lineNumber": 535
+        },
+        {
+          "caller": "backup_csv_dump",
+          "callee": "os.system",
+          "lineNumber": 536
+        }
+      ],
+      "metrics": {
+        "importCount": 30,
+        "exportCount": 21,
+        "functionCount": 21,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "from_list_of_entries_to_pd_series",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "list_of_entries",
+            "keyname"
+          ]
+        },
+        {
+          "name": "transfer_strategy_positions",
+          "startLine": 27,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "transfer_contract_positions",
+          "startLine": 52,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "transfer_optimal_positions",
+          "startLine": 79,
+          "endLine": 100,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "from_list_of_entries_to_pd_series",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "transfer_strategy_positions",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "transfer_contract_positions",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "transfer_optimal_positions",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_list_of_entries_to_pd_series",
+          "callee": "pd.Series",
+          "lineNumber": 24
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "mongoStrategyPositionData",
+          "lineNumber": 28
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "arcticStrategyPositionData",
+          "lineNumber": 29
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "instrumentStrategy",
+          "lineNumber": 32
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "old_data.mongo_data.get_list_of_all_dicts",
+          "lineNumber": 36
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "old_data.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 41
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "instrument_strategy.as_dict",
+          "lineNumber": 42
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "from_list_of_entries_to_pd_series",
+          "lineNumber": 46
+        },
+        {
+          "caller": "transfer_strategy_positions",
+          "callee": "new_data._write_updated_position_series_for_instrument_strategy_object",
+          "lineNumber": 47
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "mongoContractPositionData",
+          "lineNumber": 53
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "arcticContractPositionData",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_create_contract",
+          "callee": "result_dict[\"contractid\"].split",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_create_contract",
+          "callee": "futuresContract",
+          "lineNumber": 58
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "_create_contract",
+          "lineNumber": 63
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "old_data.mongo_data.get_list_of_all_dicts",
+          "lineNumber": 64
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "old_data.mongo_data.get_result_dict_for_dict_keys",
+          "lineNumber": 69
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "dict",
+          "lineNumber": 70
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "from_list_of_entries_to_pd_series",
+          "lineNumber": 73
+        },
+        {
+          "caller": "transfer_contract_positions",
+          "callee": "new_data._write_updated_position_series_for_contract_object",
+          "lineNumber": 74
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "mongoOptimalPositionData",
+          "lineNumber": 80
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "arcticOptimalPositionData",
+          "lineNumber": 81
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "old_data.mongo_data.get_list_of_all_dicts",
+          "lineNumber": 83
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "instrumentStrategy",
+          "lineNumber": 86
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "pd.DataFrame",
+          "lineNumber": 93
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "as_df.drop",
+          "lineNumber": 95
+        },
+        {
+          "caller": "transfer_optimal_positions",
+          "callee": "new_data.write_optimal_position_as_df_for_instrument_strategy_without_checking",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syslogdiag/_DEPRECATED/database_log.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "logData",
+          "startLine": 10,
+          "endLine": 17,
+          "methods": [
+            "__init__",
+            "delete_log_items_from_before_n_days"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "logData",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "logtoscreen",
+          "lineNumber": 11
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 12
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syslogdiag/email_control.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "emailControlData",
+          "startLine": 5,
+          "endLine": 19,
+          "methods": [
+            "__init__",
+            "get_time_last_email_sent_with_this_subject",
+            "record_date_of_email_send",
+            "get_time_last_warning_email_sent_with_this_subject",
+            "record_date_of_email_warning_send"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "emailControlData",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 6
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 7
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syslogdiag/emailing.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "send_mail_file",
+          "startLine": 13,
+          "endLine": 25,
+          "params": [
+            "textfile",
+            "subject"
+          ]
+        },
+        {
+          "name": "send_mail_msg",
+          "startLine": 36,
+          "endLine": 40,
+          "params": [
+            "body",
+            "subject",
+            "mail_type"
+          ]
+        },
+        {
+          "name": "send_mail_dataframe",
+          "startLine": 43,
+          "endLine": 53,
+          "params": [
+            "subject",
+            "df",
+            "header"
+          ]
+        },
+        {
+          "name": "send_mail_pdfs",
+          "startLine": 56,
+          "endLine": 73,
+          "params": [
+            "preamble",
+            "filelist",
+            "subject"
+          ]
+        },
+        {
+          "name": "_send_msg",
+          "startLine": 76,
+          "endLine": 101,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "get_email_details",
+          "startLine": 104,
+          "endLine": 119,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MailType",
+          "startLine": 28,
+          "endLine": 33,
+          "methods": [
+            "__str__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "send_mail_file",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "MailType",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "send_mail_msg",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "send_mail_dataframe",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "send_mail_pdfs",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "_send_msg",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "get_email_details",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send_mail_file",
+          "callee": "open",
+          "lineNumber": 18
+        },
+        {
+          "caller": "send_mail_file",
+          "callee": "MIMEText",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send_mail_file",
+          "callee": "fp.read",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send_mail_file",
+          "callee": "fp.close",
+          "lineNumber": 21
+        },
+        {
+          "caller": "send_mail_file",
+          "callee": "_send_msg",
+          "lineNumber": 25
+        },
+        {
+          "caller": "send_mail_msg",
+          "callee": "MIMEMultipart",
+          "lineNumber": 37
+        },
+        {
+          "caller": "send_mail_msg",
+          "callee": "msg.attach",
+          "lineNumber": 39
+        },
+        {
+          "caller": "send_mail_msg",
+          "callee": "MIMEText",
+          "lineNumber": 39
+        },
+        {
+          "caller": "send_mail_msg",
+          "callee": "_send_msg",
+          "lineNumber": 40
+        },
+        {
+          "caller": "send_mail_dataframe",
+          "callee": "df.to_html",
+          "lineNumber": 44
+        },
+        {
+          "caller": "send_mail_dataframe",
+          "callee": "send_mail_msg",
+          "lineNumber": 53
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "MIMEMultipart",
+          "lineNumber": 62
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "open",
+          "lineNumber": 67
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "MIMEApplication",
+          "lineNumber": 68
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "fp.read",
+          "lineNumber": 68
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "fp.close",
+          "lineNumber": 69
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "attach.add_header",
+          "lineNumber": 70
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "msg.attach",
+          "lineNumber": 71
+        },
+        {
+          "caller": "send_mail_pdfs",
+          "callee": "_send_msg",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "get_email_details",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "smtplib.SMTP_SSL",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "smtplib.SMTP",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "s.starttls",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "s.login",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "s.sendmail",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "msg.as_string",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_send_msg",
+          "callee": "s.quit",
+          "lineNumber": 101
+        },
+        {
+          "caller": "get_email_details",
+          "callee": "get_production_config",
+          "lineNumber": 107
+        },
+        {
+          "caller": "get_email_details",
+          "callee": "Exception",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syslogdiag/log_entry.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 96,
+      "classes": [
+        {
+          "name": "logEntry",
+          "startLine": 19,
+          "endLine": 122,
+          "methods": [
+            "__init__",
+            "log_entry_from_dict",
+            "__repr__",
+            "log_id",
+            "log_as_dict",
+            "timestamp",
+            "timestamp_as_text",
+            "text",
+            "msg_level",
+            "msg_level_as_text",
+            "attributes"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "logEntry",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__init__",
+          "callee": "copy",
+          "lineNumber": 38
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "copy",
+          "lineNumber": 54
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "log_dict.pop",
+          "lineNumber": 55
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "log_dict.pop",
+          "lineNumber": 56
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "log_dict.pop",
+          "lineNumber": 57
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "log_dict.pop",
+          "lineNumber": 58
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "long_to_datetime",
+          "lineNumber": 61
+        },
+        {
+          "caller": "log_entry_from_dict",
+          "callee": "logEntry",
+          "lineNumber": 63
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 76
+        },
+        {
+          "caller": "log_as_dict",
+          "callee": "copy",
+          "lineNumber": 86
+        },
+        {
+          "caller": "log_as_dict",
+          "callee": "datetime_to_long",
+          "lineNumber": 88
+        },
+        {
+          "caller": "timestamp_as_text",
+          "callee": "self.timestamp.strftime",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syslogdiag/log_to_file.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "get_logging_directory",
+          "startLine": 135,
+          "endLine": 151,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "logToFile",
+          "startLine": 16,
+          "endLine": 132,
+          "methods": [
+            "__init__",
+            "log_handle_caller",
+            "log_to_file",
+            "check_if_ready_and_if_so_flush",
+            "get_next_log_id",
+            "log_id",
+            "log_id",
+            "email_user",
+            "close_log_file",
+            "log_file_handle",
+            "log_filename_with_path",
+            "log_directory",
+            "type"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "logToFile",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "get_logging_directory",
+          "line": 135,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logging_directory",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 31
+        },
+        {
+          "caller": "log_handle_caller",
+          "callee": "logEntry",
+          "lineNumber": 42
+        },
+        {
+          "caller": "log_handle_caller",
+          "callee": "print",
+          "lineNumber": 45
+        },
+        {
+          "caller": "log_handle_caller",
+          "callee": "self.log_to_file",
+          "lineNumber": 46
+        },
+        {
+          "caller": "log_handle_caller",
+          "callee": "self.email_user",
+          "lineNumber": 50
+        },
+        {
+          "caller": "log_to_file",
+          "callee": "self.log_file_handle.write",
+          "lineNumber": 55
+        },
+        {
+          "caller": "log_to_file",
+          "callee": "str",
+          "lineNumber": 55
+        },
+        {
+          "caller": "log_to_file",
+          "callee": "self.check_if_ready_and_if_so_flush",
+          "lineNumber": 56
+        },
+        {
+          "caller": "check_if_ready_and_if_so_flush",
+          "callee": "self.log_file_handle.flush",
+          "lineNumber": 61
+        },
+        {
+          "caller": "log_id",
+          "callee": "getattr",
+          "lineNumber": 72
+        },
+        {
+          "caller": "email_user",
+          "callee": "str",
+          "lineNumber": 85
+        },
+        {
+          "caller": "email_user",
+          "callee": "str",
+          "lineNumber": 85
+        },
+        {
+          "caller": "email_user",
+          "callee": "str",
+          "lineNumber": 87
+        },
+        {
+          "caller": "email_user",
+          "callee": "send_production_mail_msg",
+          "lineNumber": 88
+        },
+        {
+          "caller": "close_log_file",
+          "callee": "getattr",
+          "lineNumber": 94
+        },
+        {
+          "caller": "close_log_file",
+          "callee": "print",
+          "lineNumber": 97
+        },
+        {
+          "caller": "close_log_file",
+          "callee": "file_handle.close",
+          "lineNumber": 99
+        },
+        {
+          "caller": "close_log_file",
+          "callee": "delattr",
+          "lineNumber": 102
+        },
+        {
+          "caller": "log_file_handle",
+          "callee": "getattr",
+          "lineNumber": 107
+        },
+        {
+          "caller": "log_file_handle",
+          "callee": "open",
+          "lineNumber": 110
+        },
+        {
+          "caller": "log_filename_with_path",
+          "callee": "join_file_and_path",
+          "lineNumber": 122
+        },
+        {
+          "caller": "get_logging_directory",
+          "callee": "get_production_config",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_logging_directory",
+          "callee": "config.get_element_or_default",
+          "lineNumber": 137
+        },
+        {
+          "caller": "get_logging_directory",
+          "callee": "print",
+          "lineNumber": 140
+        },
+        {
+          "caller": "get_logging_directory",
+          "callee": "get_resolved_pathname",
+          "lineNumber": 145
+        },
+        {
+          "caller": "get_logging_directory",
+          "callee": "os.mkdir",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

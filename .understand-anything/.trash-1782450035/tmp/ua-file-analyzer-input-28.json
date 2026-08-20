@@ -1,0 +1,182 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysexecution/strategies/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/tests/test_trade_qty.py",
+      "language": "python",
+      "sizeLines": 420,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/configtools/csvweights_to_yaml.py",
+      "language": "python",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/roll_parameters_csv_mongo.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/transfer/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/_DEPRECATED/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/logging_prod.yaml",
+      "language": "yaml",
+      "sizeLines": 40,
+      "fileCategory": "config"
+    },
+    {
+      "path": "syslogging/logging_sim.yaml",
+      "language": "yaml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "sysobjects/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/_DEPRECATED/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/tools/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/crontab",
+      "language": "unknown",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_db_to_csv",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_mongo_data_as_dump",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_parquet_to_remote",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysexecution/strategies/__init__.py": [],
+    "sysexecution/tests/__init__.py": [],
+    "sysexecution/tests/test_trade_qty.py": [],
+    "sysinit/__init__.py": [],
+    "sysinit/configtools/csvweights_to_yaml.py": [],
+    "sysinit/futures/__init__.py": [],
+    "sysinit/futures/roll_parameters_csv_mongo.py": [],
+    "sysinit/futures/tests/__init__.py": [],
+    "sysinit/transfer/__init__.py": [],
+    "syslogdiag/__init__.py": [],
+    "syslogdiag/_DEPRECATED/__init__.py": [],
+    "syslogging/logging_prod.yaml": [],
+    "syslogging/logging_sim.yaml": [],
+    "sysobjects/__init__.py": [],
+    "sysobjects/production/__init__.py": [],
+    "sysobjects/production/trading_hours/__init__.py": [],
+    "sysproduction/__init__.py": [],
+    "sysproduction/_DEPRECATED/__init__.py": [],
+    "sysproduction/data/__init__.py": [],
+    "sysproduction/data/tools/__init__.py": [],
+    "sysproduction/linux/crontab": [],
+    "sysproduction/linux/scripts/__init__.py": [],
+    "sysproduction/linux/scripts/backup_db_to_csv": [],
+    "sysproduction/linux/scripts/backup_mongo_data_as_dump": [],
+    "sysproduction/linux/scripts/backup_parquet_to_remote": []
+  }
+}

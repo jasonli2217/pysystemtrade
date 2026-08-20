@@ -1,4 +1,4 @@
-# Learning Plan — pysystemtrade from Zero to Live Trading
+****# Learning Plan — pysystemtrade from Zero to Live Trading
 
 #pysystemtrade #learning #plan
 
@@ -755,18 +755,18 @@ Switch to live IB account. Start with low capital. Scale up gradually.
 
 ## Quick Reference: Which Phase Am I In?
 
-| I want to... | Go to |
-|---|---|
-| Just run something and see output | Phase 1 |
-| Understand the pipeline and stages | Phase 2 |
-| Understand trading rules and forecasts | Phase 3 |
-| Change config (instruments, rules, weights) | Phase 4 |
-| Understand P&L and costs | Phase 5 |
-| Write my own trading rule | Phase 6 |
-| Understand Python patterns (inheritance, decorators) | Phase 7 |
-| Manage data and add instruments | Phase 8 |
-| Set up production infrastructure | Phase 9 |
-| Go live | Phase 10 |
+| I want to...                                         | Go to    |
+| ---------------------------------------------------- | -------- |
+| Just run something and see output                    | Phase 1  |
+| Understand the pipeline and stages                   | Phase 2  |
+| Understand trading rules and forecasts               | Phase 3  |
+| Change config (instruments, rules, weights)          | Phase 4  |
+| Understand P&L and costs                             | Phase 5  |
+| Write my own trading rule                            | Phase 6  |
+| Understand Python patterns (inheritance, decorators) | Phase 7  |
+| Manage data and add instruments                      | Phase 8  |
+| Set up production infrastructure                     | Phase 9  |
+| Go live                                              | Phase 10 |
 
 ---
 

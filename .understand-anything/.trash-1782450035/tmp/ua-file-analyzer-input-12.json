@@ -1,0 +1,515 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysexecution/stack_handler/completed_orders.py",
+      "language": "python",
+      "sizeLines": 204,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+      "language": "python",
+      "sizeLines": 346,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/fills.py",
+      "language": "python",
+      "sizeLines": 428,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/roll_orders.py",
+      "language": "python",
+      "sizeLines": 631,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+      "language": "python",
+      "sizeLines": 674,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/stackHandlerCore.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/stack_handler.py",
+      "language": "python",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/strategies/classic_buffered_positions.py",
+      "language": "python",
+      "sizeLines": 195,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/strategies/strategy_order_handling.py",
+      "language": "python",
+      "sizeLines": 248,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/tick_data.py",
+      "language": "python",
+      "sizeLines": 408,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/get_prices_and_contract_details_from_ib.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/seed_price_data_from_IB.py",
+      "language": "python",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/strategy_transfer.py",
+      "language": "python",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/futures_per_contract_prices.py",
+      "language": "python",
+      "sizeLines": 234,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/broker.py",
+      "language": "python",
+      "sizeLines": 538,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/controls.py",
+      "language": "python",
+      "sizeLines": 869,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/orders.py",
+      "language": "python",
+      "sizeLines": 229,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/positions.py",
+      "language": "python",
+      "sizeLines": 565,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/interactive_manual_check_historical_prices.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/interactive_order_stack.py",
+      "language": "python",
+      "sizeLines": 1024,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/pandl.py",
+      "language": "python",
+      "sizeLines": 510,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/positions.py",
+      "language": "python",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/update_historical_prices.py",
+      "language": "python",
+      "sizeLines": 503,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/scalper/broker.py",
+      "language": "python",
+      "sizeLines": 218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/scalper/components.py",
+      "language": "python",
+      "sizeLines": 439,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/scalper/configuration.py",
+      "language": "python",
+      "sizeLines": 273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/scalper/entry.py",
+      "language": "python",
+      "sizeLines": 641,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysexecution/stack_handler/completed_orders.py": [
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysproduction/data/orders.py"
+    ],
+    "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py": [
+      "syscore/objects.py",
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/fills.py",
+      "sysproduction/data/controls.py"
+    ],
+    "sysexecution/stack_handler/fills.py": [
+      "syscore/exceptions.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/completed_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysexecution/stack_handler/roll_orders.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/stack_handler/spawn_children_from_instrument_orders.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/roll_orders.py",
+      "sysexecution/stack_handler/stackHandlerCore.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/stack_handler/stackHandlerCore.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysexecution/stack_handler/stack_handler.py": [
+      "sysexecution/stack_handler/additional_sampling.py",
+      "sysexecution/stack_handler/cancel_and_modify.py",
+      "sysexecution/stack_handler/checks.py",
+      "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+      "sysexecution/stack_handler/roll_orders.py",
+      "sysexecution/stack_handler/spawn_children_from_instrument_orders.py"
+    ],
+    "sysexecution/strategies/classic_buffered_positions.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/strategies/strategy_order_handling.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/optimal_positions.py"
+    ],
+    "sysexecution/strategies/strategy_order_handling.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "syslogging/logger.py",
+      "sysobjects/production/roll_state.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysexecution/tick_data.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py"
+    ],
+    "sysinit/futures/get_prices_and_contract_details_from_ib.py": [
+      "syscore/dateutils.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py"
+    ],
+    "sysinit/futures/seed_price_data_from_IB.py": [
+      "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/update_historical_prices.py"
+    ],
+    "sysinit/futures/strategy_transfer.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/stack_handler/balance_trades.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysobjects/futures_per_contract_prices.py": [
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/full_merge_with_replacement.py",
+      "syscore/pandas/merge_data_keeping_past_data.py"
+    ],
+    "sysproduction/data/broker.py": [
+      "sysbrokers/broker_capital_data.py",
+      "sysbrokers/broker_contract_commission_data.py",
+      "sysbrokers/broker_contract_position_data.py",
+      "sysbrokers/broker_execution_stack.py",
+      "sysbrokers/broker_factory.py",
+      "sysbrokers/broker_futures_contract_data.py",
+      "sysbrokers/broker_futures_contract_price_data.py",
+      "sysbrokers/broker_fx_handling.py",
+      "sysbrokers/broker_fx_prices_data.py",
+      "sysbrokers/broker_instrument_data.py",
+      "sysbrokers/broker_static_data.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/data/controls.py": [
+      "syscore/exceptions.py",
+      "sysdata/config/instruments.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_IB_client_id.py",
+      "sysdata/mongodb/mongo_lock_data.py",
+      "sysdata/mongodb/mongo_override.py",
+      "sysdata/mongodb/mongo_position_limits.py",
+      "sysdata/mongodb/mongo_temporary_close.py",
+      "sysdata/mongodb/mongo_temporary_override.py",
+      "sysdata/mongodb/mongo_trade_limits.py",
+      "sysdata/production/broker_client_id.py",
+      "sysdata/production/locks.py",
+      "sysdata/production/override.py",
+      "sysdata/production/position_limits.py",
+      "sysdata/production/temporary_close.py",
+      "sysdata/production/temporary_override.py",
+      "sysdata/production/trade_limits.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/data/orders.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/historic_orders.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/contract_order_stack.py",
+      "sysexecution/order_stacks/instrument_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysobjects/fills.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/historic_contract_positions.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "sysdata/production/roll_state.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/roll_state.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/interactive_manual_check_historical_prices.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/update_historical_prices.py"
+    ],
+    "sysproduction/interactive_order_stack.py": [
+      "sysbrokers/IB/ib_connection.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/date_input.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysexecution/algos/allocate_algo_to_order.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/stack_handler/balance_trades.py",
+      "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+      "sysexecution/stack_handler/stack_handler.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/reporting/data/pandl.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "systems/accounts/pandl_calculators/pandl_using_fills.py"
+    ],
+    "sysproduction/reporting/data/positions.py": [
+      "sysproduction/data/broker.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/positions.py"
+    ],
+    "sysproduction/update_historical_prices.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/merge_data_keeping_past_data.py",
+      "sysdata/data_blob.py",
+      "sysdata/tools/cleaner.py",
+      "sysdata/tools/manual_price_checker.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py"
+    ],
+    "systems/provided/scalper/broker.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/algos/algo.py",
+      "sysexecution/algos/common_functions.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "systems/provided/scalper/components.py",
+      "systems/provided/scalper/configuration.py"
+    ],
+    "systems/provided/scalper/components.py": [
+      "syscore/constants.py",
+      "systems/provided/scalper/configuration.py"
+    ],
+    "systems/provided/scalper/configuration.py": [
+      "syscore/dateutils.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "systems/provided/scalper/entry.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "systems/provided/scalper/broker.py",
+      "systems/provided/scalper/components.py",
+      "systems/provided/scalper/configuration.py"
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysdata/config/defaults.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/config/production_config.py",
+      "language": "python",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_capital_data.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_contract_position_data.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_futures_contracts.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_historic_orders.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_instrument_data.py",
+      "language": "python",
+      "sizeLines": 138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_optimal_position.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_roll_state_storage.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_spread_costs.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_spreads.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/csv/csv_strategy_position_data.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/futures/contracts.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/futures/instruments.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/futures/spread_costs.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/futures/spreads.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_IB_client_id.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_futures_contracts.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_generic.py",
+      "language": "python",
+      "sizeLines": 282,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_lock_data.py",
+      "language": "python",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_override.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_position_limits.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_process_control.py",
+      "language": "python",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_roll_state_storage.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_spread_costs.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_close.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_temporary_override.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/mongo_trade_limits.py",
+      "language": "python",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_access.py",
+      "language": "python",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysdata/config/defaults.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py"
+    ],
+    "sysdata/config/production_config.py": [
+      "sysdata/config/configdata.py"
+    ],
+    "sysdata/csv/csv_capital_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_contract_position_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/csv/csv_futures_contracts.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/futures/contracts.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_historic_orders.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_orders.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_instrument_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/futures/instruments.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysdata/csv/csv_optimal_position.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/csv/csv_roll_state_storage.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/roll_state.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_spread_costs.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/futures/spread_costs.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/csv/csv_spreads.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/futures/spreads.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/csv/csv_strategy_position_data.py": [
+      "syscore/constants.py",
+      "syscore/fileutils.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/futures/contracts.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/futures/instruments.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysdata/futures/spread_costs.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/futures/spreads.py": [
+      "sysdata/base_data.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/mongodb/mongo_IB_client_id.py": [
+      "sysbrokers/IB/client/ib_client_id.py",
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_futures_contracts.py": [
+      "syscore/constants.py",
+      "sysdata/futures/contracts.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/mongodb/mongo_generic.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_connection.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_lock_data.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/locks.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_override.py": [
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/override.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/mongodb/mongo_position_limits.py": [
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/position_limits.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/mongodb/mongo_process_control.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/process_control_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py"
+    ],
+    "sysdata/mongodb/mongo_roll_state_storage.py": [
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/roll_state.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_spread_costs.py": [
+      "syscore/exceptions.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/mongodb/mongo_temporary_close.py": [
+      "syscore/constants.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/temporary_close.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py"
+    ],
+    "sysdata/mongodb/mongo_temporary_override.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/mongodb/mongo_override.py",
+      "sysdata/production/temporary_override.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/mongodb/mongo_trade_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "sysdata/production/trade_limits.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_access.py": [
+      "syscore/exceptions.py",
+      "syscore/fileutils.py"
+    ]
+  }
+}

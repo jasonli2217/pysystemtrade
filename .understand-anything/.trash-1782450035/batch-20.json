@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/action.yml",
+      "type": "pipeline",
+      "name": "action.yml",
+      "filePath": ".github/workflows/action.yml",
+      "summary": "Manually-triggered GitHub Actions workflow that checks all Markdown documentation under docs/ for broken links using the markdown-link-check action.",
+      "tags": ["ci-cd", "documentation", "infrastructure", "link-check"],
+      "complexity": "simple",
+      "languageNotes": "workflow_dispatch-only trigger means it runs on demand rather than automatically; config sourced from .github/workflows/mlc_config.json."
+    },
+    {
+      "id": "pipeline:.github/workflows/lint.yml",
+      "type": "pipeline",
+      "name": "lint.yml",
+      "filePath": ".github/workflows/lint.yml",
+      "summary": "GitHub Actions workflow that enforces code formatting on every push and pull request by running the pinned psf/black formatter (v23.11.0).",
+      "tags": ["ci-cd", "linting", "code-quality", "infrastructure"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/os-test.yml",
+      "type": "pipeline",
+      "name": "os-test.yml",
+      "filePath": ".github/workflows/os-test.yml",
+      "summary": "Cross-platform CI workflow that runs the file-utilities test suite across a matrix of operating systems (Ubuntu, macOS Intel/ARM, Windows) and Python versions 3.10-3.12.",
+      "tags": ["ci-cd", "testing", "infrastructure", "cross-platform", "matrix-build"],
+      "complexity": "moderate",
+      "languageNotes": "Uses a strategy matrix crossing 4 OSes with 3 Python versions for broad compatibility coverage; narrowly targets syscore/tests/test_fileutils.py."
+    },
+    {
+      "id": "pipeline:.github/workflows/quick-test.yml",
+      "type": "pipeline",
+      "name": "quick-test.yml",
+      "filePath": ".github/workflows/quick-test.yml",
+      "summary": "Primary CI workflow that runs the full fast pytest suite on every push and pull request under Ubuntu with Python 3.10, emitting a JUnit XML report.",
+      "tags": ["ci-cd", "testing", "infrastructure", "pytest"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "pipeline:.github/workflows/slow-test.yml",
+      "type": "pipeline",
+      "name": "slow-test.yml",
+      "filePath": ".github/workflows/slow-test.yml",
+      "summary": "Nightly scheduled CI workflow (cron 02:00 daily) that runs the slow/long-running pytest suite via the --runslow flag on Ubuntu with Python 3.10.",
+      "tags": ["ci-cd", "testing", "infrastructure", "scheduled", "pytest"],
+      "complexity": "moderate",
+      "languageNotes": "Cron-scheduled plus workflow_dispatch; the --runslow flag opts into tests gated behind a custom pytest marker."
+    }
+  ],
+  "edges": [
+    {
+      "source": "pipeline:.github/workflows/os-test.yml",
+      "target": "file:syscore/tests/test_fileutils.py",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

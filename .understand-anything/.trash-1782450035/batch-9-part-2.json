@@ -1,0 +1,1469 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/run_stack_handler.py",
+   "type": "file",
+   "name": "run_stack_handler.py",
+   "filePath": "sysproduction/run_stack_handler.py",
+   "summary": "Production process entry point that schedules the order stack handler timer functions for execution management.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "execution"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/run_stack_handler.py:get_list_of_timer_functions_for_stack_handler",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_stack_handler",
+   "filePath": "sysproduction/run_stack_handler.py",
+   "lineRange": [
+    14,
+    28
+   ],
+   "summary": "Builds the list of timer name/function pairs that drive the order stack handler.",
+   "tags": [
+    "scheduler",
+    "execution"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_strategy_order_generator.py",
+   "type": "file",
+   "name": "run_strategy_order_generator.py",
+   "filePath": "sysproduction/run_strategy_order_generator.py",
+   "summary": "Production process entry point that generates strategy order timer functions per configured strategy via the strategyRunner tool.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "orders"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/run_strategy_order_generator.py:get_list_of_strategy_order_timer_functions_for_strategies",
+   "type": "function",
+   "name": "get_list_of_strategy_order_timer_functions_for_strategies",
+   "filePath": "sysproduction/run_strategy_order_generator.py",
+   "lineRange": [
+    37,
+    51
+   ],
+   "summary": "Builds per-strategy order-generation timer functions using the strategyRunner tool.",
+   "tags": [
+    "scheduler",
+    "orders",
+    "strategy"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_systems.py",
+   "type": "file",
+   "name": "run_systems.py",
+   "filePath": "sysproduction/run_systems.py",
+   "summary": "Production process entry point that schedules backtest (system) timer functions per configured strategy via the strategyRunner tool.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "backtest"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/run_systems.py:get_list_of_backtest_timer_functions_for_strategies",
+   "type": "function",
+   "name": "get_list_of_backtest_timer_functions_for_strategies",
+   "filePath": "sysproduction/run_systems.py",
+   "lineRange": [
+    29,
+    41
+   ],
+   "summary": "Builds per-strategy backtest timer functions using the strategyRunner tool.",
+   "tags": [
+    "scheduler",
+    "backtest",
+    "strategy"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/startup.py",
+   "type": "file",
+   "name": "startup.py",
+   "filePath": "sysproduction/startup.py",
+   "summary": "Startup routine that resets process control state and clears all broker client IDs when the production stack boots.",
+   "tags": [
+    "entry-point",
+    "production",
+    "startup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/report_system_classic.py",
+   "type": "file",
+   "name": "report_system_classic.py",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "summary": "Generates the detailed classic-system backtest report: forecast matrices, position breakdowns by stage, buffer comparisons, and risk scaling diagnostics.",
+   "tags": [
+    "reporting",
+    "backtest",
+    "strategy",
+    "risk"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:report_system_classic_no_header_or_footer",
+   "type": "function",
+   "name": "report_system_classic_no_header_or_footer",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    44,
+    176
+   ],
+   "summary": "Builds the body of the classic-system report: volatility calc, subsystem and portfolio position breakdowns, buffer comparisons, forecast weights, and weighted forecasts tables.",
+   "tags": [
+    "reporting",
+    "backtest",
+    "positions"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix",
+   "type": "function",
+   "name": "get_forecast_matrix",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    179,
+    201
+   ],
+   "summary": "Builds a DataFrame of latest forecast values per trading rule across instruments from the backtest.",
+   "tags": [
+    "backtest",
+    "forecast"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix_over_code",
+   "type": "function",
+   "name": "get_forecast_matrix_over_code",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    204,
+    232
+   ],
+   "summary": "Builds a transposed forecast matrix of values per instrument code from the backtest system rules.",
+   "tags": [
+    "backtest",
+    "forecast"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:get_list_of_values_by_instrument_for_config",
+   "type": "function",
+   "name": "get_list_of_values_by_instrument_for_config",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    386,
+    432
+   ],
+   "summary": "Extracts a list of latest stage-method values per instrument according to a config spec, handling input arguments and types.",
+   "tags": [
+    "backtest",
+    "positions"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:get_position_for_instrument_code_at_timestamp",
+   "type": "function",
+   "name": "get_position_for_instrument_code_at_timestamp",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    463,
+    488
+   ],
+   "summary": "Returns the held position for an instrument/strategy as at the backtest timestamp using the diagPositions data source.",
+   "tags": [
+    "backtest",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_classic.py:risk_scaling_string",
+   "type": "function",
+   "name": "risk_scaling_string",
+   "filePath": "sysproduction/strategy_code/report_system_classic.py",
+   "lineRange": [
+    515,
+    564
+   ],
+   "summary": "Builds a human-readable diagnostic string of portfolio risk, leverage, vol target, and risk scalar from the backtest portfolio stage.",
+   "tags": [
+    "backtest",
+    "risk"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "type": "file",
+   "name": "report_system_dynamic_optimised.py",
+   "filePath": "sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "summary": "Generates the dynamic-optimised system report, building an optimal-positions table and reusing the classic system report body.",
+   "tags": [
+    "reporting",
+    "backtest",
+    "strategy",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:report_system_dynamic",
+   "type": "function",
+   "name": "report_system_dynamic",
+   "filePath": "sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "lineRange": [
+    13,
+    37
+   ],
+   "summary": "Builds the dynamic-optimised system report: an optimal-positions table plus the reused classic system report body.",
+   "tags": [
+    "reporting",
+    "backtest",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:get_optimal_positions_table_as_df",
+   "type": "function",
+   "name": "get_optimal_positions_table_as_df",
+   "filePath": "sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "lineRange": [
+    40,
+    90
+   ],
+   "summary": "Loads current optimal positions for a strategy and formats them into a rounded, sorted DataFrame for the report.",
+   "tags": [
+    "backtest",
+    "positions",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "type": "file",
+   "name": "strategy_allocation.py",
+   "filePath": "sysproduction/strategy_code/strategy_allocation.py",
+   "summary": "Allocates total capital across strategies using configured strategy weights, defaulting to equal weights when none are supplied.",
+   "tags": [
+    "strategy",
+    "capital",
+    "allocation",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/strategy_allocation.py:weighted_strategy_allocation",
+   "type": "function",
+   "name": "weighted_strategy_allocation",
+   "filePath": "sysproduction/strategy_code/strategy_allocation.py",
+   "lineRange": [
+    35,
+    59
+   ],
+   "summary": "Allocates capital across strategies in proportion to supplied (or default) strategy weights, normalising the weights.",
+   "tags": [
+    "strategy",
+    "capital",
+    "allocation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/strategy_allocation.py:strategy_weights_if_none_passed",
+   "type": "function",
+   "name": "strategy_weights_if_none_passed",
+   "filePath": "sysproduction/strategy_code/strategy_allocation.py",
+   "lineRange": [
+    62,
+    72
+   ],
+   "summary": "Returns equal strategy weights across all configured strategies when no explicit weights are supplied.",
+   "tags": [
+    "strategy",
+    "allocation",
+    "default"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/strategy_report.py",
+   "type": "file",
+   "name": "strategy_report.py",
+   "filePath": "sysproduction/strategy_code/strategy_report.py",
+   "summary": "Resolves and returns the configured reporting function instance for a given strategy from the strategy config.",
+   "tags": [
+    "strategy",
+    "reporting",
+    "factory",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/strategy_report.py:get_reporting_function_for_strategy_name",
+   "type": "function",
+   "name": "get_reporting_function_for_strategy_name",
+   "filePath": "sysproduction/strategy_code/strategy_report.py",
+   "lineRange": [
+    20,
+    35
+   ],
+   "summary": "Looks up the reporting function name for a strategy from the strategy config, warning if none is configured.",
+   "tags": [
+    "strategy",
+    "reporting",
+    "factory"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_fx_prices.py",
+   "type": "file",
+   "name": "update_fx_prices.py",
+   "filePath": "sysproduction/update_fx_prices.py",
+   "summary": "Updates spot FX prices from the broker into the database for all FX codes, reporting any data spikes via email; defines updateFxPrices process wrapper.",
+   "tags": [
+    "production",
+    "fx",
+    "prices",
+    "data-update"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_fx_prices.py:update_fx_prices_with_data",
+   "type": "function",
+   "name": "update_fx_prices_with_data",
+   "filePath": "sysproduction/update_fx_prices.py",
+   "lineRange": [
+    39,
+    52
+   ],
+   "summary": "Iterates all broker FX codes and updates each one's prices into the database via update_fx_prices_for_code.",
+   "tags": [
+    "fx",
+    "prices",
+    "data-update"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_fx_prices.py:update_fx_prices_for_code",
+   "type": "function",
+   "name": "update_fx_prices_for_code",
+   "filePath": "sysproduction/update_fx_prices.py",
+   "lineRange": [
+    55,
+    68
+   ],
+   "summary": "Fetches broker FX prices for one code and writes new rows to the database, reporting any detected spike.",
+   "tags": [
+    "fx",
+    "prices",
+    "data-update"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/update_fx_prices.py:updateFxPrices",
+   "type": "class",
+   "name": "updateFxPrices",
+   "filePath": "sysproduction/update_fx_prices.py",
+   "lineRange": [
+    29,
+    36
+   ],
+   "summary": "Process wrapper exposing update_fx_prices so the production scheduler can invoke FX price updates.",
+   "tags": [
+    "fx",
+    "wrapper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_strategy_capital.py",
+   "type": "file",
+   "name": "update_strategy_capital.py",
+   "filePath": "sysproduction/update_strategy_capital.py",
+   "summary": "Allocates and writes per-strategy capital and margin: reads total capital/margin, applies the allocation function, and persists results. Defines updateStrategyCapital wrapper.",
+   "tags": [
+    "production",
+    "capital",
+    "strategy",
+    "data-update"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/update_strategy_capital.py:updateStrategyCapital",
+   "type": "class",
+   "name": "updateStrategyCapital",
+   "filePath": "sysproduction/update_strategy_capital.py",
+   "lineRange": [
+    27,
+    70
+   ],
+   "summary": "Process wrapper that orchestrates per-strategy capital and margin allocation, logging critical failures.",
+   "tags": [
+    "capital",
+    "strategy",
+    "wrapper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_strategy_capital.py:call_allocation_function",
+   "type": "function",
+   "name": "call_allocation_function",
+   "filePath": "sysproduction/update_strategy_capital.py",
+   "lineRange": [
+    95,
+    105
+   ],
+   "summary": "Resolves and invokes the configured strategy allocation function with the capital to allocate.",
+   "tags": [
+    "capital",
+    "allocation",
+    "factory"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_capital",
+   "type": "function",
+   "name": "write_allocated_strategy_capital",
+   "filePath": "sysproduction/update_strategy_capital.py",
+   "lineRange": [
+    115,
+    125
+   ],
+   "summary": "Persists each strategy's allocated capital value to the capital data store with a timestamp.",
+   "tags": [
+    "capital",
+    "persistence"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_margin",
+   "type": "function",
+   "name": "write_allocated_strategy_margin",
+   "filePath": "sysproduction/update_strategy_capital.py",
+   "lineRange": [
+    128,
+    138
+   ],
+   "summary": "Persists each strategy's allocated margin entry to the margin data store.",
+   "tags": [
+    "margin",
+    "persistence"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_strategy_orders.py",
+   "type": "file",
+   "name": "update_strategy_orders.py",
+   "filePath": "sysproduction/update_strategy_orders.py",
+   "summary": "Interactive entry point that runs the strategy order-generation method for a user-selected strategy.",
+   "tags": [
+    "production",
+    "orders",
+    "strategy",
+    "interactive"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_strategy_orders.py:update_strategy_orders",
+   "type": "function",
+   "name": "update_strategy_orders",
+   "filePath": "sysproduction/update_strategy_orders.py",
+   "lineRange": [
+    13,
+    30
+   ],
+   "summary": "Prompts the user to select a strategy and runs that strategy's order-generation method via strategyRunner.",
+   "tags": [
+    "orders",
+    "strategy",
+    "interactive"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_system_backtests.py",
+   "type": "file",
+   "name": "update_system_backtests.py",
+   "filePath": "sysproduction/update_system_backtests.py",
+   "summary": "Interactive entry point that runs the system backtest method for a user-selected strategy.",
+   "tags": [
+    "production",
+    "backtest",
+    "strategy",
+    "interactive"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_system_backtests.py:update_system_backtests",
+   "type": "function",
+   "name": "update_system_backtests",
+   "filePath": "sysproduction/update_system_backtests.py",
+   "lineRange": [
+    12,
+    29
+   ],
+   "summary": "Prompts the user to select a strategy and runs that strategy's system backtest method via strategyRunner.",
+   "tags": [
+    "backtest",
+    "strategy",
+    "interactive"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_total_capital.py",
+   "type": "file",
+   "name": "update_total_capital.py",
+   "filePath": "sysproduction/update_total_capital.py",
+   "summary": "Updates total trading capital and margin from broker account values, creating initial capital if none exists. Defines totalCapitalUpdate process wrapper.",
+   "tags": [
+    "production",
+    "capital",
+    "margin",
+    "data-update"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/update_total_capital.py:totalCapitalUpdate",
+   "type": "class",
+   "name": "totalCapitalUpdate",
+   "filePath": "sysproduction/update_total_capital.py",
+   "lineRange": [
+    31,
+    71
+   ],
+   "summary": "Process wrapper that updates total capital and margin from broker account values, logging margin series tails.",
+   "tags": [
+    "capital",
+    "margin",
+    "wrapper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value",
+   "type": "function",
+   "name": "_update_capital_with_broker_account_value",
+   "filePath": "sysproduction/update_total_capital.py",
+   "lineRange": [
+    74,
+    92
+   ],
+   "summary": "Updates stored capital with a broker account value, creating initial capital records when none exist.",
+   "tags": [
+    "capital",
+    "data-update"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value_if_capital_data_exists",
+   "type": "function",
+   "name": "_update_capital_with_broker_account_value_if_capital_data_exists",
+   "filePath": "sysproduction/update_total_capital.py",
+   "lineRange": [
+    95,
+    114
+   ],
+   "summary": "Updates and returns total capital with a new broker account value when capital data already exists.",
+   "tags": [
+    "capital",
+    "data-update"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:systems/accounts/from_returns.py",
+   "type": "file",
+   "name": "from_returns.py",
+   "filePath": "systems/accounts/from_returns.py",
+   "summary": "Constructs an account curve directly from a returns series with cash costs, used by the accounting framework to build P&L curves from precomputed returns.",
+   "tags": [
+    "accounting",
+    "pandl",
+    "account-curve",
+    "backtest"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/accounts/from_returns.py:account_curve_from_returns",
+   "type": "function",
+   "name": "account_curve_from_returns",
+   "filePath": "systems/accounts/from_returns.py",
+   "lineRange": [
+    13,
+    33
+   ],
+   "summary": "Constructs an accountCurve from a returns series and cash costs, building the underlying P&L calculation object.",
+   "tags": [
+    "accounting",
+    "pandl",
+    "account-curve"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/run_stack_handler.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_stack_handler.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_stack_handler.py",
+   "target": "file:sysexecution/stack_handler/stack_handler.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_stack_handler.py",
+   "target": "function:sysproduction/run_stack_handler.py:get_list_of_timer_functions_for_stack_handler",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_stack_handler.py",
+   "target": "function:sysproduction/run_stack_handler.py:get_list_of_timer_functions_for_stack_handler",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "file:syscontrol/strategy_tools.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "file:sysproduction/update_strategy_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "function:sysproduction/run_strategy_order_generator.py:get_list_of_strategy_order_timer_functions_for_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_strategy_order_generator.py",
+   "target": "function:sysproduction/run_strategy_order_generator.py:get_list_of_strategy_order_timer_functions_for_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "file:syscontrol/strategy_tools.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "file:sysproduction/update_system_backtests.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "function:sysproduction/run_systems.py:get_list_of_backtest_timer_functions_for_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_systems.py",
+   "target": "function:sysproduction/run_systems.py:get_list_of_backtest_timer_functions_for_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/startup.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/startup.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:sysobjects/production/backtest_storage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:report_system_classic_no_header_or_footer",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:report_system_classic_no_header_or_footer",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix_over_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_forecast_matrix_over_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_list_of_values_by_instrument_for_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_list_of_values_by_instrument_for_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_position_for_instrument_code_at_timestamp",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:get_position_for_instrument_code_at_timestamp",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:risk_scaling_string",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_classic.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:risk_scaling_string",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "file:sysobjects/production/backtest_storage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "file:sysproduction/strategy_code/report_system_classic.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:report_system_dynamic",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:report_system_dynamic",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:get_optimal_positions_table_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "function:sysproduction/strategy_code/report_system_dynamic_optimised.py:get_optimal_positions_table_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "function:sysproduction/strategy_code/strategy_allocation.py:weighted_strategy_allocation",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "function:sysproduction/strategy_code/strategy_allocation.py:weighted_strategy_allocation",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "function:sysproduction/strategy_code/strategy_allocation.py:strategy_weights_if_none_passed",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_allocation.py",
+   "target": "function:sysproduction/strategy_code/strategy_allocation.py:strategy_weights_if_none_passed",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_report.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_report.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_report.py",
+   "target": "function:sysproduction/strategy_code/strategy_report.py:get_reporting_function_for_strategy_name",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/strategy_report.py",
+   "target": "function:sysproduction/strategy_code/strategy_report.py:get_reporting_function_for_strategy_name",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:syslogdiag/email_via_db_interface.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "function:sysproduction/update_fx_prices.py:update_fx_prices_with_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "function:sysproduction/update_fx_prices.py:update_fx_prices_with_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "function:sysproduction/update_fx_prices.py:update_fx_prices_for_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "function:sysproduction/update_fx_prices.py:update_fx_prices_for_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "class:sysproduction/update_fx_prices.py:updateFxPrices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_fx_prices.py",
+   "target": "class:sysproduction/update_fx_prices.py:updateFxPrices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "class:sysproduction/update_strategy_capital.py:updateStrategyCapital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "class:sysproduction/update_strategy_capital.py:updateStrategyCapital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:call_allocation_function",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:call_allocation_function",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_margin",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/update_strategy_capital.py:write_allocated_strategy_margin",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "file:syscontrol/strategy_tools.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "file:sysexecution/strategies/strategy_order_handling.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "function:sysproduction/update_strategy_orders.py:update_strategy_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_strategy_orders.py",
+   "target": "function:sysproduction/update_strategy_orders.py:update_strategy_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "file:syscontrol/strategy_tools.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "function:sysproduction/update_system_backtests.py:update_system_backtests",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_system_backtests.py",
+   "target": "function:sysproduction/update_system_backtests.py:update_system_backtests",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "class:sysproduction/update_total_capital.py:totalCapitalUpdate",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "class:sysproduction/update_total_capital.py:totalCapitalUpdate",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value_if_capital_data_exists",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_total_capital.py",
+   "target": "function:sysproduction/update_total_capital.py:_update_capital_with_broker_account_value_if_capital_data_exists",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/accounts/from_returns.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/from_returns.py",
+   "target": "file:systems/accounts/curves/account_curve.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/from_returns.py",
+   "target": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/from_returns.py",
+   "target": "function:systems/accounts/from_returns.py:account_curve_from_returns",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/accounts/from_returns.py",
+   "target": "function:systems/accounts/from_returns.py:account_curve_from_returns",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/report_system_dynamic_optimised.py",
+   "target": "function:sysproduction/strategy_code/report_system_classic.py:report_system_classic_no_header_or_footer",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_strategy_capital.py",
+   "target": "function:sysproduction/strategy_code/strategy_allocation.py:weighted_strategy_allocation",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  }
+ ]
+}

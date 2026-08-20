@@ -1,0 +1,472 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "systems/positionsizing.py",
+      "language": "python",
+      "sizeLines": 575,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/basic/system.py",
+      "language": "python",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/example/daily_with_order_simulation.py",
+      "language": "python",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/example/hourly_with_order_simulation.py",
+      "language": "python",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/example/simplesystem.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/futures_chapter15/basesystem.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/futures_chapter15/estimatedsystem.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rob_system/rawdata.py",
+      "language": "python",
+      "sizeLines": 301,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rob_system/run_system.py",
+      "language": "python",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rules/accel.py",
+      "language": "python",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rules/carry.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rules/ewmac.py",
+      "language": "python",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rules/mr_wings.py",
+      "language": "python",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/rawdata.py",
+      "language": "python",
+      "sizeLines": 745,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/risk.py",
+      "language": "python",
+      "sizeLines": 103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/risk_overlay.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/stage.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/system_cache.py",
+      "language": "python",
+      "sizeLines": 792,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_base_systems.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_cache.py",
+      "language": "python",
+      "sizeLines": 318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_forecast_combine.py",
+      "language": "python",
+      "sizeLines": 272,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_forecast_scale_cap.py",
+      "language": "python",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_forecasts.py",
+      "language": "python",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_mp_optimise_over_time.py",
+      "language": "python",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_portfolio.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_position_sizing.py",
+      "language": "python",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/test_rawdata.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/testdata.py",
+      "language": "python",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tests/testfuturesrawdata.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/tools/autogroup.py",
+      "language": "python",
+      "sizeLines": 271,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/trading_rules.py",
+      "language": "python",
+      "sizeLines": 508,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_examples.py",
+      "language": "python",
+      "sizeLines": 448,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "systems/positionsizing.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/buffering.py",
+      "systems/forecast_combine.py",
+      "systems/rawdata.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py": [
+      "syscore/pandas/pdutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "systems/forecast_scale_cap.py"
+    ],
+    "systems/provided/basic/system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/accounts_stage.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/example/daily_with_order_simulation.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/example/hourly_with_order_simulation.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "systems/accounts/order_simulator/hourly_market_orders.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/example/simplesystem.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/futures_chapter15/basesystem.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/futures_chapter15/estimatedsystem.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/provided/rob_system/rawdata.py": [
+      "syscore/dateutils.py",
+      "systems/rawdata.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/rob_system/run_system.py": [
+      "syscore/constants.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/db_futures_sim_data.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/provided/rob_system/rawdata.py",
+      "systems/risk.py"
+    ],
+    "systems/provided/rules/accel.py": [
+      "systems/provided/rules/ewmac.py"
+    ],
+    "systems/provided/rules/carry.py": [],
+    "systems/provided/rules/ewmac.py": [
+      "sysquant/estimators/vol.py"
+    ],
+    "systems/provided/rules/mr_wings.py": [
+      "systems/provided/rules/ewmac.py"
+    ],
+    "systems/rawdata.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "sysdata/config/configdata.py",
+      "sysdata/sim/futures_sim_data.py",
+      "sysobjects/carry_data.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/risk.py": [
+      "syscore/pandas/list_of_df.py",
+      "sysquant/optimisation/weights.py",
+      "systems/portfolio.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/risk_overlay.py": [],
+    "systems/stage.py": [
+      "syscore/objects.py",
+      "syslogging/logger.py",
+      "systems/basesystem.py"
+    ],
+    "systems/system_cache.py": [
+      "syscore/fileutils.py"
+    ],
+    "systems/tests/test_base_systems.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/basesystem.py",
+      "systems/stage.py"
+    ],
+    "systems/tests/test_cache.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/sim_data.py",
+      "systems/basesystem.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/tests/test_forecast_combine.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_forecast_scale_cap.py": [
+      "systems/basesystem.py",
+      "systems/forecast_scale_cap.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_forecasts.py": [
+      "sysdata/config/configdata.py",
+      "systems/basesystem.py",
+      "systems/forecasting.py",
+      "systems/provided/rules/carry.py",
+      "systems/provided/rules/ewmac.py",
+      "systems/rawdata.py",
+      "systems/tests/testdata.py",
+      "systems/trading_rules.py"
+    ],
+    "systems/tests/test_mp_optimise_over_time.py": [
+      "sysdata/config/configdata.py",
+      "sysquant/optimisation/optimise_over_time.py",
+      "sysquant/returns.py"
+    ],
+    "systems/tests/test_portfolio.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/portfolio.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_position_sizing.py": [
+      "sysdata/config/private_config.py",
+      "systems/basesystem.py",
+      "systems/positionsizing.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/test_rawdata.py": [
+      "systems/basesystem.py",
+      "systems/tests/testdata.py"
+    ],
+    "systems/tests/testdata.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/rawdata.py"
+    ],
+    "systems/tests/testfuturesrawdata.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "systems/basesystem.py",
+      "systems/rawdata.py"
+    ],
+    "systems/tools/autogroup.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py"
+    ],
+    "systems/trading_rules.py": [
+      "syscore/constants.py",
+      "syscore/objects.py",
+      "syscore/pandas/strategy_functions.py",
+      "syscore/text.py"
+    ],
+    "tests/test_examples.py": [
+      "sysdata/config/configdata.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/accounts_stage.py",
+      "systems/basesystem.py",
+      "systems/forecast_combine.py",
+      "systems/forecast_scale_cap.py",
+      "systems/forecasting.py",
+      "systems/portfolio.py",
+      "systems/positionsizing.py",
+      "systems/provided/example/simplesystem.py",
+      "systems/provided/futures_chapter15/basesystem.py",
+      "systems/provided/rules/ewmac.py",
+      "systems/rawdata.py",
+      "systems/trading_rules.py"
+    ]
+  }
+}

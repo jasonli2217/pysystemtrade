@@ -1,0 +1,1011 @@
+{
+ "nodes": [
+  {
+   "id": "file:systems/accounts/tests/test_accounts.py",
+   "type": "file",
+   "name": "test_accounts.py",
+   "filePath": "systems/accounts/tests/test_accounts.py",
+   "summary": "Unit tests validating accounting outputs (P&L, costs, Sharpe) of the chapter 15 system.",
+   "tags": [
+    "test",
+    "accounting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:systems/basesystem.py",
+   "type": "file",
+   "name": "basesystem.py",
+   "filePath": "systems/basesystem.py",
+   "summary": "Core System container that holds data, config and stages, wiring them together and managing the shared cache.",
+   "tags": [
+    "core",
+    "system",
+    "orchestration",
+    "cache"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/buffering.py",
+   "type": "file",
+   "name": "buffering.py",
+   "filePath": "systems/buffering.py",
+   "summary": "Position buffering helpers implementing forecast- and position-based no-trade buffers to reduce turnover.",
+   "tags": [
+    "utility",
+    "buffering",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:systems/forecast_combine.py",
+   "type": "file",
+   "name": "forecast_combine.py",
+   "filePath": "systems/forecast_combine.py",
+   "summary": "ForecastCombine stage that weights and combines individual trading-rule forecasts, applying diversification multipliers and capping.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "combination",
+    "core"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/forecast_scale_cap.py",
+   "type": "file",
+   "name": "forecast_scale_cap.py",
+   "filePath": "systems/forecast_scale_cap.py",
+   "summary": "ForecastScaleCap stage that scales raw forecasts to a target average and caps them within bounds.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "scaling"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/forecasting.py",
+   "type": "file",
+   "name": "forecasting.py",
+   "filePath": "systems/forecasting.py",
+   "summary": "Rules stage that processes the configured trading rules and produces raw forecasts for each instrument.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "trading-rules"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:systems/portfolio.py",
+   "type": "file",
+   "name": "portfolio.py",
+   "filePath": "systems/portfolio.py",
+   "summary": "Portfolios stage that combines subsystem positions into instrument weights, applying diversification, risk scaling and buffering.",
+   "tags": [
+    "stage",
+    "portfolio",
+    "risk",
+    "core"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:systems/accounts/tests/test_accounts.py:TestAccounts",
+   "type": "class",
+   "name": "TestAccounts",
+   "filePath": "systems/accounts/tests/test_accounts.py",
+   "lineRange": [
+    27,
+    123
+   ],
+   "summary": "TestCase validating P&L, cost and Sharpe outputs of the chapter 15 system accounting.",
+   "tags": [
+    "test",
+    "accounting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/basesystem.py:System",
+   "type": "class",
+   "name": "System",
+   "filePath": "systems/basesystem.py",
+   "lineRange": [
+    25,
+    390
+   ],
+   "summary": "Central system container holding data, config and stages, wiring cross-stage access and the shared cache.",
+   "tags": [
+    "core",
+    "system",
+    "orchestration"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:systems/basesystem.py:get_instrument_weights_from_config",
+   "type": "function",
+   "name": "get_instrument_weights_from_config",
+   "filePath": "systems/basesystem.py",
+   "lineRange": [
+    393,
+    405
+   ],
+   "summary": "Reads instrument weights from config, supporting auto-grouping.",
+   "tags": [
+    "config",
+    "weights",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/buffering.py:calculate_buffers",
+   "type": "function",
+   "name": "calculate_buffers",
+   "filePath": "systems/buffering.py",
+   "lineRange": [
+    35,
+    87
+   ],
+   "summary": "Calculates position buffers using either forecast- or position-based methods per config.",
+   "tags": [
+    "buffering",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/buffering.py:get_forecast_method_buffer",
+   "type": "function",
+   "name": "get_forecast_method_buffer",
+   "filePath": "systems/buffering.py",
+   "lineRange": [
+    90,
+    117
+   ],
+   "summary": "Computes the buffer width derived from forecast strength.",
+   "tags": [
+    "buffering",
+    "forecasting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/buffering.py:get_position_method_buffer",
+   "type": "function",
+   "name": "get_position_method_buffer",
+   "filePath": "systems/buffering.py",
+   "lineRange": [
+    120,
+    136
+   ],
+   "summary": "Computes the buffer width as a fraction of the position size.",
+   "tags": [
+    "buffering",
+    "positions"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/buffering.py:_calculate_forecast_buffer_method",
+   "type": "function",
+   "name": "_calculate_forecast_buffer_method",
+   "filePath": "systems/buffering.py",
+   "lineRange": [
+    146,
+    173
+   ],
+   "summary": "Internal helper deriving forecast-based buffer values aligned to positions.",
+   "tags": [
+    "buffering",
+    "forecasting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/forecast_combine.py:ForecastCombine",
+   "type": "class",
+   "name": "ForecastCombine",
+   "filePath": "systems/forecast_combine.py",
+   "lineRange": [
+    45,
+    1373
+   ],
+   "summary": "Stage combining individual rule forecasts into a single forecast via weights, diversification multipliers and capping.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "combination"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:systems/forecast_combine.py:_get_fixed_weights_from_config",
+   "type": "function",
+   "name": "_get_fixed_weights_from_config",
+   "filePath": "systems/forecast_combine.py",
+   "lineRange": [
+    1387,
+    1414
+   ],
+   "summary": "Reads fixed forecast weights for an instrument from the config.",
+   "tags": [
+    "config",
+    "forecasting",
+    "weights"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/forecast_combine.py:_get_list_of_rules_from_config_for_instrument",
+   "type": "function",
+   "name": "_get_list_of_rules_from_config_for_instrument",
+   "filePath": "systems/forecast_combine.py",
+   "lineRange": [
+    1506,
+    1537
+   ],
+   "summary": "Determines the list of trading rules applicable to an instrument from config.",
+   "tags": [
+    "config",
+    "forecasting",
+    "trading-rules"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/forecast_scale_cap.py:ForecastScaleCap",
+   "type": "class",
+   "name": "ForecastScaleCap",
+   "filePath": "systems/forecast_scale_cap.py",
+   "lineRange": [
+    16,
+    498
+   ],
+   "summary": "Stage scaling raw forecasts to a target average absolute value and capping them within configured limits.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "scaling"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:systems/forecasting.py:Rules",
+   "type": "class",
+   "name": "Rules",
+   "filePath": "systems/forecasting.py",
+   "lineRange": [
+    10,
+    163
+   ],
+   "summary": "Stage that processes configured trading rules and produces raw per-instrument forecasts.",
+   "tags": [
+    "stage",
+    "forecasting",
+    "trading-rules"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/forecasting.py:process_trading_rules",
+   "type": "function",
+   "name": "process_trading_rules",
+   "filePath": "systems/forecasting.py",
+   "lineRange": [
+    166,
+    205
+   ],
+   "summary": "Normalises various trading-rule input formats into a dict of TradingRule objects.",
+   "tags": [
+    "forecasting",
+    "trading-rules",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/portfolio.py:Portfolios",
+   "type": "class",
+   "name": "Portfolios",
+   "filePath": "systems/portfolio.py",
+   "lineRange": [
+    69,
+    1329
+   ],
+   "summary": "Stage combining subsystem positions into instrument weights with diversification, risk scaling and buffering.",
+   "tags": [
+    "stage",
+    "portfolio",
+    "risk"
+   ],
+   "complexity": "complex"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:systems/accounts/tests/test_accounts.py",
+   "target": "class:systems/accounts/tests/test_accounts.py:TestAccounts",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/accounts/tests/test_accounts.py",
+   "target": "class:systems/accounts/tests/test_accounts.py:TestAccounts",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "class:systems/basesystem.py:System",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "class:systems/basesystem.py:System",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "function:systems/basesystem.py:get_instrument_weights_from_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "function:systems/basesystem.py:get_instrument_weights_from_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:calculate_buffers",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:calculate_buffers",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:get_forecast_method_buffer",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:get_forecast_method_buffer",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:get_position_method_buffer",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:get_position_method_buffer",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:_calculate_forecast_buffer_method",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "function:systems/buffering.py:_calculate_forecast_buffer_method",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "class:systems/forecast_combine.py:ForecastCombine",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "class:systems/forecast_combine.py:ForecastCombine",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "function:systems/forecast_combine.py:_get_fixed_weights_from_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "function:systems/forecast_combine.py:_get_fixed_weights_from_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "function:systems/forecast_combine.py:_get_list_of_rules_from_config_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "function:systems/forecast_combine.py:_get_list_of_rules_from_config_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "class:systems/forecast_scale_cap.py:ForecastScaleCap",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "class:systems/forecast_scale_cap.py:ForecastScaleCap",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "class:systems/forecasting.py:Rules",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "class:systems/forecasting.py:Rules",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "function:systems/forecasting.py:process_trading_rules",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "function:systems/forecasting.py:process_trading_rules",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "class:systems/portfolio.py:Portfolios",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "class:systems/portfolio.py:Portfolios",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/accounts/tests/test_accounts.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/tests/test_accounts.py",
+   "target": "file:sysdata/sim/csv_futures_sim_test_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/tests/test_accounts.py",
+   "target": "file:systems/provided/futures_chapter15/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:sysdata/config/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:sysdata/sim/sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:systems/system_cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/basesystem.py",
+   "target": "file:systems/tools/autogroup.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/buffering.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/pandas/frequency.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/pandas/list_of_df.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:syscore/pandas/strategy_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:sysquant/estimators/correlations.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:sysquant/estimators/turnover.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:sysquant/optimisation/pre_processing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/forecast_mapping.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/forecast_scale_cap.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/forecasting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/system_cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_combine.py",
+   "target": "file:systems/tools/autogroup.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:systems/stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecast_scale_cap.py",
+   "target": "file:systems/system_cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "file:systems/stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "file:systems/system_cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/forecasting.py",
+   "target": "file:systems/trading_rules.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/pandas/find_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:syscore/pandas/strategy_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/estimators/correlations.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/estimators/covariance.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/estimators/stdev_estimator.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/estimators/turnover.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/optimisation/pre_processing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/optimisation/weights.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/portfolio_risk.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/accounts/curves/account_curve_group.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/buffering.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/positionsizing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/risk_overlay.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/portfolio.py",
+   "target": "file:systems/system_cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:systems/forecast_combine.py:ForecastCombine",
+   "target": "class:systems/stage.py:SystemStage",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:systems/forecast_scale_cap.py:ForecastScaleCap",
+   "target": "class:systems/stage.py:SystemStage",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:systems/portfolio.py:Portfolios",
+   "target": "class:systems/stage.py:SystemStage",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:systems/forecasting.py:Rules",
+   "target": "class:systems/stage.py:SystemStage",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  }
+ ]
+}

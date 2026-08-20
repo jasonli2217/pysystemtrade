@@ -1,0 +1,850 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".pre-commit-config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "repos",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".travis.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "sudo",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "language",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "matrix",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "install",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "script",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "after_success",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "Repository Guidelines",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Project Structure & Module Organization",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Build, Test, and Development Commands",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Coding Style & Naming Conventions",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Testing Guidelines",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Commit & Pull Request Guidelines",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Security & Configuration Tips",
+          "level": 2,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 672,
+      "nonEmptyLines": 461,
+      "sections": [
+        {
+          "heading": "Release notes",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Version 1.8.2",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Version 1.80",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Version 1.71",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Version 1.70 (big jump lot's done)",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Version 1.62",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Version 1.61",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Version 1.60",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Version 1.50",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "Version 1.48",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Version 1.47",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Version 1.46",
+          "level": 2,
+          "line": 104
+        },
+        {
+          "heading": "Version 1.45",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Version 1.40",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "Version 1.31 (didn't seem to do any notes for 1.30)",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "Version 1.20",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Version 1.13",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Version 1.12",
+          "level": 2,
+          "line": 149
+        },
+        {
+          "heading": "Version 1.11",
+          "level": 2,
+          "line": 157
+        },
+        {
+          "heading": "Version 1.10",
+          "level": 2,
+          "line": 164
+        },
+        {
+          "heading": "Version 1.06",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Version 1.05",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "Version 1.04",
+          "level": 2,
+          "line": 180
+        },
+        {
+          "heading": "Version 1.03",
+          "level": 2,
+          "line": 188
+        },
+        {
+          "heading": "Version 1.02",
+          "level": 2,
+          "line": 194
+        },
+        {
+          "heading": "Version 1.01",
+          "level": 2,
+          "line": 201
+        },
+        {
+          "heading": "Version 1.00",
+          "level": 2,
+          "line": 232
+        },
+        {
+          "heading": "Version 0.90",
+          "level": 2,
+          "line": 238
+        },
+        {
+          "heading": "Version 0.85",
+          "level": 2,
+          "line": 246
+        },
+        {
+          "heading": "Version 0.80",
+          "level": 2,
+          "line": 255
+        },
+        {
+          "heading": "Version 0.75",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "Version 0.70",
+          "level": 2,
+          "line": 270
+        },
+        {
+          "heading": "Version 0.60.0",
+          "level": 2,
+          "line": 275
+        },
+        {
+          "heading": "Version 0.52.0",
+          "level": 2,
+          "line": 282
+        },
+        {
+          "heading": "Version 0.51.0",
+          "level": 2,
+          "line": 287
+        },
+        {
+          "heading": "Version 0.50.0",
+          "level": 2,
+          "line": 292
+        },
+        {
+          "heading": "Version 0.30.0",
+          "level": 2,
+          "line": 308
+        },
+        {
+          "heading": "Version 0.29.0",
+          "level": 2,
+          "line": 316
+        },
+        {
+          "heading": "Version 0.28.0",
+          "level": 2,
+          "line": 323
+        },
+        {
+          "heading": "Version 0.27.0",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "Version 0.26.0",
+          "level": 2,
+          "line": 335
+        },
+        {
+          "heading": "Version 0.25.0",
+          "level": 2,
+          "line": 339
+        },
+        {
+          "heading": "Version 0.24.0",
+          "level": 2,
+          "line": 351
+        },
+        {
+          "heading": "Version 0.23.0",
+          "level": 2,
+          "line": 358
+        },
+        {
+          "heading": "Version 0.22.0",
+          "level": 2,
+          "line": 365
+        },
+        {
+          "heading": "Version 0.21.0",
+          "level": 2,
+          "line": 374
+        },
+        {
+          "heading": "Version 0.20.0",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "Version 0.19.0",
+          "level": 2,
+          "line": 387
+        },
+        {
+          "heading": "Version 0.18.2",
+          "level": 2,
+          "line": 393
+        },
+        {
+          "heading": "Version 0.18.1",
+          "level": 2,
+          "line": 400
+        },
+        {
+          "heading": "Version 0.18",
+          "level": 2,
+          "line": 404
+        },
+        {
+          "heading": "Version 0.17",
+          "level": 2,
+          "line": 410
+        },
+        {
+          "heading": "Version 0.16.6",
+          "level": 2,
+          "line": 413
+        },
+        {
+          "heading": "Version 0.16.5",
+          "level": 2,
+          "line": 416
+        },
+        {
+          "heading": "Version 0.16.4",
+          "level": 2,
+          "line": 419
+        },
+        {
+          "heading": "Version 0.16.3",
+          "level": 2,
+          "line": 422
+        },
+        {
+          "heading": "Version 0.16.2",
+          "level": 2,
+          "line": 425
+        },
+        {
+          "heading": "Version 0.16.1",
+          "level": 2,
+          "line": 431
+        },
+        {
+          "heading": "Version 0.16.0",
+          "level": 2,
+          "line": 435
+        },
+        {
+          "heading": "Version 0.15.0",
+          "level": 2,
+          "line": 438
+        },
+        {
+          "heading": "Version 0.14.1",
+          "level": 2,
+          "line": 442
+        },
+        {
+          "heading": "Version 0.14.0",
+          "level": 2,
+          "line": 446
+        },
+        {
+          "heading": "Version 0.13.0",
+          "level": 2,
+          "line": 463
+        },
+        {
+          "heading": "Version 0.12.0",
+          "level": 2,
+          "line": 467
+        },
+        {
+          "heading": "Version 0.11.2",
+          "level": 2,
+          "line": 472
+        },
+        {
+          "heading": "Version 0.11.1",
+          "level": 2,
+          "line": 477
+        },
+        {
+          "heading": "Version 0.11.0",
+          "level": 2,
+          "line": 484
+        },
+        {
+          "heading": "Version 0.10.3",
+          "level": 2,
+          "line": 492
+        },
+        {
+          "heading": "Version 0.10.2",
+          "level": 2,
+          "line": 497
+        },
+        {
+          "heading": "Version 0.10.01",
+          "level": 2,
+          "line": 501
+        },
+        {
+          "heading": "Version 0.10.0",
+          "level": 2,
+          "line": 504
+        },
+        {
+          "heading": "Version 0.10.0",
+          "level": 2,
+          "line": 511
+        },
+        {
+          "heading": "Version 0.9.0",
+          "level": 2,
+          "line": 520
+        },
+        {
+          "heading": "Version 0.8.1",
+          "level": 2,
+          "line": 527
+        },
+        {
+          "heading": "Version 0.8.0",
+          "level": 2,
+          "line": 532
+        },
+        {
+          "heading": "Version 0.7.0",
+          "level": 2,
+          "line": 539
+        },
+        {
+          "heading": "Version 0.6.6",
+          "level": 2,
+          "line": 550
+        },
+        {
+          "heading": "Version 0.6.5",
+          "level": 2,
+          "line": 555
+        },
+        {
+          "heading": "Version 0.6.4",
+          "level": 2,
+          "line": 561
+        },
+        {
+          "heading": "Version 0.6.3",
+          "level": 2,
+          "line": 567
+        },
+        {
+          "heading": "Version 0.6.2",
+          "level": 2,
+          "line": 572
+        },
+        {
+          "heading": "Version 0.6.1",
+          "level": 2,
+          "line": 577
+        },
+        {
+          "heading": "Version 0.6.0",
+          "level": 2,
+          "line": 583
+        },
+        {
+          "heading": "Version 0.5.2",
+          "level": 2,
+          "line": 589
+        },
+        {
+          "heading": "Version: 0.5.1",
+          "level": 2,
+          "line": 597
+        },
+        {
+          "heading": "Version: 0.5.0",
+          "level": 2,
+          "line": 606
+        },
+        {
+          "heading": "Version: 0.4.0",
+          "level": 2,
+          "line": 611
+        },
+        {
+          "heading": "Version: 0.3.0",
+          "level": 2,
+          "line": 615
+        },
+        {
+          "heading": "Version: 0.2.1",
+          "level": 2,
+          "line": 619
+        },
+        {
+          "heading": "Version: 0.2.0",
+          "level": 2,
+          "line": 627
+        },
+        {
+          "heading": "Version: 0.1.0",
+          "level": 2,
+          "line": 642
+        },
+        {
+          "heading": "Version: 0.0.3",
+          "level": 2,
+          "line": 649
+        },
+        {
+          "heading": "Version: 0.0.2",
+          "level": 2,
+          "line": 660
+        },
+        {
+          "heading": "Version: 0.0.1",
+          "level": 2,
+          "line": 665
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 94
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 243,
+      "nonEmptyLines": 154,
+      "sections": [
+        {
+          "heading": "Pysystemtrade contributing guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "AI Policy",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Setup",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Keeping your repo up to date",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Branching model",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Primary branches",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Topic branches",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Working on topic branches",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "Unit tests",
+          "level": 2,
+          "line": 153
+        },
+        {
+          "heading": "Lint / Black",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "Black version",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "General code guidelines (INCOMPLETE)",
+          "level": 2,
+          "line": 198
+        },
+        {
+          "heading": "General",
+          "level": 3,
+          "line": 204
+        },
+        {
+          "heading": "Naming conventions",
+          "level": 3,
+          "line": 211
+        },
+        {
+          "heading": "Error handling",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Caching",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "Testing",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Documentation",
+          "level": 3,
+          "line": 235
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 43,
+      "sections": [
+        {
+          "heading": "pysystemtrade",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Description",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "History",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Use and documentation",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Dependencies",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "A note on support",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "Licensing and legal stuff",
+          "level": 2,
+          "line": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 98,
+      "nonEmptyLines": 91,
+      "sections": [
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "project.optional-dependencies",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "project.urls",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "tool.setuptools.packages",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "tool.setuptools.package-data",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "tool.pytest.ini_options",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "tool.black",
+          "level": 2,
+          "line": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 22,
+      "nonEmptyLines": 21,
+      "metrics": {}
+    },
+    {
+      "path": "tox.ini",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "metrics": {}
+    }
+  ]
+}

@@ -1,0 +1,1172 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/data/positions.py",
+   "type": "file",
+   "name": "positions.py",
+   "filePath": "sysproduction/reporting/data/positions.py",
+   "summary": "Thin reporting helpers fetching optimal, my and broker positions and computing position breaks for reconciliation reports.",
+   "tags": [
+    "production",
+    "reporting",
+    "positions",
+    "reconciliation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/update_historical_prices.py",
+   "type": "file",
+   "name": "update_historical_prices.py",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "summary": "Daily price-update process that downloads broker prices across time zones, merges them with stored data, checks for spikes and writes per-contract prices.",
+   "tags": [
+    "production",
+    "market-data",
+    "scheduled-job",
+    "price-update"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/provided/scalper/broker.py",
+   "type": "file",
+   "name": "broker.py",
+   "filePath": "systems/provided/scalper/broker.py",
+   "summary": "Scalper system broker layer providing a BrokerController and a stripped-down execution algo to submit and manage bracket orders live.",
+   "tags": [
+    "scalper",
+    "broker",
+    "execution",
+    "strategy"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:systems/provided/scalper/components.py",
+   "type": "file",
+   "name": "components.py",
+   "filePath": "systems/provided/scalper/components.py",
+   "summary": "Core state-machine components of the mean-reversion scalper: fills, orders, bracket-order construction, running P&L and trade-state transitions.",
+   "tags": [
+    "scalper",
+    "state-machine",
+    "execution",
+    "strategy"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/provided/scalper/configuration.py",
+   "type": "file",
+   "name": "configuration.py",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "summary": "Parameter configuration and interactive tuning for the scalper, including R-multiple estimation, horizons and price-based parameter estimation.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "parameters",
+    "strategy"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/provided/scalper/entry.py",
+   "type": "file",
+   "name": "entry.py",
+   "filePath": "systems/provided/scalper/entry.py",
+   "summary": "Entry point and MRRunner driver for the mean-reversion scalper, wiring market data, configuration and broker into a live trading loop.",
+   "tags": [
+    "scalper",
+    "entry-point",
+    "execution",
+    "strategy"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/positions.py:get_position_breaks",
+   "type": "function",
+   "name": "get_position_breaks",
+   "filePath": "sysproduction/reporting/data/positions.py",
+   "lineRange": [
+    30,
+    46
+   ],
+   "summary": "Computes mismatches between optimal, my and broker positions for reconciliation.",
+   "tags": [
+    "positions",
+    "reconciliation",
+    "reporting"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/update_historical_prices.py:downloadTimeManager",
+   "type": "class",
+   "name": "downloadTimeManager",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "lineRange": [
+    185,
+    277
+   ],
+   "summary": "Manages the timing window for downloading prices across multiple time zones.",
+   "tags": [
+    "market-data",
+    "scheduled-job"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_historical_prices.py:update_historical_prices_for_instrument_and_contract",
+   "type": "function",
+   "name": "update_historical_prices_for_instrument_and_contract",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "lineRange": [
+    335,
+    360
+   ],
+   "summary": "Updates stored prices for one contract by downloading and merging broker data.",
+   "tags": [
+    "market-data",
+    "price-update"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_historical_prices.py:get_and_add_prices_for_frequency",
+   "type": "function",
+   "name": "get_and_add_prices_for_frequency",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "lineRange": [
+    363,
+    425
+   ],
+   "summary": "Downloads broker prices at a frequency, checks for spikes and writes merged prices.",
+   "tags": [
+    "market-data",
+    "price-update"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/update_historical_prices.py:manage_download_given_dict_of_instrument_codes",
+   "type": "function",
+   "name": "manage_download_given_dict_of_instrument_codes",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "lineRange": [
+    142,
+    182
+   ],
+   "summary": "Drives price downloads for a grouped set of instrument codes within a time window.",
+   "tags": [
+    "market-data",
+    "price-update"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/update_historical_prices.py:report_price_spike",
+   "type": "function",
+   "name": "report_price_spike",
+   "filePath": "sysproduction/update_historical_prices.py",
+   "lineRange": [
+    457,
+    472
+   ],
+   "summary": "Detects and reports an abnormal price spike during a price update.",
+   "tags": [
+    "market-data",
+    "validation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:systems/provided/scalper/broker.py:BrokerController",
+   "type": "class",
+   "name": "BrokerController",
+   "filePath": "systems/provided/scalper/broker.py",
+   "lineRange": [
+    28,
+    146
+   ],
+   "summary": "Controls live submission and management of scalper bracket orders through the broker.",
+   "tags": [
+    "scalper",
+    "broker",
+    "execution"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:systems/provided/scalper/broker.py:StrippedDownAlgo",
+   "type": "class",
+   "name": "StrippedDownAlgo",
+   "filePath": "systems/provided/scalper/broker.py",
+   "lineRange": [
+    175,
+    218
+   ],
+   "summary": "Minimal execution algo used by the scalper to place orders directly.",
+   "tags": [
+    "scalper",
+    "execution",
+    "algo"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/provided/scalper/broker.py:get_contract_order_from_simple_order",
+   "type": "function",
+   "name": "get_contract_order_from_simple_order",
+   "filePath": "systems/provided/scalper/broker.py",
+   "lineRange": [
+    149,
+    172
+   ],
+   "summary": "Translates a simple scalper order into a full contract order for the broker.",
+   "tags": [
+    "scalper",
+    "order-generation",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/provided/scalper/components.py:State",
+   "type": "class",
+   "name": "State",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    263,
+    396
+   ],
+   "summary": "Core state object of the scalper state machine tracking current trade, fills and P&L.",
+   "tags": [
+    "scalper",
+    "state-machine",
+    "execution"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:systems/provided/scalper/components.py:ListOfOrders",
+   "type": "class",
+   "name": "ListOfOrders",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    98,
+    160
+   ],
+   "summary": "Collection of scalper orders with helpers to find and manage bracket legs.",
+   "tags": [
+    "scalper",
+    "data-model"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/provided/scalper/components.py:RunningPandL",
+   "type": "class",
+   "name": "RunningPandL",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    190,
+    225
+   ],
+   "summary": "Tracks running profit and loss of the scalper as fills occur.",
+   "tags": [
+    "scalper",
+    "pandl"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/provided/scalper/components.py:ActionFromState",
+   "type": "class",
+   "name": "ActionFromState",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    229,
+    259
+   ],
+   "summary": "Maps the current scalper state to the next trading action.",
+   "tags": [
+    "scalper",
+    "state-machine"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/provided/scalper/components.py:CurrentTrade",
+   "type": "class",
+   "name": "CurrentTrade",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    26,
+    48
+   ],
+   "summary": "Represents the scalper's currently open trade and its fills.",
+   "tags": [
+    "scalper",
+    "data-model"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/provided/scalper/components.py:get_bracket_orders",
+   "type": "function",
+   "name": "get_bracket_orders",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    163,
+    176
+   ],
+   "summary": "Builds the entry/stop/target bracket of orders for a scalper trade.",
+   "tags": [
+    "scalper",
+    "order-generation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/provided/scalper/components.py:action_given_current_state",
+   "type": "function",
+   "name": "action_given_current_state",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    399,
+    439
+   ],
+   "summary": "Computes the action the scalper should take given its current state.",
+   "tags": [
+    "scalper",
+    "state-machine"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/provided/scalper/components.py:get_stop_loss_order_given_current_trade",
+   "type": "function",
+   "name": "get_stop_loss_order_given_current_trade",
+   "filePath": "systems/provided/scalper/components.py",
+   "lineRange": [
+    65,
+    89
+   ],
+   "summary": "Derives the stop-loss order for the scalper's current open trade.",
+   "tags": [
+    "scalper",
+    "order-generation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:systems/provided/scalper/configuration.py:StratParameters",
+   "type": "class",
+   "name": "StratParameters",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "lineRange": [
+    19,
+    58
+   ],
+   "summary": "Holds the scalper's tunable strategy parameters.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "parameters"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/provided/scalper/configuration.py:interactively_modify_parameters",
+   "type": "function",
+   "name": "interactively_modify_parameters",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "lineRange": [
+    149,
+    175
+   ],
+   "summary": "Interactively edits scalper parameters with defaults.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "interactive"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/provided/scalper/configuration.py:display_diags",
+   "type": "function",
+   "name": "display_diags",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "lineRange": [
+    185,
+    248
+   ],
+   "summary": "Prints diagnostic information about the scalper configuration and R estimates.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "diagnostics"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:systems/provided/scalper/configuration.py:estimate_R_from_prices",
+   "type": "function",
+   "name": "estimate_R_from_prices",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "lineRange": [
+    251,
+    263
+   ],
+   "summary": "Estimates the R-multiple parameter from a recent price series.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "analytics"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:systems/provided/scalper/configuration.py:describe_max_R_calculation",
+   "type": "function",
+   "name": "describe_max_R_calculation",
+   "filePath": "systems/provided/scalper/configuration.py",
+   "lineRange": [
+    112,
+    128
+   ],
+   "summary": "Explains the maximum-R calculation for the scalper parameters.",
+   "tags": [
+    "scalper",
+    "configuration",
+    "diagnostics"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:systems/provided/scalper/entry.py:MRRunner",
+   "type": "class",
+   "name": "MRRunner",
+   "filePath": "systems/provided/scalper/entry.py",
+   "lineRange": [
+    48,
+    591
+   ],
+   "summary": "Driver class running the live mean-reversion scalper loop, wiring data, config, state and broker.",
+   "tags": [
+    "scalper",
+    "entry-point",
+    "execution"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:systems/provided/scalper/entry.py:pre_start_checks_okay_to_start",
+   "type": "function",
+   "name": "pre_start_checks_okay_to_start",
+   "filePath": "systems/provided/scalper/entry.py",
+   "lineRange": [
+    594,
+    633
+   ],
+   "summary": "Validates that all prerequisites are satisfied before the scalper starts trading.",
+   "tags": [
+    "scalper",
+    "validation",
+    "entry-point"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/data/positions.py",
+   "target": "function:sysproduction/reporting/data/positions.py:get_position_breaks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/data/positions.py",
+   "target": "function:sysproduction/reporting/data/positions.py:get_position_breaks",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "class:sysproduction/update_historical_prices.py:downloadTimeManager",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "class:sysproduction/update_historical_prices.py:downloadTimeManager",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:update_historical_prices_for_instrument_and_contract",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:update_historical_prices_for_instrument_and_contract",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:get_and_add_prices_for_frequency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:get_and_add_prices_for_frequency",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:manage_download_given_dict_of_instrument_codes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:manage_download_given_dict_of_instrument_codes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:report_price_spike",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "function:sysproduction/update_historical_prices.py:report_price_spike",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "class:systems/provided/scalper/broker.py:BrokerController",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "class:systems/provided/scalper/broker.py:BrokerController",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "class:systems/provided/scalper/broker.py:StrippedDownAlgo",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "class:systems/provided/scalper/broker.py:StrippedDownAlgo",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "function:systems/provided/scalper/broker.py:get_contract_order_from_simple_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "function:systems/provided/scalper/broker.py:get_contract_order_from_simple_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:State",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:State",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:ListOfOrders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:ListOfOrders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:RunningPandL",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:RunningPandL",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:ActionFromState",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:ActionFromState",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:CurrentTrade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "class:systems/provided/scalper/components.py:CurrentTrade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:get_bracket_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:get_bracket_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:action_given_current_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:action_given_current_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:get_stop_loss_order_given_current_trade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "function:systems/provided/scalper/components.py:get_stop_loss_order_given_current_trade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "class:systems/provided/scalper/configuration.py:StratParameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "class:systems/provided/scalper/configuration.py:StratParameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:interactively_modify_parameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:interactively_modify_parameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:display_diags",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:display_diags",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:estimate_R_from_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:estimate_R_from_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:describe_max_R_calculation",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "function:systems/provided/scalper/configuration.py:describe_max_R_calculation",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "class:systems/provided/scalper/entry.py:MRRunner",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "class:systems/provided/scalper/entry.py:MRRunner",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "function:systems/provided/scalper/entry.py:pre_start_checks_okay_to_start",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "function:systems/provided/scalper/entry.py:pre_start_checks_okay_to_start",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/positions.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/positions.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/positions.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syscore/pandas/frequency.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysdata/tools/cleaner.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysdata/tools/manual_price_checker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syslogdiag/email_via_db_interface.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysobjects/futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysproduction/data/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/update_historical_prices.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/algos/algo.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/algos/common_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:systems/provided/scalper/components.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/broker.py",
+   "target": "file:systems/provided/scalper/configuration.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/components.py",
+   "target": "file:systems/provided/scalper/configuration.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/configuration.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:syscore/interactive/progress_bar.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysexecution/tick_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysproduction/data/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:systems/provided/scalper/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:systems/provided/scalper/components.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/provided/scalper/entry.py",
+   "target": "file:systems/provided/scalper/configuration.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

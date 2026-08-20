@@ -1,0 +1,1398 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/reconcile_report.py",
+   "type": "file",
+   "name": "reconcile_report.py",
+   "filePath": "sysproduction/reporting/reconcile_report.py",
+   "summary": "Assembles the reconciliation report comparing internal records against broker positions, calling the reporting API to build header, body sections, and footer.",
+   "tags": [
+    "reporting",
+    "reconciliation",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/reconcile_report.py:reconcile_report",
+   "type": "function",
+   "name": "reconcile_report",
+   "filePath": "sysproduction/reporting/reconcile_report.py",
+   "lineRange": [
+    16,
+    44
+   ],
+   "summary": "Builds the full reconciliation report by iterating named reporting-API methods and appending their output between header and footer.",
+   "tags": [
+    "reporting",
+    "reconciliation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/remove_markets_report.py",
+   "type": "file",
+   "name": "remove_markets_report.py",
+   "filePath": "sysproduction/reporting/remove_markets_report.py",
+   "summary": "Generates the report listing instruments flagged for removal from the trading universe, using the reporting API and reporting_functions helpers.",
+   "tags": [
+    "reporting",
+    "instruments",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/remove_markets_report.py:remove_markets_report",
+   "type": "function",
+   "name": "remove_markets_report",
+   "filePath": "sysproduction/reporting/remove_markets_report.py",
+   "lineRange": [
+    12,
+    43
+   ],
+   "summary": "Builds the remove-markets report by invoking reporting-API methods for flagged instruments and assembling formatted output.",
+   "tags": [
+    "reporting",
+    "instruments"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/report_configs.py",
+   "type": "file",
+   "name": "report_configs.py",
+   "filePath": "sysproduction/reporting/report_configs.py",
+   "summary": "Defines the reportConfig class that holds report metadata (function, output destination, kwargs) and supports cloning with modified output or arguments.",
+   "tags": [
+    "reporting",
+    "configuration",
+    "data-model"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/reporting/report_configs.py:reportConfig",
+   "type": "class",
+   "name": "reportConfig",
+   "filePath": "sysproduction/reporting/report_configs.py",
+   "lineRange": [
+    6,
+    38
+   ],
+   "summary": "Holds a report's configuration (function reference, output target, kwargs) with helper methods to clone the config with a modified output or modified keyword arguments.",
+   "tags": [
+    "reporting",
+    "configuration",
+    "data-model"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "file",
+   "name": "reporting_functions.py",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "summary": "Core reporting engine: runs report functions, parses results into text/PDF, and outputs reports via display, email, or file. Contains ParsedReport and PDF helper classes.",
+   "tags": [
+    "reporting",
+    "serialization",
+    "production",
+    "pdf"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/reporting/reporting_functions.py:ParsedReport",
+   "type": "class",
+   "name": "ParsedReport",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    34,
+    51
+   ],
+   "summary": "Container for a parsed report result, tracking whether it contains a PDF and exposing the text body and PDF filename.",
+   "tags": [
+    "reporting",
+    "data-model"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/reporting/reporting_functions.py:PdfOutputWithTempFileName",
+   "type": "class",
+   "name": "PdfOutputWithTempFileName",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    300,
+    322
+   ],
+   "summary": "Helper that saves matplotlib charts to a temporary PDF file and returns the figure for report embedding.",
+   "tags": [
+    "reporting",
+    "pdf"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:run_report_with_data_blob",
+   "type": "function",
+   "name": "run_report_with_data_blob",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    67,
+    79
+   ],
+   "summary": "Runs a report from its config using a shared data blob, parses the results, and outputs the report.",
+   "tags": [
+    "reporting",
+    "orchestration"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_text",
+   "type": "function",
+   "name": "parse_report_results_contains_text",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    115,
+    137
+   ],
+   "summary": "Parses a list of report result elements (headers, bodies, tables) into a single text ParsedReport.",
+   "tags": [
+    "reporting",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_figures",
+   "type": "function",
+   "name": "parse_report_results_contains_figures",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    177,
+    196
+   ],
+   "summary": "Merges report figure outputs into a single PDF file and returns a ParsedReport pointing at it.",
+   "tags": [
+    "reporting",
+    "pdf",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:output_report",
+   "type": "function",
+   "name": "output_report",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    205,
+    221
+   ],
+   "summary": "Routes a parsed report to display, email, and/or file output depending on the report config flags.",
+   "tags": [
+    "reporting",
+    "dispatch"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:email_report",
+   "type": "function",
+   "name": "email_report",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    244,
+    259
+   ],
+   "summary": "Emails a parsed report, sending the PDF as an attachment when present or the text body otherwise.",
+   "tags": [
+    "reporting",
+    "email"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:output_file_report",
+   "type": "function",
+   "name": "output_file_report",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    262,
+    275
+   ],
+   "summary": "Writes a parsed report to disk, copying the PDF file or writing the text body to the resolved filename.",
+   "tags": [
+    "reporting",
+    "file-output"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/reporting_functions.py:_generate_temp_pdf_filename",
+   "type": "function",
+   "name": "_generate_temp_pdf_filename",
+   "filePath": "sysproduction/reporting/reporting_functions.py",
+   "lineRange": [
+    328,
+    343
+   ],
+   "summary": "Builds a timestamped temporary PDF filename within the reporting directory.",
+   "tags": [
+    "reporting",
+    "pdf",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/risk_report.py",
+   "type": "file",
+   "name": "risk_report.py",
+   "filePath": "sysproduction/reporting/risk_report.py",
+   "summary": "Builds the portfolio risk report, invoking risk-related reporting API methods to produce header, body, and footer sections.",
+   "tags": [
+    "reporting",
+    "risk",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/risk_report.py:risk_report",
+   "type": "function",
+   "name": "risk_report",
+   "filePath": "sysproduction/reporting/risk_report.py",
+   "lineRange": [
+    6,
+    36
+   ],
+   "summary": "Assembles the portfolio risk report by appending risk reporting-API method outputs between header and footer.",
+   "tags": [
+    "reporting",
+    "risk"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/roll_report.py",
+   "type": "file",
+   "name": "roll_report.py",
+   "filePath": "sysproduction/reporting/roll_report.py",
+   "summary": "Produces the futures contract roll report showing roll status and roll data tables per instrument via the reporting API.",
+   "tags": [
+    "reporting",
+    "roll",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/roll_report.py:roll_report",
+   "type": "function",
+   "name": "roll_report",
+   "filePath": "sysproduction/reporting/roll_report.py",
+   "lineRange": [
+    13,
+    57
+   ],
+   "summary": "Builds the roll report for an instrument, appending roll-data tables and explanatory body text via the reporting API.",
+   "tags": [
+    "reporting",
+    "roll"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/reporting/slippage_report.py",
+   "type": "file",
+   "name": "slippage_report.py",
+   "filePath": "sysproduction/reporting/slippage_report.py",
+   "summary": "Generates the slippage report comparing estimated versus actual execution costs over a configurable date window.",
+   "tags": [
+    "reporting",
+    "slippage",
+    "costs",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/slippage_report.py:slippage_report",
+   "type": "function",
+   "name": "slippage_report",
+   "filePath": "sysproduction/reporting/slippage_report.py",
+   "lineRange": [
+    26,
+    52
+   ],
+   "summary": "Builds the slippage report with raw and tick-adjusted slippage comparison tables over a configurable date window.",
+   "tags": [
+    "reporting",
+    "slippage",
+    "costs"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/status_report.py",
+   "type": "file",
+   "name": "status_report.py",
+   "filePath": "sysproduction/reporting/status_report.py",
+   "summary": "Compiles the process/system status report summarising the state of production processes via the reporting API.",
+   "tags": [
+    "reporting",
+    "status",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/status_report.py:status_report",
+   "type": "function",
+   "name": "status_report",
+   "filePath": "sysproduction/reporting/status_report.py",
+   "lineRange": [
+    15,
+    53
+   ],
+   "summary": "Assembles the process/status report by iterating named reporting-API methods between header and footer.",
+   "tags": [
+    "reporting",
+    "status"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/strategies_report.py",
+   "type": "file",
+   "name": "strategies_report.py",
+   "filePath": "sysproduction/reporting/strategies_report.py",
+   "summary": "Generates per-strategy reports by loading the most recent backtest for each strategy and dispatching to the strategy-specific reporting function.",
+   "tags": [
+    "reporting",
+    "strategy",
+    "backtest",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/strategies_report.py:strategy_report",
+   "type": "function",
+   "name": "strategy_report",
+   "filePath": "sysproduction/reporting/strategies_report.py",
+   "lineRange": [
+    20,
+    39
+   ],
+   "summary": "Generates the combined strategies report for all (or a single) strategy at a given timestamp.",
+   "tags": [
+    "reporting",
+    "strategy"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/strategies_report.py:get_output_for_single_strategy",
+   "type": "function",
+   "name": "get_output_for_single_strategy",
+   "filePath": "sysproduction/reporting/strategies_report.py",
+   "lineRange": [
+    57,
+    69
+   ],
+   "summary": "Loads the most recent backtest for one strategy and runs its resolved reporting function.",
+   "tags": [
+    "reporting",
+    "strategy",
+    "backtest"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/trades_report.py",
+   "type": "file",
+   "name": "trades_report.py",
+   "filePath": "sysproduction/reporting/trades_report.py",
+   "summary": "Builds the trades report summarising executed orders and cash flows over a date window via the reporting API.",
+   "tags": [
+    "reporting",
+    "trades",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/trades_report.py:trades_report",
+   "type": "function",
+   "name": "trades_report",
+   "filePath": "sysproduction/reporting/trades_report.py",
+   "lineRange": [
+    7,
+    49
+   ],
+   "summary": "Builds the trades report with executed-order tables and a cash summary over a date window.",
+   "tags": [
+    "reporting",
+    "trades"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/run_capital_update.py",
+   "type": "file",
+   "name": "run_capital_update.py",
+   "filePath": "sysproduction/run_capital_update.py",
+   "summary": "Production process entry point that schedules and runs total-capital and strategy-capital update timer functions through a processToRun loop.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "capital"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/run_capital_update.py:get_list_of_timer_functions_for_capital_update",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_capital_update",
+   "filePath": "sysproduction/run_capital_update.py",
+   "lineRange": [
+    17,
+    28
+   ],
+   "summary": "Builds the list of timer name/function pairs for the capital update process (total capital and strategy capital).",
+   "tags": [
+    "scheduler",
+    "capital"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_cleaners.py",
+   "type": "file",
+   "name": "run_cleaners.py",
+   "filePath": "sysproduction/run_cleaners.py",
+   "summary": "Production process entry point that runs periodic cleanup timer functions (truncating backtest states, log files, and echo files).",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/run_cleaners.py:get_list_of_timer_functions_for_cleaning",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_cleaning",
+   "filePath": "sysproduction/run_cleaners.py",
+   "lineRange": [
+    18,
+    33
+   ],
+   "summary": "Builds the list of timer name/function pairs for cleanup tasks (backtest states, log files, echo files).",
+   "tags": [
+    "scheduler",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "type": "file",
+   "name": "run_daily_fx_and_contract_updates.py",
+   "filePath": "sysproduction/run_daily_fx_and_contract_updates.py",
+   "summary": "Production process entry point scheduling daily FX price and sampled-contract update timer functions.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/run_daily_fx_and_contract_updates.py:get_list_of_timer_functions_for_fx_and_contract_update",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_fx_and_contract_update",
+   "filePath": "sysproduction/run_daily_fx_and_contract_updates.py",
+   "lineRange": [
+    18,
+    30
+   ],
+   "summary": "Builds the list of timer name/function pairs for daily FX price and sampled-contract updates.",
+   "tags": [
+    "scheduler",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_daily_price_updates.py",
+   "type": "file",
+   "name": "run_daily_price_updates.py",
+   "filePath": "sysproduction/run_daily_price_updates.py",
+   "summary": "Production process entry point scheduling the daily historical price update timer function.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "prices"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/run_daily_price_updates.py:get_list_of_timer_functions_for_price_update",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_price_update",
+   "filePath": "sysproduction/run_daily_price_updates.py",
+   "lineRange": [
+    15,
+    24
+   ],
+   "summary": "Builds the list of timer name/function pairs for the daily historical price update.",
+   "tags": [
+    "scheduler",
+    "prices"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/run_reports.py",
+   "type": "file",
+   "name": "run_reports.py",
+   "filePath": "sysproduction/run_reports.py",
+   "summary": "Production process entry point that builds report timer functions from configured report configs and runs them; defines runReport wrapper class.",
+   "tags": [
+    "entry-point",
+    "production",
+    "scheduler",
+    "reporting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/run_reports.py:get_list_of_timer_functions_for_reports",
+   "type": "function",
+   "name": "get_list_of_timer_functions_for_reports",
+   "filePath": "sysproduction/run_reports.py",
+   "lineRange": [
+    18,
+    29
+   ],
+   "summary": "Builds report timer functions from the configured report configs, wrapping each in a runReport instance.",
+   "tags": [
+    "scheduler",
+    "reporting"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/run_reports.py:runReport",
+   "type": "class",
+   "name": "runReport",
+   "filePath": "sysproduction/run_reports.py",
+   "lineRange": [
+    35,
+    45
+   ],
+   "summary": "Lightweight wrapper that stores a report config and exposes a generic method to run that report via reporting_functions.",
+   "tags": [
+    "reporting",
+    "wrapper"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/reconcile_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reconcile_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reconcile_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reconcile_report.py",
+   "target": "function:sysproduction/reporting/reconcile_report.py:reconcile_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reconcile_report.py",
+   "target": "function:sysproduction/reporting/reconcile_report.py:reconcile_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "function:sysproduction/reporting/remove_markets_report.py:remove_markets_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/remove_markets_report.py",
+   "target": "function:sysproduction/reporting/remove_markets_report.py:remove_markets_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/report_configs.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/report_configs.py",
+   "target": "class:sysproduction/reporting/report_configs.py:reportConfig",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/report_configs.py",
+   "target": "class:sysproduction/reporting/report_configs.py:reportConfig",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:syslogdiag/email_via_db_interface.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "class:sysproduction/reporting/reporting_functions.py:ParsedReport",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "class:sysproduction/reporting/reporting_functions.py:ParsedReport",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "class:sysproduction/reporting/reporting_functions.py:PdfOutputWithTempFileName",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "class:sysproduction/reporting/reporting_functions.py:PdfOutputWithTempFileName",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:run_report_with_data_blob",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:run_report_with_data_blob",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_text",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_text",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_figures",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:parse_report_results_contains_figures",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:output_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:output_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:email_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:email_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:output_file_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:output_file_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:_generate_temp_pdf_filename",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/reporting_functions.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:_generate_temp_pdf_filename",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/risk_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/risk_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/risk_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/risk_report.py",
+   "target": "function:sysproduction/reporting/risk_report.py:risk_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/risk_report.py",
+   "target": "function:sysproduction/reporting/risk_report.py:risk_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/roll_report.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/roll_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/roll_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/roll_report.py",
+   "target": "function:sysproduction/reporting/roll_report.py:roll_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/roll_report.py",
+   "target": "function:sysproduction/reporting/roll_report.py:roll_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "function:sysproduction/reporting/slippage_report.py:slippage_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/slippage_report.py",
+   "target": "function:sysproduction/reporting/slippage_report.py:slippage_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/status_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/status_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/status_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/status_report.py",
+   "target": "function:sysproduction/reporting/status_report.py:status_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/status_report.py",
+   "target": "function:sysproduction/reporting/status_report.py:status_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "file:sysproduction/data/backtest.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "file:sysproduction/strategy_code/strategy_report.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "function:sysproduction/reporting/strategies_report.py:strategy_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "function:sysproduction/reporting/strategies_report.py:strategy_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "function:sysproduction/reporting/strategies_report.py:get_output_for_single_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "function:sysproduction/reporting/strategies_report.py:get_output_for_single_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/trades_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/trades_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/trades_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/trades_report.py",
+   "target": "function:sysproduction/reporting/trades_report.py:trades_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/trades_report.py",
+   "target": "function:sysproduction/reporting/trades_report.py:trades_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "file:sysproduction/update_strategy_capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "file:sysproduction/update_total_capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "function:sysproduction/run_capital_update.py:get_list_of_timer_functions_for_capital_update",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "function:sysproduction/run_capital_update.py:get_list_of_timer_functions_for_capital_update",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "file:sysproduction/clean_truncate_backtest_states.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "file:sysproduction/clean_truncate_echo_files.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "file:sysproduction/clean_truncate_log_files.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "function:sysproduction/run_cleaners.py:get_list_of_timer_functions_for_cleaning",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_cleaners.py",
+   "target": "function:sysproduction/run_cleaners.py:get_list_of_timer_functions_for_cleaning",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "file:sysproduction/update_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "file:sysproduction/update_sampled_contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "function:sysproduction/run_daily_fx_and_contract_updates.py:get_list_of_timer_functions_for_fx_and_contract_update",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "function:sysproduction/run_daily_fx_and_contract_updates.py:get_list_of_timer_functions_for_fx_and_contract_update",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_daily_price_updates.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_price_updates.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_price_updates.py",
+   "target": "file:sysproduction/update_historical_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_daily_price_updates.py",
+   "target": "function:sysproduction/run_daily_price_updates.py:get_list_of_timer_functions_for_price_update",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_daily_price_updates.py",
+   "target": "function:sysproduction/run_daily_price_updates.py:get_list_of_timer_functions_for_price_update",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "file:syscontrol/run_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "file:sysproduction/data/reports.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "function:sysproduction/run_reports.py:get_list_of_timer_functions_for_reports",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "function:sysproduction/run_reports.py:get_list_of_timer_functions_for_reports",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "class:sysproduction/run_reports.py:runReport",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "class:sysproduction/run_reports.py:runReport",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_reports.py",
+   "target": "function:sysproduction/reporting/reporting_functions.py:run_report_with_data_blob",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/strategies_report.py",
+   "target": "function:sysproduction/strategy_code/strategy_report.py:get_reporting_function_for_strategy_name",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "class:sysproduction/update_total_capital.py:totalCapitalUpdate",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_capital_update.py",
+   "target": "class:sysproduction/update_strategy_capital.py:updateStrategyCapital",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/run_daily_fx_and_contract_updates.py",
+   "target": "class:sysproduction/update_fx_prices.py:updateFxPrices",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  }
+ ]
+}

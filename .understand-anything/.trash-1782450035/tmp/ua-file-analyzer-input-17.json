@@ -1,0 +1,317 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "language": "python",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/repocsv_adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/repocsv_multiple_prices.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "language": "python",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "language": "python",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/safely_modify_roll_parameters.py",
+      "language": "python",
+      "sizeLines": 206,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/tests/test_sysinit_futures.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/contract_dates_and_expiries.py",
+      "language": "python",
+      "sizeLines": 619,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "language": "python",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "language": "python",
+      "sizeLines": 337,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/multiple_prices.py",
+      "language": "python",
+      "sizeLines": 297,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/roll_calendars.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/roll_parameters_with_price_data.py",
+      "language": "python",
+      "sizeLines": 304,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/rolls.py",
+      "language": "python",
+      "sizeLines": 448,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "language": "python",
+      "sizeLines": 424,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "language": "python",
+      "sizeLines": 525,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/run.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/update_multiple_adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/update_sampled_contracts.py",
+      "language": "python",
+      "sizeLines": 453,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysinit/futures/build_roll_calendars.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/repocsv_adjusted_prices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/repocsv_multiple_prices.py": [
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/rollcalendars_from_db_multipleprices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysobjects/roll_calendars.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/rollcalendars_from_db_prices_to_csv.py": [
+      "syscore/constants.py",
+      "syscore/interactive/input.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/futures/rolls_parameters.py",
+      "sysobjects/roll_calendars.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/rollcalendars_from_providedcsv_prices.py": [
+      "syscore/constants.py",
+      "sysdata/csv/csv_roll_calendars.py",
+      "sysdata/sim/csv_futures_sim_data.py",
+      "sysobjects/roll_calendars.py"
+    ],
+    "sysinit/futures/safely_modify_roll_parameters.py": [
+      "syscore/interactive/input.py",
+      "sysdata/data_blob.py",
+      "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysinit/futures/tests/test_sysinit_futures.py": [
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysinit/futures/rollcalendars_from_db_prices_to_csv.py"
+    ],
+    "sysobjects/adjusted_prices.py": [
+      "syscore/pandas/full_merge_with_replacement.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py"
+    ],
+    "sysobjects/contract_dates_and_expiries.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/dict_of_futures_per_contract_prices.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysobjects/dict_of_named_futures_per_contract_prices.py": [
+      "syscore/pandas/merge_data_with_label_column.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysobjects/multiple_prices.py": [
+      "syscore/exceptions.py",
+      "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py"
+    ],
+    "sysobjects/roll_calendars.py": [
+      "sysinit/futures/build_roll_calendars.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysobjects/roll_parameters_with_price_data.py": [
+      "syscore/exceptions.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/rolls.py"
+    ],
+    "sysobjects/rolls.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysproduction/data/contracts.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/contracts.py",
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/futures/rolls_parameters.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/prices.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysdata/futures/multiple_prices.py",
+      "sysdata/futures/spreads.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_futures_per_contract_prices.py",
+      "sysobjects/futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysobjects/spreads.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/linux/scripts/run.py": [
+      "syscore/interactive/run_functions.py"
+    ],
+    "sysproduction/run_daily_update_multiple_adjusted_prices.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/update_multiple_adjusted_prices.py"
+    ],
+    "sysproduction/update_multiple_adjusted_prices.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysobjects/adjusted_prices.py",
+      "sysobjects/contracts.py",
+      "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "sysobjects/multiple_prices.py",
+      "sysproduction/data/prices.py"
+    ],
+    "sysproduction/update_sampled_contracts.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py",
+      "sysobjects/rolls.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py"
+    ]
+  }
+}

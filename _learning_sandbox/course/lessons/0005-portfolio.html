@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 5 · The Portfolio — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 5 · Portfolio</div>
+  <h1>The portfolio: one instrument's share of the whole</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> A subsystem position pretends EUROSTX is your entire account.
+    Reality: it's one of six instruments sharing your capital. The <code>portfolio</code>
+    stage produces the <strong>final notional position</strong> — the actual number of
+    contracts the live system will hold. This is the last stop before P&amp;L.
+  </div>
+
+  <h2>The formula (mirror image of Lesson 3)</h2>
+  <p style="text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:.95rem; color:var(--accent-2);">
+    notional position = subsystem position × instrument weight × IDM
+  </p>
+  <p>
+    Notice how this rhymes with combining forecasts: back then we had
+    <em>forecast</em> weights and the <em>FDM</em>; here we have <em>instrument</em> weights
+    and the <em>IDM</em>. Same diversification logic, one level up.
+  </p>
+
+  <h2>1 · Instrument weights — splitting capital across markets</h2>
+  <p>Your six instruments' weights (they sum to 1):</p>
+<pre><code>CORN     0.233     EUROSTX  0.200
+MXP      0.233     SOFR     0.117
+US10     0.117     V2X      0.098
+                             ----
+                             1.00</code></pre>
+  <p>EUROSTX gets <strong>20%</strong> of the risk budget. So its position is cut to roughly a fifth.</p>
+
+  <h2>2 · IDM — the instrument diversification multiplier</h2>
+  <p>
+    Just like the FDM boosted a diversified <em>forecast</em>, the <strong>IDM</strong> boosts
+    a diversified <em>portfolio</em>. Because the six markets don't move together, holding all
+    six is less risky than holding one — so you can safely scale <em>every</em> position up to
+    use your full risk budget. For your system the IDM is <strong>1.89</strong> (nearly
+    doubling positions). The more diversified your instruments, the higher the IDM.
+  </p>
+
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    The IDM is powerful — 1.89 means you're holding almost twice the contracts a naive split
+    would suggest. That's mathematically justified <em>only if</em> your instruments really are
+    diversified. Add six correlated instruments and a high IDM becomes dangerous leverage. When
+    you customise your universe later, the IDM is a number to watch.
+  </div>
+
+  <h2>The full chain, reconciled</h2>
+  <p>Every number in this course so far, for EUROSTX, in one place:</p>
+<pre><code>raw ewmac8_32       4.073
+  x scalar 5.3  ->  21.6  -> capped 20      (Lesson 2)
+... blended w/ other rules, x FDM 1.31  ->  combined 14.849   (Lesson 3)
+  / 10 x avg position 9.813             ->  subsystem  14.57   (Lesson 4)
+  x instr weight 0.20 x IDM 1.89        ->  notional    5.519  (Lesson 5)</code></pre>
+  <p><strong>Hold ~5.5 EUROSTX contracts, long.</strong> That is the whole pipeline, end to end, in numbers you can now derive yourself.</p>
+
+  <h2>See it yourself (3 min)</h2>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_portfolio.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+s = futures_system()
+I = "EUROSTX"
+
+subpos   = s.positionSize.get_subsystem_position(I)
+weights  = s.portfolio.get_instrument_weights()
+idm      = s.portfolio.get_instrument_diversification_multiplier()
+notional = s.portfolio.get_notional_position(I)
+
+print("subsystem position:", round(float(subpos.iloc[-1]), 3))
+print("instrument weight :", round(float(weights.iloc[-1][I]), 3))
+print("IDM               :", round(float(idm.iloc[-1]), 3))
+print("notional position :", round(float(notional.iloc[-1]), 3),
+      " (= subsystem x weight x IDM)")
+</code></pre>
+  <p>Run: <code>uv run python _learning_sandbox/course/lessons/trace_portfolio.py</code></p>
+
+  <h2>Check yourself</h2>
+  <div class="quiz" data-quiz='[
+    {"q":"What role does the instrument weight play for a single market here?",
+     "options":["Boosts it for diversity","Its share of the budget","Caps its raw forecast","Sets its trading cost"],
+     "correct":1,
+     "why":"Instrument weights split the risk budget across markets and sum to 1; EUROSTX gets 0.20, so it takes a fifth of the risk."},
+    {"q":"An IDM of nearly two is only safe when your instruments are what?",
+     "options":["Cheap to trade often","Genuinely well diversified","Trending very strongly","Priced in one currency"],
+     "correct":1,
+     "why":"The IDM scales every position up on the assumption of diversification; if instruments are correlated, that becomes dangerous leverage."},
+    {"q":"The instrument-level IDM is the portfolio cousin of which earlier number?",
+     "options":["The forecast cap","The forecast scalar","The FDM multiplier","The average position"],
+     "correct":2,
+     "why":"The FDM diversifies across rules; the IDM diversifies across instruments — the same maths applied one level up."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <strong>Systematic Trading</strong>, Robert Carver — <em>Chapter 11 (Portfolios)</em>.
+    Code: <a href="../../../systems/portfolio.py">systems/portfolio.py</a>.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    Curious how instrument weights are chosen, or how the IDM is derived from a correlation
+    matrix? Ask — it's the natural next depth.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 5</span>
+    <span>Prev ← <a href="0004-position-sizing.html">Forecast to Position</a> · Next → <a href="0006-pnl.html">P&amp;L &amp; Sharpe</a></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

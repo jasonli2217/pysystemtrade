@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 1 · The Pipeline — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 1 · Backtesting</div>
+  <h1>The Pipeline: how a price becomes a trade</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> Your goal is to trade Carver's system live with real money.
+    Before any of that is safe, you need one unshakeable mental model: a backtest is a
+    <b>pipeline</b> that turns a raw price into a position and a P&amp;L, in seven fixed
+    steps. Live trading runs the <em>same</em> seven steps — it just sends the last
+    step's number to a broker instead of a spreadsheet. Master this and everything
+    downstream (config, rules, costs, going live) becomes "which stage am I touching?"
+  </div>
+
+  <h2>The one big idea</h2>
+  <p>
+    When you ran <code>system = futures_system()</code> and got a Sharpe ratio, you didn't
+    run "a backtest" as one blob. You ran a <strong>chain of seven stages</strong>. Each
+    stage is a Python object hanging off <code>system</code>. Each takes the previous
+    stage's output, transforms it, and hands it on. Data flows in one direction:
+  </p>
+
+  <p style="text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:.9rem; color:var(--accent-2); letter-spacing:.02em;">
+    price → forecast → scaled forecast → combined forecast → position → portfolio → P&amp;L
+  </p>
+
+  <h2>The seven stages</h2>
+  <p>Each row: the <code>system.stage</code> you call, what it does, and the Carver idea behind it.</p>
+
+  <div class="pipeline">
+    <div class="stage">
+      <div class="num">1</div>
+      <div class="body">
+        <span class="name">system.rawdata</span>
+        <p class="desc">Cleans prices and computes <strong>volatility</strong> (how much each instrument moves per day).</p>
+        <p class="carver">Carver: everything is measured in <em>risk units</em>, so we need vol first.</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">2</div>
+      <div class="body">
+        <span class="name">system.rules</span>
+        <p class="desc">Runs each <strong>trading rule</strong> (e.g. EWMAC) to produce a <strong>raw forecast</strong> — a number saying "how bullish/bearish, and how strongly."</p>
+        <p class="carver">Carver: a forecast is a risk-adjusted expected return. Positive = go long.</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">3</div>
+      <div class="body">
+        <span class="name">system.forecastScaleCap</span>
+        <p class="desc"><strong>Scales</strong> every rule so its average strength is 10, then <strong>caps</strong> at ±20.</p>
+        <p class="carver">Carver: a "+10" must mean the same thing for every rule, so they can be compared and combined.</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">4</div>
+      <div class="body">
+        <span class="name">system.combForecast</span>
+        <p class="desc">Blends all rules into <strong>one combined forecast</strong> per instrument (weighted average × diversification multiplier).</p>
+        <p class="carver">Carver: diversifying across rules raises return per unit of risk (the FDM &gt; 1).</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">5</div>
+      <div class="body">
+        <span class="name">system.positionSize</span>
+        <p class="desc">Turns the forecast into a <strong>number of contracts</strong>, sized so each instrument risks the same amount toward your vol target (20%/yr in ch.15).</p>
+        <p class="carver">Carver: <em>volatility targeting</em> — bet size scales with conviction and inversely with risk.</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">6</div>
+      <div class="body">
+        <span class="name">system.portfolio</span>
+        <p class="desc">Combines all instruments using <strong>instrument weights</strong> and the diversification multiplier into final <strong>notional positions</strong>.</p>
+        <p class="carver">Carver: diversify across instruments too — don't put all risk in one market.</p>
+      </div>
+    </div>
+    <div class="arrow">▼</div>
+    <div class="stage">
+      <div class="num">7</div>
+      <div class="body">
+        <span class="name">system.accounts</span>
+        <p class="desc">Simulates holding those positions over history and computes <strong>P&amp;L, Sharpe, and costs</strong> (gross vs net).</p>
+        <p class="carver">Carver: judge a system on <em>net</em> risk-adjusted return, after realistic costs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    In production, stages 1–6 are <em>identical</em>. The system still computes an
+    "optimal position" for each instrument. The only difference: instead of stage 7
+    imagining the P&amp;L, a live process compares the optimal position to what you
+    <em>actually</em> hold at Interactive Brokers and sends the difference as an order.
+    So when your live positions look wrong, you debug by asking: <b>which of these seven
+    stages produced the surprise?</b>
+  </div>
+
+  <h2>See it with your own eyes (5 min)</h2>
+  <p>
+    Run this in your repo. Each line pulls the output of one stage for SP500, so you can
+    watch the price turn into a position. First run is slow (it computes the chain); that's
+    the caching warming up.
+  </p>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_pipeline.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+system = futures_system()
+
+<span class="comment"># This config trades only 6 instruments; pick one that's actually in it.</span>
+I = "EUROSTX"   <span class="comment"># European equity index (SP500 is NOT in this universe!)</span>
+
+price    = system.rawdata.get_daily_prices(I)
+raw      = system.rules.get_raw_forecast(I, "ewmac8_32")
+capped   = system.forecastScaleCap.get_capped_forecast(I, "ewmac8_32")
+combined = system.combForecast.get_combined_forecast(I)
+position = system.portfolio.get_notional_position(I)
+
+for name, series in [("1 price", price), ("2 raw fc", raw),
+                     ("3 capped fc", capped), ("4 combined fc", combined),
+                     ("6 position", position)]:
+    print(name, "->", round(float(series.iloc[-1]), 3))
+</code></pre>
+
+  <div class="callout why">
+    <span class="tag">Trap you just hit — "has data" ≠ "traded"</span>
+    This config's <strong>traded universe is only 6 instruments</strong>:
+    <code>CORN, EUROSTX, MXP, SOFR, US10, V2X</code>. An instrument like SP500 has a
+    price CSV on disk, so stages 1–5 will happily compute a forecast and even a
+    <em>subsystem</em> position for it — but stage 6 (<code>portfolio</code>) only holds
+    <strong>instrument weights</strong> for the 6 in the universe, so
+    <code>get_notional_position("SP500")</code> raises <code>KeyError('SP500')</code>.
+    Always check <code>system.get_instrument_list()</code> first. This is exactly the
+    "<em>which stage produced the surprise?</em>" debugging in action — the error landed
+    at stage 6, which told you it was a portfolio/universe problem, not a data problem.
+  </div>
+  <p>Run it: <code>uv run python _learning_sandbox/course/trace_pipeline.py</code></p>
+  <p>
+    Look at the numbers. The price is in the thousands; the forecasts are small numbers
+    around ±20; the position is a handful of contracts. You just watched a price become a
+    trade. <em>Ask me if any single number surprises you — that curiosity is the lesson.</em>
+  </p>
+
+  <h2>Check yourself</h2>
+  <p>Retrieval practice — answer from memory, not by scrolling up. Immediate feedback below each.</p>
+
+  <div class="quiz" data-quiz='[
+    {"q":"Which stage first turns a forecast into an actual number of contracts to hold?",
+     "options":["The rules stage builds it","The position sizing stage","The accounts stage totals it","The raw data stage sets it"],
+     "correct":1,
+     "why":"positionSize applies volatility targeting: forecast strength + risk target + instrument vol produce a contract count."},
+    {"q":"What does the forecast scaling and capping stage mainly guarantee for you?",
+     "options":["Prices are cleaned up early","Every rule speaks one language","Positions never exceed cash","Costs are always fully paid"],
+     "correct":1,
+     "why":"Scaling makes every rule average ~10 and caps at ±20, so a +10 means the same thing across all rules — required before combining them."},
+    {"q":"Going live changes which part of the seven-stage pipeline?",
+     "options":["Only the very last stage","All of the middle stages","The first two stages","None of the seven stages"],
+     "correct":0,
+     "why":"Stages 1-6 are identical live. Only the final step differs: compare the optimal position to your real broker position and trade the gap."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <a href="https://qoppac.blogspot.com/2016/01/pysystemtrade.html">Robert Carver — <em>pysystemtrade</em> introduction (qoppac blog)</a>,
+    and in your own repo, <a href="../../../docs/backtesting.md">docs/backtesting.md</a>
+    (the official pipeline walkthrough). The definitive book is Carver's
+    <strong>Systematic Trading</strong> — the chapter-15 system you are running <em>is</em>
+    the worked example from that book.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    I'm your teacher for this course — if a stage feels hand-wavy, or a number in the
+    trace looks weird, or you want to go deeper on any stage, just ask. That back-and-forth
+    is where the real learning happens.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 1 of many</span>
+    <span>Next up → Lesson 2: <em>The forecast — reading an EWMAC signal</em></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

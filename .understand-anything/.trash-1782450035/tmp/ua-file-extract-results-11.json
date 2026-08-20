@@ -1,0 +1,6245 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysbrokers/broker_futures_contract_price_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "brokerFuturesContractPriceData",
+          "startLine": 18,
+          "endLine": 60,
+          "methods": [
+            "__init__",
+            "get_prices_at_frequency_for_potentially_expired_contract_object",
+            "get_ticker_object_for_contract",
+            "get_ticker_object_for_order",
+            "cancel_market_data_for_order",
+            "cancel_market_data_for_contract",
+            "_write_merged_prices_for_contract_object_no_checking",
+            "delete_merged_prices_for_contract_object",
+            "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+            "data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "brokerFuturesContractPriceData",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_write_merged_prices_for_contract_object_no_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 48
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "NotImplementedError",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_historic_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 230,
+      "nonEmptyLines": 179,
+      "classes": [
+        {
+          "name": "mongoGenericHistoricOrdersData",
+          "startLine": 29,
+          "endLine": 122,
+          "methods": [
+            "_collection_name",
+            "_order_class",
+            "_name",
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "add_order_to_data",
+            "_add_order_to_data_no_checking",
+            "get_order_with_orderid",
+            "_delete_order_with_orderid_without_checking",
+            "update_order_with_orderid",
+            "get_list_of_order_ids",
+            "get_list_of_order_ids_in_date_range"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoStrategyHistoricOrdersData",
+          "startLine": 125,
+          "endLine": 164,
+          "methods": [
+            "_collection_name",
+            "_order_class",
+            "_name",
+            "get_list_of_order_ids_for_instrument_strategy",
+            "_get_list_of_order_ids_for_instrument_strategy_specify_key"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoContractHistoricOrdersData",
+          "startLine": 167,
+          "endLine": 177,
+          "methods": [
+            "_collection_name",
+            "_order_class",
+            "_name"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoBrokerHistoricOrdersData",
+          "startLine": 180,
+          "endLine": 230,
+          "methods": [
+            "_collection_name",
+            "_order_class",
+            "_name",
+            "get_list_of_order_ids_for_instrument_and_contract_str"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoGenericHistoricOrdersData",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "mongoStrategyHistoricOrdersData",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "mongoContractHistoricOrdersData",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "mongoBrokerHistoricOrdersData",
+          "line": 180,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_collection_name",
+          "callee": "NotImplementedError",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_order_class",
+          "callee": "NotImplementedError",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._collection_name",
+          "lineNumber": 49
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 54
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 54
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 61
+        },
+        {
+          "caller": "add_order_to_data",
+          "callee": "self.get_order_with_orderid",
+          "lineNumber": 66
+        },
+        {
+          "caller": "add_order_to_data",
+          "callee": "self._add_order_to_data_no_checking",
+          "lineNumber": 68
+        },
+        {
+          "caller": "add_order_to_data",
+          "callee": "self.update_order_with_orderid",
+          "lineNumber": 71
+        },
+        {
+          "caller": "add_order_to_data",
+          "callee": "Exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "add_order_to_data",
+          "callee": "str",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_add_order_to_data_no_checking",
+          "callee": "order.as_dict",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_add_order_to_data_no_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 82
+        },
+        {
+          "caller": "get_order_with_orderid",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 86
+        },
+        {
+          "caller": "get_order_with_orderid",
+          "callee": "self._order_class",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_order_with_orderid",
+          "callee": "order_class.from_dict",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_delete_order_with_orderid_without_checking",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 96
+        },
+        {
+          "caller": "update_order_with_orderid",
+          "callee": "order.as_dict",
+          "lineNumber": 99
+        },
+        {
+          "caller": "update_order_with_orderid",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_list_of_order_ids",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 103
+        },
+        {
+          "caller": "get_list_of_order_ids_in_date_range",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 113
+        },
+        {
+          "caller": "get_list_of_order_ids_in_date_range",
+          "callee": "dict",
+          "lineNumber": 115
+        },
+        {
+          "caller": "get_list_of_order_ids_in_date_range",
+          "callee": "self.mongo_data.get_list_of_result_dict_for_custom_dict",
+          "lineNumber": 117
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_strategy",
+          "callee": "self._get_list_of_order_ids_for_instrument_strategy_specify_key",
+          "lineNumber": 141
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_strategy",
+          "callee": "self._get_list_of_order_ids_for_instrument_strategy_specify_key",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_get_list_of_order_ids_for_instrument_strategy_specify_key",
+          "callee": "getattr",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_get_list_of_order_ids_for_instrument_strategy_specify_key",
+          "callee": "dict",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_get_list_of_order_ids_for_instrument_strategy_specify_key",
+          "callee": "self.mongo_data.get_list_of_result_dict_for_custom_dict",
+          "lineNumber": 158
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_and_contract_str",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_and_contract_str",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_and_contract_str",
+          "callee": "futuresContractStrategy.from_key",
+          "lineNumber": 201
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_and_contract_str",
+          "callee": "zip",
+          "lineNumber": 220
+        },
+        {
+          "caller": "get_list_of_order_ids_for_instrument_and_contract_str",
+          "callee": "_contains_both",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_order_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 102,
+      "classes": [
+        {
+          "name": "mongoOrderStackData",
+          "startLine": 19,
+          "endLine": 117,
+          "methods": [
+            "_collection_name",
+            "_order_class",
+            "__init__",
+            "mongo_data",
+            "__repr__",
+            "get_order_with_id_from_stack",
+            "_get_list_of_all_order_ids",
+            "_change_order_on_stack_no_checking",
+            "_put_order_on_stack_no_checking",
+            "_get_next_order_id",
+            "_get_current_max_order_id",
+            "_update_max_order_id",
+            "_create_and_return_max_order_id",
+            "_remove_order_with_id_from_stack_no_checking"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoInstrumentOrderStackData",
+          "startLine": 120,
+          "endLine": 125,
+          "methods": [
+            "_collection_name",
+            "_order_class"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoContractOrderStackData",
+          "startLine": 128,
+          "endLine": 133,
+          "methods": [
+            "_collection_name",
+            "_order_class"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoBrokerOrderStackData",
+          "startLine": 136,
+          "endLine": 141,
+          "methods": [
+            "_collection_name",
+            "_order_class"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoOrderStackData",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "mongoInstrumentOrderStackData",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "mongoContractOrderStackData",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "mongoBrokerOrderStackData",
+          "line": 136,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_collection_name",
+          "callee": "NotImplementedError",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._collection_name",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 37
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.number_of_orders_on_stack",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get_order_with_id_from_stack",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_order_with_id_from_stack",
+          "callee": "self._order_class",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_order_with_id_from_stack",
+          "callee": "order_class.from_dict",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_get_list_of_all_order_ids",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_get_list_of_all_order_ids",
+          "callee": "order_ids.pop",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_get_list_of_all_order_ids",
+          "callee": "order_ids.index",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_change_order_on_stack_no_checking",
+          "callee": "order.as_dict",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_change_order_on_stack_no_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_put_order_on_stack_no_checking",
+          "callee": "order.as_dict",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_put_order_on_stack_no_checking",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_put_order_on_stack_no_checking",
+          "callee": "int",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_get_next_order_id",
+          "callee": "self._get_current_max_order_id",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_next_order_id",
+          "callee": "int",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_get_next_order_id",
+          "callee": "self._update_max_order_id",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_get_current_max_order_id",
+          "callee": "self.mongo_data.get_result_dict_for_key",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_get_current_max_order_id",
+          "callee": "self._create_and_return_max_order_id",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_get_current_max_order_id",
+          "callee": "int",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_update_max_order_id",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_create_and_return_max_order_id",
+          "callee": "self._update_max_order_id",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_remove_order_with_id_from_stack_no_checking",
+          "callee": "self.mongo_data.delete_data_without_any_warning",
+          "lineNumber": 117
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysdata/production/historic_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 108,
+      "classes": [
+        {
+          "name": "genericOrdersData",
+          "startLine": 33,
+          "endLine": 67,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "delete_order_with_orderid",
+            "add_order_to_data",
+            "get_list_of_order_ids",
+            "get_order_with_orderid",
+            "_delete_order_with_orderid_without_checking",
+            "update_order_with_orderid",
+            "get_list_of_order_ids_in_date_range"
+          ],
+          "properties": []
+        },
+        {
+          "name": "strategyHistoricOrdersData",
+          "startLine": 70,
+          "endLine": 106,
+          "methods": [
+            "get_fills_history_for_instrument_strategy",
+            "get_list_of_orders_for_instrument_strategy",
+            "get_list_of_order_ids_for_instrument_strategy"
+          ],
+          "properties": []
+        },
+        {
+          "name": "contractHistoricOrdersData",
+          "startLine": 109,
+          "endLine": 110,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "brokerHistoricOrdersData",
+          "startLine": 113,
+          "endLine": 147,
+          "methods": [
+            "get_fills_history_for_contract",
+            "get_fill_from_order_id",
+            "get_list_of_order_ids_for_instrument_and_contract_str"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "genericOrdersData",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "strategyHistoricOrdersData",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "contractHistoricOrdersData",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "brokerHistoricOrdersData",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 35
+        },
+        {
+          "caller": "delete_order_with_orderid",
+          "callee": "self.get_order_with_orderid",
+          "lineNumber": 41
+        },
+        {
+          "caller": "delete_order_with_orderid",
+          "callee": "self._delete_order_with_orderid_without_checking",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_fills_history_for_instrument_strategy",
+          "callee": "self.get_list_of_orders_for_instrument_strategy",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_fills_history_for_instrument_strategy",
+          "callee": "fill_from_order",
+          "lineNumber": 83
+        },
+        {
+          "caller": "get_fills_history_for_instrument_strategy",
+          "callee": "ListOfFills",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_list_of_orders_for_instrument_strategy",
+          "callee": "self.get_list_of_order_ids_for_instrument_strategy",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_list_of_orders_for_instrument_strategy",
+          "callee": "self.get_order_with_orderid",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_list_of_orders_for_instrument_strategy",
+          "callee": "order_list.append",
+          "lineNumber": 97
+        },
+        {
+          "caller": "get_list_of_orders_for_instrument_strategy",
+          "callee": "listOfOrders",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_fills_history_for_contract",
+          "callee": "self.get_list_of_order_ids_for_instrument_and_contract_str",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_fills_history_for_contract",
+          "callee": "self.get_fill_from_order_id",
+          "lineNumber": 130
+        },
+        {
+          "caller": "get_fills_history_for_contract",
+          "callee": "ListOfFills",
+          "lineNumber": 134
+        },
+        {
+          "caller": "get_fill_from_order_id",
+          "callee": "self.get_order_with_orderid",
+          "lineNumber": 139
+        },
+        {
+          "caller": "get_fill_from_order_id",
+          "callee": "single_fill_from_broker_order",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysdata/tools/cleaner.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 123,
+      "functions": [
+        {
+          "name": "apply_price_cleaning",
+          "startLine": 28,
+          "endLine": 93,
+          "params": [
+            "data",
+            "broker_prices_raw",
+            "cleaning_config",
+            "daily_data"
+          ]
+        },
+        {
+          "name": "get_config_for_price_filtering",
+          "startLine": 101,
+          "endLine": 135,
+          "params": [
+            "data",
+            "cleaning_config"
+          ]
+        },
+        {
+          "name": "interactively_get_config_overrides_for_cleaning",
+          "startLine": 138,
+          "endLine": 147,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "apply_price_cleaning",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "get_config_for_price_filtering",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "interactively_get_config_overrides_for_cleaning",
+          "line": 138,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "get_config_for_price_filtering",
+          "lineNumber": 34
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "copy",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "broker_prices.remove_future_data",
+          "lineNumber": 45
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "log.debug",
+          "lineNumber": 48
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "broker_prices.remove_zero_volumes",
+          "lineNumber": 64
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "len",
+          "lineNumber": 65
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "log.debug",
+          "lineNumber": 67
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "broker_prices.remove_zero_prices",
+          "lineNumber": 74
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "len",
+          "lineNumber": 75
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "log.debug",
+          "lineNumber": 77
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "broker_prices.remove_negative_prices",
+          "lineNumber": 84
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "len",
+          "lineNumber": 85
+        },
+        {
+          "caller": "apply_price_cleaning",
+          "callee": "log.warning",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 115
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 119
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "production_config.get_element",
+          "lineNumber": 120
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "data.log.critical",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "missingData",
+          "lineNumber": 124
+        },
+        {
+          "caller": "get_config_for_price_filtering",
+          "callee": "priceFilterConfig",
+          "lineNumber": 126
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "get_config_for_price_filtering",
+          "lineNumber": 139
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "print",
+          "lineNumber": 140
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "str",
+          "lineNumber": 140
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 141
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "input_field_names_for_named_tuple",
+          "lineNumber": 143
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "print",
+          "lineNumber": 144
+        },
+        {
+          "caller": "interactively_get_config_overrides_for_cleaning",
+          "callee": "str",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 256,
+      "nonEmptyLines": 205,
+      "classes": [
+        {
+          "name": "benchmarkPriceCollection",
+          "startLine": 34,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "side_price",
+            "offside_price",
+            "mid_price"
+          ]
+        },
+        {
+          "name": "Algo",
+          "startLine": 40,
+          "endLine": 256,
+          "methods": [
+            "__init__",
+            "data",
+            "blocking_algo_requires_management",
+            "data_broker",
+            "contract_order",
+            "submit_trade",
+            "manage_trade",
+            "get_and_submit_broker_order_for_contract_order",
+            "get_market_data_for_order_modifies_ticker_object",
+            "set_limit_price",
+            "round_limit_price_to_tick_size",
+            "file_log_report_market_order"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "benchmarkPriceCollection",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Algo",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "dataBroker",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data_broker.get_broker_name",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data_broker.get_broker_account",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data_broker.get_broker_clientid",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data_broker.get_ticker_object_for_order",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.get_market_data_for_order_modifies_ticker_object",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "copy",
+          "lineNumber": 106
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.set_limit_price",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "create_new_broker_order_from_contract_order",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data.log.debug",
+          "lineNumber": 130
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "str",
+          "lineNumber": 132
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 133
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data_broker.submit_broker_order",
+          "lineNumber": 137
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data.log.warning",
+          "lineNumber": 142
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 144
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "self.data.log.debug",
+          "lineNumber": 149
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "str",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "placed_broker_order_with_controls.order.log_attributes",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_and_submit_broker_order_for_contract_order",
+          "callee": "placed_broker_order_with_controls.add_or_replace_ticker",
+          "lineNumber": 155
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "ticker_object.wait_for_valid_bid_and_ask_and_return_current_tick",
+          "lineNumber": 170
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "self.data.log.warning",
+          "lineNumber": 175
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "str",
+          "lineNumber": 177
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 178
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "ticker_object.analyse_for_tick",
+          "lineNumber": 183
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "ticker_object.clear_and_add_reference_as_first_tick",
+          "lineNumber": 185
+        },
+        {
+          "caller": "get_market_data_for_order_modifies_ticker_object",
+          "callee": "benchmarkPriceCollection",
+          "lineNumber": 189
+        },
+        {
+          "caller": "set_limit_price",
+          "callee": "Exception",
+          "lineNumber": 215
+        },
+        {
+          "caller": "set_limit_price",
+          "callee": "self.round_limit_price_to_tick_size",
+          "lineNumber": 217
+        },
+        {
+          "caller": "round_limit_price_to_tick_size",
+          "callee": "self.data_broker.get_min_tick_size_for_contract",
+          "lineNumber": 229
+        },
+        {
+          "caller": "round_limit_price_to_tick_size",
+          "callee": "self.data.log.warning",
+          "lineNumber": 231
+        },
+        {
+          "caller": "round_limit_price_to_tick_size",
+          "callee": "str",
+          "lineNumber": 233
+        },
+        {
+          "caller": "round_limit_price_to_tick_size",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 234
+        },
+        {
+          "caller": "round_limit_price_to_tick_size",
+          "callee": "round",
+          "lineNumber": 240
+        },
+        {
+          "caller": "file_log_report_market_order",
+          "callee": "str",
+          "lineNumber": 248
+        },
+        {
+          "caller": "file_log_report_market_order",
+          "callee": "ticker_object.current_tick",
+          "lineNumber": 248
+        },
+        {
+          "caller": "file_log_report_market_order",
+          "callee": "self.data.log.debug",
+          "lineNumber": 252
+        },
+        {
+          "caller": "file_log_report_market_order",
+          "callee": "broker_order_with_controls.order.log_attributes",
+          "lineNumber": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo_adaptive.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "algoAdaptiveMkt",
+          "startLine": 5,
+          "endLine": 12,
+          "methods": [
+            "order_type_to_use"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "algoAdaptiveMkt",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo_limit_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "algoLimit",
+          "startLine": 6,
+          "endLine": 35,
+          "methods": [
+            "blocking_algo_requires_management",
+            "submit_trade",
+            "manage_trade"
+          ],
+          "properties": []
+        },
+        {
+          "name": "algoStopLoss",
+          "startLine": 38,
+          "endLine": 58,
+          "methods": [
+            "submit_trade"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "algoLimit",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "algoStopLoss",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "submit_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 17
+        },
+        {
+          "caller": "submit_trade",
+          "callee": "str",
+          "lineNumber": 19
+        },
+        {
+          "caller": "submit_trade",
+          "callee": "self.get_and_submit_broker_order_for_contract_order",
+          "lineNumber": 22
+        },
+        {
+          "caller": "manage_trade",
+          "callee": "Exception",
+          "lineNumber": 35
+        },
+        {
+          "caller": "submit_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 45
+        },
+        {
+          "caller": "submit_trade",
+          "callee": "str",
+          "lineNumber": 47
+        },
+        {
+          "caller": "submit_trade",
+          "callee": "self.get_and_submit_broker_order_for_contract_order",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo_market.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 113,
+      "classes": [
+        {
+          "name": "algoMarket",
+          "startLine": 18,
+          "endLine": 134,
+          "methods": [
+            "submit_trade",
+            "manage_trade",
+            "prepare_and_submit_trade",
+            "order_type_to_use",
+            "manage_live_trade"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "algoMarket",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "submit_trade",
+          "callee": "self.prepare_and_submit_trade",
+          "lineNumber": 29
+        },
+        {
+          "caller": "manage_trade",
+          "callee": "self.manage_live_trade",
+          "lineNumber": 39
+        },
+        {
+          "caller": "manage_trade",
+          "callee": "post_trade_processing",
+          "lineNumber": 40
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 48
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 51
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "copy",
+          "lineNumber": 55
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "contract_order.reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "lineNumber": 57
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 62
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.get_and_submit_broker_order_for_contract_order",
+          "lineNumber": 70
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "broker_order_with_controls.order.log_attributes",
+          "lineNumber": 85
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 91
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "str",
+          "lineNumber": 93
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "time.sleep",
+          "lineNumber": 97
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "broker_order_with_controls.message_required",
+          "lineNumber": 98
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.file_log_report_market_order",
+          "lineNumber": 102
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "broker_order_with_controls.completed",
+          "lineNumber": 104
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "broker_order_with_controls.seconds_since_submission",
+          "lineNumber": 106
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data_broker.check_order_is_cancelled_given_control_object",
+          "lineNumber": 110
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 115
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.data.log.debug",
+          "lineNumber": 119
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "cancel_order",
+          "lineNumber": 122
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.data.log.warning",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo_original_best.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 480,
+      "nonEmptyLines": 410,
+      "classes": [
+        {
+          "name": "algoOriginalBest",
+          "startLine": 56,
+          "endLine": 480,
+          "methods": [
+            "submit_trade",
+            "manage_trade",
+            "prepare_and_submit_trade",
+            "manage_live_trade",
+            "limit_trade_viable",
+            "file_log_report",
+            "file_log_report_limit_order",
+            "reason_to_switch_to_aggressive",
+            "is_market_about_to_close",
+            "required_to_switch_to_aggressive",
+            "adverse_size_issue",
+            "_is_imbalance_ratio_exceeded",
+            "_is_insufficient_size_on_our_preferred_side",
+            "set_aggressive_limit_price",
+            "set_best_limit_price"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "algoOriginalBest",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "submit_trade",
+          "callee": "self.prepare_and_submit_trade",
+          "lineNumber": 65
+        },
+        {
+          "caller": "manage_trade",
+          "callee": "self.manage_live_trade",
+          "lineNumber": 75
+        },
+        {
+          "caller": "manage_trade",
+          "callee": "post_trade_processing",
+          "lineNumber": 78
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 87
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "data.log.critical",
+          "lineNumber": 91
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "str",
+          "lineNumber": 93
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "contract_order.reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "lineNumber": 99
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 104
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.data_broker.get_ticker_object_for_order",
+          "lineNumber": 110
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.limit_trade_viable",
+          "lineNumber": 114
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.get_and_submit_broker_order_for_contract_order",
+          "lineNumber": 125
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 134
+        },
+        {
+          "caller": "prepare_and_submit_trade",
+          "callee": "self.get_and_submit_broker_order_for_contract_order",
+          "lineNumber": 139
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "order_control.order.log_attributes",
+          "lineNumber": 149
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 155
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "str",
+          "lineNumber": 156
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "time.sleep",
+          "lineNumber": 163
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "order_control.message_required",
+          "lineNumber": 164
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.file_log_report",
+          "lineNumber": 167
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.set_aggressive_limit_price",
+          "lineNumber": 172
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.reason_to_switch_to_aggressive",
+          "lineNumber": 177
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.required_to_switch_to_aggressive",
+          "lineNumber": 180
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 185
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "order_control.completed",
+          "lineNumber": 194
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 196
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "order_control.seconds_since_submission",
+          "lineNumber": 199
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data.log.debug",
+          "lineNumber": 201
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "cancel_order",
+          "lineNumber": 205
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "self.data_broker.check_order_is_cancelled_given_control_object",
+          "lineNumber": 209
+        },
+        {
+          "caller": "manage_live_trade",
+          "callee": "data.log.warning",
+          "lineNumber": 214
+        },
+        {
+          "caller": "limit_trade_viable",
+          "callee": "order.log_attributes",
+          "lineNumber": 224
+        },
+        {
+          "caller": "limit_trade_viable",
+          "callee": "self.adverse_size_issue",
+          "lineNumber": 228
+        },
+        {
+          "caller": "limit_trade_viable",
+          "callee": "self.data.log.debug",
+          "lineNumber": 233
+        },
+        {
+          "caller": "limit_trade_viable",
+          "callee": "self.is_market_about_to_close",
+          "lineNumber": 237
+        },
+        {
+          "caller": "limit_trade_viable",
+          "callee": "self.data.log.debug",
+          "lineNumber": 238
+        },
+        {
+          "caller": "file_log_report",
+          "callee": "self.file_log_report_limit_order",
+          "lineNumber": 252
+        },
+        {
+          "caller": "file_log_report",
+          "callee": "self.file_log_report_market_order",
+          "lineNumber": 254
+        },
+        {
+          "caller": "file_log_report_limit_order",
+          "callee": "broker_order_with_controls.broker_limit_price",
+          "lineNumber": 265
+        },
+        {
+          "caller": "file_log_report_limit_order",
+          "callee": "str",
+          "lineNumber": 268
+        },
+        {
+          "caller": "file_log_report_limit_order",
+          "callee": "ticker_object.current_tick",
+          "lineNumber": 268
+        },
+        {
+          "caller": "file_log_report_limit_order",
+          "callee": "self.data.log.debug",
+          "lineNumber": 280
+        },
+        {
+          "caller": "file_log_report_limit_order",
+          "callee": "broker_order_with_controls.order.log_attributes",
+          "lineNumber": 282
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "broker_order_with_controls.seconds_since_submission",
+          "lineNumber": 293
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "broker_order_with_controls.seconds_since_submission",
+          "lineNumber": 298
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "self.is_market_about_to_close",
+          "lineNumber": 301
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "ticker_object.adverse_price_movement_vs_reference",
+          "lineNumber": 308
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "self.adverse_size_issue",
+          "lineNumber": 312
+        },
+        {
+          "caller": "reason_to_switch_to_aggressive",
+          "callee": "ticker_object.latest_imbalance_ratio",
+          "lineNumber": 320
+        },
+        {
+          "caller": "is_market_about_to_close",
+          "callee": "self.data_broker.less_than_N_hours_of_trading_left_for_contract",
+          "lineNumber": 335
+        },
+        {
+          "caller": "is_market_about_to_close",
+          "callee": "self.data.log.warning",
+          "lineNumber": 341
+        },
+        {
+          "caller": "is_market_about_to_close",
+          "callee": "str",
+          "lineNumber": 342
+        },
+        {
+          "caller": "is_market_about_to_close",
+          "callee": "order.log_attributes",
+          "lineNumber": 343
+        },
+        {
+          "caller": "adverse_size_issue",
+          "callee": "ticker_object.wait_for_valid_bid_and_ask_and_analyse_current_tick",
+          "lineNumber": 362
+        },
+        {
+          "caller": "adverse_size_issue",
+          "callee": "self._is_imbalance_ratio_exceeded",
+          "lineNumber": 367
+        },
+        {
+          "caller": "adverse_size_issue",
+          "callee": "self._is_insufficient_size_on_our_preferred_side",
+          "lineNumber": 371
+        },
+        {
+          "caller": "_is_imbalance_ratio_exceeded",
+          "callee": "self.data.log.debug",
+          "lineNumber": 388
+        },
+        {
+          "caller": "_is_imbalance_ratio_exceeded",
+          "callee": "str",
+          "lineNumber": 391
+        },
+        {
+          "caller": "_is_imbalance_ratio_exceeded",
+          "callee": "order.log_attributes",
+          "lineNumber": 395
+        },
+        {
+          "caller": "_is_insufficient_size_on_our_preferred_side",
+          "callee": "abs",
+          "lineNumber": 407
+        },
+        {
+          "caller": "_is_insufficient_size_on_our_preferred_side",
+          "callee": "abs",
+          "lineNumber": 411
+        },
+        {
+          "caller": "_is_insufficient_size_on_our_preferred_side",
+          "callee": "self.data.log.debug",
+          "lineNumber": 418
+        },
+        {
+          "caller": "_is_insufficient_size_on_our_preferred_side",
+          "callee": "str",
+          "lineNumber": 422
+        },
+        {
+          "caller": "_is_insufficient_size_on_our_preferred_side",
+          "callee": "order.log_attributes",
+          "lineNumber": 428
+        },
+        {
+          "caller": "set_aggressive_limit_price",
+          "callee": "check_current_limit_price_at_inside_spread",
+          "lineNumber": 442
+        },
+        {
+          "caller": "set_aggressive_limit_price",
+          "callee": "self.set_best_limit_price",
+          "lineNumber": 448
+        },
+        {
+          "caller": "set_best_limit_price",
+          "callee": "broker_order_with_controls.order.log_attributes",
+          "lineNumber": 460
+        },
+        {
+          "caller": "set_best_limit_price",
+          "callee": "self.data_broker.modify_limit_price_given_control_object",
+          "lineNumber": 466
+        },
+        {
+          "caller": "set_best_limit_price",
+          "callee": "self.data.log.debug",
+          "lineNumber": 470
+        },
+        {
+          "caller": "set_best_limit_price",
+          "callee": "self.data.log.debug",
+          "lineNumber": 475
+        },
+        {
+          "caller": "set_best_limit_price",
+          "callee": "str",
+          "lineNumber": 476
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/algos/algo_snaps.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "algoSnapMkt",
+          "startLine": 10,
+          "endLine": 13,
+          "methods": [
+            "order_type_to_use"
+          ],
+          "properties": []
+        },
+        {
+          "name": "algoSnapMid",
+          "startLine": 22,
+          "endLine": 25,
+          "methods": [
+            "order_type_to_use"
+          ],
+          "properties": []
+        },
+        {
+          "name": "algoSnapPrim",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [
+            "order_type_to_use"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "algoSnapMkt",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "algoSnapMid",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "algoSnapPrim",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysexecution/algos/allocate_algo_to_order.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 159,
+      "functions": [
+        {
+          "name": "get_list_of_algos",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "allocate_algo_to_list_of_contract_orders",
+          "startLine": 28,
+          "endLine": 51,
+          "params": [
+            "data",
+            "list_of_contract_orders",
+            "instrument_order"
+          ]
+        },
+        {
+          "name": "get_algo_allocation_config",
+          "startLine": 63,
+          "endLine": 72,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "startLine": 75,
+          "endLine": 136,
+          "params": [
+            "data",
+            "contract_order",
+            "instrument_order"
+          ]
+        },
+        {
+          "name": "already_has_algo_allocated",
+          "startLine": 139,
+          "endLine": 140,
+          "params": [
+            "contract_order"
+          ]
+        },
+        {
+          "name": "algo_allocation_is_overridden_for_instrument",
+          "startLine": 143,
+          "endLine": 149,
+          "params": [
+            "contract_order",
+            "config"
+          ]
+        },
+        {
+          "name": "allocate_algo_for_specific_instrument_with_override",
+          "startLine": 152,
+          "endLine": 161,
+          "params": [
+            "config",
+            "contract_order"
+          ]
+        },
+        {
+          "name": "allocate_market_algo",
+          "startLine": 164,
+          "endLine": 168,
+          "params": [
+            "contract_order",
+            "config"
+          ]
+        },
+        {
+          "name": "allocate_for_best_execution_no_limit",
+          "startLine": 171,
+          "endLine": 182,
+          "params": [
+            "data",
+            "config",
+            "contract_order"
+          ]
+        },
+        {
+          "name": "allocate_for_limit_order",
+          "startLine": 185,
+          "endLine": 196,
+          "params": [
+            "data",
+            "config",
+            "contract_order"
+          ]
+        },
+        {
+          "name": "allocate_default_algo",
+          "startLine": 199,
+          "endLine": 203,
+          "params": [
+            "contract_order",
+            "config"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AlgoConfig",
+          "startLine": 55,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "default_algo",
+            "market_algo",
+            "limit_order_algo",
+            "best_algo",
+            "algo_overrides"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_list_of_algos",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_algo_to_list_of_contract_orders",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "AlgoConfig",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "get_algo_allocation_config",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "already_has_algo_allocated",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "algo_allocation_is_overridden_for_instrument",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_algo_for_specific_instrument_with_override",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_market_algo",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_for_best_execution_no_limit",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_for_limit_order",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "allocate_default_algo",
+          "line": 199,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_list_of_algos",
+          "callee": "get_algo_allocation_config",
+          "lineNumber": 23
+        },
+        {
+          "caller": "allocate_algo_to_list_of_contract_orders",
+          "callee": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "lineNumber": 42
+        },
+        {
+          "caller": "allocate_algo_to_list_of_contract_orders",
+          "callee": "new_list_of_contract_orders.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "allocate_algo_to_list_of_contract_orders",
+          "callee": "listOfOrders",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get_algo_allocation_config",
+          "callee": "data.config.get_element",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_algo_allocation_config",
+          "callee": "AlgoConfig",
+          "lineNumber": 66
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "get_algo_allocation_config",
+          "lineNumber": 80
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 81
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "already_has_algo_allocated",
+          "lineNumber": 83
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "algo_allocation_is_overridden_for_instrument",
+          "lineNumber": 92
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "allocate_algo_for_specific_instrument_with_override",
+          "lineNumber": 95
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "data.log.debug",
+          "lineNumber": 99
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "allocate_market_algo",
+          "lineNumber": 103
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "allocate_for_best_execution_no_limit",
+          "lineNumber": 111
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "allocate_for_limit_order",
+          "lineNumber": 116
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "data.log.critical",
+          "lineNumber": 121
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "data.log.warning",
+          "lineNumber": 127
+        },
+        {
+          "caller": "check_and_if_required_allocate_algo_to_single_contract_order",
+          "callee": "allocate_default_algo",
+          "lineNumber": 132
+        },
+        {
+          "caller": "algo_allocation_is_overridden_for_instrument",
+          "callee": "list",
+          "lineNumber": 147
+        },
+        {
+          "caller": "algo_allocation_is_overridden_for_instrument",
+          "callee": "config.algo_overrides.keys",
+          "lineNumber": 147
+        },
+        {
+          "caller": "allocate_algo_for_specific_instrument_with_override",
+          "callee": "config.algo_overrides.get",
+          "lineNumber": 157
+        },
+        {
+          "caller": "allocate_for_best_execution_no_limit",
+          "callee": "data.log.debug",
+          "lineNumber": 175
+        },
+        {
+          "caller": "allocate_for_best_execution_no_limit",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 177
+        },
+        {
+          "caller": "allocate_for_limit_order",
+          "callee": "data.log.debug",
+          "lineNumber": 189
+        },
+        {
+          "caller": "allocate_for_limit_order",
+          "callee": "contract_order.log_attributes",
+          "lineNumber": 191
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/algos/common_functions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "post_trade_processing",
+          "startLine": 15,
+          "endLine": 29,
+          "params": [
+            "data",
+            "broker_order_with_controls"
+          ]
+        },
+        {
+          "name": "cancel_order",
+          "startLine": 32,
+          "endLine": 58,
+          "params": [
+            "data",
+            "broker_order_with_controls"
+          ]
+        },
+        {
+          "name": "check_current_limit_price_at_inside_spread",
+          "startLine": 64,
+          "endLine": 85,
+          "params": [
+            "broker_order_with_controls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "post_trade_processing",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "cancel_order",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "check_current_limit_price_at_inside_spread",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "post_trade_processing",
+          "callee": "dataBroker",
+          "lineNumber": 18
+        },
+        {
+          "caller": "post_trade_processing",
+          "callee": "data_broker.cancel_market_data_for_order",
+          "lineNumber": 19
+        },
+        {
+          "caller": "post_trade_processing",
+          "callee": "broker_order_with_controls.update_order",
+          "lineNumber": 22
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "broker_order_with_controls.order.log_attributes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "dataBroker",
+          "lineNumber": 36
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "data_broker.cancel_order_given_control_object",
+          "lineNumber": 37
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "quickTimer",
+          "lineNumber": 41
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "time.sleep",
+          "lineNumber": 44
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "data_broker.check_order_is_cancelled_given_control_object",
+          "lineNumber": 45
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "data.log.debug",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cancel_order",
+          "callee": "data.log.warning",
+          "lineNumber": 52
+        },
+        {
+          "caller": "check_current_limit_price_at_inside_spread",
+          "callee": "broker_order_with_controls.broker_limit_price",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/order_stacks/broker_order_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "brokerOrderStackData",
+          "startLine": 10,
+          "endLine": 39,
+          "methods": [
+            "_name",
+            "add_execution_details_from_matched_broker_order",
+            "find_order_with_broker_tempid",
+            "get_order_with_id_from_stack"
+          ],
+          "properties": []
+        },
+        {
+          "name": "orderWithControls",
+          "startLine": 42,
+          "endLine": 136,
+          "methods": [
+            "__init__",
+            "ticker",
+            "add_or_replace_ticker",
+            "set_submit_datetime",
+            "control_object",
+            "replace_control_object",
+            "order",
+            "futures_contract",
+            "datetime_order_submitted",
+            "message_required",
+            "seconds_since_last_message",
+            "last_message_time",
+            "reset_last_message_time",
+            "seconds_since_submission",
+            "update_order",
+            "current_limit_price",
+            "completed",
+            "broker_limit_price"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "brokerOrderStackData",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "orderWithControls",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "add_execution_details_from_matched_broker_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 17
+        },
+        {
+          "caller": "add_execution_details_from_matched_broker_order",
+          "callee": "db_broker_order.add_execution_details_from_matched_broker_order",
+          "lineNumber": 18
+        },
+        {
+          "caller": "add_execution_details_from_matched_broker_order",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 22
+        },
+        {
+          "caller": "find_order_with_broker_tempid",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 25
+        },
+        {
+          "caller": "find_order_with_broker_tempid",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_order_with_id_from_stack",
+          "callee": "self.stack.get",
+          "lineNumber": 37
+        },
+        {
+          "caller": "__init__",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 61
+        },
+        {
+          "caller": "message_required",
+          "callee": "self.seconds_since_last_message",
+          "lineNumber": 93
+        },
+        {
+          "caller": "message_required",
+          "callee": "self.reset_last_message_time",
+          "lineNumber": 95
+        },
+        {
+          "caller": "seconds_since_last_message",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 101
+        },
+        {
+          "caller": "seconds_since_last_message",
+          "callee": "time_elapsed.total_seconds",
+          "lineNumber": 103
+        },
+        {
+          "caller": "last_message_time",
+          "callee": "getattr",
+          "lineNumber": 107
+        },
+        {
+          "caller": "reset_last_message_time",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 114
+        },
+        {
+          "caller": "seconds_since_submission",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "seconds_since_submission",
+          "callee": "time_elapsed.total_seconds",
+          "lineNumber": 119
+        },
+        {
+          "caller": "completed",
+          "callee": "self.update_order",
+          "lineNumber": 132
+        },
+        {
+          "caller": "completed",
+          "callee": "self.order.fill_equals_desired_trade",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/order_stacks/contract_order_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 83,
+      "classes": [
+        {
+          "name": "contractOrderStackData",
+          "startLine": 9,
+          "endLine": 100,
+          "methods": [
+            "_name",
+            "add_controlling_algo_ref",
+            "release_order_from_algo_control",
+            "get_order_with_id_from_stack",
+            "does_stack_have_orders_for_instrument_code",
+            "list_of_orders_with_instrument_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "contractOrderStackData",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self.release_order_from_algo_control",
+          "lineNumber": 21
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 23
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self.log.warning",
+          "lineNumber": 28
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "missingOrder",
+          "lineNumber": 29
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "copy",
+          "lineNumber": 32
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "modified_order.add_controlling_algo_ref",
+          "lineNumber": 33
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 34
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self.log.warning",
+          "lineNumber": 41
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "Exception",
+          "lineNumber": 46
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 49
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "self.log.warning",
+          "lineNumber": 54
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "missingOrder",
+          "lineNumber": 55
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "existing_order.is_order_controlled_by_algo",
+          "lineNumber": 57
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "copy",
+          "lineNumber": 63
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "modified_order.release_order_from_algo_control",
+          "lineNumber": 64
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 65
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "self.log.warning",
+          "lineNumber": 71
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 73
+        },
+        {
+          "caller": "release_order_from_algo_control",
+          "callee": "Exception",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_order_with_id_from_stack",
+          "callee": "self.stack.get",
+          "lineNumber": 82
+        },
+        {
+          "caller": "does_stack_have_orders_for_instrument_code",
+          "callee": "self.list_of_orders_with_instrument_code",
+          "lineNumber": 87
+        },
+        {
+          "caller": "does_stack_have_orders_for_instrument_code",
+          "callee": "len",
+          "lineNumber": 90
+        },
+        {
+          "caller": "list_of_orders_with_instrument_code",
+          "callee": "self.get_list_of_orders",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/order_stacks/instrument_order_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 200,
+      "nonEmptyLines": 158,
+      "functions": [
+        {
+          "name": "calculate_existing_trades_and_remainder",
+          "startLine": 189,
+          "endLine": 200,
+          "params": [
+            "existing_orders"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "zeroOrderException",
+          "startLine": 8,
+          "endLine": 9,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "instrumentOrderStackData",
+          "startLine": 12,
+          "endLine": 186,
+          "methods": [
+            "_name",
+            "list_of_orders_with_instrument_code",
+            "does_strategy_and_instrument_already_have_order_on_stack",
+            "does_stack_have_orders_for_instrument_code",
+            "list_of_strategies_with_orders_on_stack_for_instrument",
+            "put_manual_order_on_stack_and_return_order_id",
+            "put_order_on_stack",
+            "_put_new_order_on_stack_when_no_existing_order",
+            "_put_adjusting_order_on_stack",
+            "calculate_adjusted_order_given_existing_orders"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "zeroOrderException",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "instrumentOrderStackData",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_existing_trades_and_remainder",
+          "line": 189,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list_of_orders_with_instrument_code",
+          "callee": "self.get_list_of_orders",
+          "lineNumber": 18
+        },
+        {
+          "caller": "does_strategy_and_instrument_already_have_order_on_stack",
+          "callee": "instrumentOrder",
+          "lineNumber": 30
+        },
+        {
+          "caller": "does_strategy_and_instrument_already_have_order_on_stack",
+          "callee": "self._get_list_of_orderids_with_same_tradeable_object_on_stack",
+          "lineNumber": 32
+        },
+        {
+          "caller": "does_stack_have_orders_for_instrument_code",
+          "callee": "self.list_of_orders_with_instrument_code",
+          "lineNumber": 40
+        },
+        {
+          "caller": "does_stack_have_orders_for_instrument_code",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "list_of_strategies_with_orders_on_stack_for_instrument",
+          "callee": "self.get_list_of_orders",
+          "lineNumber": 48
+        },
+        {
+          "caller": "put_manual_order_on_stack_and_return_order_id",
+          "callee": "self._put_order_on_stack_and_get_order_id",
+          "lineNumber": 67
+        },
+        {
+          "caller": "put_order_on_stack",
+          "callee": "self._get_list_of_orderids_with_same_tradeable_object_on_stack",
+          "lineNumber": 84
+        },
+        {
+          "caller": "put_order_on_stack",
+          "callee": "self._put_new_order_on_stack_when_no_existing_order",
+          "lineNumber": 88
+        },
+        {
+          "caller": "put_order_on_stack",
+          "callee": "self._put_adjusting_order_on_stack",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "new_order.log_attributes",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "new_order.is_zero_trade",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "self.log.debug",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "zeroOrderException",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "self.log.debug",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_put_new_order_on_stack_when_no_existing_order",
+          "callee": "self._put_order_on_stack_and_get_order_id",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "new_order.log_attributes",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "listOfOrders",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "self.calculate_adjusted_order_given_existing_orders",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "adjusted_order.is_zero_trade",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "str",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "zeroOrderException",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_put_adjusting_order_on_stack",
+          "callee": "self._put_order_on_stack_and_get_order_id",
+          "lineNumber": 151
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "new_order.log_attributes",
+          "lineNumber": 158
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "calculate_existing_trades_and_remainder",
+          "lineNumber": 164
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "new_order.replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "lineNumber": 170
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "self.log.debug",
+          "lineNumber": 175
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "str",
+          "lineNumber": 178
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "str",
+          "lineNumber": 179
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "str",
+          "lineNumber": 180
+        },
+        {
+          "caller": "calculate_adjusted_order_given_existing_orders",
+          "callee": "str",
+          "lineNumber": 181
+        },
+        {
+          "caller": "calculate_existing_trades_and_remainder",
+          "callee": "sum",
+          "lineNumber": 196
+        },
+        {
+          "caller": "calculate_existing_trades_and_remainder",
+          "callee": "sum",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/order_stacks/order_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 561,
+      "nonEmptyLines": 431,
+      "classes": [
+        {
+          "name": "missingOrder",
+          "startLine": 15,
+          "endLine": 16,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "lockedOrder",
+          "startLine": 19,
+          "endLine": 20,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "failureWithRollback",
+          "startLine": 23,
+          "endLine": 24,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "orderStackData",
+          "startLine": 27,
+          "endLine": 561,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "_name",
+            "number_of_orders_on_stack",
+            "put_list_of_orders_on_stack",
+            "rollback_list_of_orders_on_stack",
+            "unlock_list_of_orders",
+            "put_order_on_stack",
+            "get_list_of_orders",
+            "get_list_of_orders_from_order_id_list",
+            "get_list_of_order_ids",
+            "list_of_new_orders",
+            "is_new_order",
+            "list_of_completed_order_ids",
+            "is_completed",
+            "add_children_to_order_without_existing_children",
+            "add_another_child_to_order",
+            "remove_children_from_order",
+            "mark_as_manual_fill_for_order_id",
+            "change_fill_quantity_for_order",
+            "zero_out",
+            "deactivate_order",
+            "remove_all_deactivated_orders_from_stack",
+            "get_list_of_inactive_order_ids",
+            "remove_order_with_id_from_stack",
+            "_change_order_on_stack",
+            "unlock_order_on_stack",
+            "lock_order_on_stack",
+            "_put_order_on_stack_and_get_order_id",
+            "_get_list_of_orderids_with_same_tradeable_object_on_stack",
+            "_get_list_of_order_ids_with_key_from_stack",
+            "_delete_entire_stack_without_checking_only_use_when_debugging",
+            "_get_list_of_all_order_ids",
+            "_remove_order_with_id_from_stack_no_checking",
+            "_change_order_on_stack_no_checking",
+            "get_order_with_id_from_stack",
+            "_put_order_on_stack_no_checking",
+            "_get_next_order_id"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "missingOrder",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "lockedOrder",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "failureWithRollback",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "orderStackData",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 53
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.number_of_orders_on_stack",
+          "lineNumber": 59
+        },
+        {
+          "caller": "number_of_orders_on_stack",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 67
+        },
+        {
+          "caller": "number_of_orders_on_stack",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "order.lock_order",
+          "lineNumber": 91
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "self.put_order_on_stack",
+          "lineNumber": 93
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 95
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "str",
+          "lineNumber": 97
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "str",
+          "lineNumber": 97
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "order.log_attributes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "self.rollback_list_of_orders_on_stack",
+          "lineNumber": 103
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 108
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "failureWithRollback",
+          "lineNumber": 109
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "list_of_order_ids.append",
+          "lineNumber": 112
+        },
+        {
+          "caller": "put_list_of_orders_on_stack",
+          "callee": "self.unlock_list_of_orders",
+          "lineNumber": 118
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "len",
+          "lineNumber": 123
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 126
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "str",
+          "lineNumber": 126
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "self.unlock_order_on_stack",
+          "lineNumber": 129
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "self.deactivate_order",
+          "lineNumber": 130
+        },
+        {
+          "caller": "rollback_list_of_orders_on_stack",
+          "callee": "self.remove_order_with_id_from_stack",
+          "lineNumber": 131
+        },
+        {
+          "caller": "unlock_list_of_orders",
+          "callee": "self.unlock_order_on_stack",
+          "lineNumber": 135
+        },
+        {
+          "caller": "put_order_on_stack",
+          "callee": "self._put_order_on_stack_and_get_order_id",
+          "lineNumber": 144
+        },
+        {
+          "caller": "get_list_of_orders",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_list_of_orders",
+          "callee": "self.get_list_of_orders_from_order_id_list",
+          "lineNumber": 154
+        },
+        {
+          "caller": "get_list_of_orders_from_order_id_list",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 161
+        },
+        {
+          "caller": "get_list_of_orders_from_order_id_list",
+          "callee": "order_list.append",
+          "lineNumber": 162
+        },
+        {
+          "caller": "get_list_of_orders_from_order_id_list",
+          "callee": "listOfOrders",
+          "lineNumber": 164
+        },
+        {
+          "caller": "get_list_of_order_ids",
+          "callee": "self._get_list_of_all_order_ids",
+          "lineNumber": 167
+        },
+        {
+          "caller": "get_list_of_order_ids",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 171
+        },
+        {
+          "caller": "list_of_new_orders",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 178
+        },
+        {
+          "caller": "list_of_new_orders",
+          "callee": "self.is_new_order",
+          "lineNumber": 180
+        },
+        {
+          "caller": "is_new_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 186
+        },
+        {
+          "caller": "is_new_order",
+          "callee": "existing_order.fill_equals_zero",
+          "lineNumber": 193
+        },
+        {
+          "caller": "list_of_completed_order_ids",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 204
+        },
+        {
+          "caller": "list_of_completed_order_ids",
+          "callee": "self.is_completed",
+          "lineNumber": 208
+        },
+        {
+          "caller": "is_completed",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 225
+        },
+        {
+          "caller": "is_completed",
+          "callee": "existing_order.fill_equals_zero",
+          "lineNumber": 240
+        },
+        {
+          "caller": "is_completed",
+          "callee": "existing_order.fill_equals_desired_trade",
+          "lineNumber": 244
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 252
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "self.log.warning",
+          "lineNumber": 255
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "missingOrder",
+          "lineNumber": 256
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "existing_order.no_children",
+          "lineNumber": 258
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "str",
+          "lineNumber": 262
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "self.log.warning",
+          "lineNumber": 264
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 266
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "Exception",
+          "lineNumber": 269
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "copy",
+          "lineNumber": 271
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "new_order.add_a_list_of_children",
+          "lineNumber": 272
+        },
+        {
+          "caller": "add_children_to_order_without_existing_children",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 274
+        },
+        {
+          "caller": "add_another_child_to_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 277
+        },
+        {
+          "caller": "add_another_child_to_order",
+          "callee": "self.log.warning",
+          "lineNumber": 280
+        },
+        {
+          "caller": "add_another_child_to_order",
+          "callee": "missingOrder",
+          "lineNumber": 281
+        },
+        {
+          "caller": "add_another_child_to_order",
+          "callee": "existing_order.add_another_child",
+          "lineNumber": 283
+        },
+        {
+          "caller": "add_another_child_to_order",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 285
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 288
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "self.log.warning",
+          "lineNumber": 291
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "missingOrder",
+          "lineNumber": 292
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "copy",
+          "lineNumber": 294
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "new_order.remove_all_children",
+          "lineNumber": 295
+        },
+        {
+          "caller": "remove_children_from_order",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 297
+        },
+        {
+          "caller": "mark_as_manual_fill_for_order_id",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 300
+        },
+        {
+          "caller": "mark_as_manual_fill_for_order_id",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 302
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 312
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "self.log.warning",
+          "lineNumber": 315
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "missingOrder",
+          "lineNumber": 316
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 322
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "copy",
+          "lineNumber": 324
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "new_order.fill_order",
+          "lineNumber": 326
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "self.log.warning",
+          "lineNumber": 330
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "str",
+          "lineNumber": 330
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "overFilledOrder",
+          "lineNumber": 331
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 333
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "self.log.debug",
+          "lineNumber": 335
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "str",
+          "lineNumber": 337
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "str",
+          "lineNumber": 337
+        },
+        {
+          "caller": "change_fill_quantity_for_order",
+          "callee": "str",
+          "lineNumber": 337
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 344
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self.log.warning",
+          "lineNumber": 347
+        },
+        {
+          "caller": "zero_out",
+          "callee": "missingOrder",
+          "lineNumber": 348
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self.log.warning",
+          "lineNumber": 352
+        },
+        {
+          "caller": "zero_out",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 354
+        },
+        {
+          "caller": "zero_out",
+          "callee": "copy",
+          "lineNumber": 359
+        },
+        {
+          "caller": "zero_out",
+          "callee": "new_order.zero_out",
+          "lineNumber": 360
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 363
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 368
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "self.log.warning",
+          "lineNumber": 371
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "missingOrder",
+          "lineNumber": 372
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "copy",
+          "lineNumber": 378
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "new_order.deactivate",
+          "lineNumber": 379
+        },
+        {
+          "caller": "deactivate_order",
+          "callee": "self._change_order_on_stack",
+          "lineNumber": 382
+        },
+        {
+          "caller": "remove_all_deactivated_orders_from_stack",
+          "callee": "self.get_list_of_inactive_order_ids",
+          "lineNumber": 386
+        },
+        {
+          "caller": "remove_all_deactivated_orders_from_stack",
+          "callee": "self.remove_order_with_id_from_stack",
+          "lineNumber": 388
+        },
+        {
+          "caller": "get_list_of_inactive_order_ids",
+          "callee": "self._get_list_of_all_order_ids",
+          "lineNumber": 391
+        },
+        {
+          "caller": "get_list_of_inactive_order_ids",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 393
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 400
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "missingOrder",
+          "lineNumber": 402
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "order_on_stack.is_order_locked",
+          "lineNumber": 406
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "Exception",
+          "lineNumber": 407
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "Exception",
+          "lineNumber": 410
+        },
+        {
+          "caller": "remove_order_with_id_from_stack",
+          "callee": "self._remove_order_with_id_from_stack_no_checking",
+          "lineNumber": 412
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 422
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 425
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "missingOrder",
+          "lineNumber": 426
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "existing_order.log_attributes",
+          "lineNumber": 428
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "existing_order.is_order_locked",
+          "lineNumber": 430
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "str",
+          "lineNumber": 433
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 434
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "Exception",
+          "lineNumber": 435
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "str",
+          "lineNumber": 440
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 441
+        },
+        {
+          "caller": "_change_order_on_stack",
+          "callee": "self._change_order_on_stack_no_checking",
+          "lineNumber": 443
+        },
+        {
+          "caller": "unlock_order_on_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 446
+        },
+        {
+          "caller": "unlock_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 449
+        },
+        {
+          "caller": "unlock_order_on_stack",
+          "callee": "missingOrder",
+          "lineNumber": 450
+        },
+        {
+          "caller": "unlock_order_on_stack",
+          "callee": "order.unlock_order",
+          "lineNumber": 452
+        },
+        {
+          "caller": "unlock_order_on_stack",
+          "callee": "self._change_order_on_stack_no_checking",
+          "lineNumber": 453
+        },
+        {
+          "caller": "lock_order_on_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 456
+        },
+        {
+          "caller": "lock_order_on_stack",
+          "callee": "self.log.warning",
+          "lineNumber": 459
+        },
+        {
+          "caller": "lock_order_on_stack",
+          "callee": "missingOrder",
+          "lineNumber": 460
+        },
+        {
+          "caller": "lock_order_on_stack",
+          "callee": "order.lock_order",
+          "lineNumber": 462
+        },
+        {
+          "caller": "lock_order_on_stack",
+          "callee": "self._change_order_on_stack_no_checking",
+          "lineNumber": 463
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "self.log.warning",
+          "lineNumber": 470
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "str",
+          "lineNumber": 472
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "order.log_attributes",
+          "lineNumber": 473
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "copy",
+          "lineNumber": 477
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "self._get_next_order_id",
+          "lineNumber": 478
+        },
+        {
+          "caller": "_put_order_on_stack_and_get_order_id",
+          "callee": "self._put_order_on_stack_no_checking",
+          "lineNumber": 481
+        },
+        {
+          "caller": "_get_list_of_orderids_with_same_tradeable_object_on_stack",
+          "callee": "self._get_list_of_order_ids_with_key_from_stack",
+          "lineNumber": 499
+        },
+        {
+          "caller": "_get_list_of_orderids_with_same_tradeable_object_on_stack",
+          "callee": "len",
+          "lineNumber": 500
+        },
+        {
+          "caller": "_get_list_of_order_ids_with_key_from_stack",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 508
+        },
+        {
+          "caller": "_get_list_of_order_ids_with_key_from_stack",
+          "callee": "self.get_order_with_id_from_stack",
+          "lineNumber": 513
+        },
+        {
+          "caller": "_delete_entire_stack_without_checking_only_use_when_debugging",
+          "callee": "self.get_list_of_order_ids",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_delete_entire_stack_without_checking_only_use_when_debugging",
+          "callee": "self._remove_order_with_id_from_stack_no_checking",
+          "lineNumber": 524
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysexecution/orders/base_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 503,
+      "nonEmptyLines": 400,
+      "functions": [
+        {
+          "name": "resolve_inputs_to_order",
+          "startLine": 453,
+          "endLine": 460,
+          "params": [
+            "trade",
+            "fill"
+          ]
+        },
+        {
+          "name": "resolve_orderid",
+          "startLine": 463,
+          "endLine": 469,
+          "params": [
+            "order_id"
+          ]
+        },
+        {
+          "name": "resolve_parent",
+          "startLine": 472,
+          "endLine": 479,
+          "params": [
+            "parent"
+          ]
+        },
+        {
+          "name": "resolve_multi_leg_price_to_single_price",
+          "startLine": 482,
+          "endLine": 503,
+          "params": [
+            "trade_list",
+            "price_list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "overFilledOrder",
+          "startLine": 17,
+          "endLine": 18,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "orderType",
+          "startLine": 21,
+          "endLine": 42,
+          "methods": [
+            "__repr__",
+            "allowed_types",
+            "__init__",
+            "as_string",
+            "__eq__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Order",
+          "startLine": 45,
+          "endLine": 450,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "full_repr",
+            "terse_repr",
+            "order_info",
+            "tradeable_object",
+            "trade",
+            "sign_of_single_trade",
+            "as_single_trade_qty_or_error",
+            "replace_required_trade_size_only_use_for_unsubmitted_trades",
+            "order_type",
+            "order_type",
+            "fill",
+            "filled_price",
+            "fill_datetime",
+            "fill_order",
+            "fill_equals_zero",
+            "fill_equals_desired_trade",
+            "is_zero_trade",
+            "order_id",
+            "order_id",
+            "children",
+            "children",
+            "remove_all_children",
+            "no_children",
+            "add_a_list_of_children",
+            "add_another_child",
+            "remaining",
+            "create_order_with_unfilled_qty",
+            "change_trade_size_proportionally_to_meet_abs_qty_limit",
+            "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+            "change_trade_qty_to_filled_qty",
+            "parent",
+            "parent",
+            "active",
+            "deactivate",
+            "zero_out",
+            "as_dict",
+            "from_dict",
+            "key",
+            "is_order_locked",
+            "lock_order",
+            "unlock_order",
+            "same_tradeable_object",
+            "same_trade_size",
+            "__eq__",
+            "log_attributes"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "overFilledOrder",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "orderType",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "Order",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_inputs_to_order",
+          "line": 453,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_orderid",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_parent",
+          "line": 472,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multi_leg_price_to_single_price",
+          "line": 482,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__repr__",
+          "callee": "self.as_string",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.allowed_types",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__eq__",
+          "callee": "self.as_string",
+          "lineNumber": 42
+        },
+        {
+          "caller": "__eq__",
+          "callee": "other.as_string",
+          "lineNumber": 42
+        },
+        {
+          "caller": "__init__",
+          "callee": "orderType",
+          "lineNumber": 65
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_inputs_to_order",
+          "lineNumber": 87
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.terse_repr",
+          "lineNumber": 105
+        },
+        {
+          "caller": "full_repr",
+          "callee": "self.terse_repr",
+          "lineNumber": 110
+        },
+        {
+          "caller": "full_repr",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 127
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 128
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 129
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 130
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 131
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 132
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 133
+        },
+        {
+          "caller": "terse_repr",
+          "callee": "str",
+          "lineNumber": 134
+        },
+        {
+          "caller": "sign_of_single_trade",
+          "callee": "self.trade.sign_of_single_trade",
+          "lineNumber": 153
+        },
+        {
+          "caller": "as_single_trade_qty_or_error",
+          "callee": "self.trade.as_single_trade_qty_or_error",
+          "lineNumber": 156
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "type",
+          "lineNumber": 162
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "len",
+          "lineNumber": 165
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "len",
+          "lineNumber": 165
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "Exception",
+          "lineNumber": 167
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "callee": "copy",
+          "lineNumber": 172
+        },
+        {
+          "caller": "fill",
+          "callee": "tradeQuantity",
+          "lineNumber": 187
+        },
+        {
+          "caller": "fill_order",
+          "callee": "self.trade.fill_less_than_or_equal_to_desired_trade",
+          "lineNumber": 205
+        },
+        {
+          "caller": "fill_order",
+          "callee": "overFilledOrder",
+          "lineNumber": 207
+        },
+        {
+          "caller": "fill_order",
+          "callee": "str",
+          "lineNumber": 209
+        },
+        {
+          "caller": "fill_order",
+          "callee": "str",
+          "lineNumber": 209
+        },
+        {
+          "caller": "fill_order",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 216
+        },
+        {
+          "caller": "fill_equals_zero",
+          "callee": "self.fill.equals_zero",
+          "lineNumber": 221
+        },
+        {
+          "caller": "is_zero_trade",
+          "callee": "self.trade.equals_zero",
+          "lineNumber": 227
+        },
+        {
+          "caller": "order_id",
+          "callee": "resolve_orderid",
+          "lineNumber": 231
+        },
+        {
+          "caller": "order_id",
+          "callee": "isinstance",
+          "lineNumber": 236
+        },
+        {
+          "caller": "order_id",
+          "callee": "getattr",
+          "lineNumber": 237
+        },
+        {
+          "caller": "order_id",
+          "callee": "Exception",
+          "lineNumber": 241
+        },
+        {
+          "caller": "children",
+          "callee": "isinstance",
+          "lineNumber": 249
+        },
+        {
+          "caller": "children",
+          "callee": "self.no_children",
+          "lineNumber": 252
+        },
+        {
+          "caller": "children",
+          "callee": "Exception",
+          "lineNumber": 253
+        },
+        {
+          "caller": "add_a_list_of_children",
+          "callee": "self.add_another_child",
+          "lineNumber": 266
+        },
+        {
+          "caller": "add_another_child",
+          "callee": "self.no_children",
+          "lineNumber": 269
+        },
+        {
+          "caller": "create_order_with_unfilled_qty",
+          "callee": "copy",
+          "lineNumber": 281
+        },
+        {
+          "caller": "create_order_with_unfilled_qty",
+          "callee": "new_trade.zero_version",
+          "lineNumber": 284
+        },
+        {
+          "caller": "change_trade_size_proportionally_to_meet_abs_qty_limit",
+          "callee": "copy",
+          "lineNumber": 294
+        },
+        {
+          "caller": "change_trade_size_proportionally_to_meet_abs_qty_limit",
+          "callee": "old_trade.change_trade_size_proportionally_to_meet_abs_qty_limit",
+          "lineNumber": 296
+        },
+        {
+          "caller": "change_trade_size_proportionally_to_meet_abs_qty_limit",
+          "callee": "new_order.replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "lineNumber": 300
+        },
+        {
+          "caller": "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "callee": "copy",
+          "lineNumber": 310
+        },
+        {
+          "caller": "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "callee": "old_trade.reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "lineNumber": 313
+        },
+        {
+          "caller": "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "callee": "new_order.replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "lineNumber": 318
+        },
+        {
+          "caller": "parent",
+          "callee": "resolve_parent",
+          "lineNumber": 330
+        },
+        {
+          "caller": "parent",
+          "callee": "int",
+          "lineNumber": 336
+        },
+        {
+          "caller": "parent",
+          "callee": "Exception",
+          "lineNumber": 338
+        },
+        {
+          "caller": "active",
+          "callee": "bool",
+          "lineNumber": 342
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self.trade.zero_version",
+          "lineNumber": 349
+        },
+        {
+          "caller": "zero_out",
+          "callee": "self.deactivate",
+          "lineNumber": 351
+        },
+        {
+          "caller": "as_dict",
+          "callee": "dict",
+          "lineNumber": 354
+        },
+        {
+          "caller": "as_dict",
+          "callee": "list",
+          "lineNumber": 355
+        },
+        {
+          "caller": "as_dict",
+          "callee": "list",
+          "lineNumber": 356
+        },
+        {
+          "caller": "as_dict",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 360
+        },
+        {
+          "caller": "as_dict",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 363
+        },
+        {
+          "caller": "as_dict",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 366
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self.order_type.as_string",
+          "lineNumber": 370
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self.order_info.items",
+          "lineNumber": 371
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 379
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 380
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 381
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 382
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 383
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 384
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 385
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 386
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 388
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 388
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 389
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 390
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 392
+        },
+        {
+          "caller": "from_dict",
+          "callee": "orderType",
+          "lineNumber": 393
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 393
+        },
+        {
+          "caller": "from_dict",
+          "callee": "Order",
+          "lineNumber": 397
+        },
+        {
+          "caller": "is_order_locked",
+          "callee": "bool",
+          "lineNumber": 419
+        },
+        {
+          "caller": "__eq__",
+          "callee": "self.same_tradeable_object",
+          "lineNumber": 439
+        },
+        {
+          "caller": "__eq__",
+          "callee": "self.same_trade_size",
+          "lineNumber": 440
+        },
+        {
+          "caller": "resolve_inputs_to_order",
+          "callee": "tradeQuantity",
+          "lineNumber": 454
+        },
+        {
+          "caller": "resolve_inputs_to_order",
+          "callee": "resolved_trade.zero_version",
+          "lineNumber": 456
+        },
+        {
+          "caller": "resolve_inputs_to_order",
+          "callee": "tradeQuantity",
+          "lineNumber": 458
+        },
+        {
+          "caller": "resolve_orderid",
+          "callee": "int",
+          "lineNumber": 468
+        },
+        {
+          "caller": "resolve_parent",
+          "callee": "int",
+          "lineNumber": 477
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "len",
+          "lineNumber": 485
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "len",
+          "lineNumber": 489
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "len",
+          "lineNumber": 492
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "len",
+          "lineNumber": 492
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "list_of_ints_with_highest_common_factor_positive_first",
+          "lineNumber": 495
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "zip",
+          "lineNumber": 497
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "sum",
+          "lineNumber": 499
+        },
+        {
+          "caller": "resolve_multi_leg_price_to_single_price",
+          "callee": "np.isnan",
+          "lineNumber": 500
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysexecution/orders/broker_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 459,
+      "nonEmptyLines": 383,
+      "functions": [
+        {
+          "name": "create_new_broker_order_from_contract_order",
+          "startLine": 379,
+          "endLine": 415,
+          "params": [
+            "contract_order",
+            "order_type",
+            "limit_price",
+            "submit_datetime",
+            "side_price",
+            "mid_price",
+            "offside_price",
+            "algo_comment",
+            "broker",
+            "broker_account",
+            "broker_clientid",
+            "broker_permid",
+            "broker_tempid"
+          ]
+        },
+        {
+          "name": "single_fill_from_broker_order",
+          "startLine": 444,
+          "endLine": 459,
+          "params": [
+            "order",
+            "contract_str"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "brokerOrderType",
+          "startLine": 33,
+          "endLine": 44,
+          "methods": [
+            "allowed_types"
+          ],
+          "properties": []
+        },
+        {
+          "name": "brokerOrder",
+          "startLine": 61,
+          "endLine": 376,
+          "methods": [
+            "__init__",
+            "strategy_name",
+            "instrument_code",
+            "contract_date",
+            "instrument_strategy",
+            "contract_date_key",
+            "limit_price",
+            "limit_price",
+            "algo_used",
+            "calendar_spread_order",
+            "submit_datetime",
+            "submit_datetime",
+            "manual_fill",
+            "manual_fill",
+            "side_price",
+            "mid_price",
+            "offside_price",
+            "algo_comment",
+            "algo_comment",
+            "broker",
+            "broker_account",
+            "broker_permid",
+            "broker_permid",
+            "broker_clientid",
+            "broker_clientid",
+            "broker_tempid",
+            "broker_tempid",
+            "commission",
+            "commission",
+            "futures_contract",
+            "leg_filled_price",
+            "leg_filled_price",
+            "from_dict",
+            "log_attributes",
+            "add_execution_details_from_matched_broker_order"
+          ],
+          "properties": []
+        },
+        {
+          "name": "brokerOrderWithParentInformation",
+          "startLine": 419,
+          "endLine": 441,
+          "methods": [
+            "create_augmented_order"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "brokerOrderType",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "brokerOrder",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "create_new_broker_order_from_contract_order",
+          "line": 379,
+          "isDefault": false
+        },
+        {
+          "name": "brokerOrderWithParentInformation",
+          "line": 419,
+          "isDefault": false
+        },
+        {
+          "name": "single_fill_from_broker_order",
+          "line": 444,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "brokerOrderType",
+          "lineNumber": 74
+        },
+        {
+          "caller": "__init__",
+          "callee": "from_contract_order_args_to_resolved_args",
+          "lineNumber": 131
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 137
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 142
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 162
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 162
+        },
+        {
+          "caller": "manual_fill",
+          "callee": "bool",
+          "lineNumber": 223
+        },
+        {
+          "caller": "futures_contract",
+          "callee": "futuresContract",
+          "lineNumber": 291
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 306
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 307
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 308
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 309
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 310
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 312
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 313
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 314
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 316
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 316
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 317
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 318
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 320
+        },
+        {
+          "caller": "from_dict",
+          "callee": "brokerOrderType",
+          "lineNumber": 321
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 321
+        },
+        {
+          "caller": "from_dict",
+          "callee": "brokerOrder",
+          "lineNumber": 325
+        },
+        {
+          "caller": "log_attributes",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 352
+        },
+        {
+          "caller": "log_attributes",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 355
+        },
+        {
+          "caller": "add_execution_details_from_matched_broker_order",
+          "callee": "self.trade.fill_less_than_or_equal_to_desired_trade",
+          "lineNumber": 361
+        },
+        {
+          "caller": "add_execution_details_from_matched_broker_order",
+          "callee": "self.fill_order",
+          "lineNumber": 366
+        },
+        {
+          "caller": "create_new_broker_order_from_contract_order",
+          "callee": "brokerOrderType",
+          "lineNumber": 381
+        },
+        {
+          "caller": "create_new_broker_order_from_contract_order",
+          "callee": "brokerOrder",
+          "lineNumber": 394
+        },
+        {
+          "caller": "create_augmented_order",
+          "callee": "order.trade.buy_or_sell",
+          "lineNumber": 439
+        },
+        {
+          "caller": "single_fill_from_broker_order",
+          "callee": "len",
+          "lineNumber": 446
+        },
+        {
+          "caller": "single_fill_from_broker_order",
+          "callee": "fill_from_order",
+          "lineNumber": 448
+        },
+        {
+          "caller": "single_fill_from_broker_order",
+          "callee": "len",
+          "lineNumber": 450
+        },
+        {
+          "caller": "single_fill_from_broker_order",
+          "callee": "list_of_dates.index",
+          "lineNumber": 453
+        },
+        {
+          "caller": "single_fill_from_broker_order",
+          "callee": "Fill",
+          "lineNumber": 457
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysexecution/orders/contract_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 359,
+      "nonEmptyLines": 293,
+      "functions": [
+        {
+          "name": "from_contract_order_args_to_resolved_args",
+          "startLine": 323,
+          "endLine": 335,
+          "params": [
+            "args",
+            "fill"
+          ]
+        },
+        {
+          "name": "split_contract_order_args",
+          "startLine": 338,
+          "endLine": 359,
+          "params": [
+            "args",
+            "fill"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "contractOrderType",
+          "startLine": 26,
+          "endLine": 28,
+          "methods": [
+            "allowed_types"
+          ],
+          "properties": []
+        },
+        {
+          "name": "contractOrder",
+          "startLine": 39,
+          "endLine": 298,
+          "methods": [
+            "__init__",
+            "from_dict",
+            "strategy_name",
+            "instrument_code",
+            "contract_date",
+            "contract_date_key",
+            "futures_contract",
+            "instrument_strategy",
+            "algo_to_use",
+            "algo_to_use",
+            "generated_datetime",
+            "reference_price",
+            "reference_price",
+            "limit_price",
+            "limit_price",
+            "manual_trade",
+            "manual_fill",
+            "manual_fill",
+            "roll_order",
+            "calendar_spread_order",
+            "reference_of_controlling_algo",
+            "is_order_controlled_by_algo",
+            "add_controlling_algo_ref",
+            "release_order_from_algo_control",
+            "panic_order",
+            "inter_spread_order",
+            "log_attributes"
+          ],
+          "properties": []
+        },
+        {
+          "name": "contractOrderKeyArguments",
+          "startLine": 302,
+          "endLine": 320,
+          "methods": [
+            "resolve_inputs_to_order_with_key_arguments",
+            "sort_inputs_by_contract_date_order"
+          ],
+          "properties": [
+            "tradeable_object",
+            "trade",
+            "fill"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "contractOrderType",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "contractOrder",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "contractOrderKeyArguments",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "from_contract_order_args_to_resolved_args",
+          "line": 323,
+          "isDefault": false
+        },
+        {
+          "name": "split_contract_order_args",
+          "line": 338,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "contractOrderType",
+          "lineNumber": 51
+        },
+        {
+          "caller": "__init__",
+          "callee": "from_contract_order_args_to_resolved_args",
+          "lineNumber": 97
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 103
+        },
+        {
+          "caller": "__init__",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 109
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 111
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 124
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 124
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 141
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 142
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 143
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 144
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 145
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 147
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 148
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 149
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 151
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 151
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 152
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 153
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 155
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 156
+        },
+        {
+          "caller": "from_dict",
+          "callee": "contractOrderType",
+          "lineNumber": 157
+        },
+        {
+          "caller": "from_dict",
+          "callee": "contractOrder",
+          "lineNumber": 161
+        },
+        {
+          "caller": "manual_trade",
+          "callee": "bool",
+          "lineNumber": 232
+        },
+        {
+          "caller": "manual_fill",
+          "callee": "bool",
+          "lineNumber": 236
+        },
+        {
+          "caller": "roll_order",
+          "callee": "bool",
+          "lineNumber": 244
+        },
+        {
+          "caller": "calendar_spread_order",
+          "callee": "bool",
+          "lineNumber": 248
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "self.is_order_controlled_by_algo",
+          "lineNumber": 263
+        },
+        {
+          "caller": "add_controlling_algo_ref",
+          "callee": "Exception",
+          "lineNumber": 264
+        },
+        {
+          "caller": "inter_spread_order",
+          "callee": "bool",
+          "lineNumber": 281
+        },
+        {
+          "caller": "log_attributes",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 292
+        },
+        {
+          "caller": "log_attributes",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 295
+        },
+        {
+          "caller": "resolve_inputs_to_order_with_key_arguments",
+          "callee": "resolve_inputs_to_order",
+          "lineNumber": 308
+        },
+        {
+          "caller": "sort_inputs_by_contract_date_order",
+          "callee": "self.tradeable_object.sort_idx_for_contracts",
+          "lineNumber": 316
+        },
+        {
+          "caller": "sort_inputs_by_contract_date_order",
+          "callee": "self.trade.sort_with_idx",
+          "lineNumber": 317
+        },
+        {
+          "caller": "sort_inputs_by_contract_date_order",
+          "callee": "self.fill.sort_with_idx",
+          "lineNumber": 318
+        },
+        {
+          "caller": "sort_inputs_by_contract_date_order",
+          "callee": "self.tradeable_object.sort_contracts_with_idx",
+          "lineNumber": 320
+        },
+        {
+          "caller": "from_contract_order_args_to_resolved_args",
+          "callee": "split_contract_order_args",
+          "lineNumber": 327
+        },
+        {
+          "caller": "from_contract_order_args_to_resolved_args",
+          "callee": "key_arguments.resolve_inputs_to_order_with_key_arguments",
+          "lineNumber": 330
+        },
+        {
+          "caller": "from_contract_order_args_to_resolved_args",
+          "callee": "key_arguments.sort_inputs_by_contract_date_order",
+          "lineNumber": 333
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "len",
+          "lineNumber": 341
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "futuresContractStrategy.from_key",
+          "lineNumber": 342
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "len",
+          "lineNumber": 344
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "futuresContractStrategy",
+          "lineNumber": 349
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "Exception",
+          "lineNumber": 351
+        },
+        {
+          "caller": "split_contract_order_args",
+          "callee": "contractOrderKeyArguments",
+          "lineNumber": 355
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysexecution/orders/instrument_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 242,
+      "nonEmptyLines": 205,
+      "classes": [
+        {
+          "name": "instrumentOrderType",
+          "startLine": 19,
+          "endLine": 29,
+          "methods": [
+            "allowed_types"
+          ],
+          "properties": []
+        },
+        {
+          "name": "instrumentOrder",
+          "startLine": 40,
+          "endLine": 242,
+          "methods": [
+            "__init__",
+            "from_dict",
+            "strategy_name",
+            "instrument_code",
+            "instrument_strategy",
+            "limit_contract",
+            "limit_contract",
+            "limit_price",
+            "limit_price",
+            "reference_contract",
+            "reference_contract",
+            "reference_price",
+            "reference_price",
+            "reference_datetime",
+            "generated_datetime",
+            "manual_trade",
+            "roll_order",
+            "log_attributes"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "instrumentOrderType",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "instrumentOrder",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 95
+        },
+        {
+          "caller": "__init__",
+          "callee": "instrumentStrategy.from_key",
+          "lineNumber": 96
+        },
+        {
+          "caller": "__init__",
+          "callee": "instrumentStrategy",
+          "lineNumber": 102
+        },
+        {
+          "caller": "__init__",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 105
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 107
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 118
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 118
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 135
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 136
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 137
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 138
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 139
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 140
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 141
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 142
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 144
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 144
+        },
+        {
+          "caller": "from_dict",
+          "callee": "if_empty_string_return_object",
+          "lineNumber": 145
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 146
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 148
+        },
+        {
+          "caller": "from_dict",
+          "callee": "instrumentOrderType",
+          "lineNumber": 149
+        },
+        {
+          "caller": "from_dict",
+          "callee": "order_as_dict.pop",
+          "lineNumber": 149
+        },
+        {
+          "caller": "from_dict",
+          "callee": "instrumentOrder",
+          "lineNumber": 153
+        },
+        {
+          "caller": "manual_trade",
+          "callee": "bool",
+          "lineNumber": 224
+        },
+        {
+          "caller": "roll_order",
+          "callee": "bool",
+          "lineNumber": 228
+        },
+        {
+          "caller": "log_attributes",
+          "callee": "if_object_matches_return_empty_string",
+          "lineNumber": 239
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/orders/list_of_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+          "startLine": 123,
+          "endLine": 140,
+          "params": [
+            "position",
+            "original_order",
+            "list_of_orders"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "listOfFillDatetime",
+          "startLine": 14,
+          "endLine": 18,
+          "methods": [
+            "final_fill_datetime"
+          ],
+          "properties": []
+        },
+        {
+          "name": "listOfOrders",
+          "startLine": 21,
+          "endLine": 120,
+          "methods": [
+            "as_pd",
+            "as_pd_with_limits",
+            "list_of_filled_price",
+            "average_fill_price",
+            "list_of_filled_datetime",
+            "final_fill_datetime",
+            "list_of_qty",
+            "list_of_filled_qty",
+            "total_filled_qty",
+            "all_zero_fills"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "listOfFillDatetime",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "listOfOrders",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+          "line": 123,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "final_fill_datetime",
+          "callee": "max",
+          "lineNumber": 18
+        },
+        {
+          "caller": "as_pd",
+          "callee": "pd.DataFrame",
+          "lineNumber": 30
+        },
+        {
+          "caller": "as_pd",
+          "callee": "dict",
+          "lineNumber": 31
+        },
+        {
+          "caller": "as_pd_with_limits",
+          "callee": "pd.DataFrame",
+          "lineNumber": 52
+        },
+        {
+          "caller": "as_pd_with_limits",
+          "callee": "dict",
+          "lineNumber": 53
+        },
+        {
+          "caller": "average_fill_price",
+          "callee": "self.list_of_filled_price",
+          "lineNumber": 78
+        },
+        {
+          "caller": "average_fill_price",
+          "callee": "_nan_for_none",
+          "lineNumber": 79
+        },
+        {
+          "caller": "average_fill_price",
+          "callee": "np.nanmean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "average_fill_price",
+          "callee": "np.isnan",
+          "lineNumber": 82
+        },
+        {
+          "caller": "list_of_filled_datetime",
+          "callee": "listOfFillDatetime",
+          "lineNumber": 88
+        },
+        {
+          "caller": "final_fill_datetime",
+          "callee": "self.list_of_filled_datetime",
+          "lineNumber": 95
+        },
+        {
+          "caller": "final_fill_datetime",
+          "callee": "list_of_filled_datetime.final_fill_datetime",
+          "lineNumber": 96
+        },
+        {
+          "caller": "list_of_qty",
+          "callee": "listOfTradeQuantity",
+          "lineNumber": 101
+        },
+        {
+          "caller": "list_of_filled_qty",
+          "callee": "listOfTradeQuantity",
+          "lineNumber": 107
+        },
+        {
+          "caller": "total_filled_qty",
+          "callee": "self.list_of_filled_qty",
+          "lineNumber": 112
+        },
+        {
+          "caller": "total_filled_qty",
+          "callee": "list_of_filled_qty.total_filled_qty",
+          "lineNumber": 114
+        },
+        {
+          "caller": "all_zero_fills",
+          "callee": "self.list_of_filled_qty",
+          "lineNumber": 117
+        },
+        {
+          "caller": "all_zero_fills",
+          "callee": "fill.equals_zero",
+          "lineNumber": 118
+        },
+        {
+          "caller": "all_zero_fills",
+          "callee": "all",
+          "lineNumber": 120
+        },
+        {
+          "caller": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+          "callee": "list_of_orders.list_of_qty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+          "callee": "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied",
+          "lineNumber": 129
+        },
+        {
+          "caller": "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied",
+          "callee": "original_order.replace_required_trade_size_only_use_for_unsubmitted_trades",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysexecution/orders/named_order_objects.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/stack_handler/additional_sampling.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "remove_ignored_instruments",
+          "startLine": 88,
+          "endLine": 102,
+          "params": [
+            "list_of_instruments"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "stackHandlerAdditionalSampling",
+          "startLine": 8,
+          "endLine": 85,
+          "methods": [
+            "refresh_additional_sampling_all_instruments",
+            "get_all_instruments_priced_contracts",
+            "_get_all_instruments_priced_contracts_from_db",
+            "_get_all_instruments",
+            "refresh_sampling_for_contract",
+            "is_contract_currently_okay_to_sample",
+            "refresh_sampling_without_checks",
+            "get_average_spread",
+            "add_spread_data_to_db"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "stackHandlerAdditionalSampling",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "remove_ignored_instruments",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "refresh_additional_sampling_all_instruments",
+          "callee": "self.get_all_instruments_priced_contracts",
+          "lineNumber": 10
+        },
+        {
+          "caller": "refresh_additional_sampling_all_instruments",
+          "callee": "self.refresh_sampling_for_contract",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get_all_instruments_priced_contracts",
+          "callee": "getattr",
+          "lineNumber": 16
+        },
+        {
+          "caller": "get_all_instruments_priced_contracts",
+          "callee": "self._get_all_instruments_priced_contracts_from_db",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_get_all_instruments_priced_contracts_from_db",
+          "callee": "self._get_all_instruments",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_get_all_instruments_priced_contracts_from_db",
+          "callee": "remove_ignored_instruments",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_get_all_instruments_priced_contracts_from_db",
+          "callee": "futuresContract",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_get_all_instruments_priced_contracts_from_db",
+          "callee": "data_contracts.get_priced_contract_id",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_get_all_instruments",
+          "callee": "diag_prices.get_list_of_instruments_in_multiple_prices",
+          "lineNumber": 41
+        },
+        {
+          "caller": "refresh_sampling_for_contract",
+          "callee": "self.is_contract_currently_okay_to_sample",
+          "lineNumber": 46
+        },
+        {
+          "caller": "refresh_sampling_for_contract",
+          "callee": "self.refresh_sampling_without_checks",
+          "lineNumber": 50
+        },
+        {
+          "caller": "is_contract_currently_okay_to_sample",
+          "callee": "data_broker.is_contract_okay_to_trade",
+          "lineNumber": 54
+        },
+        {
+          "caller": "refresh_sampling_without_checks",
+          "callee": "self.get_average_spread",
+          "lineNumber": 60
+        },
+        {
+          "caller": "refresh_sampling_without_checks",
+          "callee": "self.add_spread_data_to_db",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_average_spread",
+          "callee": "data_broker.get_recent_bid_ask_tick_data_for_contract_object",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_average_spread",
+          "callee": "tick_data.average_bid_offer_spread",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_average_spread",
+          "callee": "missingData",
+          "lineNumber": 76
+        },
+        {
+          "caller": "add_spread_data_to_db",
+          "callee": "update_prices.add_spread_entry",
+          "lineNumber": 85
+        },
+        {
+          "caller": "remove_ignored_instruments",
+          "callee": "self.data.config.get_element(\"exclude_instrument_lists\").get",
+          "lineNumber": 91
+        },
+        {
+          "caller": "remove_ignored_instruments",
+          "callee": "self.data.config.get_element",
+          "lineNumber": 91
+        },
+        {
+          "caller": "remove_ignored_instruments",
+          "callee": "len",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/stack_handler/balance_trades.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 197,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "create_balance_contract_order_from_broker_order",
+          "startLine": 166,
+          "endLine": 182,
+          "params": [
+            "broker_order"
+          ]
+        },
+        {
+          "name": "create_balance_instrument_order_from_contract_order",
+          "startLine": 185,
+          "endLine": 197,
+          "params": [
+            "contract_order"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "stackHandlerCreateBalanceTrades",
+          "startLine": 15,
+          "endLine": 163,
+          "methods": [
+            "create_balance_trade",
+            "put_balance_trades_on_stack",
+            "rollback_balance_trades",
+            "create_balance_instrument_trade"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "stackHandlerCreateBalanceTrades",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "create_balance_contract_order_from_broker_order",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "create_balance_instrument_order_from_contract_order",
+          "line": 185,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create_balance_trade",
+          "callee": "broker_order.log_attributes",
+          "lineNumber": 17
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "create_balance_contract_order_from_broker_order",
+          "lineNumber": 19
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "create_balance_instrument_order_from_contract_order",
+          "lineNumber": 20
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.log.debug",
+          "lineNumber": 24
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.put_balance_trades_on_stack",
+          "lineNumber": 27
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.log.debug",
+          "lineNumber": 33
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.apply_position_change_to_stored_contract_positions",
+          "lineNumber": 34
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.apply_position_change_to_instrument",
+          "lineNumber": 37
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.log.debug",
+          "lineNumber": 41
+        },
+        {
+          "caller": "create_balance_trade",
+          "callee": "self.handle_completed_instrument_order",
+          "lineNumber": 45
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "instrument_order.log_attributes",
+          "lineNumber": 55
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.debug",
+          "lineNumber": 56
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.instrument_stack.put_manual_order_on_stack_and_return_order_id",
+          "lineNumber": 60
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 65
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "str",
+          "lineNumber": 66
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 69
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.contract_stack.put_order_on_stack",
+          "lineNumber": 74
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 76
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "str",
+          "lineNumber": 77
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 80
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.rollback_balance_trades",
+          "lineNumber": 81
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.instrument_stack.add_children_to_order_without_existing_children",
+          "lineNumber": 87
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 91
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "str",
+          "lineNumber": 92
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 95
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.rollback_balance_trades",
+          "lineNumber": 96
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.broker_stack.put_order_on_stack",
+          "lineNumber": 103
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 109
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.rollback_balance_trades",
+          "lineNumber": 110
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.contract_stack.add_children_to_order_without_existing_children",
+          "lineNumber": 116
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 120
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "str",
+          "lineNumber": 121
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.error",
+          "lineNumber": 124
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.rollback_balance_trades",
+          "lineNumber": 125
+        },
+        {
+          "caller": "put_balance_trades_on_stack",
+          "callee": "self.log.debug",
+          "lineNumber": 133
+        },
+        {
+          "caller": "rollback_balance_trades",
+          "callee": "self.instrument_stack.remove_order_with_id_from_stack",
+          "lineNumber": 139
+        },
+        {
+          "caller": "rollback_balance_trades",
+          "callee": "self.contract_stack.remove_order_with_id_from_stack",
+          "lineNumber": 141
+        },
+        {
+          "caller": "rollback_balance_trades",
+          "callee": "self.broker_stack.remove_order_with_id_from_stack",
+          "lineNumber": 143
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "instrument_order.log_attributes",
+          "lineNumber": 146
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "self.log.debug",
+          "lineNumber": 147
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "self.instrument_stack.put_manual_order_on_stack_and_return_order_id",
+          "lineNumber": 149
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "self.log.debug",
+          "lineNumber": 156
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "self.apply_position_change_to_instrument",
+          "lineNumber": 160
+        },
+        {
+          "caller": "create_balance_instrument_trade",
+          "callee": "self.handle_completed_instrument_order",
+          "lineNumber": 163
+        },
+        {
+          "caller": "create_balance_contract_order_from_broker_order",
+          "callee": "contractOrder",
+          "lineNumber": 167
+        },
+        {
+          "caller": "create_balance_instrument_order_from_contract_order",
+          "callee": "instrumentOrder",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/stack_handler/cancel_and_modify.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 105,
+      "classes": [
+        {
+          "name": "stackHandlerCancelAndModify",
+          "startLine": 11,
+          "endLine": 129,
+          "methods": [
+            "cancel_and_confirm_all_broker_orders",
+            "try_and_cancel_all_broker_orders_and_return_list_of_orders",
+            "cancel_broker_order_with_id_and_return_order",
+            "are_all_orders_cancelled_after_timeout",
+            "list_of_orders_not_yet_cancelled",
+            "check_order_cancelled",
+            "critical_cancel_log"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "stackHandlerCancelAndModify",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cancel_and_confirm_all_broker_orders",
+          "callee": "self.try_and_cancel_all_broker_orders_and_return_list_of_orders",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cancel_and_confirm_all_broker_orders",
+          "callee": "self.are_all_orders_cancelled_after_timeout",
+          "lineNumber": 29
+        },
+        {
+          "caller": "cancel_and_confirm_all_broker_orders",
+          "callee": "len",
+          "lineNumber": 32
+        },
+        {
+          "caller": "cancel_and_confirm_all_broker_orders",
+          "callee": "self.critical_cancel_log",
+          "lineNumber": 35
+        },
+        {
+          "caller": "cancel_and_confirm_all_broker_orders",
+          "callee": "self.log.debug",
+          "lineNumber": 37
+        },
+        {
+          "caller": "try_and_cancel_all_broker_orders_and_return_list_of_orders",
+          "callee": "self.broker_stack.get_list_of_order_ids",
+          "lineNumber": 42
+        },
+        {
+          "caller": "try_and_cancel_all_broker_orders_and_return_list_of_orders",
+          "callee": "self.cancel_broker_order_with_id_and_return_order",
+          "lineNumber": 45
+        },
+        {
+          "caller": "try_and_cancel_all_broker_orders_and_return_list_of_orders",
+          "callee": "list_of_broker_orders.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "try_and_cancel_all_broker_orders_and_return_list_of_orders",
+          "callee": "listOfOrders",
+          "lineNumber": 51
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "self.broker_stack.get_order_with_id_from_stack",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "broker_order.fill_equals_desired_trade",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "self.log.debug",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "broker_order.log_attributes",
+          "lineNumber": 69
+        },
+        {
+          "caller": "cancel_broker_order_with_id_and_return_order",
+          "callee": "data_broker.cancel_order_on_stack",
+          "lineNumber": 74
+        },
+        {
+          "caller": "are_all_orders_cancelled_after_timeout",
+          "callee": "quickTimer",
+          "lineNumber": 81
+        },
+        {
+          "caller": "are_all_orders_cancelled_after_timeout",
+          "callee": "self.list_of_orders_not_yet_cancelled",
+          "lineNumber": 83
+        },
+        {
+          "caller": "are_all_orders_cancelled_after_timeout",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "copy",
+          "lineNumber": 94
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "self.check_order_cancelled",
+          "lineNumber": 98
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "new_list_of_orders.remove",
+          "lineNumber": 105
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "self.log.debug",
+          "lineNumber": 106
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "broker_order.log_attributes",
+          "lineNumber": 108
+        },
+        {
+          "caller": "list_of_orders_not_yet_cancelled",
+          "callee": "listOfOrders",
+          "lineNumber": 112
+        },
+        {
+          "caller": "check_order_cancelled",
+          "callee": "data_broker.check_order_is_cancelled",
+          "lineNumber": 118
+        },
+        {
+          "caller": "critical_cancel_log",
+          "callee": "self.log.critical",
+          "lineNumber": 124
+        },
+        {
+          "caller": "critical_cancel_log",
+          "callee": "broker_order.log_attributes",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysexecution/stack_handler/checks.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 66,
+      "classes": [
+        {
+          "name": "stackHandlerChecks",
+          "startLine": 12,
+          "endLine": 79,
+          "methods": [
+            "check_internal_position_break",
+            "check_external_position_break",
+            "log_and_lock_new_breaks",
+            "log_and_lock_position_break",
+            "clear_position_locks_where_breaks_fixed",
+            "clear_position_locks_no_checks"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "stackHandlerChecks",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "check_internal_position_break",
+          "callee": "diagPositions",
+          "lineNumber": 19
+        },
+        {
+          "caller": "check_internal_position_break",
+          "callee": "diag_positions.get_list_of_breaks_between_contract_and_strategy_positions",
+          "lineNumber": 21
+        },
+        {
+          "caller": "check_internal_position_break",
+          "callee": "self.log.critical",
+          "lineNumber": 24
+        },
+        {
+          "caller": "check_internal_position_break",
+          "callee": "str",
+          "lineNumber": 26
+        },
+        {
+          "caller": "check_external_position_break",
+          "callee": "dataBroker",
+          "lineNumber": 30
+        },
+        {
+          "caller": "check_external_position_break",
+          "callee": "data_broker.get_list_of_breaks_between_broker_and_db_contract_positions",
+          "lineNumber": 32
+        },
+        {
+          "caller": "check_external_position_break",
+          "callee": "self.log_and_lock_new_breaks",
+          "lineNumber": 35
+        },
+        {
+          "caller": "check_external_position_break",
+          "callee": "self.clear_position_locks_where_breaks_fixed",
+          "lineNumber": 36
+        },
+        {
+          "caller": "log_and_lock_new_breaks",
+          "callee": "self.log_and_lock_position_break",
+          "lineNumber": 40
+        },
+        {
+          "caller": "log_and_lock_position_break",
+          "callee": "dataLocks",
+          "lineNumber": 46
+        },
+        {
+          "caller": "log_and_lock_position_break",
+          "callee": "data_locks.is_instrument_locked",
+          "lineNumber": 47
+        },
+        {
+          "caller": "log_and_lock_position_break",
+          "callee": "self.log.critical",
+          "lineNumber": 51
+        },
+        {
+          "caller": "log_and_lock_position_break",
+          "callee": "str",
+          "lineNumber": 51
+        },
+        {
+          "caller": "log_and_lock_position_break",
+          "callee": "data_locks.add_lock_for_instrument",
+          "lineNumber": 52
+        },
+        {
+          "caller": "clear_position_locks_where_breaks_fixed",
+          "callee": "dataLocks",
+          "lineNumber": 55
+        },
+        {
+          "caller": "clear_position_locks_where_breaks_fixed",
+          "callee": "data_locks.get_list_of_locked_instruments",
+          "lineNumber": 56
+        },
+        {
+          "caller": "clear_position_locks_where_breaks_fixed",
+          "callee": "self.log.debug",
+          "lineNumber": 65
+        },
+        {
+          "caller": "clear_position_locks_where_breaks_fixed",
+          "callee": "data_locks.remove_lock_for_instrument",
+          "lineNumber": 66
+        },
+        {
+          "caller": "clear_position_locks_no_checks",
+          "callee": "dataLocks",
+          "lineNumber": 72
+        },
+        {
+          "caller": "clear_position_locks_no_checks",
+          "callee": "data_locks.get_list_of_locked_instruments",
+          "lineNumber": 74
+        },
+        {
+          "caller": "clear_position_locks_no_checks",
+          "callee": "self.log.debug",
+          "lineNumber": 78
+        },
+        {
+          "caller": "clear_position_locks_no_checks",
+          "callee": "data_locks.remove_lock_for_instrument",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

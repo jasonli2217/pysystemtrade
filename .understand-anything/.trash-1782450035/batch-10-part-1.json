@@ -1,0 +1,1258 @@
+{
+ "nodes": [
+  {
+   "id": "file:examples/introduction/asimpletradingrule.py",
+   "type": "file",
+   "name": "asimpletradingrule.py",
+   "filePath": "examples/introduction/asimpletradingrule.py",
+   "summary": "Introductory example script demonstrating how to build an EWMAC trading rule from raw futures prices, scale it by volatility, and compute P&L using the accounting tools.",
+   "tags": [
+    "example",
+    "trading-rule",
+    "entry-point",
+    "documentation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:examples/introduction/asimpletradingrule.py:calc_ewmac_forecast",
+   "type": "function",
+   "name": "calc_ewmac_forecast",
+   "filePath": "examples/introduction/asimpletradingrule.py",
+   "lineRange": [
+    66,
+    90
+   ],
+   "summary": "Computes an exponentially-weighted moving-average crossover (EWMAC) forecast for a price series, volatility-normalising the raw crossover signal.",
+   "tags": "trading-rule",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/capital.py",
+   "type": "file",
+   "name": "capital.py",
+   "filePath": "syscore/capital.py",
+   "summary": "Defines capital compounding methods (fixed, full, half compounding) used to translate percentage returns into an evolving capital base for backtests.",
+   "tags": [
+    "utility",
+    "capital",
+    "accounting"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/capital.py:half_compounding",
+   "type": "function",
+   "name": "half_compounding",
+   "filePath": "syscore/capital.py",
+   "lineRange": [
+    35,
+    48
+   ],
+   "summary": "Iteratively grows a capital series using half-compounding, capping the capital multiplier so losses compound but gains only partially do.",
+   "tags": "capital",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/dateutils.py",
+   "type": "file",
+   "name": "dateutils.py",
+   "filePath": "syscore/dateutils.py",
+   "summary": "Large utility library of date/time helpers covering period resolution, frequency conversion, futures contract month codes, long/datetime serialization, and trading-calendar calculations.",
+   "tags": [
+    "utility",
+    "date",
+    "frequency",
+    "serialization"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Heavy use of pandas Timestamp, BusinessDay offsets, and arrow for calendar math; central time-handling module imported across the codebase."
+  },
+  {
+   "id": "function:syscore/dateutils.py:calculate_start_and_end_dates",
+   "type": "function",
+   "name": "calculate_start_and_end_dates",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    58,
+    75
+   ],
+   "summary": "Date utility: calculate start and end dates.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:_resolve_end_date_given_period_and_explicit_end_date",
+   "type": "function",
+   "name": "_resolve_end_date_given_period_and_explicit_end_date",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    78,
+    101
+   ],
+   "summary": "Date utility:  resolve end date given period and explicit end date.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:_resolve_start_date_given_end_date_calendar_days_and_period",
+   "type": "function",
+   "name": "_resolve_start_date_given_end_date_calendar_days_and_period",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    104,
+    137
+   ],
+   "summary": "Date utility:  resolve start date given end date calendar days and period.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:n_days_ago",
+   "type": "function",
+   "name": "n_days_ago",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    140,
+    154
+   ],
+   "summary": "Date utility: n days ago.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:get_date_from_period_and_end_date",
+   "type": "function",
+   "name": "get_date_from_period_and_end_date",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    157,
+    189
+   ],
+   "summary": "Date utility: get date from period and end date.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:calculate_previous_date_from_period_with_char_number",
+   "type": "function",
+   "name": "calculate_previous_date_from_period_with_char_number",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    192,
+    232
+   ],
+   "summary": "Date utility: calculate previous date from period with char number.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:calculate_starting_day_of_current_uk_tax_year",
+   "type": "function",
+   "name": "calculate_starting_day_of_current_uk_tax_year",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    247,
+    265
+   ],
+   "summary": "Date utility: calculate starting day of current uk tax year.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:from_config_frequency_pandas_resample",
+   "type": "function",
+   "name": "from_config_frequency_pandas_resample",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    344,
+    370
+   ],
+   "summary": "Date utility: from config frequency pandas resample.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:from_frequency_to_times_per_year",
+   "type": "function",
+   "name": "from_frequency_to_times_per_year",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    373,
+    399
+   ],
+   "summary": "Date utility: from frequency to times per year.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:from_config_frequency_to_frequency",
+   "type": "function",
+   "name": "from_config_frequency_to_frequency",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    402,
+    428
+   ],
+   "summary": "Date utility: from config frequency to frequency.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:month_from_contract_letter",
+   "type": "function",
+   "name": "month_from_contract_letter",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    440,
+    460
+   ],
+   "summary": "Date utility: month from contract letter.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:contract_month_from_number",
+   "type": "function",
+   "name": "contract_month_from_number",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    463,
+    485
+   ],
+   "summary": "Date utility: contract month from number.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:datetime_to_long",
+   "type": "function",
+   "name": "datetime_to_long",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    502,
+    512
+   ],
+   "summary": "Date utility: datetime to long.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:long_to_datetime",
+   "type": "function",
+   "name": "long_to_datetime",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    515,
+    536
+   ],
+   "summary": "Date utility: long to datetime.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:date_as_short_pattern_or_question_if_missing",
+   "type": "function",
+   "name": "date_as_short_pattern_or_question_if_missing",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    545,
+    561
+   ],
+   "summary": "Date utility: date as short pattern or question if missing.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:replace_midnight_with_notional_closing_time",
+   "type": "function",
+   "name": "replace_midnight_with_notional_closing_time",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    614,
+    635
+   ],
+   "summary": "Date utility: replace midnight with notional closing time.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:check_time_matches_closing_time_to_second",
+   "type": "function",
+   "name": "check_time_matches_closing_time_to_second",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    638,
+    658
+   ],
+   "summary": "Date utility: check time matches closing time to second.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/dateutils.py:generate_equal_dates_within_year",
+   "type": "function",
+   "name": "generate_equal_dates_within_year",
+   "filePath": "syscore/dateutils.py",
+   "lineRange": [
+    674,
+    700
+   ],
+   "summary": "Date utility: generate equal dates within year.",
+   "tags": "date",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/maths.py",
+   "type": "file",
+   "name": "maths.py",
+   "filePath": "syscore/maths.py",
+   "summary": "Small numerical helper library for weighted averages that tolerate NaNs, weight renormalisation, and magnitude/order-of-magnitude calculations.",
+   "tags": [
+    "utility",
+    "math",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/maths.py:calculate_weighted_average_with_nans",
+   "type": "function",
+   "name": "calculate_weighted_average_with_nans",
+   "filePath": "syscore/maths.py",
+   "lineRange": [
+    11,
+    42
+   ],
+   "summary": "Computes a weighted average across values while gracefully handling NaN weights/values by renormalising the remaining valid weights.",
+   "tags": "math",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/maths.py:calculate_np_weights_without_nans_in_weights_or_values",
+   "type": "function",
+   "name": "calculate_np_weights_without_nans_in_weights_or_values",
+   "filePath": "syscore/maths.py",
+   "lineRange": [
+    45,
+    60
+   ],
+   "summary": "Strips NaN entries from paired weight and value numpy arrays so a clean weighted average can be computed.",
+   "tags": "math",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/maths.py:renormalise_array_of_values_to_sum",
+   "type": "function",
+   "name": "renormalise_array_of_values_to_sum",
+   "filePath": "syscore/maths.py",
+   "lineRange": [
+    63,
+    77
+   ],
+   "summary": "Rescales an array of values so they sum to a target total.",
+   "tags": "math",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/pandas/__init__.py",
+   "type": "file",
+   "name": "__init__.py",
+   "filePath": "syscore/pandas/__init__.py",
+   "summary": "Empty package initializer marking syscore.pandas as a Python package of pandas utility modules.",
+   "tags": [
+    "entry-point",
+    "barrel"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/pandas/frequency.py",
+   "type": "file",
+   "name": "frequency.py",
+   "filePath": "syscore/pandas/frequency.py",
+   "summary": "Pandas time-series frequency utilities: resampling between intraday and daily/closing data, inferring data frequency, and merging series of differing frequencies.",
+   "tags": [
+    "utility",
+    "frequency",
+    "time-series",
+    "pandas"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:closing_date_rows_in_pd_object",
+   "type": "function",
+   "name": "closing_date_rows_in_pd_object",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    21,
+    42
+   ],
+   "summary": "Frequency helper: closing date rows in pd object.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:intraday_date_rows_in_pd_object",
+   "type": "function",
+   "name": "intraday_date_rows_in_pd_object",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    45,
+    67
+   ],
+   "summary": "Frequency helper: intraday date rows in pd object.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:get_intraday_pdf_at_frequency",
+   "type": "function",
+   "name": "get_intraday_pdf_at_frequency",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    70,
+    92
+   ],
+   "summary": "Frequency helper: get intraday pdf at frequency.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:merge_data_with_different_freq",
+   "type": "function",
+   "name": "merge_data_with_different_freq",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    95,
+    123
+   ],
+   "summary": "Frequency helper: merge data with different freq.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+   "type": "function",
+   "name": "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    126,
+    166
+   ],
+   "summary": "Frequency helper: sumup business days over pd series without double counting of closing data.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:how_many_times_a_year_is_pd_frequency",
+   "type": "function",
+   "name": "how_many_times_a_year_is_pd_frequency",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    173,
+    189
+   ],
+   "summary": "Frequency helper: how many times a year is pd frequency.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:interpolate_data_during_day",
+   "type": "function",
+   "name": "interpolate_data_during_day",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    192,
+    207
+   ],
+   "summary": "Frequency helper: interpolate data during day.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/frequency.py:infer_frequency",
+   "type": "function",
+   "name": "infer_frequency",
+   "filePath": "syscore/pandas/frequency.py",
+   "lineRange": [
+    233,
+    241
+   ],
+   "summary": "Frequency helper: infer frequency.",
+   "tags": "frequency",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/pandas/full_merge_with_replacement.py",
+   "type": "file",
+   "name": "full_merge_with_replacement.py",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "summary": "Functions that fully merge existing and new pandas Series/DataFrames, replacing overlapping rows with the newer data while preserving non-overlapping history.",
+   "tags": [
+    "utility",
+    "data-merge",
+    "pandas"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_data",
+   "type": "function",
+   "name": "full_merge_of_existing_data",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "lineRange": [
+    17,
+    52
+   ],
+   "summary": "Full-merge helper: full merge of existing data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_data_no_checks",
+   "type": "function",
+   "name": "full_merge_of_existing_data_no_checks",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "lineRange": [
+    55,
+    90
+   ],
+   "summary": "Full-merge helper: full merge of existing data no checks.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_data_with_both_old_and_new",
+   "type": "function",
+   "name": "full_merge_of_data_with_both_old_and_new",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "lineRange": [
+    93,
+    111
+   ],
+   "summary": "Full-merge helper: full merge of data with both old and new.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_dataframe",
+   "type": "function",
+   "name": "full_merge_of_existing_dataframe",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "lineRange": [
+    114,
+    156
+   ],
+   "summary": "Full-merge helper: full merge of existing dataframe.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_series",
+   "type": "function",
+   "name": "full_merge_of_existing_series",
+   "filePath": "syscore/pandas/full_merge_with_replacement.py",
+   "lineRange": [
+    159,
+    200
+   ],
+   "summary": "Full-merge helper: full merge of existing series.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/pandas/list_of_df.py",
+   "type": "file",
+   "name": "list_of_df.py",
+   "filePath": "syscore/pandas/list_of_df.py",
+   "summary": "Defines listOfDataFrames, a list subclass providing aligned reindexing, resampling, ffill, and stacking operations across a collection of DataFrames.",
+   "tags": [
+    "utility",
+    "data-model",
+    "pandas"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscore/pandas/list_of_df.py:listOfDataFrames",
+   "type": "class",
+   "name": "listOfDataFrames",
+   "filePath": "syscore/pandas/list_of_df.py",
+   "lineRange": [
+    7,
+    74
+   ],
+   "summary": "A list of DataFrames with helpers to align them to a common index/columns, resample, forward-fill, and stack them into a single time-stamped frame.",
+   "tags": "data-model",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/list_of_df.py:stacked_df_with_added_time_from_list",
+   "type": "function",
+   "name": "stacked_df_with_added_time_from_list",
+   "filePath": "syscore/pandas/list_of_df.py",
+   "lineRange": [
+    77,
+    115
+   ],
+   "summary": "Stacks a list of DataFrames into a single frame, nudging duplicate timestamps so rows remain ordered and unique.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "file",
+   "name": "merge_data_keeping_past_data.py",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "summary": "Merges newer price/series data onto existing history while preserving past values and running spike-detection checks to reject anomalous jumps.",
+   "tags": [
+    "utility",
+    "data-merge",
+    "validation",
+    "pandas"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscore/pandas/merge_data_keeping_past_data.py:mergingDataWithStatus",
+   "type": "class",
+   "name": "mergingDataWithStatus",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    64,
+    114
+   ],
+   "summary": "Container holding merged data plus merge status flags and spike-detection results returned by the merge routines.",
+   "tags": "data-model",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:merge_newer_data",
+   "type": "function",
+   "name": "merge_newer_data",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    16,
+    42
+   ],
+   "summary": "Merge/spike-check helper: merge newer data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:merge_newer_data_no_checks",
+   "type": "function",
+   "name": "merge_newer_data_no_checks",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    117,
+    136
+   ],
+   "summary": "Merge/spike-check helper: merge newer data no checks.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:_merge_newer_data_no_checks_if_both_old_and_new",
+   "type": "function",
+   "name": "_merge_newer_data_no_checks_if_both_old_and_new",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    139,
+    162
+   ],
+   "summary": "Merge/spike-check helper:  merge newer data no checks if both old and new.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:spike_check_merged_data",
+   "type": "function",
+   "name": "spike_check_merged_data",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    165,
+    192
+   ],
+   "summary": "Merge/spike-check helper: spike check merged data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:_find_first_spike_in_data",
+   "type": "function",
+   "name": "_find_first_spike_in_data",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    195,
+    222
+   ],
+   "summary": "Merge/spike-check helper:  find first spike in data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_keeping_past_data.py:_calculate_change_in_daily_units",
+   "type": "function",
+   "name": "_calculate_change_in_daily_units",
+   "filePath": "syscore/pandas/merge_data_keeping_past_data.py",
+   "lineRange": [
+    259,
+    288
+   ],
+   "summary": "Merge/spike-check helper:  calculate change in daily units.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:examples/introduction/asimpletradingrule.py",
+   "target": "file:sysdata/sim/csv_futures_sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/asimpletradingrule.py",
+   "target": "file:sysquant/estimators/vol.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/asimpletradingrule.py",
+   "target": "file:systems/accounts/account_forecast.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/capital.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/capital.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:examples/introduction/asimpletradingrule.py",
+   "target": "function:examples/introduction/asimpletradingrule.py:calc_ewmac_forecast",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/capital.py",
+   "target": "function:syscore/capital.py:half_compounding",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:calculate_start_and_end_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:_resolve_end_date_given_period_and_explicit_end_date",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:_resolve_start_date_given_end_date_calendar_days_and_period",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:n_days_ago",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:get_date_from_period_and_end_date",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:calculate_previous_date_from_period_with_char_number",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:calculate_starting_day_of_current_uk_tax_year",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:from_config_frequency_pandas_resample",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:from_frequency_to_times_per_year",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:from_config_frequency_to_frequency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:month_from_contract_letter",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:contract_month_from_number",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:datetime_to_long",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:long_to_datetime",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:date_as_short_pattern_or_question_if_missing",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:replace_midnight_with_notional_closing_time",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:check_time_matches_closing_time_to_second",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "function:syscore/dateutils.py:generate_equal_dates_within_year",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:calculate_weighted_average_with_nans",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:calculate_np_weights_without_nans_in_weights_or_values",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:renormalise_array_of_values_to_sum",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:closing_date_rows_in_pd_object",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:intraday_date_rows_in_pd_object",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:get_intraday_pdf_at_frequency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:merge_data_with_different_freq",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:how_many_times_a_year_is_pd_frequency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:interpolate_data_during_day",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/frequency.py",
+   "target": "function:syscore/pandas/frequency.py:infer_frequency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_data_no_checks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_data_with_both_old_and_new",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_dataframe",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/full_merge_with_replacement.py",
+   "target": "function:syscore/pandas/full_merge_with_replacement.py:full_merge_of_existing_series",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "class:syscore/pandas/list_of_df.py:listOfDataFrames",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "function:syscore/pandas/list_of_df.py:stacked_df_with_added_time_from_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "class:syscore/pandas/merge_data_keeping_past_data.py:mergingDataWithStatus",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:merge_newer_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:merge_newer_data_no_checks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:_merge_newer_data_no_checks_if_both_old_and_new",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:spike_check_merged_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:_find_first_spike_in_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:_calculate_change_in_daily_units",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:examples/introduction/asimpletradingrule.py",
+   "target": "function:examples/introduction/asimpletradingrule.py:calc_ewmac_forecast",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/capital.py",
+   "target": "function:syscore/capital.py:half_compounding",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:calculate_weighted_average_with_nans",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:calculate_np_weights_without_nans_in_weights_or_values",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/maths.py",
+   "target": "function:syscore/maths.py:renormalise_array_of_values_to_sum",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "class:syscore/pandas/list_of_df.py:listOfDataFrames",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/list_of_df.py",
+   "target": "function:syscore/pandas/list_of_df.py:stacked_df_with_added_time_from_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "class:syscore/pandas/merge_data_keeping_past_data.py:mergingDataWithStatus",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:merge_newer_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "target": "function:syscore/pandas/merge_data_keeping_past_data.py:spike_check_merged_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/dateutils.py",
+   "target": "file:syscore/tests/test_dateutils.py",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  }
+ ]
+}

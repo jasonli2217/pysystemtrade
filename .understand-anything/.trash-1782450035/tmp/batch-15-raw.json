@@ -1,0 +1,1839 @@
+{
+  "batchIndex": 15,
+  "files": [
+    {
+      "path": "sysquant/estimators/mean_estimator.py",
+      "language": "python",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/pooled_correlation.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/stdev_estimator.py",
+      "language": "python",
+      "sizeLines": 215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/tests/test_mean_estimator.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/fitting_dates.py",
+      "language": "python",
+      "sizeLines": 224,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/SR_adjustment.py",
+      "language": "python",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/cleaning.py",
+      "language": "python",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/equal_weights.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/handcraft.py",
+      "language": "python",
+      "sizeLines": 250,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/one_period.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/shrinkage.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/portfolio_optimiser.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/shared.py",
+      "language": "python",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/weights.py",
+      "language": "python",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/portfolio_risk.py",
+      "language": "python",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/diagoutput.py",
+      "language": "python",
+      "sizeLines": 400,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/forecast_mapping.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "language": "python",
+      "sizeLines": 339,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "language": "python",
+      "sizeLines": 399,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "language": "python",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "language": "python",
+      "sizeLines": 315,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysquant/estimators/mean_estimator.py": [
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/pooled_correlation.py": [
+      "syscore/pandas/list_of_df.py",
+      "sysquant/estimators/correlation_over_time.py",
+      "sysquant/estimators/correlations.py"
+    ],
+    "sysquant/estimators/stdev_estimator.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/tests/test_mean_estimator.py": [
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/fitting_dates.py": [
+      "syscore/pandas/list_of_df.py"
+    ],
+    "sysquant/optimisation/SR_adjustment.py": [
+      "sysquant/estimators/correlations.py",
+      "sysquant/optimisation/shared.py"
+    ],
+    "sysquant/optimisation/cleaning.py": [
+      "syscore/pandas/pdutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/call_optimiser.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/equal_weights.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/optimisers/one_period.py",
+      "sysquant/optimisation/optimisers/shrinkage.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/equal_weights.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/handcraft.py": [
+      "sysquant/estimators/clustering_correlations.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/diversification_multipliers.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/SR_adjustment.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/one_period.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/optimisers/shrinkage.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/portfolio_optimiser.py": [
+      "syscore/genutils.py",
+      "syscore/objects.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/fitting_dates.py",
+      "sysquant/optimisation/cleaning.py",
+      "sysquant/optimisation/optimisers/call_optimiser.py",
+      "sysquant/optimisation/weights.py",
+      "sysquant/returns.py"
+    ],
+    "sysquant/optimisation/shared.py": [
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/optimisation/weights.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/find_data.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/estimators/stdev_estimator.py"
+    ],
+    "sysquant/portfolio_risk.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "systems/diagoutput.py": [
+      "syscore/dateutils.py",
+      "systems/forecast_mapping.py"
+    ],
+    "systems/forecast_mapping.py": [
+      "syscore/genutils.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/buffering.py": [],
+    "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py": [
+      "syscore/constants.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/set_up_constraints.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/greedy_algo.py": [],
+    "systems/provided/dynamic_small_system_optimise/optimisation.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "systems/provided/dynamic_small_system_optimise/greedy_algo.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py": [
+      "syscore/constants.py",
+      "syscore/interactive/progress_bar.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/portfolio.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/provided/dynamic_small_system_optimise/set_up_constraints.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "systems/provided/static_small_system_optimise/optimise_small_system.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/estimates.py",
+      "sysquant/optimisation/optimisers/handcraft.py",
+      "sysquant/optimisation/shared.py"
+    ]
+  },
+  "neighborMap": {
+    "sysquant/estimators/mean_estimator.py": [
+      {
+        "path": "syscore/pandas/find_data.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_row_of_df_aligned_to_weights_as_dict",
+          "get_row_of_series",
+          "get_row_of_series_before_date",
+          "get_max_index_before_datetime"
+        ]
+      },
+      {
+        "path": "syscore/pandas/frequency.py",
+        "batchIndex": 10,
+        "symbols": [
+          "closing_date_rows_in_pd_object",
+          "intraday_date_rows_in_pd_object",
+          "get_intraday_pdf_at_frequency",
+          "merge_data_with_different_freq",
+          "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+          "resample_prices_to_business_day_index",
+          "how_many_times_a_year_is_pd_frequency",
+          "interpolate_data_during_day",
+          "interpolate_for_a_single_day",
+          "reindex_last_monthly_include_first_date",
+          "infer_frequency",
+          "infer_frequency_approx",
+          "_probably_daily_freq",
+          "_probably_hourly_freq",
+          "average_time_delta_for_time_series"
+        ]
+      },
+      {
+        "path": "syscore/pandas/pdutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "rolling_pairwise_correlation",
+          "is_a_series",
+          "is_a_dataframe",
+          "top_and_tail",
+          "sum_series",
+          "uniquets",
+          "get_column_names_in_df_with_at_least_one_value",
+          "get_index_of_columns_in_df_with_at_least_one_value",
+          "pd_readcsv",
+          "add_datetime_index",
+          "remap_columns_in_pd",
+          "from_dict_of_values_to_df",
+          "from_scalar_values_to_ts",
+          "create_arbitrary_pdseries",
+          "dataframe_pad",
+          "check_df_equals",
+          "check_ts_equals",
+          "make_df_from_list_of_named_tuple",
+          "sort_df_ignoring_missing",
+          "apply_with_min_periods",
+          "from_series_to_matching_df_frame",
+          "from_series_to_df_with_column_names",
+          "print_full"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/generic_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimate",
+          "exponentialEstimator",
+          "genericEstimator"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+        "batchIndex": 14,
+        "symbols": [
+          "orderGeneratorForDynamicPositions",
+          "calculate_optimised_positions_data",
+          "dataForObjectiveInstance",
+          "get_data_for_objective_instance",
+          "get_maximum_position_contracts",
+          "get_maximum_position_contracts_for_instrument_strategy",
+          "get_per_contract_values",
+          "calculate_costs_per_portfolio_weight",
+          "get_cost_per_notional_weight_as_proportion_of_capital",
+          "get_constraints",
+          "get_no_trade_keys",
+          "get_reduce_only_keys",
+          "get_override_for_instrument_strategy",
+          "get_covariance_matrix_for_instrument_returns_for_optimisation",
+          "get_correlation_matrix_with_shrinkage",
+          "get_speed_control",
+          "get_config_parameters",
+          "get_objective_instance",
+          "get_optimised_positions_data_dict_given_optimisation",
+          "get_positions_given_weights",
+          "get_weights_given_positions",
+          "get_optimal_position_entry_with_calcs_for_code",
+          "write_optimised_positions_data",
+          "write_optimised_positions_data_for_code",
+          "list_of_trades_given_optimised_and_actual_positions",
+          "trade_given_optimal_and_actual_positions"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/estimators/pooled_correlation.py": [
+      {
+        "path": "syscore/pandas/list_of_df.py",
+        "batchIndex": 10,
+        "symbols": [
+          "listOfDataFrames",
+          "stacked_df_with_added_time_from_list"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlation_over_time.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlation_over_time_for_returns",
+          "correlation_over_time"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      }
+    ],
+    "sysquant/estimators/stdev_estimator.py": [
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "syscore/pandas/find_data.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_row_of_df_aligned_to_weights_as_dict",
+          "get_row_of_series",
+          "get_row_of_series_before_date",
+          "get_max_index_before_datetime"
+        ]
+      },
+      {
+        "path": "syscore/pandas/frequency.py",
+        "batchIndex": 10,
+        "symbols": [
+          "closing_date_rows_in_pd_object",
+          "intraday_date_rows_in_pd_object",
+          "get_intraday_pdf_at_frequency",
+          "merge_data_with_different_freq",
+          "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+          "resample_prices_to_business_day_index",
+          "how_many_times_a_year_is_pd_frequency",
+          "interpolate_data_during_day",
+          "interpolate_for_a_single_day",
+          "reindex_last_monthly_include_first_date",
+          "infer_frequency",
+          "infer_frequency_approx",
+          "_probably_daily_freq",
+          "_probably_hourly_freq",
+          "average_time_delta_for_time_series"
+        ]
+      },
+      {
+        "path": "syscore/pandas/pdutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "rolling_pairwise_correlation",
+          "is_a_series",
+          "is_a_dataframe",
+          "top_and_tail",
+          "sum_series",
+          "uniquets",
+          "get_column_names_in_df_with_at_least_one_value",
+          "get_index_of_columns_in_df_with_at_least_one_value",
+          "pd_readcsv",
+          "add_datetime_index",
+          "remap_columns_in_pd",
+          "from_dict_of_values_to_df",
+          "from_scalar_values_to_ts",
+          "create_arbitrary_pdseries",
+          "dataframe_pad",
+          "check_df_equals",
+          "check_ts_equals",
+          "make_df_from_list_of_named_tuple",
+          "sort_df_ignoring_missing",
+          "apply_with_min_periods",
+          "from_series_to_matching_df_frame",
+          "from_series_to_df_with_column_names",
+          "print_full"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/generic_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimate",
+          "exponentialEstimator",
+          "genericEstimator"
+        ]
+      },
+      {
+        "path": "sysproduction/data/risk.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_covariance_matrix_for_instrument_returns",
+          "get_correlation_matrix_for_instrument_returns",
+          "_replicate_creation_of_correlation_list_in_sim",
+          "get_annualised_stdev_perc_of_instruments",
+          "get_perc_returns_across_instruments",
+          "get_current_annualised_perc_stdev_for_instrument",
+          "get_current_daily_perc_stdev_for_instrument",
+          "get_daily_ts_stdev_perc_of_prices",
+          "get_corr_params_and_func",
+          "get_perc_of_strategy_capital_for_instrument_per_contract",
+          "get_current_ann_stdev_of_prices",
+          "get_ann_ts_stdev_of_prices",
+          "get_daily_ts_stdev_of_prices",
+          "vol_config",
+          "get_exposure_per_contract_base_currency",
+          "get_base_currency_point_size_per_contract",
+          "get_daily_perc_returns_for_risk",
+          "get_daily_returns_for_risk",
+          "get_daily_price_series_for_risk",
+          "get_daily_current_price_series_for_risk"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+        "batchIndex": 4,
+        "symbols": [
+          "get_notional_risk_target",
+          "dynamic_optimisation_graphical",
+          "get_figures_for_DO",
+          "get_data_for_scatter_plot",
+          "plot_scatter_for_asset_class",
+          "plot_scatter_names_only",
+          "plot_scatter_colors_only",
+          "get_unrounded_weights",
+          "get_optimised_weights",
+          "get_item_from_optimised_weights_list",
+          "get_optimal_position_objects_as_list",
+          "instrument_codes_from_optimal_positions_as_list",
+          "get_standard_deviations_for_instrument_list",
+          "get_pd_df_of_betas_to_plot",
+          "get_pd_df_of_beta_loadings",
+          "dynamic_optimisation_text"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/data/risk.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_margin_usage",
+          "get_current_capital",
+          "get_current_margin",
+          "minimum_capital_table",
+          "from_risk_table_to_min_capital",
+          "get_instrument_risk_table",
+          "get_risk_data_for_instrument",
+          "portfolioRisks",
+          "get_pd_series_of_risk_by_asset_class",
+          "get_risk_for_asset_class",
+          "get_dict_of_asset_classes_for_instrument_list",
+          "get_perc_of_capital_position_size_all_strategies",
+          "get_portfolio_risk_across_strategies",
+          "get_df_annualised_risk_as_perc_of_capital_per_instrument_across_strategies",
+          "get_annualised_perc_of_capital_risk_of_positions_held_for_instruments_across_strategies",
+          "get_portfolio_risk_for_strategy",
+          "get_perc_of_capital_position_size_across_instruments_for_strategy",
+          "get_correlation_matrix_all_instruments",
+          "get_correlation_matrix_for_instruments",
+          "cluster_correlation_matrix",
+          "get_current_annualised_stdev_for_instrument",
+          "get_current_daily_stdev_for_instrument",
+          "get_list_of_positions_for_strategy_as_perc_of_capital",
+          "get_instruments_with_positions",
+          "get_instruments_with_positions_all_strategies",
+          "get_perc_of_capital_position_size_for_instrument",
+          "get_perc_of_capital_position_size_for_instrument_across_strategies",
+          "total_capital",
+          "get_notional_exposure_in_base_currency_for_instrument",
+          "get_notional_exposure_in_base_currency_for_instrument_across_strategies",
+          "get_base_currency_risk_held_for_instrument_across_strategies",
+          "get_base_currency_risk_per_lot_for_instrument",
+          "get_current_position_for_instrument_code",
+          "get_current_position_for_instrument_code_across_strategies",
+          "sorted_clean_df",
+          "get_asset_classes_for_instrument_list",
+          "calculate_dict_of_beta_loadings_by_asset_class_given_weights",
+          "calculate_dict_of_beta_loadings_per_instrument",
+          "calculate_beta_loadings_across_asset_classes",
+          "calculate_beta_loading_for_asset_class",
+          "get_beta_for_instrument_list",
+          "last_years_perc_returns_for_list_of_instruments",
+          "get_equally_weighted_returns_across_asset_classes",
+          "get_historical_portfolio_returns_with_fixed_current_weights",
+          "get_equally_weighted_returns_for_asset_class",
+          "calculate_equal_returns_to_avg_vol",
+          "dict_of_beta_by_instrument",
+          "beta_for_instrument",
+          "dict_of_portfolio_beta_by_asset_class",
+          "portfolio_beta_for_asset_class"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      }
+    ],
+    "sysquant/fitting_dates.py": [
+      {
+        "path": "syscore/pandas/list_of_df.py",
+        "batchIndex": 10,
+        "symbols": [
+          "listOfDataFrames",
+          "stacked_df_with_added_time_from_list"
+        ]
+      },
+      {
+        "path": "sysproduction/data/risk.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_covariance_matrix_for_instrument_returns",
+          "get_correlation_matrix_for_instrument_returns",
+          "_replicate_creation_of_correlation_list_in_sim",
+          "get_annualised_stdev_perc_of_instruments",
+          "get_perc_returns_across_instruments",
+          "get_current_annualised_perc_stdev_for_instrument",
+          "get_current_daily_perc_stdev_for_instrument",
+          "get_daily_ts_stdev_perc_of_prices",
+          "get_corr_params_and_func",
+          "get_perc_of_strategy_capital_for_instrument_per_contract",
+          "get_current_ann_stdev_of_prices",
+          "get_ann_ts_stdev_of_prices",
+          "get_daily_ts_stdev_of_prices",
+          "vol_config",
+          "get_exposure_per_contract_base_currency",
+          "get_base_currency_point_size_per_contract",
+          "get_daily_perc_returns_for_risk",
+          "get_daily_returns_for_risk",
+          "get_daily_price_series_for_risk",
+          "get_daily_current_price_series_for_risk"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlation_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimator",
+          "correlation_estimator_for_subperiod"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlation_over_time.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlation_over_time_for_returns",
+          "correlation_over_time"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/exponential_correlation.py",
+        "batchIndex": 14,
+        "symbols": [
+          "exponentialCorrelation",
+          "exponentialCorrelationResults",
+          "last_valid_cor_matrix_for_date"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/generic_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimate",
+          "exponentialEstimator",
+          "genericEstimator"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimise_over_time.py",
+        "batchIndex": 1,
+        "symbols": [
+          "optimiseWeightsOverTime"
+        ]
+      }
+    ],
+    "sysquant/optimisation/SR_adjustment.py": [
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/generic_optimiser.py",
+        "batchIndex": 1,
+        "symbols": [
+          "genericOptimiser"
+        ]
+      }
+    ],
+    "sysquant/optimisation/cleaning.py": [
+      {
+        "path": "syscore/pandas/pdutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "rolling_pairwise_correlation",
+          "is_a_series",
+          "is_a_dataframe",
+          "top_and_tail",
+          "sum_series",
+          "uniquets",
+          "get_column_names_in_df_with_at_least_one_value",
+          "get_index_of_columns_in_df_with_at_least_one_value",
+          "pd_readcsv",
+          "add_datetime_index",
+          "remap_columns_in_pd",
+          "from_dict_of_values_to_df",
+          "from_scalar_values_to_ts",
+          "create_arbitrary_pdseries",
+          "dataframe_pad",
+          "check_df_equals",
+          "check_ts_equals",
+          "make_df_from_list_of_named_tuple",
+          "sort_df_ignoring_missing",
+          "apply_with_min_periods",
+          "from_series_to_matching_df_frame",
+          "from_series_to_df_with_column_names",
+          "print_full"
+        ]
+      }
+    ],
+    "sysquant/optimisation/optimisers/call_optimiser.py": [
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/optimisation/optimisers/equal_weights.py": [
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/optimisation/optimisers/handcraft.py": [
+      {
+        "path": "sysquant/estimators/clustering_correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "assets_in_cluster_order",
+          "cluster_correlation_matrix",
+          "get_list_of_clusters_for_non_boring_correlation_matrix",
+          "get_list_of_clusters_for_correlation_matrix",
+          "cutoff_distance_to_guarantee_N_clusters",
+          "arbitrary_split_of_correlation_matrix",
+          "arbitrary_split_for_asset_length",
+          "from_cluster_index_to_asset_names",
+          "get_asset_names_for_cluster_index"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/diversification_multipliers.py",
+        "batchIndex": 14,
+        "symbols": [
+          "diversification_multiplier_from_list",
+          "diversification_mult_single_period"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/optimisation/optimisers/one_period.py": [
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/optimisation/optimisers/shrinkage.py": [
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      }
+    ],
+    "sysquant/optimisation/portfolio_optimiser.py": [
+      {
+        "path": "syscore/genutils.py",
+        "batchIndex": 14,
+        "symbols": [
+          "new_removing_existing",
+          "list_intersection",
+          "list_difference",
+          "list_union",
+          "get_unique_list",
+          "get_unique_list_slow",
+          "round_significant_figures",
+          "flatten_list",
+          "str2Bool",
+          "str_of_int",
+          "same_sign",
+          "sign",
+          "return_another_value_if_nan",
+          "are_dicts_equal",
+          "quickTimer",
+          "if_empty_string_return_object",
+          "if_object_matches_return_empty_string",
+          "transfer_object_attributes",
+          "highest_common_factor_for_list",
+          "divide_list_of_ints_by_highest_common_factor",
+          "list_of_ints_with_highest_common_factor_positive_first",
+          "np_convert",
+          "intersection_intervals"
+        ]
+      },
+      {
+        "path": "syscore/objects.py",
+        "batchIndex": 1,
+        "symbols": [
+          "get_methods",
+          "resolve_function",
+          "resolve_data_method",
+          "_recursively_get_attr_within_list",
+          "hasallattr",
+          "get_class_name"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/generic_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimate",
+          "exponentialEstimator",
+          "genericEstimator"
+        ]
+      },
+      {
+        "path": "sysquant/returns.py",
+        "batchIndex": 1,
+        "symbols": [
+          "dictOfSR",
+          "dictOfSRacrossAssets",
+          "returnsForOptimisation",
+          "dictOfReturnsForOptimisation",
+          "_adjust_df_for_SR_costs",
+          "_adjust_df_column_for_SR_costs",
+          "_get_average_return_in_dict_for_column",
+          "_equalise_average_returns_for_df",
+          "_equalise_average_returns_for_df_column",
+          "dictOfReturnsForOptimisationWithCosts",
+          "returnsForOptimisationWithCosts",
+          "_turn_singular_account_curve_into_dict",
+          "_singular_account_curve",
+          "_get_annual_SR_for_returns_for_optimisation",
+          "annual_SR_from_daily_returns"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimise_over_time.py",
+        "batchIndex": 1,
+        "symbols": [
+          "optimiseWeightsOverTime"
+        ]
+      }
+    ],
+    "sysquant/optimisation/shared.py": [
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      }
+    ],
+    "sysquant/optimisation/weights.py": [
+      {
+        "path": "syscore/genutils.py",
+        "batchIndex": 14,
+        "symbols": [
+          "new_removing_existing",
+          "list_intersection",
+          "list_difference",
+          "list_union",
+          "get_unique_list",
+          "get_unique_list_slow",
+          "round_significant_figures",
+          "flatten_list",
+          "str2Bool",
+          "str_of_int",
+          "same_sign",
+          "sign",
+          "return_another_value_if_nan",
+          "are_dicts_equal",
+          "quickTimer",
+          "if_empty_string_return_object",
+          "if_object_matches_return_empty_string",
+          "transfer_object_attributes",
+          "highest_common_factor_for_list",
+          "divide_list_of_ints_by_highest_common_factor",
+          "list_of_ints_with_highest_common_factor_positive_first",
+          "np_convert",
+          "intersection_intervals"
+        ]
+      },
+      {
+        "path": "syscore/pandas/find_data.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_row_of_df_aligned_to_weights_as_dict",
+          "get_row_of_series",
+          "get_row_of_series_before_date",
+          "get_max_index_before_datetime"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlation_estimator.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimator",
+          "correlation_estimator_for_subperiod"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+        "batchIndex": 14,
+        "symbols": [
+          "orderGeneratorForDynamicPositions",
+          "calculate_optimised_positions_data",
+          "dataForObjectiveInstance",
+          "get_data_for_objective_instance",
+          "get_maximum_position_contracts",
+          "get_maximum_position_contracts_for_instrument_strategy",
+          "get_per_contract_values",
+          "calculate_costs_per_portfolio_weight",
+          "get_cost_per_notional_weight_as_proportion_of_capital",
+          "get_constraints",
+          "get_no_trade_keys",
+          "get_reduce_only_keys",
+          "get_override_for_instrument_strategy",
+          "get_covariance_matrix_for_instrument_returns_for_optimisation",
+          "get_correlation_matrix_with_shrinkage",
+          "get_speed_control",
+          "get_config_parameters",
+          "get_objective_instance",
+          "get_optimised_positions_data_dict_given_optimisation",
+          "get_positions_given_weights",
+          "get_weights_given_positions",
+          "get_optimal_position_entry_with_calcs_for_code",
+          "write_optimised_positions_data",
+          "write_optimised_positions_data_for_code",
+          "list_of_trades_given_optimised_and_actual_positions",
+          "trade_given_optimal_and_actual_positions"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+        "batchIndex": 4,
+        "symbols": [
+          "get_notional_risk_target",
+          "dynamic_optimisation_graphical",
+          "get_figures_for_DO",
+          "get_data_for_scatter_plot",
+          "plot_scatter_for_asset_class",
+          "plot_scatter_names_only",
+          "plot_scatter_colors_only",
+          "get_unrounded_weights",
+          "get_optimised_weights",
+          "get_item_from_optimised_weights_list",
+          "get_optimal_position_objects_as_list",
+          "instrument_codes_from_optimal_positions_as_list",
+          "get_standard_deviations_for_instrument_list",
+          "get_pd_df_of_betas_to_plot",
+          "get_pd_df_of_beta_loadings",
+          "dynamic_optimisation_text"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/data/risk.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_margin_usage",
+          "get_current_capital",
+          "get_current_margin",
+          "minimum_capital_table",
+          "from_risk_table_to_min_capital",
+          "get_instrument_risk_table",
+          "get_risk_data_for_instrument",
+          "portfolioRisks",
+          "get_pd_series_of_risk_by_asset_class",
+          "get_risk_for_asset_class",
+          "get_dict_of_asset_classes_for_instrument_list",
+          "get_perc_of_capital_position_size_all_strategies",
+          "get_portfolio_risk_across_strategies",
+          "get_df_annualised_risk_as_perc_of_capital_per_instrument_across_strategies",
+          "get_annualised_perc_of_capital_risk_of_positions_held_for_instruments_across_strategies",
+          "get_portfolio_risk_for_strategy",
+          "get_perc_of_capital_position_size_across_instruments_for_strategy",
+          "get_correlation_matrix_all_instruments",
+          "get_correlation_matrix_for_instruments",
+          "cluster_correlation_matrix",
+          "get_current_annualised_stdev_for_instrument",
+          "get_current_daily_stdev_for_instrument",
+          "get_list_of_positions_for_strategy_as_perc_of_capital",
+          "get_instruments_with_positions",
+          "get_instruments_with_positions_all_strategies",
+          "get_perc_of_capital_position_size_for_instrument",
+          "get_perc_of_capital_position_size_for_instrument_across_strategies",
+          "total_capital",
+          "get_notional_exposure_in_base_currency_for_instrument",
+          "get_notional_exposure_in_base_currency_for_instrument_across_strategies",
+          "get_base_currency_risk_held_for_instrument_across_strategies",
+          "get_base_currency_risk_per_lot_for_instrument",
+          "get_current_position_for_instrument_code",
+          "get_current_position_for_instrument_code_across_strategies",
+          "sorted_clean_df",
+          "get_asset_classes_for_instrument_list",
+          "calculate_dict_of_beta_loadings_by_asset_class_given_weights",
+          "calculate_dict_of_beta_loadings_per_instrument",
+          "calculate_beta_loadings_across_asset_classes",
+          "calculate_beta_loading_for_asset_class",
+          "get_beta_for_instrument_list",
+          "last_years_perc_returns_for_list_of_instruments",
+          "get_equally_weighted_returns_across_asset_classes",
+          "get_historical_portfolio_returns_with_fixed_current_weights",
+          "get_equally_weighted_returns_for_asset_class",
+          "calculate_equal_returns_to_avg_vol",
+          "dict_of_beta_by_instrument",
+          "beta_for_instrument",
+          "dict_of_portfolio_beta_by_asset_class",
+          "portfolio_beta_for_asset_class"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/diversification_multipliers.py",
+        "batchIndex": 14,
+        "symbols": [
+          "diversification_multiplier_from_list",
+          "diversification_mult_single_period"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "systems/risk.py",
+        "batchIndex": 2,
+        "symbols": [
+          "Risk"
+        ]
+      }
+    ],
+    "sysquant/portfolio_risk.py": [
+      {
+        "path": "syscore/interactive/progress_bar.py",
+        "batchIndex": 14,
+        "symbols": [
+          "progressBar",
+          "_display_progress_bar",
+          "_construct_timing_string"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      }
+    ],
+    "systems/diagoutput.py": [
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      }
+    ],
+    "systems/forecast_mapping.py": [
+      {
+        "path": "syscore/genutils.py",
+        "batchIndex": 14,
+        "symbols": [
+          "new_removing_existing",
+          "list_intersection",
+          "list_difference",
+          "list_union",
+          "get_unique_list",
+          "get_unique_list_slow",
+          "round_significant_figures",
+          "flatten_list",
+          "str2Bool",
+          "str_of_int",
+          "same_sign",
+          "sign",
+          "return_another_value_if_nan",
+          "are_dicts_equal",
+          "quickTimer",
+          "if_empty_string_return_object",
+          "if_object_matches_return_empty_string",
+          "transfer_object_attributes",
+          "highest_common_factor_for_list",
+          "divide_list_of_ints_by_highest_common_factor",
+          "list_of_ints_with_highest_common_factor_positive_first",
+          "np_convert",
+          "intersection_intervals"
+        ]
+      },
+      {
+        "path": "systems/forecast_combine.py",
+        "batchIndex": 1,
+        "symbols": [
+          "ForecastCombine",
+          "_cap_combined_forecast",
+          "_get_fixed_weights_from_config",
+          "_get_forecast_weights_for_instrument_with_autogrouping",
+          "_get_fixed_fdm_scalar_value_from_config",
+          "_get_list_of_rules_from_config_for_instrument"
+        ]
+      }
+    ],
+    "systems/provided/dynamic_small_system_optimise/buffering.py": [
+      {
+        "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+        "batchIndex": 14,
+        "symbols": [
+          "orderGeneratorForDynamicPositions",
+          "calculate_optimised_positions_data",
+          "dataForObjectiveInstance",
+          "get_data_for_objective_instance",
+          "get_maximum_position_contracts",
+          "get_maximum_position_contracts_for_instrument_strategy",
+          "get_per_contract_values",
+          "calculate_costs_per_portfolio_weight",
+          "get_cost_per_notional_weight_as_proportion_of_capital",
+          "get_constraints",
+          "get_no_trade_keys",
+          "get_reduce_only_keys",
+          "get_override_for_instrument_strategy",
+          "get_covariance_matrix_for_instrument_returns_for_optimisation",
+          "get_correlation_matrix_with_shrinkage",
+          "get_speed_control",
+          "get_config_parameters",
+          "get_objective_instance",
+          "get_optimised_positions_data_dict_given_optimisation",
+          "get_positions_given_weights",
+          "get_weights_given_positions",
+          "get_optimal_position_entry_with_calcs_for_code",
+          "write_optimised_positions_data",
+          "write_optimised_positions_data_for_code",
+          "list_of_trades_given_optimised_and_actual_positions",
+          "trade_given_optimal_and_actual_positions"
+        ]
+      }
+    ],
+    "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      }
+    ],
+    "systems/provided/dynamic_small_system_optimise/optimisation.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+        "batchIndex": 14,
+        "symbols": [
+          "orderGeneratorForDynamicPositions",
+          "calculate_optimised_positions_data",
+          "dataForObjectiveInstance",
+          "get_data_for_objective_instance",
+          "get_maximum_position_contracts",
+          "get_maximum_position_contracts_for_instrument_strategy",
+          "get_per_contract_values",
+          "calculate_costs_per_portfolio_weight",
+          "get_cost_per_notional_weight_as_proportion_of_capital",
+          "get_constraints",
+          "get_no_trade_keys",
+          "get_reduce_only_keys",
+          "get_override_for_instrument_strategy",
+          "get_covariance_matrix_for_instrument_returns_for_optimisation",
+          "get_correlation_matrix_with_shrinkage",
+          "get_speed_control",
+          "get_config_parameters",
+          "get_objective_instance",
+          "get_optimised_positions_data_dict_given_optimisation",
+          "get_positions_given_weights",
+          "get_weights_given_positions",
+          "get_optimal_position_entry_with_calcs_for_code",
+          "write_optimised_positions_data",
+          "write_optimised_positions_data_for_code",
+          "list_of_trades_given_optimised_and_actual_positions",
+          "trade_given_optimal_and_actual_positions"
+        ]
+      }
+    ],
+    "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/interactive/progress_bar.py",
+        "batchIndex": 14,
+        "symbols": [
+          "progressBar",
+          "_display_progress_bar",
+          "_construct_timing_string"
+        ]
+      },
+      {
+        "path": "syscore/pandas/find_data.py",
+        "batchIndex": 14,
+        "symbols": [
+          "get_row_of_df_aligned_to_weights_as_dict",
+          "get_row_of_series",
+          "get_row_of_series_before_date",
+          "get_max_index_before_datetime"
+        ]
+      },
+      {
+        "path": "syscore/pandas/strategy_functions.py",
+        "batchIndex": 10,
+        "symbols": [
+          "turnover",
+          "weights_sum_to_one",
+          "drawdown",
+          "apply_abs_min",
+          "replace_all_zeros_with_nan",
+          "spread_out_annualised_return_over_periods",
+          "calculate_cost_deflator",
+          "price_to_daily_returns",
+          "quantile_of_points_in_data_series",
+          "years_in_data",
+          "fix_weights_vs_position_or_forecast"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/covariance.py",
+        "batchIndex": 14,
+        "symbols": [
+          "covarianceEstimate",
+          "covariance_from_stdev_and_correlation",
+          "get_annualised_risk",
+          "clean_values"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "systems/stage.py",
+        "batchIndex": 2,
+        "symbols": [
+          "SystemStage"
+        ]
+      },
+      {
+        "path": "systems/system_cache.py",
+        "batchIndex": 2,
+        "symbols": [
+          "cacheRef",
+          "listOfCacheRefs",
+          "cacheElement",
+          "systemCache",
+          "resolve_args_to_code_and_key",
+          "resolve_kwargs_to_str",
+          "null_decorator",
+          "stage_access_cache_decorator",
+          "base_system_cache"
+        ]
+      },
+      {
+        "path": "examples/production/example_of_custom_run_system.py",
+        "batchIndex": 1,
+        "symbols": [
+          "runMySystemCarryTrendDynamic",
+          "production_carry_trend_dynamic_system",
+          "futures_system"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+        "batchIndex": 14,
+        "symbols": [
+          "orderGeneratorForDynamicPositions",
+          "calculate_optimised_positions_data",
+          "dataForObjectiveInstance",
+          "get_data_for_objective_instance",
+          "get_maximum_position_contracts",
+          "get_maximum_position_contracts_for_instrument_strategy",
+          "get_per_contract_values",
+          "calculate_costs_per_portfolio_weight",
+          "get_cost_per_notional_weight_as_proportion_of_capital",
+          "get_constraints",
+          "get_no_trade_keys",
+          "get_reduce_only_keys",
+          "get_override_for_instrument_strategy",
+          "get_covariance_matrix_for_instrument_returns_for_optimisation",
+          "get_correlation_matrix_with_shrinkage",
+          "get_speed_control",
+          "get_config_parameters",
+          "get_objective_instance",
+          "get_optimised_positions_data_dict_given_optimisation",
+          "get_positions_given_weights",
+          "get_weights_given_positions",
+          "get_optimal_position_entry_with_calcs_for_code",
+          "write_optimised_positions_data",
+          "write_optimised_positions_data_for_code",
+          "list_of_trades_given_optimised_and_actual_positions",
+          "trade_given_optimal_and_actual_positions"
+        ]
+      },
+      {
+        "path": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+        "batchIndex": 1,
+        "symbols": [
+          "runSystemCarryTrendDynamic",
+          "dynamic_system",
+          "futures_system",
+          "updated_optimal_positions_for_dynamic_system",
+          "construct_optimal_position_entry",
+          "get_optimal_position_from_system"
+        ]
+      },
+      {
+        "path": "systems/provided/rob_system/run_system.py",
+        "batchIndex": 2,
+        "symbols": [
+          "futures_system"
+        ]
+      },
+      {
+        "path": "systems/risk.py",
+        "batchIndex": 2,
+        "symbols": [
+          "Risk"
+        ]
+      }
+    ],
+    "systems/provided/dynamic_small_system_optimise/set_up_constraints.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/genutils.py",
+        "batchIndex": 14,
+        "symbols": [
+          "new_removing_existing",
+          "list_intersection",
+          "list_difference",
+          "list_union",
+          "get_unique_list",
+          "get_unique_list_slow",
+          "round_significant_figures",
+          "flatten_list",
+          "str2Bool",
+          "str_of_int",
+          "same_sign",
+          "sign",
+          "return_another_value_if_nan",
+          "are_dicts_equal",
+          "quickTimer",
+          "if_empty_string_return_object",
+          "if_object_matches_return_empty_string",
+          "transfer_object_attributes",
+          "highest_common_factor_for_list",
+          "divide_list_of_ints_by_highest_common_factor",
+          "list_of_ints_with_highest_common_factor_positive_first",
+          "np_convert",
+          "intersection_intervals"
+        ]
+      }
+    ],
+    "systems/provided/static_small_system_optimise/optimise_small_system.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/correlations.py",
+        "batchIndex": 14,
+        "symbols": [
+          "correlationEstimate",
+          "create_boring_corr_matrix",
+          "boring_corr_matrix_values",
+          "clean_correlation",
+          "_get_cleaned_matrix_values",
+          "CorrelationList",
+          "modify_correlation",
+          "average_correlation",
+          "get_near_psd"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/estimates.py",
+        "batchIndex": 14,
+        "symbols": [
+          "Estimates",
+          "equalise_estimates",
+          "equalise_estimates_from_lists",
+          "SR_equaliser",
+          "vol_equaliser",
+          "shrink_means_to_SR",
+          "shrink_SR_with_lists"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/adhoc/static_system.py",
+        "batchIndex": 4,
+        "symbols": [
+          "static_system_adhoc_report",
+          "static_system_results_for_capital"
+        ]
+      }
+    ]
+  }
+}

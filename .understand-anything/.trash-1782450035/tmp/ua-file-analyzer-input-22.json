@@ -1,0 +1,23 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {"path": "_learning_sandbox/docs/accounts-stage-architecture.md", "language": "markdown", "sizeLines": 364, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/basesystem-and-stage-line-by-line.md", "language": "markdown", "sizeLines": 508, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/codebase-architecture-part2.md", "language": "markdown", "sizeLines": 393, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/codebase-architecture-reference.md", "language": "markdown", "sizeLines": 307, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/installaltion.md", "language": "markdown", "sizeLines": 123, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/learning-plan-pysystemtrade.md", "language": "markdown", "sizeLines": 789, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/production-setup-macos.md", "language": "markdown", "sizeLines": 605, "fileCategory": "docs"},
+    {"path": "_learning_sandbox/docs/systems-folder-overview.md", "language": "markdown", "sizeLines": 110, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "_learning_sandbox/docs/accounts-stage-architecture.md": [],
+    "_learning_sandbox/docs/basesystem-and-stage-line-by-line.md": [],
+    "_learning_sandbox/docs/codebase-architecture-part2.md": [],
+    "_learning_sandbox/docs/codebase-architecture-reference.md": [],
+    "_learning_sandbox/docs/installaltion.md": [],
+    "_learning_sandbox/docs/learning-plan-pysystemtrade.md": [],
+    "_learning_sandbox/docs/production-setup-macos.md": [],
+    "_learning_sandbox/docs/systems-folder-overview.md": []
+  }
+}

@@ -13,184 +13,185 @@ Table of Contents
 =================
 
 <!--ts-->
-* [Table of Contents](#table-of-contents)
-* [How do I?](#how-do-i)
-   * [How do I.... Experiment with a single trading rule and instrument](#how-do-i-experiment-with-a-single-trading-rule-and-instrument)
-   * [How do I....Create a standard futures backtest](#how-do-icreate-a-standard-futures-backtest)
-   * [How do I....Create a futures backtest which estimates parameters](#how-do-icreate-a-futures-backtest-which-estimates-parameters)
-   * [How do I....See intermediate results from a backtest](#how-do-isee-intermediate-results-from-a-backtest)
-   * [How do I....See how profitable a backtest was](#how-do-isee-how-profitable-a-backtest-was)
-   * [How do I....Change backtest parameters](#how-do-ichange-backtest-parameters)
-      * [Option 1: Change the configuration file](#option-1-change-the-configuration-file)
-      * [Option 2: Change the configuration object; create a new system](#option-2-change-the-configuration-object-create-a-new-system)
-      * [Option 3: Change the configuration object within an existing system (not recommended - advanced)](#option-3-change-the-configuration-object-within-an-existing-system-not-recommended---advanced)
-      * [Option 4: Create a private config file](#option-4-create-a-private-config-file)
-      * [Option 5: Change the project defaults (definitely not recommended)](#option-5-change-the-project-defaults-definitely-not-recommended)
-   * [How do I....Run a backtest on a different set of instruments](#how-do-irun-a-backtest-on-a-different-set-of-instruments)
-      * [Change instruments: Change the configuration file](#change-instruments-change-the-configuration-file)
-      * [Change instruments: Change the configuration object](#change-instruments-change-the-configuration-object)
-   * [How do I.... run the backtest only on more recent data](#how-do-i-run-the-backtest-only-on-more-recent-data)
-   * [How do I....Run a backtest on all available instruments](#how-do-irun-a-backtest-on-all-available-instruments)
-   * [How do I.... Exclude some instruments from the backtest](#how-do-i-exclude-some-instruments-from-the-backtest)
-   * [How do I.... Exclude some instruments from having positive instrument weights](#how-do-i-exclude-some-instruments-from-having-positive-instrument-weights)
-   * [How do I....Create my own trading rule](#how-do-icreate-my-own-trading-rule)
-      * [Writing the function](#writing-the-function)
-      * [Adding the trading rule to a configuration](#adding-the-trading-rule-to-a-configuration)
-   * [How do I....Use different data or instruments](#how-do-iuse-different-data-or-instruments)
-   * [How do I... Save my work](#how-do-i-save-my-work)
-* [Guide](#guide)
-   * [Data](#data)
-      * [Using the standard data objects](#using-the-standard-data-objects)
-         * [Generic data objects](#generic-data-objects)
-         * [The csvFuturesSimData object](#the-csvfuturessimdata-object)
-         * [The dbFuturesSimData object](#the-dbfuturessimdata-object)
-            * [Setting up MongoDB and Parquet](#setting-up-mongodb-and-parquet)
-            * [Using dbFuturesSimData](#using-dbfuturessimdata)
-         * [Arctic](#arctic)
-            * [Backtesting with Arctic instead of Parquet](#backtesting-with-arctic-instead-of-parquet)
-      * [Creating your own data objects](#creating-your-own-data-objects)
-         * [The Data() class](#the-data-class)
-   * [Configuration](#configuration)
-      * [Creating a configuration object](#creating-a-configuration-object)
-         * [1) Creating a configuration object with a dictionary](#1-creating-a-configuration-object-with-a-dictionary)
-         * [2) Creating a configuration object from a file](#2-creating-a-configuration-object-from-a-file)
-         * [3) Creating a configuration object from a pre-baked system](#3-creating-a-configuration-object-from-a-pre-baked-system)
-         * [4) Creating a configuration object from a list](#4-creating-a-configuration-object-from-a-list)
-         * [5) Creating configuration files from CSV files](#5-creating-configuration-files-from-csv-files)
-      * [Project defaults and private configuration](#project-defaults-and-private-configuration)
-         * [Handling defaults when you change certain functions](#handling-defaults-when-you-change-certain-functions)
-         * [How the defaults and private configuration work](#how-the-defaults-and-private-configuration-work)
-      * [Viewing configuration parameters](#viewing-configuration-parameters)
-      * [Modifying configuration parameters](#modifying-configuration-parameters)
-      * [Using configuration in a system](#using-configuration-in-a-system)
-      * [Including your own configuration options](#including-your-own-configuration-options)
-      * [Saving configurations](#saving-configurations)
-      * [Modifying the configuration class](#modifying-the-configuration-class)
-   * [System](#system)
-      * [Pre-baked systems](#pre-baked-systems)
-         * [Futures system for chapter 15](#futures-system-for-chapter-15)
-         * [Estimated system for chapter 15](#estimated-system-for-chapter-15)
-      * [Using the system object](#using-the-system-object)
-         * [Accessing child stages, data, and config within a system](#accessing-child-stages-data-and-config-within-a-system)
-         * [System methods](#system-methods)
-      * [System Caching and pickling](#system-caching-and-pickling)
-      * [Pickling and unpickling saved cache data](#pickling-and-unpickling-saved-cache-data)
-      * [Advanced caching](#advanced-caching)
-         * [Advanced Caching when backtesting.](#advanced-caching-when-backtesting)
-         * [Advanced caching behaviour with a live trading system](#advanced-caching-behaviour-with-a-live-trading-system)
-      * [Very advanced: Caching in new or modified code](#very-advanced-caching-in-new-or-modified-code)
-      * [Creating a new 'pre-baked' system](#creating-a-new-pre-baked-system)
-      * [Changing or making a new System class](#changing-or-making-a-new-system-class)
-   * [Stages](#stages)
-      * [Stage 'wiring'](#stage-wiring)
-      * [Writing new stages](#writing-new-stages)
-      * [Specific stages](#specific-stages)
-      * [Stage: Raw data](#stage-raw-data)
-         * [Using the standard RawData class](#using-the-standard-rawdata-class)
-            * [Volatility calculation](#volatility-calculation)
-         * [New or modified raw data classes](#new-or-modified-raw-data-classes)
-      * [Stage: Rules](#stage-rules)
-         * [Data and data arguments](#data-and-data-arguments)
-      * [The Rules class, and specifying lists of trading rules](#the-rules-class-and-specifying-lists-of-trading-rules)
-         * [Creating lists of rules from a configuration object](#creating-lists-of-rules-from-a-configuration-object)
-         * [Interactively passing a list of trading rules](#interactively-passing-a-list-of-trading-rules)
-         * [Creating variations on a single trading rule](#creating-variations-on-a-single-trading-rule)
-         * [Using a newly created Rules() instance](#using-a-newly-created-rules-instance)
-         * [Passing trading rules to a pre-baked system function](#passing-trading-rules-to-a-pre-baked-system-function)
-         * [Changing the trading rules in a system on the fly (advanced)](#changing-the-trading-rules-in-a-system-on-the-fly-advanced)
-      * [Stage: Forecast scale and cap](#stage-forecast-scale-and-cap)
-         * [Using fixed weights](#using-fixed-weights)
-         * [Calculating estimated forecasting scaling on the fly](#calculating-estimated-forecasting-scaling-on-the-fly)
-            * [Pooled forecast scale estimate (default)](#pooled-forecast-scale-estimate-default)
-            * [Individual instrument forecast scale estimate](#individual-instrument-forecast-scale-estimate)
-      * [Stage: Forecast combine](#stage-forecast-combine)
-         * [Using fixed weights and multipliers](#using-fixed-weights-and-multipliers)
-         * [Using estimated weights and diversification multiplier](#using-estimated-weights-and-diversification-multiplier)
-            * [Estimating the forecast weights](#estimating-the-forecast-weights)
-            * [Removing expensive trading rules](#removing-expensive-trading-rules)
-            * [Estimating the forecast diversification multiplier](#estimating-the-forecast-diversification-multiplier)
-         * [Forecast mapping](#forecast-mapping)
-      * [Stage: Position scaling](#stage-position-scaling)
-         * [Using the standard PositionSizing class](#using-the-standard-positionsizing-class)
-      * [Stage: Creating portfolios](#stage-creating-portfolios)
-         * [Using fixed weights and instrument diversification multiplier(/systems/portfolio.py)](#using-fixed-weights-and-instrument-diversification-multipliersystemsportfoliopy)
-         * [Using estimated weights and instrument diversification multiplier(/systems/portfolio.py)](#using-estimated-weights-and-instrument-diversification-multipliersystemsportfoliopy)
-            * [Estimating the instrument weights](#estimating-the-instrument-weights)
-            * [Using an estimated forecast diversification multiplier](#using-an-estimated-forecast-diversification-multiplier)
-         * [Buffering and position inertia](#buffering-and-position-inertia)
-         * [Capital correction](#capital-correction)
-      * [Stage: Accounting](#stage-accounting)
-         * [Using the standard Account class](#using-the-standard-account-class)
-         * [accountCurve](#accountcurve)
-         * [A nested accountCurveGroup](#a-nested-accountcurvegroup)
-            * [Weighted and unweighted account curve groups](#weighted-and-unweighted-account-curve-groups)
-         * [Testing account curves](#testing-account-curves)
-         * [Costs](#costs)
-* [Processes](#processes)
-   * [File names](#file-names)
-   * [Logging](#logging)
-      * [Basic logging](#basic-logging)
-      * [Advanced logging](#advanced-logging)
-   * [Optimisation](#optimisation)
-      * [The optimisation function, and data](#the-optimisation-function-and-data)
-      * [Removing expensive assets (forecast weights only)](#removing-expensive-assets-forecast-weights-only)
-      * [Pooling gross returns (forecast weights only)](#pooling-gross-returns-forecast-weights-only)
-      * [Working out net costs (both instrument and forecast weights)](#working-out-net-costs-both-instrument-and-forecast-weights)
-      * [Time periods](#time-periods)
-      * [Moment estimation](#moment-estimation)
-      * [Methods](#methods)
-         * [Equal weights](#equal-weights)
-         * [One period (not recommend)](#one-period-not-recommend)
-         * [Bootstrapping (recommended, but slow)](#bootstrapping-recommended-but-slow)
-         * [Shrinkage (okay, but tricky to calibrate)](#shrinkage-okay-but-tricky-to-calibrate)
-         * [Handcrafting (recommended)](#handcrafting-recommended)
-      * [Post processing](#post-processing)
-   * [Estimating correlations and diversification multipliers](#estimating-correlations-and-diversification-multipliers)
-   * [Specifying weights as hierarchy](#specifying-weights-as-hierarchy)
-      * [Hierarchical forecast weight example](#hierarchical-forecast-weight-example)
-      * [Hierarchical instrument weight example](#hierarchical-instrument-weight-example)
-   * [Capital correction - varying capital](#capital-correction---varying-capital)
-* [Reference](#reference)
-   * [Table of standard system.data and system.stage methods](#table-of-standard-systemdata-and-systemstage-methods)
-      * [Explanation of columns](#explanation-of-columns)
-      * [System object](#system-object)
-      * [Data object](#data-object)
-      * [Raw data stage](#raw-data-stage)
-      * [Trading rules stage (chapter 7 of book)](#trading-rules-stage-chapter-7-of-book)
-      * [Forecast scaling and capping stage (chapter 7 of book)](#forecast-scaling-and-capping-stage-chapter-7-of-book)
-      * [Combine forecasts stage (chapter 8 of book)](#combine-forecasts-stage-chapter-8-of-book)
-      * [Position sizing stage (chapters 9 and 10 of book)](#position-sizing-stage-chapters-9-and-10-of-book)
-      * [Portfolio stage (chapter 11 of book)](#portfolio-stage-chapter-11-of-book)
-      * [Accounting stage](#accounting-stage)
-   * [Configuration options](#configuration-options)
-      * [Raw data](#raw-data)
-         * [Calculating volatility](#calculating-volatility)
-      * [Rules stage](#rules-stage)
-         * [Trading rules](#trading-rules)
-      * [Forecast scaling and capping stage](#forecast-scaling-and-capping-stage)
-         * [Forecast scalar (fixed)](#forecast-scalar-fixed)
-         * [Forecast scalar (estimated)](#forecast-scalar-estimated)
-         * [Forecast cap (fixed - all classes)](#forecast-cap-fixed---all-classes)
-      * [Forecast combination stage](#forecast-combination-stage)
-         * [Forecast weights (fixed)](#forecast-weights-fixed)
-         * [Forecast weights (estimated)](#forecast-weights-estimated)
-            * [List of trading rules to get forecasts for](#list-of-trading-rules-to-get-forecasts-for)
-            * [Parameters for estimating forecast weights](#parameters-for-estimating-forecast-weights)
-         * [Forecast diversification multiplier (fixed)](#forecast-diversification-multiplier-fixed)
-         * [Forecast diversification multiplier (estimated)](#forecast-diversification-multiplier-estimated)
-            * [Forecast mapping config](#forecast-mapping-config)
-      * [Position sizing stage](#position-sizing-stage)
-         * [Capital scaling parameters](#capital-scaling-parameters)
-      * [Portfolio combination stage](#portfolio-combination-stage)
-         * [Instrument weights (fixed)](#instrument-weights-fixed)
-         * [Instrument weights (estimated)](#instrument-weights-estimated)
-         * [Instrument diversification multiplier (fixed)](#instrument-diversification-multiplier-fixed)
-         * [Instrument diversification multiplier (estimated)](#instrument-diversification-multiplier-estimated)
-         * [Buffering](#buffering)
-      * [Accounting stage config](#accounting-stage-config)
-         * [Buffering config](#buffering-config)
-         * [Costs config](#costs-config)
-         * [Capital correction config](#capital-correction-config)
+- [Table of Contents](#table-of-contents)
+- [How do I?](#how-do-i)
+  - [How do I.... Experiment with a single trading rule and instrument](#how-do-i-experiment-with-a-single-trading-rule-and-instrument)
+  - [How do I....Create a standard futures backtest](#how-do-icreate-a-standard-futures-backtest)
+  - [How do I....Create a futures backtest which estimates parameters](#how-do-icreate-a-futures-backtest-which-estimates-parameters)
+  - [How do I....See intermediate results from a backtest](#how-do-isee-intermediate-results-from-a-backtest)
+  - [How do I....See how profitable a backtest was](#how-do-isee-how-profitable-a-backtest-was)
+  - [How do I....Change backtest parameters](#how-do-ichange-backtest-parameters)
+    - [Option 1: Change the configuration file](#option-1-change-the-configuration-file)
+    - [Option 2: Change the configuration object; create a new system](#option-2-change-the-configuration-object-create-a-new-system)
+    - [Option 3: Change the configuration object within an existing system (not recommended - advanced)](#option-3-change-the-configuration-object-within-an-existing-system-not-recommended---advanced)
+    - [Option 4: Create a private config file](#option-4-create-a-private-config-file)
+    - [Option 5: Change the project defaults (definitely not recommended)](#option-5-change-the-project-defaults-definitely-not-recommended)
+  - [How do I....Run a backtest on a different set of instruments](#how-do-irun-a-backtest-on-a-different-set-of-instruments)
+    - [Change instruments: Change the configuration file](#change-instruments-change-the-configuration-file)
+    - [Change instruments: Change the configuration object](#change-instruments-change-the-configuration-object)
+  - [How do I.... run the backtest only on more recent data](#how-do-i-run-the-backtest-only-on-more-recent-data)
+  - [How do I....Run a backtest on all available instruments](#how-do-irun-a-backtest-on-all-available-instruments)
+  - [How do I.... Exclude some instruments from the backtest](#how-do-i-exclude-some-instruments-from-the-backtest)
+  - [How do I.... Exclude some instruments from having positive instrument weights](#how-do-i-exclude-some-instruments-from-having-positive-instrument-weights)
+  - [How do I....Create my own trading rule](#how-do-icreate-my-own-trading-rule)
+    - [Writing the function](#writing-the-function)
+    - [Adding the trading rule to a configuration](#adding-the-trading-rule-to-a-configuration)
+  - [How do I....Use different data or instruments](#how-do-iuse-different-data-or-instruments)
+  - [How do I... Save my work](#how-do-i-save-my-work)
+- [Guide](#guide)
+  - [Data](#data)
+    - [Using the standard data objects](#using-the-standard-data-objects)
+      - [Generic data objects](#generic-data-objects)
+      - [The csvFuturesSimData object](#the-csvfuturessimdata-object)
+      - [The dbFuturesSimData object](#the-dbfuturessimdata-object)
+        - [Setting up MongoDB and Parquet](#setting-up-mongodb-and-parquet)
+        - [Using dbFuturesSimData](#using-dbfuturessimdata)
+      - [Arctic](#arctic)
+        - [Backtesting with Arctic instead of Parquet](#backtesting-with-arctic-instead-of-parquet)
+    - [Creating your own data objects](#creating-your-own-data-objects)
+      - [The Data() class](#the-data-class)
+  - [Configuration](#configuration)
+    - [Creating a configuration object](#creating-a-configuration-object)
+      - [1) Creating a configuration object with a dictionary](#1-creating-a-configuration-object-with-a-dictionary)
+      - [2) Creating a configuration object from a file](#2-creating-a-configuration-object-from-a-file)
+      - [3) Creating a configuration object from a pre-baked system](#3-creating-a-configuration-object-from-a-pre-baked-system)
+      - [4) Creating a configuration object from a list](#4-creating-a-configuration-object-from-a-list)
+      - [5) Creating configuration files from CSV files](#5-creating-configuration-files-from-csv-files)
+    - [Project defaults and private configuration](#project-defaults-and-private-configuration)
+      - [Handling defaults when you change certain functions](#handling-defaults-when-you-change-certain-functions)
+      - [How the defaults and private configuration work](#how-the-defaults-and-private-configuration-work)
+    - [Viewing configuration parameters](#viewing-configuration-parameters)
+    - [Modifying configuration parameters](#modifying-configuration-parameters)
+    - [Using configuration in a system](#using-configuration-in-a-system)
+    - [Including your own configuration options](#including-your-own-configuration-options)
+    - [Saving configurations](#saving-configurations)
+    - [Modifying the configuration class](#modifying-the-configuration-class)
+  - [System](#system)
+    - [Pre-baked systems](#pre-baked-systems)
+      - [Futures system for chapter 15](#futures-system-for-chapter-15)
+      - [Estimated system for chapter 15](#estimated-system-for-chapter-15)
+    - [Using the system object](#using-the-system-object)
+      - [Accessing child stages, data, and config within a system](#accessing-child-stages-data-and-config-within-a-system)
+      - [System methods](#system-methods)
+    - [System Caching and pickling](#system-caching-and-pickling)
+    - [Pickling and unpickling saved cache data](#pickling-and-unpickling-saved-cache-data)
+    - [Advanced caching](#advanced-caching)
+      - [Advanced Caching when backtesting.](#advanced-caching-when-backtesting)
+      - [Advanced caching behaviour with a live trading system](#advanced-caching-behaviour-with-a-live-trading-system)
+    - [Very advanced: Caching in new or modified code](#very-advanced-caching-in-new-or-modified-code)
+    - [Creating a new 'pre-baked' system](#creating-a-new-pre-baked-system)
+    - [Changing or making a new System class](#changing-or-making-a-new-system-class)
+  - [Stages](#stages)
+    - [Stage 'wiring'](#stage-wiring)
+    - [Writing new stages](#writing-new-stages)
+    - [Specific stages](#specific-stages)
+    - [Stage: Raw data](#stage-raw-data)
+      - [Using the standard RawData class](#using-the-standard-rawdata-class)
+        - [Volatility calculation](#volatility-calculation)
+      - [New or modified raw data classes](#new-or-modified-raw-data-classes)
+    - [Stage: Rules](#stage-rules)
+      - [Data and data arguments](#data-and-data-arguments)
+    - [The Rules class, and specifying lists of trading rules](#the-rules-class-and-specifying-lists-of-trading-rules)
+      - [Creating lists of rules from a configuration object](#creating-lists-of-rules-from-a-configuration-object)
+      - [Interactively passing a list of trading rules](#interactively-passing-a-list-of-trading-rules)
+      - [Creating variations on a single trading rule](#creating-variations-on-a-single-trading-rule)
+      - [Using a newly created Rules() instance](#using-a-newly-created-rules-instance)
+      - [Passing trading rules to a pre-baked system function](#passing-trading-rules-to-a-pre-baked-system-function)
+      - [Changing the trading rules in a system on the fly (advanced)](#changing-the-trading-rules-in-a-system-on-the-fly-advanced)
+    - [Stage: Forecast scale and cap](#stage-forecast-scale-and-cap)
+      - [Using fixed weights](#using-fixed-weights)
+      - [Calculating estimated forecasting scaling on the fly](#calculating-estimated-forecasting-scaling-on-the-fly)
+        - [Pooled forecast scale estimate (default)](#pooled-forecast-scale-estimate-default)
+        - [Individual instrument forecast scale estimate](#individual-instrument-forecast-scale-estimate)
+    - [Stage: Forecast combine](#stage-forecast-combine)
+      - [Using fixed weights and multipliers](#using-fixed-weights-and-multipliers)
+      - [Using estimated weights and diversification multiplier](#using-estimated-weights-and-diversification-multiplier)
+        - [Estimating the forecast weights](#estimating-the-forecast-weights)
+        - [Removing expensive trading rules](#removing-expensive-trading-rules)
+        - [Estimating the forecast diversification multiplier](#estimating-the-forecast-diversification-multiplier)
+      - [Forecast mapping](#forecast-mapping)
+    - [Stage: Position scaling](#stage-position-scaling)
+      - [Using the standard PositionSizing class](#using-the-standard-positionsizing-class)
+    - [Stage: Creating portfolios](#stage-creating-portfolios)
+      - [Using fixed weights and instrument diversification multiplier(/systems/portfolio.py)](#using-fixed-weights-and-instrument-diversification-multipliersystemsportfoliopy)
+      - [Using estimated weights and instrument diversification multiplier(/systems/portfolio.py)](#using-estimated-weights-and-instrument-diversification-multipliersystemsportfoliopy)
+        - [Estimating the instrument weights](#estimating-the-instrument-weights)
+        - [Using an estimated forecast diversification multiplier](#using-an-estimated-forecast-diversification-multiplier)
+      - [Buffering and position inertia](#buffering-and-position-inertia)
+      - [Capital correction](#capital-correction)
+    - [Stage: Accounting](#stage-accounting)
+      - [Using the standard Account class](#using-the-standard-account-class)
+      - [`accountCurve`](#accountcurve)
+      - [`accountCurveGroup` in more detail](#accountcurvegroup-in-more-detail)
+      - [A nested `accountCurveGroup`](#a-nested-accountcurvegroup)
+        - [Weighted and unweighted account curve groups](#weighted-and-unweighted-account-curve-groups)
+      - [Testing account curves](#testing-account-curves)
+      - [Costs](#costs)
+- [Processes](#processes)
+  - [File names](#file-names)
+  - [Logging](#logging)
+    - [Basic logging](#basic-logging)
+    - [Advanced logging](#advanced-logging)
+  - [Optimisation](#optimisation)
+    - [The optimisation function, and data](#the-optimisation-function-and-data)
+    - [Removing expensive assets (forecast weights only)](#removing-expensive-assets-forecast-weights-only)
+    - [Pooling gross returns (forecast weights only)](#pooling-gross-returns-forecast-weights-only)
+    - [Working out net costs (both instrument and forecast weights)](#working-out-net-costs-both-instrument-and-forecast-weights)
+    - [Time periods](#time-periods)
+    - [Moment estimation](#moment-estimation)
+    - [Methods](#methods)
+      - [Equal weights](#equal-weights)
+      - [One period (not recommend)](#one-period-not-recommend)
+      - [Bootstrapping (recommended, but slow)](#bootstrapping-recommended-but-slow)
+      - [Shrinkage (okay, but tricky to calibrate)](#shrinkage-okay-but-tricky-to-calibrate)
+      - [Handcrafting (recommended)](#handcrafting-recommended)
+    - [Post processing](#post-processing)
+  - [Estimating correlations and diversification multipliers](#estimating-correlations-and-diversification-multipliers)
+  - [Specifying weights as hierarchy](#specifying-weights-as-hierarchy)
+    - [Hierarchical forecast weight example](#hierarchical-forecast-weight-example)
+    - [Hierarchical instrument weight example](#hierarchical-instrument-weight-example)
+  - [Capital correction - varying capital](#capital-correction---varying-capital)
+- [Reference](#reference)
+  - [Table of standard system.data and system.stage methods](#table-of-standard-systemdata-and-systemstage-methods)
+    - [Explanation of columns](#explanation-of-columns)
+    - [System object](#system-object)
+    - [Data object](#data-object)
+    - [Raw data stage](#raw-data-stage)
+    - [Trading rules stage (chapter 7 of book)](#trading-rules-stage-chapter-7-of-book)
+    - [Forecast scaling and capping stage (chapter 7 of book)](#forecast-scaling-and-capping-stage-chapter-7-of-book)
+    - [Combine forecasts stage (chapter 8 of book)](#combine-forecasts-stage-chapter-8-of-book)
+    - [Position sizing stage (chapters 9 and 10 of book)](#position-sizing-stage-chapters-9-and-10-of-book)
+    - [Portfolio stage (chapter 11 of book)](#portfolio-stage-chapter-11-of-book)
+    - [Accounting stage](#accounting-stage)
+  - [Configuration options](#configuration-options)
+    - [Raw data](#raw-data)
+      - [Calculating volatility](#calculating-volatility)
+    - [Rules stage](#rules-stage)
+      - [Trading rules](#trading-rules)
+    - [Forecast scaling and capping stage](#forecast-scaling-and-capping-stage)
+      - [Forecast scalar (fixed)](#forecast-scalar-fixed)
+      - [Forecast scalar (estimated)](#forecast-scalar-estimated)
+      - [Forecast cap (fixed - all classes)](#forecast-cap-fixed---all-classes)
+    - [Forecast combination stage](#forecast-combination-stage)
+      - [Forecast weights (fixed)](#forecast-weights-fixed)
+      - [Forecast weights (estimated)](#forecast-weights-estimated)
+        - [List of trading rules to get forecasts for](#list-of-trading-rules-to-get-forecasts-for)
+        - [Parameters for estimating forecast weights](#parameters-for-estimating-forecast-weights)
+      - [Forecast diversification multiplier (fixed)](#forecast-diversification-multiplier-fixed)
+      - [Forecast diversification multiplier (estimated)](#forecast-diversification-multiplier-estimated)
+        - [Forecast mapping config](#forecast-mapping-config)
+    - [Position sizing stage](#position-sizing-stage)
+      - [Capital scaling parameters](#capital-scaling-parameters)
+    - [Portfolio combination stage](#portfolio-combination-stage)
+      - [Instrument weights (fixed)](#instrument-weights-fixed)
+      - [Instrument weights (estimated)](#instrument-weights-estimated)
+      - [Instrument diversification multiplier (fixed)](#instrument-diversification-multiplier-fixed)
+      - [Instrument diversification multiplier (estimated)](#instrument-diversification-multiplier-estimated)
+      - [Buffering](#buffering)
+    - [Accounting stage config](#accounting-stage-config)
+      - [Buffering config](#buffering-config)
+      - [Costs config](#costs-config)
+      - [Capital correction config](#capital-correction-config)
 <!--te-->
 
 
@@ -257,7 +258,7 @@ For a complete list of possible intermediate results, use `print(system)` to see
 from systems.provided.futures_chapter15.basesystem import futures_system
 system=futures_system()
 system.accounts.portfolio().stats() ## see some statistics
-system.accounts.portfolio().curve().plot() ## plot an account curve
+ ## plot an account curve
 system.accounts.portfolio().percent.curve().plot() ## plot an account curve in percentage terms
 system.accounts.pandl_for_instrument("US10").percent.stats() ## produce % statistics for a 10 year bond
 system.accounts.pandl_for_instrument_forecast("SOFR", "carry").sharpe() ## Sharpe for a specific trading rule variation
@@ -3923,14 +3924,14 @@ To get the varying capital multiplier which the chosen method calculates use `sy
 
 Here's a list of methods with their counterparts for both fixed and variable capital:
 
-|                             | Fixed capital | Variable capital |
-|:-------------------------:|:---------:|:---------------:|
-| Get capital at risk | `positionSize.get_daily_cash_vol_target()['notional_trading_capital']` | `accounts.get_actual_capital()` |
-| Get position in a system portfolio | `portfolio.get_notional_position` | `portfolio.get_actual_position` |
-| Get buffers for a position | `portfolio.get_buffers_for_position` | `portfolio.get_actual_buffers_for_position` |
-| Get buffered position | `accounts.get_buffered_position`| `accounts.get_buffered_position_with_multiplier`|
-| Get P&L for instrument at system level | `accounts.pandl_for_instrument`| `accounts.pandl_for_instrument_with_multiplier`|
-| P&L for whole system | `accounts.portfolio`| `accounts.portfolio_with_multiplier`|
+|                                        |                             Fixed capital                              |                 Variable capital                 |
+| :------------------------------------: | :--------------------------------------------------------------------: | :----------------------------------------------: |
+|          Get capital at risk           | `positionSize.get_daily_cash_vol_target()['notional_trading_capital']` |         `accounts.get_actual_capital()`          |
+|   Get position in a system portfolio   |                   `portfolio.get_notional_position`                    |         `portfolio.get_actual_position`          |
+|       Get buffers for a position       |                  `portfolio.get_buffers_for_position`                  |   `portfolio.get_actual_buffers_for_position`    |
+|         Get buffered position          |                    `accounts.get_buffered_position`                    | `accounts.get_buffered_position_with_multiplier` |
+| Get P&L for instrument at system level |                    `accounts.pandl_for_instrument`                     | `accounts.pandl_for_instrument_with_multiplier`  |
+|          P&L for whole system          |                          `accounts.portfolio`                          |       `accounts.portfolio_with_multiplier`       |
 
 All other methods in pysystemtrade use fixed capital.
 
@@ -3976,119 +3977,119 @@ Private methods are excluded from this table.
 
 ### System object
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `system.get_instrument_list` | Standard | | D,O | List of instruments available; either from config.instrument weights, config.instruments, or from data set|
+|             Call             | Standard? | Arguments | Type  |                                                Description                                                 |
+| :--------------------------: | :-------: | :-------: | :---: | :--------------------------------------------------------------------------------------------------------: |
+| `system.get_instrument_list` | Standard  |           |  D,O  | List of instruments available; either from config.instrument weights, config.instruments, or from data set |
 
 Other methods exist to access logging and caching.
 
 ### Data object
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `data.get_raw_price` | Standard | `instrument_code` | D,O | Intraday prices if available (backadjusted if relevant)|
-| `data.daily_prices` | Standard | `instrument_code` | D,O | Default price used for trading rule analysis (backadjusted if relevant)|
-| `data.get_instrument_list` | Standard | | D,O | List of instruments available in data set (not all will be used for backtest)|
-| `data.get_value_of_block_price_move`| Standard | `instrument_code` | D,O | How much does a $1 (or whatever) move in the price of an instrument block affect it's value? |
-| `data.get_instrument_currency`|Standard | `instrument_code` | D,O | What currency does this instrument trade in? |
-| `data.get_fx_for_instrument` |Standard | `instrument_code, base_currency` | D, O | What is the exchange rate between the currency of this instrument, and some base currency? |
-| `data.get_instrument_raw_carry_data` | Futures | `instrument_code` | D, O | Returns a dataframe with the 4 columns PRICE, CARRY, PRICE_CONTRACT, CARRY_CONTRACT |
-| `data.get_raw_cost_data`| Standard | `instrument_code` | D,O | Cost data (slippage and different types of commission) |
+|                 Call                 | Standard? |            Arguments             | Type  |                                         Description                                          |
+| :----------------------------------: | :-------: | :------------------------------: | :---: | :------------------------------------------------------------------------------------------: |
+|         `data.get_raw_price`         | Standard  |        `instrument_code`         |  D,O  |                   Intraday prices if available (backadjusted if relevant)                    |
+|         `data.daily_prices`          | Standard  |        `instrument_code`         |  D,O  |           Default price used for trading rule analysis (backadjusted if relevant)            |
+|      `data.get_instrument_list`      | Standard  |                                  |  D,O  |        List of instruments available in data set (not all will be used for backtest)         |
+| `data.get_value_of_block_price_move` | Standard  |        `instrument_code`         |  D,O  | How much does a $1 (or whatever) move in the price of an instrument block affect it's value? |
+|    `data.get_instrument_currency`    | Standard  |        `instrument_code`         |  D,O  |                         What currency does this instrument trade in?                         |
+|     `data.get_fx_for_instrument`     | Standard  | `instrument_code, base_currency` | D, O  |  What is the exchange rate between the currency of this instrument, and some base currency?  |
+| `data.get_instrument_raw_carry_data` |  Futures  |        `instrument_code`         | D, O  |     Returns a dataframe with the 4 columns PRICE, CARRY, PRICE_CONTRACT, CARRY_CONTRACT      |
+|       `data.get_raw_cost_data`       | Standard  |        `instrument_code`         |  D,O  |                    Cost data (slippage and different types of commission)                    |
 
 
 
 ### Raw data stage
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `rawdata.get_daily_prices` | Standard | `instrument_code` | I | `data.daily_prices`|
-| `rawdata.daily_denominator_price` | Standard | `instrument_code` | O | Price used to calculate % volatility (for futures the current contract price) |
-| `rawdata.daily_returns` | Standard | `instrument_code` | D, O | Daily returns in price units|
-| `rawdata.get_daily_percentage_returns` | Standard | `instrument_code` | D | Daily returns as a percentage. |
-| `rawdata.daily_returns_volatility` | Standard | `instrument_code` | D,O | Daily standard deviation of returns in price units |
-| `rawdata.get_daily_percentage_volatility` | Standard | `instrument_code` | D,O | Daily standard deviation of returns in % (10.0 = 10%) |
-| `rawdata.get_daily_vol_normalised_returns` | Standard | `instrument_code` | D | Daily returns normalised by vol (1.0 = 1 sigma) |
-| `rawdata.get_instrument_raw_carry_data` | Futures | `instrument_code` | I | data.get_instrument_raw_carry_data |
-| `rawdata.raw_futures_roll`| Futures | `instrument_code` | D | The raw difference between price and carry |
-| `rawdata.roll_differentials` | Futures | `instrument_code` | D | The annualisation factor |
-| `rawdata.annualised_roll` | Futures | `instrument_code` | D | Annualised roll |
-| `rawdata.daily_annualised_roll` | Futures | `instrument_code` | D | Annualised roll. Used for carry rule. |
+|                    Call                    | Standard? |     Arguments     | Type  |                                  Description                                  |
+| :----------------------------------------: | :-------: | :---------------: | :---: | :---------------------------------------------------------------------------: |
+|         `rawdata.get_daily_prices`         | Standard  | `instrument_code` |   I   |                              `data.daily_prices`                              |
+|     `rawdata.daily_denominator_price`      | Standard  | `instrument_code` |   O   | Price used to calculate % volatility (for futures the current contract price) |
+|          `rawdata.daily_returns`           | Standard  | `instrument_code` | D, O  |                         Daily returns in price units                          |
+|   `rawdata.get_daily_percentage_returns`   | Standard  | `instrument_code` |   D   |                        Daily returns as a percentage.                         |
+|     `rawdata.daily_returns_volatility`     | Standard  | `instrument_code` |  D,O  |              Daily standard deviation of returns in price units               |
+| `rawdata.get_daily_percentage_volatility`  | Standard  | `instrument_code` |  D,O  |             Daily standard deviation of returns in % (10.0 = 10%)             |
+| `rawdata.get_daily_vol_normalised_returns` | Standard  | `instrument_code` |   D   |                Daily returns normalised by vol (1.0 = 1 sigma)                |
+|  `rawdata.get_instrument_raw_carry_data`   |  Futures  | `instrument_code` |   I   |                      data.get_instrument_raw_carry_data                       |
+|         `rawdata.raw_futures_roll`         |  Futures  | `instrument_code` |   D   |                  The raw difference between price and carry                   |
+|        `rawdata.roll_differentials`        |  Futures  | `instrument_code` |   D   |                           The annualisation factor                            |
+|         `rawdata.annualised_roll`          |  Futures  | `instrument_code` |   D   |                                Annualised roll                                |
+|      `rawdata.daily_annualised_roll`       |  Futures  | `instrument_code` |   D   |                     Annualised roll. Used for carry rule.                     |
 
 
 
 ### Trading rules stage (chapter 7 of book)
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `rules.trading_rules` | Standard | | D,O | List of trading rule variations |
-| `rules.get_raw_forecast` | Standard | `instrument_code`, `rule_variation_name` | D,O| Get forecast (unscaled, uncapped) |
+|           Call           | Standard? |                Arguments                 | Type  |            Description            |
+| :----------------------: | :-------: | :--------------------------------------: | :---: | :-------------------------------: |
+|  `rules.trading_rules`   | Standard  |                                          |  D,O  |  List of trading rule variations  |
+| `rules.get_raw_forecast` | Standard  | `instrument_code`, `rule_variation_name` |  D,O  | Get forecast (unscaled, uncapped) |
 
 
 ### Forecast scaling and capping stage (chapter 7 of book)
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `forecastScaleCap.get_raw_forecast` | Standard | `instrument_code`, `rule_variation_name` | I | `rules.get_raw_forecast` |
-| `forecastScaleCap.get_forecast_scalar` | Standard / Estimate | `instrument_code`, `rule_variation_name` | D | Get the scalar to use for a forecast |
-| `forecastScaleCap.get_forecast_cap` | Standard |  | D,O | Get the maximum allowable forecast |
-| `forecastScaleCap.get_forecast_floor` | Standard |  | D,O | Get the minimum allowable forecast |
-| `forecastScaleCap.get_scaled_forecast` | Standard | `instrument_code`, `rule_variation_name` | D | Get the forecast after scaling (after capping) |
-| `forecastScaleCap.get_capped_forecast` | Standard | `instrument_code`, `rule_variation_name` | D, O | Get the forecast after scaling (after capping) |
+|                  Call                  |      Standard?      |                Arguments                 | Type  |                  Description                   |
+| :------------------------------------: | :-----------------: | :--------------------------------------: | :---: | :--------------------------------------------: |
+|  `forecastScaleCap.get_raw_forecast`   |      Standard       | `instrument_code`, `rule_variation_name` |   I   |            `rules.get_raw_forecast`            |
+| `forecastScaleCap.get_forecast_scalar` | Standard / Estimate | `instrument_code`, `rule_variation_name` |   D   |      Get the scalar to use for a forecast      |
+|  `forecastScaleCap.get_forecast_cap`   |      Standard       |                                          |  D,O  |       Get the maximum allowable forecast       |
+| `forecastScaleCap.get_forecast_floor`  |      Standard       |                                          |  D,O  |       Get the minimum allowable forecast       |
+| `forecastScaleCap.get_scaled_forecast` |      Standard       | `instrument_code`, `rule_variation_name` |   D   | Get the forecast after scaling (after capping) |
+| `forecastScaleCap.get_capped_forecast` |      Standard       | `instrument_code`, `rule_variation_name` | D, O  | Get the forecast after scaling (after capping) |
 
 
 ### Combine forecasts stage (chapter 8 of book)
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `combForecast.get_trading_rule_list` | Standard | `instrument_code` | I | List of trading rules from config or prior stage |
-| `combForecast.get_all_forecasts` | Standard | `instrument_code`, (`rule_variation_list`) | D | pd.DataFrame of forecast values |
-| `combForecast.get_forecast_cap` | Standard |  | I | `forecastScaleCap.get_forecast_cap` |
-| `combForecast.calculation_of_raw_estimated_monthly_forecast_weights` | Estimate | `instrument_code` | D | Forecast weight calculation objects |
-| `combForecast.get_forecast_weights` | Standard / Estimate| `instrument_code` | D | Forecast weights, adjusted for missing forecasts|
-| `combForecast.get_forecast_correlation_matrices` | Estimate | `instrument_code` | D | Correlations of forecasts |
-| `combForecast.get_forecast_diversification_multiplier` | Standard / Estimate | `instrument_code` | D | Get diversification multiplier |
-| `combForecast.get_combined_forecast` | Standard | `instrument_code` | D,O | Get weighted average of forecasts for instrument |
+|                                 Call                                 |      Standard?      |                 Arguments                  | Type  |                   Description                    |
+| :------------------------------------------------------------------: | :-----------------: | :----------------------------------------: | :---: | :----------------------------------------------: |
+|                 `combForecast.get_trading_rule_list`                 |      Standard       |             `instrument_code`              |   I   | List of trading rules from config or prior stage |
+|                   `combForecast.get_all_forecasts`                   |      Standard       | `instrument_code`, (`rule_variation_list`) |   D   |         pd.DataFrame of forecast values          |
+|                   `combForecast.get_forecast_cap`                    |      Standard       |                                            |   I   |       `forecastScaleCap.get_forecast_cap`        |
+| `combForecast.calculation_of_raw_estimated_monthly_forecast_weights` |      Estimate       |             `instrument_code`              |   D   |       Forecast weight calculation objects        |
+|                 `combForecast.get_forecast_weights`                  | Standard / Estimate |             `instrument_code`              |   D   | Forecast weights, adjusted for missing forecasts |
+|           `combForecast.get_forecast_correlation_matrices`           |      Estimate       |             `instrument_code`              |   D   |            Correlations of forecasts             |
+|        `combForecast.get_forecast_diversification_multiplier`        | Standard / Estimate |             `instrument_code`              |   D   |          Get diversification multiplier          |
+|                 `combForecast.get_combined_forecast`                 |      Standard       |             `instrument_code`              |  D,O  | Get weighted average of forecasts for instrument |
 
 
 
 ### Position sizing stage (chapters 9 and 10 of book)
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `positionSize.get_combined_forecast` | Standard | `instrument_code` | I | `combForecast.get_combined_forecast` |
-| `positionSize.get_price_volatility` | Standard | `instrument_code` | I | `rawdata.get_daily_percentage_volatility` (or `data.daily_prices`) |
-| `positionSize.get_underlying_price` | Standard | `instrument_code` | I | `rawdata.daily_denominator_price` (or `data.daily_prices`); `data.get_value_of_block_price_move` |
-| `positionSize.get_fx_rate` | Standard | `instrument_code` | I | `data.get_fx_for_instrument` |
-| `positionSize.get_daily_cash_vol_target` | Standard | | D | Dictionary of base_currency, percentage_vol_target, notional_trading_capital, annual_cash_vol_target, daily_cash_vol_target |
-| `positionSize.get_block_value` | Standard | `instrument_code` | D | Get value of a 1% move in the price |
-| `positionSize.get_instrument_currency_vol` | Standard | `instrument_code` |D | Get daily volatility in the currency of the instrument |
-| `positionSize.get_instrument_value_vol` | Standard | `instrument_code` |D | Get daily volatility in the currency of the trading account |
-| `positionSize.get_average_position_at_subsystem_level` | Standard | `instrument_code` | D |Get ratio of target volatility vs volatility of instrument in instrument's own currency |
-| `positionSize.get_subsystem_position`| Standard | `instrument_code` | D, O |Get position if we put our entire trading capital into one instrument |
+|                          Call                          | Standard? |     Arguments     | Type  |                                                         Description                                                         |
+| :----------------------------------------------------: | :-------: | :---------------: | :---: | :-------------------------------------------------------------------------------------------------------------------------: |
+|          `positionSize.get_combined_forecast`          | Standard  | `instrument_code` |   I   |                                            `combForecast.get_combined_forecast`                                             |
+|          `positionSize.get_price_volatility`           | Standard  | `instrument_code` |   I   |                             `rawdata.get_daily_percentage_volatility` (or `data.daily_prices`)                              |
+|          `positionSize.get_underlying_price`           | Standard  | `instrument_code` |   I   |              `rawdata.daily_denominator_price` (or `data.daily_prices`); `data.get_value_of_block_price_move`               |
+|               `positionSize.get_fx_rate`               | Standard  | `instrument_code` |   I   |                                                `data.get_fx_for_instrument`                                                 |
+|        `positionSize.get_daily_cash_vol_target`        | Standard  |                   |   D   | Dictionary of base_currency, percentage_vol_target, notional_trading_capital, annual_cash_vol_target, daily_cash_vol_target |
+|             `positionSize.get_block_value`             | Standard  | `instrument_code` |   D   |                                             Get value of a 1% move in the price                                             |
+|       `positionSize.get_instrument_currency_vol`       | Standard  | `instrument_code` |   D   |                                   Get daily volatility in the currency of the instrument                                    |
+|        `positionSize.get_instrument_value_vol`         | Standard  | `instrument_code` |   D   |                                 Get daily volatility in the currency of the trading account                                 |
+| `positionSize.get_average_position_at_subsystem_level` | Standard  | `instrument_code` |   D   |                   Get ratio of target volatility vs volatility of instrument in instrument's own currency                   |
+|         `positionSize.get_subsystem_position`          | Standard  | `instrument_code` | D, O  |                            Get position if we put our entire trading capital into one instrument                            |
 
 
 
 ### Portfolio stage (chapter 11 of book)
 
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `portfolio.get_subsystem_position`| Standard | `instrument_code` | I |`positionSize.get_subsystem_position` |
-| `portfolio.pandl_across_subsystems`| Estimate |  | I | `accounts.pandl_across_subsystems`|
-| `portfolio.calculation_of_raw_instrument_weights`| Estimate | | D | Instrument weight calculation objects |
-| `portfolio.get_unsmoothed_instrument_weights_fitted_to_position_lengths`| Standard / Estimate| | D |Get raw instrument weights |
-| `portfolio.get_instrument_weights`| Standard / Estimate| | D |Get instrument weights, adjusted for missing instruments |
-| `portfolio.get_instrument_diversification_multiplier`| Standard / Estimate | | D |Get instrument div. multiplier |
-| `portfolio.get_notional_position`| Standard | `instrument_code` | D,O |Get the *notional* position (with constant risk capital; doesn't allow for adjustments when profits or losses are made) |
-| `portfolio.get_buffers_for_position`| Standard | `instrument_code` | D,O |Get the buffers around the position |
-| `portfolio.get_actual_position`| Standard | `instrument_code` | D,O | Get position accounting for capital multiplier|
-| `portfolio.get_actual_buffers_for_position`| Standard | `instrument_code` | D,O |Get the buffers around the position, accounting for capital multiplier |
+|                                   Call                                   |      Standard?      |     Arguments     | Type  |                                                       Description                                                       |
+| :----------------------------------------------------------------------: | :-----------------: | :---------------: | :---: | :---------------------------------------------------------------------------------------------------------------------: |
+|                    `portfolio.get_subsystem_position`                    |      Standard       | `instrument_code` |   I   |                                          `positionSize.get_subsystem_position`                                          |
+|                   `portfolio.pandl_across_subsystems`                    |      Estimate       |                   |   I   |                                           `accounts.pandl_across_subsystems`                                            |
+|            `portfolio.calculation_of_raw_instrument_weights`             |      Estimate       |                   |   D   |                                          Instrument weight calculation objects                                          |
+| `portfolio.get_unsmoothed_instrument_weights_fitted_to_position_lengths` | Standard / Estimate |                   |   D   |                                               Get raw instrument weights                                                |
+|                    `portfolio.get_instrument_weights`                    | Standard / Estimate |                   |   D   |                                Get instrument weights, adjusted for missing instruments                                 |
+|          `portfolio.get_instrument_diversification_multiplier`           | Standard / Estimate |                   |   D   |                                             Get instrument div. multiplier                                              |
+|                    `portfolio.get_notional_position`                     |      Standard       | `instrument_code` |  D,O  | Get the *notional* position (with constant risk capital; doesn't allow for adjustments when profits or losses are made) |
+|                   `portfolio.get_buffers_for_position`                   |      Standard       | `instrument_code` |  D,O  |                                           Get the buffers around the position                                           |
+|                     `portfolio.get_actual_position`                      |      Standard       | `instrument_code` |  D,O  |                                     Get position accounting for capital multiplier                                      |
+|               `portfolio.get_actual_buffers_for_position`                |      Standard       | `instrument_code` |  D,O  |                         Get the buffers around the position, accounting for capital multiplier                          |
 
 
 
@@ -4096,60 +4097,60 @@ Other methods exist to access logging and caching.
 
 Inputs:
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `accounts.get_notional_position`| Standard | `instrument_code` | I | `portfolio.get_notional_position`|
-| `accounts.get_actual_position`| Standard | `instrument_code` | I | `portfolio.get_actual_position`|
-| `accounts.get_capped_forecast`| Standard | `instrument_code`, `rule_variation_name` | I | `forecastScaleCap.get_capped_forecast`|
-| `accounts.get_instrument_list`| Standard | | I | `system.get_instrument_list` |
-| `accounts.get_notional_capital`| Standard | | I | `positionSize.get_daily_cash_vol_target`|
-| `accounts.get_fx_rate`| Standard | `instrument_code` | I | `positionSize.get_fx_rate`|
-| `accounts.get_value_of_block_price_move`| Standard | `instrument_code` | I | `data.get_value_of_block_price_move`|
-| `accounts.get_daily_returns_volatility`| Standard | `instrument_code` | I | `rawdata.daily_returns_volatility` or `data.daily_prices`|
-| `accounts.get_raw_cost_data`| Standard | `instrument_code` | I | `data.get_raw_cost_data` |
-| `accounts.get_buffers_for_position`| Standard | `instrument_code` | I | `portfolio.get_buffers_for_position`|
-| `accounts.get_actual_buffers_for_position`| Standard | `instrument_code` | I | `portfolio.get_actual_buffers_for_position`|
-| `accounts.get_instrument_diversification_multiplier`| Standard | | I | `portfolio.get_instrument_diversification_multiplier`|
-| `accounts.get_instrument_weights`| Standard | | I | `portfolio.get_instrument_weights`|
-| `accounts.list_of_rules_for_code`| Standard | `instrument_code` | I | `combForecast.get_trading_rule_list`|
-| `accounts.has_same_rules_as_code`| Standard | `instrument_code` | I | `combForecast.has_same_rules_as_code`|
+|                         Call                         | Standard? |                Arguments                 | Type  |                        Description                        |
+| :--------------------------------------------------: | :-------: | :--------------------------------------: | :---: | :-------------------------------------------------------: |
+|           `accounts.get_notional_position`           | Standard  |            `instrument_code`             |   I   |             `portfolio.get_notional_position`             |
+|            `accounts.get_actual_position`            | Standard  |            `instrument_code`             |   I   |              `portfolio.get_actual_position`              |
+|            `accounts.get_capped_forecast`            | Standard  | `instrument_code`, `rule_variation_name` |   I   |          `forecastScaleCap.get_capped_forecast`           |
+|            `accounts.get_instrument_list`            | Standard  |                                          |   I   |               `system.get_instrument_list`                |
+|           `accounts.get_notional_capital`            | Standard  |                                          |   I   |         `positionSize.get_daily_cash_vol_target`          |
+|                `accounts.get_fx_rate`                | Standard  |            `instrument_code`             |   I   |                `positionSize.get_fx_rate`                 |
+|       `accounts.get_value_of_block_price_move`       | Standard  |            `instrument_code`             |   I   |           `data.get_value_of_block_price_move`            |
+|       `accounts.get_daily_returns_volatility`        | Standard  |            `instrument_code`             |   I   | `rawdata.daily_returns_volatility` or `data.daily_prices` |
+|             `accounts.get_raw_cost_data`             | Standard  |            `instrument_code`             |   I   |                 `data.get_raw_cost_data`                  |
+|         `accounts.get_buffers_for_position`          | Standard  |            `instrument_code`             |   I   |           `portfolio.get_buffers_for_position`            |
+|      `accounts.get_actual_buffers_for_position`      | Standard  |            `instrument_code`             |   I   |        `portfolio.get_actual_buffers_for_position`        |
+| `accounts.get_instrument_diversification_multiplier` | Standard  |                                          |   I   |   `portfolio.get_instrument_diversification_multiplier`   |
+|          `accounts.get_instrument_weights`           | Standard  |                                          |   I   |            `portfolio.get_instrument_weights`             |
+|          `accounts.list_of_rules_for_code`           | Standard  |            `instrument_code`             |   I   |           `combForecast.get_trading_rule_list`            |
+|          `accounts.has_same_rules_as_code`           | Standard  |            `instrument_code`             |   I   |           `combForecast.has_same_rules_as_code`           |
 
 
 Diagnostics:
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `accounts.list_of_trading_rules`| Standard | | D | All trading rules across instruments|
-| `accounts.get_instrument_scaling_factor`| Standard | `instrument_code` | D | IDM * instrument weight|
-| `accounts.get_buffered_position`| Standard | `instrument_code` | D | Buffered position at portfolio level|
-| `accounts.get_buffered_position_with_multiplier`| Standard | `instrument_code` | D | Buffered position at portfolio level, including capital multiplier|
-| `accounts.subsystem_turnover`| Standard | `instrument_code` | D | Annualised turnover of subsystem|
-| `accounts.instrument_turnover`| Standard | `instrument_code` | D | Annualised turnover of instrument position at portfolio level|
-| `accounts.forecast_turnover`| Standard | `instrument_code`, `rule_variation_name` | D | Annualised turnover of forecast|
-| `accounts.get_SR_cost_for_instrument_forecast`| Standard | `instrument_code`, `rule_variation_name` | D | SR cost * turnover for forecast|
-| `accounts.capital_multiplier`| Standard | | D, O | Capital multiplier, ratio of actual to fixed notional capital|
-| `accounts.get_actual_capital`| Standard | | D | Actual capital (fixed notional capital times multiplier)|
+|                       Call                       | Standard? |                Arguments                 | Type  |                            Description                             |
+| :----------------------------------------------: | :-------: | :--------------------------------------: | :---: | :----------------------------------------------------------------: |
+|         `accounts.list_of_trading_rules`         | Standard  |                                          |   D   |                All trading rules across instruments                |
+|     `accounts.get_instrument_scaling_factor`     | Standard  |            `instrument_code`             |   D   |                      IDM * instrument weight                       |
+|         `accounts.get_buffered_position`         | Standard  |            `instrument_code`             |   D   |                Buffered position at portfolio level                |
+| `accounts.get_buffered_position_with_multiplier` | Standard  |            `instrument_code`             |   D   | Buffered position at portfolio level, including capital multiplier |
+|          `accounts.subsystem_turnover`           | Standard  |            `instrument_code`             |   D   |                  Annualised turnover of subsystem                  |
+|          `accounts.instrument_turnover`          | Standard  |            `instrument_code`             |   D   |   Annualised turnover of instrument position at portfolio level    |
+|           `accounts.forecast_turnover`           | Standard  | `instrument_code`, `rule_variation_name` |   D   |                  Annualised turnover of forecast                   |
+|  `accounts.get_SR_cost_for_instrument_forecast`  | Standard  | `instrument_code`, `rule_variation_name` |   D   |                  SR cost * turnover for forecast                   |
+|          `accounts.capital_multiplier`           | Standard  |                                          | D, O  |   Capital multiplier, ratio of actual to fixed notional capital    |
+|          `accounts.get_actual_capital`           | Standard  |                                          |   D   |      Actual capital (fixed notional capital times multiplier)      |
 
 
 Accounting outputs:
 
-| Call | Standard?| Arguments | Type | Description |
-|:-------------------------:|:---------:|:---------------:|:----:|:--------------------------------------------------------------:|
-| `accounts.pandl_for_instrument`| Standard | `instrument_code` | D | P&L for an instrument within a system|
-| `accounts.pandl_for_instrument_with_multiplier`| Standard | `instrument_code` | D | P&L for an instrument within a system, using multiplied capital|
-| `accounts.pandl_for_instrument_forecast`| Standard | `instrument_code`, `rule_variation_name` | D | P&L for a trading rule and instrument |
-| `accounts.pandl_for_instrument_forecast_weighted`| Standard | `instrument_code`, `rule_variation_name` | D | P&L for a trading rule and instrument as a % of total capital |
-| `accounts.pandl_for_instrument_rules`| Standard | `instrument_code` | D,O | P&L for all trading rules in an instrument, weighted |
-| `accounts.pandl_for_instrument_rules_unweighted`| Standard | `instrument_code` | D,O | P&L for all trading rules in an instrument, unweighted |
-| `accounts.pandl_for_trading_rule`| Standard | `rule_variation_name` | D | P&L for a trading rule over all instruments |
-| `accounts.pandl_for_trading_rule_weighted`| Standard | `rule_variation_name` | D | P&L for a trading rule over all instruments as % of total capital |
-| `accounts.pandl_for_trading_rule_unweighted`| Standard | `rule_variation_name` | D | P&L for a trading rule over all instruments, unweighted |
-| `accounts.pandl_for_subsystem`| Standard | `instrument_code` | D | P&L for an instrument outright|
-| `accounts.pandl_across_subsystems`| Standard | `instrument_code` | O,D | P&L across instruments, outright|
-| `accounts.pandl_for_all_trading_rules`| Standard | | D | P&L for trading rules across whole system |
-| `accounts.pandl_for_all_trading_rules_unweighted`| Standard | | D | P&L for trading rules across whole system |
-| `accounts.portfolio`| Standard | | O,D | P&L for whole system |
-| `accounts.portfolio_with_multiplier`| Standard | | D | P&L for whole system using multiplied capital|
+|                       Call                        | Standard? |                Arguments                 | Type  |                            Description                            |
+| :-----------------------------------------------: | :-------: | :--------------------------------------: | :---: | :---------------------------------------------------------------: |
+|          `accounts.pandl_for_instrument`          | Standard  |            `instrument_code`             |   D   |               P&L for an instrument within a system               |
+|  `accounts.pandl_for_instrument_with_multiplier`  | Standard  |            `instrument_code`             |   D   |  P&L for an instrument within a system, using multiplied capital  |
+|     `accounts.pandl_for_instrument_forecast`      | Standard  | `instrument_code`, `rule_variation_name` |   D   |               P&L for a trading rule and instrument               |
+| `accounts.pandl_for_instrument_forecast_weighted` | Standard  | `instrument_code`, `rule_variation_name` |   D   |   P&L for a trading rule and instrument as a % of total capital   |
+|       `accounts.pandl_for_instrument_rules`       | Standard  |            `instrument_code`             |  D,O  |       P&L for all trading rules in an instrument, weighted        |
+| `accounts.pandl_for_instrument_rules_unweighted`  | Standard  |            `instrument_code`             |  D,O  |      P&L for all trading rules in an instrument, unweighted       |
+|         `accounts.pandl_for_trading_rule`         | Standard  |          `rule_variation_name`           |   D   |            P&L for a trading rule over all instruments            |
+|    `accounts.pandl_for_trading_rule_weighted`     | Standard  |          `rule_variation_name`           |   D   | P&L for a trading rule over all instruments as % of total capital |
+|   `accounts.pandl_for_trading_rule_unweighted`    | Standard  |          `rule_variation_name`           |   D   |      P&L for a trading rule over all instruments, unweighted      |
+|          `accounts.pandl_for_subsystem`           | Standard  |            `instrument_code`             |   D   |                  P&L for an instrument outright                   |
+|        `accounts.pandl_across_subsystems`         | Standard  |            `instrument_code`             |  O,D  |                 P&L across instruments, outright                  |
+|      `accounts.pandl_for_all_trading_rules`       | Standard  |                                          |   D   |             P&L for trading rules across whole system             |
+| `accounts.pandl_for_all_trading_rules_unweighted` | Standard  |                                          |   D   |             P&L for trading rules across whole system             |
+|               `accounts.portfolio`                | Standard  |                                          |  O,D  |                       P&L for whole system                        |
+|       `accounts.portfolio_with_multiplier`        | Standard  |                                          |   D   |           P&L for whole system using multiplied capital           |
 
 
 ## Configuration options

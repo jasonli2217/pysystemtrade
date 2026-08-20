@@ -1,0 +1,1060 @@
+{
+ "nodes": [
+  {
+   "id": "file:syscore/pandas/merge_data_with_label_column.py",
+   "type": "file",
+   "name": "merge_data_with_label_column.py",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "summary": "Merges time series that carry a label column (e.g. the current futures contract), tracking when labels change so old and new data are stitched on matching boundaries.",
+   "tags": [
+    "utility",
+    "data-merge",
+    "pandas"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:merge_data_series_with_label_column",
+   "type": "function",
+   "name": "merge_data_series_with_label_column",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    10,
+    88
+   ],
+   "summary": "Labelled-merge helper: merge data series with label column.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_merge_data_series_with_label_column_when_old_and_new_data_provided",
+   "type": "function",
+   "name": "_merge_data_series_with_label_column_when_old_and_new_data_provided",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    96,
+    130
+   ],
+   "summary": "Labelled-merge helper:  merge data series with label column when old and new data provided.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_label_changes",
+   "type": "function",
+   "name": "_find_dates_when_label_changes",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    133,
+    179
+   ],
+   "summary": "Labelled-merge helper:  find dates when label changes.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_labels_change_given_label_data",
+   "type": "function",
+   "name": "_find_dates_when_labels_change_given_label_data",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    182,
+    206
+   ],
+   "summary": "Labelled-merge helper:  find dates when labels change given label data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_series_starts_matching",
+   "type": "function",
+   "name": "_find_dates_when_series_starts_matching",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    209,
+    250
+   ],
+   "summary": "Labelled-merge helper:  find dates when series starts matching.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_match_dates_for_labels_when_not_equal_or_mismatch",
+   "type": "function",
+   "name": "_match_dates_for_labels_when_not_equal_or_mismatch",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    253,
+    275
+   ],
+   "summary": "Labelled-merge helper:  match dates for labels when not equal or mismatch.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_merge_data_given_matching_dates",
+   "type": "function",
+   "name": "_merge_data_given_matching_dates",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    296,
+    330
+   ],
+   "summary": "Labelled-merge helper:  merge data given matching dates.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_stitch_merged_and_existing_data",
+   "type": "function",
+   "name": "_stitch_merged_and_existing_data",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    333,
+    364
+   ],
+   "summary": "Labelled-merge helper:  stitch merged and existing data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_get_labelled_merged_data",
+   "type": "function",
+   "name": "_get_labelled_merged_data",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    367,
+    389
+   ],
+   "summary": "Labelled-merge helper:  get labelled merged data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/pandas/merge_data_with_label_column.py:_get_merged_label_data",
+   "type": "function",
+   "name": "_get_merged_label_data",
+   "filePath": "syscore/pandas/merge_data_with_label_column.py",
+   "lineRange": [
+    392,
+    418
+   ],
+   "summary": "Labelled-merge helper:  get merged label data.",
+   "tags": "data-merge",
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/pandas/pdutils.py",
+   "type": "file",
+   "name": "pdutils.py",
+   "filePath": "syscore/pandas/pdutils.py",
+   "summary": "General-purpose pandas helpers: CSV reading with datetime indexing, series/DataFrame construction, padding, deduplication, and equality checks used throughout the codebase.",
+   "tags": [
+    "utility",
+    "pandas",
+    "serialization"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:pd_readcsv",
+   "type": "function",
+   "name": "pd_readcsv",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    86,
+    124
+   ],
+   "summary": "Pandas utility: pd readcsv.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:add_datetime_index",
+   "type": "function",
+   "name": "add_datetime_index",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    127,
+    144
+   ],
+   "summary": "Pandas utility: add datetime index.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:remap_columns_in_pd",
+   "type": "function",
+   "name": "remap_columns_in_pd",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    147,
+    162
+   ],
+   "summary": "Pandas utility: remap columns in pd.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:from_dict_of_values_to_df",
+   "type": "function",
+   "name": "from_dict_of_values_to_df",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    165,
+    191
+   ],
+   "summary": "Pandas utility: from dict of values to df.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:create_arbitrary_pdseries",
+   "type": "function",
+   "name": "create_arbitrary_pdseries",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    210,
+    231
+   ],
+   "summary": "Pandas utility: create arbitrary pdseries.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:dataframe_pad",
+   "type": "function",
+   "name": "dataframe_pad",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    234,
+    271
+   ],
+   "summary": "Pandas utility: dataframe pad.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:make_df_from_list_of_named_tuple",
+   "type": "function",
+   "name": "make_df_from_list_of_named_tuple",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    290,
+    328
+   ],
+   "summary": "Pandas utility: make df from list of named tuple.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:print_full",
+   "type": "function",
+   "name": "print_full",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    368,
+    384
+   ],
+   "summary": "Pandas utility: print full.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/pdutils.py:get_column_names_in_df_with_at_least_one_value",
+   "type": "function",
+   "name": "get_column_names_in_df_with_at_least_one_value",
+   "filePath": "syscore/pandas/pdutils.py",
+   "lineRange": [
+    59,
+    71
+   ],
+   "summary": "Pandas utility: get column names in df with at least one value.",
+   "tags": "pandas",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/pandas/strategy_functions.py",
+   "type": "file",
+   "name": "strategy_functions.py",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "summary": "Strategy-level pandas calculations including turnover, drawdown, weight normalisation, cost deflators, and forecast/position weight alignment.",
+   "tags": [
+    "utility",
+    "strategy",
+    "accounting",
+    "pandas"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:turnover",
+   "type": "function",
+   "name": "turnover",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    11,
+    33
+   ],
+   "summary": "Strategy function: turnover.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:weights_sum_to_one",
+   "type": "function",
+   "name": "weights_sum_to_one",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    36,
+    67
+   ],
+   "summary": "Strategy function: weights sum to one.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:drawdown",
+   "type": "function",
+   "name": "drawdown",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    70,
+    97
+   ],
+   "summary": "Strategy function: drawdown.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:apply_abs_min",
+   "type": "function",
+   "name": "apply_abs_min",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    100,
+    119
+   ],
+   "summary": "Strategy function: apply abs min.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:replace_all_zeros_with_nan",
+   "type": "function",
+   "name": "replace_all_zeros_with_nan",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    122,
+    140
+   ],
+   "summary": "Strategy function: replace all zeros with nan.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:spread_out_annualised_return_over_periods",
+   "type": "function",
+   "name": "spread_out_annualised_return_over_periods",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    143,
+    161
+   ],
+   "summary": "Strategy function: spread out annualised return over periods.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:quantile_of_points_in_data_series",
+   "type": "function",
+   "name": "quantile_of_points_in_data_series",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    182,
+    193
+   ],
+   "summary": "Strategy function: quantile of points in data series.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:years_in_data",
+   "type": "function",
+   "name": "years_in_data",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    196,
+    210
+   ],
+   "summary": "Strategy function: years in data.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/pandas/strategy_functions.py:fix_weights_vs_position_or_forecast",
+   "type": "function",
+   "name": "fix_weights_vs_position_or_forecast",
+   "filePath": "syscore/pandas/strategy_functions.py",
+   "lineRange": [
+    213,
+    240
+   ],
+   "summary": "Strategy function: fix weights vs position or forecast.",
+   "tags": "strategy",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/tests/test_algos.py",
+   "type": "file",
+   "name": "test_algos.py",
+   "filePath": "syscore/tests/test_algos.py",
+   "summary": "Unit tests for the robust volatility calculation algorithm, checking min-period, min-value and vol-floor behaviour.",
+   "tags": [
+    "test",
+    "validation",
+    "volatility"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscore/tests/test_algos.py:Test",
+   "type": "class",
+   "name": "Test",
+   "filePath": "syscore/tests/test_algos.py",
+   "lineRange": [
+    25,
+    70
+   ],
+   "summary": "unittest TestCase exercising robust_vol_calc across edge cases (minimum periods, minimum value, vol floor).",
+   "tags": "test",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/tests/test_dateutils.py",
+   "type": "file",
+   "name": "test_dateutils.py",
+   "filePath": "syscore/tests/test_dateutils.py",
+   "summary": "Unit tests for date utility functions in syscore.dateutils.",
+   "tags": [
+    "test",
+    "date"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:syscore/tests/test_dateutils.py:Test",
+   "type": "class",
+   "name": "Test",
+   "filePath": "syscore/tests/test_dateutils.py",
+   "lineRange": [
+    10,
+    35
+   ],
+   "summary": "unittest TestCase verifying date utility behaviour.",
+   "tags": "test",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/tests/test_pdutils.py",
+   "type": "file",
+   "name": "test_pdutils.py",
+   "filePath": "syscore/tests/test_pdutils.py",
+   "summary": "Unit tests for pandas DataFrame arithmetic helpers in syscore.pandas.pdutils.",
+   "tags": [
+    "test",
+    "pandas"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:syscore/tests/test_pdutils.py:Test",
+   "type": "class",
+   "name": "Test",
+   "filePath": "syscore/tests/test_pdutils.py",
+   "lineRange": [
+    11,
+    55
+   ],
+   "summary": "unittest TestCase verifying DataFrame divide/multiply helpers.",
+   "tags": "test",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "type": "file",
+   "name": "csv_futures_contract_prices.py",
+   "filePath": "sysdata/csv/csv_futures_contract_prices.py",
+   "summary": "CSV-backed data store for per-contract futures prices, reading and writing OHLC price files at merged and per-frequency granularity.",
+   "tags": [
+    "data-model",
+    "service",
+    "csv",
+    "serialization"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysdata/csv/csv_futures_contract_prices.py:csvFuturesContractPriceData",
+   "type": "class",
+   "name": "csvFuturesContractPriceData",
+   "filePath": "sysdata/csv/csv_futures_contract_prices.py",
+   "lineRange": [
+    27,
+    293
+   ],
+   "summary": "Concrete futuresContractPriceData implementation that persists per-contract OHLC prices to CSV files, keyed by contract and frequency.",
+   "tags": "data-model",
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysdata/csv/csv_futures_contract_prices.py:ConfigCsvFuturesPrices",
+   "type": "class",
+   "name": "ConfigCsvFuturesPrices",
+   "filePath": "sysdata/csv/csv_futures_contract_prices.py",
+   "lineRange": [
+    17,
+    24
+   ],
+   "summary": "Configuration dataclass describing the CSV column layout and datetime format for futures price files.",
+   "tags": "config",
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/tools/manual_price_checker.py",
+   "type": "file",
+   "name": "manual_price_checker.py",
+   "filePath": "sysdata/tools/manual_price_checker.py",
+   "summary": "Interactive tool that walks a user through manually reviewing and overriding merged price data where automatic spike checks flagged potential errors.",
+   "tags": [
+    "utility",
+    "interactive",
+    "validation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysdata/tools/manual_price_checker.py:manual_price_checker",
+   "type": "function",
+   "name": "manual_price_checker",
+   "filePath": "sysdata/tools/manual_price_checker.py",
+   "lineRange": [
+    15,
+    147
+   ],
+   "summary": "Interactive loop prompting the user to accept, reject, or override new price points when merging data, applying decisions to the combined series.",
+   "tags": "interactive",
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysdata/tools/manual_price_checker.py:_get_new_value",
+   "type": "function",
+   "name": "_get_new_value",
+   "filePath": "sysdata/tools/manual_price_checker.py",
+   "lineRange": [
+    158,
+    217
+   ],
+   "summary": "Prompts the user for a corrected price value at a given timestamp and validates the input.",
+   "tags": "interactive",
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "type": "file",
+   "name": "barchart_futures_contract_prices.py",
+   "filePath": "sysinit/futures/barchart_futures_contract_prices.py",
+   "summary": "Initialization script that renames Barchart CSV export files and transfers their futures contract prices into the price database.",
+   "tags": [
+    "script",
+    "data-pipeline",
+    "initialization"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysinit/futures/barchart_futures_contract_prices.py:strip_file_names",
+   "type": "function",
+   "name": "strip_file_names",
+   "filePath": "sysinit/futures/barchart_futures_contract_prices.py",
+   "lineRange": [
+    14,
+    39
+   ],
+   "summary": "Renames raw Barchart CSV export files into the canonical naming convention expected by the CSV price store.",
+   "tags": "data-pipeline",
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "file:syscore/pandas/full_merge_with_replacement.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_algos.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_algos.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_algos.py",
+   "target": "file:sysquant/estimators/vol.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_dateutils.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/tests/test_pdutils.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:sysdata/futures/futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "file:sysobjects/futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tools/manual_price_checker.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tools/manual_price_checker.py",
+   "target": "file:syscore/pandas/full_merge_with_replacement.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tools/manual_price_checker.py",
+   "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "target": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "target": "file:sysinit/futures/contract_prices_from_csv_to_db.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:merge_data_series_with_label_column",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_merge_data_series_with_label_column_when_old_and_new_data_provided",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_label_changes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_labels_change_given_label_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_find_dates_when_series_starts_matching",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_match_dates_for_labels_when_not_equal_or_mismatch",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_merge_data_given_matching_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_stitch_merged_and_existing_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_get_labelled_merged_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/merge_data_with_label_column.py",
+   "target": "function:syscore/pandas/merge_data_with_label_column.py:_get_merged_label_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:pd_readcsv",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:add_datetime_index",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:remap_columns_in_pd",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:from_dict_of_values_to_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:create_arbitrary_pdseries",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:dataframe_pad",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:make_df_from_list_of_named_tuple",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:print_full",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "function:syscore/pandas/pdutils.py:get_column_names_in_df_with_at_least_one_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:turnover",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:weights_sum_to_one",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:drawdown",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:apply_abs_min",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:replace_all_zeros_with_nan",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:spread_out_annualised_return_over_periods",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:quantile_of_points_in_data_series",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:years_in_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/pandas/strategy_functions.py",
+   "target": "function:syscore/pandas/strategy_functions.py:fix_weights_vs_position_or_forecast",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/tests/test_algos.py",
+   "target": "class:syscore/tests/test_algos.py:Test",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/tests/test_dateutils.py",
+   "target": "class:syscore/tests/test_dateutils.py:Test",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/tests/test_pdutils.py",
+   "target": "class:syscore/tests/test_pdutils.py:Test",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "class:sysdata/csv/csv_futures_contract_prices.py:csvFuturesContractPriceData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "class:sysdata/csv/csv_futures_contract_prices.py:ConfigCsvFuturesPrices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/tools/manual_price_checker.py",
+   "target": "function:sysdata/tools/manual_price_checker.py:manual_price_checker",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/tools/manual_price_checker.py",
+   "target": "function:sysdata/tools/manual_price_checker.py:_get_new_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysinit/futures/barchart_futures_contract_prices.py",
+   "target": "function:sysinit/futures/barchart_futures_contract_prices.py:strip_file_names",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "class:sysdata/csv/csv_futures_contract_prices.py:csvFuturesContractPriceData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/csv/csv_futures_contract_prices.py",
+   "target": "class:sysdata/csv/csv_futures_contract_prices.py:ConfigCsvFuturesPrices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/pandas/pdutils.py",
+   "target": "file:syscore/tests/test_pdutils.py",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  }
+ ]
+}

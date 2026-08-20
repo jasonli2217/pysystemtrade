@@ -1,0 +1,6646 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysquant/estimators/mean_estimator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "exponential_mean",
+          "startLine": 87,
+          "endLine": 94,
+          "params": [
+            "data_for_mean",
+            "ew_lookback",
+            "min_periods"
+          ]
+        },
+        {
+          "name": "mean_estimator_for_subperiod",
+          "startLine": 126,
+          "endLine": 148,
+          "params": [
+            "data_for_mean",
+            "fit_period",
+            "min_periods",
+            "frequency",
+            "**_ignored_kwargs"
+          ]
+        },
+        {
+          "name": "simple_mean_estimator_with_min_periods",
+          "startLine": 151,
+          "endLine": 161,
+          "params": [
+            "x",
+            "min_periods"
+          ]
+        },
+        {
+          "name": "empty_mean",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "data_for_mean"
+          ]
+        },
+        {
+          "name": "annualise_mean_estimate",
+          "startLine": 170,
+          "endLine": 176,
+          "params": [
+            "mean",
+            "frequency"
+          ]
+        },
+        {
+          "name": "annualised_mean",
+          "startLine": 179,
+          "endLine": 182,
+          "params": [
+            "mean",
+            "frequency"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "meanEstimates",
+          "startLine": 18,
+          "endLine": 31,
+          "methods": [
+            "subset",
+            "assets_with_missing_data",
+            "list_in_key_order",
+            "list_of_keys"
+          ],
+          "properties": []
+        },
+        {
+          "name": "exponentialMeans",
+          "startLine": 34,
+          "endLine": 84,
+          "methods": [
+            "__init__",
+            "frequency",
+            "perform_calculations",
+            "get_estimate_for_fitperiod_with_data"
+          ],
+          "properties": []
+        },
+        {
+          "name": "meanEstimator",
+          "startLine": 97,
+          "endLine": 123,
+          "methods": [
+            "__init__",
+            "calculate_estimate_normally",
+            "get_exponential_estimator_for_entire_dataset",
+            "estimate_if_no_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "meanEstimates",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "exponentialMeans",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "exponential_mean",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "meanEstimator",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "mean_estimator_for_subperiod",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "simple_mean_estimator_with_min_periods",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "empty_mean",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "annualise_mean_estimate",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "annualised_mean",
+          "line": 179,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "subset",
+          "callee": "meanEstimates",
+          "lineNumber": 20
+        },
+        {
+          "caller": "assets_with_missing_data",
+          "callee": "self.keys",
+          "lineNumber": 25
+        },
+        {
+          "caller": "assets_with_missing_data",
+          "callee": "np.isnan",
+          "lineNumber": 25
+        },
+        {
+          "caller": "list_of_keys",
+          "callee": "list",
+          "lineNumber": 31
+        },
+        {
+          "caller": "list_of_keys",
+          "callee": "self.keys",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 44
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 44
+        },
+        {
+          "caller": "perform_calculations",
+          "callee": "exponential_mean",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "get_max_index_before_datetime",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "empty_mean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "meanEstimates",
+          "lineNumber": 81
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "annualise_mean_estimate",
+          "lineNumber": 82
+        },
+        {
+          "caller": "exponential_mean",
+          "callee": "data_for_mean.ewm(\n        span=ew_lookback, min_periods=min_periods\n    ).mean",
+          "lineNumber": 90
+        },
+        {
+          "caller": "exponential_mean",
+          "callee": "data_for_mean.ewm",
+          "lineNumber": 90
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 105
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 105
+        },
+        {
+          "caller": "calculate_estimate_normally",
+          "callee": "mean_estimator_for_subperiod",
+          "lineNumber": 110
+        },
+        {
+          "caller": "get_exponential_estimator_for_entire_dataset",
+          "callee": "exponentialMeans",
+          "lineNumber": 118
+        },
+        {
+          "caller": "estimate_if_no_data",
+          "callee": "empty_mean",
+          "lineNumber": 123
+        },
+        {
+          "caller": "mean_estimator_for_subperiod",
+          "callee": "simple_mean_estimator_with_min_periods",
+          "lineNumber": 135
+        },
+        {
+          "caller": "mean_estimator_for_subperiod",
+          "callee": "meanEstimates",
+          "lineNumber": 139
+        },
+        {
+          "caller": "mean_estimator_for_subperiod",
+          "callee": "zip",
+          "lineNumber": 142
+        },
+        {
+          "caller": "mean_estimator_for_subperiod",
+          "callee": "annualise_mean_estimate",
+          "lineNumber": 146
+        },
+        {
+          "caller": "simple_mean_estimator_with_min_periods",
+          "callee": "x.apply",
+          "lineNumber": 152
+        },
+        {
+          "caller": "simple_mean_estimator_with_min_periods",
+          "callee": "list",
+          "lineNumber": 159
+        },
+        {
+          "caller": "empty_mean",
+          "callee": "meanEstimates",
+          "lineNumber": 167
+        },
+        {
+          "caller": "annualise_mean_estimate",
+          "callee": "meanEstimates",
+          "lineNumber": 171
+        },
+        {
+          "caller": "annualise_mean_estimate",
+          "callee": "annualised_mean",
+          "lineNumber": 173
+        },
+        {
+          "caller": "annualise_mean_estimate",
+          "callee": "mean.items",
+          "lineNumber": 174
+        },
+        {
+          "caller": "annualised_mean",
+          "callee": "how_many_times_a_year_is_pd_frequency",
+          "lineNumber": 180
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 9,
+        "functionCount": 6,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysquant/estimators/pooled_correlation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "pooled_correlation_estimator",
+          "startLine": 12,
+          "endLine": 37,
+          "params": [
+            "data",
+            "frequency",
+            "forward_fill_data",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pooled_correlation_estimator",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "copy",
+          "lineNumber": 15
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "copied_data.ffill",
+          "lineNumber": 18
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "copied_data.resample",
+          "lineNumber": 20
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "len",
+          "lineNumber": 23
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "downsampled_data.reindex_to_common_index",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "syscore.pandas.list_of_df.stacked_df_with_added_time_from_list",
+          "lineNumber": 29
+        },
+        {
+          "caller": "pooled_correlation_estimator",
+          "callee": "correlation_over_time",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/estimators/stdev_estimator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "exponential_std_deviation",
+          "startLine": 124,
+          "endLine": 134,
+          "params": [
+            "data_for_stdev",
+            "ew_lookback",
+            "min_periods",
+            "**_ignored_kwargs"
+          ]
+        },
+        {
+          "name": "stdev_estimator_for_subperiod",
+          "startLine": 162,
+          "endLine": 181,
+          "params": [
+            "data_for_stdev",
+            "fit_period",
+            "min_periods",
+            "frequency",
+            "**_ignored_kwargs"
+          ]
+        },
+        {
+          "name": "simple_vol_estimator_with_min_periods",
+          "startLine": 184,
+          "endLine": 194,
+          "params": [
+            "x",
+            "min_periods"
+          ]
+        },
+        {
+          "name": "empty_stdev",
+          "startLine": 197,
+          "endLine": 200,
+          "params": [
+            "data_for_stdev"
+          ]
+        },
+        {
+          "name": "annualise_stdev_estimate",
+          "startLine": 203,
+          "endLine": 209,
+          "params": [
+            "stdev",
+            "frequency"
+          ]
+        },
+        {
+          "name": "annualised_stdev",
+          "startLine": 212,
+          "endLine": 215,
+          "params": [
+            "stdev_value",
+            "frequency"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "stdevEstimates",
+          "startLine": 23,
+          "endLine": 39,
+          "methods": [
+            "assets_with_data",
+            "subset",
+            "assets_with_missing_data",
+            "list_in_key_order",
+            "list_of_keys"
+          ],
+          "properties": []
+        },
+        {
+          "name": "seriesOfStdevEstimates",
+          "startLine": 42,
+          "endLine": 66,
+          "methods": [
+            "get_stdev_on_date",
+            "shocked"
+          ],
+          "properties": []
+        },
+        {
+          "name": "exponentialStdev",
+          "startLine": 69,
+          "endLine": 121,
+          "methods": [
+            "__init__",
+            "frequency",
+            "perform_calculations",
+            "get_estimate_for_fitperiod_with_data"
+          ],
+          "properties": []
+        },
+        {
+          "name": "stdevEstimator",
+          "startLine": 137,
+          "endLine": 159,
+          "methods": [
+            "__init__",
+            "estimate_if_no_data",
+            "calculate_estimate_normally",
+            "get_exponential_estimator_for_entire_dataset"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "stdevEstimates",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "seriesOfStdevEstimates",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "exponentialStdev",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "exponential_std_deviation",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "stdevEstimator",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "stdev_estimator_for_subperiod",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "simple_vol_estimator_with_min_periods",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "empty_stdev",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "annualise_stdev_estimate",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "annualised_stdev",
+          "line": 212,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "assets_with_data",
+          "callee": "self.keys",
+          "lineNumber": 25
+        },
+        {
+          "caller": "assets_with_data",
+          "callee": "np.isnan",
+          "lineNumber": 25
+        },
+        {
+          "caller": "subset",
+          "callee": "stdevEstimates",
+          "lineNumber": 28
+        },
+        {
+          "caller": "assets_with_missing_data",
+          "callee": "self.keys",
+          "lineNumber": 33
+        },
+        {
+          "caller": "assets_with_missing_data",
+          "callee": "np.isnan",
+          "lineNumber": 33
+        },
+        {
+          "caller": "list_of_keys",
+          "callee": "list",
+          "lineNumber": 39
+        },
+        {
+          "caller": "list_of_keys",
+          "callee": "self.keys",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_stdev_on_date",
+          "callee": "get_row_of_df_aligned_to_weights_as_dict",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_stdev_on_date",
+          "callee": "get_row_of_df_aligned_to_weights_as_dict",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_stdev_on_date",
+          "callee": "stdevEstimates",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shocked",
+          "callee": "int",
+          "lineNumber": 56
+        },
+        {
+          "caller": "shocked",
+          "callee": "np.ceil",
+          "lineNumber": 56
+        },
+        {
+          "caller": "shocked",
+          "callee": "int",
+          "lineNumber": 57
+        },
+        {
+          "caller": "shocked",
+          "callee": "self.resample(\"1B\").ffill",
+          "lineNumber": 58
+        },
+        {
+          "caller": "shocked",
+          "callee": "self.resample",
+          "lineNumber": 58
+        },
+        {
+          "caller": "shocked",
+          "callee": "align_daily.rolling(roll_bus_days, min_periods=min_periods).quantile",
+          "lineNumber": 59
+        },
+        {
+          "caller": "shocked",
+          "callee": "align_daily.rolling",
+          "lineNumber": 59
+        },
+        {
+          "caller": "shocked",
+          "callee": "shocked.bfill",
+          "lineNumber": 63
+        },
+        {
+          "caller": "shocked",
+          "callee": "shocked.reindex(self.index).ffill",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shocked",
+          "callee": "shocked.reindex",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shocked",
+          "callee": "seriesOfStdevEstimates",
+          "lineNumber": 66
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 79
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 79
+        },
+        {
+          "caller": "perform_calculations",
+          "callee": "exponential_std_deviation",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "get_max_index_before_datetime",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "empty_stdev",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "stdevEstimates",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_estimate_for_fitperiod_with_data",
+          "callee": "annualise_stdev_estimate",
+          "lineNumber": 119
+        },
+        {
+          "caller": "exponential_std_deviation",
+          "callee": "data_for_stdev.ewm(\n        span=ew_lookback, min_periods=min_periods\n    ).std",
+          "lineNumber": 130
+        },
+        {
+          "caller": "exponential_std_deviation",
+          "callee": "data_for_stdev.ewm",
+          "lineNumber": 130
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 141
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 141
+        },
+        {
+          "caller": "estimate_if_no_data",
+          "callee": "empty_stdev",
+          "lineNumber": 144
+        },
+        {
+          "caller": "calculate_estimate_normally",
+          "callee": "stdev_estimator_for_subperiod",
+          "lineNumber": 149
+        },
+        {
+          "caller": "get_exponential_estimator_for_entire_dataset",
+          "callee": "exponentialStdev",
+          "lineNumber": 157
+        },
+        {
+          "caller": "stdev_estimator_for_subperiod",
+          "callee": "simple_vol_estimator_with_min_periods",
+          "lineNumber": 171
+        },
+        {
+          "caller": "stdev_estimator_for_subperiod",
+          "callee": "stdevEstimates",
+          "lineNumber": 175
+        },
+        {
+          "caller": "stdev_estimator_for_subperiod",
+          "callee": "zip",
+          "lineNumber": 176
+        },
+        {
+          "caller": "stdev_estimator_for_subperiod",
+          "callee": "annualise_stdev_estimate",
+          "lineNumber": 179
+        },
+        {
+          "caller": "simple_vol_estimator_with_min_periods",
+          "callee": "x.apply",
+          "lineNumber": 185
+        },
+        {
+          "caller": "simple_vol_estimator_with_min_periods",
+          "callee": "list",
+          "lineNumber": 192
+        },
+        {
+          "caller": "empty_stdev",
+          "callee": "stdevEstimates",
+          "lineNumber": 200
+        },
+        {
+          "caller": "annualise_stdev_estimate",
+          "callee": "stdevEstimates",
+          "lineNumber": 204
+        },
+        {
+          "caller": "annualise_stdev_estimate",
+          "callee": "annualised_stdev",
+          "lineNumber": 206
+        },
+        {
+          "caller": "annualise_stdev_estimate",
+          "callee": "stdev.items",
+          "lineNumber": 207
+        },
+        {
+          "caller": "annualised_stdev",
+          "callee": "how_many_times_a_year_is_pd_frequency",
+          "lineNumber": 213
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 10,
+        "functionCount": 6,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysquant/estimators/tests/test_mean_estimator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "Test",
+          "startLine": 16,
+          "endLine": 31,
+          "methods": [
+            "test_estimate_before_any_data_returns_empty_mean"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Test",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "pd.date_range",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "datetime.datetime",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "pd.DataFrame",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "np.arange",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "np.arange",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "exponentialMeans",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "datetime.datetime",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "fitDates",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "estimator.get_estimate_for_fitperiod_with_data",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "self.assertIsInstance",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "self.assertEqual",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "estimate.list_of_keys",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "self.assertTrue",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "np.isnan",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "self.assertTrue",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_estimate_before_any_data_returns_empty_mean",
+          "callee": "np.isnan",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysquant/fitting_dates.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 224,
+      "nonEmptyLines": 175,
+      "functions": [
+        {
+          "name": "generate_fitting_dates",
+          "startLine": 57,
+          "endLine": 83,
+          "params": [
+            "data",
+            "date_method",
+            "rollyears",
+            "interval_frequency"
+          ]
+        },
+        {
+          "name": "generate_fitting_dates_given_start_and_end_date",
+          "startLine": 86,
+          "endLine": 139,
+          "params": [
+            "start_date",
+            "end_date",
+            "date_method",
+            "rollyears",
+            "interval_frequency"
+          ]
+        },
+        {
+          "name": "_get_start_and_end_date",
+          "startLine": 142,
+          "endLine": 150,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "_in_sample_dates",
+          "startLine": 153,
+          "endLine": 154,
+          "params": [
+            "start_date",
+            "end_date"
+          ]
+        },
+        {
+          "name": "_list_of_starting_dates_per_period",
+          "startLine": 157,
+          "endLine": 178,
+          "params": [
+            "start_date",
+            "end_date",
+            "interval_frequency"
+          ]
+        },
+        {
+          "name": "_fit_dates_for_period_index",
+          "startLine": 181,
+          "endLine": 203,
+          "params": [
+            "period_index",
+            "list_of_starting_dates_per_period",
+            "start_date",
+            "date_method",
+            "rollyears"
+          ]
+        },
+        {
+          "name": "_add_dummy_period_if_required",
+          "startLine": 206,
+          "endLine": 224,
+          "params": [
+            "periods",
+            "date_method",
+            "start_date",
+            "list_of_starting_dates_per_period"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "fitDates",
+          "startLine": 9,
+          "endLine": 28,
+          "methods": [
+            "__repr__"
+          ],
+          "properties": [
+            "fit_start",
+            "fit_end",
+            "period_start",
+            "period_end",
+            "no_data"
+          ]
+        },
+        {
+          "name": "listOfFittingDates",
+          "startLine": 31,
+          "endLine": 47,
+          "methods": [
+            "list_of_starting_periods",
+            "index_of_most_recent_period_before_relevant_date"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fitDates",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "listOfFittingDates",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "generate_fitting_dates",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "generate_fitting_dates_given_start_and_end_date",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "_get_start_and_end_date",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "_in_sample_dates",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "_list_of_starting_dates_per_period",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "_fit_dates_for_period_index",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "_add_dummy_period_if_required",
+          "line": 206,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "index_of_most_recent_period_before_relevant_date",
+          "callee": "self.list_of_starting_periods",
+          "lineNumber": 38
+        },
+        {
+          "caller": "index_of_most_recent_period_before_relevant_date",
+          "callee": "Exception",
+          "lineNumber": 40
+        },
+        {
+          "caller": "index_of_most_recent_period_before_relevant_date",
+          "callee": "str",
+          "lineNumber": 40
+        },
+        {
+          "caller": "index_of_most_recent_period_before_relevant_date",
+          "callee": "enumerate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "generate_fitting_dates",
+          "callee": "_get_start_and_end_date",
+          "lineNumber": 73
+        },
+        {
+          "caller": "generate_fitting_dates",
+          "callee": "generate_fitting_dates_given_start_and_end_date",
+          "lineNumber": 75
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "Exception",
+          "lineNumber": 104
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "_in_sample_dates",
+          "lineNumber": 112
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "_list_of_starting_dates_per_period",
+          "lineNumber": 115
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "range",
+          "lineNumber": 122
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "len",
+          "lineNumber": 122
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "_fit_dates_for_period_index",
+          "lineNumber": 123
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "periods.append",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "_add_dummy_period_if_required",
+          "lineNumber": 132
+        },
+        {
+          "caller": "generate_fitting_dates_given_start_and_end_date",
+          "callee": "listOfFittingDates",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_get_start_and_end_date",
+          "callee": "isinstance",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_get_start_and_end_date",
+          "callee": "min",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_get_start_and_end_date",
+          "callee": "max",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_in_sample_dates",
+          "callee": "listOfFittingDates",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_in_sample_dates",
+          "callee": "fitDates",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_list_of_starting_dates_per_period",
+          "callee": "list",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_list_of_starting_dates_per_period",
+          "callee": "pd.date_range",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_list_of_starting_dates_per_period",
+          "callee": "results.reverse",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_fit_dates_for_period_index",
+          "callee": "max",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_fit_dates_for_period_index",
+          "callee": "Exception",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_fit_dates_for_period_index",
+          "callee": "fitDates",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_add_dummy_period_if_required",
+          "callee": "fitDates",
+          "lineNumber": 215
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 7,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysquant/optimisation/SR_adjustment.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 251,
+      "nonEmptyLines": 193,
+      "functions": [
+        {
+          "name": "adjust_dataframe_of_weights_for_SR_costs",
+          "startLine": 12,
+          "endLine": 31,
+          "params": [
+            "weights",
+            "costs_dict"
+          ]
+        },
+        {
+          "name": "adjust_dataframe_of_weights_for_SR",
+          "startLine": 34,
+          "endLine": 55,
+          "params": [
+            "weights",
+            "SR_list",
+            "avg_correlation",
+            "years_of_data"
+          ]
+        },
+        {
+          "name": "adjust_list_of_weight_lists_for_SR",
+          "startLine": 58,
+          "endLine": 74,
+          "params": [
+            "list_of_weight_lists",
+            "SR_list",
+            "avg_correlation",
+            "years_of_data"
+          ]
+        },
+        {
+          "name": "adjust_weights_for_SR",
+          "startLine": 77,
+          "endLine": 93,
+          "params": [
+            "weights_as_list",
+            "SR_list",
+            "avg_correlation",
+            "years_of_data"
+          ]
+        },
+        {
+          "name": "multiplier_from_relative_SR",
+          "startLine": 96,
+          "endLine": 105,
+          "params": [
+            "relative_SR",
+            "avg_correlation",
+            "years_of_data"
+          ]
+        },
+        {
+          "name": "mini_bootstrap_ratio_given_SR_diff",
+          "startLine": 108,
+          "endLine": 155,
+          "params": [
+            "SR_diff",
+            "avg_correlation",
+            "years_of_data",
+            "avg_SR",
+            "std",
+            "how_many_assets",
+            "p_step"
+          ]
+        },
+        {
+          "name": "weight_ratio",
+          "startLine": 158,
+          "endLine": 169,
+          "params": [
+            "weights"
+          ]
+        },
+        {
+          "name": "weights_given_SR_diff",
+          "startLine": 172,
+          "endLine": 211,
+          "params": [
+            "SR_diff",
+            "avg_correlation",
+            "confidence_interval",
+            "years_of_data",
+            "avg_SR",
+            "std",
+            "how_many_assets"
+          ]
+        },
+        {
+          "name": "calculate_confident_mean_difference",
+          "startLine": 214,
+          "endLine": 226,
+          "params": [
+            "std",
+            "years_of_data",
+            "mean_difference",
+            "confidence_interval",
+            "avg_correlation"
+          ]
+        },
+        {
+          "name": "calculate_omega_difference",
+          "startLine": 229,
+          "endLine": 236,
+          "params": [
+            "std",
+            "years_of_data",
+            "avg_correlation"
+          ]
+        },
+        {
+          "name": "optimise_using_correlation",
+          "startLine": 239,
+          "endLine": 246,
+          "params": [
+            "mean_list",
+            "avg_correlation",
+            "std"
+          ]
+        },
+        {
+          "name": "norm_weights",
+          "startLine": 249,
+          "endLine": 251,
+          "params": [
+            "list_of_weights"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "adjust_dataframe_of_weights_for_SR_costs",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_dataframe_of_weights_for_SR",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_list_of_weight_lists_for_SR",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_weights_for_SR",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "multiplier_from_relative_SR",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "mini_bootstrap_ratio_given_SR_diff",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "weight_ratio",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "weights_given_SR_diff",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_confident_mean_difference",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_omega_difference",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_using_correlation",
+          "line": 239,
+          "isDefault": false
+        },
+        {
+          "name": "norm_weights",
+          "line": 249,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR_costs",
+          "callee": "list",
+          "lineNumber": 15
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR_costs",
+          "callee": "adjust_dataframe_of_weights_for_SR",
+          "lineNumber": 24
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR",
+          "callee": "list",
+          "lineNumber": 41
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR",
+          "callee": "range",
+          "lineNumber": 41
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR",
+          "callee": "adjust_list_of_weight_lists_for_SR",
+          "lineNumber": 44
+        },
+        {
+          "caller": "adjust_dataframe_of_weights_for_SR",
+          "callee": "pd.DataFrame",
+          "lineNumber": 51
+        },
+        {
+          "caller": "adjust_list_of_weight_lists_for_SR",
+          "callee": "adjust_weights_for_SR",
+          "lineNumber": 65
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "len",
+          "lineNumber": 80
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.nanmean",
+          "lineNumber": 83
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "float",
+          "lineNumber": 86
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "multiplier_from_relative_SR",
+          "lineNumber": 86
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "list",
+          "lineNumber": 90
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.array",
+          "lineNumber": 90
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.array",
+          "lineNumber": 90
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "norm_weights",
+          "lineNumber": 91
+        },
+        {
+          "caller": "multiplier_from_relative_SR",
+          "callee": "mini_bootstrap_ratio_given_SR_diff",
+          "lineNumber": 101
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.arange",
+          "lineNumber": 132
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "weights_given_SR_diff",
+          "lineNumber": 134
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.array",
+          "lineNumber": 146
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.nanmean",
+          "lineNumber": 147
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "weight_ratio",
+          "lineNumber": 148
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.sign",
+          "lineNumber": 150
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.sign",
+          "lineNumber": 150
+        },
+        {
+          "caller": "weight_ratio",
+          "callee": "len",
+          "lineNumber": 166
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "calculate_confident_mean_difference",
+          "lineNumber": 201
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "optimise_using_correlation",
+          "lineNumber": 209
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "list",
+          "lineNumber": 211
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "calculate_omega_difference",
+          "lineNumber": 221
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "stats.norm(mean_difference, omega_difference).ppf",
+          "lineNumber": 222
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "stats.norm",
+          "lineNumber": 222
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "boring_corr_matrix_values",
+          "lineNumber": 240
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "len",
+          "lineNumber": 240
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "np.full",
+          "lineNumber": 241
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "len",
+          "lineNumber": 241
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "sigma_from_corr_and_std",
+          "lineNumber": 242
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "optimise_from_sigma_and_mean_list",
+          "lineNumber": 244
+        },
+        {
+          "caller": "norm_weights",
+          "callee": "list",
+          "lineNumber": 250
+        },
+        {
+          "caller": "norm_weights",
+          "callee": "np.array",
+          "lineNumber": 250
+        },
+        {
+          "caller": "norm_weights",
+          "callee": "np.sum",
+          "lineNumber": 250
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/cleaning.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 109,
+      "functions": [
+        {
+          "name": "get_must_have_dict_from_data",
+          "startLine": 7,
+          "endLine": 17,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "clean_weights",
+          "startLine": 20,
+          "endLine": 39,
+          "params": [
+            "weights",
+            "must_haves",
+            "fraction"
+          ]
+        },
+        {
+          "name": "get_lists_from_dicts_of_weights_and_must_haves",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "weights",
+            "must_haves"
+          ]
+        },
+        {
+          "name": "clean_list_of_weights",
+          "startLine": 52,
+          "endLine": 139,
+          "params": [
+            "weights",
+            "must_haves",
+            "fraction"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_must_have_dict_from_data",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "clean_weights",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "get_lists_from_dicts_of_weights_and_must_haves",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "clean_list_of_weights",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_must_have_dict_from_data",
+          "callee": "get_index_of_columns_in_df_with_at_least_one_value",
+          "lineNumber": 8
+        },
+        {
+          "caller": "get_must_have_dict_from_data",
+          "callee": "list",
+          "lineNumber": 9
+        },
+        {
+          "caller": "get_must_have_dict_from_data",
+          "callee": "dict",
+          "lineNumber": 10
+        },
+        {
+          "caller": "get_must_have_dict_from_data",
+          "callee": "zip",
+          "lineNumber": 13
+        },
+        {
+          "caller": "clean_weights",
+          "callee": "get_lists_from_dicts_of_weights_and_must_haves",
+          "lineNumber": 27
+        },
+        {
+          "caller": "clean_weights",
+          "callee": "clean_list_of_weights",
+          "lineNumber": 31
+        },
+        {
+          "caller": "clean_weights",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_lists_from_dicts_of_weights_and_must_haves",
+          "callee": "list",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_lists_from_dicts_of_weights_and_must_haves",
+          "callee": "weights.keys",
+          "lineNumber": 45
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "any",
+          "lineNumber": 88
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "np.isnan",
+          "lineNumber": 91
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "enumerate",
+          "lineNumber": 91
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "np.isnan",
+          "lineNumber": 92
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "enumerate",
+          "lineNumber": 92
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "enumerate",
+          "lineNumber": 95
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "any",
+          "lineNumber": 98
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "sum",
+          "lineNumber": 101
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "float",
+          "lineNumber": 106
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "np.nansum",
+          "lineNumber": 106
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "np.nansum",
+          "lineNumber": 106
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "_good_weight",
+          "lineNumber": 124
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "enumerate",
+          "lineNumber": 132
+        },
+        {
+          "caller": "clean_list_of_weights",
+          "callee": "sum",
+          "lineNumber": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "optimiser_for_method",
+          "startLine": 21,
+          "endLine": 46,
+          "params": [
+            "method",
+            "estimates",
+            "**weighting_args"
+          ]
+        },
+        {
+          "name": "weights_and_estimates_with_no_valid_data",
+          "startLine": 49,
+          "endLine": 57,
+          "params": [
+            "estimates"
+          ]
+        },
+        {
+          "name": "call_optimiser",
+          "startLine": 60,
+          "endLine": 72,
+          "params": [
+            "method",
+            "estimates_with_only_valid_data",
+            "**weighting_args"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "optimiser_for_method",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "weights_and_estimates_with_no_valid_data",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "call_optimiser",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "optimiser_for_method",
+          "callee": "estimates.assets_with_missing_data",
+          "lineNumber": 24
+        },
+        {
+          "caller": "optimiser_for_method",
+          "callee": "estimates.subset_with_available_data",
+          "lineNumber": 25
+        },
+        {
+          "caller": "optimiser_for_method",
+          "callee": "weights_and_estimates_with_no_valid_data",
+          "lineNumber": 27
+        },
+        {
+          "caller": "optimiser_for_method",
+          "callee": "call_optimiser",
+          "lineNumber": 29
+        },
+        {
+          "caller": "optimiser_for_method",
+          "callee": "portfolioWeights.allnan",
+          "lineNumber": 38
+        },
+        {
+          "caller": "optimiser_for_method",
+          "callee": "portfolioWeights.from_list_of_subportfolios",
+          "lineNumber": 40
+        },
+        {
+          "caller": "weights_and_estimates_with_no_valid_data",
+          "callee": "portfolioWeights.allnan",
+          "lineNumber": 52
+        },
+        {
+          "caller": "weights_and_estimates_with_no_valid_data",
+          "callee": "estimatesWithPortfolioWeights",
+          "lineNumber": 53
+        },
+        {
+          "caller": "call_optimiser",
+          "callee": "REGISTER_OF_OPTIMISERS.get",
+          "lineNumber": 63
+        },
+        {
+          "caller": "call_optimiser",
+          "callee": "Exception",
+          "lineNumber": 66
+        },
+        {
+          "caller": "call_optimiser",
+          "callee": "optimisation_function",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/equal_weights.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "equal_weights_optimisation",
+          "startLine": 8,
+          "endLine": 16,
+          "params": [
+            "estimates",
+            "**_ignore_weighting_args"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "equal_weights_optimisation",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "equal_weights_optimisation",
+          "callee": "one_over_n_portfolio_weights_from_estimates",
+          "lineNumber": 11
+        },
+        {
+          "caller": "equal_weights_optimisation",
+          "callee": "estimatesWithPortfolioWeights",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/handcraft.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 250,
+      "nonEmptyLines": 188,
+      "functions": [
+        {
+          "name": "handcraft_optimisation",
+          "startLine": 21,
+          "endLine": 35,
+          "params": [
+            "estimates",
+            "equalise_SR",
+            "equalise_vols",
+            "**_ignored_weighting_kwargs"
+          ]
+        },
+        {
+          "name": "get_handcrafted_portfolio_weights_for_valid_data",
+          "startLine": 38,
+          "endLine": 48,
+          "params": [
+            "estimates",
+            "equalise_vols",
+            "equalise_SR"
+          ]
+        },
+        {
+          "name": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "startLine": 146,
+          "endLine": 167,
+          "params": [
+            "raw_weights",
+            "handcraft_portfolio"
+          ]
+        },
+        {
+          "name": "create_sub_portfolios_from_portfolio",
+          "startLine": 173,
+          "endLine": 180,
+          "params": [
+            "handcraft_portfolio"
+          ]
+        },
+        {
+          "name": "create_sub_portfolios_given_clusters",
+          "startLine": 183,
+          "endLine": 191,
+          "params": [
+            "clusters_as_names",
+            "handcraft_portfolio"
+          ]
+        },
+        {
+          "name": "aggregate_risk_weights_over_sub_portfolios",
+          "startLine": 194,
+          "endLine": 229,
+          "params": [
+            "sub_portfolios"
+          ]
+        },
+        {
+          "name": "multiplied_out_risk_weight_for_sub_portfolios",
+          "startLine": 232,
+          "endLine": 250,
+          "params": [
+            "weights_for_portfolio",
+            "div_mult_for_portfolio",
+            "weight_for_subportfolio"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "handcraftPortfolio",
+          "startLine": 54,
+          "endLine": 140,
+          "methods": [
+            "__init__",
+            "estimates",
+            "correlation",
+            "mean",
+            "stdev",
+            "sharpe_ratio",
+            "data_length_years",
+            "boring_correlation",
+            "size",
+            "avg_correlation",
+            "asset_names",
+            "risk_weights",
+            "risk_weights_this_portfolio",
+            "aggregated_risk_weights",
+            "div_mult",
+            "subset"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handcraft_optimisation",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "get_handcrafted_portfolio_weights_for_valid_data",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "handcraftPortfolio",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "create_sub_portfolios_from_portfolio",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "create_sub_portfolios_given_clusters",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "aggregate_risk_weights_over_sub_portfolios",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "multiplied_out_risk_weight_for_sub_portfolios",
+          "line": 232,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handcraft_optimisation",
+          "callee": "get_handcrafted_portfolio_weights_for_valid_data",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handcraft_optimisation",
+          "callee": "estimatesWithPortfolioWeights",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_handcrafted_portfolio_weights_for_valid_data",
+          "callee": "handcraftPortfolio",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_handcrafted_portfolio_weights_for_valid_data",
+          "callee": "handcraft_portfolio.risk_weights",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_handcrafted_portfolio_weights_for_valid_data",
+          "callee": "Exception",
+          "lineNumber": 48
+        },
+        {
+          "caller": "sharpe_ratio",
+          "callee": "zip",
+          "lineNumber": 76
+        },
+        {
+          "caller": "size",
+          "callee": "len",
+          "lineNumber": 88
+        },
+        {
+          "caller": "avg_correlation",
+          "callee": "self.estimates.correlation.average_corr",
+          "lineNumber": 92
+        },
+        {
+          "caller": "risk_weights",
+          "callee": "self.risk_weights_this_portfolio",
+          "lineNumber": 101
+        },
+        {
+          "caller": "risk_weights",
+          "callee": "self.aggregated_risk_weights",
+          "lineNumber": 103
+        },
+        {
+          "caller": "risk_weights",
+          "callee": "len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "risk_weights",
+          "callee": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "lineNumber": 108
+        },
+        {
+          "caller": "risk_weights_this_portfolio",
+          "callee": "one_over_n_weights_given_asset_names",
+          "lineNumber": 116
+        },
+        {
+          "caller": "aggregated_risk_weights",
+          "callee": "create_sub_portfolios_from_portfolio",
+          "lineNumber": 121
+        },
+        {
+          "caller": "aggregated_risk_weights",
+          "callee": "aggregate_risk_weights_over_sub_portfolios",
+          "lineNumber": 122
+        },
+        {
+          "caller": "div_mult",
+          "callee": "weights.reorder",
+          "lineNumber": 130
+        },
+        {
+          "caller": "div_mult",
+          "callee": "diversification_mult_single_period",
+          "lineNumber": 133
+        },
+        {
+          "caller": "subset",
+          "callee": "handcraftPortfolio",
+          "lineNumber": 140
+        },
+        {
+          "caller": "subset",
+          "callee": "self.estimates.subset",
+          "lineNumber": 140
+        },
+        {
+          "caller": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "callee": "raw_weights.as_list_given_keys",
+          "lineNumber": 154
+        },
+        {
+          "caller": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "callee": "adjust_weights_for_SR",
+          "lineNumber": 156
+        },
+        {
+          "caller": "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 163
+        },
+        {
+          "caller": "create_sub_portfolios_from_portfolio",
+          "callee": "cluster_correlation_matrix",
+          "lineNumber": 174
+        },
+        {
+          "caller": "create_sub_portfolios_from_portfolio",
+          "callee": "create_sub_portfolios_given_clusters",
+          "lineNumber": 176
+        },
+        {
+          "caller": "create_sub_portfolios_given_clusters",
+          "callee": "handcraft_portfolio.subset",
+          "lineNumber": 187
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "len",
+          "lineNumber": 202
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "sub_portfolio.risk_weights",
+          "lineNumber": 206
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "sub_portfolio.div_mult",
+          "lineNumber": 210
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "zip",
+          "lineNumber": 211
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "multiplied_out_risk_weight_for_sub_portfolios",
+          "lineNumber": 215
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "zip",
+          "lineNumber": 220
+        },
+        {
+          "caller": "aggregate_risk_weights_over_sub_portfolios",
+          "callee": "portfolioWeights.from_list_of_subportfolios",
+          "lineNumber": 225
+        },
+        {
+          "caller": "multiplied_out_risk_weight_for_sub_portfolios",
+          "callee": "list",
+          "lineNumber": 237
+        },
+        {
+          "caller": "multiplied_out_risk_weight_for_sub_portfolios",
+          "callee": "weights_for_portfolio.keys",
+          "lineNumber": 237
+        },
+        {
+          "caller": "multiplied_out_risk_weight_for_sub_portfolios",
+          "callee": "portfolioWeights",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/one_period.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "one_period_optimisation",
+          "startLine": 6,
+          "endLine": 13,
+          "params": [
+            "estimates",
+            "**weighting_kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "one_period_optimisation",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "one_period_optimisation",
+          "callee": "optimise_given_estimates",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/shrinkage.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "shrinkage_optimisation",
+          "startLine": 7,
+          "endLine": 23,
+          "params": [
+            "estimates",
+            "shrinkage_SR",
+            "shrinkage_corr",
+            "ann_target_SR",
+            "**weighting_kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "shrinkage_optimisation",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shrinkage_optimisation",
+          "callee": "estimates.shrink_correlation_to_average",
+          "lineNumber": 14
+        },
+        {
+          "caller": "shrinkage_optimisation",
+          "callee": "estimates.shrink_means_to_SR",
+          "lineNumber": 15
+        },
+        {
+          "caller": "shrinkage_optimisation",
+          "callee": "optimise_given_estimates",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/portfolio_optimiser.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 140,
+      "classes": [
+        {
+          "name": "portfolioOptimiser",
+          "startLine": 26,
+          "endLine": 190,
+          "methods": [
+            "__init__",
+            "net_returns",
+            "frequency",
+            "length_adjustment",
+            "method",
+            "weighting_args",
+            "cleaning",
+            "calculate_weights_for_period",
+            "clean_weights_for_period",
+            "calculate_weights_given_data",
+            "get_weights_and_returned_estimates_for_period",
+            "get_estimators_for_period",
+            "data_length_for_period",
+            "calculate_correlation_matrix_for_period",
+            "calculate_stdev_for_period",
+            "calculate_mean_for_period",
+            "correlation_estimator",
+            "mean_estimator",
+            "stdev_estimator",
+            "_generic_estimator",
+            "_get_estimator"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "portfolioOptimiser",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 30
+        },
+        {
+          "caller": "cleaning",
+          "callee": "str2Bool",
+          "lineNumber": 61
+        },
+        {
+          "caller": "calculate_weights_for_period",
+          "callee": "one_over_n_weights_given_data",
+          "lineNumber": 65
+        },
+        {
+          "caller": "calculate_weights_for_period",
+          "callee": "self.calculate_weights_given_data",
+          "lineNumber": 67
+        },
+        {
+          "caller": "calculate_weights_for_period",
+          "callee": "self.clean_weights_for_period",
+          "lineNumber": 70
+        },
+        {
+          "caller": "clean_weights_for_period",
+          "callee": "get_must_have_dict_from_data",
+          "lineNumber": 81
+        },
+        {
+          "caller": "clean_weights_for_period",
+          "callee": "clean_weights",
+          "lineNumber": 83
+        },
+        {
+          "caller": "calculate_weights_given_data",
+          "callee": "self.get_weights_and_returned_estimates_for_period",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get_weights_and_returned_estimates_for_period",
+          "callee": "self.get_estimators_for_period",
+          "lineNumber": 101
+        },
+        {
+          "caller": "get_weights_and_returned_estimates_for_period",
+          "callee": "copy",
+          "lineNumber": 102
+        },
+        {
+          "caller": "get_weights_and_returned_estimates_for_period",
+          "callee": "optimiser_for_method",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_estimators_for_period",
+          "callee": "self.calculate_correlation_matrix_for_period",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_estimators_for_period",
+          "callee": "self.calculate_mean_for_period",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_estimators_for_period",
+          "callee": "self.calculate_stdev_for_period",
+          "lineNumber": 113
+        },
+        {
+          "caller": "get_estimators_for_period",
+          "callee": "self.data_length_for_period",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_estimators_for_period",
+          "callee": "Estimates",
+          "lineNumber": 117
+        },
+        {
+          "caller": "data_length_for_period",
+          "callee": "len",
+          "lineNumber": 131
+        },
+        {
+          "caller": "calculate_correlation_matrix_for_period",
+          "callee": "self.correlation_estimator",
+          "lineNumber": 136
+        },
+        {
+          "caller": "calculate_correlation_matrix_for_period",
+          "callee": "estimator.calculate_estimate_for_period",
+          "lineNumber": 137
+        },
+        {
+          "caller": "calculate_stdev_for_period",
+          "callee": "self.stdev_estimator",
+          "lineNumber": 142
+        },
+        {
+          "caller": "calculate_stdev_for_period",
+          "callee": "estimator.calculate_estimate_for_period",
+          "lineNumber": 143
+        },
+        {
+          "caller": "calculate_mean_for_period",
+          "callee": "self.mean_estimator",
+          "lineNumber": 148
+        },
+        {
+          "caller": "calculate_mean_for_period",
+          "callee": "estimator.calculate_estimate_for_period",
+          "lineNumber": 149
+        },
+        {
+          "caller": "correlation_estimator",
+          "callee": "self._generic_estimator",
+          "lineNumber": 154
+        },
+        {
+          "caller": "mean_estimator",
+          "callee": "self._generic_estimator",
+          "lineNumber": 159
+        },
+        {
+          "caller": "stdev_estimator",
+          "callee": "self._generic_estimator",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_generic_estimator",
+          "callee": "getattr",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_generic_estimator",
+          "callee": "self._get_estimator",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_generic_estimator",
+          "callee": "setattr",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_get_estimator",
+          "callee": "copy",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_get_estimator",
+          "callee": "params.pop",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_get_estimator",
+          "callee": "resolve_function",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_get_estimator",
+          "callee": "function_object",
+          "lineNumber": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysquant/optimisation/shared.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 191,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "optimise_given_estimates",
+          "startLine": 15,
+          "endLine": 33,
+          "params": [
+            "estimates",
+            "equalise_SR",
+            "ann_target_SR",
+            "equalise_vols",
+            "**_ignored_kwargs"
+          ]
+        },
+        {
+          "name": "optimise_from_processed_estimates",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "estimates"
+          ]
+        },
+        {
+          "name": "sigma_from_corr_and_std",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "stdev_list",
+            "corrmatrix"
+          ]
+        },
+        {
+          "name": "optimise_from_sigma_and_mean_list",
+          "startLine": 58,
+          "endLine": 79,
+          "params": [
+            "sigma",
+            "mean_list"
+          ]
+        },
+        {
+          "name": "fix_mus",
+          "startLine": 82,
+          "endLine": 89,
+          "params": [
+            "mean_list"
+          ]
+        },
+        {
+          "name": "fix_stdev",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "stdev_list"
+          ]
+        },
+        {
+          "name": "fix_vector",
+          "startLine": 102,
+          "endLine": 117,
+          "params": [
+            "vector_list",
+            "replace_with"
+          ]
+        },
+        {
+          "name": "un_fix_weights",
+          "startLine": 120,
+          "endLine": 135,
+          "params": [
+            "mean_list",
+            "weights"
+          ]
+        },
+        {
+          "name": "fix_sigma",
+          "startLine": 138,
+          "endLine": 144,
+          "params": [
+            "sigma"
+          ]
+        },
+        {
+          "name": "fix_correlation",
+          "startLine": 147,
+          "endLine": 153,
+          "params": [
+            "sigma"
+          ]
+        },
+        {
+          "name": "fix_matrix",
+          "startLine": 156,
+          "endLine": 172,
+          "params": [
+            "some_matrix",
+            "replace_with"
+          ]
+        },
+        {
+          "name": "neg_SR",
+          "startLine": 175,
+          "endLine": 181,
+          "params": [
+            "weights",
+            "sigma",
+            "mus"
+          ]
+        },
+        {
+          "name": "variance",
+          "startLine": 184,
+          "endLine": 186,
+          "params": [
+            "weights",
+            "sigma"
+          ]
+        },
+        {
+          "name": "addem",
+          "startLine": 189,
+          "endLine": 191,
+          "params": [
+            "weights"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "optimise_given_estimates",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_from_processed_estimates",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "sigma_from_corr_and_std",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_from_sigma_and_mean_list",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "fix_mus",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "fix_stdev",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "fix_vector",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "un_fix_weights",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "fix_sigma",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "fix_correlation",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "fix_matrix",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "neg_SR",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "variance",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "addem",
+          "line": 189,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "optimise_given_estimates",
+          "callee": "estimates.equalise_estimates",
+          "lineNumber": 22
+        },
+        {
+          "caller": "optimise_given_estimates",
+          "callee": "optimise_from_processed_estimates",
+          "lineNumber": 28
+        },
+        {
+          "caller": "optimise_given_estimates",
+          "callee": "estimatesWithPortfolioWeights",
+          "lineNumber": 29
+        },
+        {
+          "caller": "optimise_from_processed_estimates",
+          "callee": "sigma_from_corr_and_std",
+          "lineNumber": 42
+        },
+        {
+          "caller": "optimise_from_processed_estimates",
+          "callee": "optimise_from_sigma_and_mean_list",
+          "lineNumber": 44
+        },
+        {
+          "caller": "optimise_from_processed_estimates",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag(stdev_list).dot(corrmatrix).dot",
+          "lineNumber": 54
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag(stdev_list).dot",
+          "lineNumber": 54
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag",
+          "lineNumber": 54
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag",
+          "lineNumber": 54
+        },
+        {
+          "caller": "optimise_from_sigma_and_mean_list",
+          "callee": "np.array(mean_list, ndmin=2).transpose",
+          "lineNumber": 59
+        },
+        {
+          "caller": "optimise_from_sigma_and_mean_list",
+          "callee": "np.array",
+          "lineNumber": 59
+        },
+        {
+          "caller": "optimise_from_sigma_and_mean_list",
+          "callee": "minimize",
+          "lineNumber": 66
+        },
+        {
+          "caller": "fix_mus",
+          "callee": "fix_vector",
+          "lineNumber": 89
+        },
+        {
+          "caller": "fix_stdev",
+          "callee": "fix_vector",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_fixit",
+          "callee": "np.isnan",
+          "lineNumber": 110
+        },
+        {
+          "caller": "fix_vector",
+          "callee": "_fixit",
+          "lineNumber": 115
+        },
+        {
+          "caller": "un_fix_weights",
+          "callee": "_unfixit",
+          "lineNumber": 132
+        },
+        {
+          "caller": "un_fix_weights",
+          "callee": "zip",
+          "lineNumber": 132
+        },
+        {
+          "caller": "fix_sigma",
+          "callee": "fix_matrix",
+          "lineNumber": 144
+        },
+        {
+          "caller": "fix_correlation",
+          "callee": "fix_matrix",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_fixit",
+          "callee": "np.isnan",
+          "lineNumber": 163
+        },
+        {
+          "caller": "fix_matrix",
+          "callee": "_fixit",
+          "lineNumber": 168
+        },
+        {
+          "caller": "fix_matrix",
+          "callee": "np.array",
+          "lineNumber": 170
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "float",
+          "lineNumber": 178
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "weights.dot(mus).item",
+          "lineNumber": 178
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "weights.dot",
+          "lineNumber": 178
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "variance",
+          "lineNumber": 179
+        },
+        {
+          "caller": "variance",
+          "callee": "weights.dot(sigma).dot",
+          "lineNumber": 186
+        },
+        {
+          "caller": "variance",
+          "callee": "weights.dot",
+          "lineNumber": 186
+        },
+        {
+          "caller": "variance",
+          "callee": "weights.transpose",
+          "lineNumber": 186
+        },
+        {
+          "caller": "addem",
+          "callee": "sum",
+          "lineNumber": 191
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/weights.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 214,
+      "nonEmptyLines": 156,
+      "functions": [
+        {
+          "name": "_int_from_nan",
+          "startLine": 183,
+          "endLine": 187,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "one_over_n_portfolio_weights_from_estimates",
+          "startLine": 196,
+          "endLine": 201,
+          "params": [
+            "estimate"
+          ]
+        },
+        {
+          "name": "one_over_n_weights_given_data",
+          "startLine": 204,
+          "endLine": 207,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "one_over_n_weights_given_asset_names",
+          "startLine": 210,
+          "endLine": 214,
+          "params": [
+            "list_of_asset_names"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "portfolioWeights",
+          "startLine": 15,
+          "endLine": 168,
+          "methods": [
+            "allzeros",
+            "allnan",
+            "all_one_value",
+            "from_weights_and_keys",
+            "assets",
+            "all_weights_are_zero",
+            "subset",
+            "reorder",
+            "replace_weights_with_ints",
+            "as_np",
+            "as_list",
+            "as_list_given_keys",
+            "product_with_stdev",
+            "from_list_of_subportfolios",
+            "with_zero_weights_for_missing_keys",
+            "with_zero_weights_instead_of_nan",
+            "assets_with_data",
+            "__truediv__",
+            "__mul__",
+            "__sub__",
+            "_operate_on_other",
+            "portfolio_stdev"
+          ],
+          "properties": []
+        },
+        {
+          "name": "seriesOfPortfolioWeights",
+          "startLine": 171,
+          "endLine": 180,
+          "methods": [
+            "get_weights_on_date",
+            "get_sum_leverage"
+          ],
+          "properties": []
+        },
+        {
+          "name": "estimatesWithPortfolioWeights",
+          "startLine": 191,
+          "endLine": 193,
+          "methods": [],
+          "properties": [
+            "estimates",
+            "weights"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "portfolioWeights",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "seriesOfPortfolioWeights",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "_int_from_nan",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "estimatesWithPortfolioWeights",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "one_over_n_portfolio_weights_from_estimates",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "one_over_n_weights_given_data",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "one_over_n_weights_given_asset_names",
+          "line": 210,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "allzeros",
+          "callee": "portfolioWeights.all_one_value",
+          "lineNumber": 18
+        },
+        {
+          "caller": "allnan",
+          "callee": "portfolioWeights.all_one_value",
+          "lineNumber": 22
+        },
+        {
+          "caller": "all_one_value",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 26
+        },
+        {
+          "caller": "all_one_value",
+          "callee": "len",
+          "lineNumber": 27
+        },
+        {
+          "caller": "from_weights_and_keys",
+          "callee": "len",
+          "lineNumber": 34
+        },
+        {
+          "caller": "from_weights_and_keys",
+          "callee": "len",
+          "lineNumber": 34
+        },
+        {
+          "caller": "from_weights_and_keys",
+          "callee": "zip",
+          "lineNumber": 36
+        },
+        {
+          "caller": "from_weights_and_keys",
+          "callee": "portfolioWeights",
+          "lineNumber": 39
+        },
+        {
+          "caller": "assets",
+          "callee": "list",
+          "lineNumber": 43
+        },
+        {
+          "caller": "assets",
+          "callee": "self.keys",
+          "lineNumber": 43
+        },
+        {
+          "caller": "all_weights_are_zero",
+          "callee": "all",
+          "lineNumber": 46
+        },
+        {
+          "caller": "all_weights_are_zero",
+          "callee": "self.values",
+          "lineNumber": 46
+        },
+        {
+          "caller": "subset",
+          "callee": "self.reorder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "reorder",
+          "callee": "portfolioWeights",
+          "lineNumber": 52
+        },
+        {
+          "caller": "replace_weights_with_ints",
+          "callee": "dict",
+          "lineNumber": 58
+        },
+        {
+          "caller": "replace_weights_with_ints",
+          "callee": "_int_from_nan",
+          "lineNumber": 60
+        },
+        {
+          "caller": "replace_weights_with_ints",
+          "callee": "np.round",
+          "lineNumber": 60
+        },
+        {
+          "caller": "replace_weights_with_ints",
+          "callee": "self.items",
+          "lineNumber": 61
+        },
+        {
+          "caller": "replace_weights_with_ints",
+          "callee": "portfolioWeights",
+          "lineNumber": 65
+        },
+        {
+          "caller": "as_np",
+          "callee": "self.as_list",
+          "lineNumber": 68
+        },
+        {
+          "caller": "as_np",
+          "callee": "np.array",
+          "lineNumber": 69
+        },
+        {
+          "caller": "as_list",
+          "callee": "list",
+          "lineNumber": 72
+        },
+        {
+          "caller": "as_list",
+          "callee": "self.keys",
+          "lineNumber": 72
+        },
+        {
+          "caller": "as_list",
+          "callee": "self.as_list_given_keys",
+          "lineNumber": 73
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "stdev.list_in_key_order",
+          "lineNumber": 81
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "self.as_list",
+          "lineNumber": 82
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "list",
+          "lineNumber": 84
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "np.array",
+          "lineNumber": 84
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "np.array",
+          "lineNumber": 84
+        },
+        {
+          "caller": "product_with_stdev",
+          "callee": "self.from_weights_and_keys",
+          "lineNumber": 86
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "list",
+          "lineNumber": 92
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "set",
+          "lineNumber": 93
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "flatten_list",
+          "lineNumber": 94
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "list",
+          "lineNumber": 96
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "subportfolio.keys",
+          "lineNumber": 96
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "portfolioWeights.allzeros",
+          "lineNumber": 103
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "list",
+          "lineNumber": 106
+        },
+        {
+          "caller": "from_list_of_subportfolios",
+          "callee": "subportfolio_weights.keys",
+          "lineNumber": 106
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "list",
+          "lineNumber": 114
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "set",
+          "lineNumber": 114
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "list",
+          "lineNumber": 114
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "self.keys",
+          "lineNumber": 114
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "portfolioWeights",
+          "lineNumber": 115
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "dict",
+          "lineNumber": 115
+        },
+        {
+          "caller": "with_zero_weights_for_missing_keys",
+          "callee": "self.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "with_zero_weights_instead_of_nan",
+          "callee": "self.keys",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_replace",
+          "callee": "np.isnan",
+          "lineNumber": 121
+        },
+        {
+          "caller": "with_zero_weights_instead_of_nan",
+          "callee": "portfolioWeights",
+          "lineNumber": 126
+        },
+        {
+          "caller": "with_zero_weights_instead_of_nan",
+          "callee": "dict",
+          "lineNumber": 127
+        },
+        {
+          "caller": "with_zero_weights_instead_of_nan",
+          "callee": "_replace",
+          "lineNumber": 127
+        },
+        {
+          "caller": "assets_with_data",
+          "callee": "self.items",
+          "lineNumber": 131
+        },
+        {
+          "caller": "assets_with_data",
+          "callee": "np.isnan",
+          "lineNumber": 131
+        },
+        {
+          "caller": "__truediv__",
+          "callee": "self._operate_on_other",
+          "lineNumber": 134
+        },
+        {
+          "caller": "__mul__",
+          "callee": "self._operate_on_other",
+          "lineNumber": 137
+        },
+        {
+          "caller": "__sub__",
+          "callee": "self._operate_on_other",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "np.array",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "self.as_list_given_keys",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "np.array",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "other.as_list_given_keys",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "getattr",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "np_func",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_operate_on_other",
+          "callee": "list",
+          "lineNumber": 151
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "list",
+          "lineNumber": 155
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "set(self.assets_with_data()).intersection",
+          "lineNumber": 156
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "set",
+          "lineNumber": 156
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "self.assets_with_data",
+          "lineNumber": 156
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "set",
+          "lineNumber": 156
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "cmatrix.assets_with_data",
+          "lineNumber": 156
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "self.subset",
+          "lineNumber": 158
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "cmatrix.subset",
+          "lineNumber": 159
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "weights_valid.as_np",
+          "lineNumber": 161
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "corr_valid.as_np",
+          "lineNumber": 162
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "weights_np.dot(corr_np).dot",
+          "lineNumber": 164
+        },
+        {
+          "caller": "portfolio_stdev",
+          "callee": "weights_np.dot",
+          "lineNumber": 164
+        },
+        {
+          "caller": "get_weights_on_date",
+          "callee": "get_row_of_df_aligned_to_weights_as_dict",
+          "lineNumber": 173
+        },
+        {
+          "caller": "get_weights_on_date",
+          "callee": "portfolioWeights",
+          "lineNumber": 177
+        },
+        {
+          "caller": "get_sum_leverage",
+          "callee": "self.abs().sum",
+          "lineNumber": 180
+        },
+        {
+          "caller": "get_sum_leverage",
+          "callee": "self.abs",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_int_from_nan",
+          "callee": "np.isnan",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_int_from_nan",
+          "callee": "int",
+          "lineNumber": 187
+        },
+        {
+          "caller": "one_over_n_portfolio_weights_from_estimates",
+          "callee": "list",
+          "lineNumber": 200
+        },
+        {
+          "caller": "one_over_n_portfolio_weights_from_estimates",
+          "callee": "mean_estimate.keys",
+          "lineNumber": 200
+        },
+        {
+          "caller": "one_over_n_portfolio_weights_from_estimates",
+          "callee": "one_over_n_weights_given_asset_names",
+          "lineNumber": 201
+        },
+        {
+          "caller": "one_over_n_weights_given_data",
+          "callee": "list",
+          "lineNumber": 205
+        },
+        {
+          "caller": "one_over_n_weights_given_data",
+          "callee": "one_over_n_weights_given_asset_names",
+          "lineNumber": 207
+        },
+        {
+          "caller": "one_over_n_weights_given_asset_names",
+          "callee": "len",
+          "lineNumber": 211
+        },
+        {
+          "caller": "one_over_n_weights_given_asset_names",
+          "callee": "portfolioWeights",
+          "lineNumber": 212
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysquant/portfolio_risk.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "calc_sum_annualised_risk_given_portfolio_weights",
+          "startLine": 18,
+          "endLine": 27,
+          "params": [
+            "portfolio_weights",
+            "pd_of_stdev"
+          ]
+        },
+        {
+          "name": "calc_portfolio_risk_series",
+          "startLine": 30,
+          "endLine": 59,
+          "params": [
+            "portfolio_weights",
+            "list_of_correlations",
+            "pd_of_stdev"
+          ]
+        },
+        {
+          "name": "get_covariance_matrix",
+          "startLine": 62,
+          "endLine": 82,
+          "params": [
+            "list_of_correlations",
+            "pd_of_stdev",
+            "relevant_date"
+          ]
+        },
+        {
+          "name": "get_correlation_matrix",
+          "startLine": 85,
+          "endLine": 99,
+          "params": [
+            "relevant_date",
+            "list_of_correlations",
+            "instrument_list"
+          ]
+        },
+        {
+          "name": "get_stdev_estimate",
+          "startLine": 102,
+          "endLine": 107,
+          "params": [
+            "pd_of_stdev",
+            "relevant_date"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "calc_sum_annualised_risk_given_portfolio_weights",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "calc_portfolio_risk_series",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "get_covariance_matrix",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "get_correlation_matrix",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "get_stdev_estimate",
+          "line": 102,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calc_sum_annualised_risk_given_portfolio_weights",
+          "callee": "list",
+          "lineNumber": 21
+        },
+        {
+          "caller": "calc_sum_annualised_risk_given_portfolio_weights",
+          "callee": "pd_of_stdev[instrument_list].reindex",
+          "lineNumber": 22
+        },
+        {
+          "caller": "calc_sum_annualised_risk_given_portfolio_weights",
+          "callee": "portfolio_weights.abs",
+          "lineNumber": 24
+        },
+        {
+          "caller": "calc_sum_annualised_risk_given_portfolio_weights",
+          "callee": "risk_df.sum",
+          "lineNumber": 25
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "list",
+          "lineNumber": 36
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "progressBar",
+          "lineNumber": 37
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "progress.iterate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "portfolio_weights.get_weights_on_date",
+          "lineNumber": 46
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "get_covariance_matrix",
+          "lineNumber": 48
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "weights_on_date.portfolio_stdev",
+          "lineNumber": 53
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "risk_series.append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "progress.close",
+          "lineNumber": 56
+        },
+        {
+          "caller": "calc_portfolio_risk_series",
+          "callee": "pd.Series",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "list",
+          "lineNumber": 67
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "get_correlation_matrix",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "get_stdev_estimate",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "covariance_from_stdev_and_correlation",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "list_of_correlations.most_recent_correlation_before_date",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "create_boring_corr_matrix",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "len",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_stdev_estimate",
+          "callee": "pd_of_stdev.get_stdev_on_date",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/diagoutput.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 400,
+      "nonEmptyLines": 336,
+      "functions": [
+        {
+          "name": "forecast_error",
+          "startLine": 393,
+          "endLine": 400,
+          "params": [
+            "forecast",
+            "target_forecast_value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "systemDiag",
+          "startLine": 10,
+          "endLine": 390,
+          "methods": [
+            "__init__",
+            "instrument_list",
+            "trading_rules",
+            "target_forecast_value",
+            "check_forecast_scaling",
+            "check_combined_forecast_scaling",
+            "forecast_mapping",
+            "forecast_scalars",
+            "forecast_div_multiplier",
+            "forecast_weights",
+            "instrument_weights",
+            "instrument_div_multiplier",
+            "output_config_with_estimated_parameters",
+            "yaml_config_with_estimated_parameters",
+            "calculation_details",
+            "explain_calculator_for_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "systemDiag",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "forecast_error",
+          "line": 393,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "instrument_list",
+          "callee": "self.system.get_instrument_list",
+          "lineNumber": 15
+        },
+        {
+          "caller": "trading_rules",
+          "callee": "self.system.rules.trading_rules().keys",
+          "lineNumber": 18
+        },
+        {
+          "caller": "trading_rules",
+          "callee": "self.system.rules.trading_rules",
+          "lineNumber": 18
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "system.get_instrument_list",
+          "lineNumber": 33
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "self.trading_rules",
+          "lineNumber": 34
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "self.target_forecast_value",
+          "lineNumber": 35
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "system.forecastScaleCap.get_capped_forecast",
+          "lineNumber": 40
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "forecast_error",
+          "lineNumber": 41
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "results_list.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "check_forecast_scaling",
+          "callee": "sorted",
+          "lineNumber": 44
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "system.get_instrument_list",
+          "lineNumber": 59
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "self.target_forecast_value",
+          "lineNumber": 60
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "dict",
+          "lineNumber": 63
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "Exception",
+          "lineNumber": 68
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "str",
+          "lineNumber": 69
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "attr_name_dict.keys",
+          "lineNumber": 69
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "getattr",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "Exception",
+          "lineNumber": 75
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "forecast_func",
+          "lineNumber": 79
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "forecast_error",
+          "lineNumber": 81
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "results_list.append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "check_combined_forecast_scaling",
+          "callee": "sorted",
+          "lineNumber": 84
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "self.instrument_list",
+          "lineNumber": 95
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "self.target_forecast_value",
+          "lineNumber": 96
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "system.portfolio.get_notional_position",
+          "lineNumber": 100
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "system.combForecast.get_combined_forecast",
+          "lineNumber": 101
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "scalar.ewm(500).mean",
+          "lineNumber": 103
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "scalar.ewm",
+          "lineNumber": 103
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "np.isnan",
+          "lineNumber": 106
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "print",
+          "lineNumber": 114
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "print",
+          "lineNumber": 118
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "print",
+          "lineNumber": 120
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "estimate_mapping_params",
+          "lineNumber": 130
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "dict",
+          "lineNumber": 131
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "float",
+          "lineNumber": 132
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "float",
+          "lineNumber": 133
+        },
+        {
+          "caller": "forecast_mapping",
+          "callee": "float",
+          "lineNumber": 134
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "self.instrument_list",
+          "lineNumber": 148
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "self.trading_rules",
+          "lineNumber": 149
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "print",
+          "lineNumber": 153
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "print",
+          "lineNumber": 157
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "dict",
+          "lineNumber": 160
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "dict",
+          "lineNumber": 164
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "float",
+          "lineNumber": 167
+        },
+        {
+          "caller": "forecast_scalars",
+          "callee": "system.forecastScaleCap.get_forecast_scalar",
+          "lineNumber": 168
+        },
+        {
+          "caller": "forecast_div_multiplier",
+          "callee": "self.instrument_list",
+          "lineNumber": 188
+        },
+        {
+          "caller": "forecast_div_multiplier",
+          "callee": "dict",
+          "lineNumber": 189
+        },
+        {
+          "caller": "forecast_div_multiplier",
+          "callee": "system.combForecast.get_forecast_diversification_multiplier",
+          "lineNumber": 191
+        },
+        {
+          "caller": "forecast_div_multiplier",
+          "callee": "float",
+          "lineNumber": 194
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "self.instrument_list",
+          "lineNumber": 206
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "dict",
+          "lineNumber": 207
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "dict",
+          "lineNumber": 209
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "system.combForecast.get_forecast_weights",
+          "lineNumber": 210
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "dict",
+          "lineNumber": 212
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "str",
+          "lineNumber": 213
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "float",
+          "lineNumber": 213
+        },
+        {
+          "caller": "forecast_weights",
+          "callee": "weights.items",
+          "lineNumber": 213
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "system.portfolio.get_instrument_weights",
+          "lineNumber": 226
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "dict",
+          "lineNumber": 227
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "str",
+          "lineNumber": 228
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "float",
+          "lineNumber": 228
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "instrument_weights.items",
+          "lineNumber": 228
+        },
+        {
+          "caller": "instrument_div_multiplier",
+          "callee": "float",
+          "lineNumber": 240
+        },
+        {
+          "caller": "instrument_div_multiplier",
+          "callee": "system.portfolio.get_instrument_diversification_multiplier",
+          "lineNumber": 241
+        },
+        {
+          "caller": "output_config_with_estimated_parameters",
+          "callee": "getattr",
+          "lineNumber": 259
+        },
+        {
+          "caller": "output_config_with_estimated_parameters",
+          "callee": "dict_function",
+          "lineNumber": 261
+        },
+        {
+          "caller": "output_config_with_estimated_parameters",
+          "callee": "print",
+          "lineNumber": 264
+        },
+        {
+          "caller": "yaml_config_with_estimated_parameters",
+          "callee": "self.output_config_with_estimated_parameters",
+          "lineNumber": 280
+        },
+        {
+          "caller": "yaml_config_with_estimated_parameters",
+          "callee": "open",
+          "lineNumber": 283
+        },
+        {
+          "caller": "yaml_config_with_estimated_parameters",
+          "callee": "yaml.dump",
+          "lineNumber": 284
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "dict",
+          "lineNumber": 320
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "zip",
+          "lineNumber": 321
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "attribute.split",
+          "lineNumber": 322
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 323
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 324
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method(instrument_code).ffill",
+          "lineNumber": 325
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method",
+          "lineNumber": 325
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "zip",
+          "lineNumber": 330
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "attribute.split",
+          "lineNumber": 331
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 332
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 333
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method",
+          "lineNumber": 334
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "result_dict[instrument_code].ffill",
+          "lineNumber": 335
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "zip",
+          "lineNumber": 340
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "attribute.split",
+          "lineNumber": 341
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 342
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 343
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method().ffill",
+          "lineNumber": 344
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method",
+          "lineNumber": 344
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "zip",
+          "lineNumber": 349
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "attribute.split",
+          "lineNumber": 350
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 351
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "getattr",
+          "lineNumber": 352
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "stage_method",
+          "lineNumber": 353
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "system.positionSize.get_vol_target_dict",
+          "lineNumber": 356
+        },
+        {
+          "caller": "calculation_details",
+          "callee": "system.portfolio.get_buffers_for_position",
+          "lineNumber": 360
+        },
+        {
+          "caller": "explain_calculator_for_code",
+          "callee": "self.calculation_details",
+          "lineNumber": 366
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "forecast.abs().mean",
+          "lineNumber": 394
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "forecast.abs",
+          "lineNumber": 394
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "forecast.std",
+          "lineNumber": 395
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "abs",
+          "lineNumber": 396
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "abs",
+          "lineNumber": 397
+        },
+        {
+          "caller": "forecast_error",
+          "callee": "max",
+          "lineNumber": 398
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/forecast_mapping.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "estimate_mapping_params",
+          "startLine": 6,
+          "endLine": 35,
+          "params": [
+            "a_param"
+          ]
+        },
+        {
+          "name": "map_forecast_value_scalar",
+          "startLine": 38,
+          "endLine": 69,
+          "params": [
+            "x",
+            "threshold",
+            "capped_value",
+            "a_param",
+            "b_param"
+          ]
+        },
+        {
+          "name": "map_forecast_value",
+          "startLine": 72,
+          "endLine": 94,
+          "params": [
+            "x",
+            "threshold",
+            "capped_value",
+            "a_param",
+            "b_param"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "estimate_mapping_params",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "map_forecast_value_scalar",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "map_forecast_value",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "float",
+          "lineNumber": 57
+        },
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "np.isnan",
+          "lineNumber": 58
+        },
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "abs",
+          "lineNumber": 60
+        },
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "abs",
+          "lineNumber": 66
+        },
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "sign",
+          "lineNumber": 67
+        },
+        {
+          "caller": "map_forecast_value_scalar",
+          "callee": "Exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "map_forecast_value",
+          "callee": "x.apply",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "calculate_adjustment_factor",
+          "startLine": 15,
+          "endLine": 30,
+          "params": [
+            "speed_control",
+            "tracking_error_of_prior"
+          ]
+        },
+        {
+          "name": "adjust_weights_with_factor",
+          "startLine": 33,
+          "endLine": 51,
+          "params": [
+            "optimised_weights_as_np",
+            "prior_weights_as_np",
+            "per_contract_value_as_np",
+            "adj_factor"
+          ]
+        },
+        {
+          "name": "calculate_adjusting_trades_rounding_in_contract_space",
+          "startLine": 54,
+          "endLine": 65,
+          "params": [
+            "adjusted_trades_weight_space",
+            "per_contract_value_as_np"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "speedControlForDynamicOpt",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "trade_shadow_cost",
+            "tracking_error_buffer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "speedControlForDynamicOpt",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_adjustment_factor",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_weights_with_factor",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_adjusting_trades_rounding_in_contract_space",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calculate_adjustment_factor",
+          "callee": "max",
+          "lineNumber": 28
+        },
+        {
+          "caller": "adjust_weights_with_factor",
+          "callee": "calculate_adjusting_trades_rounding_in_contract_space",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculate_adjusting_trades_rounding_in_contract_space",
+          "callee": "np.round",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 193,
+      "classes": [
+        {
+          "name": "dataForOptimisation",
+          "startLine": 12,
+          "endLine": 252,
+          "methods": [
+            "__init__",
+            "get_key",
+            "set_key",
+            "weights_optimal_as_np",
+            "keys_with_valid_data",
+            "per_contract_value_as_np",
+            "weights_prior_as_np",
+            "covariance_matrix_as_np",
+            "covariance_matrix_as_np",
+            "costs_as_np",
+            "weights_prior_as_np_replace_nans_with_zeros",
+            "starting_weights_as_np",
+            "direction_as_np",
+            "minima_as_np",
+            "maxima_as_np",
+            "_minima_as_np",
+            "_maxima_as_np",
+            "_weights_optimal_as_np",
+            "_per_contract_value_as_np",
+            "_weights_prior_as_np_replace_nans_with_zeros",
+            "_weights_prior_as_np",
+            "_covariance_matrix_as_np",
+            "_costs_as_np",
+            "_starting_weights_as_np",
+            "_direction_as_np",
+            "optimal_weights_for_code",
+            "maximum_position_weight_for_code",
+            "prior_weight_for_code",
+            "per_contract_value_for_code",
+            "_minima",
+            "_maxima",
+            "_starting_weights",
+            "_direction",
+            "_min_max_and_direction_start",
+            "_keys_with_valid_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dataForOptimisation",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_key",
+          "callee": "getattr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_key",
+          "callee": "getattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_key",
+          "callee": "setattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "set_key",
+          "callee": "setattr",
+          "lineNumber": 47
+        },
+        {
+          "caller": "weights_optimal_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 51
+        },
+        {
+          "caller": "keys_with_valid_data",
+          "callee": "self.get_key",
+          "lineNumber": 55
+        },
+        {
+          "caller": "per_contract_value_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 59
+        },
+        {
+          "caller": "weights_prior_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 63
+        },
+        {
+          "caller": "covariance_matrix_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 67
+        },
+        {
+          "caller": "covariance_matrix_as_np",
+          "callee": "self.set_key",
+          "lineNumber": 71
+        },
+        {
+          "caller": "costs_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 75
+        },
+        {
+          "caller": "weights_prior_as_np_replace_nans_with_zeros",
+          "callee": "self.get_key",
+          "lineNumber": 79
+        },
+        {
+          "caller": "starting_weights_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 83
+        },
+        {
+          "caller": "direction_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 87
+        },
+        {
+          "caller": "minima_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 91
+        },
+        {
+          "caller": "maxima_as_np",
+          "callee": "self.get_key",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_minima_as_np",
+          "callee": "minima.as_list_given_keys",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_maxima_as_np",
+          "callee": "maxima.as_list_given_keys",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_weights_optimal_as_np",
+          "callee": "np.array",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_weights_optimal_as_np",
+          "callee": "self.weights_optimal.as_list_given_keys",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_per_contract_value_as_np",
+          "callee": "np.array",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_per_contract_value_as_np",
+          "callee": "self.per_contract_value.as_list_given_keys",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_weights_prior_as_np_replace_nans_with_zeros",
+          "callee": "copy",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_zero_if_nan",
+          "callee": "np.isnan",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_weights_prior_as_np_replace_nans_with_zeros",
+          "callee": "_zero_if_nan",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_weights_prior_as_np_replace_nans_with_zeros",
+          "callee": "np.array",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_weights_prior_as_np",
+          "callee": "np.array",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_weights_prior_as_np",
+          "callee": "self.weights_prior.as_list_given_keys",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_covariance_matrix_as_np",
+          "callee": "self.covariance_matrix.subset",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_costs_as_np",
+          "callee": "np.array",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_costs_as_np",
+          "callee": "list",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_costs_as_np",
+          "callee": "costs.subset(self.keys_with_valid_data).values",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_costs_as_np",
+          "callee": "costs.subset",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_starting_weights_as_np",
+          "callee": "np.array",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_starting_weights_as_np",
+          "callee": "list",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_starting_weights_as_np",
+          "callee": "starting_weights.as_list_given_keys",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_direction_as_np",
+          "callee": "np.array",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_direction_as_np",
+          "callee": "list",
+          "lineNumber": 186
+        },
+        {
+          "caller": "_direction_as_np",
+          "callee": "direction.as_list_given_keys",
+          "lineNumber": 186
+        },
+        {
+          "caller": "optimal_weights_for_code",
+          "callee": "optimal_weights.get",
+          "lineNumber": 194
+        },
+        {
+          "caller": "maximum_position_weight_for_code",
+          "callee": "maximum_position_weights.get",
+          "lineNumber": 201
+        },
+        {
+          "caller": "prior_weight_for_code",
+          "callee": "prior_weights.get",
+          "lineNumber": 208
+        },
+        {
+          "caller": "per_contract_value_for_code",
+          "callee": "per_contract_value.get",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_min_max_and_direction_start",
+          "callee": "calculate_min_max_and_direction_and_start",
+          "lineNumber": 233
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "self.covariance_matrix.assets_with_data",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "self.weights_optimal.assets_with_data",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "self.per_contract_value.assets_with_data",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "set",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "set",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "set",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "valid_correlation_keys_set.intersection",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "valid_keys.intersection",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_keys_with_valid_data",
+          "callee": "list",
+          "lineNumber": 252
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "greedy_algo_across_integer_values",
+          "startLine": 6,
+          "endLine": 35,
+          "params": [
+            "obj_instance"
+          ]
+        },
+        {
+          "name": "_find_possible_new_best_live",
+          "startLine": 38,
+          "endLine": 69,
+          "params": [
+            "best_solution",
+            "best_value",
+            "obj_instance",
+            "at_limit"
+          ]
+        },
+        {
+          "name": "_update_at_limit",
+          "startLine": 72,
+          "endLine": 90,
+          "params": [
+            "i",
+            "at_limit",
+            "temp_step",
+            "obj_instance"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "greedy_algo_across_integer_values",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "_find_possible_new_best_live",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "_update_at_limit",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "greedy_algo_across_integer_values",
+          "callee": "obj_instance.evaluate",
+          "lineNumber": 12
+        },
+        {
+          "caller": "greedy_algo_across_integer_values",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "greedy_algo_across_integer_values",
+          "callee": "_find_possible_new_best_live",
+          "lineNumber": 20
+        },
+        {
+          "caller": "_find_possible_new_best_live",
+          "callee": "len",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_find_possible_new_best_live",
+          "callee": "range",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_find_possible_new_best_live",
+          "callee": "copy",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_find_possible_new_best_live",
+          "callee": "_update_at_limit",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_find_possible_new_best_live",
+          "callee": "obj_instance.evaluate",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 339,
+      "nonEmptyLines": 260,
+      "classes": [
+        {
+          "name": "constraintsForDynamicOpt",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "reduce_only_keys",
+            "no_trade_keys",
+            "long_only_keys"
+          ]
+        },
+        {
+          "name": "objectiveFunctionForGreedy",
+          "startLine": 33,
+          "endLine": 339,
+          "methods": [
+            "__init__",
+            "optimise_positions",
+            "optimise_weights",
+            "optimise_np_for_valid_keys",
+            "is_tracking_error_of_prior_smaller_than_buffer",
+            "tracking_error_of_prior_weights",
+            "optimise_np_with_large_tracking_error",
+            "get_optimisation_results_raw",
+            "log_optimised_results",
+            "adjust_weights_for_size_of_tracking_error",
+            "evaluate",
+            "tracking_error_against_optimal",
+            "tracking_error_against_passed_weights",
+            "calculate_costs",
+            "trade_shadow_cost",
+            "constraint_function_value",
+            "starting_weights_as_np",
+            "no_prior_positions_provided",
+            "maxima_as_np",
+            "minima_as_np",
+            "keys_with_valid_data",
+            "weights_optimal_as_np",
+            "per_contract_value_as_np",
+            "weights_prior_as_np_replace_nans_with_zeros",
+            "covariance_matrix_as_np",
+            "covariance_matrix_as_np",
+            "costs_as_np",
+            "direction_as_np",
+            "input_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "constraintsForDynamicOpt",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "objectiveFunctionForGreedy",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 44
+        },
+        {
+          "caller": "__init__",
+          "callee": "previous_positions.with_zero_weights_instead_of_nan",
+          "lineNumber": 62
+        },
+        {
+          "caller": "optimise_positions",
+          "callee": "self.optimise_weights",
+          "lineNumber": 80
+        },
+        {
+          "caller": "optimise_positions",
+          "callee": "optimal_positions.replace_weights_with_ints",
+          "lineNumber": 83
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "self.optimise_np_for_valid_keys",
+          "lineNumber": 88
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "list",
+          "lineNumber": 90
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 94
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "optimal_weights.with_zero_weights_for_missing_keys",
+          "lineNumber": 100
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "list",
+          "lineNumber": 101
+        },
+        {
+          "caller": "optimise_weights",
+          "callee": "self.weights_optimal.keys",
+          "lineNumber": 101
+        },
+        {
+          "caller": "optimise_np_for_valid_keys",
+          "callee": "self.is_tracking_error_of_prior_smaller_than_buffer",
+          "lineNumber": 109
+        },
+        {
+          "caller": "optimise_np_for_valid_keys",
+          "callee": "self.optimise_np_with_large_tracking_error",
+          "lineNumber": 115
+        },
+        {
+          "caller": "is_tracking_error_of_prior_smaller_than_buffer",
+          "callee": "self.tracking_error_of_prior_weights",
+          "lineNumber": 124
+        },
+        {
+          "caller": "is_tracking_error_of_prior_smaller_than_buffer",
+          "callee": "self.log.debug",
+          "lineNumber": 129
+        },
+        {
+          "caller": "is_tracking_error_of_prior_smaller_than_buffer",
+          "callee": "self.log.debug",
+          "lineNumber": 135
+        },
+        {
+          "caller": "tracking_error_of_prior_weights",
+          "callee": "self.tracking_error_against_optimal",
+          "lineNumber": 144
+        },
+        {
+          "caller": "optimise_np_with_large_tracking_error",
+          "callee": "self.get_optimisation_results_raw",
+          "lineNumber": 149
+        },
+        {
+          "caller": "optimise_np_with_large_tracking_error",
+          "callee": "self.log_optimised_results",
+          "lineNumber": 150
+        },
+        {
+          "caller": "optimise_np_with_large_tracking_error",
+          "callee": "self.adjust_weights_for_size_of_tracking_error",
+          "lineNumber": 155
+        },
+        {
+          "caller": "optimise_np_with_large_tracking_error",
+          "callee": "self.log_optimised_results",
+          "lineNumber": 158
+        },
+        {
+          "caller": "get_optimisation_results_raw",
+          "callee": "greedy_algo_across_integer_values",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_optimisation_results_raw",
+          "callee": "all",
+          "lineNumber": 167
+        },
+        {
+          "caller": "get_optimisation_results_raw",
+          "callee": "self.log.error",
+          "lineNumber": 169
+        },
+        {
+          "caller": "log_optimised_results",
+          "callee": "self.tracking_error_against_optimal",
+          "lineNumber": 177
+        },
+        {
+          "caller": "log_optimised_results",
+          "callee": "self.calculate_costs",
+          "lineNumber": 178
+        },
+        {
+          "caller": "log_optimised_results",
+          "callee": "self.log.debug",
+          "lineNumber": 180
+        },
+        {
+          "caller": "adjust_weights_for_size_of_tracking_error",
+          "callee": "self.tracking_error_against_passed_weights",
+          "lineNumber": 192
+        },
+        {
+          "caller": "adjust_weights_for_size_of_tracking_error",
+          "callee": "calculate_adjustment_factor",
+          "lineNumber": 198
+        },
+        {
+          "caller": "adjust_weights_for_size_of_tracking_error",
+          "callee": "self.log.debug",
+          "lineNumber": 202
+        },
+        {
+          "caller": "adjust_weights_for_size_of_tracking_error",
+          "callee": "adjust_weights_with_factor",
+          "lineNumber": 210
+        },
+        {
+          "caller": "evaluate",
+          "callee": "self.tracking_error_against_optimal",
+          "lineNumber": 220
+        },
+        {
+          "caller": "evaluate",
+          "callee": "self.calculate_costs",
+          "lineNumber": 221
+        },
+        {
+          "caller": "evaluate",
+          "callee": "self.constraint_function_value",
+          "lineNumber": 222
+        },
+        {
+          "caller": "tracking_error_against_optimal",
+          "callee": "self.tracking_error_against_passed_weights",
+          "lineNumber": 227
+        },
+        {
+          "caller": "tracking_error_against_passed_weights",
+          "callee": "solution_gap.dot(self.covariance_matrix_as_np).dot",
+          "lineNumber": 237
+        },
+        {
+          "caller": "tracking_error_against_passed_weights",
+          "callee": "solution_gap.dot",
+          "lineNumber": 237
+        },
+        {
+          "caller": "tracking_error_against_passed_weights",
+          "callee": "self.log.critical",
+          "lineNumber": 245
+        },
+        {
+          "caller": "tracking_error_against_passed_weights",
+          "callee": "Exception",
+          "lineNumber": 246
+        },
+        {
+          "caller": "calculate_costs",
+          "callee": "sum",
+          "lineNumber": 258
+        },
+        {
+          "caller": "calculate_costs",
+          "callee": "abs",
+          "lineNumber": 258
+        },
+        {
+          "caller": "calculate_costs",
+          "callee": "np.isnan",
+          "lineNumber": 260
+        },
+        {
+          "caller": "calculate_costs",
+          "callee": "Exception",
+          "lineNumber": 261
+        },
+        {
+          "caller": "constraint_function_value",
+          "callee": "portfolioWeights.from_weights_and_keys",
+          "lineNumber": 276
+        },
+        {
+          "caller": "constraint_function_value",
+          "callee": "constraint_function",
+          "lineNumber": 280
+        },
+        {
+          "caller": "input_data",
+          "callee": "getattr",
+          "lineNumber": 334
+        },
+        {
+          "caller": "input_data",
+          "callee": "dataForOptimisation",
+          "lineNumber": 336
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 399,
+      "nonEmptyLines": 323,
+      "functions": [
+        {
+          "name": "calculate_cost_per_notional_weight_as_proportion_of_capital",
+          "startLine": 385,
+          "endLine": 399,
+          "params": [
+            "notional_value_per_contract_as_proportion_of_capital",
+            "cost_per_contract",
+            "capital",
+            "cost_multiplier"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "optimisedPositions",
+          "startLine": 35,
+          "endLine": 382,
+          "methods": [
+            "name",
+            "get_optimised_weights_df",
+            "get_optimised_position_df",
+            "get_optimal_positions_with_fixed_contract_values",
+            "_get_optimal_positions_objective_instance",
+            "get_constraints",
+            "get_reduce_only_instruments",
+            "get_long_only_instruments",
+            "get_speed_control",
+            "get_costs_per_contract_as_proportion_of_capital_all_instruments",
+            "get_cost_per_contract_as_proportion_of_capital_on_date",
+            "get_cost_deflator_on_date",
+            "get_cost_deflator",
+            "get_cost_per_notional_weight_as_proportion_of_capital",
+            "cost_multiplier",
+            "get_cost_per_contract_in_base_ccy",
+            "get_final_price",
+            "get_last_fx_rate",
+            "get_covariance_matrix",
+            "get_correlation_matrix",
+            "correlation_shrinkage",
+            "get_stdev_estimate",
+            "get_per_contract_value",
+            "get_current_contract_value_as_proportion_of_capital_for_instrument",
+            "get_contract_ts_value_as_proportion_of_capital_for_instrument",
+            "get_per_contract_value_as_proportion_of_capital_df",
+            "instrument_list",
+            "get_instrument_weights",
+            "common_index",
+            "original_position_contracts_for_relevant_date",
+            "get_raw_cost_data",
+            "get_contract_multiplier",
+            "get_raw_price",
+            "get_fx_rate",
+            "get_trading_capital",
+            "accounts_stage",
+            "position_size_stage",
+            "portfolio_stage",
+            "forecast_scaling_stage",
+            "data",
+            "config"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "optimisedPositions",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_cost_per_notional_weight_as_proportion_of_capital",
+          "line": 385,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_optimised_weights_df",
+          "callee": "self.get_optimised_position_df",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_optimised_weights_df",
+          "callee": "self.get_per_contract_value_as_proportion_of_capital_df",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_optimised_weights_df",
+          "callee": "seriesOfPortfolioWeights",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "self.log.debug",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "list",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "self.common_index",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "progressBar",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "len",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "portfolioWeights.allzeros",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "self.instrument_list",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "self.get_optimal_positions_with_fixed_contract_values",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "position_list.append",
+          "lineNumber": 69
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "copy",
+          "lineNumber": 70
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "progress.iterate",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "progress.close",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_optimised_position_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "self._get_optimal_positions_objective_instance",
+          "lineNumber": 83
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "obj_instance.optimise_positions",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "str",
+          "lineNumber": 93
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "str",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "str",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_optimal_positions_with_fixed_contract_values",
+          "callee": "print",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.get_covariance_matrix",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.get_per_contract_value",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.original_position_contracts_for_relevant_date",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.get_costs_per_contract_as_proportion_of_capital_all_instruments",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.get_speed_control",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "self.get_constraints",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_get_optimal_positions_objective_instance",
+          "callee": "objectiveFunctionForGreedy",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_constraints",
+          "callee": "self.get_reduce_only_instruments",
+          "lineNumber": 137
+        },
+        {
+          "caller": "get_constraints",
+          "callee": "self.get_long_only_instruments",
+          "lineNumber": 138
+        },
+        {
+          "caller": "get_constraints",
+          "callee": "constraintsForDynamicOpt",
+          "lineNumber": 140
+        },
+        {
+          "caller": "get_reduce_only_instruments",
+          "callee": "self.parent.get_list_of_markets_not_trading_but_with_data",
+          "lineNumber": 145
+        },
+        {
+          "caller": "get_long_only_instruments",
+          "callee": "self.config.get_element_or_default",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_speed_control",
+          "callee": "speedControlForDynamicOpt",
+          "lineNumber": 159
+        },
+        {
+          "caller": "get_costs_per_contract_as_proportion_of_capital_all_instruments",
+          "callee": "self.instrument_list",
+          "lineNumber": 171
+        },
+        {
+          "caller": "get_costs_per_contract_as_proportion_of_capital_all_instruments",
+          "callee": "dict",
+          "lineNumber": 172
+        },
+        {
+          "caller": "get_costs_per_contract_as_proportion_of_capital_all_instruments",
+          "callee": "self.get_cost_per_contract_as_proportion_of_capital_on_date",
+          "lineNumber": 176
+        },
+        {
+          "caller": "get_costs_per_contract_as_proportion_of_capital_all_instruments",
+          "callee": "meanEstimates",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_cost_per_contract_as_proportion_of_capital_on_date",
+          "callee": "self.get_cost_deflator_on_date",
+          "lineNumber": 191
+        },
+        {
+          "caller": "get_cost_per_contract_as_proportion_of_capital_on_date",
+          "callee": "self.get_cost_per_notional_weight_as_proportion_of_capital",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_cost_deflator_on_date",
+          "callee": "self.get_cost_deflator",
+          "lineNumber": 206
+        },
+        {
+          "caller": "get_cost_deflator_on_date",
+          "callee": "get_row_of_series",
+          "lineNumber": 208
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "self.get_raw_price",
+          "lineNumber": 212
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "calculate_cost_deflator",
+          "lineNumber": 213
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "deflator.reindex(self.common_index()).ffill",
+          "lineNumber": 214
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "deflator.reindex",
+          "lineNumber": 214
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "self.common_index",
+          "lineNumber": 214
+        },
+        {
+          "caller": "get_cost_deflator",
+          "callee": "deflator.isna",
+          "lineNumber": 215
+        },
+        {
+          "caller": "get_cost_per_notional_weight_as_proportion_of_capital",
+          "callee": "self.get_cost_per_contract_in_base_ccy",
+          "lineNumber": 223
+        },
+        {
+          "caller": "get_cost_per_notional_weight_as_proportion_of_capital",
+          "callee": "self.cost_multiplier",
+          "lineNumber": 224
+        },
+        {
+          "caller": "get_cost_per_notional_weight_as_proportion_of_capital",
+          "callee": "self.get_current_contract_value_as_proportion_of_capital_for_instrument",
+          "lineNumber": 226
+        },
+        {
+          "caller": "get_cost_per_notional_weight_as_proportion_of_capital",
+          "callee": "self.get_trading_capital",
+          "lineNumber": 230
+        },
+        {
+          "caller": "get_cost_per_notional_weight_as_proportion_of_capital",
+          "callee": "calculate_cost_per_notional_weight_as_proportion_of_capital",
+          "lineNumber": 231
+        },
+        {
+          "caller": "cost_multiplier",
+          "callee": "float",
+          "lineNumber": 241
+        },
+        {
+          "caller": "get_cost_per_contract_in_base_ccy",
+          "callee": "self.get_raw_cost_data",
+          "lineNumber": 245
+        },
+        {
+          "caller": "get_cost_per_contract_in_base_ccy",
+          "callee": "self.get_contract_multiplier",
+          "lineNumber": 246
+        },
+        {
+          "caller": "get_cost_per_contract_in_base_ccy",
+          "callee": "self.get_final_price",
+          "lineNumber": 247
+        },
+        {
+          "caller": "get_cost_per_contract_in_base_ccy",
+          "callee": "self.get_last_fx_rate",
+          "lineNumber": 248
+        },
+        {
+          "caller": "get_cost_per_contract_in_base_ccy",
+          "callee": "raw_cost_data.calculate_cost_instrument_currency",
+          "lineNumber": 250
+        },
+        {
+          "caller": "get_final_price",
+          "callee": "self.get_raw_price(instrument_code).ffill",
+          "lineNumber": 258
+        },
+        {
+          "caller": "get_final_price",
+          "callee": "self.get_raw_price",
+          "lineNumber": 258
+        },
+        {
+          "caller": "get_last_fx_rate",
+          "callee": "self.get_fx_rate(instrument_code).ffill",
+          "lineNumber": 261
+        },
+        {
+          "caller": "get_last_fx_rate",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 261
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "self.get_correlation_matrix",
+          "lineNumber": 268
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "self.get_stdev_estimate",
+          "lineNumber": 270
+        },
+        {
+          "caller": "get_covariance_matrix",
+          "callee": "covariance_from_stdev_and_correlation",
+          "lineNumber": 272
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "self.portfolio_stage.get_correlation_matrix",
+          "lineNumber": 281
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "copy",
+          "lineNumber": 284
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "corr_matrix.shrink_to_offdiag",
+          "lineNumber": 285
+        },
+        {
+          "caller": "correlation_shrinkage",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "get_stdev_estimate",
+          "callee": "self.portfolio_stage.get_stdev_estimate",
+          "lineNumber": 302
+        },
+        {
+          "caller": "get_per_contract_value",
+          "callee": "self.portfolio_stage.get_per_contract_value",
+          "lineNumber": 307
+        },
+        {
+          "caller": "get_current_contract_value_as_proportion_of_capital_for_instrument",
+          "callee": "self.get_contract_ts_value_as_proportion_of_capital_for_instrument",
+          "lineNumber": 313
+        },
+        {
+          "caller": "get_current_contract_value_as_proportion_of_capital_for_instrument",
+          "callee": "value_as_ts.ffill",
+          "lineNumber": 317
+        },
+        {
+          "caller": "get_contract_ts_value_as_proportion_of_capital_for_instrument",
+          "callee": "self.portfolio_stage.get_per_contract_value_as_proportion_of_capital",
+          "lineNumber": 322
+        },
+        {
+          "caller": "get_per_contract_value_as_proportion_of_capital_df",
+          "callee": "self.portfolio_stage.get_per_contract_value_as_proportion_of_capital_df",
+          "lineNumber": 327
+        },
+        {
+          "caller": "instrument_list",
+          "callee": "self.parent.get_instrument_list",
+          "lineNumber": 330
+        },
+        {
+          "caller": "get_instrument_weights",
+          "callee": "self.portfolio_stage.get_instrument_weights",
+          "lineNumber": 333
+        },
+        {
+          "caller": "common_index",
+          "callee": "self.portfolio_stage.common_index",
+          "lineNumber": 336
+        },
+        {
+          "caller": "original_position_contracts_for_relevant_date",
+          "callee": "self.portfolio_stage.get_position_contracts_for_relevant_date",
+          "lineNumber": 341
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.accounts_stage().get_raw_cost_data",
+          "lineNumber": 346
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.accounts_stage",
+          "lineNumber": 346
+        },
+        {
+          "caller": "get_contract_multiplier",
+          "callee": "float",
+          "lineNumber": 349
+        },
+        {
+          "caller": "get_contract_multiplier",
+          "callee": "self.data.get_value_of_block_price_move",
+          "lineNumber": 349
+        },
+        {
+          "caller": "get_raw_price",
+          "callee": "self.data.get_raw_price",
+          "lineNumber": 352
+        },
+        {
+          "caller": "get_fx_rate",
+          "callee": "self.position_size_stage.get_fx_rate",
+          "lineNumber": 355
+        },
+        {
+          "caller": "get_trading_capital",
+          "callee": "self.position_size_stage.get_notional_trading_capital",
+          "lineNumber": 358
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 152,
+      "functions": [
+        {
+          "name": "calculate_min_max_and_direction_and_start",
+          "startLine": 47,
+          "endLine": 61,
+          "params": [
+            "input_data"
+          ]
+        },
+        {
+          "name": "get_data_and_calculate_for_code",
+          "startLine": 64,
+          "endLine": 95,
+          "params": [
+            "instrument_code",
+            "input_data"
+          ]
+        },
+        {
+          "name": "calculations_for_code",
+          "startLine": 98,
+          "endLine": 124,
+          "params": [
+            "reduce_only",
+            "no_trade",
+            "max_position",
+            "weight_prior",
+            "optimium_weight",
+            "long_only"
+          ]
+        },
+        {
+          "name": "calculate_minima_and_maxima",
+          "startLine": 127,
+          "endLine": 166,
+          "params": [
+            "reduce_only",
+            "long_only",
+            "no_trade",
+            "max_position",
+            "weight_prior"
+          ]
+        },
+        {
+          "name": "calculate_direction",
+          "startLine": 169,
+          "endLine": 184,
+          "params": [
+            "optimum_weight",
+            "minimum",
+            "maximum"
+          ]
+        },
+        {
+          "name": "calculate_starting_weight",
+          "startLine": 187,
+          "endLine": 198,
+          "params": [
+            "minimum",
+            "maximum"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "minMaxAndDirectionAndStart",
+          "startLine": 13,
+          "endLine": 36,
+          "methods": [
+            "minima",
+            "maxima",
+            "direction",
+            "starting_weights",
+            "_get_dict_for_value_across_codes"
+          ],
+          "properties": []
+        },
+        {
+          "name": "minMaxAndDirectionAndStartForCode",
+          "startLine": 40,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "minimum",
+            "maximum",
+            "direction",
+            "start_weight"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "minMaxAndDirectionAndStart",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "minMaxAndDirectionAndStartForCode",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_min_max_and_direction_and_start",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "get_data_and_calculate_for_code",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "calculations_for_code",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_minima_and_maxima",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_direction",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_starting_weight",
+          "line": 187,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "minima",
+          "callee": "portfolioWeights",
+          "lineNumber": 16
+        },
+        {
+          "caller": "minima",
+          "callee": "self._get_dict_for_value_across_codes",
+          "lineNumber": 16
+        },
+        {
+          "caller": "maxima",
+          "callee": "portfolioWeights",
+          "lineNumber": 20
+        },
+        {
+          "caller": "maxima",
+          "callee": "self._get_dict_for_value_across_codes",
+          "lineNumber": 20
+        },
+        {
+          "caller": "direction",
+          "callee": "portfolioWeights",
+          "lineNumber": 24
+        },
+        {
+          "caller": "direction",
+          "callee": "self._get_dict_for_value_across_codes",
+          "lineNumber": 24
+        },
+        {
+          "caller": "starting_weights",
+          "callee": "portfolioWeights",
+          "lineNumber": 28
+        },
+        {
+          "caller": "starting_weights",
+          "callee": "self._get_dict_for_value_across_codes",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_get_dict_for_value_across_codes",
+          "callee": "dict",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_get_dict_for_value_across_codes",
+          "callee": "getattr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_get_dict_for_value_across_codes",
+          "callee": "self.items",
+          "lineNumber": 34
+        },
+        {
+          "caller": "calculate_min_max_and_direction_and_start",
+          "callee": "list",
+          "lineNumber": 50
+        },
+        {
+          "caller": "calculate_min_max_and_direction_and_start",
+          "callee": "dict",
+          "lineNumber": 51
+        },
+        {
+          "caller": "calculate_min_max_and_direction_and_start",
+          "callee": "get_data_and_calculate_for_code",
+          "lineNumber": 55
+        },
+        {
+          "caller": "calculate_min_max_and_direction_and_start",
+          "callee": "minMaxAndDirectionAndStart",
+          "lineNumber": 61
+        },
+        {
+          "caller": "get_data_and_calculate_for_code",
+          "callee": "input_data.maximum_position_weight_for_code",
+          "lineNumber": 82
+        },
+        {
+          "caller": "get_data_and_calculate_for_code",
+          "callee": "input_data.prior_weight_for_code",
+          "lineNumber": 83
+        },
+        {
+          "caller": "get_data_and_calculate_for_code",
+          "callee": "input_data.optimal_weights_for_code",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_data_and_calculate_for_code",
+          "callee": "calculations_for_code",
+          "lineNumber": 86
+        },
+        {
+          "caller": "calculations_for_code",
+          "callee": "calculate_minima_and_maxima",
+          "lineNumber": 106
+        },
+        {
+          "caller": "calculations_for_code",
+          "callee": "calculate_direction",
+          "lineNumber": 116
+        },
+        {
+          "caller": "calculations_for_code",
+          "callee": "calculate_starting_weight",
+          "lineNumber": 120
+        },
+        {
+          "caller": "calculations_for_code",
+          "callee": "minMaxAndDirectionAndStartForCode",
+          "lineNumber": 122
+        },
+        {
+          "caller": "calculate_minima_and_maxima",
+          "callee": "max",
+          "lineNumber": 152
+        },
+        {
+          "caller": "calculate_minima_and_maxima",
+          "callee": "abs",
+          "lineNumber": 160
+        },
+        {
+          "caller": "calculate_minima_and_maxima",
+          "callee": "max",
+          "lineNumber": 163
+        },
+        {
+          "caller": "calculate_minima_and_maxima",
+          "callee": "min",
+          "lineNumber": 164
+        },
+        {
+          "caller": "calculate_direction",
+          "callee": "np.isnan",
+          "lineNumber": 181
+        },
+        {
+          "caller": "calculate_direction",
+          "callee": "sign",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 8,
+        "functionCount": 6,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 315,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "find_best_ordered_set_of_instruments",
+          "startLine": 20,
+          "endLine": 69,
+          "params": [
+            "system",
+            "corr_matrix",
+            "max_instrument_weight",
+            "notional_starting_IDM",
+            "capital"
+          ]
+        },
+        {
+          "name": "get_correlation_matrix",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "system"
+          ]
+        },
+        {
+          "name": "find_best_market",
+          "startLine": 82,
+          "endLine": 103,
+          "params": [
+            "system",
+            "list_of_instruments",
+            "minimum_instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "find_next_instrument",
+          "startLine": 106,
+          "endLine": 129,
+          "params": [
+            "system",
+            "unused_list_of_instruments",
+            "set_of_instruments_used",
+            "corr_matrix",
+            "minimum_instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "SR_for_instrument_list",
+          "startLine": 132,
+          "endLine": 153,
+          "params": [
+            "system",
+            "corr_matrix",
+            "instrument_list",
+            "minimum_instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "build_estimates",
+          "startLine": 156,
+          "endLine": 174,
+          "params": [
+            "instrument_list",
+            "corr_matrix",
+            "notional_years_data"
+          ]
+        },
+        {
+          "name": "estimate_SR_given_weights",
+          "startLine": 177,
+          "endLine": 198,
+          "params": [
+            "system",
+            "risk_weights",
+            "handcraft_portfolio",
+            "minimum_instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "mean_estimates_from_SR_function_actual_weights",
+          "startLine": 201,
+          "endLine": 227,
+          "params": [
+            "system",
+            "risk_weights",
+            "handcraft_portfolio",
+            "minimum_instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "estimate_portfolio_sizes_given_weights",
+          "startLine": 230,
+          "endLine": 253,
+          "params": [
+            "system",
+            "risk_weights",
+            "handcraft_portfolio"
+          ]
+        },
+        {
+          "name": "net_SR_for_instrument_in_system",
+          "startLine": 256,
+          "endLine": 275,
+          "params": [
+            "system",
+            "instrument_code",
+            "minimum_instrument_weight_idm",
+            "instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "calculate_maximum_position",
+          "startLine": 278,
+          "endLine": 289,
+          "params": [
+            "system",
+            "instrument_code",
+            "instrument_weight_idm"
+          ]
+        },
+        {
+          "name": "calculate_trading_cost",
+          "startLine": 292,
+          "endLine": 300,
+          "params": [
+            "system",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "net_SR_for_instrument",
+          "startLine": 303,
+          "endLine": 308,
+          "params": [
+            "maximum_position",
+            "trading_cost",
+            "notional_SR",
+            "cost_multiplier"
+          ]
+        },
+        {
+          "name": "size_penalty",
+          "startLine": 311,
+          "endLine": 315,
+          "params": [
+            "maximum_position"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "find_best_ordered_set_of_instruments",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "get_correlation_matrix",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "find_best_market",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "find_next_instrument",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "SR_for_instrument_list",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "build_estimates",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "estimate_SR_given_weights",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "mean_estimates_from_SR_function_actual_weights",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "estimate_portfolio_sizes_given_weights",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "net_SR_for_instrument_in_system",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_maximum_position",
+          "line": 278,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_trading_cost",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "net_SR_for_instrument",
+          "line": 303,
+          "isDefault": false
+        },
+        {
+          "name": "size_penalty",
+          "line": 311,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "system.portfolio.get_instrument_list",
+          "lineNumber": 32
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "get_correlation_matrix",
+          "lineNumber": 36
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "find_best_market",
+          "lineNumber": 40
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "copy",
+          "lineNumber": 47
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "unused_list_of_instruments.remove",
+          "lineNumber": 48
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "len",
+          "lineNumber": 51
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "find_next_instrument",
+          "lineNumber": 52
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "print",
+          "lineNumber": 60
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "str",
+          "lineNumber": 62
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "set_of_instruments_used.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "find_best_ordered_set_of_instruments",
+          "callee": "unused_list_of_instruments.remove",
+          "lineNumber": 65
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "system.portfolio.get_instrument_list",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_correlation_matrix",
+          "callee": "system.portfolio.get_instrument_correlation_matrix",
+          "lineNumber": 76
+        },
+        {
+          "caller": "find_best_market",
+          "callee": "all_results.append",
+          "lineNumber": 87
+        },
+        {
+          "caller": "find_best_market",
+          "callee": "net_SR_for_instrument_in_system",
+          "lineNumber": 90
+        },
+        {
+          "caller": "find_best_market",
+          "callee": "sorted",
+          "lineNumber": 99
+        },
+        {
+          "caller": "find_next_instrument",
+          "callee": "SR_for_instrument_list",
+          "lineNumber": 117
+        },
+        {
+          "caller": "find_next_instrument",
+          "callee": "SR_list.append",
+          "lineNumber": 123
+        },
+        {
+          "caller": "find_next_instrument",
+          "callee": "sorted",
+          "lineNumber": 125
+        },
+        {
+          "caller": "SR_for_instrument_list",
+          "callee": "build_estimates",
+          "lineNumber": 135
+        },
+        {
+          "caller": "SR_for_instrument_list",
+          "callee": "handcraftPortfolio",
+          "lineNumber": 139
+        },
+        {
+          "caller": "SR_for_instrument_list",
+          "callee": "handcraft_portfolio.risk_weights",
+          "lineNumber": 140
+        },
+        {
+          "caller": "SR_for_instrument_list",
+          "callee": "estimate_SR_given_weights",
+          "lineNumber": 142
+        },
+        {
+          "caller": "SR_for_instrument_list",
+          "callee": "estimate_portfolio_sizes_given_weights",
+          "lineNumber": 149
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "meanEstimates",
+          "lineNumber": 158
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "dict",
+          "lineNumber": 159
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "stdevEstimates",
+          "lineNumber": 162
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "dict",
+          "lineNumber": 163
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "Estimates",
+          "lineNumber": 166
+        },
+        {
+          "caller": "build_estimates",
+          "callee": "corr_matrix.subset",
+          "lineNumber": 167
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "list",
+          "lineNumber": 183
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "risk_weights.keys",
+          "lineNumber": 183
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "mean_estimates_from_SR_function_actual_weights",
+          "lineNumber": 185
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "np.array",
+          "lineNumber": 192
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "risk_weights.as_list_given_keys",
+          "lineNumber": 192
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "np.array",
+          "lineNumber": 193
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "mean_estimates.list_in_key_order",
+          "lineNumber": 193
+        },
+        {
+          "caller": "estimate_SR_given_weights",
+          "callee": "neg_SR",
+          "lineNumber": 196
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "list",
+          "lineNumber": 207
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "risk_weights.keys",
+          "lineNumber": 207
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "min",
+          "lineNumber": 208
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "handcraft_portfolio.div_mult",
+          "lineNumber": 208
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "meanEstimates",
+          "lineNumber": 209
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "dict",
+          "lineNumber": 210
+        },
+        {
+          "caller": "mean_estimates_from_SR_function_actual_weights",
+          "callee": "net_SR_for_instrument_in_system",
+          "lineNumber": 214
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "list",
+          "lineNumber": 233
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "risk_weights.keys",
+          "lineNumber": 233
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "handcraft_portfolio.div_mult",
+          "lineNumber": 234
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "dict",
+          "lineNumber": 236
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "round",
+          "lineNumber": 240
+        },
+        {
+          "caller": "estimate_portfolio_sizes_given_weights",
+          "callee": "calculate_maximum_position",
+          "lineNumber": 241
+        },
+        {
+          "caller": "net_SR_for_instrument_in_system",
+          "callee": "copy",
+          "lineNumber": 266
+        },
+        {
+          "caller": "net_SR_for_instrument_in_system",
+          "callee": "calculate_maximum_position",
+          "lineNumber": 268
+        },
+        {
+          "caller": "net_SR_for_instrument_in_system",
+          "callee": "calculate_trading_cost",
+          "lineNumber": 271
+        },
+        {
+          "caller": "net_SR_for_instrument_in_system",
+          "callee": "net_SR_for_instrument",
+          "lineNumber": 273
+        },
+        {
+          "caller": "calculate_maximum_position",
+          "callee": "system.positionSize.get_average_position_at_subsystem_level",
+          "lineNumber": 279
+        },
+        {
+          "caller": "calculate_maximum_position",
+          "callee": "system.combForecast.get_forecast_cap",
+          "lineNumber": 284
+        },
+        {
+          "caller": "calculate_maximum_position",
+          "callee": "system.positionSize.avg_abs_forecast",
+          "lineNumber": 284
+        },
+        {
+          "caller": "calculate_trading_cost",
+          "callee": "system.accounts.subsystem_turnover",
+          "lineNumber": 293
+        },
+        {
+          "caller": "calculate_trading_cost",
+          "callee": "system.accounts.get_SR_cost_per_trade_for_instrument",
+          "lineNumber": 294
+        },
+        {
+          "caller": "net_SR_for_instrument",
+          "callee": "size_penalty",
+          "lineNumber": 307
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    }
+  ]
+}

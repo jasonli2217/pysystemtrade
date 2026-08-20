@@ -1,0 +1,4907 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "syscore/interactive/input.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 149,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "true_if_answer_is_yes",
+          "startLine": 12,
+          "endLine": 28,
+          "params": [
+            "prompt",
+            "allow_empty_to_return_none"
+          ]
+        },
+        {
+          "name": "get_input_from_user_and_convert_to_type",
+          "startLine": 38,
+          "endLine": 61,
+          "params": [
+            "prompt",
+            "type_expected",
+            "allow_default",
+            "default_value",
+            "default_str",
+            "check_type"
+          ]
+        },
+        {
+          "name": "_get_input_and_check_type",
+          "startLine": 64,
+          "endLine": 88,
+          "params": [
+            "input_str",
+            "type_expected",
+            "allow_default",
+            "default_value",
+            "check_type"
+          ]
+        },
+        {
+          "name": "_convert_type_or_throw_expection",
+          "startLine": 91,
+          "endLine": 101,
+          "params": [
+            "user_input",
+            "type_expected"
+          ]
+        },
+        {
+          "name": "input_field_names_for_named_tuple",
+          "startLine": 111,
+          "endLine": 126,
+          "params": [
+            "named_tuple_instance"
+          ]
+        },
+        {
+          "name": "override_tuple_fields",
+          "startLine": 129,
+          "endLine": 140,
+          "params": [
+            "original_tuple_instance",
+            "dict_of_new_fields"
+          ]
+        },
+        {
+          "name": "named_tuple_as_dict",
+          "startLine": 143,
+          "endLine": 149,
+          "params": [
+            "original_tuple_instance"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "true_if_answer_is_yes",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "get_input_from_user_and_convert_to_type",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "_get_input_and_check_type",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "_convert_type_or_throw_expection",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "input_field_names_for_named_tuple",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "override_tuple_fields",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "named_tuple_as_dict",
+          "line": 143,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "true_if_answer_is_yes",
+          "callee": "input",
+          "lineNumber": 17
+        },
+        {
+          "caller": "true_if_answer_is_yes",
+          "callee": "x[0].lower",
+          "lineNumber": 22
+        },
+        {
+          "caller": "true_if_answer_is_yes",
+          "callee": "print",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_input_from_user_and_convert_to_type",
+          "callee": "str",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get_input_from_user_and_convert_to_type",
+          "callee": "_get_input_and_check_type",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_get_input_and_check_type",
+          "callee": "input",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_get_input_and_check_type",
+          "callee": "_convert_type_or_throw_expection",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_convert_type_or_throw_expection",
+          "callee": "str2Bool",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_convert_type_or_throw_expection",
+          "callee": "type_expected",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_convert_type_or_throw_expection",
+          "callee": "print",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_convert_type_or_throw_expection",
+          "callee": "Exception",
+          "lineNumber": 99
+        },
+        {
+          "caller": "input_field_names_for_named_tuple",
+          "callee": "named_tuple_as_dict",
+          "lineNumber": 112
+        },
+        {
+          "caller": "input_field_names_for_named_tuple",
+          "callee": "original_tuple_as_dict.keys",
+          "lineNumber": 113
+        },
+        {
+          "caller": "input_field_names_for_named_tuple",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 116
+        },
+        {
+          "caller": "input_field_names_for_named_tuple",
+          "callee": "override_tuple_fields",
+          "lineNumber": 124
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "named_tuple_as_dict",
+          "lineNumber": 130
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "dict",
+          "lineNumber": 131
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "original_tuple_class",
+          "lineNumber": 134
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "Exception",
+          "lineNumber": 136
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "str",
+          "lineNumber": 138
+        },
+        {
+          "caller": "override_tuple_fields",
+          "callee": "str",
+          "lineNumber": 138
+        },
+        {
+          "caller": "named_tuple_as_dict",
+          "callee": "dict",
+          "lineNumber": 144
+        },
+        {
+          "caller": "named_tuple_as_dict",
+          "callee": "getattr",
+          "lineNumber": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscore/interactive/run_functions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "interactively_input_arguments_for_function",
+          "startLine": 12,
+          "endLine": 37,
+          "params": [
+            "func",
+            "full_funcname"
+          ]
+        },
+        {
+          "name": "input_and_type_cast_argument",
+          "startLine": 40,
+          "endLine": 78,
+          "params": [
+            "argname",
+            "parameter_signature"
+          ]
+        },
+        {
+          "name": "has_type",
+          "startLine": 81,
+          "endLine": 82,
+          "params": [
+            "parameter_signature"
+          ]
+        },
+        {
+          "name": "parameter_type",
+          "startLine": 85,
+          "endLine": 99,
+          "params": [
+            "parameter_signature"
+          ]
+        },
+        {
+          "name": "get_default_type",
+          "startLine": 102,
+          "endLine": 106,
+          "params": [
+            "parameter_signature"
+          ]
+        },
+        {
+          "name": "has_default",
+          "startLine": 109,
+          "endLine": 110,
+          "params": [
+            "parameter_signature"
+          ]
+        },
+        {
+          "name": "parameter_default",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "parameter_signature"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "interactively_input_arguments_for_function",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "input_and_type_cast_argument",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "has_type",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "parameter_type",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "get_default_type",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "has_default",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "parameter_default",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "inspect.signature",
+          "lineNumber": 19
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "print",
+          "lineNumber": 21
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "inspect.getdoc",
+          "lineNumber": 23
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "list",
+          "lineNumber": 23
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "func_arguments.keys",
+          "lineNumber": 23
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "dict",
+          "lineNumber": 27
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "func_arguments.items",
+          "lineNumber": 28
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "input_and_type_cast_argument",
+          "lineNumber": 29
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "has_default",
+          "lineNumber": 31
+        },
+        {
+          "caller": "interactively_input_arguments_for_function",
+          "callee": "args.append",
+          "lineNumber": 35
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "has_default",
+          "lineNumber": 47
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "has_type",
+          "lineNumber": 48
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "parameter_default",
+          "lineNumber": 51
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "parameter_type",
+          "lineNumber": 57
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "input_and_type_cast_argument",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 70
+        },
+        {
+          "caller": "has_type",
+          "callee": "parameter_type",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parameter_type",
+          "callee": "has_default",
+          "lineNumber": 91
+        },
+        {
+          "caller": "parameter_type",
+          "callee": "get_default_type",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_default_type",
+          "callee": "parameter_default",
+          "lineNumber": 103
+        },
+        {
+          "caller": "get_default_type",
+          "callee": "type",
+          "lineNumber": 104
+        },
+        {
+          "caller": "has_default",
+          "callee": "parameter_default",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/arctic/arctic_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "arcticFuturesAdjustedPricesData",
+          "startLine": 12,
+          "endLine": 61,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "arctic",
+            "get_list_of_instruments",
+            "_get_adjusted_prices_without_checking",
+            "_delete_adjusted_prices_without_any_warning_be_careful",
+            "_add_adjusted_prices_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "arcticFuturesAdjustedPricesData",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "arcticData",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__repr__",
+          "callee": "repr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.arctic.get_keynames",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "self.arctic.read",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "self.arctic.delete",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "adjusted_price_data_aspd.astype",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "self.arctic.write",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/arctic/arctic_multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "_change_contracts_to_str",
+          "startLine": 71,
+          "endLine": 82,
+          "params": [
+            "multiple_price_data_aspd"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "arcticFuturesMultiplePricesData",
+          "startLine": 20,
+          "endLine": 68,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "arctic",
+            "get_list_of_instruments",
+            "_get_multiple_prices_without_checking",
+            "_delete_multiple_prices_without_any_warning_be_careful",
+            "_add_multiple_prices_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "arcticFuturesMultiplePricesData",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_change_contracts_to_str",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "arcticData",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__repr__",
+          "callee": "repr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.arctic.get_keynames",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "self.arctic.read",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "self.arctic.delete",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "_change_contracts_to_str",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self.arctic.write",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "multiple_price_data_aspd[\n            price_column\n        ].astype",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "multiple_price_data_aspd[\n            contract_column\n        ].astype",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "csvFuturesAdjustedPricesData",
+          "startLine": 17,
+          "endLine": 82,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "get_list_of_instruments",
+            "_get_adjusted_prices_without_checking",
+            "_delete_adjusted_prices_without_any_warning_be_careful",
+            "_add_adjusted_prices_without_checking_for_existing_entry",
+            "_filename_given_instrument_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvFuturesAdjustedPricesData",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "files_with_extension_in_pathname",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "pd_readcsv",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "futuresAdjustedPrices.create_empty",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "instrpricedata.groupby(level=0).last",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "instrpricedata.groupby",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "pd.Series",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "adjusted_price_data_as_dataframe.to_csv",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_filename_given_instrument_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "csvFuturesMultiplePricesData",
+          "startLine": 21,
+          "endLine": 97,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "get_list_of_instruments",
+            "_get_multiple_prices_without_checking",
+            "_delete_multiple_prices_without_any_warning_be_careful",
+            "_add_multiple_prices_without_checking_for_existing_entry",
+            "_read_instrument_prices",
+            "_filename_given_instrument_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvFuturesMultiplePricesData",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "files_with_extension_in_pathname",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "self._read_instrument_prices",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "instr_all_price_data[\n                contract_col_name\n            ].apply",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "multiple_price_data.to_csv",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_read_instrument_prices",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_read_instrument_prices",
+          "callee": "pd_readcsv",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_read_instrument_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_read_instrument_prices",
+          "callee": "futuresMultiplePrices.create_empty",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_filename_given_instrument_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_roll_calendars.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "csvRollCalendarData",
+          "startLine": 18,
+          "endLine": 73,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "get_list_of_instruments",
+            "_get_roll_calendar_without_checking",
+            "_delete_roll_calendar_data_without_any_warning_be_careful",
+            "_add_roll_calendar_without_checking_for_existing_entry",
+            "_filename_given_instrument_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "csvRollCalendarData",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "files_with_extension_in_pathname",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "pd_readcsv",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "rollCalendar.create_empty",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "rollCalendar",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_delete_roll_calendar_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_add_roll_calendar_without_checking_for_existing_entry",
+          "callee": "self._filename_given_instrument_code",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_add_roll_calendar_without_checking_for_existing_entry",
+          "callee": "roll_calendar.to_csv",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_add_roll_calendar_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_add_roll_calendar_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_filename_given_instrument_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_roll_parameters.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 92,
+      "classes": [
+        {
+          "name": "allRollParameters",
+          "startLine": 13,
+          "endLine": 57,
+          "methods": [
+            "read_from_file",
+            "get_list_of_instruments",
+            "get_roll_parameters_for_instrument",
+            "update_roll_parameters_for_instrument",
+            "write_to_file"
+          ],
+          "properties": []
+        },
+        {
+          "name": "csvRollParametersData",
+          "startLine": 60,
+          "endLine": 118,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "get_list_of_instruments",
+            "_get_roll_parameters_without_checking",
+            "_delete_roll_parameters_data_without_any_warning_be_careful",
+            "_add_roll_parameters_without_checking_for_existing_entry",
+            "write_all_roll_parameters_data",
+            "get_roll_parameters_all_instruments",
+            "config_file"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "allRollParameters",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "csvRollParametersData",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "read_from_file",
+          "callee": "pd.read_csv",
+          "lineNumber": 17
+        },
+        {
+          "caller": "read_from_file",
+          "callee": "Exception",
+          "lineNumber": 19
+        },
+        {
+          "caller": "read_from_file",
+          "callee": "roll_data.drop",
+          "lineNumber": 23
+        },
+        {
+          "caller": "read_from_file",
+          "callee": "Exception",
+          "lineNumber": 26
+        },
+        {
+          "caller": "read_from_file",
+          "callee": "allRollParameters",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "list",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_roll_parameters_for_instrument",
+          "callee": "rollParameters",
+          "lineNumber": 37
+        },
+        {
+          "caller": "write_to_file",
+          "callee": "self.to_csv",
+          "lineNumber": 57
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 67
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 69
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 69
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.get_roll_parameters_all_instruments",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "all_roll_parameters.get_list_of_instruments",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_get_roll_parameters_without_checking",
+          "callee": "self.get_roll_parameters_all_instruments",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_get_roll_parameters_without_checking",
+          "callee": "all_parameters.get_roll_parameters_for_instrument",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_delete_roll_parameters_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_add_roll_parameters_without_checking_for_existing_entry",
+          "callee": "self.get_roll_parameters_all_instruments",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_add_roll_parameters_without_checking_for_existing_entry",
+          "callee": "all_parameters.update_roll_parameters_for_instrument",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_add_roll_parameters_without_checking_for_existing_entry",
+          "callee": "all_parameters.write_to_file",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_add_roll_parameters_without_checking_for_existing_entry",
+          "callee": "self.log.warning",
+          "lineNumber": 104
+        },
+        {
+          "caller": "write_all_roll_parameters_data",
+          "callee": "allRollParameters",
+          "lineNumber": 110
+        },
+        {
+          "caller": "write_all_roll_parameters_data",
+          "callee": "all_roll_parameters.write_to_file",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_roll_parameters_all_instruments",
+          "callee": "allRollParameters.read_from_file",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysdata/futures/adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 90,
+      "classes": [
+        {
+          "name": "futuresAdjustedPricesData",
+          "startLine": 15,
+          "endLine": 113,
+          "methods": [
+            "__repr__",
+            "keys",
+            "get_adjusted_prices",
+            "__getitem__",
+            "delete_adjusted_prices",
+            "is_code_in_data",
+            "add_adjusted_prices",
+            "_add_adjusted_prices_without_checking_for_existing_entry",
+            "get_list_of_instruments",
+            "_delete_adjusted_prices_without_any_warning_be_careful",
+            "_get_adjusted_prices_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresAdjustedPricesData",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_adjusted_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_adjusted_prices",
+          "callee": "self._get_adjusted_prices_without_checking",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_adjusted_prices",
+          "callee": "futuresAdjustedPrices.create_empty",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_adjusted_prices",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 44
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self._delete_adjusted_prices_without_any_warning_be_careful",
+          "lineNumber": 45
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self.log.info",
+          "lineNumber": 48
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 55
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self.log.error",
+          "lineNumber": 61
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 67
+        },
+        {
+          "caller": "add_adjusted_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 78
+        },
+        {
+          "caller": "add_adjusted_prices",
+          "callee": "self.log.error",
+          "lineNumber": 82
+        },
+        {
+          "caller": "add_adjusted_prices",
+          "callee": "self._add_adjusted_prices_without_checking_for_existing_entry",
+          "lineNumber": 88
+        },
+        {
+          "caller": "add_adjusted_prices",
+          "callee": "self.log.info",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_add_adjusted_prices_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_delete_adjusted_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_get_adjusted_prices_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/futures_per_contract_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 545,
+      "nonEmptyLines": 445,
+      "classes": [
+        {
+          "name": "futuresContractPriceData",
+          "startLine": 23,
+          "endLine": 545,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "__getitem__",
+            "keys",
+            "get_list_of_instrument_codes_with_merged_price_data",
+            "get_list_of_instrument_codes_with_price_data_at_frequency",
+            "has_merged_price_data_for_contract",
+            "has_price_data_for_contract_at_frequency",
+            "contracts_with_merged_price_data_for_instrument_code",
+            "contracts_with_price_data_at_frequency_for_instrument_code",
+            "contract_dates_with_merged_price_data_for_instrument_code",
+            "contract_dates_with_price_data_at_frequency_for_instrument_code",
+            "get_merged_prices_for_instrument",
+            "get_prices_at_frequency_for_instrument",
+            "get_merged_prices_for_contract_object",
+            "get_prices_at_frequency_for_contract_object",
+            "write_merged_prices_for_contract_object",
+            "write_prices_at_frequency_for_contract_object",
+            "update_prices_at_frequency_for_contract",
+            "delete_merged_prices_for_contract_object",
+            "delete_prices_at_frequency_for_contract_object",
+            "delete_merged_prices_for_instrument_code",
+            "delete_prices_at_frequency_for_instrument_code",
+            "get_contracts_with_merged_price_data",
+            "get_contracts_with_price_data_for_frequency",
+            "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+            "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+            "_write_merged_prices_for_contract_object_no_checking",
+            "_write_prices_at_frequency_for_contract_object_no_checking",
+            "_get_merged_prices_for_contract_object_no_checking",
+            "_get_prices_at_frequency_for_contract_object_no_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresContractPriceData",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_merged_prices_for_contract_object",
+          "lineNumber": 45
+        },
+        {
+          "caller": "keys",
+          "callee": "self.get_contracts_with_merged_price_data",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_list_of_instrument_codes_with_merged_price_data",
+          "callee": "self.get_contracts_with_merged_price_data",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_list_of_instrument_codes_with_merged_price_data",
+          "callee": "list_of_contracts_with_price_data.unique_list_of_instrument_codes",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_list_of_instrument_codes_with_price_data_at_frequency",
+          "callee": "self.get_contracts_with_price_data_for_frequency",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_list_of_instrument_codes_with_price_data_at_frequency",
+          "callee": "list_of_contracts_with_price_data.unique_list_of_instrument_codes",
+          "lineNumber": 81
+        },
+        {
+          "caller": "has_merged_price_data_for_contract",
+          "callee": "self.get_contracts_with_merged_price_data",
+          "lineNumber": 89
+        },
+        {
+          "caller": "has_price_data_for_contract_at_frequency",
+          "callee": "self.get_contracts_with_price_data_for_frequency",
+          "lineNumber": 98
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "self.get_contracts_with_merged_price_data",
+          "lineNumber": 116
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "list_of_contracts_with_price_data.contracts_in_list_for_instrument_code",
+          "lineNumber": 118
+        },
+        {
+          "caller": "contracts_with_price_data_at_frequency_for_instrument_code",
+          "callee": "self.get_contracts_with_price_data_for_frequency",
+          "lineNumber": 136
+        },
+        {
+          "caller": "contracts_with_price_data_at_frequency_for_instrument_code",
+          "callee": "list_of_contracts_with_price_data.contracts_in_list_for_instrument_code",
+          "lineNumber": 139
+        },
+        {
+          "caller": "contract_dates_with_merged_price_data_for_instrument_code",
+          "callee": "self.contracts_with_merged_price_data_for_instrument_code",
+          "lineNumber": 156
+        },
+        {
+          "caller": "contract_dates_with_merged_price_data_for_instrument_code",
+          "callee": "list_of_contracts_with_price_data.list_of_dates",
+          "lineNumber": 159
+        },
+        {
+          "caller": "contract_dates_with_price_data_at_frequency_for_instrument_code",
+          "callee": "self.contracts_with_price_data_at_frequency_for_instrument_code",
+          "lineNumber": 173
+        },
+        {
+          "caller": "contract_dates_with_price_data_at_frequency_for_instrument_code",
+          "callee": "list_of_contracts_with_price_data.list_of_dates",
+          "lineNumber": 178
+        },
+        {
+          "caller": "get_merged_prices_for_instrument",
+          "callee": "self.contracts_with_merged_price_data_for_instrument_code",
+          "lineNumber": 192
+        },
+        {
+          "caller": "get_merged_prices_for_instrument",
+          "callee": "dictFuturesContractPrices",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_merged_prices_for_instrument",
+          "callee": "self.get_merged_prices_for_contract_object",
+          "lineNumber": 199
+        },
+        {
+          "caller": "get_prices_at_frequency_for_instrument",
+          "callee": "self.contracts_with_price_data_at_frequency_for_instrument_code",
+          "lineNumber": 218
+        },
+        {
+          "caller": "get_prices_at_frequency_for_instrument",
+          "callee": "dictFuturesContractPrices",
+          "lineNumber": 222
+        },
+        {
+          "caller": "get_prices_at_frequency_for_instrument",
+          "callee": "self.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 226
+        },
+        {
+          "caller": "get_merged_prices_for_contract_object",
+          "callee": "self.has_merged_price_data_for_contract",
+          "lineNumber": 246
+        },
+        {
+          "caller": "get_merged_prices_for_contract_object",
+          "callee": "self._get_merged_prices_for_contract_object_no_checking",
+          "lineNumber": 247
+        },
+        {
+          "caller": "get_merged_prices_for_contract_object",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 252
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "self.has_price_data_for_contract_at_frequency",
+          "lineNumber": 272
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "self._get_prices_at_frequency_for_contract_object_no_checking",
+          "lineNumber": 275
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 280
+        },
+        {
+          "caller": "write_merged_prices_for_contract_object",
+          "callee": "self.has_merged_price_data_for_contract",
+          "lineNumber": 300
+        },
+        {
+          "caller": "write_merged_prices_for_contract_object",
+          "callee": "self.log.warning",
+          "lineNumber": 301
+        },
+        {
+          "caller": "write_merged_prices_for_contract_object",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 304
+        },
+        {
+          "caller": "write_merged_prices_for_contract_object",
+          "callee": "self._write_merged_prices_for_contract_object_no_checking",
+          "lineNumber": 309
+        },
+        {
+          "caller": "write_prices_at_frequency_for_contract_object",
+          "callee": "self.has_price_data_for_contract_at_frequency",
+          "lineNumber": 330
+        },
+        {
+          "caller": "write_prices_at_frequency_for_contract_object",
+          "callee": "self.log.warning",
+          "lineNumber": 333
+        },
+        {
+          "caller": "write_prices_at_frequency_for_contract_object",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 336
+        },
+        {
+          "caller": "write_prices_at_frequency_for_contract_object",
+          "callee": "self._write_prices_at_frequency_for_contract_object_no_checking",
+          "lineNumber": 341
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 355
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "len",
+          "lineNumber": 357
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 358
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.get_merged_prices_for_contract_object",
+          "lineNumber": 362
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 364
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "old_prices.add_rows_to_existing_data",
+          "lineNumber": 368
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 375
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "old_prices.index.duplicated",
+          "lineNumber": 381
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "len",
+          "lineNumber": 382
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "len",
+          "lineNumber": 382
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.critical",
+          "lineNumber": 385
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "mergeError",
+          "lineNumber": 386
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "len",
+          "lineNumber": 389
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 390
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 393
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "str",
+          "lineNumber": 394
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.write_merged_prices_for_contract_object",
+          "lineNumber": 401
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.write_prices_at_frequency_for_contract_object",
+          "lineNumber": 405
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 412
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "Exception",
+          "lineNumber": 426
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "self.has_merged_price_data_for_contract",
+          "lineNumber": 428
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "self._delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+          "lineNumber": 429
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "self.log.warning",
+          "lineNumber": 433
+        },
+        {
+          "caller": "delete_merged_prices_for_contract_object",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 435
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_contract_object",
+          "callee": "Exception",
+          "lineNumber": 452
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_contract_object",
+          "callee": "self.has_price_data_for_contract_at_frequency",
+          "lineNumber": 454
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_contract_object",
+          "callee": "self._delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "lineNumber": 457
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_contract_object",
+          "callee": "self.log.warning",
+          "lineNumber": 461
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_contract_object",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 463
+        },
+        {
+          "caller": "delete_merged_prices_for_instrument_code",
+          "callee": "Exception",
+          "lineNumber": 473
+        },
+        {
+          "caller": "delete_merged_prices_for_instrument_code",
+          "callee": "self.contracts_with_merged_price_data_for_instrument_code",
+          "lineNumber": 478
+        },
+        {
+          "caller": "delete_merged_prices_for_instrument_code",
+          "callee": "self.delete_merged_prices_for_contract_object",
+          "lineNumber": 481
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_instrument_code",
+          "callee": "Exception",
+          "lineNumber": 489
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_instrument_code",
+          "callee": "self.contracts_with_price_data_at_frequency_for_instrument_code",
+          "lineNumber": 494
+        },
+        {
+          "caller": "delete_prices_at_frequency_for_instrument_code",
+          "callee": "self.delete_prices_at_frequency_for_contract_object",
+          "lineNumber": 500
+        },
+        {
+          "caller": "get_contracts_with_merged_price_data",
+          "callee": "NotImplementedError",
+          "lineNumber": 505
+        },
+        {
+          "caller": "get_contracts_with_price_data_for_frequency",
+          "callee": "NotImplementedError",
+          "lineNumber": 510
+        },
+        {
+          "caller": "_delete_merged_prices_for_contract_object_with_no_checks_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 515
+        },
+        {
+          "caller": "_delete_prices_at_frequency_for_contract_object_with_no_checks_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_write_merged_prices_for_contract_object_no_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 527
+        },
+        {
+          "caller": "_write_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 535
+        },
+        {
+          "caller": "_get_merged_prices_for_contract_object_no_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 540
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 545
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 97,
+      "classes": [
+        {
+          "name": "futuresMultiplePricesData",
+          "startLine": 22,
+          "endLine": 122,
+          "methods": [
+            "__repr__",
+            "keys",
+            "__getitem__",
+            "get_multiple_prices",
+            "delete_multiple_prices",
+            "is_code_in_data",
+            "add_multiple_prices",
+            "_add_multiple_prices_without_checking_for_existing_entry",
+            "get_list_of_instruments",
+            "_get_multiple_prices_without_checking",
+            "_delete_multiple_prices_without_any_warning_be_careful"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresMultiplePricesData",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_multiple_prices",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "self._get_multiple_prices_without_checking",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "futuresMultiplePrices.create_empty",
+          "lineNumber": 45
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 53
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self._delete_multiple_prices_without_any_warning_be_careful",
+          "lineNumber": 54
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self.log.info",
+          "lineNumber": 57
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 64
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self.log.error",
+          "lineNumber": 70
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "Exception",
+          "lineNumber": 74
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 77
+        },
+        {
+          "caller": "add_multiple_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add_multiple_prices",
+          "callee": "self.log.error",
+          "lineNumber": 93
+        },
+        {
+          "caller": "add_multiple_prices",
+          "callee": "self._add_multiple_prices_without_checking_for_existing_entry",
+          "lineNumber": 100
+        },
+        {
+          "caller": "add_multiple_prices",
+          "callee": "self.log.info",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/roll_calendars.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "rollCalendarData",
+          "startLine": 10,
+          "endLine": 99,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "keys",
+            "__getitem__",
+            "get_roll_calendar",
+            "delete_roll_calendar",
+            "add_roll_calendar",
+            "is_code_in_data",
+            "get_list_of_instruments",
+            "_get_roll_calendar_without_checking",
+            "_delete_roll_calendar_data_without_any_warning_be_careful",
+            "_add_roll_calendar_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollCalendarData",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 24
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_roll_calendar",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_roll_calendar",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_roll_calendar",
+          "callee": "self._get_roll_calendar_without_checking",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_roll_calendar",
+          "callee": "Exception",
+          "lineNumber": 33
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self.log.debug",
+          "lineNumber": 36
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 39
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self._delete_roll_calendar_data_without_any_warning_be_careful",
+          "lineNumber": 40
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self.log.info",
+          "lineNumber": 43
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self.log.warning",
+          "lineNumber": 47
+        },
+        {
+          "caller": "delete_roll_calendar",
+          "callee": "self.log.error",
+          "lineNumber": 52
+        },
+        {
+          "caller": "add_roll_calendar",
+          "callee": "self.log.debug",
+          "lineNumber": 62
+        },
+        {
+          "caller": "add_roll_calendar",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 64
+        },
+        {
+          "caller": "add_roll_calendar",
+          "callee": "Exception",
+          "lineNumber": 68
+        },
+        {
+          "caller": "add_roll_calendar",
+          "callee": "self._add_roll_calendar_without_checking_for_existing_entry",
+          "lineNumber": 73
+        },
+        {
+          "caller": "add_roll_calendar",
+          "callee": "self.log.debug",
+          "lineNumber": 77
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_get_roll_calendar_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_delete_roll_calendar_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_add_roll_calendar_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/futures/rolls_parameters.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "rollParametersMissing",
+          "startLine": 10,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "rollParametersData",
+          "startLine": 14,
+          "endLine": 108,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "keys",
+            "__getitem__",
+            "get_roll_parameters",
+            "delete_roll_parameters",
+            "add_roll_parameters",
+            "is_code_in_data",
+            "_delete_roll_parameters_data_without_any_warning_be_careful",
+            "_add_roll_parameters_without_checking_for_existing_entry",
+            "get_list_of_instruments",
+            "_get_roll_parameters_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollParametersMissing",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "rollParametersData",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_roll_parameters",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get_roll_parameters",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 35
+        },
+        {
+          "caller": "get_roll_parameters",
+          "callee": "self._get_roll_parameters_without_checking",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_roll_parameters",
+          "callee": "rollParametersMissing",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self.log.debug",
+          "lineNumber": 43
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 46
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self._delete_roll_parameters_data_without_any_warning_be_careful",
+          "lineNumber": 47
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self.log.info",
+          "lineNumber": 50
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self.log.warning",
+          "lineNumber": 54
+        },
+        {
+          "caller": "delete_roll_parameters",
+          "callee": "self.log.error",
+          "lineNumber": 59
+        },
+        {
+          "caller": "add_roll_parameters",
+          "callee": "self.log.debug",
+          "lineNumber": 69
+        },
+        {
+          "caller": "add_roll_parameters",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 71
+        },
+        {
+          "caller": "add_roll_parameters",
+          "callee": "self.log.warning",
+          "lineNumber": 75
+        },
+        {
+          "caller": "add_roll_parameters",
+          "callee": "self._add_roll_parameters_without_checking_for_existing_entry",
+          "lineNumber": 80
+        },
+        {
+          "caller": "add_roll_parameters",
+          "callee": "self.log.info",
+          "lineNumber": 84
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_instruments",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_delete_roll_parameters_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_add_roll_parameters_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "NotImplementedError",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_get_roll_parameters_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysdata/parquet/parquet_multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "_change_contracts_to_str",
+          "startLine": 82,
+          "endLine": 93,
+          "params": [
+            "multiple_price_data_aspd"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "parquetFuturesMultiplePricesData",
+          "startLine": 20,
+          "endLine": 79,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "parquet",
+            "get_list_of_instruments",
+            "_get_multiple_prices_without_checking",
+            "_delete_multiple_prices_without_any_warning_be_careful",
+            "_add_multiple_prices_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parquetFuturesMultiplePricesData",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_change_contracts_to_str",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.parquet.get_all_identifiers_with_data_type",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "self.parquet.read_data_given_data_type_and_identifier",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_get_multiple_prices_without_checking",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "self.parquet.delete_data_given_data_type_and_identifier",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "self.log.debug",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_delete_multiple_prices_without_any_warning_be_careful",
+          "callee": "str",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "pd.DataFrame",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "_change_contracts_to_str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self.parquet.write_data_given_data_type_and_identifier",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "len",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_add_multiple_prices_without_checking_for_existing_entry",
+          "callee": "str",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "multiple_price_data_aspd[\n            price_column\n        ].astype",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_change_contracts_to_str",
+          "callee": "multiple_price_data_aspd[\n            contract_column\n        ].astype",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/sim/csv_futures_sim_test_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 91,
+      "classes": [
+        {
+          "name": "CsvFuturesSimTestData",
+          "startLine": 20,
+          "endLine": 111,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "start_date",
+            "end_date",
+            "get_backadjusted_futures_price",
+            "get_multiple_prices",
+            "get_fx_for_instrument",
+            "daily_prices",
+            "get_instrument_raw_carry_data",
+            "get_current_and_forward_price_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CsvFuturesSimTestData",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "dataBlob",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 37
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 64
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.start_date.strftime",
+          "lineNumber": 65
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.end_date.strftime",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_backadjusted_futures_price",
+          "callee": "super().db_futures_adjusted_prices_data.get_adjusted_prices",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_backadjusted_futures_price",
+          "callee": "super",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "super().get_multiple_prices",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "super",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get_fx_for_instrument",
+          "callee": "super().get_fx_for_instrument",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_fx_for_instrument",
+          "callee": "super",
+          "lineNumber": 94
+        },
+        {
+          "caller": "daily_prices",
+          "callee": "super().daily_prices",
+          "lineNumber": 99
+        },
+        {
+          "caller": "daily_prices",
+          "callee": "super",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_instrument_raw_carry_data",
+          "callee": "super().get_instrument_raw_carry_data",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_instrument_raw_carry_data",
+          "callee": "super",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_current_and_forward_price_data",
+          "callee": "super().get_current_and_forward_price_data",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_current_and_forward_price_data",
+          "callee": "super",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/sim/futures_sim_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 266,
+      "nonEmptyLines": 189,
+      "classes": [
+        {
+          "name": "futuresSimData",
+          "startLine": 26,
+          "endLine": 260,
+          "methods": [
+            "__repr__",
+            "all_asset_classes",
+            "all_instruments_in_asset_class",
+            "asset_class_for_instrument",
+            "length_of_history_in_days_for_instrument",
+            "get_raw_price_from_start_date",
+            "get_instrument_raw_carry_data",
+            "get_current_and_forward_price_data",
+            "get_rolls_per_year",
+            "get_raw_cost_data",
+            "get_value_of_block_price_move",
+            "get_instrument_currency",
+            "get_instrument_asset_classes",
+            "get_spread_cost",
+            "get_backadjusted_futures_price",
+            "get_multiple_prices",
+            "get_multiple_prices_from_start_date",
+            "get_instrument_meta_data",
+            "get_roll_parameters",
+            "get_instrument_object_with_meta_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresSimData",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__repr__",
+          "callee": "len",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 29
+        },
+        {
+          "caller": "all_asset_classes",
+          "callee": "self.get_instrument_asset_classes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "all_asset_classes",
+          "callee": "asset_class_data.all_asset_classes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "all_instruments_in_asset_class",
+          "callee": "self.get_instrument_asset_classes",
+          "lineNumber": 44
+        },
+        {
+          "caller": "all_instruments_in_asset_class",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 45
+        },
+        {
+          "caller": "all_instruments_in_asset_class",
+          "callee": "asset_class_data.all_instruments_in_asset_class",
+          "lineNumber": 46
+        },
+        {
+          "caller": "asset_class_for_instrument",
+          "callee": "self.get_instrument_asset_classes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "length_of_history_in_days_for_instrument",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "length_of_history_in_days_for_instrument",
+          "callee": "self.daily_prices",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_raw_price_from_start_date",
+          "callee": "self.get_backadjusted_futures_price",
+          "lineNumber": 77
+        },
+        {
+          "caller": "get_raw_price_from_start_date",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_raw_price_from_start_date",
+          "callee": "Exception",
+          "lineNumber": 79
+        },
+        {
+          "caller": "get_instrument_raw_carry_data",
+          "callee": "self.get_multiple_prices",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_current_and_forward_price_data",
+          "callee": "self.get_multiple_prices",
+          "lineNumber": 120
+        },
+        {
+          "caller": "get_rolls_per_year",
+          "callee": "self.get_roll_parameters",
+          "lineNumber": 127
+        },
+        {
+          "caller": "get_rolls_per_year",
+          "callee": "roll_parameters.rolls_per_year_in_hold_cycle",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.get_instrument_object_with_meta_data",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.log.warning",
+          "lineNumber": 155
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "instrumentCosts",
+          "lineNumber": 158
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.get_spread_cost",
+          "lineNumber": 160
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "instrumentCosts.from_meta_data_and_spread_cost",
+          "lineNumber": 163
+        },
+        {
+          "caller": "get_value_of_block_price_move",
+          "callee": "self.get_instrument_object_with_meta_data",
+          "lineNumber": 180
+        },
+        {
+          "caller": "get_instrument_currency",
+          "callee": "self.get_instrument_object_with_meta_data",
+          "lineNumber": 196
+        },
+        {
+          "caller": "get_instrument_asset_classes",
+          "callee": "NotImplementedError",
+          "lineNumber": 208
+        },
+        {
+          "caller": "get_backadjusted_futures_price",
+          "callee": "NotImplementedError",
+          "lineNumber": 222
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "self.start_date_for_data",
+          "lineNumber": 225
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "self.get_multiple_prices_from_start_date",
+          "lineNumber": 227
+        },
+        {
+          "caller": "get_multiple_prices_from_start_date",
+          "callee": "NotImplementedError",
+          "lineNumber": 234
+        },
+        {
+          "caller": "get_instrument_meta_data",
+          "callee": "NotImplementedError",
+          "lineNumber": 245
+        },
+        {
+          "caller": "get_instrument_object_with_meta_data",
+          "callee": "NotImplementedError",
+          "lineNumber": 260
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "genericBlobUsingFuturesSimData",
+          "startLine": 23,
+          "endLine": 131,
+          "methods": [
+            "__init__",
+            "get_instrument_list",
+            "_get_fx_data_from_start_date",
+            "get_instrument_asset_classes",
+            "get_all_instrument_data_as_df",
+            "get_backadjusted_futures_price",
+            "get_multiple_prices_from_start_date",
+            "get_instrument_meta_data",
+            "get_instrument_object_with_meta_data",
+            "get_roll_parameters",
+            "get_spread_cost",
+            "data",
+            "db_fx_prices_data",
+            "db_futures_adjusted_prices_data",
+            "db_futures_instrument_data",
+            "db_futures_multiple_prices_data",
+            "db_roll_parameters",
+            "db_spread_cost_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "genericBlobUsingFuturesSimData",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 29
+        },
+        {
+          "caller": "get_instrument_list",
+          "callee": "self.db_futures_adjusted_prices_data.get_list_of_instruments",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_get_fx_data_from_start_date",
+          "callee": "self.db_fx_prices_data.get_fx_prices",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_instrument_asset_classes",
+          "callee": "self.get_all_instrument_data_as_df",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_instrument_asset_classes",
+          "callee": "assetClassesAndInstruments.from_pd_series",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "self.db_futures_instrument_data.get_all_instrument_data_as_df",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_all_instrument_data_as_df",
+          "callee": "all_instrument_data.index.isin",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_backadjusted_futures_price",
+          "callee": "self.db_futures_adjusted_prices_data.get_adjusted_prices",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_multiple_prices_from_start_date",
+          "callee": "self.db_futures_multiple_prices_data.get_multiple_prices",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_multiple_prices_from_start_date",
+          "callee": "len",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_multiple_prices_from_start_date",
+          "callee": "missingData",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_instrument_meta_data",
+          "callee": "self.get_instrument_object_with_meta_data",
+          "lineNumber": 86
+        },
+        {
+          "caller": "get_instrument_object_with_meta_data",
+          "callee": "self.db_futures_instrument_data.get_instrument_data",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_roll_parameters",
+          "callee": "self.db_roll_parameters.get_roll_parameters",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_spread_cost",
+          "callee": "self.db_spread_cost_data.get_spread_cost",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 84,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "_get_data_inputs",
+          "startLine": 17,
+          "endLine": 22,
+          "params": [
+            "csv_adj_data_path"
+          ]
+        },
+        {
+          "name": "process_adjusted_prices_all_instruments",
+          "startLine": 25,
+          "endLine": 37,
+          "params": [
+            "csv_adj_data_path",
+            "ADD_TO_DB",
+            "ADD_TO_CSV"
+          ]
+        },
+        {
+          "name": "process_adjusted_prices_single_instrument",
+          "startLine": 40,
+          "endLine": 69,
+          "params": [
+            "instrument_code",
+            "csv_adj_data_path",
+            "multiple_prices",
+            "ADD_TO_DB",
+            "ADD_TO_CSV"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_get_data_inputs",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "process_adjusted_prices_all_instruments",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "process_adjusted_prices_single_instrument",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_get_data_inputs",
+          "callee": "csvFuturesAdjustedPricesData",
+          "lineNumber": 20
+        },
+        {
+          "caller": "process_adjusted_prices_all_instruments",
+          "callee": "_get_data_inputs",
+          "lineNumber": 28
+        },
+        {
+          "caller": "process_adjusted_prices_all_instruments",
+          "callee": "db_multiple_prices.get_list_of_instruments",
+          "lineNumber": 29
+        },
+        {
+          "caller": "process_adjusted_prices_all_instruments",
+          "callee": "print",
+          "lineNumber": 31
+        },
+        {
+          "caller": "process_adjusted_prices_all_instruments",
+          "callee": "process_adjusted_prices_single_instrument",
+          "lineNumber": 32
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "_get_data_inputs",
+          "lineNumber": 51
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "db_multiple_prices.get_multiple_prices",
+          "lineNumber": 53
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "futuresAdjustedPrices.stitch_multiple_prices",
+          "lineNumber": 54
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "print",
+          "lineNumber": 58
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "db_adjusted_prices.add_adjusted_prices",
+          "lineNumber": 61
+        },
+        {
+          "caller": "process_adjusted_prices_single_instrument",
+          "callee": "csv_adjusted_prices.add_adjusted_prices",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 337,
+      "nonEmptyLines": 271,
+      "functions": [
+        {
+          "name": "create_multiple_price_stack_from_raw_data",
+          "startLine": 60,
+          "endLine": 90,
+          "params": [
+            "roll_calendar",
+            "dict_of_futures_contract_closing_prices"
+          ]
+        },
+        {
+          "name": "_get_price_data_between_rolls",
+          "startLine": 93,
+          "endLine": 123,
+          "params": [
+            "roll_calendar_with_roll_index",
+            "dict_of_futures_contract_closing_prices"
+          ]
+        },
+        {
+          "name": "_calc_roll_date_info",
+          "startLine": 126,
+          "endLine": 149,
+          "params": [
+            "roll_calendar_with_roll_index"
+          ]
+        },
+        {
+          "name": "_calc_contract_date_info",
+          "startLine": 152,
+          "endLine": 177,
+          "params": [
+            "roll_date_info",
+            "dict_of_futures_contract_closing_prices"
+          ]
+        },
+        {
+          "name": "_invalid_current_contract",
+          "startLine": 180,
+          "endLine": 189,
+          "params": [
+            "contract_date_info"
+          ]
+        },
+        {
+          "name": "_calculate_price_data_from_current_next_carry_data",
+          "startLine": 192,
+          "endLine": 199,
+          "params": [
+            "roll_date_info",
+            "contract_date_info"
+          ]
+        },
+        {
+          "name": "_get_current_next_carry_data",
+          "startLine": 202,
+          "endLine": 226,
+          "params": [
+            "roll_date_info",
+            "contract_date_info"
+          ]
+        },
+        {
+          "name": "_get_next_price_data",
+          "startLine": 229,
+          "endLine": 265,
+          "params": [
+            "contract_date_info",
+            "current_price_data",
+            "roll_date_info"
+          ]
+        },
+        {
+          "name": "_get_carry_price_data",
+          "startLine": 268,
+          "endLine": 302,
+          "params": [
+            "contract_date_info",
+            "current_price_data",
+            "roll_date_info"
+          ]
+        },
+        {
+          "name": "_last_row_in_roll_calendar",
+          "startLine": 305,
+          "endLine": 313,
+          "params": [
+            "roll_date_info"
+          ]
+        },
+        {
+          "name": "_build_all_price_data",
+          "startLine": 316,
+          "endLine": 337,
+          "params": [
+            "set_of_price_data",
+            "contract_date_info"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "rollCalendarWithRollIndex",
+          "startLine": 21,
+          "endLine": 33,
+          "methods": [
+            "iterate_roll",
+            "not_end_of_calendar",
+            "data_now_added"
+          ],
+          "properties": [
+            "roll_calendar",
+            "rolling_row_index",
+            "already_added_data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollCalendarWithRollIndex",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "create_multiple_price_stack_from_raw_data",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "_get_price_data_between_rolls",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "_calc_roll_date_info",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "_calc_contract_date_info",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "_invalid_current_contract",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "_calculate_price_data_from_current_next_carry_data",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "_get_current_next_carry_data",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "_get_next_price_data",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "_get_carry_price_data",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "_last_row_in_roll_calendar",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "_build_all_price_data",
+          "line": 316,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "not_end_of_calendar",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "rollCalendarWithRollIndex",
+          "lineNumber": 74
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "roll_calendar_with_roll_index.not_end_of_calendar",
+          "lineNumber": 75
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "_get_price_data_between_rolls",
+          "lineNumber": 76
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "all_price_data_stack.append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "roll_calendar_with_roll_index.data_now_added",
+          "lineNumber": 83
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "roll_calendar_with_roll_index.iterate_roll",
+          "lineNumber": 85
+        },
+        {
+          "caller": "create_multiple_price_stack_from_raw_data",
+          "callee": "pd.concat",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "_calc_roll_date_info",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "_calc_contract_date_info",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "_invalid_current_contract",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "print",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "Exception",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "str",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_get_price_data_between_rolls",
+          "callee": "_calculate_price_data_from_current_next_carry_data",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_calc_roll_date_info",
+          "callee": "pd.DateOffset",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_calc_roll_date_info",
+          "callee": "rollDateInfo",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_calc_contract_date_info",
+          "callee": "str",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_calc_contract_date_info",
+          "callee": "str",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_calc_contract_date_info",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_calc_contract_date_info",
+          "callee": "contractAndPriceInfo",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_invalid_current_contract",
+          "callee": "dict_of_futures_contract_closing_prices.keys",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_calculate_price_data_from_current_next_carry_data",
+          "callee": "_get_current_next_carry_data",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_calculate_price_data_from_current_next_carry_data",
+          "callee": "_build_all_price_data",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_get_current_next_carry_data",
+          "callee": "min",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_get_current_next_carry_data",
+          "callee": "current_contract_data.sort_index",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_get_current_next_carry_data",
+          "callee": "_get_carry_price_data",
+          "lineNumber": 218
+        },
+        {
+          "caller": "_get_current_next_carry_data",
+          "callee": "_get_next_price_data",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "dict_of_futures_contract_closing_prices.keys",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "_last_row_in_roll_calendar",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "print",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "pd.Series",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "Exception",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "str",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_get_next_price_data",
+          "callee": "next_price_data_for_contract.sort_index",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "dict_of_futures_contract_closing_prices.keys",
+          "lineNumber": 276
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "_last_row_in_roll_calendar",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "print",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "pd.Series",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "Exception",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "str",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_get_carry_price_data",
+          "callee": "carry_price_data_for_contract.sort_index",
+          "lineNumber": 297
+        },
+        {
+          "caller": "_last_row_in_roll_calendar",
+          "callee": "len",
+          "lineNumber": 309
+        },
+        {
+          "caller": "_build_all_price_data",
+          "callee": "pd.concat",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_build_all_price_data",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 328
+        },
+        {
+          "caller": "_build_all_price_data",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 331
+        },
+        {
+          "caller": "_build_all_price_data",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 334
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysinit/futures/build_roll_calendars.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 688,
+      "nonEmptyLines": 533,
+      "functions": [
+        {
+          "name": "generate_approximate_calendar",
+          "startLine": 20,
+          "endLine": 46,
+          "params": [
+            "roll_parameters_object",
+            "dict_of_futures_contract_prices"
+          ]
+        },
+        {
+          "name": "_create_approx_calendar_from_earliest_contract",
+          "startLine": 91,
+          "endLine": 114,
+          "params": [
+            "earliest_contract_with_roll_data"
+          ]
+        },
+        {
+          "name": "_get_new_row_of_roll_calendar",
+          "startLine": 117,
+          "endLine": 167,
+          "params": [
+            "current_contract"
+          ]
+        },
+        {
+          "name": "adjust_to_price_series",
+          "startLine": 176,
+          "endLine": 233,
+          "params": [
+            "approx_calendar",
+            "dict_of_futures_contract_prices"
+          ]
+        },
+        {
+          "name": "_get_local_data_for_row_number",
+          "startLine": 236,
+          "endLine": 257,
+          "params": [
+            "approx_calendar",
+            "row_number",
+            "idx_of_last_row_in_data"
+          ]
+        },
+        {
+          "name": "_adjust_row_of_approx_roll_calendar",
+          "startLine": 267,
+          "endLine": 290,
+          "params": [
+            "local_row_data",
+            "dict_of_futures_contract_prices",
+            "omit_carry"
+          ]
+        },
+        {
+          "name": "_get_roll_date_and_date_to_avoid",
+          "startLine": 293,
+          "endLine": 305,
+          "params": [
+            "local_row_data"
+          ]
+        },
+        {
+          "name": "_get_set_of_prices",
+          "startLine": 308,
+          "endLine": 343,
+          "params": [
+            "local_row_data",
+            "dict_of_futures_contract_prices",
+            "omit_carry"
+          ]
+        },
+        {
+          "name": "_get_carry_contract_and_prices",
+          "startLine": 346,
+          "endLine": 369,
+          "params": [
+            "local_row_data",
+            "dict_of_futures_contract_prices"
+          ]
+        },
+        {
+          "name": "_does_carry_come_after_current_contract",
+          "startLine": 372,
+          "endLine": 380,
+          "params": [
+            "local_row_data"
+          ]
+        },
+        {
+          "name": "_print_roll_date_error",
+          "startLine": 383,
+          "endLine": 397,
+          "params": [
+            "local_row_data"
+          ]
+        },
+        {
+          "name": "_print_roll_date_carry_warning",
+          "startLine": 400,
+          "endLine": 412,
+          "params": [
+            "local_row_data"
+          ]
+        },
+        {
+          "name": "_find_best_matching_roll_date",
+          "startLine": 415,
+          "endLine": 439,
+          "params": [
+            "roll_date",
+            "set_of_prices",
+            "avoid_date"
+          ]
+        },
+        {
+          "name": "_required_paired_prices",
+          "startLine": 442,
+          "endLine": 460,
+          "params": [
+            "set_of_prices"
+          ]
+        },
+        {
+          "name": "_valid_dates_from_paired_prices",
+          "startLine": 463,
+          "endLine": 467,
+          "params": [
+            "paired_prices",
+            "avoid_date"
+          ]
+        },
+        {
+          "name": "_matching_prices_from_paired_prices",
+          "startLine": 470,
+          "endLine": 476,
+          "params": [
+            "paired_prices"
+          ]
+        },
+        {
+          "name": "_valid_dates_from_matching_prices",
+          "startLine": 479,
+          "endLine": 487,
+          "params": [
+            "paired_prices_matching",
+            "avoid_date"
+          ]
+        },
+        {
+          "name": "_find_closest_valid_date_to_approx_roll_date",
+          "startLine": 490,
+          "endLine": 498,
+          "params": [
+            "valid_dates",
+            "roll_date"
+          ]
+        },
+        {
+          "name": "_get_adjusted_row",
+          "startLine": 501,
+          "endLine": 513,
+          "params": [
+            "local_row_data",
+            "adjusted_roll_date"
+          ]
+        },
+        {
+          "name": "_print_data_at_start_not_valid_flag",
+          "startLine": 516,
+          "endLine": 521,
+          "params": [
+            "local_row_data"
+          ]
+        },
+        {
+          "name": "_print_adjustment_message",
+          "startLine": 524,
+          "endLine": 534,
+          "params": [
+            "local_row_data",
+            "adjusted_row"
+          ]
+        },
+        {
+          "name": "_add_carry_calendar",
+          "startLine": 537,
+          "endLine": 570,
+          "params": [
+            "roll_calendar",
+            "roll_parameters_object",
+            "dict_of_futures_contract_prices"
+          ]
+        },
+        {
+          "name": "back_out_roll_calendar_from_multiple_prices",
+          "startLine": 573,
+          "endLine": 586,
+          "params": [
+            "multiple_prices"
+          ]
+        },
+        {
+          "name": "_get_roll_calendar_from_unique_prices",
+          "startLine": 589,
+          "endLine": 597,
+          "params": [
+            "multiple_prices_unique"
+          ]
+        },
+        {
+          "name": "_get_time_indices_from_multiple_prices",
+          "startLine": 600,
+          "endLine": 612,
+          "params": [
+            "multiple_prices_unique"
+          ]
+        },
+        {
+          "name": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "startLine": 615,
+          "endLine": 639,
+          "params": [
+            "multiple_prices_unique",
+            "tuple_of_roll_dates"
+          ]
+        },
+        {
+          "name": "_extract_contract_from_multiple_prices",
+          "startLine": 642,
+          "endLine": 649,
+          "params": [
+            "index_of_dates",
+            "multiple_prices_unique",
+            "column_name"
+          ]
+        },
+        {
+          "name": "_float_to_contract_str",
+          "startLine": 652,
+          "endLine": 659,
+          "params": [
+            "multiple_prices_unique",
+            "date_index",
+            "column_name"
+          ]
+        },
+        {
+          "name": "_add_extra_row_to_implied_roll_calendar",
+          "startLine": 662,
+          "endLine": 688,
+          "params": [
+            "roll_calendar",
+            "multiple_prices_unique"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_rollCalendarRow",
+          "startLine": 52,
+          "endLine": 72,
+          "methods": [
+            "__init__",
+            "roll_date"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_listOfRollCalendarRows",
+          "startLine": 78,
+          "endLine": 88,
+          "methods": [
+            "to_pd_df",
+            "last_roll_date"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "generate_approximate_calendar",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_rollCalendarRow",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "_listOfRollCalendarRows",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "_create_approx_calendar_from_earliest_contract",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "_get_new_row_of_roll_calendar",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_to_price_series",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "_get_local_data_for_row_number",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "_adjust_row_of_approx_roll_calendar",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "_get_roll_date_and_date_to_avoid",
+          "line": 293,
+          "isDefault": false
+        },
+        {
+          "name": "_get_set_of_prices",
+          "line": 308,
+          "isDefault": false
+        },
+        {
+          "name": "_get_carry_contract_and_prices",
+          "line": 346,
+          "isDefault": false
+        },
+        {
+          "name": "_does_carry_come_after_current_contract",
+          "line": 372,
+          "isDefault": false
+        },
+        {
+          "name": "_print_roll_date_error",
+          "line": 383,
+          "isDefault": false
+        },
+        {
+          "name": "_print_roll_date_carry_warning",
+          "line": 400,
+          "isDefault": false
+        },
+        {
+          "name": "_find_best_matching_roll_date",
+          "line": 415,
+          "isDefault": false
+        },
+        {
+          "name": "_required_paired_prices",
+          "line": 442,
+          "isDefault": false
+        },
+        {
+          "name": "_valid_dates_from_paired_prices",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "_matching_prices_from_paired_prices",
+          "line": 470,
+          "isDefault": false
+        },
+        {
+          "name": "_valid_dates_from_matching_prices",
+          "line": 479,
+          "isDefault": false
+        },
+        {
+          "name": "_find_closest_valid_date_to_approx_roll_date",
+          "line": 490,
+          "isDefault": false
+        },
+        {
+          "name": "_get_adjusted_row",
+          "line": 501,
+          "isDefault": false
+        },
+        {
+          "name": "_print_data_at_start_not_valid_flag",
+          "line": 516,
+          "isDefault": false
+        },
+        {
+          "name": "_print_adjustment_message",
+          "line": 524,
+          "isDefault": false
+        },
+        {
+          "name": "_add_carry_calendar",
+          "line": 537,
+          "isDefault": false
+        },
+        {
+          "name": "back_out_roll_calendar_from_multiple_prices",
+          "line": 573,
+          "isDefault": false
+        },
+        {
+          "name": "_get_roll_calendar_from_unique_prices",
+          "line": 589,
+          "isDefault": false
+        },
+        {
+          "name": "_get_time_indices_from_multiple_prices",
+          "line": 600,
+          "isDefault": false
+        },
+        {
+          "name": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "line": 615,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_contract_from_multiple_prices",
+          "line": 642,
+          "isDefault": false
+        },
+        {
+          "name": "_float_to_contract_str",
+          "line": 652,
+          "isDefault": false
+        },
+        {
+          "name": "_add_extra_row_to_implied_roll_calendar",
+          "line": 662,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate_approximate_calendar",
+          "callee": "find_earliest_held_contract_with_price_data",
+          "lineNumber": 36
+        },
+        {
+          "caller": "generate_approximate_calendar",
+          "callee": "Exception",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_approximate_calendar",
+          "callee": "_create_approx_calendar_from_earliest_contract",
+          "lineNumber": 42
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 63
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 63
+        },
+        {
+          "caller": "to_pd_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 80
+        },
+        {
+          "caller": "to_pd_df",
+          "callee": "result.drop",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "_listOfRollCalendarRows",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "dict_of_futures_contract_prices.last_contract_date_str",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "current_contract.update_expiry_with_offset_from_parameters",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "_get_new_row_of_roll_calendar",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "roll_calendar_as_list.append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "copy",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "print",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_create_approx_calendar_from_earliest_contract",
+          "callee": "roll_calendar_as_list.to_pd_df",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "current_contract.prices.last_contract_date_str",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "current_contract.find_next_held_contract_with_price_data",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "current_contract.next_held_contract",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "Exception",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "str",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "current_contract.find_best_carry_contract_with_price_data",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "Exception",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "str",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "_rollCalendarRow",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "print",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_get_new_row_of_roll_calendar",
+          "callee": "current_roll_date.strftime",
+          "lineNumber": 163
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_listOfRollCalendarRows",
+          "lineNumber": 189
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "range",
+          "lineNumber": 192
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "len",
+          "lineNumber": 192
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_get_local_data_for_row_number",
+          "lineNumber": 193
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_adjust_row_of_approx_roll_calendar",
+          "lineNumber": 199
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_print_roll_date_carry_warning",
+          "lineNumber": 208
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_adjust_row_of_approx_roll_calendar",
+          "lineNumber": 209
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_print_roll_date_error",
+          "lineNumber": 214
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "len",
+          "lineNumber": 215
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_print_data_at_start_not_valid_flag",
+          "lineNumber": 220
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "adjusted_roll_calendar_as_list.append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "_print_adjustment_message",
+          "lineNumber": 224
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "len",
+          "lineNumber": 226
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "Exception",
+          "lineNumber": 227
+        },
+        {
+          "caller": "adjust_to_price_series",
+          "callee": "adjusted_roll_calendar_as_list.to_pd_df",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_get_local_data_for_row_number",
+          "callee": "localRowData",
+          "lineNumber": 253
+        },
+        {
+          "caller": "_adjust_row_of_approx_roll_calendar",
+          "callee": "_get_roll_date_and_date_to_avoid",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_adjust_row_of_approx_roll_calendar",
+          "callee": "_get_set_of_prices",
+          "lineNumber": 273
+        },
+        {
+          "caller": "_adjust_row_of_approx_roll_calendar",
+          "callee": "_print_roll_date_error",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_adjust_row_of_approx_roll_calendar",
+          "callee": "_find_best_matching_roll_date",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_adjust_row_of_approx_roll_calendar",
+          "callee": "_get_adjusted_row",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_get_set_of_prices",
+          "callee": "str",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_get_set_of_prices",
+          "callee": "str",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_get_set_of_prices",
+          "callee": "_get_carry_contract_and_prices",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_get_set_of_prices",
+          "callee": "setOfPrices",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_get_carry_contract_and_prices",
+          "callee": "_does_carry_come_after_current_contract",
+          "lineNumber": 350
+        },
+        {
+          "caller": "_get_carry_contract_and_prices",
+          "callee": "str",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_get_carry_contract_and_prices",
+          "callee": "str",
+          "lineNumber": 364
+        },
+        {
+          "caller": "_print_roll_date_error",
+          "callee": "print",
+          "lineNumber": 391
+        },
+        {
+          "caller": "_print_roll_date_error",
+          "callee": "print",
+          "lineNumber": 395
+        },
+        {
+          "caller": "_print_roll_date_carry_warning",
+          "callee": "print",
+          "lineNumber": 408
+        },
+        {
+          "caller": "_print_roll_date_carry_warning",
+          "callee": "print",
+          "lineNumber": 412
+        },
+        {
+          "caller": "_find_best_matching_roll_date",
+          "callee": "_required_paired_prices",
+          "lineNumber": 430
+        },
+        {
+          "caller": "_find_best_matching_roll_date",
+          "callee": "_valid_dates_from_paired_prices",
+          "lineNumber": 431
+        },
+        {
+          "caller": "_find_best_matching_roll_date",
+          "callee": "len",
+          "lineNumber": 433
+        },
+        {
+          "caller": "_find_best_matching_roll_date",
+          "callee": "LookupError",
+          "lineNumber": 435
+        },
+        {
+          "caller": "_find_best_matching_roll_date",
+          "callee": "_find_closest_valid_date_to_approx_roll_date",
+          "lineNumber": 437
+        },
+        {
+          "caller": "_required_paired_prices",
+          "callee": "pd.concat",
+          "lineNumber": 446
+        },
+        {
+          "caller": "_required_paired_prices",
+          "callee": "pd.concat",
+          "lineNumber": 450
+        },
+        {
+          "caller": "_valid_dates_from_paired_prices",
+          "callee": "_matching_prices_from_paired_prices",
+          "lineNumber": 464
+        },
+        {
+          "caller": "_valid_dates_from_paired_prices",
+          "callee": "_valid_dates_from_matching_prices",
+          "lineNumber": 465
+        },
+        {
+          "caller": "_matching_prices_from_paired_prices",
+          "callee": "paired_prices.apply",
+          "lineNumber": 471
+        },
+        {
+          "caller": "_matching_prices_from_paired_prices",
+          "callee": "any",
+          "lineNumber": 472
+        },
+        {
+          "caller": "_matching_prices_from_paired_prices",
+          "callee": "np.isnan",
+          "lineNumber": 472
+        },
+        {
+          "caller": "_valid_dates_from_matching_prices",
+          "callee": "valid_dates.sort_values",
+          "lineNumber": 481
+        },
+        {
+          "caller": "_find_closest_valid_date_to_approx_roll_date",
+          "callee": "abs",
+          "lineNumber": 493
+        },
+        {
+          "caller": "_find_closest_valid_date_to_approx_roll_date",
+          "callee": "distance_to_roll_days.index",
+          "lineNumber": 495
+        },
+        {
+          "caller": "_find_closest_valid_date_to_approx_roll_date",
+          "callee": "min",
+          "lineNumber": 495
+        },
+        {
+          "caller": "_get_adjusted_row",
+          "callee": "_rollCalendarRow",
+          "lineNumber": 509
+        },
+        {
+          "caller": "_print_data_at_start_not_valid_flag",
+          "callee": "print",
+          "lineNumber": 518
+        },
+        {
+          "caller": "_print_data_at_start_not_valid_flag",
+          "callee": "str",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_print_adjustment_message",
+          "callee": "print",
+          "lineNumber": 527
+        },
+        {
+          "caller": "_print_adjustment_message",
+          "callee": "str",
+          "lineNumber": 530
+        },
+        {
+          "caller": "_print_adjustment_message",
+          "callee": "str",
+          "lineNumber": 531
+        },
+        {
+          "caller": "_print_adjustment_message",
+          "callee": "str",
+          "lineNumber": 532
+        },
+        {
+          "caller": "_print_adjustment_message",
+          "callee": "adjusted_row.items",
+          "lineNumber": 532
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "list",
+          "lineNumber": 546
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 548
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "contractDate",
+          "lineNumber": 549
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "str",
+          "lineNumber": 549
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "contract.carry_contract",
+          "lineNumber": 555
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "carry_contract_dates.pop",
+          "lineNumber": 562
+        },
+        {
+          "caller": "_add_carry_calendar",
+          "callee": "roll_calendar.drop",
+          "lineNumber": 566
+        },
+        {
+          "caller": "back_out_roll_calendar_from_multiple_prices",
+          "callee": "multiple_prices.index.duplicated",
+          "lineNumber": 577
+        },
+        {
+          "caller": "back_out_roll_calendar_from_multiple_prices",
+          "callee": "_get_roll_calendar_from_unique_prices",
+          "lineNumber": 580
+        },
+        {
+          "caller": "back_out_roll_calendar_from_multiple_prices",
+          "callee": "_add_extra_row_to_implied_roll_calendar",
+          "lineNumber": 582
+        },
+        {
+          "caller": "_get_roll_calendar_from_unique_prices",
+          "callee": "_get_time_indices_from_multiple_prices",
+          "lineNumber": 592
+        },
+        {
+          "caller": "_get_roll_calendar_from_unique_prices",
+          "callee": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "lineNumber": 593
+        },
+        {
+          "caller": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "callee": "_extract_contract_from_multiple_prices",
+          "lineNumber": 620
+        },
+        {
+          "caller": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "callee": "_extract_contract_from_multiple_prices",
+          "lineNumber": 623
+        },
+        {
+          "caller": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "callee": "_extract_contract_from_multiple_prices",
+          "lineNumber": 626
+        },
+        {
+          "caller": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "callee": "pd.DataFrame",
+          "lineNumber": 630
+        },
+        {
+          "caller": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+          "callee": "dict",
+          "lineNumber": 631
+        },
+        {
+          "caller": "_extract_contract_from_multiple_prices",
+          "callee": "_float_to_contract_str",
+          "lineNumber": 646
+        },
+        {
+          "caller": "_float_to_contract_str",
+          "callee": "contractDate",
+          "lineNumber": 653
+        },
+        {
+          "caller": "_float_to_contract_str",
+          "callee": "str",
+          "lineNumber": 654
+        },
+        {
+          "caller": "_float_to_contract_str",
+          "callee": "int",
+          "lineNumber": 654
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "pd.DataFrame",
+          "lineNumber": 666
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "dict",
+          "lineNumber": 667
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "_float_to_contract_str",
+          "lineNumber": 669
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "_float_to_contract_str",
+          "lineNumber": 674
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "_float_to_contract_str",
+          "lineNumber": 679
+        },
+        {
+          "caller": "_add_extra_row_to_implied_roll_calendar",
+          "callee": "pd.concat",
+          "lineNumber": 686
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 31,
+        "functionCount": 29,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysinit/futures/clone_data_for_instrument.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 204,
+      "nonEmptyLines": 167,
+      "functions": [
+        {
+          "name": "clone_data_for_instrument",
+          "startLine": 22,
+          "endLine": 53,
+          "params": [
+            "instrument_from",
+            "instrument_to",
+            "write_to_csv",
+            "inverse",
+            "offset",
+            "ignore_duplication"
+          ]
+        },
+        {
+          "name": "clone_prices_per_contract",
+          "startLine": 56,
+          "endLine": 81,
+          "params": [
+            "instrument_from",
+            "instrument_to",
+            "list_of_contract_dates",
+            "ignore_duplication",
+            "inverse",
+            "multiplier",
+            "offset"
+          ]
+        },
+        {
+          "name": "clone_single_contract",
+          "startLine": 84,
+          "endLine": 154,
+          "params": [
+            "instrument_from",
+            "instrument_to",
+            "contract_date",
+            "ignore_duplication",
+            "inverse",
+            "multiplier",
+            "offset"
+          ]
+        },
+        {
+          "name": "clone_roll_calendar",
+          "startLine": 157,
+          "endLine": 159,
+          "params": [
+            "instrument_from",
+            "instrument_to"
+          ]
+        },
+        {
+          "name": "clone_multiple_prices",
+          "startLine": 162,
+          "endLine": 182,
+          "params": [
+            "instrument_from",
+            "instrument_to",
+            "write_to_csv",
+            "ignore_duplication",
+            "inverse",
+            "offset"
+          ]
+        },
+        {
+          "name": "clone_adjusted_prices",
+          "startLine": 185,
+          "endLine": 204,
+          "params": [
+            "instrument_from",
+            "instrument_to",
+            "write_to_csv",
+            "ignore_duplication",
+            "inverse",
+            "offset"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "clone_data_for_instrument",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "clone_prices_per_contract",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "clone_single_contract",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "clone_roll_calendar",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "clone_multiple_prices",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "clone_adjusted_prices",
+          "line": 185,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clone_data_for_instrument",
+          "callee": "clone_prices_per_contract",
+          "lineNumber": 30
+        },
+        {
+          "caller": "clone_data_for_instrument",
+          "callee": "clone_roll_calendar",
+          "lineNumber": 38
+        },
+        {
+          "caller": "clone_data_for_instrument",
+          "callee": "clone_multiple_prices",
+          "lineNumber": 40
+        },
+        {
+          "caller": "clone_data_for_instrument",
+          "callee": "clone_adjusted_prices",
+          "lineNumber": 47
+        },
+        {
+          "caller": "clone_prices_per_contract",
+          "callee": "db_data_individual_prices.contract_dates_with_merged_price_data_for_instrument_code",
+          "lineNumber": 66
+        },
+        {
+          "caller": "clone_prices_per_contract",
+          "callee": "clone_single_contract",
+          "lineNumber": 71
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "futuresContract",
+          "lineNumber": 93
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "futuresContract",
+          "lineNumber": 94
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.get_merged_prices_for_contract_object",
+          "lineNumber": 96
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "data_in.inverse",
+          "lineNumber": 101
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "data_in.multiply_prices",
+          "lineNumber": 103
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "data_in.add_offset_to_prices",
+          "lineNumber": 106
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.write_merged_prices_for_contract_object",
+          "lineNumber": 108
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 115
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "len",
+          "lineNumber": 119
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "hourly_data_in.inverse",
+          "lineNumber": 121
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "hourly_data_in.multiply_prices",
+          "lineNumber": 123
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "hourly_data_in.add_offset_to_prices",
+          "lineNumber": 126
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.write_prices_at_frequency_for_contract_object",
+          "lineNumber": 128
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 136
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "daily_data_in.inverse",
+          "lineNumber": 142
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "daily_data_in.multiply_prices",
+          "lineNumber": 144
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "daily_data_in.add_offset_to_prices",
+          "lineNumber": 147
+        },
+        {
+          "caller": "clone_single_contract",
+          "callee": "db_data_individual_prices.write_prices_at_frequency_for_contract_object",
+          "lineNumber": 149
+        },
+        {
+          "caller": "clone_roll_calendar",
+          "callee": "csv_roll_calendar.get_roll_calendar",
+          "lineNumber": 158
+        },
+        {
+          "caller": "clone_roll_calendar",
+          "callee": "csv_roll_calendar.add_roll_calendar",
+          "lineNumber": 159
+        },
+        {
+          "caller": "clone_multiple_prices",
+          "callee": "db_data_multiple_prices.get_multiple_prices",
+          "lineNumber": 170
+        },
+        {
+          "caller": "clone_multiple_prices",
+          "callee": "prices.inverse",
+          "lineNumber": 172
+        },
+        {
+          "caller": "clone_multiple_prices",
+          "callee": "prices.add_offset_to_prices",
+          "lineNumber": 175
+        },
+        {
+          "caller": "clone_multiple_prices",
+          "callee": "db_data_multiple_prices.add_multiple_prices",
+          "lineNumber": 177
+        },
+        {
+          "caller": "clone_multiple_prices",
+          "callee": "csv_multiple.add_multiple_prices",
+          "lineNumber": 182
+        },
+        {
+          "caller": "clone_adjusted_prices",
+          "callee": "db_data_adjusted_prices.get_adjusted_prices",
+          "lineNumber": 193
+        },
+        {
+          "caller": "clone_adjusted_prices",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 195
+        },
+        {
+          "caller": "clone_adjusted_prices",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 198
+        },
+        {
+          "caller": "clone_adjusted_prices",
+          "callee": "db_data_adjusted_prices.add_adjusted_prices",
+          "lineNumber": 200
+        },
+        {
+          "caller": "clone_adjusted_prices",
+          "callee": "csv_adjusted.add_adjusted_prices",
+          "lineNumber": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/clone_large_to_small_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

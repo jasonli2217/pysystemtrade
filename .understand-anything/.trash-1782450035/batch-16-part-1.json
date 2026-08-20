@@ -1,0 +1,1141 @@
+{
+  "nodes": [
+    {
+      "id": "file:syscore/interactive/input.py",
+      "type": "file",
+      "name": "input.py",
+      "filePath": "syscore/interactive/input.py",
+      "summary": "Interactive console input helpers: yes/no prompts, type-checked user input conversion, and namedtuple field editing utilities used throughout init/production interactive scripts.",
+      "tags": [
+        "utility",
+        "interactive",
+        "validation",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:syscore/interactive/run_functions.py",
+      "type": "file",
+      "name": "run_functions.py",
+      "filePath": "syscore/interactive/run_functions.py",
+      "summary": "Reflection-based helpers that introspect a function signature and interactively prompt the user for each argument, casting input to the annotated type.",
+      "tags": [
+        "utility",
+        "interactive",
+        "reflection",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "type": "file",
+      "name": "arctic_adjusted_prices.py",
+      "filePath": "sysdata/arctic/arctic_adjusted_prices.py",
+      "summary": "Arctic/MongoDB-backed storage implementation of the futures adjusted (back-adjusted) prices data interface.",
+      "tags": [
+        "data-access",
+        "database",
+        "adjusted-prices",
+        "arctic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "type": "file",
+      "name": "arctic_multiple_prices.py",
+      "filePath": "sysdata/arctic/arctic_multiple_prices.py",
+      "summary": "Arctic/MongoDB-backed storage implementation of the futures multiple prices data interface, serialising contract identifiers to strings on write.",
+      "tags": [
+        "data-access",
+        "database",
+        "multiple-prices",
+        "arctic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "file",
+      "name": "csv_adjusted_prices.py",
+      "filePath": "sysdata/csv/csv_adjusted_prices.py",
+      "summary": "CSV-file-backed storage implementation of the futures adjusted prices data interface.",
+      "tags": [
+        "data-access",
+        "csv",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "file",
+      "name": "csv_multiple_prices.py",
+      "filePath": "sysdata/csv/csv_multiple_prices.py",
+      "summary": "CSV-file-backed storage implementation of the futures multiple prices data interface, parsing per-contract price/carry columns.",
+      "tags": [
+        "data-access",
+        "csv",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "file",
+      "name": "csv_roll_calendars.py",
+      "filePath": "sysdata/csv/csv_roll_calendars.py",
+      "summary": "CSV-file-backed storage implementation of the roll calendar data interface.",
+      "tags": [
+        "data-access",
+        "csv",
+        "roll-calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "file",
+      "name": "csv_roll_parameters.py",
+      "filePath": "sysdata/csv/csv_roll_parameters.py",
+      "summary": "CSV-file-backed roll parameters store plus an allRollParameters aggregate that reads/writes the full instrument roll-config table.",
+      "tags": [
+        "data-access",
+        "csv",
+        "roll-parameters",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/futures/adjusted_prices.py",
+      "type": "file",
+      "name": "adjusted_prices.py",
+      "filePath": "sysdata/futures/adjusted_prices.py",
+      "summary": "Abstract base class defining the futures adjusted prices data interface (get/add/delete with existence checks) implemented by csv/arctic backends.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/futures/futures_per_contract_prices.py",
+      "type": "file",
+      "name": "futures_per_contract_prices.py",
+      "filePath": "sysdata/futures/futures_per_contract_prices.py",
+      "summary": "Large abstract base class defining the per-contract futures price data interface across merged and frequency-specific prices, with extensive read/write/delete and listing methods.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "per-contract-prices"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Defines public methods delegating to abstract _no_checking primitives subclasses must implement."
+    },
+    {
+      "id": "file:sysdata/futures/multiple_prices.py",
+      "type": "file",
+      "name": "multiple_prices.py",
+      "filePath": "sysdata/futures/multiple_prices.py",
+      "summary": "Abstract base class defining the futures multiple prices data interface implemented by csv/arctic/parquet backends.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/futures/roll_calendars.py",
+      "type": "file",
+      "name": "roll_calendars.py",
+      "filePath": "sysdata/futures/roll_calendars.py",
+      "summary": "Abstract base class defining the roll calendar data interface (get/add/delete by instrument) implemented by the csv backend.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "roll-calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/input.py:true_if_answer_is_yes",
+      "type": "function",
+      "name": "true_if_answer_is_yes",
+      "filePath": "syscore/interactive/input.py",
+      "lineRange": [
+        12,
+        28
+      ],
+      "summary": "Prompts the user with a yes/no question and returns a boolean, optionally allowing an empty answer to mean None.",
+      "tags": [
+        "interactive",
+        "validation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/interactive/input.py:get_input_from_user_and_convert_to_type",
+      "type": "function",
+      "name": "get_input_from_user_and_convert_to_type",
+      "filePath": "syscore/interactive/input.py",
+      "lineRange": [
+        38,
+        61
+      ],
+      "summary": "Prompts for input with optional default and loops until the user supplies a value convertible to the expected type.",
+      "tags": [
+        "interactive",
+        "validation",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/input.py:_get_input_and_check_type",
+      "type": "function",
+      "name": "_get_input_and_check_type",
+      "filePath": "syscore/interactive/input.py",
+      "lineRange": [
+        64,
+        88
+      ],
+      "summary": "Reads raw input, applies the default when blank, and validates/casts it to the expected type.",
+      "tags": [
+        "interactive",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/input.py:input_field_names_for_named_tuple",
+      "type": "function",
+      "name": "input_field_names_for_named_tuple",
+      "filePath": "syscore/interactive/input.py",
+      "lineRange": [
+        111,
+        126
+      ],
+      "summary": "Interactively edits the fields of a namedtuple instance, prompting per field with current values as defaults.",
+      "tags": [
+        "interactive",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/input.py:override_tuple_fields",
+      "type": "function",
+      "name": "override_tuple_fields",
+      "filePath": "syscore/interactive/input.py",
+      "lineRange": [
+        129,
+        140
+      ],
+      "summary": "Returns a new namedtuple instance with selected fields overridden from a supplied dict.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/interactive/run_functions.py:interactively_input_arguments_for_function",
+      "type": "function",
+      "name": "interactively_input_arguments_for_function",
+      "filePath": "syscore/interactive/run_functions.py",
+      "lineRange": [
+        12,
+        37
+      ],
+      "summary": "Introspects a function signature and builds an argument dict by prompting the user for each parameter.",
+      "tags": [
+        "reflection",
+        "interactive",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/run_functions.py:input_and_type_cast_argument",
+      "type": "function",
+      "name": "input_and_type_cast_argument",
+      "filePath": "syscore/interactive/run_functions.py",
+      "lineRange": [
+        40,
+        78
+      ],
+      "summary": "Prompts for a single function argument, applying the parameter annotation and default to type-cast the input.",
+      "tags": [
+        "reflection",
+        "interactive",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/interactive/run_functions.py:parameter_type",
+      "type": "function",
+      "name": "parameter_type",
+      "filePath": "syscore/interactive/run_functions.py",
+      "lineRange": [
+        85,
+        99
+      ],
+      "summary": "Extracts the annotated type of a parameter from its signature, defaulting to str when unannotated.",
+      "tags": [
+        "reflection",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_adjusted_prices.py:arcticFuturesAdjustedPricesData",
+      "type": "class",
+      "name": "arcticFuturesAdjustedPricesData",
+      "filePath": "sysdata/arctic/arctic_adjusted_prices.py",
+      "lineRange": [
+        12,
+        61
+      ],
+      "summary": "Arctic-backed adjusted prices store implementing the get/add/delete primitives over a MongoDB Arctic connection.",
+      "tags": [
+        "data-access",
+        "database",
+        "arctic",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/arctic/arctic_multiple_prices.py:arcticFuturesMultiplePricesData",
+      "type": "class",
+      "name": "arcticFuturesMultiplePricesData",
+      "filePath": "sysdata/arctic/arctic_multiple_prices.py",
+      "lineRange": [
+        20,
+        68
+      ],
+      "summary": "Arctic-backed multiple prices store implementing the get/add/delete primitives, stringifying contract columns on write.",
+      "tags": [
+        "data-access",
+        "database",
+        "arctic",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/arctic/arctic_multiple_prices.py:_change_contracts_to_str",
+      "type": "function",
+      "name": "_change_contracts_to_str",
+      "filePath": "sysdata/arctic/arctic_multiple_prices.py",
+      "lineRange": [
+        71,
+        82
+      ],
+      "summary": "Converts the per-contract identifier columns of a multiple-prices DataFrame to strings for storage.",
+      "tags": [
+        "serialization",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_adjusted_prices.py:csvFuturesAdjustedPricesData",
+      "type": "class",
+      "name": "csvFuturesAdjustedPricesData",
+      "filePath": "sysdata/csv/csv_adjusted_prices.py",
+      "lineRange": [
+        17,
+        82
+      ],
+      "summary": "CSV-backed adjusted prices store reading/writing one file per instrument code.",
+      "tags": [
+        "data-access",
+        "csv",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_multiple_prices.py:csvFuturesMultiplePricesData",
+      "type": "class",
+      "name": "csvFuturesMultiplePricesData",
+      "filePath": "sysdata/csv/csv_multiple_prices.py",
+      "lineRange": [
+        21,
+        97
+      ],
+      "summary": "CSV-backed multiple prices store parsing per-contract price/carry/forward columns from one file per instrument.",
+      "tags": [
+        "data-access",
+        "csv",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_roll_calendars.py:csvRollCalendarData",
+      "type": "class",
+      "name": "csvRollCalendarData",
+      "filePath": "sysdata/csv/csv_roll_calendars.py",
+      "lineRange": [
+        18,
+        73
+      ],
+      "summary": "CSV-backed roll calendar store reading/writing one calendar file per instrument code.",
+      "tags": [
+        "data-access",
+        "csv",
+        "roll-calendar"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_roll_parameters.py:allRollParameters",
+      "type": "class",
+      "name": "allRollParameters",
+      "filePath": "sysdata/csv/csv_roll_parameters.py",
+      "lineRange": [
+        13,
+        57
+      ],
+      "summary": "Aggregate of all instruments roll parameters with read/write to a single CSV config file.",
+      "tags": [
+        "configuration",
+        "roll-parameters",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_roll_parameters.py:csvRollParametersData",
+      "type": "class",
+      "name": "csvRollParametersData",
+      "filePath": "sysdata/csv/csv_roll_parameters.py",
+      "lineRange": [
+        60,
+        118
+      ],
+      "summary": "CSV-backed roll parameters store exposing per-instrument roll config plus bulk read/write of the full table.",
+      "tags": [
+        "data-access",
+        "csv",
+        "roll-parameters"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/adjusted_prices.py:futuresAdjustedPricesData",
+      "type": "class",
+      "name": "futuresAdjustedPricesData",
+      "filePath": "sysdata/futures/adjusted_prices.py",
+      "lineRange": [
+        15,
+        113
+      ],
+      "summary": "Abstract base defining the adjusted prices interface: keyed get/add/delete with existence checks delegating to backend primitives.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/futures_per_contract_prices.py:futuresContractPriceData",
+      "type": "class",
+      "name": "futuresContractPriceData",
+      "filePath": "sysdata/futures/futures_per_contract_prices.py",
+      "lineRange": [
+        23,
+        545
+      ],
+      "summary": "Abstract base for per-contract futures prices, exposing merged and per-frequency get/write/update/delete and contract-listing methods over backend _no_checking primitives.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "per-contract-prices"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "class",
+      "name": "futuresMultiplePricesData",
+      "filePath": "sysdata/futures/multiple_prices.py",
+      "lineRange": [
+        22,
+        122
+      ],
+      "summary": "Abstract base defining the multiple prices interface with keyed get/add/delete and existence checks.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/roll_calendars.py:rollCalendarData",
+      "type": "class",
+      "name": "rollCalendarData",
+      "filePath": "sysdata/futures/roll_calendars.py",
+      "lineRange": [
+        10,
+        99
+      ],
+      "summary": "Abstract base defining the roll calendar interface with keyed get/add/delete by instrument.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "roll-calendar"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "function:syscore/interactive/input.py:true_if_answer_is_yes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "function:syscore/interactive/input.py:get_input_from_user_and_convert_to_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "function:syscore/interactive/input.py:_get_input_and_check_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "function:syscore/interactive/input.py:input_field_names_for_named_tuple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "function:syscore/interactive/input.py:override_tuple_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/run_functions.py",
+      "target": "function:syscore/interactive/run_functions.py:interactively_input_arguments_for_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/run_functions.py",
+      "target": "function:syscore/interactive/run_functions.py:input_and_type_cast_argument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/interactive/run_functions.py",
+      "target": "function:syscore/interactive/run_functions.py:parameter_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "class:sysdata/arctic/arctic_adjusted_prices.py:arcticFuturesAdjustedPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "class:sysdata/arctic/arctic_adjusted_prices.py:arcticFuturesAdjustedPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "class:sysdata/arctic/arctic_multiple_prices.py:arcticFuturesMultiplePricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "class:sysdata/arctic/arctic_multiple_prices.py:arcticFuturesMultiplePricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "function:sysdata/arctic/arctic_multiple_prices.py:_change_contracts_to_str",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "class:sysdata/csv/csv_adjusted_prices.py:csvFuturesAdjustedPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "class:sysdata/csv/csv_adjusted_prices.py:csvFuturesAdjustedPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "class:sysdata/csv/csv_multiple_prices.py:csvFuturesMultiplePricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "class:sysdata/csv/csv_multiple_prices.py:csvFuturesMultiplePricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "class:sysdata/csv/csv_roll_calendars.py:csvRollCalendarData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "class:sysdata/csv/csv_roll_calendars.py:csvRollCalendarData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "class:sysdata/csv/csv_roll_parameters.py:allRollParameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "class:sysdata/csv/csv_roll_parameters.py:allRollParameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "class:sysdata/csv/csv_roll_parameters.py:csvRollParametersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "class:sysdata/csv/csv_roll_parameters.py:csvRollParametersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/adjusted_prices.py",
+      "target": "class:sysdata/futures/adjusted_prices.py:futuresAdjustedPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/adjusted_prices.py",
+      "target": "class:sysdata/futures/adjusted_prices.py:futuresAdjustedPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "class:sysdata/futures/futures_per_contract_prices.py:futuresContractPriceData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "class:sysdata/futures/futures_per_contract_prices.py:futuresContractPriceData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/roll_calendars.py",
+      "target": "class:sysdata/futures/roll_calendars.py:rollCalendarData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/roll_calendars.py",
+      "target": "class:sysdata/futures/roll_calendars.py:rollCalendarData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/interactive/input.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/interactive/run_functions.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "file:sysdata/futures/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "file:sysdata/arctic/arctic_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:sysdata/futures/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_adjusted_prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_multiple_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:sysdata/futures/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_calendars.py",
+      "target": "file:sysobjects/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "file:sysdata/futures/rolls_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_parameters.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/adjusted_prices.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/adjusted_prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/futures_per_contract_prices.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/multiple_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/roll_calendars.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/roll_calendars.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/roll_calendars.py",
+      "target": "file:sysobjects/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysdata/arctic/arctic_adjusted_prices.py:arcticFuturesAdjustedPricesData",
+      "target": "class:sysdata/futures/adjusted_prices.py:futuresAdjustedPricesData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/csv/csv_adjusted_prices.py:csvFuturesAdjustedPricesData",
+      "target": "class:sysdata/futures/adjusted_prices.py:futuresAdjustedPricesData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/arctic/arctic_multiple_prices.py:arcticFuturesMultiplePricesData",
+      "target": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/csv/csv_multiple_prices.py:csvFuturesMultiplePricesData",
+      "target": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/csv/csv_roll_calendars.py:csvRollCalendarData",
+      "target": "class:sysdata/futures/roll_calendars.py:rollCalendarData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/csv/csv_roll_parameters.py:csvRollParametersData",
+      "target": "class:sysdata/futures/rolls_parameters.py:rollParametersData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

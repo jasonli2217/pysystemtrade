@@ -1,0 +1,277 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/market_monitor_report.py",
+   "type": "file",
+   "name": "market_monitor_report.py",
+   "filePath": "sysproduction/reporting/market_monitor_report.py",
+   "summary": "Report generator producing the market monitor report of price moves over date ranges.",
+   "tags": [
+    "reporting",
+    "market-monitor",
+    "report"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/market_monitor_report.py:market_monitor_report",
+   "type": "function",
+   "name": "market_monitor_report",
+   "filePath": "sysproduction/reporting/market_monitor_report.py",
+   "lineRange": [
+    26,
+    43
+   ],
+   "summary": "Function market monitor report (18 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_with_dates",
+   "type": "function",
+   "name": "_market_monitor_with_dates",
+   "filePath": "sysproduction/reporting/market_monitor_report.py",
+   "lineRange": [
+    46,
+    68
+   ],
+   "summary": "Function  market monitor with dates (23 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_report_full",
+   "type": "function",
+   "name": "_market_monitor_report_full",
+   "filePath": "sysproduction/reporting/market_monitor_report.py",
+   "lineRange": [
+    71,
+    95
+   ],
+   "summary": "Function  market monitor report full (25 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/minimum_capital_report.py",
+   "type": "file",
+   "name": "minimum_capital_report.py",
+   "filePath": "sysproduction/reporting/minimum_capital_report.py",
+   "summary": "Report generator producing the minimum-capital-per-instrument report.",
+   "tags": [
+    "reporting",
+    "capital",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/minimum_capital_report.py:minimum_capital_report",
+   "type": "function",
+   "name": "minimum_capital_report",
+   "filePath": "sysproduction/reporting/minimum_capital_report.py",
+   "lineRange": [
+    22,
+    38
+   ],
+   "summary": "Function minimum capital report (17 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/pandl_report.py",
+   "type": "file",
+   "name": "pandl_report.py",
+   "filePath": "sysproduction/reporting/pandl_report.py",
+   "summary": "Report generator producing the profit-and-loss report across instruments and strategies.",
+   "tags": [
+    "reporting",
+    "pandl",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/pandl_report.py:pandl_report",
+   "type": "function",
+   "name": "pandl_report",
+   "filePath": "sysproduction/reporting/pandl_report.py",
+   "lineRange": [
+    13,
+    56
+   ],
+   "summary": "Function pandl report (44 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:market_monitor_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:market_monitor_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_with_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_with_dates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_report_full",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "function:sysproduction/reporting/market_monitor_report.py:_market_monitor_report_full",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/market_monitor_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "function:sysproduction/reporting/minimum_capital_report.py:minimum_capital_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "function:sysproduction/reporting/minimum_capital_report.py:minimum_capital_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/minimum_capital_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/pandl_report.py",
+   "target": "function:sysproduction/reporting/pandl_report.py:pandl_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/pandl_report.py",
+   "target": "function:sysproduction/reporting/pandl_report.py:pandl_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/pandl_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/pandl_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/pandl_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

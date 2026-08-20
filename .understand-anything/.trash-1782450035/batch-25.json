@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "config:systems/provided/example/daily_with_order_simulation.yaml",
+      "type": "config",
+      "name": "daily_with_order_simulation.yaml",
+      "filePath": "systems/provided/example/daily_with_order_simulation.yaml",
+      "summary": "Example backtest system config running two EWMAC (8/32, 32/128) momentum rules on daily prices with an order-simulation overlay, using a $50k notional, 25% vol target, and a two-instrument (US10, SP500_micro) portfolio.",
+      "tags": ["configuration", "backtest", "trading-rules", "order-simulation", "example"],
+      "complexity": "simple",
+      "languageNotes": "pysystemtrade config: trading_rules map each rule to a dotted Python function path plus data accessors and other_args; forecast_weights/instrument_weights and div multipliers control portfolio combination."
+    },
+    {
+      "id": "config:systems/provided/example/estimateexampleconfig.yaml",
+      "type": "config",
+      "name": "estimateexampleconfig.yaml",
+      "filePath": "systems/provided/example/estimateexampleconfig.yaml",
+      "summary": "Example config that enables estimation of forecast scalars, forecast weights, and instrument weights (rather than fixed values), wiring EWMAC8/16 and carry rules across EDOLLAR, US10, and BUND with a 16% vol target and GBP base currency.",
+      "tags": ["configuration", "backtest", "estimation", "trading-rules", "example"],
+      "complexity": "moderate",
+      "languageNotes": "Sets use_forecast_scale_estimates / use_forecast_weight_estimates / use_instrument_weight_estimates to True so the system fits these parameters from data instead of reading static weights."
+    },
+    {
+      "id": "config:systems/provided/example/exampleconfig.yaml",
+      "type": "config",
+      "name": "exampleconfig.yaml",
+      "filePath": "systems/provided/example/exampleconfig.yaml",
+      "summary": "Canonical fixed-parameter example config defining trading rules with explicit forecast caps, forecast weights, instrument weights, and diversification multipliers for the standard pysystemtrade demo system.",
+      "tags": ["configuration", "backtest", "trading-rules", "fixed-weights", "example"],
+      "complexity": "moderate",
+      "languageNotes": "Mixes fixed forecast/instrument weights with a forecast_weight_estimate block, serving as the baseline config referenced throughout the documentation and tests."
+    },
+    {
+      "id": "config:systems/provided/example/hourly_with_order_simulator.yaml",
+      "type": "config",
+      "name": "hourly_with_order_simulator.yaml",
+      "filePath": "systems/provided/example/hourly_with_order_simulator.yaml",
+      "summary": "Example backtest config mirroring the daily order-simulation system but driven on hourly data, applying two EWMAC rules with order simulation, a 25% vol target, and a two-instrument portfolio.",
+      "tags": ["configuration", "backtest", "trading-rules", "order-simulation", "hourly"],
+      "complexity": "simple",
+      "languageNotes": "buffer_method set to 'none' for consistency with the order-simulation pathway; intended to demonstrate intraday execution simulation."
+    },
+    {
+      "id": "config:systems/provided/example/simplesystemconfig.yaml",
+      "type": "config",
+      "name": "simplesystemconfig.yaml",
+      "filePath": "systems/provided/example/simplesystemconfig.yaml",
+      "summary": "Minimal example system config used in introductory tutorials, defining two EWMAC trading rules with fixed forecast and instrument weights, a 25% vol target, and a $50k notional capital base.",
+      "tags": ["configuration", "backtest", "trading-rules", "tutorial", "example"],
+      "complexity": "simple",
+      "languageNotes": "Simplest of the provided example configs; commonly loaded in getting-started notebooks to build a System object end to end."
+    }
+  ],
+  "edges": []
+}

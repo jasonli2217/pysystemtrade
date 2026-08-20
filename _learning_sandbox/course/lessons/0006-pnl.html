@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 6 · P&amp;L &amp; Sharpe — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 6 · Accounts</div>
+  <h1>P&amp;L &amp; Sharpe: judging the system</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> Everything so far produced <em>positions</em>. Now
+    <code>accounts</code> asks the only question that matters before you risk real money:
+    <strong>did it make money, per unit of risk, after costs?</strong> Reading these numbers
+    correctly is what stops you from trading a system that only <em>looks</em> good.
+  </div>
+
+  <h2>P&amp;L comes at several levels</h2>
+  <p>
+    <code>system.accounts</code> can measure P&amp;L at increasing scope. Same machinery,
+    different lens:
+  </p>
+  <div class="pipeline">
+    <div class="stage"><div class="num">1</div><div class="body">
+      <span class="name">pandl_for_instrument_forecast(I, rule)</span>
+      <p class="desc">One rule, one instrument. "Is EWMAC any good on EUROSTX?"</p></div></div>
+    <div class="stage"><div class="num">2</div><div class="body">
+      <span class="name">pandl_for_subsystem(I)</span>
+      <p class="desc">All rules on one instrument, as if it were the whole account.</p></div></div>
+    <div class="stage"><div class="num">3</div><div class="body">
+      <span class="name">pandl_for_instrument(I)</span>
+      <p class="desc">That instrument's real contribution inside the portfolio.</p></div></div>
+    <div class="stage"><div class="num">4</div><div class="body">
+      <span class="name">portfolio()</span>
+      <p class="desc">The whole system — the headline number.</p></div></div>
+  </div>
+
+  <h2>Sharpe ratio — the headline</h2>
+  <p>
+    The <strong>Sharpe ratio</strong> = return ÷ risk (annualised). It lets you compare a
+    calm system and a wild one fairly. Your ch.15 system:
+  </p>
+<pre><code>portfolio Sharpe   0.478      <span class="comment"># return per unit of risk, after costs</span></code></pre>
+  <p>Carver's rule of thumb: a diversified system around <strong>0.5–1.0</strong> is realistic and good. Anything claiming 3+ should make you suspicious.</p>
+
+  <h2>The diversification payoff — in real numbers</h2>
+  <p>Here's the most important thing on this page. Look at EUROSTX <em>alone</em> vs the <em>portfolio</em>:</p>
+<pre><code>EUROSTX subsystem Sharpe   -0.037   <span class="comment"># on its own, basically a loser!</span>
+whole portfolio Sharpe     +0.478   <span class="comment"># yet the system makes money</span></code></pre>
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    You do <strong>not</strong> need every instrument (or rule) to be a winner. EUROSTX has
+    been a dud in this sample, yet the diversified portfolio is solidly positive — the winners
+    and the diversification carry the losers. This is why you must judge the
+    <em>portfolio</em>, never cherry-pick one instrument. Live, resist the urge to yank an
+    instrument just because it's down; that's often exactly the diversification you're being
+    paid for.
+  </div>
+
+  <h2>Gross vs net — always read net</h2>
+<pre><code>gross Sharpe   0.498     <span class="comment"># before trading costs</span>
+net   Sharpe   0.478     <span class="comment"># after costs — THIS is your real number</span>
+cost drag   ~= 0.02 Sharpe</code></pre>
+  <p>The gap is costs. A backtest that only shows <em>gross</em> is lying to you. Lesson 7 opens up that cost number.</p>
+
+  <h2>See it yourself (5 min)</h2>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_pnl.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+s = futures_system()
+I = "EUROSTX"
+
+p = s.accounts.portfolio()
+print("portfolio Sharpe :", round(float(p.sharpe()), 3))
+print("  gross / net    :", round(float(p.gross.sharpe()), 3),
+      "/", round(float(p.net.sharpe()), 3))
+print("EUROSTX alone    :", round(float(s.accounts.pandl_for_subsystem(I).sharpe()), 3),
+      " (loser, yet portfolio wins)")
+</code></pre>
+  <p>Run: <code>uv run python _learning_sandbox/course/lessons/trace_pnl.py</code>
+     <em>(the portfolio P&amp;L takes a minute to compute).</em></p>
+
+  <h2>Check yourself</h2>
+  <div class="quiz" data-quiz='[
+    {"q":"What does the Sharpe ratio actually measure about a system?",
+     "options":["Total profit in dollars","Return per unit risk","The largest single loss","Number of trades made"],
+     "correct":1,
+     "why":"Sharpe is annualised return divided by annualised risk, letting you fairly compare systems of different volatility."},
+    {"q":"EUROSTX alone is a slight loser, yet the portfolio makes money because?",
+     "options":["Its costs were refunded","Diversification carries losers","Its forecast was capped","Its weight was set high"],
+     "correct":1,
+     "why":"Winners and diversification across six markets more than cover a single weak instrument; judge the portfolio, not one name."},
+    {"q":"Which Sharpe figure should you trust when deciding to trade real money?",
+     "options":["The gross Sharpe ratio","The net Sharpe ratio","The single-rule Sharpe","The largest Sharpe shown"],
+     "correct":1,
+     "why":"Net is after trading costs — the only figure that reflects what you would actually earn; gross-only backtests flatter themselves."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <strong>Systematic Trading</strong>, Robert Carver — <em>Chapter 3 (Fitting &amp; the danger
+    of overfitting)</em> and the accounts docs. Code:
+    <a href="../../../systems/accounts/accounts_stage.py">systems/accounts/accounts_stage.py</a>.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    Want drawdowns, skew, or how Sharpe is annualised from daily returns? Ask — these are the
+    numbers that keep you honest.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 6</span>
+    <span>Prev ← <a href="0005-portfolio.html">The Portfolio</a> · Next → <a href="0007-costs.html">Costs</a></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "type": "file",
+      "name": "parquet_adjusted_prices.py",
+      "filePath": "sysdata/parquet/parquet_adjusted_prices.py",
+      "summary": "Parquet storage backend for futures adjusted (back-adjusted) price series, implementing the abstract adjusted-prices data interface against the parquet access layer.",
+      "tags": [
+        "data-model",
+        "service",
+        "serialization",
+        "persistence"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_capital.py",
+      "type": "file",
+      "name": "parquet_capital.py",
+      "filePath": "sysdata/parquet/parquet_capital.py",
+      "summary": "Parquet storage backend for per-strategy capital time series, implementing the abstract capital data interface.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "capital"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "type": "file",
+      "name": "parquet_futures_per_contract_prices.py",
+      "filePath": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "summary": "Parquet storage backend for per-contract futures prices at multiple frequencies, with key encoding helpers that combine contract identity and frequency.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "futures-prices"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "type": "file",
+      "name": "parquet_historic_contract_positions.py",
+      "filePath": "sysdata/parquet/parquet_historic_contract_positions.py",
+      "summary": "Parquet storage backend for historic per-contract position series, with contract<->key encoding helpers.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "type": "file",
+      "name": "parquet_historic_strategy_positions.py",
+      "filePath": "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "summary": "Parquet storage backend for historic instrument-strategy position series.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "type": "file",
+      "name": "parquet_optimal_positions.py",
+      "filePath": "sysdata/parquet/parquet_optimal_positions.py",
+      "summary": "Parquet storage backend for optimal position dataframes keyed by instrument strategy.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "type": "file",
+      "name": "parquet_spotfx_prices.py",
+      "filePath": "sysdata/parquet/parquet_spotfx_prices.py",
+      "summary": "Parquet storage backend for spot FX price series, implementing the abstract FX prices interface.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "fx"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_spreads.py",
+      "type": "file",
+      "name": "parquet_spreads.py",
+      "filePath": "sysdata/parquet/parquet_spreads.py",
+      "summary": "Parquet storage backend for per-instrument spread cost series.",
+      "tags": [
+        "data-model",
+        "service",
+        "persistence",
+        "spreads"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/broker_client_id.py",
+      "type": "file",
+      "name": "broker_client_id.py",
+      "filePath": "sysdata/production/broker_client_id.py",
+      "summary": "Abstract data store that allocates, locks, and releases broker client IDs to avoid collisions when connecting to the broker, with free-list helper functions.",
+      "tags": [
+        "data-model",
+        "service",
+        "broker",
+        "concurrency"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/capital.py",
+      "type": "file",
+      "name": "capital.py",
+      "filePath": "sysdata/production/capital.py",
+      "summary": "Core production capital data abstraction: capitalData stores raw global/strategy capital series while totalCapitalCalculationData derives total, broker-account and high-water-mark capital and updates it after P&L events.",
+      "tags": [
+        "data-model",
+        "service",
+        "capital",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_adjusted_prices.py:parquetFuturesAdjustedPricesData",
+      "type": "class",
+      "name": "parquetFuturesAdjustedPricesData",
+      "filePath": "sysdata/parquet/parquet_adjusted_prices.py",
+      "lineRange": [
+        13,
+        74
+      ],
+      "summary": "Parquet-backed adjusted prices store; reads/writes/deletes back-adjusted price series via the parquet access layer.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "futures-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_capital.py:parquetCapitalData",
+      "type": "class",
+      "name": "parquetCapitalData",
+      "filePath": "sysdata/parquet/parquet_capital.py",
+      "lineRange": [
+        11,
+        69
+      ],
+      "summary": "Parquet-backed capital store reading and updating per-strategy capital dataframes.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "capital"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_futures_per_contract_prices.py:parquetFuturesContractPriceData",
+      "type": "class",
+      "name": "parquetFuturesContractPriceData",
+      "filePath": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "lineRange": [
+        19,
+        202
+      ],
+      "summary": "Parquet-backed per-contract futures price store supporting merged and per-frequency reads/writes keyed by contract+frequency.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "futures-prices"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "function",
+      "name": "from_key_to_freq_and_contract",
+      "filePath": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "lineRange": [
+        205,
+        217
+      ],
+      "summary": "Parses a parquet identifier key back into a frequency and futuresContract object.",
+      "tags": [
+        "serialization",
+        "parsing",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "function",
+      "name": "from_contract_and_freq_to_key",
+      "filePath": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "lineRange": [
+        220,
+        230
+      ],
+      "summary": "Builds a parquet identifier key from a contract object and frequency.",
+      "tags": [
+        "serialization",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_historic_contract_positions.py:parquetContractPositionData",
+      "type": "class",
+      "name": "parquetContractPositionData",
+      "filePath": "sysdata/parquet/parquet_historic_contract_positions.py",
+      "lineRange": [
+        15,
+        74
+      ],
+      "summary": "Parquet-backed historic contract position store with contract<->key encoding.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_historic_strategy_positions.py:parquetStrategyPositionData",
+      "type": "class",
+      "name": "parquetStrategyPositionData",
+      "filePath": "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "lineRange": [
+        16,
+        75
+      ],
+      "summary": "Parquet-backed historic instrument-strategy position store.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_optimal_positions.py:parquetOptimalPositionData",
+      "type": "class",
+      "name": "parquetOptimalPositionData",
+      "filePath": "sysdata/parquet/parquet_optimal_positions.py",
+      "lineRange": [
+        16,
+        70
+      ],
+      "summary": "Parquet-backed optimal position store keyed by instrument strategy.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_spotfx_prices.py:parquetFxPricesData",
+      "type": "class",
+      "name": "parquetFxPricesData",
+      "filePath": "sysdata/parquet/parquet_spotfx_prices.py",
+      "lineRange": [
+        11,
+        68
+      ],
+      "summary": "Parquet-backed spot FX price store.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "fx"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_spreads.py:parquetSpreadsForInstrumentData",
+      "type": "class",
+      "name": "parquetSpreadsForInstrumentData",
+      "filePath": "sysdata/parquet/parquet_spreads.py",
+      "lineRange": [
+        12,
+        69
+      ],
+      "summary": "Parquet-backed per-instrument spread cost store.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "spreads"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/broker_client_id.py:brokerClientIdData",
+      "type": "class",
+      "name": "brokerClientIdData",
+      "filePath": "sysdata/production/broker_client_id.py",
+      "lineRange": [
+        6,
+        103
+      ],
+      "summary": "Abstract store that hands out and locks unique broker client IDs and releases them on disconnect.",
+      "tags": [
+        "data-model",
+        "broker",
+        "concurrency"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list",
+      "type": "function",
+      "name": "get_next_id_from_current_list",
+      "filePath": "sysdata/production/broker_client_id.py",
+      "lineRange": [
+        106,
+        117
+      ],
+      "summary": "Returns the next unused client ID given the current locked list, falling back to the full available set when wrapping.",
+      "tags": [
+        "utility",
+        "concurrency",
+        "business-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list_and_full_set",
+      "type": "function",
+      "name": "get_next_id_from_current_list_and_full_set",
+      "filePath": "sysdata/production/broker_client_id.py",
+      "lineRange": [
+        120,
+        129
+      ],
+      "summary": "Picks the lowest available client ID from the full set not currently in use.",
+      "tags": [
+        "utility",
+        "concurrency",
+        "business-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/production/capital.py:capitalData",
+      "type": "class",
+      "name": "capitalData",
+      "filePath": "sysdata/production/capital.py",
+      "lineRange": [
+        29,
+        216
+      ],
+      "summary": "Abstract raw-capital store exposing total/broker/max/P&L series accessors and global/per-strategy capital CRUD.",
+      "tags": [
+        "data-model",
+        "capital",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/production/capital.py:totalCapitalCalculationData",
+      "type": "class",
+      "name": "totalCapitalCalculationData",
+      "filePath": "sysdata/production/capital.py",
+      "lineRange": [
+        228,
+        516
+      ],
+      "summary": "Wraps a capitalData store to compute total, broker-account, and high-water-mark capital, applying configurable accumulation methods after P&L events.",
+      "tags": [
+        "service",
+        "capital",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "file:sysdata/futures/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "file:sysdata/production/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:sysdata/futures/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "file:sysdata/production/historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "file:sysdata/production/historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "file:sysdata/production/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "file:sysdata/fx/spotfx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "file:sysdata/futures/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "file:sysobjects/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "file:sysobjects/production/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "class:sysdata/parquet/parquet_adjusted_prices.py:parquetFuturesAdjustedPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "target": "class:sysdata/parquet/parquet_adjusted_prices.py:parquetFuturesAdjustedPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "class:sysdata/parquet/parquet_capital.py:parquetCapitalData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "class:sysdata/parquet/parquet_capital.py:parquetCapitalData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "class:sysdata/parquet/parquet_futures_per_contract_prices.py:parquetFuturesContractPriceData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "class:sysdata/parquet/parquet_futures_per_contract_prices.py:parquetFuturesContractPriceData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_key_to_freq_and_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "target": "function:sysdata/parquet/parquet_futures_per_contract_prices.py:from_contract_and_freq_to_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "class:sysdata/parquet/parquet_historic_contract_positions.py:parquetContractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "target": "class:sysdata/parquet/parquet_historic_contract_positions.py:parquetContractPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "class:sysdata/parquet/parquet_historic_strategy_positions.py:parquetStrategyPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "target": "class:sysdata/parquet/parquet_historic_strategy_positions.py:parquetStrategyPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "class:sysdata/parquet/parquet_optimal_positions.py:parquetOptimalPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "target": "class:sysdata/parquet/parquet_optimal_positions.py:parquetOptimalPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "class:sysdata/parquet/parquet_spotfx_prices.py:parquetFxPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "target": "class:sysdata/parquet/parquet_spotfx_prices.py:parquetFxPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "class:sysdata/parquet/parquet_spreads.py:parquetSpreadsForInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_spreads.py",
+      "target": "class:sysdata/parquet/parquet_spreads.py:parquetSpreadsForInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "class:sysdata/production/broker_client_id.py:brokerClientIdData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "class:sysdata/production/broker_client_id.py:brokerClientIdData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list_and_full_set",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/broker_client_id.py",
+      "target": "function:sysdata/production/broker_client_id.py:get_next_id_from_current_list_and_full_set",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "class:sysdata/production/capital.py:capitalData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "class:sysdata/production/capital.py:capitalData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "class:sysdata/production/capital.py:totalCapitalCalculationData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/capital.py",
+      "target": "class:sysdata/production/capital.py:totalCapitalCalculationData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_capital.py",
+      "target": "class:sysdata/production/capital.py:capitalData",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

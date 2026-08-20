@@ -1,0 +1,1458 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/accounts/account_forecast.py",
+      "type": "file",
+      "name": "account_forecast.py",
+      "filePath": "systems/accounts/account_forecast.py",
+      "summary": "Accounting stage mixin computing per-trading-rule, per-instrument forecast P&L, including normalised forecast weighting across instruments and trading rules.",
+      "tags": [
+        "service",
+        "pandl",
+        "backtesting",
+        "forecast",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/account_inputs.py",
+      "type": "file",
+      "name": "account_inputs.py",
+      "filePath": "systems/accounts/account_inputs.py",
+      "summary": "Input adapter mixin that pulls prices, volatility, positions, weights and config from upstream system stages into the accounting layer.",
+      "tags": [
+        "service",
+        "adapter",
+        "accounting",
+        "data-access",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/account_instruments.py",
+      "type": "file",
+      "name": "account_instruments.py",
+      "filePath": "systems/accounts/account_instruments.py",
+      "summary": "Accounting stage mixin computing per-instrument portfolio-level P&L with either SR (Sharpe-ratio) costs or cash costs.",
+      "tags": [
+        "service",
+        "pandl",
+        "accounting",
+        "backtesting",
+        "costs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/account_portfolio.py",
+      "type": "file",
+      "name": "account_portfolio.py",
+      "filePath": "systems/accounts/account_portfolio.py",
+      "summary": "Accounting stage mixin aggregating per-instrument P&L into a portfolio-level account curve group and total portfolio turnover.",
+      "tags": [
+        "service",
+        "pandl",
+        "accounting",
+        "portfolio",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/account_subsystem.py",
+      "type": "file",
+      "name": "account_subsystem.py",
+      "filePath": "systems/accounts/account_subsystem.py",
+      "summary": "Accounting stage mixin computing subsystem (single-instrument-as-portfolio) P&L across instruments with SR or cash cost models.",
+      "tags": [
+        "service",
+        "pandl",
+        "accounting",
+        "subsystem",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/account_trading_rules.py",
+      "type": "file",
+      "name": "account_trading_rules.py",
+      "filePath": "systems/accounts/account_trading_rules.py",
+      "summary": "Accounting stage mixin producing weighted and unweighted P&L for individual and grouped trading rules across the whole system.",
+      "tags": [
+        "service",
+        "pandl",
+        "accounting",
+        "trading-rules",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/account_with_multiplier.py",
+      "type": "file",
+      "name": "account_with_multiplier.py",
+      "filePath": "systems/accounts/account_with_multiplier.py",
+      "summary": "Accounting stage mixin applying a dynamic capital multiplier (compounding) to produce actual-capital P&L curves.",
+      "tags": [
+        "service",
+        "pandl",
+        "accounting",
+        "capital",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/curves/account_curve.py",
+      "type": "file",
+      "name": "account_curve.py",
+      "filePath": "systems/accounts/curves/account_curve.py",
+      "summary": "Core accountCurve class wrapping a P&L calculator as a returns time series with a large suite of performance statistics (Sharpe, drawdown, Sortino, t-tests).",
+      "tags": [
+        "data-model",
+        "performance-stats",
+        "accounting",
+        "backtesting",
+        "account-curve"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/curves/account_curve_analysis.py",
+      "type": "file",
+      "name": "account_curve_analysis.py",
+      "filePath": "systems/accounts/curves/account_curve_analysis.py",
+      "summary": "Helper functions for statistical analysis of account curves, including t-tests comparing two return series and standard statistics extraction.",
+      "tags": [
+        "utility",
+        "performance-stats",
+        "statistics",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "file",
+      "name": "account_curve_group.py",
+      "filePath": "systems/accounts/curves/account_curve_group.py",
+      "summary": "Container grouping multiple account curves (e.g. per-instrument) exposing aggregate net/gross/cost curves and cross-sectional statistics tables.",
+      "tags": [
+        "data-model",
+        "account-curve",
+        "aggregation",
+        "accounting",
+        "performance-stats"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "file",
+      "name": "dict_of_account_curves.py",
+      "filePath": "systems/accounts/curves/dict_of_account_curves.py",
+      "summary": "Dictionary types mapping codes to P&L calculators that build aggregate account curves, with a nested variant for hierarchical grouping.",
+      "tags": [
+        "data-model",
+        "account-curve",
+        "container",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "type": "file",
+      "name": "nested_account_curve_group.py",
+      "filePath": "systems/accounts/curves/nested_account_curve_group.py",
+      "summary": "Two-level nested account curve group (e.g. trading rule -> instrument) flattening to weighted/unweighted aggregate curves.",
+      "tags": [
+        "data-model",
+        "account-curve",
+        "aggregation",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/curves/stats_dict.py",
+      "type": "file",
+      "name": "stats_dict.py",
+      "filePath": "systems/accounts/curves/stats_dict.py",
+      "summary": "statsDict produces and formats cross-sectional performance statistics across an account curve group, including correlation and ranked tables.",
+      "tags": [
+        "data-model",
+        "performance-stats",
+        "statistics",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/accounts/account_forecast.py:accountForecast",
+      "type": "class",
+      "name": "accountForecast",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        14,
+        217
+      ],
+      "summary": "Mixin computing forecast-level P&L and the normalised forecast weights used to combine rules and instruments.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/accounts/account_forecast.py:pandl_for_instrument_forecast",
+      "type": "function",
+      "name": "pandl_for_instrument_forecast",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        227,
+        268
+      ],
+      "summary": "Module-level function computing the P&L return series for a single instrument's forecast given price, capital, vol and SR cost.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/account_forecast.py:_get_notional_position_for_forecast",
+      "type": "function",
+      "name": "_get_notional_position_for_forecast",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        271,
+        278
+      ],
+      "summary": "Function _get_notional_position_for_forecast in account_forecast.py.",
+      "tags": [
+        "accounting",
+        "backtesting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/account_forecast.py:_get_average_notional_position",
+      "type": "function",
+      "name": "_get_average_notional_position",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        281,
+        293
+      ],
+      "summary": "Derives the average notional position from vol target, capital and contract value.",
+      "tags": [
+        "accounting",
+        "backtesting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/account_forecast.py:_get_normalised_forecast",
+      "type": "function",
+      "name": "_get_normalised_forecast",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        296,
+        301
+      ],
+      "summary": "Function _get_normalised_forecast in account_forecast.py.",
+      "tags": [
+        "accounting",
+        "backtesting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/account_forecast.py:pandl_for_position",
+      "type": "function",
+      "name": "pandl_for_position",
+      "filePath": "systems/accounts/account_forecast.py",
+      "lineRange": [
+        304,
+        329
+      ],
+      "summary": "Module-level function computing position-level P&L from a notional position, price and SR cost.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/account_inputs.py:accountInputs",
+      "type": "class",
+      "name": "accountInputs",
+      "filePath": "systems/accounts/account_inputs.py",
+      "lineRange": [
+        13,
+        313
+      ],
+      "summary": "Adapter mixin exposing ~37 accessor methods that fetch prices, vol, positions, weights and config from other system stages.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/accounts/account_instruments.py:accountInstruments",
+      "type": "class",
+      "name": "accountInstruments",
+      "filePath": "systems/accounts/account_instruments.py",
+      "lineRange": [
+        15,
+        221
+      ],
+      "summary": "Mixin producing per-instrument portfolio-level P&L with SR or cash cost models and turnover.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/accounts/account_portfolio.py:accountPortfolio",
+      "type": "class",
+      "name": "accountPortfolio",
+      "filePath": "systems/accounts/account_portfolio.py",
+      "lineRange": [
+        8,
+        68
+      ],
+      "summary": "Mixin aggregating instrument P&L into a portfolio account curve group and computing total turnover.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/accounts/account_subsystem.py:accountSubsystem",
+      "type": "class",
+      "name": "accountSubsystem",
+      "filePath": "systems/accounts/account_subsystem.py",
+      "lineRange": [
+        12,
+        200
+      ],
+      "summary": "Mixin computing per-instrument subsystem P&L across the instrument list with SR or cash costs.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/accounts/account_trading_rules.py:accountTradingRules",
+      "type": "class",
+      "name": "accountTradingRules",
+      "filePath": "systems/accounts/account_trading_rules.py",
+      "lineRange": [
+        12,
+        214
+      ],
+      "summary": "Mixin producing weighted/unweighted P&L curves for individual rules and grouped across all rules.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/accounts/account_with_multiplier.py:accountWithMultiplier",
+      "type": "class",
+      "name": "accountWithMultiplier",
+      "filePath": "systems/accounts/account_with_multiplier.py",
+      "lineRange": [
+        17,
+        159
+      ],
+      "summary": "Mixin applying a compounding capital multiplier to convert notional P&L into actual-capital P&L.",
+      "tags": [
+        "service",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/accounts/curves/account_curve.py:accountCurve",
+      "type": "class",
+      "name": "accountCurve",
+      "filePath": "systems/accounts/curves/account_curve.py",
+      "lineRange": [
+        20,
+        390
+      ],
+      "summary": "Returns-series wrapper exposing performance statistics (Sharpe, drawdown, Sortino, t-tests) over a P&L calculator.",
+      "tags": [
+        "account-curve",
+        "performance-stats",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve.py:quant_ratio_lower_curve",
+      "type": "function",
+      "name": "quant_ratio_lower_curve",
+      "filePath": "systems/accounts/curves/account_curve.py",
+      "lineRange": [
+        393,
+        398
+      ],
+      "summary": "Computes the lower quantile ratio statistic for an account curve.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve.py:quant_ratio_upper_curve",
+      "type": "function",
+      "name": "quant_ratio_upper_curve",
+      "filePath": "systems/accounts/curves/account_curve.py",
+      "lineRange": [
+        401,
+        406
+      ],
+      "summary": "Computes the upper quantile ratio statistic for an account curve.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve.py:demeaned_remove_zeros",
+      "type": "function",
+      "name": "demeaned_remove_zeros",
+      "filePath": "systems/accounts/curves/account_curve.py",
+      "lineRange": [
+        409,
+        411
+      ],
+      "summary": "Function demeaned_remove_zeros in account_curve.py.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve_analysis.py:account_t_test",
+      "type": "function",
+      "name": "account_t_test",
+      "filePath": "systems/accounts/curves/account_curve_analysis.py",
+      "lineRange": [
+        16,
+        52
+      ],
+      "summary": "Runs a two-sample t-test comparing returns of two account curves.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve_analysis.py:_prepare_returns_data_for_t_test",
+      "type": "function",
+      "name": "_prepare_returns_data_for_t_test",
+      "filePath": "systems/accounts/curves/account_curve_analysis.py",
+      "lineRange": [
+        55,
+        68
+      ],
+      "summary": "Function _prepare_returns_data_for_t_test in account_curve_analysis.py.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve_analysis.py:standard_statistics",
+      "type": "function",
+      "name": "standard_statistics",
+      "filePath": "systems/accounts/curves/account_curve_analysis.py",
+      "lineRange": [
+        71,
+        87
+      ],
+      "summary": "Extracts a standard dictionary of performance statistics from an account curve.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/curves/account_curve_group.py:accountCurveGroup",
+      "type": "class",
+      "name": "accountCurveGroup",
+      "filePath": "systems/accounts/curves/account_curve_group.py",
+      "lineRange": [
+        16,
+        154
+      ],
+      "summary": "Group of account curves exposing aggregate net/gross/cost curves and cross-sectional stats tables.",
+      "tags": [
+        "account-curve",
+        "performance-stats",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/curves/account_curve_group.py:_kwargs_with_defaults",
+      "type": "function",
+      "name": "_kwargs_with_defaults",
+      "filePath": "systems/accounts/curves/account_curve_group.py",
+      "lineRange": [
+        157,
+        167
+      ],
+      "summary": "Function _kwargs_with_defaults in account_curve_group.py.",
+      "tags": [
+        "performance-stats",
+        "statistics",
+        "account-curve"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/curves/dict_of_account_curves.py:dictOfAccountCurves",
+      "type": "class",
+      "name": "dictOfAccountCurves",
+      "filePath": "systems/accounts/curves/dict_of_account_curves.py",
+      "lineRange": [
+        7,
+        37
+      ],
+      "summary": "Dict of code->P&L-calculator that builds an aggregate account curve.",
+      "tags": [
+        "account-curve",
+        "performance-stats",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/curves/nested_account_curve_group.py:nestedAccountCurveGroup",
+      "type": "class",
+      "name": "nestedAccountCurveGroup",
+      "filePath": "systems/accounts/curves/nested_account_curve_group.py",
+      "lineRange": [
+        13,
+        123
+      ],
+      "summary": "Two-level nested account curve group flattening to weighted/unweighted aggregate curves.",
+      "tags": [
+        "account-curve",
+        "performance-stats",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/accounts/curves/stats_dict.py:statsDict",
+      "type": "class",
+      "name": "statsDict",
+      "filePath": "systems/accounts/curves/stats_dict.py",
+      "lineRange": [
+        31,
+        253
+      ],
+      "summary": "Computes and formats cross-sectional statistics and correlations across an account curve group.",
+      "tags": [
+        "account-curve",
+        "performance-stats",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/accounts/curves/stats_dict.py:_from_freq_str_to_frequency",
+      "type": "function",
+      "name": "_from_freq_str_to_frequency",
+      "filePath": "systems/accounts/curves/stats_dict.py",
+      "lineRange": [
+        14,
+        22
+      ],
+      "summary": "Maps a frequency string to a Frequency enum value.",
+      "tags": [
+        "accounting",
+        "backtesting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/curves/stats_dict.py:_from_curve_str_to_curve_type",
+      "type": "function",
+      "name": "_from_curve_str_to_curve_type",
+      "filePath": "systems/accounts/curves/stats_dict.py",
+      "lineRange": [
+        25,
+        28
+      ],
+      "summary": "Function _from_curve_str_to_curve_type in stats_dict.py.",
+      "tags": [
+        "accounting",
+        "backtesting",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "class:systems/accounts/account_forecast.py:accountForecast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "class:systems/accounts/account_forecast.py:accountForecast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:pandl_for_instrument_forecast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:pandl_for_instrument_forecast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_notional_position_for_forecast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_notional_position_for_forecast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_average_notional_position",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_average_notional_position",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_normalised_forecast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:_get_normalised_forecast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:pandl_for_position",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "function:systems/accounts/account_forecast.py:pandl_for_position",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "class:systems/accounts/account_inputs.py:accountInputs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "class:systems/accounts/account_inputs.py:accountInputs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "class:systems/accounts/account_instruments.py:accountInstruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "class:systems/accounts/account_instruments.py:accountInstruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "class:systems/accounts/account_portfolio.py:accountPortfolio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "class:systems/accounts/account_portfolio.py:accountPortfolio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "class:systems/accounts/account_subsystem.py:accountSubsystem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "class:systems/accounts/account_subsystem.py:accountSubsystem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "class:systems/accounts/account_trading_rules.py:accountTradingRules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "class:systems/accounts/account_trading_rules.py:accountTradingRules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "class:systems/accounts/account_with_multiplier.py:accountWithMultiplier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "class:systems/accounts/account_with_multiplier.py:accountWithMultiplier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "class:systems/accounts/curves/account_curve.py:accountCurve",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "class:systems/accounts/curves/account_curve.py:accountCurve",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:quant_ratio_lower_curve",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:quant_ratio_lower_curve",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:quant_ratio_upper_curve",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:quant_ratio_upper_curve",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:demeaned_remove_zeros",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "function:systems/accounts/curves/account_curve.py:demeaned_remove_zeros",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:account_t_test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:account_t_test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:_prepare_returns_data_for_t_test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:_prepare_returns_data_for_t_test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:standard_statistics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "function:systems/accounts/curves/account_curve_analysis.py:standard_statistics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "class:systems/accounts/curves/account_curve_group.py:accountCurveGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "class:systems/accounts/curves/account_curve_group.py:accountCurveGroup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "function:systems/accounts/curves/account_curve_group.py:_kwargs_with_defaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "function:systems/accounts/curves/account_curve_group.py:_kwargs_with_defaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "target": "class:systems/accounts/curves/dict_of_account_curves.py:dictOfAccountCurves",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "target": "class:systems/accounts/curves/dict_of_account_curves.py:dictOfAccountCurves",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "class:systems/accounts/curves/nested_account_curve_group.py:nestedAccountCurveGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "class:systems/accounts/curves/nested_account_curve_group.py:nestedAccountCurveGroup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "class:systems/accounts/curves/stats_dict.py:statsDict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "class:systems/accounts/curves/stats_dict.py:statsDict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "function:systems/accounts/curves/stats_dict.py:_from_freq_str_to_frequency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "function:systems/accounts/curves/stats_dict.py:_from_freq_str_to_frequency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "function:systems/accounts/curves/stats_dict.py:_from_curve_str_to_curve_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "function:systems/accounts/curves/stats_dict.py:_from_curve_str_to_curve_type",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:sysquant/estimators/vol.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:systems/accounts/account_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_forecast.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_inputs.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/accounts/account_buffering_system.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/accounts/account_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_instruments.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "file:systems/accounts/account_instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_portfolio.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/account_buffering_subsystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_subsystem.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:systems/accounts/account_forecast.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_trading_rules.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/accounts/account_buffering_system.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/accounts/account_portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/account_with_multiplier.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_analysis.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "file:systems/accounts/curves/stats_dict.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/account_curve_group.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/nested_account_curve_group.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/curves/stats_dict.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

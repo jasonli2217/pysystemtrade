@@ -1,0 +1,1537 @@
+{
+  "nodes": [
+    {
+      "id": "file:syslogging/tests/logging_tests.py",
+      "type": "file",
+      "name": "logging_tests.py",
+      "filePath": "syslogging/tests/logging_tests.py",
+      "summary": "Pytest suite exercising the syslogging logger: name handling, attribute merge/clear/reset/preserve/overwrite/temp semantics, and contract/fx attribute logging.",
+      "tags": [
+        "test",
+        "logging",
+        "pytest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/contracts.py",
+      "type": "file",
+      "name": "contracts.py",
+      "filePath": "sysobjects/contracts.py",
+      "summary": "Core futures contract domain objects: futuresContract, its parameters, a list container, and helpers for building/parsing contract keys, expiry handling, and spread decomposition.",
+      "tags": [
+        "data-model",
+        "futures",
+        "contract",
+        "domain"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/optimal_positions.py",
+      "type": "file",
+      "name": "optimal_positions.py",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "summary": "Hierarchy of optimal-position objects (simple, buffered, with-reference, dynamic) plus list containers and DataFrame conversion used to represent target positions per instrument strategy.",
+      "tags": [
+        "data-model",
+        "optimal-position",
+        "production",
+        "serialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/override.py",
+      "type": "file",
+      "name": "override.py",
+      "filePath": "sysobjects/production/override.py",
+      "summary": "Override object and helpers that scale, reduce-only, or block trading on a position, combining override values to constrain proposed positions and orders.",
+      "tags": [
+        "data-model",
+        "override",
+        "risk",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/production/position_limits.py",
+      "type": "file",
+      "name": "position_limits.py",
+      "filePath": "sysobjects/production/position_limits.py",
+      "summary": "Position limit objects and helpers that cap instrument and strategy-instrument positions and apply those limits to proposed orders and single-leg trades.",
+      "tags": [
+        "data-model",
+        "position-limit",
+        "risk",
+        "production"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/positions.py",
+      "type": "file",
+      "name": "positions.py",
+      "filePath": "sysobjects/production/positions.py",
+      "summary": "Position domain objects (instrument, strategy-instrument, contract) and list containers with aggregation helpers for summing positions across instruments and contracts.",
+      "tags": [
+        "data-model",
+        "position",
+        "production",
+        "aggregation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/process_control.py",
+      "type": "file",
+      "name": "process_control.py",
+      "filePath": "sysobjects/production/process_control.py",
+      "summary": "controlProcess state machine and supporting dicts tracking start/stop/run status of production processes, with persistence-friendly serialization and PID checks.",
+      "tags": [
+        "data-model",
+        "process-control",
+        "production",
+        "state-machine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/trade_limits.py",
+      "type": "file",
+      "name": "trade_limits.py",
+      "filePath": "sysobjects/production/trade_limits.py",
+      "summary": "tradeLimit and listOfTradeLimits objects enforcing rolling-period trade quantity limits per instrument strategy in production.",
+      "tags": [
+        "data-model",
+        "trade-limit",
+        "risk",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/production/tradeable_object.py",
+      "type": "file",
+      "name": "tradeable_object.py",
+      "filePath": "sysobjects/production/tradeable_object.py",
+      "summary": "Base tradeableObject plus instrumentStrategy and futuresContractStrategy identifiers used as keys throughout the production order and position system.",
+      "tags": [
+        "data-model",
+        "tradeable-object",
+        "production",
+        "domain"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/spreads.py",
+      "type": "file",
+      "name": "spreads.py",
+      "filePath": "sysobjects/spreads.py",
+      "summary": "spreadsForInstrument value object wrapping a pandas Series of spread cost observations for a single instrument.",
+      "tags": [
+        "data-model",
+        "spread",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogging/tests/logging_tests.py:TestLogging",
+      "type": "class",
+      "name": "TestLogging",
+      "filePath": "syslogging/tests/logging_tests.py",
+      "lineRange": [
+        6,
+        158
+      ],
+      "summary": "Pytest test class covering logger naming and the full set of attribute merge behaviours plus contract/fx logging.",
+      "tags": [
+        "test",
+        "logging",
+        "pytest"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/contracts.py:futuresContract",
+      "type": "class",
+      "name": "futuresContract",
+      "filePath": "sysobjects/contracts.py",
+      "lineRange": [
+        55,
+        281
+      ],
+      "summary": "Central futures contract object combining instrument, contract date(s), and sampling parameters with expiry, spread, and serialization logic.",
+      "tags": [
+        "data-model",
+        "futures",
+        "contract",
+        "domain"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/contracts.py:listOfFuturesContracts",
+      "type": "class",
+      "name": "listOfFuturesContracts",
+      "filePath": "sysobjects/contracts.py",
+      "lineRange": [
+        316,
+        388
+      ],
+      "summary": "List container of futuresContract with instrument grouping, date extraction, and set-difference helpers.",
+      "tags": [
+        "data-model",
+        "futures",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/contracts.py:parametersForFuturesContract",
+      "type": "class",
+      "name": "parametersForFuturesContract",
+      "filePath": "sysobjects/contracts.py",
+      "lineRange": [
+        22,
+        37
+      ],
+      "summary": "Dataclass holding contract-level parameters such as sampling flag, with dict (de)serialization.",
+      "tags": [
+        "data-model",
+        "futures",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contracts.py:_resolve_args_for_futures_contract",
+      "type": "function",
+      "name": "_resolve_args_for_futures_contract",
+      "filePath": "sysobjects/contracts.py",
+      "lineRange": [
+        284,
+        297
+      ],
+      "summary": "Normalizes loosely-typed instrument and contract-date arguments into proper domain objects for futuresContract construction.",
+      "tags": [
+        "futures",
+        "factory",
+        "normalization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/optimal_positions.py:baseOptimalPosition",
+      "type": "class",
+      "name": "baseOptimalPosition",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        14,
+        33
+      ],
+      "summary": "Abstract base for optimal-position value objects defining dict serialization and verification interface.",
+      "tags": [
+        "data-model",
+        "optimal-position",
+        "abstract"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/production/optimal_positions.py:bufferedOptimalPositions",
+      "type": "class",
+      "name": "bufferedOptimalPositions",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        60,
+        93
+      ],
+      "summary": "Optimal position expressed as a lower/upper buffer band with helpers to test and clip current positions.",
+      "tags": [
+        "data-model",
+        "optimal-position",
+        "buffer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/optimal_positions.py:optimalPositionWithDynamicCalculations",
+      "type": "class",
+      "name": "optimalPositionWithDynamicCalculations",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        114,
+        179
+      ],
+      "summary": "Rich optimal-position object carrying dynamic optimisation intermediate values alongside the target position.",
+      "tags": [
+        "data-model",
+        "optimal-position",
+        "dynamic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/optimal_positions.py:instrumentStrategyAndOptimalPosition",
+      "type": "class",
+      "name": "instrumentStrategyAndOptimalPosition",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        275,
+        304
+      ],
+      "summary": "Pairs an instrument strategy with its optimal position, supporting verification and comparison against current positions.",
+      "tags": [
+        "data-model",
+        "optimal-position"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/optimal_positions.py:listOfOptimalPositionsAcrossInstrumentStrategies",
+      "type": "class",
+      "name": "listOfOptimalPositionsAcrossInstrumentStrategies",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        367,
+        443
+      ],
+      "summary": "Collection of optimal positions across instrument strategies with DataFrame conversion and current-position joining.",
+      "tags": [
+        "data-model",
+        "optimal-position",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysobjects/production/optimal_positions.py:add_optimal_position_entry_row_to_positions_as_df",
+      "type": "function",
+      "name": "add_optimal_position_entry_row_to_positions_as_df",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        191,
+        205
+      ],
+      "summary": "Appends one optimal-position record as a row to a positions DataFrame for time-series storage.",
+      "tags": [
+        "optimal-position",
+        "serialization",
+        "pandas"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/production/optimal_positions.py:infer_class_of_optimal_position_from_field_list",
+      "type": "function",
+      "name": "infer_class_of_optimal_position_from_field_list",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        253,
+        272
+      ],
+      "summary": "Infers which concrete optimal-position class to instantiate based on the set of fields present in stored data.",
+      "tags": [
+        "optimal-position",
+        "factory",
+        "deserialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/optimal_positions.py:_check_append_positions_okay",
+      "type": "function",
+      "name": "_check_append_positions_okay",
+      "filePath": "sysobjects/production/optimal_positions.py",
+      "lineRange": [
+        208,
+        236
+      ],
+      "summary": "Validates that a new optimal-position row is consistent with the existing positions DataFrame before appending.",
+      "tags": [
+        "optimal-position",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/override.py:Override",
+      "type": "class",
+      "name": "Override",
+      "filePath": "sysobjects/production/override.py",
+      "lineRange": [
+        32,
+        147
+      ],
+      "summary": "Represents a trading override (float scalar, reduce-only, or no-trading) and applies it to positions and orders.",
+      "tags": [
+        "data-model",
+        "override",
+        "risk"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysobjects/production/override.py:_apply_float_override",
+      "type": "function",
+      "name": "_apply_float_override",
+      "filePath": "sysobjects/production/override.py",
+      "lineRange": [
+        156,
+        184
+      ],
+      "summary": "Scales a proposed position by a float override factor, handling sign and rounding rules.",
+      "tags": [
+        "override",
+        "risk",
+        "position"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/override.py:_apply_reduce_only",
+      "type": "function",
+      "name": "_apply_reduce_only",
+      "filePath": "sysobjects/production/override.py",
+      "lineRange": [
+        187,
+        209
+      ],
+      "summary": "Applies a reduce-only override, permitting only position-reducing trades.",
+      "tags": [
+        "override",
+        "risk",
+        "position"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/override.py:lookup_value_and_return_float_or_object",
+      "type": "function",
+      "name": "lookup_value_and_return_float_or_object",
+      "filePath": "sysobjects/production/override.py",
+      "lineRange": [
+        24,
+        29
+      ],
+      "summary": "Resolves an override value from a mapping, returning either a float or the override object.",
+      "tags": [
+        "override",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/production/position_limits.py:positionLimit",
+      "type": "class",
+      "name": "positionLimit",
+      "filePath": "sysobjects/production/position_limits.py",
+      "lineRange": [
+        10,
+        44
+      ],
+      "summary": "Base position-limit object holding the maximum allowed absolute position for a tradeable key.",
+      "tags": [
+        "data-model",
+        "position-limit",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/position_limits.py:positionLimitAndPosition",
+      "type": "class",
+      "name": "positionLimitAndPosition",
+      "filePath": "sysobjects/production/position_limits.py",
+      "lineRange": [
+        68,
+        109
+      ],
+      "summary": "Pairs a position limit with the current position, exposing room-to-trade and breach checks.",
+      "tags": [
+        "data-model",
+        "position-limit",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/position_limits.py:apply_position_limit_to_single_leg_trade",
+      "type": "function",
+      "name": "apply_position_limit_to_single_leg_trade",
+      "filePath": "sysobjects/production/position_limits.py",
+      "lineRange": [
+        132,
+        291
+      ],
+      "summary": "Clamps a proposed single-leg trade quantity so the resulting position respects the applicable limit.",
+      "tags": [
+        "position-limit",
+        "risk",
+        "trade"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysobjects/production/position_limits.py:apply_position_limit_to_order",
+      "type": "function",
+      "name": "apply_position_limit_to_order",
+      "filePath": "sysobjects/production/position_limits.py",
+      "lineRange": [
+        112,
+        129
+      ],
+      "summary": "Applies the relevant position limit to an order, reducing its size where the limit would be breached.",
+      "tags": [
+        "position-limit",
+        "risk",
+        "order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/positions.py:listOfPositions",
+      "type": "class",
+      "name": "listOfPositions",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        91,
+        218
+      ],
+      "summary": "Generic list container of positions with DataFrame conversion, diffing, and per-key lookup helpers.",
+      "tags": [
+        "data-model",
+        "position",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/production/positions.py:contractPosition",
+      "type": "class",
+      "name": "contractPosition",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        66,
+        84
+      ],
+      "summary": "Position object keyed by instrument and contract date.",
+      "tags": [
+        "data-model",
+        "position",
+        "contract"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/production/positions.py:listOfContractPositions",
+      "type": "class",
+      "name": "listOfContractPositions",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        330,
+        381
+      ],
+      "summary": "Collection of contract positions with aggregation to instrument level and DataFrame export.",
+      "tags": [
+        "data-model",
+        "position",
+        "collection",
+        "aggregation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/positions.py:listOfInstrumentStrategyPositions",
+      "type": "class",
+      "name": "listOfInstrumentStrategyPositions",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        265,
+        327
+      ],
+      "summary": "Collection of instrument-strategy positions with stripping and DataFrame conversion helpers.",
+      "tags": [
+        "data-model",
+        "position",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/positions.py:sum_for_contract",
+      "type": "function",
+      "name": "sum_for_contract",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        402,
+        421
+      ],
+      "summary": "Aggregates a list of positions to net positions per instrument/contract.",
+      "tags": [
+        "position",
+        "aggregation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/production/positions.py:sum_for_instrument",
+      "type": "function",
+      "name": "sum_for_instrument",
+      "filePath": "sysobjects/production/positions.py",
+      "lineRange": [
+        384,
+        399
+      ],
+      "summary": "Aggregates a list of positions to net positions per instrument.",
+      "tags": [
+        "position",
+        "aggregation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/production/process_control.py:controlProcess",
+      "type": "class",
+      "name": "controlProcess",
+      "filePath": "sysobjects/production/process_control.py",
+      "lineRange": [
+        118,
+        348
+      ],
+      "summary": "State object tracking a production process's start/end/running status and the methods it runs, with serialization and status transitions.",
+      "tags": [
+        "data-model",
+        "process-control",
+        "state-machine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/production/process_control.py:dictOfRunningMethods",
+      "type": "class",
+      "name": "dictOfRunningMethods",
+      "filePath": "sysobjects/production/process_control.py",
+      "lineRange": [
+        58,
+        110
+      ],
+      "summary": "Dictionary of method run states tracking last-start and last-end timestamps per method within a process.",
+      "tags": [
+        "data-model",
+        "process-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/process_control.py:dictOfControlProcesses",
+      "type": "class",
+      "name": "dictOfControlProcesses",
+      "filePath": "sysobjects/production/process_control.py",
+      "lineRange": [
+        351,
+        382
+      ],
+      "summary": "Dictionary of controlProcess objects with bulk status views for monitoring all production processes.",
+      "tags": [
+        "data-model",
+        "process-control",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trade_limits.py:tradeLimit",
+      "type": "class",
+      "name": "tradeLimit",
+      "filePath": "sysobjects/production/trade_limits.py",
+      "lineRange": [
+        10,
+        144
+      ],
+      "summary": "Rolling trade-quantity limit for a tradeable key over a period, tracking recent trades and remaining capacity.",
+      "tags": [
+        "data-model",
+        "trade-limit",
+        "risk"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/production/trade_limits.py:listOfTradeLimits",
+      "type": "class",
+      "name": "listOfTradeLimits",
+      "filePath": "sysobjects/production/trade_limits.py",
+      "lineRange": [
+        147,
+        200
+      ],
+      "summary": "Collection of tradeLimit objects with helpers to find and combine limits applicable to a trade.",
+      "tags": [
+        "data-model",
+        "trade-limit",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/tradeable_object.py:instrumentStrategy",
+      "type": "class",
+      "name": "instrumentStrategy",
+      "filePath": "sysobjects/production/tradeable_object.py",
+      "lineRange": [
+        85,
+        146
+      ],
+      "summary": "Identifier pairing a strategy name with an instrument code, used as a key across the production system.",
+      "tags": [
+        "data-model",
+        "tradeable-object",
+        "domain"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/tradeable_object.py:futuresContractStrategy",
+      "type": "class",
+      "name": "futuresContractStrategy",
+      "filePath": "sysobjects/production/tradeable_object.py",
+      "lineRange": [
+        149,
+        245
+      ],
+      "summary": "Identifier combining strategy, instrument, and contract date for per-contract production tracking.",
+      "tags": [
+        "data-model",
+        "tradeable-object",
+        "futures",
+        "domain"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/production/tradeable_object.py:tradeableObject",
+      "type": "class",
+      "name": "tradeableObject",
+      "filePath": "sysobjects/production/tradeable_object.py",
+      "lineRange": [
+        6,
+        30
+      ],
+      "summary": "Abstract base for tradeable identifier objects providing key (de)serialization contract.",
+      "tags": [
+        "data-model",
+        "tradeable-object",
+        "abstract"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/production/tradeable_object.py:listOfInstrumentStrategies",
+      "type": "class",
+      "name": "listOfInstrumentStrategies",
+      "filePath": "sysobjects/production/tradeable_object.py",
+      "lineRange": [
+        33,
+        78
+      ],
+      "summary": "List container of instrumentStrategy identifiers with filtering and unique-instrument helpers.",
+      "tags": [
+        "data-model",
+        "tradeable-object",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/spreads.py:spreadsForInstrument",
+      "type": "class",
+      "name": "spreadsForInstrument",
+      "filePath": "sysobjects/spreads.py",
+      "lineRange": [
+        8,
+        23
+      ],
+      "summary": "Value object wrapping a pandas Series of spread cost observations for a single instrument.",
+      "tags": [
+        "data-model",
+        "spread",
+        "futures"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:syslogging/tests/logging_tests.py",
+      "target": "class:syslogging/tests/logging_tests.py:TestLogging",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syslogging/tests/logging_tests.py",
+      "target": "class:syslogging/tests/logging_tests.py:TestLogging",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:futuresContract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:futuresContract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:listOfFuturesContracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:listOfFuturesContracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:parametersForFuturesContract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "class:sysobjects/contracts.py:parametersForFuturesContract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "function:sysobjects/contracts.py:_resolve_args_for_futures_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "function:sysobjects/contracts.py:_resolve_args_for_futures_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:baseOptimalPosition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:baseOptimalPosition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:bufferedOptimalPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:bufferedOptimalPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:optimalPositionWithDynamicCalculations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:optimalPositionWithDynamicCalculations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:instrumentStrategyAndOptimalPosition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:instrumentStrategyAndOptimalPosition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:listOfOptimalPositionsAcrossInstrumentStrategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "class:sysobjects/production/optimal_positions.py:listOfOptimalPositionsAcrossInstrumentStrategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:add_optimal_position_entry_row_to_positions_as_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:add_optimal_position_entry_row_to_positions_as_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:infer_class_of_optimal_position_from_field_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:infer_class_of_optimal_position_from_field_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:_check_append_positions_okay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "function:sysobjects/production/optimal_positions.py:_check_append_positions_okay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "class:sysobjects/production/override.py:Override",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "class:sysobjects/production/override.py:Override",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:_apply_float_override",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:_apply_float_override",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:_apply_reduce_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:_apply_reduce_only",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:lookup_value_and_return_float_or_object",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "function:sysobjects/production/override.py:lookup_value_and_return_float_or_object",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "class:sysobjects/production/position_limits.py:positionLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "class:sysobjects/production/position_limits.py:positionLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "class:sysobjects/production/position_limits.py:positionLimitAndPosition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "class:sysobjects/production/position_limits.py:positionLimitAndPosition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "function:sysobjects/production/position_limits.py:apply_position_limit_to_single_leg_trade",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "function:sysobjects/production/position_limits.py:apply_position_limit_to_single_leg_trade",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "function:sysobjects/production/position_limits.py:apply_position_limit_to_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "function:sysobjects/production/position_limits.py:apply_position_limit_to_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:contractPosition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:contractPosition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfContractPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfContractPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfInstrumentStrategyPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "class:sysobjects/production/positions.py:listOfInstrumentStrategyPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "function:sysobjects/production/positions.py:sum_for_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "function:sysobjects/production/positions.py:sum_for_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "function:sysobjects/production/positions.py:sum_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "function:sysobjects/production/positions.py:sum_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:controlProcess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:controlProcess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:dictOfRunningMethods",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:dictOfRunningMethods",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:dictOfControlProcesses",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "class:sysobjects/production/process_control.py:dictOfControlProcesses",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "class:sysobjects/production/trade_limits.py:tradeLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "class:sysobjects/production/trade_limits.py:tradeLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "class:sysobjects/production/trade_limits.py:listOfTradeLimits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "class:sysobjects/production/trade_limits.py:listOfTradeLimits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:instrumentStrategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:instrumentStrategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:futuresContractStrategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:futuresContractStrategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:tradeableObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:tradeableObject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:listOfInstrumentStrategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "class:sysobjects/production/tradeable_object.py:listOfInstrumentStrategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/spreads.py",
+      "target": "class:sysobjects/spreads.py:spreadsForInstrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/spreads.py",
+      "target": "class:sysobjects/spreads.py:spreadsForInstrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogging/tests/logging_tests.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogging/tests/logging_tests.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "file:sysobjects/production/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/optimal_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/override.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/position_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "file:syscontrol/list_running_pids.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/process_control.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trade_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/tradeable_object.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/spreads.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/spreads.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contracts.py",
+      "target": "file:syslogging/tests/logging_tests.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

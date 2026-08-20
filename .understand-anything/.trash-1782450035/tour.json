@@ -1,0 +1,96 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview & Docs Map",
+    "description": "Start here to understand what pysystemtrade is: Rob Carver's open-source engine that does three jobs at once - a backtesting environment for the strategies in his books, an implementation of his optimisation and system-design principles, and a fully automated futures trading system for Interactive Brokers. The README orients you to the project, while introduction.md is the hands-on tutorial that builds up from a single trading rule to a complete system. Read these before touching code so the rest of the tour has context.",
+    "nodeIds": ["document:README.md", "document:docs/introduction.md", "document:docs/backtesting.md"]
+  },
+  {
+    "order": 2,
+    "title": "Your First System (Examples)",
+    "description": "There is no single main() in pysystemtrade; the natural entry point is the example scripts that the introduction docs walk you through. asimpletradingrule.py shows a forecast computed by hand, simplesystem.py wires that rule into a small System, and prebakedsystems.py loads a complete pre-configured system in one line. These scripts are the bridge between the book's concepts and the actual API you will explore next.",
+    "nodeIds": ["file:examples/introduction/asimpletradingrule.py", "file:examples/introduction/simplesystem.py", "file:examples/introduction/prebakedsystems.py"]
+  },
+  {
+    "order": 3,
+    "title": "The System Orchestrator",
+    "description": "basesystem.py defines the System object - the heart of the backtest engine. A System is a container that holds a set of processing Stages and the data/config they share, and it lazily computes results on demand. stage.py is the base class every stage inherits from, and system_cache.py is the caching machinery (note its high fan-in: 25 files depend on it) that memoises expensive calculations so each quantity is computed only once. Understanding this trio explains how every later stage plugs in.",
+    "nodeIds": ["file:systems/basesystem.py", "file:systems/stage.py", "file:systems/system_cache.py"],
+    "languageLesson": "pysystemtrade uses a custom @diagnostic / @output decorator-driven caching layer (system_cache.py) layered on top of Python descriptors. Decorators wrap a stage method so its result is stored in the System's cache keyed by stage name and arguments - this is why calling the same calculation twice is cheap."
+  },
+  {
+    "order": 4,
+    "title": "Stage 1 - Raw Data",
+    "description": "The first stage in the pipeline. rawdata.py takes the raw futures prices and turns them into the derived series the trading rules need - most importantly volatility estimates used to normalise everything else. Building on the System container from Step 3, this shows the standard stage pattern: read from data, compute, cache the output, and expose it to downstream stages. Carver's whole framework is built on risk-normalised (vol-adjusted) signals, which originate here.",
+    "nodeIds": ["file:systems/rawdata.py"]
+  },
+  {
+    "order": 5,
+    "title": "Stage 2 - Trading Rules & Forecasts",
+    "description": "This is where strategies live. forecasting.py is the Rules stage that runs each trading rule to produce a forecast (a risk-normalised signal of how strongly to be long or short). trading_rules.py defines the TradingRule wrapper that binds a rule function to its data and parameters. ewmac.py and carry.py are the two flagship rules from the books - trend-following via moving-average crossovers, and the carry of the futures curve. These forecasts feed every stage downstream.",
+    "nodeIds": ["file:systems/forecasting.py", "file:systems/trading_rules.py", "file:systems/provided/rules/ewmac.py", "file:systems/provided/rules/carry.py"]
+  },
+  {
+    "order": 6,
+    "title": "Stages 3-4 - Scaling, Capping & Combining",
+    "description": "Raw forecasts are not directly comparable across rules, so forecast_scale_cap.py scales each forecast to a common target risk and caps extreme values (a key Carver robustness step). forecast_combine.py then blends the multiple capped forecasts into a single combined forecast per instrument, using forecast weights and a forecast diversification multiplier. This is the first place the quant-optimisation machinery (Step 9) gets used to choose weights.",
+    "nodeIds": ["file:systems/forecast_scale_cap.py", "file:systems/forecast_combine.py"]
+  },
+  {
+    "order": 7,
+    "title": "Stages 5-6 - Position Sizing & Portfolio",
+    "description": "positionsizing.py converts the combined forecast into a position in contracts, scaling by the instrument's volatility, the account's capital, and the target risk - turning a dimensionless signal into a tradeable number. portfolio.py then aggregates positions across all instruments, applying instrument weights, an instrument diversification multiplier, buffering, and the risk overlay. After this stage you have the system's target positions - what it actually wants to hold.",
+    "nodeIds": ["file:systems/positionsizing.py", "file:systems/portfolio.py", "file:systems/risk.py"]
+  },
+  {
+    "order": 8,
+    "title": "Stage 7 - Accounting & P&L",
+    "description": "accounts_stage.py is the final backtest stage: it takes the target positions from Step 7, simulates trading them against historical prices, and produces a P&L curve with Sharpe ratio, drawdowns, costs, and per-instrument breakdowns. This is how you actually evaluate whether a strategy works. The accountCurve objects it returns are the main output you analyse when backtesting the strategies from Carver's books.",
+    "nodeIds": ["file:systems/accounts/accounts_stage.py"]
+  },
+  {
+    "order": 9,
+    "title": "Quant Optimisation Engine",
+    "description": "Several stages (forecast combining and portfolio weighting) need to choose weights from historical data. sysquant holds that machinery: correlations.py and mean_estimator.py are the estimators of correlation and expected returns, and handcraft.py implements Carver's signature 'handcrafting' optimiser - a robust, hierarchical alternative to naive mean-variance that avoids over-fitting. This is the 'optimisation and system-design principles' pillar from the README.",
+    "nodeIds": ["file:sysquant/estimators/correlations.py", "file:sysquant/estimators/mean_estimator.py", "file:sysquant/optimisation/optimisers/handcraft.py"]
+  },
+  {
+    "order": 10,
+    "title": "Domain Objects & Data Storage",
+    "description": "Everything above operates on shared domain objects. contracts.py models a futures contract (very high fan-in - 54 files depend on it), and multiple_prices.py / adjusted_prices.py model the price series that feed the backtest. base_data.py is the abstract data-source interface, parquet_access.py is one concrete storage backend, and data_blob.py is the high-fan-in object (130 dependents) that bundles all data sources together so production code can grab whatever it needs from one handle.",
+    "nodeIds": ["file:sysobjects/contracts.py", "file:sysobjects/multiple_prices.py", "file:sysdata/base_data.py", "file:sysdata/parquet/parquet_access.py", "file:sysdata/data_blob.py"]
+  },
+  {
+    "order": 11,
+    "title": "A Complete Provided System",
+    "description": "Now see all the stages assembled. The futures_chapter15 package is the full system from chapter 15 of 'Systematic Trading': basesystem.py composes every stage in order, estimatedsystem.py is the variant that estimates weights from data rather than using fixed values, and futuresconfig.yaml is the YAML config that ties rules, parameters, and weights together. This is the canonical reference for how a real Carver system is configured end to end.",
+    "nodeIds": ["file:systems/provided/futures_chapter15/basesystem.py", "file:systems/provided/futures_chapter15/estimatedsystem.py", "config:systems/provided/futures_chapter15/futuresconfig.yaml"],
+    "languageLesson": "Configuration is data, not code: a YAML file declares which trading rules to run and their parameters, and the System reads it at construction. This separation lets you change a strategy without editing Python - the same pattern used throughout pysystemtrade's production configs."
+  },
+  {
+    "order": 12,
+    "title": "The Live-Trading Edge - Broker Integration",
+    "description": "Backtesting is only one of pysystemtrade's three jobs; the rest of the tour crosses into live trading. ib_connection.py establishes the connection to Interactive Brokers (via ib_async), broker_factory.py builds the right broker data objects, and sysproduction/data/broker.py is the production-facing wrapper that the rest of the live system talks to. This is the boundary where simulated positions become real orders.",
+    "nodeIds": ["file:sysbrokers/IB/ib_connection.py", "file:sysbrokers/broker_factory.py", "file:sysproduction/data/broker.py"],
+    "languageLesson": "Interactive Brokers' API is asynchronous; ib_async wraps it so price and order requests return when data arrives. The broker layer isolates all of this behind a clean interface so the trading logic never depends on IB-specific details directly."
+  },
+  {
+    "order": 13,
+    "title": "Order Execution & The Stack",
+    "description": "How does a target position become a filled trade? broker_orders.py defines the order objects, and stack_handler.py runs the 'order stack' - the engine that breaks a desired position change into instrument orders, then contract orders, then broker orders, manages partial fills, and reconciles state. The algos in sysexecution decide how each order is worked into the market. This is the most operationally critical code in the live system.",
+    "nodeIds": ["file:sysexecution/orders/broker_orders.py", "file:sysexecution/stack_handler/stack_handler.py", "file:sysexecution/algos/algo_market.py"]
+  },
+  {
+    "order": 14,
+    "title": "Production Orchestration & Dashboard",
+    "description": "Finally, what ties a 24/7 live system together. run_stack_handler.py is one of the scheduled production processes that drives the order stack, and dashboard/app.py is the Flask web app (the highest-scoring entry point in the dependency analysis) that monitors capital, positions, rolls, and process health. production.md is the definitive operations guide. Together these show how the backtest engine, data, broker, and execution layers run unattended in production.",
+    "nodeIds": ["file:sysproduction/run_stack_handler.py", "file:dashboard/app.py", "document:docs/production.md"]
+  },
+  {
+    "order": 15,
+    "title": "Testing & CI",
+    "description": "As a capstone, see how the project keeps itself correct. quick-test.yml is the primary CI workflow that runs the fast pytest suite on every push, slow-test.yml runs the long-running tests nightly, and pyproject.toml defines the package metadata, dependencies, and tooling configuration. This closes the loop: every change to the backtest and trading logic you toured above is guarded by automated tests before it can merge.",
+    "nodeIds": ["pipeline:.github/workflows/quick-test.yml", "pipeline:.github/workflows/slow-test.yml", "config:pyproject.toml"],
+    "languageLesson": "GitHub Actions workflows use 'on' triggers (push, pull_request, schedule) and 'jobs' of sequential 'steps'. Splitting fast tests (run on every push) from slow tests (run nightly via cron) keeps the feedback loop quick while still exercising the expensive end-to-end paths."
+  }
+]

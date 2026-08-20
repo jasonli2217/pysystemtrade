@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 7 · Costs — pysystemtrade course</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+
+  <div class="eyebrow">Lesson 7 · Costs</div>
+  <h1>Costs: the silent killer, measured</h1>
+
+  <div class="mission">
+    <b>Why this lesson?</b> Costs are the one thing separating a great backtest from a
+    mediocre live result — and the one thing beginners underestimate. This lesson closes the
+    backtest arc: you'll be able to say <em>which</em> rules are too expensive to trade, and
+    why the system dropped <code>ewmac8_32</code> for EUROSTX back in Lesson 3.
+  </div>
+
+  <h2>Two ideas: turnover and SR cost</h2>
+  <ul>
+    <li><strong>Turnover</strong> — how many times a year the rule flips your position around.
+      Fast rules churn; churn costs money.</li>
+    <li><strong>SR cost</strong> — the cost expressed as a hit to your <em>Sharpe ratio</em>.
+      Because it's in Sharpe units, it's dimensionless — you can compare costs across any
+      instrument or rule.</li>
+  </ul>
+
+  <h2>The Lesson 3 mystery, solved</h2>
+  <p>Remember <code>ewmac8_32</code> got <strong>zero weight</strong> for EUROSTX? Here's why:</p>
+<pre><code>ewmac8_32 turnover (EUROSTX)   ~23 times / year   <span class="comment"># very churny — it's the fast rule</span>
+EUROSTX SR cost per trade      ~0.00116           <span class="comment"># cheap market, but...</span></code></pre>
+  <p>
+    A fast rule × many trades = a cost drag big enough that the system judged
+    <code>ewmac8_32</code> couldn't pay its way on EUROSTX, and dropped it. The slower EWMACs
+    (16/64, 32/128, 64/256) trade less and survived. <strong>This is cost-aware rule
+    selection happening automatically</strong> — and now you can see the exact machinery.
+  </p>
+
+  <div class="callout why">
+    <span class="tag">Why this matters for going live</span>
+    Live costs are <em>real money leaving your account</em>, not a backtest abstraction. The
+    SR-cost framework is your defence: Carver's guideline is to avoid any rule/instrument combo
+    whose costs exceed roughly a third of its expected gross return. When you add instruments
+    later, checking SR cost first will save you from trading things that only work on paper.
+  </div>
+
+  <h2>Cheaper is more than convenience</h2>
+  <p>
+    Lower costs let you trade <em>faster</em> signals profitably, hold <em>more</em>
+    instruments, and run <em>higher</em> turnover rules — all of which add diversification.
+    That's why Carver obsesses over costs: they don't just subtract return, they shrink the
+    menu of what you're allowed to trade at all.
+  </p>
+
+  <h2>See it yourself (3 min)</h2>
+<pre><code><span class="comment"># _learning_sandbox/course/lessons/trace_costs.py</span>
+from systems.provided.futures_chapter15.basesystem import futures_system
+s = futures_system()
+I = "EUROSTX"
+
+fast_turnover = s.accounts.forecast_turnover(I, "ewmac8_32")
+slow_turnover = s.accounts.forecast_turnover(I, "ewmac64_256")
+sr_cost       = s.accounts.get_SR_cost_per_trade_for_instrument(I)
+
+print("ewmac8_32  turnover:", round(float(fast_turnover), 2), " (fast, churny)")
+print("ewmac64_256 turnover:", round(float(slow_turnover), 2), " (slow, calm)")
+print("SR cost per trade   :", round(float(sr_cost), 5))
+</code></pre>
+  <p>Run: <code>uv run python _learning_sandbox/course/lessons/trace_costs.py</code> — watch the fast rule churn far more than the slow one.</p>
+
+  <h2>Check yourself</h2>
+  <div class="quiz" data-quiz='[
+    {"q":"What does a trading rules turnover number tell you?",
+     "options":["Its total yearly profit","How often it retrades","Its correlation to price","Its maximum forecast"],
+     "correct":1,
+     "why":"Turnover counts how many times a year the rule flips the position around; higher turnover means more trades and more cost."},
+    {"q":"Why is cost expressed in Sharpe-ratio units so useful?",
+     "options":["It hides the real fees","It compares across markets","It always rounds to zero","It ignores the turnover"],
+     "correct":1,
+     "why":"SR cost is dimensionless, so you can compare the cost drag of any rule or instrument on the same footing."},
+    {"q":"Why did the system drop ewmac8_32 from EUROSTXs blend?",
+     "options":["Its signal was flat","Its costs were too high","Its data was missing","Its weight was zero"],
+     "correct":1,
+     "why":"ewmac8_32 is fast and high-turnover; its cost drag was too large to justify, so cost-aware selection gave it zero weight."}
+  ]'></div>
+
+  <div class="source">
+    <span class="tag">Primary source — read this next</span>
+    <strong>Systematic Trading</strong>, Robert Carver — <em>Chapter 12 (Speed &amp; size:
+    costs)</em>, plus his blog posts on trading costs. Code:
+    <a href="../../../systems/accounts/">systems/accounts/</a>.
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    This closes the "understand the backtest" arc. Ready to start <em>changing</em> the
+    system (config, your own rules), or to map the road to live trading? Just ask — I'll build
+    the next part.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course · Lesson 7 — end of Part 1</span>
+    <span>Prev ← <a href="0006-pnl.html">P&amp;L &amp; Sharpe</a> · <a href="../index.html">Course index</a></span>
+  </footer>
+
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

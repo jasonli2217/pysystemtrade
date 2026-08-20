@@ -1,0 +1,1188 @@
+{
+  "nodes": [
+    {
+      "id": "file:examples/data/subscription_test.py",
+      "type": "file",
+      "name": "subscription_test.py",
+      "filePath": "examples/data/subscription_test.py",
+      "summary": "Example script that connects to IB and subscribes to contract details for a sample instrument to demonstrate the streaming subscription API.",
+      "tags": [
+        "test",
+        "example",
+        "broker-integration",
+        "interactive-brokers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "type": "file",
+      "name": "ib_accounting_client.py",
+      "filePath": "sysbrokers/IB/client/ib_accounting_client.py",
+      "summary": "Low-level IB client mixin that retrieves account summary and excess liquidity data from the Interactive Brokers API.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "file",
+      "name": "ib_client.py",
+      "filePath": "sysbrokers/IB/client/ib_client.py",
+      "summary": "Base IB client class aggregating shared connection, contract resolution, and error-handling logic for all IB client mixins.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "base-class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "type": "file",
+      "name": "ib_contracts_client.py",
+      "filePath": "sysbrokers/IB/client/ib_contracts_client.py",
+      "summary": "Large IB client mixin handling futures contract resolution, expiry dates, and trading-hours retrieval from Interactive Brokers.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "contracts"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "type": "file",
+      "name": "ib_fx_client.py",
+      "filePath": "sysbrokers/IB/client/ib_fx_client.py",
+      "summary": "IB client mixin that fetches spot FX prices and FX rates from Interactive Brokers.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "fx"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "type": "file",
+      "name": "ib_orders_client.py",
+      "filePath": "sysbrokers/IB/client/ib_orders_client.py",
+      "summary": "IB client mixin responsible for submitting, modifying, and cancelling broker orders via the Interactive Brokers API.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "orders"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "type": "file",
+      "name": "ib_positions_client.py",
+      "filePath": "sysbrokers/IB/client/ib_positions_client.py",
+      "summary": "Minimal IB client mixin exposing current broker positions from Interactive Brokers.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "positions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_price_client.py",
+      "type": "file",
+      "name": "ib_price_client.py",
+      "filePath": "sysbrokers/IB/client/ib_price_client.py",
+      "summary": "IB client mixin streaming and retrieving historical and live futures prices and tick data from Interactive Brokers.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "client",
+        "price-data"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "type": "file",
+      "name": "ib_fx_config.py",
+      "filePath": "sysbrokers/IB/config/ib_fx_config.py",
+      "summary": "Helper functions that load IB FX instrument configuration from a CSV file and resolve currency codes.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "config",
+        "fx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "type": "file",
+      "name": "ib_instrument_config.py",
+      "filePath": "sysbrokers/IB/config/ib_instrument_config.py",
+      "summary": "Loads and resolves IB instrument configuration mapping pysystemtrade instrument codes to broker symbols, exchanges, and multipliers.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "config",
+        "instrument-mapping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "type": "file",
+      "name": "ib_Fx_prices_data.py",
+      "filePath": "sysbrokers/IB/ib_Fx_prices_data.py",
+      "summary": "Data adapter implementing the broker FX prices interface backed by the Interactive Brokers FX client.",
+      "tags": [
+        "broker-integration",
+        "interactive-brokers",
+        "data-adapter",
+        "fx"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:examples/data/subscription_test.py:subscription_test",
+      "type": "function",
+      "name": "subscription_test",
+      "filePath": "examples/data/subscription_test.py",
+      "lineRange": [
+        16,
+        40
+      ],
+      "summary": "Connects to IB, subscribes to contract details for a sample instrument and prints the streamed results.",
+      "tags": [
+        "example",
+        "subscription",
+        "broker-integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_accounting_client.py:ibAccountingClient",
+      "type": "class",
+      "name": "ibAccountingClient",
+      "filePath": "sysbrokers/IB/client/ib_accounting_client.py",
+      "lineRange": [
+        13,
+        159
+      ],
+      "summary": "IB client mixin that queries account summary, net liquidation, and excess liquidity values from Interactive Brokers.",
+      "tags": [
+        "client",
+        "accounting",
+        "broker-integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysbrokers/IB/client/ib_accounting_client.py:clean_up_account_summary",
+      "type": "function",
+      "name": "clean_up_account_summary",
+      "filePath": "sysbrokers/IB/client/ib_accounting_client.py",
+      "lineRange": [
+        162,
+        181
+      ],
+      "summary": "Normalises the raw IB account summary list into a structured per-currency dictionary.",
+      "tags": [
+        "accounting",
+        "parsing",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_client.py:ibClient",
+      "type": "class",
+      "name": "ibClient",
+      "filePath": "sysbrokers/IB/client/ib_client.py",
+      "lineRange": [
+        29,
+        153
+      ],
+      "summary": "Base IB client class providing the shared ib_async connection, logging, contract resolution, and error handling reused by all client mixins.",
+      "tags": [
+        "client",
+        "base-class",
+        "broker-integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_contracts_client.py:ibContractsClient",
+      "type": "class",
+      "name": "ibContractsClient",
+      "filePath": "sysbrokers/IB/client/ib_contracts_client.py",
+      "lineRange": [
+        39,
+        607
+      ],
+      "summary": "IB client mixin resolving futures contracts, expiry dates, and weekly trading hours from Interactive Brokers.",
+      "tags": [
+        "client",
+        "contracts",
+        "trading-hours",
+        "broker-integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_fx_client.py:ibFxClient",
+      "type": "class",
+      "name": "ibFxClient",
+      "filePath": "sysbrokers/IB/client/ib_fx_client.py",
+      "lineRange": [
+        17,
+        100
+      ],
+      "summary": "IB client mixin fetching spot FX prices and FX rates from Interactive Brokers.",
+      "tags": [
+        "client",
+        "fx",
+        "price-data",
+        "broker-integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_orders_client.py:ibOrdersClient",
+      "type": "class",
+      "name": "ibOrdersClient",
+      "filePath": "sysbrokers/IB/client/ib_orders_client.py",
+      "lineRange": [
+        39,
+        225
+      ],
+      "summary": "IB client mixin submitting, modifying, cancelling, and tracking broker orders via the Interactive Brokers API.",
+      "tags": [
+        "client",
+        "orders",
+        "execution",
+        "broker-integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_positions_client.py:ibPositionsClient",
+      "type": "class",
+      "name": "ibPositionsClient",
+      "filePath": "sysbrokers/IB/client/ib_positions_client.py",
+      "lineRange": [
+        9,
+        23
+      ],
+      "summary": "IB client mixin exposing current broker positions from Interactive Brokers.",
+      "tags": [
+        "client",
+        "positions",
+        "broker-integration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_price_client.py:tickerWithBS",
+      "type": "class",
+      "name": "tickerWithBS",
+      "filePath": "sysbrokers/IB/client/ib_price_client.py",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Lightweight container pairing an IB ticker with its bid/ask side metadata.",
+      "tags": [
+        "data-model",
+        "tick-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_price_client.py:ibPriceClient",
+      "type": "class",
+      "name": "ibPriceClient",
+      "filePath": "sysbrokers/IB/client/ib_price_client.py",
+      "lineRange": [
+        36,
+        355
+      ],
+      "summary": "IB client mixin retrieving historical bars, streaming prices, and tick data for futures contracts from Interactive Brokers.",
+      "tags": [
+        "client",
+        "price-data",
+        "streaming",
+        "broker-integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_fx_config.py:get_ib_config_from_file",
+      "type": "function",
+      "name": "get_ib_config_from_file",
+      "filePath": "sysbrokers/IB/config/ib_fx_config.py",
+      "lineRange": [
+        17,
+        24
+      ],
+      "summary": "Loads the IB FX configuration CSV from disk into a config object.",
+      "tags": [
+        "config",
+        "fx",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_fx_config.py:config_info_for_code",
+      "type": "function",
+      "name": "config_info_for_code",
+      "filePath": "sysbrokers/IB/config/ib_fx_config.py",
+      "lineRange": [
+        27,
+        34
+      ],
+      "summary": "Returns IB FX configuration row for a given currency code.",
+      "tags": [
+        "config",
+        "fx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_fx_config.py:get_list_of_codes",
+      "type": "function",
+      "name": "get_list_of_codes",
+      "filePath": "sysbrokers/IB/config/ib_fx_config.py",
+      "lineRange": [
+        37,
+        40
+      ],
+      "summary": "Returns the list of FX currency codes available in the IB config.",
+      "tags": [
+        "config",
+        "fx"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_instrument_config.py:read_ib_config_from_file",
+      "type": "function",
+      "name": "read_ib_config_from_file",
+      "filePath": "sysbrokers/IB/config/ib_instrument_config.py",
+      "lineRange": [
+        25,
+        32
+      ],
+      "summary": "Reads the IB instrument configuration CSV into an IBconfig object.",
+      "tags": [
+        "config",
+        "instrument-mapping",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_object_from_config",
+      "type": "function",
+      "name": "get_instrument_object_from_config",
+      "filePath": "sysbrokers/IB/config/ib_instrument_config.py",
+      "lineRange": [
+        35,
+        65
+      ],
+      "summary": "Resolves an IB futures instrument object from config for a given instrument code, handling validation.",
+      "tags": [
+        "config",
+        "instrument-mapping",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_instrument_config.py:_get_instrument_object_from_valid_config",
+      "type": "function",
+      "name": "_get_instrument_object_from_valid_config",
+      "filePath": "sysbrokers/IB/config/ib_instrument_config.py",
+      "lineRange": [
+        68,
+        100
+      ],
+      "summary": "Builds an IB instrument object from a validated config row, resolving symbol, exchange, and multiplier.",
+      "tags": [
+        "config",
+        "instrument-mapping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_code_from_broker_instrument_identity",
+      "type": "function",
+      "name": "get_instrument_code_from_broker_instrument_identity",
+      "filePath": "sysbrokers/IB/config/ib_instrument_config.py",
+      "lineRange": [
+        111,
+        157
+      ],
+      "summary": "Maps a broker instrument identity (symbol/exchange/currency) back to the pysystemtrade instrument code.",
+      "tags": [
+        "config",
+        "instrument-mapping",
+        "reverse-lookup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/ib_Fx_prices_data.py:ibFxPricesData",
+      "type": "class",
+      "name": "ibFxPricesData",
+      "filePath": "sysbrokers/IB/ib_Fx_prices_data.py",
+      "lineRange": [
+        17,
+        138
+      ],
+      "summary": "Broker FX prices data adapter backed by the IB FX client, exposing spot FX series in pysystemtrade format.",
+      "tags": [
+        "data-adapter",
+        "fx",
+        "price-data",
+        "broker-integration"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:examples/data/subscription_test.py",
+      "target": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:sysbrokers/IB/ib_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:sysbrokers/IB/ib_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:syscore/cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysbrokers/IB/ib_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysbrokers/IB/ib_instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysbrokers/IB/ib_trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:syscore/cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:sysbrokers/IB/client/ib_price_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:sysbrokers/IB/ib_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:sysbrokers/IB/ib_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysbrokers/IB/ib_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysbrokers/IB/ib_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "target": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "target": "file:sysbrokers/IB/ib_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:sysbrokers/IB/client/ib_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:sysbrokers/IB/ib_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:sysbrokers/IB/ib_instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:sysbrokers/broker_fx_prices_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:examples/data/subscription_test.py",
+      "target": "function:examples/data/subscription_test.py:subscription_test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:examples/data/subscription_test.py",
+      "target": "function:examples/data/subscription_test.py:subscription_test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "class:sysbrokers/IB/client/ib_accounting_client.py:ibAccountingClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "class:sysbrokers/IB/client/ib_accounting_client.py:ibAccountingClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "function:sysbrokers/IB/client/ib_accounting_client.py:clean_up_account_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_accounting_client.py",
+      "target": "function:sysbrokers/IB/client/ib_accounting_client.py:clean_up_account_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "class:sysbrokers/IB/client/ib_client.py:ibClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client.py",
+      "target": "class:sysbrokers/IB/client/ib_client.py:ibClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "class:sysbrokers/IB/client/ib_contracts_client.py:ibContractsClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_contracts_client.py",
+      "target": "class:sysbrokers/IB/client/ib_contracts_client.py:ibContractsClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "class:sysbrokers/IB/client/ib_fx_client.py:ibFxClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_fx_client.py",
+      "target": "class:sysbrokers/IB/client/ib_fx_client.py:ibFxClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "class:sysbrokers/IB/client/ib_orders_client.py:ibOrdersClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_orders_client.py",
+      "target": "class:sysbrokers/IB/client/ib_orders_client.py:ibOrdersClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "target": "class:sysbrokers/IB/client/ib_positions_client.py:ibPositionsClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_positions_client.py",
+      "target": "class:sysbrokers/IB/client/ib_positions_client.py:ibPositionsClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "class:sysbrokers/IB/client/ib_price_client.py:tickerWithBS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "class:sysbrokers/IB/client/ib_price_client.py:tickerWithBS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "class:sysbrokers/IB/client/ib_price_client.py:ibPriceClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_price_client.py",
+      "target": "class:sysbrokers/IB/client/ib_price_client.py:ibPriceClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:get_ib_config_from_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:get_ib_config_from_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:config_info_for_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:config_info_for_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:get_list_of_codes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_fx_config.py",
+      "target": "function:sysbrokers/IB/config/ib_fx_config.py:get_list_of_codes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:read_ib_config_from_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:read_ib_config_from_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_object_from_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_object_from_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:_get_instrument_object_from_valid_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_code_from_broker_instrument_identity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/config/ib_instrument_config.py",
+      "target": "function:sysbrokers/IB/config/ib_instrument_config.py:get_instrument_code_from_broker_instrument_identity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "class:sysbrokers/IB/ib_Fx_prices_data.py:ibFxPricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_Fx_prices_data.py",
+      "target": "class:sysbrokers/IB/ib_Fx_prices_data.py:ibFxPricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

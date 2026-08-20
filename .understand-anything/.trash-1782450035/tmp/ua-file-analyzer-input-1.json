@@ -1,0 +1,490 @@
+{
+ "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+ "batchFiles": [
+  {
+   "path": "_learning_sandbox/chapter15.py",
+   "language": "python",
+   "sizeLines": 5,
+   "fileCategory": "code"
+  },
+  {
+   "path": "_learning_sandbox/intro.py",
+   "language": "python",
+   "sizeLines": 20,
+   "fileCategory": "code"
+  },
+  {
+   "path": "examples/introduction/prebakedsystems.py",
+   "language": "python",
+   "sizeLines": 45,
+   "fileCategory": "code"
+  },
+  {
+   "path": "examples/introduction/simplesystem.py",
+   "language": "python",
+   "sizeLines": 257,
+   "fileCategory": "code"
+  },
+  {
+   "path": "examples/production/example_of_custom_run_system.py",
+   "language": "python",
+   "sizeLines": 93,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysbrokers/IB/ib_trading_hours.py",
+   "language": "python",
+   "sizeLines": 152,
+   "fileCategory": "code"
+  },
+  {
+   "path": "syscore/objects.py",
+   "language": "python",
+   "sizeLines": 121,
+   "fileCategory": "code"
+  },
+  {
+   "path": "syscore/tests/test.py",
+   "language": "python",
+   "sizeLines": 3,
+   "fileCategory": "code"
+  },
+  {
+   "path": "syscore/tests/test_correlation.py",
+   "language": "python",
+   "sizeLines": 148,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/config/configdata.py",
+   "language": "python",
+   "sizeLines": 297,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/config/control_config.py",
+   "language": "python",
+   "sizeLines": 36,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/config/fill_config_dict_with_defaults.py",
+   "language": "python",
+   "sizeLines": 25,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/config/instruments.py",
+   "language": "python",
+   "sizeLines": 107,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/config/private_config.py",
+   "language": "python",
+   "sizeLines": 38,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/sim/csv_futures_sim_data.py",
+   "language": "python",
+   "sizeLines": 46,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/sim/db_futures_sim_data.py",
+   "language": "python",
+   "sizeLines": 82,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/sim/sim_data.py",
+   "language": "python",
+   "sizeLines": 325,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysdata/tests/test_config.py",
+   "language": "python",
+   "sizeLines": 99,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysproduction/data/sim_data.py",
+   "language": "python",
+   "sizeLines": 33,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "language": "python",
+   "sizeLines": 178,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysproduction/strategy_code/run_system_classic.py",
+   "language": "python",
+   "sizeLines": 204,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysquant/estimators/turnover.py",
+   "language": "python",
+   "sizeLines": 31,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysquant/optimisation/generic_optimiser.py",
+   "language": "python",
+   "sizeLines": 98,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysquant/optimisation/optimise_over_time.py",
+   "language": "python",
+   "sizeLines": 81,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysquant/optimisation/pre_processing.py",
+   "language": "python",
+   "sizeLines": 280,
+   "fileCategory": "code"
+  },
+  {
+   "path": "sysquant/returns.py",
+   "language": "python",
+   "sizeLines": 333,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/accounts/accounts_stage.py",
+   "language": "python",
+   "sizeLines": 12,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/accounts/tests/test_accounts.py",
+   "language": "python",
+   "sizeLines": 123,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/basesystem.py",
+   "language": "python",
+   "sizeLines": 427,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/buffering.py",
+   "language": "python",
+   "sizeLines": 173,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/forecast_combine.py",
+   "language": "python",
+   "sizeLines": 1543,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/forecast_scale_cap.py",
+   "language": "python",
+   "sizeLines": 519,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/forecasting.py",
+   "language": "python",
+   "sizeLines": 251,
+   "fileCategory": "code"
+  },
+  {
+   "path": "systems/portfolio.py",
+   "language": "python",
+   "sizeLines": 1347,
+   "fileCategory": "code"
+  }
+ ],
+ "batchImportData": {
+  "_learning_sandbox/chapter15.py": [
+   "systems/provided/futures_chapter15/basesystem.py"
+  ],
+  "_learning_sandbox/intro.py": [
+   "sysdata/sim/csv_futures_sim_data.py",
+   "systems/basesystem.py",
+   "systems/forecasting.py",
+   "systems/provided/rules/ewmac.py"
+  ],
+  "examples/introduction/prebakedsystems.py": [
+   "sysdata/config/configdata.py",
+   "sysdata/sim/csv_futures_sim_data.py",
+   "systems/provided/example/simplesystem.py",
+   "systems/provided/futures_chapter15/basesystem.py",
+   "systems/provided/futures_chapter15/estimatedsystem.py"
+  ],
+  "examples/introduction/simplesystem.py": [
+   "sysdata/config/configdata.py",
+   "sysdata/sim/csv_futures_sim_data.py",
+   "systems/accounts/accounts_stage.py",
+   "systems/basesystem.py",
+   "systems/forecast_combine.py",
+   "systems/forecast_scale_cap.py",
+   "systems/forecasting.py",
+   "systems/portfolio.py",
+   "systems/positionsizing.py",
+   "systems/provided/rules/ewmac.py",
+   "systems/rawdata.py",
+   "systems/trading_rules.py"
+  ],
+  "examples/production/example_of_custom_run_system.py": [
+   "syscore/constants.py",
+   "sysdata/config/configdata.py",
+   "sysdata/data_blob.py",
+   "syslogging/logger.py",
+   "sysproduction/data/sim_data.py",
+   "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "systems/basesystem.py",
+   "systems/forecast_combine.py",
+   "systems/forecasting.py",
+   "systems/portfolio.py",
+   "systems/positionsizing.py",
+   "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+   "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+   "systems/risk.py"
+  ],
+  "sysbrokers/IB/ib_trading_hours.py": [
+   "syscore/fileutils.py",
+   "sysdata/config/private_config.py",
+   "sysdata/config/production_config.py",
+   "sysdata/production/trading_hours.py",
+   "sysobjects/production/trading_hours/trading_hours.py"
+  ],
+  "syscore/objects.py": [],
+  "syscore/tests/test.py": [
+   "systems/provided/futures_chapter15/basesystem.py"
+  ],
+  "syscore/tests/test_correlation.py": [
+   "systems/basesystem.py",
+   "systems/tests/testdata.py"
+  ],
+  "sysdata/config/configdata.py": [
+   "syscore/constants.py",
+   "syscore/exceptions.py",
+   "syscore/fileutils.py",
+   "sysdata/config/defaults.py",
+   "sysdata/config/fill_config_dict_with_defaults.py",
+   "sysdata/config/private_config.py",
+   "syslogging/logger.py"
+  ],
+  "sysdata/config/control_config.py": [
+   "syscore/fileutils.py",
+   "sysdata/config/configdata.py",
+   "sysdata/config/private_config.py"
+  ],
+  "sysdata/config/fill_config_dict_with_defaults.py": [],
+  "sysdata/config/instruments.py": [
+   "sysdata/config/configdata.py"
+  ],
+  "sysdata/config/private_config.py": [
+   "syscore/constants.py",
+   "syscore/fileutils.py"
+  ],
+  "sysdata/sim/csv_futures_sim_data.py": [
+   "syscore/constants.py",
+   "sysdata/csv/csv_adjusted_prices.py",
+   "sysdata/csv/csv_instrument_data.py",
+   "sysdata/csv/csv_multiple_prices.py",
+   "sysdata/csv/csv_roll_parameters.py",
+   "sysdata/csv/csv_spot_fx.py",
+   "sysdata/csv/csv_spread_costs.py",
+   "sysdata/data_blob.py",
+   "sysdata/sim/futures_sim_data_with_data_blob.py",
+   "syslogging/logger.py"
+  ],
+  "sysdata/sim/db_futures_sim_data.py": [
+   "syscore/constants.py",
+   "sysdata/csv/csv_instrument_data.py",
+   "sysdata/csv/csv_roll_parameters.py",
+   "sysdata/data_blob.py",
+   "sysdata/mongodb/mongo_spread_costs.py",
+   "sysdata/parquet/parquet_adjusted_prices.py",
+   "sysdata/parquet/parquet_multiple_prices.py",
+   "sysdata/parquet/parquet_spotfx_prices.py",
+   "sysdata/sim/futures_sim_data_with_data_blob.py",
+   "syslogging/logger.py"
+  ],
+  "sysdata/sim/sim_data.py": [
+   "syscore/dateutils.py",
+   "syscore/exceptions.py",
+   "syscore/objects.py",
+   "syscore/pandas/frequency.py",
+   "sysdata/base_data.py",
+   "syslogging/logger.py",
+   "sysobjects/instruments.py",
+   "sysobjects/spot_fx_prices.py"
+  ],
+  "sysdata/tests/test_config.py": [
+   "sysbrokers/IB/ib_trading_hours.py",
+   "sysdata/config/configdata.py",
+   "sysdata/config/control_config.py",
+   "sysdata/config/private_config.py"
+  ],
+  "sysproduction/data/sim_data.py": [
+   "syscore/constants.py",
+   "sysdata/data_blob.py",
+   "sysdata/sim/db_futures_sim_data.py",
+   "sysproduction/data/production_data_objects.py"
+  ],
+  "sysproduction/strategy_code/run_dynamic_optimised_system.py": [
+   "syscore/constants.py",
+   "sysdata/config/configdata.py",
+   "sysdata/data_blob.py",
+   "syslogging/logger.py",
+   "sysobjects/production/optimal_positions.py",
+   "sysobjects/production/tradeable_object.py",
+   "sysproduction/data/contracts.py",
+   "sysproduction/data/optimal_positions.py",
+   "sysproduction/data/sim_data.py",
+   "sysproduction/strategy_code/run_system_classic.py",
+   "systems/basesystem.py",
+   "systems/forecast_combine.py",
+   "systems/forecast_scale_cap.py",
+   "systems/forecasting.py",
+   "systems/portfolio.py",
+   "systems/positionsizing.py",
+   "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+   "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+   "systems/rawdata.py",
+   "systems/risk.py"
+  ],
+  "sysproduction/strategy_code/run_system_classic.py": [
+   "syscore/constants.py",
+   "syscore/exceptions.py",
+   "sysdata/config/configdata.py",
+   "sysdata/data_blob.py",
+   "syslogging/logger.py",
+   "sysobjects/production/optimal_positions.py",
+   "sysobjects/production/tradeable_object.py",
+   "sysproduction/data/backtest.py",
+   "sysproduction/data/capital.py",
+   "sysproduction/data/contracts.py",
+   "sysproduction/data/currency_data.py",
+   "sysproduction/data/optimal_positions.py",
+   "sysproduction/data/sim_data.py",
+   "systems/basesystem.py",
+   "systems/provided/futures_chapter15/basesystem.py"
+  ],
+  "sysquant/estimators/turnover.py": [
+   "sysquant/returns.py"
+  ],
+  "sysquant/optimisation/generic_optimiser.py": [
+   "syslogging/logger.py",
+   "sysquant/optimisation/optimise_over_time.py",
+   "sysquant/optimisation/pre_processing.py",
+   "sysquant/optimisation/SR_adjustment.py",
+   "sysquant/returns.py"
+  ],
+  "sysquant/optimisation/optimise_over_time.py": [
+   "syscore/interactive/progress_bar.py",
+   "syslogging/logger.py",
+   "sysquant/fitting_dates.py",
+   "sysquant/optimisation/portfolio_optimiser.py",
+   "sysquant/returns.py"
+  ],
+  "sysquant/optimisation/pre_processing.py": [
+   "sysquant/estimators/turnover.py",
+   "sysquant/returns.py"
+  ],
+  "sysquant/returns.py": [
+   "syscore/dateutils.py",
+   "syscore/genutils.py",
+   "syscore/pandas/list_of_df.py",
+   "systems/accounts/curves/account_curve_group.py"
+  ],
+  "systems/accounts/accounts_stage.py": [
+   "systems/accounts/account_subsystem.py",
+   "systems/accounts/account_trading_rules.py",
+   "systems/accounts/account_with_multiplier.py"
+  ],
+  "systems/accounts/tests/test_accounts.py": [
+   "sysdata/config/configdata.py",
+   "sysdata/sim/csv_futures_sim_test_data.py",
+   "systems/provided/futures_chapter15/basesystem.py"
+  ],
+  "systems/basesystem.py": [
+   "syscore/constants.py",
+   "sysdata/config/configdata.py",
+   "sysdata/config/instruments.py",
+   "sysdata/sim/sim_data.py",
+   "syslogging/logger.py",
+   "systems/system_cache.py",
+   "systems/tools/autogroup.py"
+  ],
+  "systems/buffering.py": [
+   "syscore/constants.py",
+   "sysdata/config/configdata.py",
+   "syslogging/logger.py"
+  ],
+  "systems/forecast_combine.py": [
+   "syscore/exceptions.py",
+   "syscore/genutils.py",
+   "syscore/objects.py",
+   "syscore/pandas/frequency.py",
+   "syscore/pandas/list_of_df.py",
+   "syscore/pandas/pdutils.py",
+   "syscore/pandas/strategy_functions.py",
+   "sysdata/config/configdata.py",
+   "sysquant/estimators/correlations.py",
+   "sysquant/estimators/turnover.py",
+   "sysquant/optimisation/pre_processing.py",
+   "sysquant/returns.py",
+   "systems/forecast_mapping.py",
+   "systems/forecast_scale_cap.py",
+   "systems/forecasting.py",
+   "systems/stage.py",
+   "systems/system_cache.py",
+   "systems/tools/autogroup.py"
+  ],
+  "systems/forecast_scale_cap.py": [
+   "syscore/genutils.py",
+   "syscore/objects.py",
+   "sysdata/config/configdata.py",
+   "systems/basesystem.py",
+   "systems/stage.py",
+   "systems/system_cache.py"
+  ],
+  "systems/forecasting.py": [
+   "syscore/constants.py",
+   "systems/stage.py",
+   "systems/system_cache.py",
+   "systems/trading_rules.py"
+  ],
+  "systems/portfolio.py": [
+   "syscore/constants.py",
+   "syscore/dateutils.py",
+   "syscore/exceptions.py",
+   "syscore/genutils.py",
+   "syscore/objects.py",
+   "syscore/pandas/find_data.py",
+   "syscore/pandas/pdutils.py",
+   "syscore/pandas/strategy_functions.py",
+   "sysdata/config/configdata.py",
+   "sysquant/estimators/correlations.py",
+   "sysquant/estimators/covariance.py",
+   "sysquant/estimators/stdev_estimator.py",
+   "sysquant/estimators/turnover.py",
+   "sysquant/optimisation/pre_processing.py",
+   "sysquant/optimisation/weights.py",
+   "sysquant/portfolio_risk.py",
+   "sysquant/returns.py",
+   "systems/accounts/curves/account_curve_group.py",
+   "systems/basesystem.py",
+   "systems/buffering.py",
+   "systems/positionsizing.py",
+   "systems/risk_overlay.py",
+   "systems/stage.py",
+   "systems/system_cache.py"
+  ]
+ }
+}

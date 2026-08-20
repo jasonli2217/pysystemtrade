@@ -1,0 +1,258 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysbrokers/IB/ib_orders.py",
+      "language": "python",
+      "sizeLines": 566,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_positions.py",
+      "language": "python",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_static_data.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "language": "python",
+      "sizeLines": 547,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_capital_data.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_factory.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_futures_contract_data.py",
+      "language": "python",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_fx_handling.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_fx_prices_data.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/broker_trade.py",
+      "language": "python",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscore/cache.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscore/exceptions.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/trading_hours.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/trade_qty.py",
+      "language": "python",
+      "sizeLines": 253,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/instruments.py",
+      "language": "python",
+      "sizeLines": 391,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "language": "python",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/trading_hours.py",
+      "language": "python",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "language": "python",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/spot_fx_prices.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysbrokers/IB/ib_orders.py": [
+      "sysbrokers/broker_execution_stack.py",
+      "sysbrokers/IB/client/ib_orders_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysexecution/order_stacks/broker_order_stack.py",
+      "sysexecution/order_stacks/order_stack.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/tick_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_positions.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysbrokers/IB/ib_static_data.py": [
+      "sysbrokers/broker_static_data.py",
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_translate_broker_order_objects.py": [
+      "sysbrokers/broker_trade.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_capital_data.py": [
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_factory.py": [
+      "sysbrokers/IB/ib_broker_commissions.py",
+      "sysbrokers/IB/ib_capital_data.py",
+      "sysbrokers/IB/ib_contract_position_data.py",
+      "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_fx_handling.py",
+      "sysbrokers/IB/ib_Fx_prices_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_orders.py",
+      "sysbrokers/IB/ib_static_data.py",
+      "syscore/objects.py",
+      "sysdata/data_blob.py"
+    ],
+    "sysbrokers/broker_futures_contract_data.py": [
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/contracts.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysbrokers/broker_fx_handling.py": [
+      "sysbrokers/broker_trade.py",
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/broker_fx_prices_data.py": [
+      "sysdata/data_blob.py",
+      "sysdata/fx/spotfx.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/broker_trade.py": [],
+    "syscore/cache.py": [
+      "syscore/exceptions.py"
+    ],
+    "syscore/exceptions.py": [],
+    "sysdata/production/trading_hours.py": [
+      "syscore/fileutils.py",
+      "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py"
+    ],
+    "sysexecution/trade_qty.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/named_order_objects.py"
+    ],
+    "sysobjects/instruments.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py": [
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py": [
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysobjects/production/trading_hours/trading_hours.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py"
+    ],
+    "sysobjects/production/trading_hours/trading_hours_any_day.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py": [
+      "sysobjects/production/trading_hours/trading_hours_any_day.py"
+    ],
+    "sysobjects/spot_fx_prices.py": [
+      "syscore/pandas/full_merge_with_replacement.py",
+      "syscore/pandas/merge_data_keeping_past_data.py"
+    ]
+  }
+}

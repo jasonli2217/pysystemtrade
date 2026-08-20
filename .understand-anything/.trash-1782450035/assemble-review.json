@@ -1,0 +1,15 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 2,
+  "edgesRestored": 2,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Fixed section is sane: 7 mechanical corrections (2 tested_by flips, 5 tested_by drops) out of 5618 edges is negligible and expected. No node-ID corrections were flagged as systemic; no skewed complexity. No upstream concern.",
+    "Post-merge integrity is clean: 0 nodes without id, 0 dangling edges, all 7 node types valid (file/class/function/pipeline/config/document/service), all complexity values valid (simple/moderate/complex).",
+    "Cross-batch import verification: all 2721 importMap relationships have a corresponding imports edge; graph has exactly 2721 imports edges. 0 missing. Script's import recovery was already complete.",
+    "Both 'could not fix' dropped calls edges pointed to real source functions that the file-analyzer simply never emitted as nodes. Recreated 2 function nodes (get_max_index_before_datetime in syscore/pandas/find_data.py; get_index_of_columns_in_df_with_at_least_one_value in syscore/pandas/pdutils.py), added 2 contains edges from parent files, and restored the 2 calls edges.",
+    "Observation on coverage: the file-analyzer emitted only a subset of functions per file (find_data.py has 4 functions in source, 3 emitted; pdutils.py emitted 9 but skipped the near-identical get_index_of_columns_...). This is an upstream completeness gap, not a merge defect. Function-level call coverage in the graph is therefore partial, but no fabricated data was introduced."
+  ]
+}

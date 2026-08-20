@@ -1,0 +1,1605 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/data/status.py",
+   "type": "file",
+   "name": "status.py",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "summary": "Reporting data module aggregating system status: process/method control state, trade and position limits, overrides, locks, and last-update timestamps.",
+   "tags": [
+    "reporting",
+    "data-model",
+    "status",
+    "control"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_overrides_in_db_as_df",
+   "type": "function",
+   "name": "get_overrides_in_db_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    75,
+    83
+   ],
+   "summary": "Function get overrides in db as df (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_all_overrides_as_df",
+   "type": "function",
+   "name": "get_all_overrides_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    86,
+    94
+   ],
+   "summary": "Function get all overrides as df (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_trade_limits_as_df",
+   "type": "function",
+   "name": "get_trade_limits_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    97,
+    103
+   ],
+   "summary": "Function get trade limits as df (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_trade_limits",
+   "type": "function",
+   "name": "get_list_of_trade_limits",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    106,
+    110
+   ],
+   "summary": "Function get list of trade limits (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_trade_limit_tuple",
+   "type": "function",
+   "name": "get_trade_limit_tuple",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    113,
+    116
+   ],
+   "summary": "Function get trade limit tuple (4 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes_as_df",
+   "type": "function",
+   "name": "get_process_status_list_for_all_processes_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    119,
+    124
+   ],
+   "summary": "Function get process status list for all processes as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes_as_df",
+   "type": "function",
+   "name": "get_control_config_list_for_all_processes_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    127,
+    132
+   ],
+   "summary": "Function get control config list for all processes as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_processes_as_df",
+   "type": "function",
+   "name": "get_control_status_list_for_all_processes_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    135,
+    140
+   ],
+   "summary": "Function get control status list for all processes as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods_as_df",
+   "type": "function",
+   "name": "get_control_data_list_for_all_methods_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    143,
+    147
+   ],
+   "summary": "Function get control data list for all methods as df (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_methods_as_df",
+   "type": "function",
+   "name": "get_control_status_list_for_all_methods_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    150,
+    154
+   ],
+   "summary": "Function get control status list for all methods as df (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_last_price_updates_as_df",
+   "type": "function",
+   "name": "get_last_price_updates_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    157,
+    162
+   ],
+   "summary": "Function get last price updates as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_last_optimal_position_updates_as_df",
+   "type": "function",
+   "name": "get_last_optimal_position_updates_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    165,
+    170
+   ],
+   "summary": "Function get last optimal position updates as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_last_price_updates",
+   "type": "function",
+   "name": "get_list_of_last_price_updates",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    173,
+    177
+   ],
+   "summary": "Function get list of last price updates (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_last_futures_price_updates",
+   "type": "function",
+   "name": "get_list_of_last_futures_price_updates",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    180,
+    186
+   ],
+   "summary": "Function get list of last futures price updates (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_last_futures_price_update_for_instrument",
+   "type": "function",
+   "name": "get_last_futures_price_update_for_instrument",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    189,
+    195
+   ],
+   "summary": "Function get last futures price update for instrument (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_last_fx_price_updates",
+   "type": "function",
+   "name": "get_list_of_last_fx_price_updates",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    198,
+    203
+   ],
+   "summary": "Function get list of last fx price updates (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_last_fx_price_update_for_code",
+   "type": "function",
+   "name": "get_last_fx_price_update_for_code",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    206,
+    213
+   ],
+   "summary": "Function get last fx price update for code (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_last_position_updates",
+   "type": "function",
+   "name": "get_list_of_last_position_updates",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    216,
+    225
+   ],
+   "summary": "Function get list of last position updates (10 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_position_updates_for_strategy",
+   "type": "function",
+   "name": "get_list_of_position_updates_for_strategy",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    228,
+    239
+   ],
+   "summary": "Function get list of position updates for strategy (12 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_last_position_update_for_strategy_instrument",
+   "type": "function",
+   "name": "get_last_position_update_for_strategy_instrument",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    242,
+    259
+   ],
+   "summary": "Function get last position update for strategy instrument (18 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes",
+   "type": "function",
+   "name": "get_control_config_list_for_all_processes",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    262,
+    269
+   ],
+   "summary": "Function get control config list for all processes (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes",
+   "type": "function",
+   "name": "get_process_status_list_for_all_processes",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    272,
+    279
+   ],
+   "summary": "Function get process status list for all processes (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_config_dict_for_process_name",
+   "type": "function",
+   "name": "get_control_config_dict_for_process_name",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    282,
+    287
+   ],
+   "summary": "Function get control config dict for process name (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_process_status_dict_for_process_name",
+   "type": "function",
+   "name": "get_process_status_dict_for_process_name",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    290,
+    295
+   ],
+   "summary": "Function get process status dict for process name (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods",
+   "type": "function",
+   "name": "get_control_data_list_for_all_methods",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    298,
+    304
+   ],
+   "summary": "Function get control data list for all methods (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_control_data_for_single_ordinary_method",
+   "type": "function",
+   "name": "get_control_data_for_single_ordinary_method",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    307,
+    331
+   ],
+   "summary": "Function get control data for single ordinary method (25 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_method_names_and_process_names",
+   "type": "function",
+   "name": "get_method_names_and_process_names",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    334,
+    346
+   ],
+   "summary": "Function get method names and process names (13 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_all_processes",
+   "type": "function",
+   "name": "get_list_of_all_processes",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    349,
+    353
+   ],
+   "summary": "Function get list of all processes (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_methods_dict",
+   "type": "function",
+   "name": "get_methods_dict",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    356,
+    362
+   ],
+   "summary": "Function get methods dict (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_list_of_position_locks",
+   "type": "function",
+   "name": "get_list_of_position_locks",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    365,
+    369
+   ],
+   "summary": "Function get list of position locks (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_position_limits_as_df",
+   "type": "function",
+   "name": "get_position_limits_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    372,
+    387
+   ],
+   "summary": "Function get position limits as df (16 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_strategy_instrument_limits_as_df",
+   "type": "function",
+   "name": "get_strategy_instrument_limits_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    390,
+    399
+   ],
+   "summary": "Function get strategy instrument limits as df (10 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:get_instrument_limits_as_df",
+   "type": "function",
+   "name": "get_instrument_limits_as_df",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    402,
+    407
+   ],
+   "summary": "Function get instrument limits as df (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/status.py:df_from_list_of_limits_and_positions",
+   "type": "function",
+   "name": "df_from_list_of_limits_and_positions",
+   "filePath": "sysproduction/reporting/data/status.py",
+   "lineRange": [
+    410,
+    420
+   ],
+   "summary": "Function df from list of limits and positions (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/duplicate_market_report.py",
+   "type": "file",
+   "name": "duplicate_market_report.py",
+   "filePath": "sysproduction/reporting/duplicate_market_report.py",
+   "summary": "Report generator listing duplicate/correlated markets and suggested configuration changes.",
+   "tags": [
+    "reporting",
+    "duplicate-market",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/duplicate_market_report.py:duplicate_market_report",
+   "type": "function",
+   "name": "duplicate_market_report",
+   "filePath": "sysproduction/reporting/duplicate_market_report.py",
+   "lineRange": [
+    12,
+    41
+   ],
+   "summary": "Function duplicate market report (30 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/formatting.py",
+   "type": "file",
+   "name": "formatting.py",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "summary": "Reporting helper providing account-curve plotting and nice-formatting functions for the various report tables.",
+   "tags": [
+    "reporting",
+    "formatting",
+    "plotting",
+    "utility"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:make_account_curve_plot",
+   "type": "function",
+   "name": "make_account_curve_plot",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    10,
+    36
+   ],
+   "summary": "Function make account curve plot (27 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:make_account_curve_plot_from_df",
+   "type": "function",
+   "name": "make_account_curve_plot_from_df",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    39,
+    68
+   ],
+   "summary": "Function make account curve plot from df (30 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:nice_format_min_capital_table",
+   "type": "function",
+   "name": "nice_format_min_capital_table",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    71,
+    86
+   ],
+   "summary": "Function nice format min capital table (16 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:nice_format_roll_table",
+   "type": "function",
+   "name": "nice_format_roll_table",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    89,
+    94
+   ],
+   "summary": "Function nice format roll table (6 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:nice_format_slippage_table",
+   "type": "function",
+   "name": "nice_format_slippage_table",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    97,
+    108
+   ],
+   "summary": "Function nice format slippage table (12 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:nice_format_liquidity_table",
+   "type": "function",
+   "name": "nice_format_liquidity_table",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    111,
+    115
+   ],
+   "summary": "Function nice format liquidity table (5 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/formatting.py:nice_format_instrument_risk_table",
+   "type": "function",
+   "name": "nice_format_instrument_risk_table",
+   "filePath": "sysproduction/reporting/formatting.py",
+   "lineRange": [
+    118,
+    153
+   ],
+   "summary": "Function nice format instrument risk table (36 lines).",
+   "tags": [
+    "plotting",
+    "formatting",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/instrument_risk_report.py",
+   "type": "file",
+   "name": "instrument_risk_report.py",
+   "filePath": "sysproduction/reporting/instrument_risk_report.py",
+   "summary": "Report generator producing per-instrument risk statistics.",
+   "tags": [
+    "reporting",
+    "risk",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/instrument_risk_report.py:instrument_risk_report",
+   "type": "function",
+   "name": "instrument_risk_report",
+   "filePath": "sysproduction/reporting/instrument_risk_report.py",
+   "lineRange": [
+    20,
+    55
+   ],
+   "summary": "Function instrument risk report (36 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/liquidity_report.py",
+   "type": "file",
+   "name": "liquidity_report.py",
+   "filePath": "sysproduction/reporting/liquidity_report.py",
+   "summary": "Report generator producing the market liquidity report.",
+   "tags": [
+    "reporting",
+    "liquidity",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/liquidity_report.py:liquidity_report",
+   "type": "function",
+   "name": "liquidity_report",
+   "filePath": "sysproduction/reporting/liquidity_report.py",
+   "lineRange": [
+    20,
+    35
+   ],
+   "summary": "Function liquidity report (16 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_overrides_in_db_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_overrides_in_db_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_all_overrides_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_all_overrides_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_trade_limits_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_trade_limits_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_trade_limits",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_trade_limits",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_trade_limit_tuple",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_trade_limit_tuple",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_processes_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_processes_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_methods_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_status_list_for_all_methods_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_price_updates_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_price_updates_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_optimal_position_updates_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_optimal_position_updates_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_price_updates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_price_updates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_futures_price_updates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_futures_price_updates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_futures_price_update_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_futures_price_update_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_fx_price_updates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_fx_price_updates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_fx_price_update_for_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_fx_price_update_for_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_position_updates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_last_position_updates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_position_updates_for_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_position_updates_for_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_position_update_for_strategy_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_last_position_update_for_strategy_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_list_for_all_processes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_list_for_all_processes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_dict_for_process_name",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_config_dict_for_process_name",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_dict_for_process_name",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_process_status_dict_for_process_name",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_list_for_all_methods",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_for_single_ordinary_method",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_control_data_for_single_ordinary_method",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_method_names_and_process_names",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_method_names_and_process_names",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_all_processes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_all_processes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_methods_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_methods_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_position_locks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_list_of_position_locks",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_position_limits_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_position_limits_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_strategy_instrument_limits_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_strategy_instrument_limits_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_instrument_limits_as_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:get_instrument_limits_as_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:df_from_list_of_limits_and_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "function:sysproduction/reporting/data/status.py:df_from_list_of_limits_and_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/status.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "function:sysproduction/reporting/duplicate_market_report.py:duplicate_market_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "function:sysproduction/reporting/duplicate_market_report.py:duplicate_market_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/duplicate_market_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:make_account_curve_plot",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:make_account_curve_plot",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:make_account_curve_plot_from_df",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:make_account_curve_plot_from_df",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_min_capital_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_min_capital_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_roll_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_roll_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_slippage_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_slippage_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_liquidity_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_liquidity_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_instrument_risk_table",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "function:sysproduction/reporting/formatting.py:nice_format_instrument_risk_table",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/formatting.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "function:sysproduction/reporting/instrument_risk_report.py:instrument_risk_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "function:sysproduction/reporting/instrument_risk_report.py:instrument_risk_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/instrument_risk_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "function:sysproduction/reporting/liquidity_report.py:liquidity_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "function:sysproduction/reporting/liquidity_report.py:liquidity_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/liquidity_report.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

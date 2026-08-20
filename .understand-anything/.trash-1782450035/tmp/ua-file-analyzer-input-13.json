@@ -1,0 +1,324 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "systems/accounts/account_forecast.py",
+      "language": "python",
+      "sizeLines": 329,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_inputs.py",
+      "language": "python",
+      "sizeLines": 313,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_instruments.py",
+      "language": "python",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_portfolio.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_subsystem.py",
+      "language": "python",
+      "sizeLines": 200,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_trading_rules.py",
+      "language": "python",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/account_with_multiplier.py",
+      "language": "python",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/account_curve.py",
+      "language": "python",
+      "sizeLines": 411,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/account_curve_analysis.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/account_curve_group.py",
+      "language": "python",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/dict_of_account_curves.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/nested_account_curve_group.py",
+      "language": "python",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/stats_dict.py",
+      "language": "python",
+      "sizeLines": 253,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "language": "python",
+      "sizeLines": 188,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/fills_and_orders.py",
+      "language": "python",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/hourly_market_orders.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "language": "python",
+      "sizeLines": 269,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/simple_orders.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "language": "python",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "language": "python",
+      "sizeLines": 235,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "language": "python",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "language": "python",
+      "sizeLines": 259,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "language": "python",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/rules/factors.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "systems/accounts/account_forecast.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/account_costs.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_inputs.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/frequency.py",
+      "syscore/pandas/pdutils.py",
+      "sysobjects/instruments.py",
+      "systems/stage.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_instruments.py": [
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/account_buffering_system.py",
+      "systems/accounts/account_costs.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_portfolio.py": [
+      "systems/accounts/account_instruments.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_subsystem.py": [
+      "systems/accounts/account_buffering_subsystem.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_trading_rules.py": [
+      "syscore/constants.py",
+      "systems/accounts/account_forecast.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/curves/nested_account_curve_group.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/account_with_multiplier.py": [
+      "syscore/objects.py",
+      "syscore/pandas/pdutils.py",
+      "systems/accounts/account_buffering_system.py",
+      "systems/accounts/account_portfolio.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/curves/account_curve.py": [
+      "syscore/dateutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/account_curve_analysis.py": [
+      "systems/accounts/curves/account_curve.py"
+    ],
+    "systems/accounts/curves/account_curve_group.py": [
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/curves/stats_dict.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/dict_of_account_curves.py": [
+      "systems/accounts/pandl_calculators/pandl_calculation_dict.py"
+    ],
+    "systems/accounts/curves/nested_account_curve_group.py": [
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve_group.py",
+      "systems/accounts/curves/dict_of_account_curves.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/curves/stats_dict.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/order_simulator/account_curve_order_simulator.py": [
+      "systems/accounts/accounts_stage.py",
+      "systems/accounts/curves/account_curve.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/fills_and_orders.py": [
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/simple_orders.py"
+    ],
+    "systems/accounts/order_simulator/hourly_limit_orders.py": [
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/accounts/order_simulator/fills_and_orders.py",
+      "systems/accounts/order_simulator/hourly_market_orders.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/accounts/order_simulator/simple_orders.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/hourly_market_orders.py": [
+      "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "systems/system_cache.py"
+    ],
+    "systems/accounts/order_simulator/pandl_order_simulator.py": [
+      "syscore/cache.py",
+      "sysobjects/fills.py",
+      "systems/accounts/order_simulator/fills_and_orders.py",
+      "systems/accounts/order_simulator/simple_orders.py"
+    ],
+    "systems/accounts/order_simulator/simple_orders.py": [
+      "syscore/pandas/pdutils.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_SR_cost.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysquant/estimators/vol.py",
+      "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_calculation.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_calculation_dict.py": [
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_cash_costs.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/pandas/find_data.py",
+      "syscore/pandas/strategy_functions.py",
+      "sysobjects/fills.py",
+      "sysobjects/instruments.py",
+      "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "systems/accounts/pandl_calculators/pandl_using_fills.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_generic_costs.py": [
+      "systems/accounts/pandl_calculators/pandl_calculation.py"
+    ],
+    "systems/accounts/pandl_calculators/pandl_using_fills.py": [
+      "syscore/constants.py",
+      "sysobjects/fills.py",
+      "systems/accounts/pandl_calculators/pandl_calculation.py"
+    ],
+    "systems/provided/rules/factors.py": [
+      "sysquant/estimators/vol.py"
+    ]
+  }
+}

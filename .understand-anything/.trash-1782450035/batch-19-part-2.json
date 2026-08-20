@@ -1,0 +1,812 @@
+{
+  "nodes": [
+    {
+      "id": "file:syscore/exceptions.py",
+      "type": "file",
+      "name": "exceptions.py",
+      "filePath": "syscore/exceptions.py",
+      "summary": "Central module defining domain-specific exception types (missing data/instrument/contract, market closed, order-cannot-be-modified, etc.) used throughout the codebase.",
+      "tags": [
+        "utility",
+        "exceptions",
+        "error-handling",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/production/trading_hours.py",
+      "type": "file",
+      "name": "trading_hours.py",
+      "filePath": "sysdata/production/trading_hours.py",
+      "summary": "Reads and writes the weekday trading-hours configuration to/from a YAML file, converting between the on-disk simple dict format and the trading-hours object model.",
+      "tags": [
+        "data-pipeline",
+        "serialization",
+        "trading-hours",
+        "yaml",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/trade_qty.py",
+      "type": "file",
+      "name": "trade_qty.py",
+      "filePath": "sysexecution/trade_qty.py",
+      "summary": "Defines the tradeQuantity object (single and multi-leg) plus helpers that proportionally scale trade sizes to respect absolute and per-leg quantity limits.",
+      "tags": [
+        "execution",
+        "data-model",
+        "validation",
+        "position-sizing",
+        "trade"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/instruments.py",
+      "type": "file",
+      "name": "instruments.py",
+      "filePath": "sysobjects/instruments.py",
+      "summary": "Core instrument domain model: futures instrument metadata, asset-class mappings, and the instrumentCosts class that computes commission, slippage and SR cost figures.",
+      "tags": [
+        "data-model",
+        "instrument",
+        "costs",
+        "domain-model",
+        "serialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "type": "file",
+      "name": "dict_of_weekly_trading_hours_any_day.py",
+      "filePath": "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "summary": "Maps each instrument code to its weekday trading-hours dictionary, with serialization to and from the simple dict format used for persistence.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "serialization",
+        "collection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "type": "file",
+      "name": "intersection_of_weekly_and_specific_trading_hours.py",
+      "filePath": "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "summary": "Functions that intersect generic weekly trading-hours with concrete dated trading-hours, handling sessions that span across two weekdays.",
+      "tags": [
+        "trading-hours",
+        "algorithm",
+        "intersection",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "type": "file",
+      "name": "trading_hours.py",
+      "filePath": "sysobjects/production/trading_hours/trading_hours.py",
+      "summary": "Defines dated tradingHours and listOfTradingHours objects with logic for whether a market is open now, hours left before close, and interval intersection.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "datetime",
+        "domain-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "type": "file",
+      "name": "trading_hours_any_day.py",
+      "filePath": "sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "summary": "Day-agnostic trading-hours objects (open/close times without a date) supporting intersection, date attachment, and simple-list serialization.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "datetime",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "type": "file",
+      "name": "weekly_trading_hours_any_day.py",
+      "filePath": "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "summary": "Weekday-keyed dictionary of day-agnostic trading hours, with intersection logic and conversion to/from simple dict and list configuration formats.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/spot_fx_prices.py",
+      "type": "file",
+      "name": "spot_fx_prices.py",
+      "filePath": "sysobjects/spot_fx_prices.py",
+      "summary": "Defines the fxPrices time-series object with construction from data frames and merge logic for combining existing and new FX price data.",
+      "tags": [
+        "data-model",
+        "fx",
+        "price-data",
+        "time-series",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/trade_qty.py:tradeQuantity",
+      "type": "class",
+      "name": "tradeQuantity",
+      "filePath": "sysexecution/trade_qty.py",
+      "lineRange": [
+        7,
+        116
+      ],
+      "summary": "List-based trade quantity object supporting single and multi-leg trades with arithmetic, sign logic, and proportional resizing to abs/per-leg limits.",
+      "tags": [
+        "execution",
+        "data-model",
+        "position-sizing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_to_abs_limit_per_leg",
+      "type": "function",
+      "name": "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+      "filePath": "sysexecution/trade_qty.py",
+      "lineRange": [
+        155,
+        194
+      ],
+      "summary": "Scales a multi-leg trade down so each leg respects its absolute size limit while preserving leg ratios.",
+      "tags": [
+        "execution",
+        "validation",
+        "position-sizing",
+        "algorithm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+      "type": "function",
+      "name": "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+      "filePath": "sysexecution/trade_qty.py",
+      "lineRange": [
+        197,
+        235
+      ],
+      "summary": "Reduces a multi-leg trade proportionally so its smallest leg equals the maximum allowed size.",
+      "tags": [
+        "execution",
+        "validation",
+        "position-sizing",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/trade_qty.py:change_trade_size_proportionally_to_meet_abs_qty_limit",
+      "type": "function",
+      "name": "change_trade_size_proportionally_to_meet_abs_qty_limit",
+      "filePath": "sysexecution/trade_qty.py",
+      "lineRange": [
+        125,
+        152
+      ],
+      "summary": "Proportionally rescales a trade list so its total absolute quantity meets a maximum limit.",
+      "tags": [
+        "execution",
+        "validation",
+        "position-sizing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/instruments.py:futuresInstrument",
+      "type": "class",
+      "name": "futuresInstrument",
+      "filePath": "sysobjects/instruments.py",
+      "lineRange": [
+        10,
+        38
+      ],
+      "summary": "Lightweight value object identifying a futures instrument by its instrument code, with dict serialization and equality.",
+      "tags": [
+        "data-model",
+        "instrument",
+        "domain-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/instruments.py:instrumentMetaData",
+      "type": "class",
+      "name": "instrumentMetaData",
+      "filePath": "sysobjects/instruments.py",
+      "lineRange": [
+        70,
+        108
+      ],
+      "summary": "Holds per-instrument metadata (description, currency, point size, asset class, etc.) with dict (de)serialization, NaN coalescing and equality.",
+      "tags": [
+        "data-model",
+        "instrument",
+        "metadata",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/instruments.py:futuresInstrumentWithMetaData",
+      "type": "class",
+      "name": "futuresInstrumentWithMetaData",
+      "filePath": "sysobjects/instruments.py",
+      "lineRange": [
+        111,
+        154
+      ],
+      "summary": "Combines a futuresInstrument with its metadata into a single domain object, with dict round-tripping and empty/equality helpers.",
+      "tags": [
+        "data-model",
+        "instrument",
+        "metadata"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/instruments.py:assetClassesAndInstruments",
+      "type": "class",
+      "name": "assetClassesAndInstruments",
+      "filePath": "sysobjects/instruments.py",
+      "lineRange": [
+        188,
+        240
+      ],
+      "summary": "Mapping of instruments to asset classes, with construction from a pandas series and queries by asset class.",
+      "tags": [
+        "data-model",
+        "instrument",
+        "asset-class",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/instruments.py:instrumentCosts",
+      "type": "class",
+      "name": "instrumentCosts",
+      "filePath": "sysobjects/instruments.py",
+      "lineRange": [
+        243,
+        391
+      ],
+      "summary": "Computes trading costs for an instrument: per-trade and percentage commission, slippage, block commission and SR cost in currency and percentage terms.",
+      "tags": [
+        "data-model",
+        "costs",
+        "instrument",
+        "calculation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py:dictOfDictOfWeekdayTradingHours",
+      "type": "class",
+      "name": "dictOfDictOfWeekdayTradingHours",
+      "filePath": "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "lineRange": [
+        8,
+        40
+      ],
+      "summary": "Instrument-code-keyed dictionary of weekday trading hours with simple-dict serialization for persistence.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py:intersection_of_any_weekly_and_trading_hours",
+      "type": "function",
+      "name": "intersection_of_any_weekly_and_trading_hours",
+      "filePath": "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "lineRange": [
+        31,
+        51
+      ],
+      "summary": "Intersects concrete dated trading hours with the generic weekly hours for the relevant weekday, splitting sessions that cross midnight.",
+      "tags": [
+        "trading-hours",
+        "algorithm",
+        "intersection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/trading_hours.py:tradingHours",
+      "type": "class",
+      "name": "tradingHours",
+      "filePath": "sysobjects/production/trading_hours/trading_hours.py",
+      "lineRange": [
+        16,
+        70
+      ],
+      "summary": "Dated open/close trading-hours interval with checks for whether the market is open now, hours left before close, and interval intersection.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "datetime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/trading_hours.py:listOfTradingHours",
+      "type": "class",
+      "name": "listOfTradingHours",
+      "filePath": "sysobjects/production/trading_hours/trading_hours.py",
+      "lineRange": [
+        73,
+        119
+      ],
+      "summary": "List of dated trading-hours intervals supporting intersection, zero-length removal, and open-now / hours-left queries across periods.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "collection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:tradingHoursAnyDay",
+      "type": "class",
+      "name": "tradingHoursAnyDay",
+      "filePath": "sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "lineRange": [
+        14,
+        66
+      ],
+      "summary": "Day-agnostic open/close time interval supporting intersection, date attachment and simple-list serialization.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "datetime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:listOfTradingHoursAnyDay",
+      "type": "class",
+      "name": "listOfTradingHoursAnyDay",
+      "filePath": "sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "lineRange": [
+        69,
+        109
+      ],
+      "summary": "List of day-agnostic trading-hours intervals with intersection, date attachment and simple-list round-tripping.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py:weekdayDictOfListOfTradingHoursAnyDay",
+      "type": "class",
+      "name": "weekdayDictOfListOfTradingHoursAnyDay",
+      "filePath": "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "lineRange": [
+        11,
+        46
+      ],
+      "summary": "Weekday-keyed dictionary of day-agnostic trading-hours lists with intersection and simple dict/list serialization.",
+      "tags": [
+        "data-model",
+        "trading-hours",
+        "collection",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/spot_fx_prices.py:fxPrices",
+      "type": "class",
+      "name": "fxPrices",
+      "filePath": "sysobjects/spot_fx_prices.py",
+      "lineRange": [
+        12,
+        88
+      ],
+      "summary": "FX spot-price time series built on a pandas series, with construction from data frames and merge logic combining existing and new price data.",
+      "tags": [
+        "data-model",
+        "fx",
+        "price-data",
+        "time-series"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "class:sysexecution/trade_qty.py:tradeQuantity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "class:sysexecution/trade_qty.py:tradeQuantity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_to_abs_limit_per_leg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_to_abs_limit_per_leg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:change_trade_size_proportionally_to_meet_abs_qty_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "function:sysexecution/trade_qty.py:change_trade_size_proportionally_to_meet_abs_qty_limit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:futuresInstrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:futuresInstrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:instrumentMetaData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:instrumentMetaData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:futuresInstrumentWithMetaData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:futuresInstrumentWithMetaData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:assetClassesAndInstruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:assetClassesAndInstruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:instrumentCosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "class:sysobjects/instruments.py:instrumentCosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py:dictOfDictOfWeekdayTradingHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py:dictOfDictOfWeekdayTradingHours",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "target": "function:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py:intersection_of_any_weekly_and_trading_hours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "target": "function:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py:intersection_of_any_weekly_and_trading_hours",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours.py:tradingHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours.py:tradingHours",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours.py:listOfTradingHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours.py:listOfTradingHours",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:tradingHoursAnyDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:tradingHoursAnyDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:listOfTradingHoursAnyDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/trading_hours_any_day.py:listOfTradingHoursAnyDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py:weekdayDictOfListOfTradingHoursAnyDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "target": "class:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py:weekdayDictOfListOfTradingHoursAnyDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/spot_fx_prices.py",
+      "target": "class:sysobjects/spot_fx_prices.py:fxPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysobjects/spot_fx_prices.py",
+      "target": "class:sysobjects/spot_fx_prices.py:fxPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/trading_hours.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trading_hours.py",
+      "target": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/trade_qty.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/instruments.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "target": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "target": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/production/trading_hours/weekly_trading_hours_any_day.py",
+      "target": "file:sysobjects/production/trading_hours/trading_hours_any_day.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/spot_fx_prices.py",
+      "target": "file:syscore/pandas/full_merge_with_replacement.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/spot_fx_prices.py",
+      "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

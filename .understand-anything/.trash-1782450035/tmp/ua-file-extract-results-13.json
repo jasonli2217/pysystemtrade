@@ -1,0 +1,6019 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 26,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "systems/accounts/account_forecast.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 329,
+      "nonEmptyLines": 257,
+      "functions": [
+        {
+          "name": "pandl_for_instrument_forecast",
+          "startLine": 227,
+          "endLine": 268,
+          "params": [
+            "forecast",
+            "price",
+            "capital",
+            "fx",
+            "risk_target",
+            "daily_returns_volatility",
+            "target_abs_forecast",
+            "SR_cost",
+            "delayfill",
+            "value_per_point"
+          ]
+        },
+        {
+          "name": "_get_notional_position_for_forecast",
+          "startLine": 271,
+          "endLine": 278,
+          "params": [
+            "normalised_forecast",
+            "average_notional_position"
+          ]
+        },
+        {
+          "name": "_get_average_notional_position",
+          "startLine": 281,
+          "endLine": 293,
+          "params": [
+            "daily_returns_volatility",
+            "capital",
+            "risk_target",
+            "value_per_point"
+          ]
+        },
+        {
+          "name": "_get_normalised_forecast",
+          "startLine": 296,
+          "endLine": 301,
+          "params": [
+            "forecast",
+            "target_abs_forecast"
+          ]
+        },
+        {
+          "name": "pandl_for_position",
+          "startLine": 304,
+          "endLine": 329,
+          "params": [
+            "notional_position",
+            "average_notional_position",
+            "price",
+            "capital",
+            "fx",
+            "daily_returns_volatility",
+            "SR_cost",
+            "delayfill",
+            "value_per_point"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "accountForecast",
+          "startLine": 14,
+          "endLine": 217,
+          "methods": [
+            "pandl_for_instrument_forecast_weighted_within_trading_rule",
+            "pandl_for_instrument_forecast_weighted",
+            "_normalised_weight_for_forecast_and_instrument_within_trading_rule",
+            "_total_unnormalised_weight_for_trading_rule",
+            "_normalised_weight_for_forecast_and_instrument",
+            "_total_unnormalised_weight_across_all_instruments_and_forecasts",
+            "_total_unnormalised_weight_for_instrument",
+            "_unnormalised_weight_for_forecast_and_instrument",
+            "pandl_for_instrument_forecast"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountForecast",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "pandl_for_instrument_forecast",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "_get_notional_position_for_forecast",
+          "line": 271,
+          "isDefault": false
+        },
+        {
+          "name": "_get_average_notional_position",
+          "line": 281,
+          "isDefault": false
+        },
+        {
+          "name": "_get_normalised_forecast",
+          "line": 296,
+          "isDefault": false
+        },
+        {
+          "name": "pandl_for_position",
+          "line": 304,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pandl_for_instrument_forecast_weighted_within_trading_rule",
+          "callee": "self.pandl_for_instrument_forecast",
+          "lineNumber": 19
+        },
+        {
+          "caller": "pandl_for_instrument_forecast_weighted_within_trading_rule",
+          "callee": "self._normalised_weight_for_forecast_and_instrument_within_trading_rule",
+          "lineNumber": 24
+        },
+        {
+          "caller": "pandl_for_instrument_forecast_weighted_within_trading_rule",
+          "callee": "pandl_for_instrument_forecast.weight",
+          "lineNumber": 29
+        },
+        {
+          "caller": "pandl_for_instrument_forecast_weighted",
+          "callee": "self.pandl_for_instrument_forecast",
+          "lineNumber": 37
+        },
+        {
+          "caller": "pandl_for_instrument_forecast_weighted",
+          "callee": "self._normalised_weight_for_forecast_and_instrument",
+          "lineNumber": 41
+        },
+        {
+          "caller": "pandl_for_instrument_forecast_weighted",
+          "callee": "pandl_for_instrument_forecast.weight",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument_within_trading_rule",
+          "callee": "self._unnormalised_weight_for_forecast_and_instrument",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument_within_trading_rule",
+          "callee": "self._total_unnormalised_weight_for_trading_rule",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument_within_trading_rule",
+          "callee": "total_weight_for_rule.reindex(weight.index).ffill",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument_within_trading_rule",
+          "callee": "total_weight_for_rule.reindex",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_trading_rule",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_trading_rule",
+          "callee": "self._unnormalised_weight_for_forecast_and_instrument",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_trading_rule",
+          "callee": "sum_series",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument",
+          "callee": "self._unnormalised_weight_for_forecast_and_instrument",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument",
+          "callee": "self._total_unnormalised_weight_across_all_instruments_and_forecasts",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument",
+          "callee": "total_weight.reindex(weight.index).ffill",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_normalised_weight_for_forecast_and_instrument",
+          "callee": "total_weight.reindex",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_total_unnormalised_weight_across_all_instruments_and_forecasts",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_total_unnormalised_weight_across_all_instruments_and_forecasts",
+          "callee": "self._total_unnormalised_weight_for_instrument",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_total_unnormalised_weight_across_all_instruments_and_forecasts",
+          "callee": "sum_series",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_instrument",
+          "callee": "self.list_of_rules_for_code",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_instrument",
+          "callee": "self._unnormalised_weight_for_forecast_and_instrument",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_total_unnormalised_weight_for_instrument",
+          "callee": "sum_series",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "self.instrument_diversification_multiplier",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "self.forecast_diversification_multiplier",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "self.specific_instrument_weight",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "self.forecast_weight",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "pd.concat",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "weighting_df.ffill",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "weighting_df.bfill",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_unnormalised_weight_for_forecast_and_instrument",
+          "callee": "weighting_df.product",
+          "lineNumber": 145
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.log.debug",
+          "lineNumber": 177
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_capped_forecast",
+          "lineNumber": 183
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_instrument_prices_for_position_or_forecast",
+          "lineNumber": 185
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_daily_returns_volatility",
+          "lineNumber": 189
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_SR_cost_for_instrument_forecast",
+          "lineNumber": 192
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.target_abs_forecast",
+          "lineNumber": 196
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 198
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_annual_risk_target",
+          "lineNumber": 199
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 200
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 202
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "pandl_for_instrument_forecast",
+          "lineNumber": 204
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "robust_daily_vol_given_price",
+          "lineNumber": 240
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "_get_normalised_forecast",
+          "lineNumber": 242
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "_get_average_notional_position",
+          "lineNumber": 246
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "_get_notional_position_for_forecast",
+          "lineNumber": 253
+        },
+        {
+          "caller": "pandl_for_instrument_forecast",
+          "callee": "pandl_for_position",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_get_notional_position_for_forecast",
+          "callee": "average_notional_position.reindex",
+          "lineNumber": 274
+        },
+        {
+          "caller": "pandl_for_position",
+          "callee": "pandlCalculationWithSRCosts",
+          "lineNumber": 315
+        },
+        {
+          "caller": "pandl_for_position",
+          "callee": "accountCurve",
+          "lineNumber": 327
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_inputs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 313,
+      "nonEmptyLines": 228,
+      "classes": [
+        {
+          "name": "accountInputs",
+          "startLine": 13,
+          "endLine": 313,
+          "methods": [
+            "get_raw_price",
+            "get_instrument_prices_for_position_or_forecast",
+            "instrument_prices_for_position_or_forecast_infer_frequency",
+            "get_daily_prices",
+            "get_hourly_prices",
+            "get_capped_forecast",
+            "get_daily_returns_volatility",
+            "get_daily_percentage_volatility",
+            "has_same_rules_as_code",
+            "target_abs_forecast",
+            "average_forecast",
+            "forecast_cap",
+            "get_raw_cost_data",
+            "get_rolls_per_year",
+            "get_value_of_block_price_move",
+            "get_fx_rate",
+            "get_subsystem_position",
+            "get_notional_capital",
+            "get_annual_risk_target",
+            "get_average_position_for_instrument_at_portfolio_level",
+            "get_average_position_at_subsystem_level",
+            "get_notional_position",
+            "get_instrument_scaling_factor",
+            "get_instrument_diversification_multiplier",
+            "get_instrument_weights",
+            "get_instrument_list",
+            "config",
+            "instrument_diversification_multiplier",
+            "forecast_diversification_multiplier",
+            "specific_instrument_weight",
+            "instrument_weights",
+            "forecast_weight",
+            "forecast_weights_for_instrument",
+            "list_of_rules_for_code",
+            "list_of_trading_rules",
+            "get_actual_position",
+            "get_actual_buffers_for_position"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountInputs",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_raw_price",
+          "callee": "self.parent.data.get_raw_price",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_instrument_prices_for_position_or_forecast",
+          "callee": "self.get_daily_prices",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get_instrument_prices_for_position_or_forecast",
+          "callee": "self.instrument_prices_for_position_or_forecast_infer_frequency",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get_instrument_prices_for_position_or_forecast",
+          "callee": "instrument_prices.reindex",
+          "lineNumber": 29
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "infer_frequency",
+          "lineNumber": 39
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "self.get_daily_prices",
+          "lineNumber": 41
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "self.get_hourly_prices",
+          "lineNumber": 43
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "Exception",
+          "lineNumber": 45
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "str",
+          "lineNumber": 47
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "self.log.warning",
+          "lineNumber": 50
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "self.get_hourly_prices",
+          "lineNumber": 54
+        },
+        {
+          "caller": "instrument_prices_for_position_or_forecast_infer_frequency",
+          "callee": "hourly_prices.reindex",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_daily_prices",
+          "callee": "self.parent.rawdata.get_daily_prices",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_hourly_prices",
+          "callee": "self.parent.rawdata.get_hourly_prices",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_capped_forecast",
+          "callee": "self.parent.forecastScaleCap.get_capped_forecast",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_daily_returns_volatility",
+          "callee": "system.rawdata.daily_returns_volatility",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_daily_percentage_volatility",
+          "callee": "self.parent.rawdata.get_daily_percentage_volatility",
+          "lineNumber": 83
+        },
+        {
+          "caller": "has_same_rules_as_code",
+          "callee": "self.parent.combForecast.has_same_rules_as_code",
+          "lineNumber": 101
+        },
+        {
+          "caller": "target_abs_forecast",
+          "callee": "self.parent.forecastScaleCap.target_abs_forecast",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_raw_cost_data",
+          "callee": "self.parent.rawdata.get_raw_cost_data",
+          "lineNumber": 113
+        },
+        {
+          "caller": "get_rolls_per_year",
+          "callee": "self.parent.rawdata.rolls_per_year",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get_value_of_block_price_move",
+          "callee": "self.parent.rawdata.get_value_of_block_price_move",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_fx_rate",
+          "callee": "self.parent.positionSize.get_fx_rate",
+          "lineNumber": 124
+        },
+        {
+          "caller": "get_subsystem_position",
+          "callee": "self.parent.positionSize.get_subsystem_position",
+          "lineNumber": 127
+        },
+        {
+          "caller": "get_notional_capital",
+          "callee": "self.parent.positionSize.get_vol_target_dict",
+          "lineNumber": 145
+        },
+        {
+          "caller": "get_annual_risk_target",
+          "callee": "self.parent.positionSize.get_vol_target_dict",
+          "lineNumber": 158
+        },
+        {
+          "caller": "get_average_position_for_instrument_at_portfolio_level",
+          "callee": "self.get_average_position_at_subsystem_level",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_average_position_for_instrument_at_portfolio_level",
+          "callee": "self.get_instrument_scaling_factor",
+          "lineNumber": 168
+        },
+        {
+          "caller": "get_average_position_for_instrument_at_portfolio_level",
+          "callee": "scaling_factor.reindex",
+          "lineNumber": 169
+        },
+        {
+          "caller": "get_average_position_at_subsystem_level",
+          "callee": "self.parent.positionSize.get_average_position_at_subsystem_level",
+          "lineNumber": 191
+        },
+        {
+          "caller": "get_notional_position",
+          "callee": "self.parent.portfolio.get_notional_position",
+          "lineNumber": 212
+        },
+        {
+          "caller": "get_instrument_scaling_factor",
+          "callee": "self.get_instrument_diversification_multiplier",
+          "lineNumber": 229
+        },
+        {
+          "caller": "get_instrument_scaling_factor",
+          "callee": "self.get_instrument_weights",
+          "lineNumber": 230
+        },
+        {
+          "caller": "get_instrument_diversification_multiplier",
+          "callee": "self.parent.portfolio.get_instrument_diversification_multiplier",
+          "lineNumber": 248
+        },
+        {
+          "caller": "get_instrument_weights",
+          "callee": "self.parent.portfolio.get_instrument_weights",
+          "lineNumber": 261
+        },
+        {
+          "caller": "get_instrument_list",
+          "callee": "self.parent.get_instrument_list",
+          "lineNumber": 264
+        },
+        {
+          "caller": "instrument_diversification_multiplier",
+          "callee": "self.parent.portfolio.get_instrument_diversification_multiplier",
+          "lineNumber": 271
+        },
+        {
+          "caller": "forecast_diversification_multiplier",
+          "callee": "self.parent.combForecast.get_forecast_diversification_multiplier",
+          "lineNumber": 274
+        },
+        {
+          "caller": "specific_instrument_weight",
+          "callee": "self.instrument_weights",
+          "lineNumber": 279
+        },
+        {
+          "caller": "instrument_weights",
+          "callee": "self.parent.portfolio.get_instrument_weights",
+          "lineNumber": 284
+        },
+        {
+          "caller": "forecast_weight",
+          "callee": "self.forecast_weights_for_instrument",
+          "lineNumber": 289
+        },
+        {
+          "caller": "forecast_weight",
+          "callee": "self.get_raw_price",
+          "lineNumber": 293
+        },
+        {
+          "caller": "forecast_weight",
+          "callee": "from_scalar_values_to_ts",
+          "lineNumber": 294
+        },
+        {
+          "caller": "forecast_weights_for_instrument",
+          "callee": "self.parent.combForecast.get_forecast_weights",
+          "lineNumber": 301
+        },
+        {
+          "caller": "list_of_rules_for_code",
+          "callee": "self.parent.combForecast.get_trading_rule_list",
+          "lineNumber": 304
+        },
+        {
+          "caller": "list_of_trading_rules",
+          "callee": "self.parent.rules.trading_rules",
+          "lineNumber": 307
+        },
+        {
+          "caller": "get_actual_position",
+          "callee": "self.parent.portfolio.get_actual_position",
+          "lineNumber": 310
+        },
+        {
+          "caller": "get_actual_buffers_for_position",
+          "callee": "self.parent.portfolio.get_actual_buffers_for_position",
+          "lineNumber": 313
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_instruments.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 221,
+      "nonEmptyLines": 180,
+      "classes": [
+        {
+          "name": "accountInstruments",
+          "startLine": 15,
+          "endLine": 221,
+          "methods": [
+            "pandl_for_instrument",
+            "_pandl_for_instrument_with_positions",
+            "_pandl_for_instrument_with_SR_costs",
+            "turnover_at_portfolio_level",
+            "_pandl_for_instrument_with_cash_costs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountInstruments",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "self.log.debug",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "self.get_buffered_position",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "self._pandl_for_instrument_with_positions",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_pandl_for_instrument_with_positions",
+          "callee": "self.log.debug",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_pandl_for_instrument_with_positions",
+          "callee": "self._pandl_for_instrument_with_SR_costs",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_pandl_for_instrument_with_positions",
+          "callee": "self._pandl_for_instrument_with_cash_costs",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_instrument_prices_for_position_or_forecast",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_daily_returns_volatility",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.instrument_turnover",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_SR_cost_given_turnover",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "self.get_average_position_for_instrument_at_portfolio_level",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "pandlCalculationWithSRCosts",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_pandl_for_instrument_with_SR_costs",
+          "callee": "accountCurve",
+          "lineNumber": 156
+        },
+        {
+          "caller": "turnover_at_portfolio_level",
+          "callee": "self.get_average_position_at_subsystem_level",
+          "lineNumber": 165
+        },
+        {
+          "caller": "turnover_at_portfolio_level",
+          "callee": "self.get_buffered_position",
+          "lineNumber": 170
+        },
+        {
+          "caller": "turnover_at_portfolio_level",
+          "callee": "turnover",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.log.warning",
+          "lineNumber": 186
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_raw_cost_data",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_instrument_prices_for_position_or_forecast",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 199
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "self.get_rolls_per_year",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "pandlCalculationWithCashCostsAndFills",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_pandl_for_instrument_with_cash_costs",
+          "callee": "accountCurve",
+          "lineNumber": 219
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_portfolio.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "accountPortfolio",
+          "startLine": 8,
+          "endLine": 68,
+          "methods": [
+            "portfolio",
+            "total_portfolio_level_turnover"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountPortfolio",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "portfolio",
+          "callee": "self.log.info",
+          "lineNumber": 31
+        },
+        {
+          "caller": "portfolio",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 32
+        },
+        {
+          "caller": "portfolio",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 33
+        },
+        {
+          "caller": "portfolio",
+          "callee": "dict",
+          "lineNumber": 34
+        },
+        {
+          "caller": "portfolio",
+          "callee": "self.pandl_for_instrument",
+          "lineNumber": 38
+        },
+        {
+          "caller": "portfolio",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 48
+        },
+        {
+          "caller": "portfolio",
+          "callee": "accountCurveGroup",
+          "lineNumber": 50
+        },
+        {
+          "caller": "total_portfolio_level_turnover",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 58
+        },
+        {
+          "caller": "total_portfolio_level_turnover",
+          "callee": "self.turnover_at_portfolio_level",
+          "lineNumber": 60
+        },
+        {
+          "caller": "total_portfolio_level_turnover",
+          "callee": "np.nansum",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_subsystem.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 200,
+      "nonEmptyLines": 160,
+      "classes": [
+        {
+          "name": "accountSubsystem",
+          "startLine": 12,
+          "endLine": 200,
+          "methods": [
+            "pandl_across_subsystems",
+            "pandl_across_subsystems_given_instrument_list",
+            "pandl_for_subsystem",
+            "_pandl_for_subsystem_with_SR_costs",
+            "_pandl_calculator_for_subsystem_with_SR_costs",
+            "_pandl_for_subsystem_with_cash_costs",
+            "_pandl_calculator_for_subsystem_with_cash_costs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountSubsystem",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pandl_across_subsystems",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 17
+        },
+        {
+          "caller": "pandl_across_subsystems",
+          "callee": "self.pandl_across_subsystems_given_instrument_list",
+          "lineNumber": 19
+        },
+        {
+          "caller": "pandl_across_subsystems_given_instrument_list",
+          "callee": "dict",
+          "lineNumber": 29
+        },
+        {
+          "caller": "pandl_across_subsystems_given_instrument_list",
+          "callee": "self.pandl_for_subsystem",
+          "lineNumber": 33
+        },
+        {
+          "caller": "pandl_across_subsystems_given_instrument_list",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pandl_across_subsystems_given_instrument_list",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 47
+        },
+        {
+          "caller": "pandl_across_subsystems_given_instrument_list",
+          "callee": "accountCurveGroup",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "self.log.debug",
+          "lineNumber": 83
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "self._pandl_for_subsystem_with_SR_costs",
+          "lineNumber": 91
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "self._pandl_for_subsystem_with_cash_costs",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_pandl_for_subsystem_with_SR_costs",
+          "callee": "self._pandl_calculator_for_subsystem_with_SR_costs",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_pandl_for_subsystem_with_SR_costs",
+          "callee": "accountCurve",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_buffered_subsystem_position",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_instrument_prices_for_position_or_forecast",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_daily_returns_volatility",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_average_position_at_subsystem_level",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.subsystem_turnover",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_SR_cost_given_turnover",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_SR_costs",
+          "callee": "pandlCalculationWithSRCosts",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_pandl_for_subsystem_with_cash_costs",
+          "callee": "self._pandl_calculator_for_subsystem_with_cash_costs",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_pandl_for_subsystem_with_cash_costs",
+          "callee": "accountCurve",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_raw_cost_data",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_buffered_subsystem_position",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_instrument_prices_for_position_or_forecast",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_rolls_per_year",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "pandlCalculationWithCashCostsAndFills",
+          "lineNumber": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_trading_rules.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 214,
+      "nonEmptyLines": 177,
+      "classes": [
+        {
+          "name": "accountTradingRules",
+          "startLine": 12,
+          "endLine": 214,
+          "methods": [
+            "pandl_for_trading_rule_weighted",
+            "pandl_for_trading_rule_unweighted",
+            "pandl_for_trading_rule",
+            "pandl_for_all_trading_rules",
+            "pandl_for_all_trading_rules_unweighted",
+            "pandl_for_instrument_rules",
+            "pandl_for_instrument_rules_unweighted"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountTradingRules",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 17
+        },
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "dict",
+          "lineNumber": 18
+        },
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "self.pandl_for_instrument_forecast_weighted",
+          "lineNumber": 22
+        },
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 32
+        },
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 34
+        },
+        {
+          "caller": "pandl_for_trading_rule_weighted",
+          "callee": "accountCurveGroup",
+          "lineNumber": 36
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 46
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "dict",
+          "lineNumber": 47
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "self.pandl_for_instrument_forecast",
+          "lineNumber": 51
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 61
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 63
+        },
+        {
+          "caller": "pandl_for_trading_rule_unweighted",
+          "callee": "accountCurveGroup",
+          "lineNumber": 65
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 83
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "dict",
+          "lineNumber": 84
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "self.pandl_for_instrument_forecast_weighted_within_trading_rule",
+          "lineNumber": 88
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 98
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 100
+        },
+        {
+          "caller": "pandl_for_trading_rule",
+          "callee": "accountCurveGroup",
+          "lineNumber": 102
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "self.list_of_trading_rules",
+          "lineNumber": 113
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "dict",
+          "lineNumber": 115
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "self.pandl_for_trading_rule_weighted",
+          "lineNumber": 117
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "nestedDictOfAccountCurves",
+          "lineNumber": 122
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 123
+        },
+        {
+          "caller": "pandl_for_all_trading_rules",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 125
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "self.list_of_trading_rules",
+          "lineNumber": 134
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "dict",
+          "lineNumber": 136
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "self.pandl_for_trading_rule",
+          "lineNumber": 138
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "nestedDictOfAccountCurves",
+          "lineNumber": 143
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 144
+        },
+        {
+          "caller": "pandl_for_all_trading_rules_unweighted",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 146
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "self.list_of_rules_for_code",
+          "lineNumber": 157
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "dict",
+          "lineNumber": 158
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "self.pandl_for_instrument_forecast_weighted",
+          "lineNumber": 162
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 172
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 174
+        },
+        {
+          "caller": "pandl_for_instrument_rules",
+          "callee": "accountCurveGroup",
+          "lineNumber": 176
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "self.list_of_rules_for_code",
+          "lineNumber": 191
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "dict",
+          "lineNumber": 192
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "self.pandl_for_instrument_forecast",
+          "lineNumber": 196
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 206
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 208
+        },
+        {
+          "caller": "pandl_for_instrument_rules_unweighted",
+          "callee": "accountCurveGroup",
+          "lineNumber": 210
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/account_with_multiplier.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 114,
+      "classes": [
+        {
+          "name": "accountWithMultiplier",
+          "startLine": 17,
+          "endLine": 159,
+          "methods": [
+            "portfolio_with_multiplier",
+            "pandl_for_instrument_with_multiplier",
+            "get_buffered_position_with_multiplier",
+            "get_actual_capital",
+            "capital_multiplier"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountWithMultiplier",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "self.log.info",
+          "lineNumber": 20
+        },
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "self.get_actual_capital",
+          "lineNumber": 21
+        },
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 22
+        },
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "self.pandl_for_instrument_with_multiplier",
+          "lineNumber": 26
+        },
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "dictOfAccountCurves",
+          "lineNumber": 33
+        },
+        {
+          "caller": "portfolio_with_multiplier",
+          "callee": "accountCurveGroup",
+          "lineNumber": 35
+        },
+        {
+          "caller": "pandl_for_instrument_with_multiplier",
+          "callee": "self.log.debug",
+          "lineNumber": 59
+        },
+        {
+          "caller": "pandl_for_instrument_with_multiplier",
+          "callee": "self.get_buffered_position_with_multiplier",
+          "lineNumber": 65
+        },
+        {
+          "caller": "pandl_for_instrument_with_multiplier",
+          "callee": "self._pandl_for_instrument_with_positions",
+          "lineNumber": 69
+        },
+        {
+          "caller": "get_buffered_position_with_multiplier",
+          "callee": "self.get_actual_position",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_buffered_position_with_multiplier",
+          "callee": "self.get_actual_buffers_for_position",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_buffered_position_with_multiplier",
+          "callee": "self._get_buffered_position_given_optimal_position_and_buffers",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "self.capital_multiplier",
+          "lineNumber": 122
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "type",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "type",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "from_scalar_values_to_ts",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "notional.reindex(capmult.index).ffill",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "notional.reindex",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_actual_capital",
+          "callee": "capital.shift",
+          "lineNumber": 131
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "copy",
+          "lineNumber": 152
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "resolve_function",
+          "lineNumber": 153
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "capmult_params.pop",
+          "lineNumber": 153
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "capmult_func",
+          "lineNumber": 155
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "capmult.reindex(self.portfolio().index).ffill",
+          "lineNumber": 157
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "capmult.reindex",
+          "lineNumber": 157
+        },
+        {
+          "caller": "capital_multiplier",
+          "callee": "self.portfolio",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/curves/account_curve.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 411,
+      "nonEmptyLines": 327,
+      "functions": [
+        {
+          "name": "quant_ratio_lower_curve",
+          "startLine": 393,
+          "endLine": 398,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "quant_ratio_upper_curve",
+          "startLine": 401,
+          "endLine": 406,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "demeaned_remove_zeros",
+          "startLine": 409,
+          "endLine": 411,
+          "params": [
+            "x"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "accountCurve",
+          "startLine": 20,
+          "endLine": 390,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "weight",
+            "gross",
+            "net",
+            "costs",
+            "daily",
+            "weekly",
+            "monthly",
+            "annual",
+            "percent",
+            "value_terms",
+            "to_ncg_frame",
+            "length_in_months",
+            "capital",
+            "pandl_calculator_with_costs",
+            "as_ts",
+            "frequency",
+            "curve_type",
+            "is_percentage",
+            "weighted",
+            "curve",
+            "mean",
+            "std",
+            "ann_mean",
+            "ann_std",
+            "number_of_years_in_data",
+            "returns_scalar",
+            "vol_scalar",
+            "sharpe",
+            "drawdown",
+            "avg_drawdown",
+            "worst_drawdown",
+            "time_in_drawdown",
+            "calmar",
+            "avg_return_to_drawdown",
+            "sortino",
+            "vals",
+            "min",
+            "max",
+            "median",
+            "skew",
+            "losses",
+            "gains",
+            "avg_loss",
+            "avg_gain",
+            "gaintolossratio",
+            "profitfactor",
+            "hitrate",
+            "rolling_ann_std",
+            "t_test",
+            "t_stat",
+            "p_value",
+            "average_quant_ratio",
+            "quant_ratio_lower",
+            "quant_ratio_upper",
+            "demeaned_remove_zeros",
+            "stats"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountCurve",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "quant_ratio_lower_curve",
+          "line": 393,
+          "isDefault": false
+        },
+        {
+          "name": "quant_ratio_upper_curve",
+          "line": 401,
+          "isDefault": false
+        },
+        {
+          "name": "demeaned_remove_zeros",
+          "line": 409,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "pandl_calculator_with_costs.as_pd_series_for_frequency",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__repr__",
+          "callee": "super().__repr__",
+          "lineNumber": 49
+        },
+        {
+          "caller": "__repr__",
+          "callee": "super",
+          "lineNumber": 49
+        },
+        {
+          "caller": "weight",
+          "callee": "pandl_calculator.weight",
+          "lineNumber": 55
+        },
+        {
+          "caller": "weight",
+          "callee": "accountCurve",
+          "lineNumber": 57
+        },
+        {
+          "caller": "gross",
+          "callee": "accountCurve",
+          "lineNumber": 68
+        },
+        {
+          "caller": "net",
+          "callee": "accountCurve",
+          "lineNumber": 78
+        },
+        {
+          "caller": "costs",
+          "callee": "accountCurve",
+          "lineNumber": 88
+        },
+        {
+          "caller": "daily",
+          "callee": "accountCurve",
+          "lineNumber": 98
+        },
+        {
+          "caller": "weekly",
+          "callee": "accountCurve",
+          "lineNumber": 108
+        },
+        {
+          "caller": "monthly",
+          "callee": "accountCurve",
+          "lineNumber": 118
+        },
+        {
+          "caller": "annual",
+          "callee": "accountCurve",
+          "lineNumber": 128
+        },
+        {
+          "caller": "percent",
+          "callee": "accountCurve",
+          "lineNumber": 138
+        },
+        {
+          "caller": "value_terms",
+          "callee": "accountCurve",
+          "lineNumber": 148
+        },
+        {
+          "caller": "to_ncg_frame",
+          "callee": "pd.concat",
+          "lineNumber": 161
+        },
+        {
+          "caller": "capital",
+          "callee": "self.pandl_calculator_with_costs.capital_as_pd_series_for_frequency",
+          "lineNumber": 172
+        },
+        {
+          "caller": "curve",
+          "callee": "self.cumsum().ffill",
+          "lineNumber": 201
+        },
+        {
+          "caller": "curve",
+          "callee": "self.cumsum",
+          "lineNumber": 201
+        },
+        {
+          "caller": "mean",
+          "callee": "float",
+          "lineNumber": 204
+        },
+        {
+          "caller": "mean",
+          "callee": "self.as_ts.mean",
+          "lineNumber": 204
+        },
+        {
+          "caller": "std",
+          "callee": "float",
+          "lineNumber": 207
+        },
+        {
+          "caller": "std",
+          "callee": "self.as_ts.std",
+          "lineNumber": 207
+        },
+        {
+          "caller": "ann_mean",
+          "callee": "self.sum",
+          "lineNumber": 211
+        },
+        {
+          "caller": "ann_std",
+          "callee": "self.std",
+          "lineNumber": 217
+        },
+        {
+          "caller": "number_of_years_in_data",
+          "callee": "len",
+          "lineNumber": 223
+        },
+        {
+          "caller": "returns_scalar",
+          "callee": "from_frequency_to_times_per_year",
+          "lineNumber": 227
+        },
+        {
+          "caller": "vol_scalar",
+          "callee": "from_frequency_to_times_per_year",
+          "lineNumber": 231
+        },
+        {
+          "caller": "sharpe",
+          "callee": "self.ann_mean",
+          "lineNumber": 235
+        },
+        {
+          "caller": "sharpe",
+          "callee": "self.ann_std",
+          "lineNumber": 236
+        },
+        {
+          "caller": "drawdown",
+          "callee": "self.curve",
+          "lineNumber": 244
+        },
+        {
+          "caller": "drawdown",
+          "callee": "drawdown",
+          "lineNumber": 245
+        },
+        {
+          "caller": "avg_drawdown",
+          "callee": "self.drawdown",
+          "lineNumber": 248
+        },
+        {
+          "caller": "avg_drawdown",
+          "callee": "np.nanmean",
+          "lineNumber": 249
+        },
+        {
+          "caller": "worst_drawdown",
+          "callee": "self.drawdown",
+          "lineNumber": 252
+        },
+        {
+          "caller": "worst_drawdown",
+          "callee": "np.nanmin",
+          "lineNumber": 253
+        },
+        {
+          "caller": "time_in_drawdown",
+          "callee": "self.drawdown().dropna",
+          "lineNumber": 256
+        },
+        {
+          "caller": "time_in_drawdown",
+          "callee": "self.drawdown",
+          "lineNumber": 256
+        },
+        {
+          "caller": "time_in_drawdown",
+          "callee": "float",
+          "lineNumber": 257
+        },
+        {
+          "caller": "time_in_drawdown",
+          "callee": "float",
+          "lineNumber": 258
+        },
+        {
+          "caller": "calmar",
+          "callee": "self.ann_mean",
+          "lineNumber": 261
+        },
+        {
+          "caller": "calmar",
+          "callee": "self.worst_drawdown",
+          "lineNumber": 261
+        },
+        {
+          "caller": "avg_return_to_drawdown",
+          "callee": "self.ann_mean",
+          "lineNumber": 264
+        },
+        {
+          "caller": "avg_return_to_drawdown",
+          "callee": "self.avg_drawdown",
+          "lineNumber": 264
+        },
+        {
+          "caller": "sortino",
+          "callee": "np.std",
+          "lineNumber": 267
+        },
+        {
+          "caller": "sortino",
+          "callee": "self.losses",
+          "lineNumber": 267
+        },
+        {
+          "caller": "sortino",
+          "callee": "self.ann_mean",
+          "lineNumber": 270
+        },
+        {
+          "caller": "vals",
+          "callee": "pd.to_numeric",
+          "lineNumber": 280
+        },
+        {
+          "caller": "vals",
+          "callee": "pd.isnull",
+          "lineNumber": 280
+        },
+        {
+          "caller": "min",
+          "callee": "np.nanmin",
+          "lineNumber": 286
+        },
+        {
+          "caller": "max",
+          "callee": "np.nanmax",
+          "lineNumber": 290
+        },
+        {
+          "caller": "median",
+          "callee": "np.nanmedian",
+          "lineNumber": 293
+        },
+        {
+          "caller": "skew",
+          "callee": "skew",
+          "lineNumber": 296
+        },
+        {
+          "caller": "skew",
+          "callee": "self.vals",
+          "lineNumber": 296
+        },
+        {
+          "caller": "losses",
+          "callee": "self.vals",
+          "lineNumber": 299
+        },
+        {
+          "caller": "gains",
+          "callee": "self.vals",
+          "lineNumber": 303
+        },
+        {
+          "caller": "avg_loss",
+          "callee": "np.mean",
+          "lineNumber": 307
+        },
+        {
+          "caller": "avg_loss",
+          "callee": "self.losses",
+          "lineNumber": 307
+        },
+        {
+          "caller": "avg_gain",
+          "callee": "np.mean",
+          "lineNumber": 310
+        },
+        {
+          "caller": "avg_gain",
+          "callee": "self.gains",
+          "lineNumber": 310
+        },
+        {
+          "caller": "gaintolossratio",
+          "callee": "self.avg_gain",
+          "lineNumber": 313
+        },
+        {
+          "caller": "gaintolossratio",
+          "callee": "self.avg_loss",
+          "lineNumber": 313
+        },
+        {
+          "caller": "profitfactor",
+          "callee": "np.sum",
+          "lineNumber": 316
+        },
+        {
+          "caller": "profitfactor",
+          "callee": "self.gains",
+          "lineNumber": 316
+        },
+        {
+          "caller": "profitfactor",
+          "callee": "np.sum",
+          "lineNumber": 316
+        },
+        {
+          "caller": "profitfactor",
+          "callee": "self.losses",
+          "lineNumber": 316
+        },
+        {
+          "caller": "hitrate",
+          "callee": "float",
+          "lineNumber": 319
+        },
+        {
+          "caller": "hitrate",
+          "callee": "self.gains",
+          "lineNumber": 319
+        },
+        {
+          "caller": "hitrate",
+          "callee": "float",
+          "lineNumber": 320
+        },
+        {
+          "caller": "hitrate",
+          "callee": "self.losses",
+          "lineNumber": 320
+        },
+        {
+          "caller": "rolling_ann_std",
+          "callee": "self.as_ts.rolling(window, min_periods=4, center=True).std().to_frame",
+          "lineNumber": 326
+        },
+        {
+          "caller": "rolling_ann_std",
+          "callee": "self.as_ts.rolling(window, min_periods=4, center=True).std",
+          "lineNumber": 326
+        },
+        {
+          "caller": "rolling_ann_std",
+          "callee": "self.as_ts.rolling",
+          "lineNumber": 326
+        },
+        {
+          "caller": "t_test",
+          "callee": "ttest_1samp",
+          "lineNumber": 330
+        },
+        {
+          "caller": "t_test",
+          "callee": "self.vals",
+          "lineNumber": 330
+        },
+        {
+          "caller": "t_stat",
+          "callee": "float",
+          "lineNumber": 333
+        },
+        {
+          "caller": "t_stat",
+          "callee": "self.t_test",
+          "lineNumber": 333
+        },
+        {
+          "caller": "p_value",
+          "callee": "float",
+          "lineNumber": 336
+        },
+        {
+          "caller": "p_value",
+          "callee": "self.t_test",
+          "lineNumber": 336
+        },
+        {
+          "caller": "average_quant_ratio",
+          "callee": "self.quant_ratio_upper",
+          "lineNumber": 339
+        },
+        {
+          "caller": "average_quant_ratio",
+          "callee": "self.quant_ratio_lower",
+          "lineNumber": 340
+        },
+        {
+          "caller": "average_quant_ratio",
+          "callee": "np.mean",
+          "lineNumber": 342
+        },
+        {
+          "caller": "quant_ratio_lower",
+          "callee": "quant_ratio_lower_curve",
+          "lineNumber": 345
+        },
+        {
+          "caller": "quant_ratio_upper",
+          "callee": "quant_ratio_upper_curve",
+          "lineNumber": 348
+        },
+        {
+          "caller": "demeaned_remove_zeros",
+          "callee": "demeaned_remove_zeros",
+          "lineNumber": 352
+        },
+        {
+          "caller": "stats",
+          "callee": "getattr",
+          "lineNumber": 381
+        },
+        {
+          "caller": "stats",
+          "callee": "stat_method",
+          "lineNumber": 382
+        },
+        {
+          "caller": "stats",
+          "callee": "build_stats.append",
+          "lineNumber": 383
+        },
+        {
+          "caller": "stats",
+          "callee": "\"{0:.4g}\".format",
+          "lineNumber": 383
+        },
+        {
+          "caller": "quant_ratio_lower_curve",
+          "callee": "demeaned_remove_zeros",
+          "lineNumber": 394
+        },
+        {
+          "caller": "quant_ratio_lower_curve",
+          "callee": "demeaned_x.quantile",
+          "lineNumber": 395
+        },
+        {
+          "caller": "quant_ratio_lower_curve",
+          "callee": "demeaned_x.quantile",
+          "lineNumber": 395
+        },
+        {
+          "caller": "quant_ratio_upper_curve",
+          "callee": "demeaned_remove_zeros",
+          "lineNumber": 402
+        },
+        {
+          "caller": "quant_ratio_upper_curve",
+          "callee": "demeaned_x.quantile",
+          "lineNumber": 403
+        },
+        {
+          "caller": "quant_ratio_upper_curve",
+          "callee": "demeaned_x.quantile",
+          "lineNumber": 403
+        },
+        {
+          "caller": "demeaned_remove_zeros",
+          "callee": "x.mean",
+          "lineNumber": 411
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/curves/account_curve_analysis.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "account_t_test",
+          "startLine": 16,
+          "endLine": 52,
+          "params": [
+            "acc1",
+            "acc2"
+          ]
+        },
+        {
+          "name": "_prepare_returns_data_for_t_test",
+          "startLine": 55,
+          "endLine": 68,
+          "params": [
+            "acc1",
+            "acc2"
+          ]
+        },
+        {
+          "name": "standard_statistics",
+          "startLine": 71,
+          "endLine": 87,
+          "params": [
+            "account_curve"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AccountTTestResult",
+          "startLine": 8,
+          "endLine": 13,
+          "methods": [],
+          "properties": [
+            "diff",
+            "statistic",
+            "pvalue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AccountTTestResult",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "account_t_test",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_prepare_returns_data_for_t_test",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "standard_statistics",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "account_t_test",
+          "callee": "_prepare_returns_data_for_t_test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "account_t_test",
+          "callee": "standardised_df_returns.mean",
+          "lineNumber": 41
+        },
+        {
+          "caller": "account_t_test",
+          "callee": "ttest_rel",
+          "lineNumber": 48
+        },
+        {
+          "caller": "account_t_test",
+          "callee": "AccountTTestResult",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "pd.DataFrame(acc1).cumsum",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "pd.DataFrame",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "pd.DataFrame(acc2).cumsum",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "pd.DataFrame",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "pd.merge",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "cum.sort_index",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "cum.diff(periods=1).dropna",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "cum.diff",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_prepare_returns_data_for_t_test",
+          "callee": "df_returns.std",
+          "lineNumber": 66
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.costs.ann_mean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 74
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.ann_mean",
+          "lineNumber": 74
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 75
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.gross.ann_mean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 76
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 77
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.avg_drawdown",
+          "lineNumber": 77
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 78
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.ann_std",
+          "lineNumber": 78
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 79
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.sharpe",
+          "lineNumber": 79
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 80
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "system.accounts.total_portfolio_level_turnover",
+          "lineNumber": 80
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 81
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.daily.skew",
+          "lineNumber": 81
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 82
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.weekly.skew",
+          "lineNumber": 82
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 83
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.monthly.skew",
+          "lineNumber": 83
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 84
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.annual.skew",
+          "lineNumber": 84
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 86
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.quant_ratio_lower",
+          "lineNumber": 86
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "print",
+          "lineNumber": 87
+        },
+        {
+          "caller": "standard_statistics",
+          "callee": "acc.quant_ratio_upper",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/curves/account_curve_group.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "_kwargs_with_defaults",
+          "startLine": 157,
+          "endLine": 167,
+          "params": [
+            "kwargs"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "accountCurveGroup",
+          "startLine": 16,
+          "endLine": 154,
+          "methods": [
+            "__init__",
+            "asset_columns",
+            "__getitem__",
+            "get_pandl_calculator_for_item",
+            "to_frame",
+            "get_stats",
+            "gross",
+            "net",
+            "costs",
+            "daily",
+            "weekly",
+            "monthly",
+            "annual",
+            "percent",
+            "value_terms",
+            "dict_of_account_curves",
+            "kwargs_without_item",
+            "kwargs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "accountCurveGroup",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_kwargs_with_defaults",
+          "line": 157,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "dict_of_account_curves.summed_pandl_calculator",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "_kwargs_with_defaults",
+          "lineNumber": 24
+        },
+        {
+          "caller": "asset_columns",
+          "callee": "list",
+          "lineNumber": 28
+        },
+        {
+          "caller": "asset_columns",
+          "callee": "self.dict_of_account_curves.keys",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "accountCurve",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_pandl_calculator_for_item",
+          "lineNumber": 32
+        },
+        {
+          "caller": "to_frame",
+          "callee": "pd.concat",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_stats",
+          "callee": "statsDict",
+          "lineNumber": 48
+        },
+        {
+          "caller": "gross",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 53
+        },
+        {
+          "caller": "gross",
+          "callee": "accountCurveGroup",
+          "lineNumber": 54
+        },
+        {
+          "caller": "net",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 63
+        },
+        {
+          "caller": "net",
+          "callee": "accountCurveGroup",
+          "lineNumber": 65
+        },
+        {
+          "caller": "costs",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 74
+        },
+        {
+          "caller": "costs",
+          "callee": "accountCurveGroup",
+          "lineNumber": 75
+        },
+        {
+          "caller": "daily",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 84
+        },
+        {
+          "caller": "daily",
+          "callee": "accountCurveGroup",
+          "lineNumber": 85
+        },
+        {
+          "caller": "weekly",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 94
+        },
+        {
+          "caller": "weekly",
+          "callee": "accountCurveGroup",
+          "lineNumber": 95
+        },
+        {
+          "caller": "monthly",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 104
+        },
+        {
+          "caller": "monthly",
+          "callee": "accountCurveGroup",
+          "lineNumber": 105
+        },
+        {
+          "caller": "annual",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 114
+        },
+        {
+          "caller": "annual",
+          "callee": "accountCurveGroup",
+          "lineNumber": 115
+        },
+        {
+          "caller": "percent",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 124
+        },
+        {
+          "caller": "percent",
+          "callee": "accountCurveGroup",
+          "lineNumber": 125
+        },
+        {
+          "caller": "value_terms",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 134
+        },
+        {
+          "caller": "value_terms",
+          "callee": "accountCurveGroup",
+          "lineNumber": 135
+        },
+        {
+          "caller": "kwargs_without_item",
+          "callee": "copy",
+          "lineNumber": 147
+        },
+        {
+          "caller": "kwargs_without_item",
+          "callee": "kwargs.pop",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/curves/dict_of_account_curves.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "dictOfAccountCurves",
+          "startLine": 7,
+          "endLine": 37,
+          "methods": [
+            "summed_pandl_calculator",
+            "dict_of_pandl_calculators",
+            "asset_columns",
+            "weighted"
+          ],
+          "properties": []
+        },
+        {
+          "name": "nestedDictOfAccountCurves",
+          "startLine": 40,
+          "endLine": 41,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dictOfAccountCurves",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "nestedDictOfAccountCurves",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "summed_pandl_calculator",
+          "callee": "self.dict_of_pandl_calculators",
+          "lineNumber": 9
+        },
+        {
+          "caller": "summed_pandl_calculator",
+          "callee": "dict_of_pandl_calculators.sum",
+          "lineNumber": 10
+        },
+        {
+          "caller": "dict_of_pandl_calculators",
+          "callee": "dict",
+          "lineNumber": 15
+        },
+        {
+          "caller": "dict_of_pandl_calculators",
+          "callee": "self.items",
+          "lineNumber": 18
+        },
+        {
+          "caller": "dict_of_pandl_calculators",
+          "callee": "dictOfPandlCalculatorsWithGenericCosts",
+          "lineNumber": 22
+        },
+        {
+          "caller": "asset_columns",
+          "callee": "list",
+          "lineNumber": 26
+        },
+        {
+          "caller": "asset_columns",
+          "callee": "self.keys",
+          "lineNumber": 26
+        },
+        {
+          "caller": "weighted",
+          "callee": "self.values",
+          "lineNumber": 30
+        },
+        {
+          "caller": "weighted",
+          "callee": "all",
+          "lineNumber": 31
+        },
+        {
+          "caller": "weighted",
+          "callee": "all",
+          "lineNumber": 33
+        },
+        {
+          "caller": "weighted",
+          "callee": "Exception",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/accounts/curves/nested_account_curve_group.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 106,
+      "classes": [
+        {
+          "name": "nestedAccountCurveGroup",
+          "startLine": 13,
+          "endLine": 123,
+          "methods": [
+            "__init__",
+            "__getitem__",
+            "get_account_curve_dict_for_item",
+            "gross",
+            "net",
+            "costs",
+            "daily",
+            "weekly",
+            "monthly",
+            "annual",
+            "percent",
+            "value_terms",
+            "nested_account_curves"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "nestedAccountCurveGroup",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_account_curve_dict_for_item",
+          "lineNumber": 25
+        },
+        {
+          "caller": "gross",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 33
+        },
+        {
+          "caller": "gross",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 34
+        },
+        {
+          "caller": "net",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 43
+        },
+        {
+          "caller": "net",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 44
+        },
+        {
+          "caller": "costs",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 53
+        },
+        {
+          "caller": "costs",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 54
+        },
+        {
+          "caller": "daily",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 63
+        },
+        {
+          "caller": "daily",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 64
+        },
+        {
+          "caller": "weekly",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 73
+        },
+        {
+          "caller": "weekly",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 74
+        },
+        {
+          "caller": "monthly",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 83
+        },
+        {
+          "caller": "monthly",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 84
+        },
+        {
+          "caller": "annual",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 93
+        },
+        {
+          "caller": "annual",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 94
+        },
+        {
+          "caller": "percent",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 103
+        },
+        {
+          "caller": "percent",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 104
+        },
+        {
+          "caller": "value_terms",
+          "callee": "self.kwargs_without_item",
+          "lineNumber": 113
+        },
+        {
+          "caller": "value_terms",
+          "callee": "nestedAccountCurveGroup",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/curves/stats_dict.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 253,
+      "nonEmptyLines": 209,
+      "functions": [
+        {
+          "name": "_from_freq_str_to_frequency",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "freq_str"
+          ]
+        },
+        {
+          "name": "_from_curve_str_to_curve_type",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "curve_type_str"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "statsDict",
+          "startLine": 31,
+          "endLine": 253,
+          "methods": [
+            "__init__",
+            "dict_of_results_by_asset_name_equal_weighted",
+            "dict_of_results_by_asset_name_timeweighted",
+            "dict_of_results_by_asset_name",
+            "statresult_for_item",
+            "account_curve_for_asset",
+            "mean",
+            "std",
+            "tstat",
+            "pvalue",
+            "_time_weights",
+            "account_curve_group",
+            "item"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_from_freq_str_to_frequency",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_from_curve_str_to_curve_type",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "statsDict",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_from_freq_str_to_frequency",
+          "callee": "dict",
+          "lineNumber": 15
+        },
+        {
+          "caller": "_from_curve_str_to_curve_type",
+          "callee": "dict",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.dict_of_results_by_asset_name",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 48
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 48
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_equal_weighted",
+          "callee": "len",
+          "lineNumber": 61
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_equal_weighted",
+          "callee": "self.keys",
+          "lineNumber": 61
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_equal_weighted",
+          "callee": "self.dict_of_results_by_asset_name",
+          "lineNumber": 62
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_equal_weighted",
+          "callee": "dict",
+          "lineNumber": 70
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_equal_weighted",
+          "callee": "unweighted_results.keys",
+          "lineNumber": 73
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_timeweighted",
+          "callee": "self._time_weights",
+          "lineNumber": 87
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_timeweighted",
+          "callee": "self.dict_of_results_by_asset_name",
+          "lineNumber": 88
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_timeweighted",
+          "callee": "dict",
+          "lineNumber": 96
+        },
+        {
+          "caller": "dict_of_results_by_asset_name_timeweighted",
+          "callee": "unweighted_results.keys",
+          "lineNumber": 102
+        },
+        {
+          "caller": "dict_of_results_by_asset_name",
+          "callee": "dict",
+          "lineNumber": 119
+        },
+        {
+          "caller": "dict_of_results_by_asset_name",
+          "callee": "self.statresult_for_item",
+          "lineNumber": 123
+        },
+        {
+          "caller": "statresult_for_item",
+          "callee": "self.account_curve_for_asset",
+          "lineNumber": 150
+        },
+        {
+          "caller": "statresult_for_item",
+          "callee": "getattr",
+          "lineNumber": 158
+        },
+        {
+          "caller": "statresult_for_item",
+          "callee": "method_to_call",
+          "lineNumber": 160
+        },
+        {
+          "caller": "account_curve_for_asset",
+          "callee": "_from_freq_str_to_frequency",
+          "lineNumber": 173
+        },
+        {
+          "caller": "account_curve_for_asset",
+          "callee": "_from_curve_str_to_curve_type",
+          "lineNumber": 174
+        },
+        {
+          "caller": "account_curve_for_asset",
+          "callee": "accountCurve",
+          "lineNumber": 176
+        },
+        {
+          "caller": "account_curve_for_asset",
+          "callee": "account_curve_group.get_pandl_calculator_for_item",
+          "lineNumber": 177
+        },
+        {
+          "caller": "mean",
+          "callee": "self.dict_of_results_by_asset_name_timeweighted",
+          "lineNumber": 187
+        },
+        {
+          "caller": "mean",
+          "callee": "self.dict_of_results_by_asset_name_equal_weighted",
+          "lineNumber": 189
+        },
+        {
+          "caller": "mean",
+          "callee": "list",
+          "lineNumber": 191
+        },
+        {
+          "caller": "mean",
+          "callee": "results.values",
+          "lineNumber": 191
+        },
+        {
+          "caller": "mean",
+          "callee": "np.nanmean",
+          "lineNumber": 193
+        },
+        {
+          "caller": "std",
+          "callee": "self.dict_of_results_by_asset_name_timeweighted",
+          "lineNumber": 197
+        },
+        {
+          "caller": "std",
+          "callee": "self.dict_of_results_by_asset_name_equal_weighted",
+          "lineNumber": 199
+        },
+        {
+          "caller": "std",
+          "callee": "list",
+          "lineNumber": 201
+        },
+        {
+          "caller": "std",
+          "callee": "results.values",
+          "lineNumber": 201
+        },
+        {
+          "caller": "std",
+          "callee": "np.nanstd",
+          "lineNumber": 203
+        },
+        {
+          "caller": "tstat",
+          "callee": "self.dict_of_results_by_asset_name_timeweighted",
+          "lineNumber": 207
+        },
+        {
+          "caller": "tstat",
+          "callee": "self.dict_of_results_by_asset_name_equal_weighted",
+          "lineNumber": 209
+        },
+        {
+          "caller": "tstat",
+          "callee": "list",
+          "lineNumber": 211
+        },
+        {
+          "caller": "tstat",
+          "callee": "results.values",
+          "lineNumber": 211
+        },
+        {
+          "caller": "tstat",
+          "callee": "ttest_1samp",
+          "lineNumber": 213
+        },
+        {
+          "caller": "pvalue",
+          "callee": "self.dict_of_results_by_asset_name_timeweighted",
+          "lineNumber": 217
+        },
+        {
+          "caller": "pvalue",
+          "callee": "self.dict_of_results_by_asset_name_equal_weighted",
+          "lineNumber": 219
+        },
+        {
+          "caller": "pvalue",
+          "callee": "list",
+          "lineNumber": 221
+        },
+        {
+          "caller": "pvalue",
+          "callee": "results.values",
+          "lineNumber": 221
+        },
+        {
+          "caller": "pvalue",
+          "callee": "ttest_1samp",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "dict",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "self.account_curve_for_asset",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "self.keys",
+          "lineNumber": 234
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "np.mean",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "list",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "dict_of_time_lengths.values",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "dict",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_time_weights",
+          "callee": "dict_of_time_lengths.keys",
+          "lineNumber": 241
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 156,
+      "functions": [
+        {
+          "name": "_raise_exceptions",
+          "startLine": 178,
+          "endLine": 188,
+          "params": [
+            "roundpositions",
+            "use_SR_costs",
+            "delayfill"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AccountWithOrderSimulator",
+          "startLine": 14,
+          "endLine": 175,
+          "methods": [
+            "pandl_for_subsystem",
+            "_pandl_calculator_for_subsystem_with_cash_costs",
+            "pandl_for_instrument",
+            "_pandl_calculator_for_instrument_with_cash_costs",
+            "get_buffered_position",
+            "get_buffered_subsystem_position",
+            "get_unrounded_subsystem_position_for_order_simulator",
+            "get_unrounded_instrument_position_for_order_simulator",
+            "get_order_simulator"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AccountWithOrderSimulator",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_raise_exceptions",
+          "line": 178,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "self.log.debug",
+          "lineNumber": 19
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "_raise_exceptions",
+          "lineNumber": 25
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "self._pandl_calculator_for_subsystem_with_cash_costs",
+          "lineNumber": 30
+        },
+        {
+          "caller": "pandl_for_subsystem",
+          "callee": "accountCurve",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_order_simulator",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "order_simulator.prices",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "order_simulator.list_of_fills",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_raw_cost_data",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "self.get_rolls_per_year",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "pandlCalculationWithCashCostsAndFills",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_pandl_calculator_for_subsystem_with_cash_costs",
+          "callee": "order_simulator.diagnostic_df",
+          "lineNumber": 70
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "self.log.debug",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "_raise_exceptions",
+          "lineNumber": 84
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "self._pandl_calculator_for_instrument_with_cash_costs",
+          "lineNumber": 90
+        },
+        {
+          "caller": "pandl_for_instrument",
+          "callee": "accountCurve",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_order_simulator",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "order_simulator.list_of_fills",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "order_simulator.prices",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_raw_cost_data",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_fx_rate",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_value_of_block_price_move",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_notional_capital",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "self.get_rolls_per_year",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_pandl_calculator_for_instrument_with_cash_costs",
+          "callee": "pandlCalculationWithCashCostsAndFills",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_buffered_position",
+          "callee": "_raise_exceptions",
+          "lineNumber": 143
+        },
+        {
+          "caller": "get_buffered_position",
+          "callee": "self.get_order_simulator",
+          "lineNumber": 144
+        },
+        {
+          "caller": "get_buffered_position",
+          "callee": "order_simulator.positions",
+          "lineNumber": 146
+        },
+        {
+          "caller": "get_buffered_subsystem_position",
+          "callee": "_raise_exceptions",
+          "lineNumber": 152
+        },
+        {
+          "caller": "get_buffered_subsystem_position",
+          "callee": "self.get_order_simulator",
+          "lineNumber": 153
+        },
+        {
+          "caller": "get_buffered_subsystem_position",
+          "callee": "order_simulator.positions",
+          "lineNumber": 155
+        },
+        {
+          "caller": "get_unrounded_subsystem_position_for_order_simulator",
+          "callee": "self.get_subsystem_position",
+          "lineNumber": 160
+        },
+        {
+          "caller": "get_unrounded_instrument_position_for_order_simulator",
+          "callee": "self.get_notional_position",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_order_simulator",
+          "callee": "OrderSimulator",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_raise_exceptions",
+          "callee": "Exception",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_raise_exceptions",
+          "callee": "Exception",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_raise_exceptions",
+          "callee": "Exception",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/fills_and_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "fill_list_of_simple_orders",
+          "startLine": 15,
+          "endLine": 38,
+          "params": [
+            "list_of_orders",
+            "fill_datetime",
+            "market_price"
+          ]
+        },
+        {
+          "name": "fill_from_simple_order",
+          "startLine": 41,
+          "endLine": 61,
+          "params": [
+            "simple_order",
+            "market_price",
+            "fill_datetime"
+          ]
+        },
+        {
+          "name": "fill_from_simple_limit_order",
+          "startLine": 64,
+          "endLine": 88,
+          "params": [
+            "simple_order",
+            "market_price",
+            "fill_datetime"
+          ]
+        },
+        {
+          "name": "fill_from_simple_market_order",
+          "startLine": 91,
+          "endLine": 101,
+          "params": [
+            "simple_order",
+            "market_price",
+            "fill_datetime"
+          ]
+        },
+        {
+          "name": "empty_list_of_orders_with_no_fills",
+          "startLine": 109,
+          "endLine": 114,
+          "params": [
+            "fill_datetime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fill_list_of_simple_orders",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "fill_from_simple_order",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "fill_from_simple_limit_order",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "fill_from_simple_market_order",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "empty_list_of_orders_with_no_fills",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "fill_from_simple_order",
+          "lineNumber": 21
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "ListOfFills",
+          "lineNumber": 28
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "empty_fill",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "len",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "Exception",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fill_list_of_simple_orders",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fill_from_simple_order",
+          "callee": "empty_fill",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fill_from_simple_order",
+          "callee": "fill_from_simple_market_order",
+          "lineNumber": 50
+        },
+        {
+          "caller": "fill_from_simple_order",
+          "callee": "fill_from_simple_limit_order",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fill_from_simple_limit_order",
+          "callee": "Fill",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fill_from_simple_limit_order",
+          "callee": "Fill",
+          "lineNumber": 81
+        },
+        {
+          "caller": "fill_from_simple_limit_order",
+          "callee": "empty_fill",
+          "lineNumber": 88
+        },
+        {
+          "caller": "fill_from_simple_market_order",
+          "callee": "Fill",
+          "lineNumber": 96
+        },
+        {
+          "caller": "empty_list_of_orders_with_no_fills",
+          "callee": "ListOfSimpleOrdersAndResultingFill",
+          "lineNumber": 112
+        },
+        {
+          "caller": "empty_list_of_orders_with_no_fills",
+          "callee": "empty_list_of_orders_with_date",
+          "lineNumber": 113
+        },
+        {
+          "caller": "empty_list_of_orders_with_no_fills",
+          "callee": "empty_fill",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "startLine": 36,
+          "endLine": 65,
+          "params": [
+            "current_position",
+            "current_datetime",
+            "data_for_idx"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HourlyOrderSimulatorOfLimitOrders",
+          "startLine": 30,
+          "endLine": 33,
+          "methods": [
+            "orders_fills_function"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AccountWithOrderSimulatorForLimitOrders",
+          "startLine": 68,
+          "endLine": 78,
+          "methods": [
+            "get_order_simulator"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HourlyOrderSimulatorOfLimitOrders",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "AccountWithOrderSimulatorForLimitOrders",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "np.isnan",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "round",
+          "lineNumber": 45
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "empty_list_of_orders_with_no_fills",
+          "lineNumber": 49
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "SimpleOrderWithDate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "ListOfSimpleOrdersWithDate",
+          "lineNumber": 58
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "fill_list_of_simple_orders",
+          "lineNumber": 59
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_limit_orders",
+          "callee": "ListOfSimpleOrdersAndResultingFill",
+          "lineNumber": 65
+        },
+        {
+          "caller": "get_order_simulator",
+          "callee": "HourlyOrderSimulatorOfLimitOrders",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/hourly_market_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "_build_hourly_series_data_for_order_simulator",
+          "startLine": 23,
+          "endLine": 53,
+          "params": [
+            "system_accounts_stage",
+            "instrument_code",
+            "is_subsystem"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HourlyOrderSimulatorOfMarketOrders",
+          "startLine": 13,
+          "endLine": 20,
+          "methods": [
+            "_series_data"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AccountWithOrderSimulatorForHourlyMarketOrders",
+          "startLine": 56,
+          "endLine": 66,
+          "methods": [
+            "get_order_simulator"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HourlyOrderSimulatorOfMarketOrders",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "_build_hourly_series_data_for_order_simulator",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "AccountWithOrderSimulatorForHourlyMarketOrders",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_series_data",
+          "callee": "_build_hourly_series_data_for_order_simulator",
+          "lineNumber": 15
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_hourly_prices",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_unrounded_subsystem_position_for_order_simulator",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_unrounded_instrument_position_for_order_simulator",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "price_series.sort_index",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "unrounded_positions.sort_index",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "pd.concat",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "price_series.reindex(both_index).ffill",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "price_series.reindex",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "unrounded_positions.reindex(both_index).ffill",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "unrounded_positions.reindex",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_build_hourly_series_data_for_order_simulator",
+          "callee": "OrdersSeriesData",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_order_simulator",
+          "callee": "HourlyOrderSimulatorOfMarketOrders",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 269,
+      "nonEmptyLines": 212,
+      "functions": [
+        {
+          "name": "build_daily_series_data_for_order_simulator",
+          "startLine": 136,
+          "endLine": 166,
+          "params": [
+            "system_accounts_stage",
+            "instrument_code",
+            "is_subsystem"
+          ]
+        },
+        {
+          "name": "generate_positions_orders_and_fills_from_series_data",
+          "startLine": 169,
+          "endLine": 212,
+          "params": [
+            "series_data",
+            "passed_idx_data_function",
+            "passed_orders_fills_function"
+          ]
+        },
+        {
+          "name": "get_order_sim_daily_data_at_idx_point",
+          "startLine": 221,
+          "endLine": 237,
+          "params": [
+            "idx",
+            "series_data"
+          ]
+        },
+        {
+          "name": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "startLine": 240,
+          "endLine": 269,
+          "params": [
+            "current_position",
+            "current_datetime",
+            "data_for_idx"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PositionsOrdersFills",
+          "startLine": 23,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "positions",
+            "list_of_orders",
+            "list_of_fills"
+          ]
+        },
+        {
+          "name": "OrdersSeriesData",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "OrderSimulator",
+          "startLine": 36,
+          "endLine": 133,
+          "methods": [
+            "diagnostic_df",
+            "_diagnostic_df",
+            "_other_diagnostics",
+            "_orders_and_fills_df",
+            "prices",
+            "optimal_positions_series",
+            "positions",
+            "list_of_fills",
+            "list_of_orders",
+            "positions_orders_and_fills_from_series_data",
+            "_positions_orders_and_fills_from_series_data",
+            "series_data",
+            "_series_data",
+            "cache",
+            "orders_fills_function",
+            "idx_data_function"
+          ],
+          "properties": [
+            "system_accounts_stage",
+            "instrument_code",
+            "is_subsystem"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PositionsOrdersFills",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "OrdersSeriesData",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "OrderSimulator",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "build_daily_series_data_for_order_simulator",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "generate_positions_orders_and_fills_from_series_data",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "get_order_sim_daily_data_at_idx_point",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "line": 240,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "diagnostic_df",
+          "callee": "self.cache.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_diagnostic_df",
+          "callee": "self._other_diagnostics",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_diagnostic_df",
+          "callee": "self._orders_and_fills_df",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_diagnostic_df",
+          "callee": "pd.concat",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_other_diagnostics",
+          "callee": "self.positions",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_other_diagnostics",
+          "callee": "pd.DataFrame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_other_diagnostics",
+          "callee": "self.optimal_positions_series",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_other_diagnostics",
+          "callee": "pd.DataFrame",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_other_diagnostics",
+          "callee": "pd.concat",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_orders_and_fills_df",
+          "callee": "self.list_of_fills",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_orders_and_fills_df",
+          "callee": "list_of_fills.as_pd_df",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_orders_and_fills_df",
+          "callee": "self.list_of_orders",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_orders_and_fills_df",
+          "callee": "list_of_orders.as_pd_df",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_orders_and_fills_df",
+          "callee": "pd.concat",
+          "lineNumber": 71
+        },
+        {
+          "caller": "positions",
+          "callee": "self.positions_orders_and_fills_from_series_data",
+          "lineNumber": 88
+        },
+        {
+          "caller": "list_of_fills",
+          "callee": "self.positions_orders_and_fills_from_series_data",
+          "lineNumber": 92
+        },
+        {
+          "caller": "list_of_orders",
+          "callee": "self.positions_orders_and_fills_from_series_data",
+          "lineNumber": 96
+        },
+        {
+          "caller": "positions_orders_and_fills_from_series_data",
+          "callee": "self.cache.get",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_positions_orders_and_fills_from_series_data",
+          "callee": "generate_positions_orders_and_fills_from_series_data",
+          "lineNumber": 105
+        },
+        {
+          "caller": "series_data",
+          "callee": "self.cache.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_series_data",
+          "callee": "build_daily_series_data_for_order_simulator",
+          "lineNumber": 116
+        },
+        {
+          "caller": "cache",
+          "callee": "getattr",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cache",
+          "callee": "Cache",
+          "lineNumber": 125
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_daily_prices",
+          "lineNumber": 141
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_unrounded_subsystem_position_for_order_simulator",
+          "lineNumber": 144
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "system_accounts_stage.get_unrounded_instrument_position_for_order_simulator",
+          "lineNumber": 150
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "price_series.sort_index",
+          "lineNumber": 155
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "unrounded_positions.sort_index",
+          "lineNumber": 156
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "pd.concat",
+          "lineNumber": 158
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "price_series.reindex(both_index).ffill",
+          "lineNumber": 160
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "price_series.reindex",
+          "lineNumber": 160
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "unrounded_positions.reindex(both_index).ffill",
+          "lineNumber": 161
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "unrounded_positions.reindex",
+          "lineNumber": 161
+        },
+        {
+          "caller": "build_daily_series_data_for_order_simulator",
+          "callee": "OrdersSeriesData",
+          "lineNumber": 163
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "enumerate",
+          "lineNumber": 183
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "list_of_positions.append",
+          "lineNumber": 184
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "passed_idx_data_function",
+          "lineNumber": 185
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "passed_orders_fills_function",
+          "lineNumber": 186
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "len",
+          "lineNumber": 193
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "list_of_fills.append",
+          "lineNumber": 199
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "list_of_positions.append",
+          "lineNumber": 204
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "pd.Series",
+          "lineNumber": 206
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "ListOfSimpleOrdersWithDate",
+          "lineNumber": 207
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "ListOfFills",
+          "lineNumber": 208
+        },
+        {
+          "caller": "generate_positions_orders_and_fills_from_series_data",
+          "callee": "PositionsOrdersFills",
+          "lineNumber": 210
+        },
+        {
+          "caller": "get_order_sim_daily_data_at_idx_point",
+          "callee": "DataAtIDXPoint",
+          "lineNumber": 232
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "np.isnan",
+          "lineNumber": 249
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "round",
+          "lineNumber": 252
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "empty_list_of_orders_with_no_fills",
+          "lineNumber": 255
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "SimpleOrderWithDate",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "Fill",
+          "lineNumber": 261
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "ListOfSimpleOrdersWithDate",
+          "lineNumber": 267
+        },
+        {
+          "caller": "generate_order_and_fill_at_idx_point_for_market_orders",
+          "callee": "ListOfSimpleOrdersAndResultingFill",
+          "lineNumber": 269
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/simple_orders.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "empty_list_of_orders_with_date",
+          "startLine": 96,
+          "endLine": 97,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SimpleOrder",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [
+            "is_market_order",
+            "is_zero_order",
+            "zero_order"
+          ],
+          "properties": [
+            "quantity",
+            "limit_price"
+          ]
+        },
+        {
+          "name": "ListOfSimpleOrders",
+          "startLine": 34,
+          "endLine": 43,
+          "methods": [
+            "__init__",
+            "remove_zero_orders",
+            "contains_no_orders"
+          ],
+          "properties": []
+        },
+        {
+          "name": "SimpleOrderWithDate",
+          "startLine": 51,
+          "endLine": 78,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "zero_order",
+            "_as_tuple"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ListOfSimpleOrdersWithDate",
+          "startLine": 81,
+          "endLine": 93,
+          "methods": [
+            "__init__",
+            "as_pd_df",
+            "_as_list_of_named_tuples"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SimpleOrder",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ListOfSimpleOrders",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "SimpleOrderWithDate",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "ListOfSimpleOrdersWithDate",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "empty_list_of_orders_with_date",
+          "line": 96,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "zero_order",
+          "callee": "cls",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 36
+        },
+        {
+          "caller": "remove_zero_orders",
+          "callee": "ListOfSimpleOrders",
+          "lineNumber": 40
+        },
+        {
+          "caller": "contains_no_orders",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "contains_no_orders",
+          "callee": "self.remove_zero_orders",
+          "lineNumber": 43
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 55
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 55
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 62
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 66
+        },
+        {
+          "caller": "zero_order",
+          "callee": "cls",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_as_tuple",
+          "callee": "_SimpleOrderWithDateAsTuple",
+          "lineNumber": 74
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 83
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 83
+        },
+        {
+          "caller": "as_pd_df",
+          "callee": "make_df_from_list_of_named_tuple",
+          "lineNumber": 86
+        },
+        {
+          "caller": "as_pd_df",
+          "callee": "self._as_list_of_named_tuples",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_as_list_of_named_tuples",
+          "callee": "order._as_tuple",
+          "lineNumber": 93
+        },
+        {
+          "caller": "empty_list_of_orders_with_date",
+          "callee": "ListOfSimpleOrdersWithDate",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 1,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "startLine": 108,
+          "endLine": 135,
+          "params": [
+            "position",
+            "price",
+            "SR_cost_as_annualised_figure"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithSRCosts",
+          "startLine": 13,
+          "endLine": 105,
+          "methods": [
+            "__init__",
+            "weight",
+            "costs_pandl_in_points",
+            "SR_cost_as_annualised_figure_points",
+            "points_vol_of_an_average_position",
+            "annualised_price_volatility_points",
+            "daily_price_volatility_points",
+            "daily_returns_volatility",
+            "SR_cost",
+            "average_position"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculationWithSRCosts",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "line": 108,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 30
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 31
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 32
+        },
+        {
+          "caller": "weight",
+          "callee": "pandlCalculationWithSRCosts",
+          "lineNumber": 34
+        },
+        {
+          "caller": "costs_pandl_in_points",
+          "callee": "self.SR_cost_as_annualised_figure_points",
+          "lineNumber": 48
+        },
+        {
+          "caller": "costs_pandl_in_points",
+          "callee": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "lineNumber": 54
+        },
+        {
+          "caller": "SR_cost_as_annualised_figure_points",
+          "callee": "self.points_vol_of_an_average_position",
+          "lineNumber": 66
+        },
+        {
+          "caller": "points_vol_of_an_average_position",
+          "callee": "self.annualised_price_volatility_points",
+          "lineNumber": 76
+        },
+        {
+          "caller": "points_vol_of_an_average_position",
+          "callee": "average_position.reindex",
+          "lineNumber": 78
+        },
+        {
+          "caller": "daily_price_volatility_points",
+          "callee": "robust_daily_vol_given_price",
+          "lineNumber": 91
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "position.ffill",
+          "lineNumber": 112
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "SR_cost_as_annualised_figure.reindex",
+          "lineNumber": 115
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "SR_cost_aligned_positions.bfill",
+          "lineNumber": 118
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "position_ffill.isna",
+          "lineNumber": 122
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "SR_cost_aligned_positions_when_position_held.reindex",
+          "lineNumber": 126
+        },
+        {
+          "caller": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+          "callee": "spread_out_annualised_return_over_periods",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 235,
+      "nonEmptyLines": 175,
+      "functions": [
+        {
+          "name": "apply_weighting",
+          "startLine": 216,
+          "endLine": 220,
+          "params": [
+            "weight",
+            "thing_to_weight"
+          ]
+        },
+        {
+          "name": "calculate_pandl",
+          "startLine": 223,
+          "endLine": 235,
+          "params": [
+            "positions",
+            "prices"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculation",
+          "startLine": 8,
+          "endLine": 213,
+          "methods": [
+            "__init__",
+            "calculations_and_diagnostic_df",
+            "calculations_df",
+            "weight",
+            "capital_as_pd_series_for_frequency",
+            "as_pd_series_for_frequency",
+            "as_pd_series",
+            "percentage_pandl",
+            "_percentage_pandl_given_pandl",
+            "pandl_in_base_currency",
+            "_base_pandl_given_currency_pandl",
+            "pandl_in_instrument_currency",
+            "_pandl_in_instrument_ccy_given_points_pandl",
+            "pandl_in_points",
+            "price",
+            "length_in_months",
+            "positions",
+            "_process_positions",
+            "_get_passed_positions",
+            "delayfill",
+            "roundpositions",
+            "value_per_point",
+            "passed_diagnostic_df",
+            "_default_diagnostic_df",
+            "fx",
+            "capital",
+            "_index_to_align_capital_to"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculation",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "apply_weighting",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_pandl",
+          "line": 223,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calculations_and_diagnostic_df",
+          "callee": "self.calculations_df",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calculations_and_diagnostic_df",
+          "callee": "pd.concat",
+          "lineNumber": 32
+        },
+        {
+          "caller": "calculations_df",
+          "callee": "NotImplemented",
+          "lineNumber": 39
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 42
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 43
+        },
+        {
+          "caller": "weight",
+          "callee": "pandlCalculation",
+          "lineNumber": 45
+        },
+        {
+          "caller": "capital_as_pd_series_for_frequency",
+          "callee": "from_config_frequency_pandas_resample",
+          "lineNumber": 59
+        },
+        {
+          "caller": "capital_as_pd_series_for_frequency",
+          "callee": "capital.resample(resample_freq).ffill",
+          "lineNumber": 60
+        },
+        {
+          "caller": "capital_as_pd_series_for_frequency",
+          "callee": "capital.resample",
+          "lineNumber": 60
+        },
+        {
+          "caller": "as_pd_series_for_frequency",
+          "callee": "self.as_pd_series",
+          "lineNumber": 67
+        },
+        {
+          "caller": "as_pd_series_for_frequency",
+          "callee": "pd.to_datetime",
+          "lineNumber": 70
+        },
+        {
+          "caller": "as_pd_series_for_frequency",
+          "callee": "from_config_frequency_pandas_resample",
+          "lineNumber": 72
+        },
+        {
+          "caller": "as_pd_series_for_frequency",
+          "callee": "as_pd_series.resample(resample_freq).sum",
+          "lineNumber": 73
+        },
+        {
+          "caller": "as_pd_series_for_frequency",
+          "callee": "as_pd_series.resample",
+          "lineNumber": 73
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.percentage_pandl",
+          "lineNumber": 79
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.pandl_in_base_currency",
+          "lineNumber": 81
+        },
+        {
+          "caller": "percentage_pandl",
+          "callee": "self.pandl_in_base_currency",
+          "lineNumber": 84
+        },
+        {
+          "caller": "percentage_pandl",
+          "callee": "self._percentage_pandl_given_pandl",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_percentage_pandl_given_pandl",
+          "callee": "type",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_percentage_pandl_given_pandl",
+          "callee": "capital.reindex",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_percentage_pandl_given_pandl",
+          "callee": "type",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_percentage_pandl_given_pandl",
+          "callee": "type",
+          "lineNumber": 94
+        },
+        {
+          "caller": "pandl_in_base_currency",
+          "callee": "self.pandl_in_instrument_currency",
+          "lineNumber": 100
+        },
+        {
+          "caller": "pandl_in_base_currency",
+          "callee": "self._base_pandl_given_currency_pandl",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_base_pandl_given_currency_pandl",
+          "callee": "fx.reindex",
+          "lineNumber": 107
+        },
+        {
+          "caller": "pandl_in_instrument_currency",
+          "callee": "self.pandl_in_points",
+          "lineNumber": 112
+        },
+        {
+          "caller": "pandl_in_instrument_currency",
+          "callee": "self._pandl_in_instrument_ccy_given_points_pandl",
+          "lineNumber": 113
+        },
+        {
+          "caller": "pandl_in_points",
+          "callee": "calculate_pandl",
+          "lineNumber": 125
+        },
+        {
+          "caller": "length_in_months",
+          "callee": "self.positions.resample(\"1M\").last",
+          "lineNumber": 134
+        },
+        {
+          "caller": "length_in_months",
+          "callee": "self.positions.resample",
+          "lineNumber": 134
+        },
+        {
+          "caller": "length_in_months",
+          "callee": "positions_monthly.ffill",
+          "lineNumber": 135
+        },
+        {
+          "caller": "length_in_months",
+          "callee": "positions_ffill.dropna",
+          "lineNumber": 136
+        },
+        {
+          "caller": "length_in_months",
+          "callee": "len",
+          "lineNumber": 138
+        },
+        {
+          "caller": "positions",
+          "callee": "self._get_passed_positions",
+          "lineNumber": 142
+        },
+        {
+          "caller": "positions",
+          "callee": "self._process_positions",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_process_positions",
+          "callee": "positions.shift",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_process_positions",
+          "callee": "positions_to_use.round",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_default_diagnostic_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_default_diagnostic_df",
+          "callee": "dict",
+          "lineNumber": 187
+        },
+        {
+          "caller": "fx",
+          "callee": "pd.Series",
+          "lineNumber": 195
+        },
+        {
+          "caller": "fx",
+          "callee": "len",
+          "lineNumber": 195
+        },
+        {
+          "caller": "capital",
+          "callee": "type",
+          "lineNumber": 205
+        },
+        {
+          "caller": "capital",
+          "callee": "type",
+          "lineNumber": 205
+        },
+        {
+          "caller": "capital",
+          "callee": "pd.Series",
+          "lineNumber": 207
+        },
+        {
+          "caller": "capital",
+          "callee": "len",
+          "lineNumber": 207
+        },
+        {
+          "caller": "apply_weighting",
+          "callee": "weight.reindex(thing_to_weight.index).ffill",
+          "lineNumber": 217
+        },
+        {
+          "caller": "apply_weighting",
+          "callee": "weight.reindex",
+          "lineNumber": 217
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "positions.groupby(positions.index).last",
+          "lineNumber": 224
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "positions.groupby",
+          "lineNumber": 224
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "pd.concat",
+          "lineNumber": 225
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "both_series.ffill",
+          "lineNumber": 227
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "both_series.prices.diff",
+          "lineNumber": 229
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "both_series.positions.shift",
+          "lineNumber": 231
+        },
+        {
+          "caller": "calculate_pandl",
+          "callee": "returns.isna",
+          "lineNumber": 233
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "sum_list_of_pandl_curves",
+          "startLine": 101,
+          "endLine": 105,
+          "params": [
+            "list_of_pandl_curves"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithoutPositions",
+          "startLine": 7,
+          "endLine": 62,
+          "methods": [
+            "__init__",
+            "pandl_in_base_currency",
+            "costs_pandl_in_base_currency",
+            "net_pandl_in_instrument_currency",
+            "pandl_in_instrument_currency",
+            "costs_pandl_in_instrument_currency",
+            "net_pandl_in_points",
+            "pandl_in_points",
+            "costs_pandl_in_points",
+            "price",
+            "positions",
+            "value_per_point",
+            "fx",
+            "_index_to_align_capital_to"
+          ],
+          "properties": []
+        },
+        {
+          "name": "dictOfPandlCalculatorsWithGenericCosts",
+          "startLine": 65,
+          "endLine": 98,
+          "methods": [
+            "sum",
+            "sum_of_pandl_in_base_currency",
+            "sum_of_costs_pandl_in_base_currency",
+            "list_of_pandl_in_base_currency",
+            "list_of_costs_pandl_in_base_currency",
+            "_list_of_attr"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculationWithoutPositions",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "dictOfPandlCalculatorsWithGenericCosts",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "sum_list_of_pandl_curves",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "pd.Series",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_index_to_align_capital_to",
+          "callee": "self.pandl_in_base_currency",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sum",
+          "callee": "self.sum_of_pandl_in_base_currency",
+          "lineNumber": 67
+        },
+        {
+          "caller": "sum",
+          "callee": "self.sum_of_costs_pandl_in_base_currency",
+          "lineNumber": 68
+        },
+        {
+          "caller": "sum",
+          "callee": "pandlCalculationWithoutPositions",
+          "lineNumber": 70
+        },
+        {
+          "caller": "sum_of_pandl_in_base_currency",
+          "callee": "sum_list_of_pandl_curves",
+          "lineNumber": 79
+        },
+        {
+          "caller": "sum_of_costs_pandl_in_base_currency",
+          "callee": "sum_list_of_pandl_curves",
+          "lineNumber": 82
+        },
+        {
+          "caller": "list_of_pandl_in_base_currency",
+          "callee": "self._list_of_attr",
+          "lineNumber": 86
+        },
+        {
+          "caller": "list_of_costs_pandl_in_base_currency",
+          "callee": "self._list_of_attr",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_list_of_attr",
+          "callee": "getattr",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_list_of_attr",
+          "callee": "self.values",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_list_of_attr",
+          "callee": "x",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sum_list_of_pandl_curves",
+          "callee": "pd.concat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "sum_list_of_pandl_curves",
+          "callee": "df_of_pandl_curves.sum",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 259,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "calculate_cost_from_fill_with_cost_object",
+          "startLine": 244,
+          "endLine": 259,
+          "params": [
+            "fill",
+            "value_per_point",
+            "raw_costs"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithCashCostsAndFills",
+          "startLine": 21,
+          "endLine": 241,
+          "methods": [
+            "__init__",
+            "calculations_df",
+            "costs_pandl_in_points",
+            "costs_pandl_in_instrument_currency",
+            "costs_from_trading_in_instrument_currency_as_series",
+            "costs_from_trading_in_instrument_currency_as_list",
+            "date_index_for_all_fills",
+            "list_of_all_fills",
+            "pseudo_fills_from_holding",
+            "_calculate_pseudo_fills",
+            "_pseudo_fills_for_year",
+            "_average_holdings_within_year",
+            "_average_holding_for_period",
+            "last_date_with_positions",
+            "normalise_costs_in_instrument_currency",
+            "calculate_cost_instrument_currency_for_a_fill",
+            "cost_deflator",
+            "_calculate_cost_deflator",
+            "raw_costs",
+            "vol_normalise_currency_costs",
+            "rolls_per_year",
+            "multiply_roll_costs_by"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculationWithCashCostsAndFills",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_cost_from_fill_with_cost_object",
+          "line": 244,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 33
+        },
+        {
+          "caller": "calculations_df",
+          "callee": "self.costs_from_trading_in_instrument_currency_as_series",
+          "lineNumber": 41
+        },
+        {
+          "caller": "calculations_df",
+          "callee": "self.pandl_in_instrument_currency",
+          "lineNumber": 42
+        },
+        {
+          "caller": "calculations_df",
+          "callee": "self.net_pandl_in_instrument_currency",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculations_df",
+          "callee": "pd.concat",
+          "lineNumber": 45
+        },
+        {
+          "caller": "costs_pandl_in_points",
+          "callee": "self.costs_pandl_in_instrument_currency",
+          "lineNumber": 52
+        },
+        {
+          "caller": "costs_pandl_in_instrument_currency",
+          "callee": "self.costs_from_trading_in_instrument_currency_as_series",
+          "lineNumber": 61
+        },
+        {
+          "caller": "costs_pandl_in_instrument_currency",
+          "callee": "self.normalise_costs_in_instrument_currency",
+          "lineNumber": 62
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "self.costs_from_trading_in_instrument_currency_as_list",
+          "lineNumber": 70
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "self.date_index_for_all_fills",
+          "lineNumber": 72
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "pd.Series",
+          "lineNumber": 73
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "costs_as_pd_series.sort_index",
+          "lineNumber": 76
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "costs_as_pd_series.groupby(costs_as_pd_series.index).sum",
+          "lineNumber": 77
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_series",
+          "callee": "costs_as_pd_series.groupby",
+          "lineNumber": 77
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_list",
+          "callee": "self.list_of_all_fills",
+          "lineNumber": 82
+        },
+        {
+          "caller": "costs_from_trading_in_instrument_currency_as_list",
+          "callee": "self.calculate_cost_instrument_currency_for_a_fill",
+          "lineNumber": 85
+        },
+        {
+          "caller": "date_index_for_all_fills",
+          "callee": "self.list_of_all_fills",
+          "lineNumber": 92
+        },
+        {
+          "caller": "pseudo_fills_from_holding",
+          "callee": "getattr",
+          "lineNumber": 105
+        },
+        {
+          "caller": "pseudo_fills_from_holding",
+          "callee": "self._calculate_pseudo_fills",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_calculate_pseudo_fills",
+          "callee": "years_in_data",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_calculate_pseudo_fills",
+          "callee": "self._pseudo_fills_for_year",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_calculate_pseudo_fills",
+          "callee": "flatten_list",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "generate_equal_dates_within_year",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "self._average_holdings_within_year",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "self.price.ffill",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "Fill",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "get_row_of_series_before_date",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "zip",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "abs",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_pseudo_fills_for_year",
+          "callee": "Fill",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "generate_equal_dates_within_year",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "generate_equal_dates_within_year",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "range",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "len",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "self._average_holding_for_period",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_average_holdings_within_year",
+          "callee": "list_of_average_holdings.append",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_average_holding_for_period",
+          "callee": "positions_in_period.abs().mean",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_average_holding_for_period",
+          "callee": "positions_in_period.abs",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_average_holding_for_period",
+          "callee": "np.isnan",
+          "lineNumber": 182
+        },
+        {
+          "caller": "normalise_costs_in_instrument_currency",
+          "callee": "self.cost_deflator",
+          "lineNumber": 196
+        },
+        {
+          "caller": "normalise_costs_in_instrument_currency",
+          "callee": "cost_deflator.reindex",
+          "lineNumber": 197
+        },
+        {
+          "caller": "calculate_cost_instrument_currency_for_a_fill",
+          "callee": "calculate_cost_from_fill_with_cost_object",
+          "lineNumber": 206
+        },
+        {
+          "caller": "cost_deflator",
+          "callee": "getattr",
+          "lineNumber": 213
+        },
+        {
+          "caller": "cost_deflator",
+          "callee": "self._calculate_cost_deflator",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_calculate_cost_deflator",
+          "callee": "calculate_cost_deflator",
+          "lineNumber": 223
+        },
+        {
+          "caller": "calculate_cost_from_fill_with_cost_object",
+          "callee": "raw_costs.calculate_cost_instrument_currency",
+          "lineNumber": 252
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "_add_gross_and_costs",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "gross",
+            "costs"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithGenericCosts",
+          "startLine": 14,
+          "endLine": 102,
+          "methods": [
+            "weight",
+            "as_pd_series",
+            "net_percentage_pandl",
+            "net_pandl_in_base_currency",
+            "net_pandl_in_instrument_currency",
+            "net_pandl_in_points",
+            "costs_percentage_pandl",
+            "costs_pandl_in_base_currency",
+            "costs_pandl_in_instrument_currency",
+            "costs_pandl_in_points"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculationWithGenericCosts",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_add_gross_and_costs",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 16
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 17
+        },
+        {
+          "caller": "weight",
+          "callee": "pandlCalculationWithGenericCosts",
+          "lineNumber": 19
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.net_percentage_pandl",
+          "lineNumber": 32
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.net_pandl_in_base_currency",
+          "lineNumber": 34
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.percentage_pandl",
+          "lineNumber": 38
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.pandl_in_base_currency",
+          "lineNumber": 40
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.costs_percentage_pandl",
+          "lineNumber": 43
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "self.costs_pandl_in_base_currency",
+          "lineNumber": 45
+        },
+        {
+          "caller": "as_pd_series",
+          "callee": "Exception",
+          "lineNumber": 48
+        },
+        {
+          "caller": "net_percentage_pandl",
+          "callee": "self.percentage_pandl",
+          "lineNumber": 54
+        },
+        {
+          "caller": "net_percentage_pandl",
+          "callee": "self.costs_percentage_pandl",
+          "lineNumber": 55
+        },
+        {
+          "caller": "net_percentage_pandl",
+          "callee": "_add_gross_and_costs",
+          "lineNumber": 56
+        },
+        {
+          "caller": "net_pandl_in_base_currency",
+          "callee": "self.pandl_in_base_currency",
+          "lineNumber": 61
+        },
+        {
+          "caller": "net_pandl_in_base_currency",
+          "callee": "self.costs_pandl_in_base_currency",
+          "lineNumber": 62
+        },
+        {
+          "caller": "net_pandl_in_base_currency",
+          "callee": "_add_gross_and_costs",
+          "lineNumber": 63
+        },
+        {
+          "caller": "net_pandl_in_instrument_currency",
+          "callee": "self.pandl_in_instrument_currency",
+          "lineNumber": 68
+        },
+        {
+          "caller": "net_pandl_in_instrument_currency",
+          "callee": "self.costs_pandl_in_instrument_currency",
+          "lineNumber": 69
+        },
+        {
+          "caller": "net_pandl_in_instrument_currency",
+          "callee": "_add_gross_and_costs",
+          "lineNumber": 70
+        },
+        {
+          "caller": "net_pandl_in_points",
+          "callee": "self.pandl_in_points",
+          "lineNumber": 75
+        },
+        {
+          "caller": "net_pandl_in_points",
+          "callee": "self.costs_pandl_in_points",
+          "lineNumber": 76
+        },
+        {
+          "caller": "net_pandl_in_points",
+          "callee": "_add_gross_and_costs",
+          "lineNumber": 77
+        },
+        {
+          "caller": "costs_percentage_pandl",
+          "callee": "self.costs_pandl_in_base_currency",
+          "lineNumber": 82
+        },
+        {
+          "caller": "costs_percentage_pandl",
+          "callee": "self._percentage_pandl_given_pandl",
+          "lineNumber": 83
+        },
+        {
+          "caller": "costs_pandl_in_base_currency",
+          "callee": "self.costs_pandl_in_instrument_currency",
+          "lineNumber": 88
+        },
+        {
+          "caller": "costs_pandl_in_base_currency",
+          "callee": "self._base_pandl_given_currency_pandl",
+          "lineNumber": 89
+        },
+        {
+          "caller": "costs_pandl_in_instrument_currency",
+          "callee": "self.costs_pandl_in_points",
+          "lineNumber": 94
+        },
+        {
+          "caller": "costs_pandl_in_instrument_currency",
+          "callee": "self._pandl_in_instrument_ccy_given_points_pandl",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_add_gross_and_costs",
+          "callee": "gross.add",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "merge_fill_prices_with_prices",
+          "startLine": 94,
+          "endLine": 114,
+          "params": [
+            "prices",
+            "list_of_fills"
+          ]
+        },
+        {
+          "name": "unique_trades_df",
+          "startLine": 117,
+          "endLine": 126,
+          "params": [
+            "trade_df"
+          ]
+        },
+        {
+          "name": "infer_positions_from_fills",
+          "startLine": 129,
+          "endLine": 136,
+          "params": [
+            "fills"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "pandlCalculationWithFills",
+          "startLine": 13,
+          "endLine": 91,
+          "methods": [
+            "__init__",
+            "weight",
+            "using_positions_and_prices_merged_from_fills",
+            "fills",
+            "_infer_fills_from_position",
+            "positions",
+            "_infer_position_from_fills"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pandlCalculationWithFills",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "merge_fill_prices_with_prices",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "unique_trades_df",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "infer_positions_from_fills",
+          "line": 129,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 16
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 23
+        },
+        {
+          "caller": "weight",
+          "callee": "apply_weighting",
+          "lineNumber": 24
+        },
+        {
+          "caller": "weight",
+          "callee": "pandlCalculationWithFills",
+          "lineNumber": 26
+        },
+        {
+          "caller": "using_positions_and_prices_merged_from_fills",
+          "callee": "merge_fill_prices_with_prices",
+          "lineNumber": 44
+        },
+        {
+          "caller": "using_positions_and_prices_merged_from_fills",
+          "callee": "pandlCalculation",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fills",
+          "callee": "self._infer_fills_from_position",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_infer_fills_from_position",
+          "callee": "Exception",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_infer_fills_from_position",
+          "callee": "ListOfFills.from_position_series_and_prices",
+          "lineNumber": 67
+        },
+        {
+          "caller": "positions",
+          "callee": "self._get_passed_positions",
+          "lineNumber": 74
+        },
+        {
+          "caller": "positions",
+          "callee": "self._infer_position_from_fills",
+          "lineNumber": 77
+        },
+        {
+          "caller": "positions",
+          "callee": "self._process_positions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_infer_position_from_fills",
+          "callee": "Exception",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_infer_position_from_fills",
+          "callee": "infer_positions_from_fills",
+          "lineNumber": 89
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "list_of_fills.as_pd_df",
+          "lineNumber": 97
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "unique_trades_df",
+          "lineNumber": 98
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "pd.concat",
+          "lineNumber": 100
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "pd.to_datetime",
+          "lineNumber": 104
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "prices_to_use.ffill",
+          "lineNumber": 107
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "prices_to_use.replace",
+          "lineNumber": 111
+        },
+        {
+          "caller": "merge_fill_prices_with_prices",
+          "callee": "prices_to_use.dropna",
+          "lineNumber": 112
+        },
+        {
+          "caller": "unique_trades_df",
+          "callee": "trade_df.groupby(trade_df.index).sum",
+          "lineNumber": 120
+        },
+        {
+          "caller": "unique_trades_df",
+          "callee": "trade_df.groupby",
+          "lineNumber": 120
+        },
+        {
+          "caller": "unique_trades_df",
+          "callee": "new_df.drop",
+          "lineNumber": 124
+        },
+        {
+          "caller": "infer_positions_from_fills",
+          "callee": "pd.Series",
+          "lineNumber": 132
+        },
+        {
+          "caller": "infer_positions_from_fills",
+          "callee": "trade_series.sort_index",
+          "lineNumber": 133
+        },
+        {
+          "caller": "infer_positions_from_fills",
+          "callee": "trade_series.cumsum",
+          "lineNumber": 134
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "systems/provided/rules/factors.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "factor_trading_rule",
+          "startLine": 6,
+          "endLine": 11,
+          "params": [
+            "demean_factor_value",
+            "smooth"
+          ]
+        },
+        {
+          "name": "conditioned_factor_trading_rule",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "demean_factor_value",
+            "condition_demean_factor_value",
+            "smooth"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "factor_trading_rule",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "conditioned_factor_trading_rule",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "factor_trading_rule",
+          "callee": "robust_vol_calc",
+          "lineNumber": 7
+        },
+        {
+          "caller": "factor_trading_rule",
+          "callee": "normalised_factor_value.ewm(span=smooth).mean",
+          "lineNumber": 9
+        },
+        {
+          "caller": "factor_trading_rule",
+          "callee": "normalised_factor_value.ewm",
+          "lineNumber": 9
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "robust_vol_calc",
+          "lineNumber": 17
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "condition_demean_factor_value.apply",
+          "lineNumber": 20
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "sign_condition.reindex(\n        normalised_factor_value.index\n    ).ffill",
+          "lineNumber": 21
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "sign_condition.reindex",
+          "lineNumber": 21
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "conditioned_factor.ewm(span=smooth).mean",
+          "lineNumber": 26
+        },
+        {
+          "caller": "conditioned_factor_trading_rule",
+          "callee": "conditioned_factor.ewm",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

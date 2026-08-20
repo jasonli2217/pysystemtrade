@@ -1,0 +1,999 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "file",
+      "name": "buffering.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "summary": "Tracking-error buffering for the dynamic optimised system: computes how far to move from prior toward optimal positions to balance trading cost against tracking error.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "buffering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "function",
+      "name": "adjust_weights_with_factor",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        33,
+        51
+      ],
+      "summary": "Blends prior and optimised weights by an adjustment factor and rounds the resulting trades to contract space.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "function",
+      "name": "calculate_adjustment_factor",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        15,
+        30
+      ],
+      "summary": "Computes the buffer adjustment factor from the speed control and the prior tracking error.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "function",
+      "name": "calculate_adjusting_trades_rounding_in_contract_space",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        54,
+        65
+      ],
+      "summary": "Rounds weight-space adjusting trades into whole-contract space.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "type": "file",
+      "name": "data_for_optimisation.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "summary": "Holds and lazily converts all per-instrument inputs (optimal/prior weights, covariance, costs, constraints) into numpy arrays for the dynamic greedy optimiser.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "class",
+      "name": "dataForOptimisation",
+      "filePath": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "lineRange": [
+        12,
+        252
+      ],
+      "summary": "Caching container that transforms portfolioWeights/covariance/cost inputs into aligned numpy arrays and constraint vectors keyed on valid-data instruments.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "type": "file",
+      "name": "greedy_algo.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "summary": "Greedy integer optimisation algorithm that incrementally adds contracts in the direction that most improves the objective until no improvement is found.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "function",
+      "name": "greedy_algo_across_integer_values",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        6,
+        35
+      ],
+      "summary": "Greedily steps integer position values to minimise the objective, returning the best solution found.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "function",
+      "name": "_find_possible_new_best_live",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        38,
+        69
+      ],
+      "summary": "Evaluates each candidate single-step move from the current solution to find an improvement.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "function",
+      "name": "_update_at_limit",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        72,
+        90
+      ],
+      "summary": "Marks instruments that have hit their min/max constraint so they are skipped in further steps.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "type": "file",
+      "name": "optimisation.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "summary": "Defines the greedy objective function for the dynamic small-system optimiser: minimises tracking error against optimal positions plus trading costs subject to constraints, with buffering on small tracking errors.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "objective-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "class",
+      "name": "objectiveFunctionForGreedy",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "lineRange": [
+        33,
+        339
+      ],
+      "summary": "Objective function object computing tracking error, costs and constraint penalties for candidate integer positions, driving the greedy optimiser and applying buffering.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "objective-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "type": "file",
+      "name": "optimised_positions_stage.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "summary": "Backtest system stage that produces dynamically-optimised integer positions: gathers covariance, costs, constraints and per-contract values, runs the greedy optimiser per date and assembles the optimised position DataFrame.",
+      "tags": [
+        "service",
+        "optimisation",
+        "quant",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "class",
+      "name": "optimisedPositions",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "lineRange": [
+        35,
+        382
+      ],
+      "summary": "System stage computing dynamically optimised positions by building per-date objective instances, running the greedy optimiser and deriving costs, deflators and covariance inputs.",
+      "tags": [
+        "service",
+        "optimisation",
+        "quant",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "type": "file",
+      "name": "set_up_constraints.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "summary": "Builds per-instrument minima, maxima, trade direction and starting weights for the dynamic optimiser from reduce-only/no-trade/long-only constraints and prior positions.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "constraints",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "class",
+      "name": "minMaxAndDirectionAndStart",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        13,
+        36
+      ],
+      "summary": "Container exposing per-code minima, maxima, direction and starting weights as portfolioWeights across instruments.",
+      "tags": [
+        "optimisation",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "function",
+      "name": "calculate_min_max_and_direction_and_start",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        47,
+        61
+      ],
+      "summary": "Computes the full set of constraint vectors across all instrument codes from the input data.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "function",
+      "name": "calculate_minima_and_maxima",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        127,
+        166
+      ],
+      "summary": "Derives the min and max allowable weight for one instrument from its constraints and prior weight.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "constraints"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "function",
+      "name": "calculations_for_code",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        98,
+        124
+      ],
+      "summary": "Computes minima, maxima, direction and starting weight for a single instrument code.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "type": "file",
+      "name": "optimise_small_system.py",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "summary": "Static small-system optimiser that greedily selects an ordered set of instruments by net post-cost Sharpe ratio, using handcrafting to size a capital-constrained portfolio.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "instrument-selection"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "function",
+      "name": "find_best_ordered_set_of_instruments",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        20,
+        69
+      ],
+      "summary": "Greedily builds an ordered list of instruments, adding the one that most improves portfolio net Sharpe at each step.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "instrument-selection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "function",
+      "name": "find_next_instrument",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        106,
+        129
+      ],
+      "summary": "Finds the next-best instrument to add to the current set by post-cost SR.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "function",
+      "name": "SR_for_instrument_list",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        132,
+        153
+      ],
+      "summary": "Estimates the net Sharpe ratio of a candidate instrument list via handcrafting and size penalties.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "function",
+      "name": "build_estimates",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        156,
+        174
+      ],
+      "summary": "Assembles mean/stdev/correlation Estimates for a subset of instruments for handcrafting.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "function",
+      "name": "estimate_SR_given_weights",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        177,
+        198
+      ],
+      "summary": "Estimates portfolio SR for given risk weights using the cost-aware mean function.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "function",
+      "name": "net_SR_for_instrument_in_system",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        256,
+        275
+      ],
+      "summary": "Computes the net post-cost, size-penalised Sharpe ratio for a single instrument in the system.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:syslogging/logger.py:get_logger",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:sysquant/optimisation/weights.py:seriesOfPortfolioWeights",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "class:sysquant/optimisation/optimisers/handcraft.py:handcraftPortfolio",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:sysquant/optimisation/shared.py:neg_SR",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

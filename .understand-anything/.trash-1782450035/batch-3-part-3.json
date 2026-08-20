@@ -1,0 +1,609 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "type": "file",
+   "name": "spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "filePath": "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "summary": "Initialisation script importing spot FX prices from CSV and Investing.com files into the production FX database.",
+   "tags": [
+    "script",
+    "fx",
+    "data-import",
+    "initialisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "function",
+   "name": "spotfx_from_csv_and_investing_dot_com",
+   "filePath": "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "lineRange": [
+    19,
+    64
+   ],
+   "summary": "Loads spot FX price series from CSV/Investing.com sources and writes them into the production currency data store.",
+   "tags": [
+    "fx",
+    "data-import",
+    "initialisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "type": "file",
+   "name": "spotfx_from_db_to_csv.py",
+   "filePath": "sysinit/futures/spotfx_from_db_to_csv.py",
+   "summary": "Initialisation script exporting spot FX prices from the production database back out to CSV files.",
+   "tags": [
+    "script",
+    "fx",
+    "data-export",
+    "initialisation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syslogdiag/email_via_db_interface.py",
+   "type": "file",
+   "name": "email_via_db_interface.py",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "summary": "Production email layer that sends mail (with rate-limited warnings) and falls back to storing messages in the DB when email delivery fails.",
+   "tags": [
+    "service",
+    "email",
+    "logging",
+    "notification"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Implements de-duplication of warning emails and store-and-forward of messages via a Mongo-backed control object."
+  },
+  {
+   "id": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "class",
+   "name": "dataEmailControl",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    171,
+    197
+   ],
+   "summary": "Mongo-backed control object tracking last-sent times for emails and stored-message handling to support rate limiting and retries.",
+   "tags": [
+    "email",
+    "data-access",
+    "logging"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "function",
+   "name": "send_email_and_record_date_or_store_on_fail",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    43,
+    56
+   ],
+   "summary": "Attempts to send a production email and, on failure, stores the message in the DB for later retry.",
+   "tags": [
+    "email",
+    "notification",
+    "logging"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "function",
+   "name": "can_we_send_this_email_now",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    59,
+    74
+   ],
+   "summary": "Checks the recorded send history to decide whether a warning email may be sent now or should be throttled.",
+   "tags": [
+    "email",
+    "throttling",
+    "logging"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysobjects/production/backtest_storage.py",
+   "type": "file",
+   "name": "backtest_storage.py",
+   "filePath": "sysobjects/production/backtest_storage.py",
+   "summary": "Provides the interactiveBacktest object that loads and navigates stored backtest System states for inspection in interactive sessions.",
+   "tags": [
+    "data-model",
+    "backtest",
+    "storage",
+    "interactive"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "class",
+   "name": "interactiveBacktest",
+   "filePath": "sysobjects/production/backtest_storage.py",
+   "lineRange": [
+    14,
+    201
+   ],
+   "summary": "Wraps a pickled backtest System state, offering interactive menus to explore its stages, instruments and diagnostic outputs.",
+   "tags": [
+    "backtest",
+    "storage",
+    "interactive"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysobjects/production/capital.py",
+   "type": "file",
+   "name": "capital.py",
+   "filePath": "sysobjects/production/capital.py",
+   "summary": "Capital accounting logic that updates total brokerage and system capital, handling P&L application and large-capital-change protection.",
+   "tags": [
+    "data-model",
+    "capital",
+    "accounting"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "class",
+   "name": "totalCapitalUpdater",
+   "filePath": "sysobjects/production/capital.py",
+   "lineRange": [
+    4,
+    185
+   ],
+   "summary": "Computes updated broker, maximum and accumulated capital figures from new account values, guarding against implausibly large jumps.",
+   "tags": [
+    "capital",
+    "accounting",
+    "calculation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysobjects/production/roll_state.py",
+   "type": "file",
+   "name": "roll_state.py",
+   "filePath": "sysobjects/production/roll_state.py",
+   "summary": "Defines the futures roll-state enumeration and helper predicates governing which roll-state transitions and order generation are allowed.",
+   "tags": [
+    "data-model",
+    "rolls",
+    "state-machine"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "function",
+   "name": "allowable_roll_state_from_current_and_position",
+   "filePath": "sysobjects/production/roll_state.py",
+   "lineRange": [
+    68,
+    104
+   ],
+   "summary": "Computes the set of valid next roll states given the current roll state and contract position.",
+   "tags": [
+    "rolls",
+    "state-machine",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_backtest_states.py",
+   "type": "file",
+   "name": "clean_truncate_backtest_states.py",
+   "filePath": "sysproduction/clean_truncate_backtest_states.py",
+   "summary": "Production housekeeping script that truncates old stored backtest state files to manage disk usage.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "backtest",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "class",
+   "name": "cleanTruncateBacktestStates",
+   "filePath": "sysproduction/clean_truncate_backtest_states.py",
+   "lineRange": [
+    15,
+    35
+   ],
+   "summary": "Runnable cleanup object that deletes outdated backtest state files via the data blob.",
+   "tags": [
+    "housekeeping",
+    "backtest",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_echo_files.py",
+   "type": "file",
+   "name": "clean_truncate_echo_files.py",
+   "filePath": "sysproduction/clean_truncate_echo_files.py",
+   "summary": "Production housekeeping script that truncates old echo (stdout capture) files to manage disk usage.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "class",
+   "name": "cleanTruncateEchoFiles",
+   "filePath": "sysproduction/clean_truncate_echo_files.py",
+   "lineRange": [
+    17,
+    31
+   ],
+   "summary": "Runnable cleanup object that removes outdated echo files from the production log directory.",
+   "tags": [
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_log_files.py",
+   "type": "file",
+   "name": "clean_truncate_log_files.py",
+   "filePath": "sysproduction/clean_truncate_log_files.py",
+   "summary": "Production housekeeping script that truncates old log records via the deprecated logs interface.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "class",
+   "name": "cleanTruncateLogFiles",
+   "filePath": "sysproduction/clean_truncate_log_files.py",
+   "lineRange": [
+    12,
+    20
+   ],
+   "summary": "Runnable cleanup object that purges old log entries through the data blob.",
+   "tags": [
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syslogdiag/emailing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syslogdiag/mongo_email_control.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/interactive/run_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysproduction/data/backtest.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:sysproduction/data/directories.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "file:sysproduction/_DEPRECATED/logs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/capital.py",
+   "target": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/capital.py",
+   "target": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/roll_state.py",
+   "target": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/roll_state.py",
+   "target": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  }
+ ]
+}

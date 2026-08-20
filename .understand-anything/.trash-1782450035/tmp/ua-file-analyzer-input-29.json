@@ -1,0 +1,31 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {"path": "sysproduction/linux/scripts/backup_state_files", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/clean_truncate_backtest_states", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/clean_truncate_echo_files", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/clean_truncate_log_files", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_controls", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_diagnostics", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_manual_check_fx_prices", "language": "unknown", "sizeLines": 3, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_manual_check_historical_prices", "language": "unknown", "sizeLines": 3, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_order_stack", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_update_capital_manual", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/interactive_update_roll_status", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/p", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_backups", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_capital_update", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_cleaners", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_daily_fx_and_contract_updates", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_daily_price_updates", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_daily_update_multiple_adjusted_prices", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_reports", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_stack_handler", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_strategy_order_generator", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/run_systems", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/startup", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/update_fx_prices", "language": "unknown", "sizeLines": 2, "fileCategory": "code"},
+    {"path": "sysproduction/linux/scripts/update_historical_prices", "language": "unknown", "sizeLines": 3, "fileCategory": "code"}
+  ],
+  "batchImportData": {}
+}

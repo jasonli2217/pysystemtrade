@@ -1,0 +1,1244 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysexecution/stack_handler/completed_orders.py",
+   "type": "file",
+   "name": "completed_orders.py",
+   "filePath": "sysexecution/stack_handler/completed_orders.py",
+   "summary": "Stack-handler mixin that detects fully filled instrument/contract/broker orders, deactivates them on their stacks, and writes the completed-order trio to the historic order store.",
+   "tags": [
+    "execution",
+    "order-management",
+    "stack-handler",
+    "middleware"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "type": "file",
+   "name": "create_broker_orders_from_contract_orders.py",
+   "filePath": "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "summary": "Stack-handler stage that converts contract orders into live broker orders, allocating an execution algo and managing client IDs before submission.",
+   "tags": [
+    "execution",
+    "order-management",
+    "stack-handler",
+    "broker"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/fills.py",
+   "type": "file",
+   "name": "fills.py",
+   "filePath": "sysexecution/stack_handler/fills.py",
+   "summary": "Stack-handler mixin that propagates fills upward from broker orders to contract and instrument orders, updating positions and applying split/distributed-order logic.",
+   "tags": [
+    "execution",
+    "order-management",
+    "stack-handler",
+    "fills"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/roll_orders.py",
+   "type": "file",
+   "name": "roll_orders.py",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "summary": "Generates and processes futures roll orders (force, flat, and close-near-contract rolls), creating the paired contract orders needed to move positions between expiries.",
+   "tags": [
+    "execution",
+    "rolls",
+    "stack-handler",
+    "futures"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "type": "file",
+   "name": "spawn_children_from_instrument_orders.py",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "summary": "Spawns child contract orders from parent instrument orders, choosing the priced contract or roll legs and computing reference, adjusted and limit prices for each child.",
+   "tags": [
+    "execution",
+    "order-management",
+    "stack-handler",
+    "pricing"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "type": "file",
+   "name": "stackHandlerCore.py",
+   "filePath": "sysexecution/stack_handler/stackHandlerCore.py",
+   "summary": "Base class for all stack-handler mixins, wiring the instrument/contract/broker order stacks and shared data access plus parent/child rollback helpers.",
+   "tags": [
+    "execution",
+    "stack-handler",
+    "base-class",
+    "order-management"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysexecution/stack_handler/stack_handler.py",
+   "type": "file",
+   "name": "stack_handler.py",
+   "filePath": "sysexecution/stack_handler/stack_handler.py",
+   "summary": "Top-level stackHandler that composes all stack-handler mixins into a single orchestrator running the full order lifecycle.",
+   "tags": [
+    "execution",
+    "stack-handler",
+    "orchestration",
+    "barrel"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/completed_orders.py:stackHandlerForCompletions",
+   "type": "class",
+   "name": "stackHandlerForCompletions",
+   "filePath": "sysexecution/stack_handler/completed_orders.py",
+   "lineRange": [
+    7,
+    204
+   ],
+   "summary": "Mixin that finds fully filled order trios, deactivates them on each stack and persists them as completed historic orders.",
+   "tags": [
+    "stack-handler",
+    "order-management",
+    "execution"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py:stackHandlerCreateBrokerOrders",
+   "type": "class",
+   "name": "stackHandlerCreateBrokerOrders",
+   "filePath": "sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "lineRange": [
+    21,
+    346
+   ],
+   "summary": "Mixin that selects contract orders ready to execute, allocates an algo, manages broker client IDs and submits broker orders.",
+   "tags": [
+    "stack-handler",
+    "broker",
+    "execution"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/fills.py:stackHandlerForFills",
+   "type": "class",
+   "name": "stackHandlerForFills",
+   "filePath": "sysexecution/stack_handler/fills.py",
+   "lineRange": [
+    22,
+    400
+   ],
+   "summary": "Mixin that applies broker fills upward to contract and instrument orders and updates stored positions accordingly.",
+   "tags": [
+    "stack-handler",
+    "fills",
+    "execution"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/fills.py:check_to_see_if_distributed_order",
+   "type": "function",
+   "name": "check_to_see_if_distributed_order",
+   "filePath": "sysexecution/stack_handler/fills.py",
+   "lineRange": [
+    403,
+    428
+   ],
+   "summary": "Determines whether a contract order's fill must be distributed across multiple instrument orders.",
+   "tags": [
+    "fills",
+    "helper"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/roll_orders.py:stackHandlerForRolls",
+   "type": "class",
+   "name": "stackHandlerForRolls",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    33,
+    281
+   ],
+   "summary": "Mixin orchestrating futures roll processing: force rolls, flat rolls and closing the near contract.",
+   "tags": [
+    "stack-handler",
+    "rolls",
+    "futures"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/roll_orders.py:rollSpreadInformation",
+   "type": "class",
+   "name": "rollSpreadInformation",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    329,
+    342
+   ],
+   "summary": "Value object holding spread prices used to construct roll orders.",
+   "tags": [
+    "rolls",
+    "data-model"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/roll_orders.py:create_force_roll_orders",
+   "type": "function",
+   "name": "create_force_roll_orders",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    284,
+    309
+   ],
+   "summary": "Builds the instrument and contract roll orders required to force a roll for an instrument.",
+   "tags": [
+    "rolls",
+    "order-generation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/roll_orders.py:get_roll_spread_information",
+   "type": "function",
+   "name": "get_roll_spread_information",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    345,
+    376
+   ],
+   "summary": "Collects priced/forward contract prices into a rollSpreadInformation object.",
+   "tags": [
+    "rolls",
+    "pricing"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/roll_orders.py:create_contract_roll_orders",
+   "type": "function",
+   "name": "create_contract_roll_orders",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    481,
+    517
+   ],
+   "summary": "Creates the pair of contract orders implementing a roll given spread information.",
+   "tags": [
+    "rolls",
+    "order-generation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/roll_orders.py:create_contract_orders_spread",
+   "type": "function",
+   "name": "create_contract_orders_spread",
+   "filePath": "sysexecution/stack_handler/roll_orders.py",
+   "lineRange": [
+    565,
+    588
+   ],
+   "summary": "Constructs a spread contract order spanning the two roll contracts.",
+   "tags": [
+    "rolls",
+    "order-generation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:stackHandlerForSpawning",
+   "type": "class",
+   "name": "stackHandlerForSpawning",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    38,
+    299
+   ],
+   "summary": "Mixin that spawns child contract orders from parent instrument orders and attaches reference/limit prices.",
+   "tags": [
+    "stack-handler",
+    "order-generation",
+    "pricing"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:passive_roll_child_order",
+   "type": "function",
+   "name": "passive_roll_child_order",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    302,
+    372
+   ],
+   "summary": "Builds child contract orders for a passive roll spread across two contracts.",
+   "tags": [
+    "rolls",
+    "order-generation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:contract_order_for_direct_instrument_child_date_and_trade",
+   "type": "function",
+   "name": "contract_order_for_direct_instrument_child_date_and_trade",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    418,
+    449
+   ],
+   "summary": "Creates a direct contract order child for a given contract date and trade quantity.",
+   "tags": [
+    "order-generation",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_reference_prices_for_direct_child_orders",
+   "type": "function",
+   "name": "calculate_reference_prices_for_direct_child_orders",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    500,
+    520
+   ],
+   "summary": "Computes reference prices to stamp on direct child contract orders.",
+   "tags": [
+    "pricing",
+    "helper"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_reference_price_to_a_direct_child_order",
+   "type": "function",
+   "name": "add_reference_price_to_a_direct_child_order",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    523,
+    561
+   ],
+   "summary": "Attaches a computed reference price to a single direct child order.",
+   "tags": [
+    "pricing",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_adjusted_price_for_a_direct_child_order",
+   "type": "function",
+   "name": "calculate_adjusted_price_for_a_direct_child_order",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    564,
+    596
+   ],
+   "summary": "Computes the adjusted price for a direct child order from the priced contract.",
+   "tags": [
+    "pricing",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_limit_prices_for_direct_child_orders",
+   "type": "function",
+   "name": "calculate_limit_prices_for_direct_child_orders",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    599,
+    631
+   ],
+   "summary": "Derives limit prices for direct child contract orders.",
+   "tags": [
+    "pricing",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_limit_price_to_a_direct_child_order",
+   "type": "function",
+   "name": "add_limit_price_to_a_direct_child_order",
+   "filePath": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "lineRange": [
+    634,
+    674
+   ],
+   "summary": "Attaches a limit price to a single direct child order.",
+   "tags": [
+    "pricing",
+    "helper"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/stackHandlerCore.py:stackHandlerCore",
+   "type": "class",
+   "name": "stackHandlerCore",
+   "filePath": "sysexecution/stack_handler/stackHandlerCore.py",
+   "lineRange": [
+    22,
+    203
+   ],
+   "summary": "Base stack-handler holding references to the three order stacks and shared data/logging used by all mixins.",
+   "tags": [
+    "stack-handler",
+    "base-class",
+    "execution"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysexecution/stack_handler/stackHandlerCore.py:rollback_parents_and_children",
+   "type": "function",
+   "name": "rollback_parents_and_children",
+   "filePath": "sysexecution/stack_handler/stackHandlerCore.py",
+   "lineRange": [
+    206,
+    219
+   ],
+   "summary": "Rolls back parent and child orders on failure to keep the stacks consistent.",
+   "tags": [
+    "stack-handler",
+    "helper"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysexecution/stack_handler/stack_handler.py:stackHandler",
+   "type": "class",
+   "name": "stackHandler",
+   "filePath": "sysexecution/stack_handler/stack_handler.py",
+   "lineRange": [
+    15,
+    51
+   ],
+   "summary": "Composed stack handler inheriting all mixins to run the full order lifecycle end to end.",
+   "tags": [
+    "stack-handler",
+    "orchestration"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysexecution/stack_handler/completed_orders.py",
+   "target": "class:sysexecution/stack_handler/completed_orders.py:stackHandlerForCompletions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/completed_orders.py",
+   "target": "class:sysexecution/stack_handler/completed_orders.py:stackHandlerForCompletions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "class:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py:stackHandlerCreateBrokerOrders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "class:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py:stackHandlerCreateBrokerOrders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "class:sysexecution/stack_handler/fills.py:stackHandlerForFills",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "class:sysexecution/stack_handler/fills.py:stackHandlerForFills",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "function:sysexecution/stack_handler/fills.py:check_to_see_if_distributed_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "function:sysexecution/stack_handler/fills.py:check_to_see_if_distributed_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "class:sysexecution/stack_handler/roll_orders.py:stackHandlerForRolls",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "class:sysexecution/stack_handler/roll_orders.py:stackHandlerForRolls",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "class:sysexecution/stack_handler/roll_orders.py:rollSpreadInformation",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "class:sysexecution/stack_handler/roll_orders.py:rollSpreadInformation",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_force_roll_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_force_roll_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:get_roll_spread_information",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:get_roll_spread_information",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_contract_roll_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_contract_roll_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_contract_orders_spread",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "function:sysexecution/stack_handler/roll_orders.py:create_contract_orders_spread",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "class:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:stackHandlerForSpawning",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "class:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:stackHandlerForSpawning",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:passive_roll_child_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:passive_roll_child_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:contract_order_for_direct_instrument_child_date_and_trade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:contract_order_for_direct_instrument_child_date_and_trade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_reference_prices_for_direct_child_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_reference_prices_for_direct_child_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_reference_price_to_a_direct_child_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_reference_price_to_a_direct_child_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_adjusted_price_for_a_direct_child_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_adjusted_price_for_a_direct_child_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_limit_prices_for_direct_child_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:calculate_limit_prices_for_direct_child_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_limit_price_to_a_direct_child_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "function:sysexecution/stack_handler/spawn_children_from_instrument_orders.py:add_limit_price_to_a_direct_child_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "class:sysexecution/stack_handler/stackHandlerCore.py:stackHandlerCore",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "class:sysexecution/stack_handler/stackHandlerCore.py:stackHandlerCore",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "function:sysexecution/stack_handler/stackHandlerCore.py:rollback_parents_and_children",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "function:sysexecution/stack_handler/stackHandlerCore.py:rollback_parents_and_children",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "class:sysexecution/stack_handler/stack_handler.py:stackHandler",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "class:sysexecution/stack_handler/stack_handler.py:stackHandler",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysexecution/stack_handler/completed_orders.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/completed_orders.py",
+   "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/completed_orders.py",
+   "target": "file:sysproduction/data/orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/algos/algo.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/algos/allocate_algo_to_order.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/order_stacks/instrument_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysexecution/stack_handler/fills.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/stack_handler/completed_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysexecution/trade_qty.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/fills.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/algos/allocate_algo_to_order.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/order_stacks/instrument_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/roll_orders.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/algos/allocate_algo_to_order.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/order_stacks/order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/orders/base_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/stack_handler/roll_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysexecution/trade_qty.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysexecution/order_stacks/order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysexecution/orders/base_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysproduction/data/orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stackHandlerCore.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/additional_sampling.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/cancel_and_modify.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/checks.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/create_broker_orders_from_contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/roll_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysexecution/stack_handler/stack_handler.py",
+   "target": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

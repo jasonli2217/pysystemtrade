@@ -1,0 +1,323 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "examples/data/subscription_test.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_accounting_client.py",
+      "language": "python",
+      "sizeLines": 189,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_client.py",
+      "language": "python",
+      "sizeLines": 153,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_contracts_client.py",
+      "language": "python",
+      "sizeLines": 607,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_fx_client.py",
+      "language": "python",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_orders_client.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_positions_client.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_price_client.py",
+      "language": "python",
+      "sizeLines": 355,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/config/ib_fx_config.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/config/ib_instrument_config.py",
+      "language": "python",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_Fx_prices_data.py",
+      "language": "python",
+      "sizeLines": 138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_broker_commissions.py",
+      "language": "python",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_capital_data.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_connection.py",
+      "language": "python",
+      "sizeLines": 133,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_contract_position_data.py",
+      "language": "python",
+      "sizeLines": 130,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_contracts.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "language": "python",
+      "sizeLines": 335,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contracts_data.py",
+      "language": "python",
+      "sizeLines": 234,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_fx_handling.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_instruments.py",
+      "language": "python",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_instruments_data.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "examples/data/subscription_test.py": [
+      "sysbrokers/IB/config/ib_instrument_config.py"
+    ],
+    "sysbrokers/IB/client/ib_accounting_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "syscore/constants.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/client/ib_client.py": [
+      "sysbrokers/IB/config/ib_instrument_config.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "syscore/cache.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/client/ib_contracts_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_instruments.py",
+      "sysbrokers/IB/ib_trading_hours.py",
+      "syscore/cache.py",
+      "syscore/exceptions.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/dict_of_weekly_trading_hours_any_day.py",
+      "sysobjects/production/trading_hours/intersection_of_weekly_and_specific_trading_hours.py",
+      "sysobjects/production/trading_hours/trading_hours.py",
+      "sysobjects/production/trading_hours/weekly_trading_hours_any_day.py"
+    ],
+    "sysbrokers/IB/client/ib_fx_client.py": [
+      "sysbrokers/IB/client/ib_price_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_positions.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py"
+    ],
+    "sysbrokers/IB/client/ib_orders_client.py": [
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_positions.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysexecution/orders/broker_orders.py",
+      "sysexecution/orders/named_order_objects.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysbrokers/IB/client/ib_positions_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/constants.py"
+    ],
+    "sysbrokers/IB/client/ib_price_client.py": [
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysbrokers/IB/config/ib_fx_config.py": [
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/config/ib_instrument_config.py": [
+      "sysbrokers/IB/ib_instruments.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py",
+      "syscore/genutils.py",
+      "syslogging/logger.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysbrokers/IB/ib_Fx_prices_data.py": [
+      "sysbrokers/broker_fx_prices_data.py",
+      "sysbrokers/IB/client/ib_fx_client.py",
+      "sysbrokers/IB/config/ib_fx_config.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_broker_commissions.py": [
+      "sysbrokers/broker_contract_commission_data.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_orders.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/genutils.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/broker_orders.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_capital_data.py": [
+      "sysbrokers/broker_capital_data.py",
+      "sysbrokers/IB/client/ib_accounting_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysbrokers/IB/ib_connection.py": [
+      "sysbrokers/IB/ib_connection_defaults.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/config/production_config.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_contract_position_data.py": [
+      "sysbrokers/broker_contract_position_data.py",
+      "sysbrokers/IB/client/ib_positions_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysbrokers/IB/ib_contracts.py": [
+      "sysbrokers/IB/ib_instruments.py",
+      "sysbrokers/IB/ib_positions.py",
+      "syscore/genutils.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/contract_dates_and_expiries.py"
+    ],
+    "sysbrokers/IB/ib_futures_contract_price_data.py": [
+      "sysbrokers/broker_futures_contract_price_data.py",
+      "sysbrokers/IB/client/ib_price_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_futures_contracts_data.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "sysexecution/orders/contract_orders.py",
+      "sysexecution/tick_data.py",
+      "sysexecution/trade_qty.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysbrokers/IB/ib_futures_contracts_data.py": [
+      "sysbrokers/broker_futures_contract_data.py",
+      "sysbrokers/IB/client/ib_contracts_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_instruments_data.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/trading_hours/trading_hours.py"
+    ],
+    "sysbrokers/IB/ib_fx_handling.py": [
+      "sysbrokers/broker_fx_handling.py",
+      "sysbrokers/IB/client/ib_fx_client.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_translate_broker_order_objects.py",
+      "syscore/constants.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ],
+    "sysbrokers/IB/ib_instruments.py": [
+      "sysobjects/instruments.py"
+    ],
+    "sysbrokers/IB/ib_instruments_data.py": [
+      "sysbrokers/broker_instrument_data.py",
+      "sysbrokers/IB/client/ib_client.py",
+      "sysbrokers/IB/config/ib_instrument_config.py",
+      "sysbrokers/IB/ib_connection.py",
+      "sysbrokers/IB/ib_contracts.py",
+      "sysbrokers/IB/ib_instruments.py",
+      "syscore/exceptions.py",
+      "sysdata/data_blob.py",
+      "syslogging/logger.py"
+    ]
+  }
+}

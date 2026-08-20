@@ -1,0 +1,1517 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/futures/rolls_parameters.py",
+      "type": "file",
+      "name": "rolls_parameters.py",
+      "filePath": "sysdata/futures/rolls_parameters.py",
+      "summary": "Abstract base class defining the roll parameters data interface, with a rollParametersMissing exception for absent instruments.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "roll-parameters"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "type": "file",
+      "name": "parquet_multiple_prices.py",
+      "filePath": "sysdata/parquet/parquet_multiple_prices.py",
+      "summary": "Parquet-file-backed storage implementation of the futures multiple prices data interface.",
+      "tags": [
+        "data-access",
+        "parquet",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "type": "file",
+      "name": "csv_futures_sim_test_data.py",
+      "filePath": "sysdata/sim/csv_futures_sim_test_data.py",
+      "summary": "Lightweight CSV-backed simulation data object bundling adjusted/multiple/fx/roll test fixtures for backtest unit tests.",
+      "tags": [
+        "simulation",
+        "test-data",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/sim/futures_sim_data.py",
+      "type": "file",
+      "name": "futures_sim_data.py",
+      "filePath": "sysdata/sim/futures_sim_data.py",
+      "summary": "Abstract simulation data interface exposing the price, carry, cost, FX and instrument metadata accessors consumed by the backtesting System.",
+      "tags": [
+        "simulation",
+        "data-model",
+        "abstract-base"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "type": "file",
+      "name": "futures_sim_data_with_data_blob.py",
+      "filePath": "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "summary": "Concrete futuresSimData implementation backed by a dataBlob, wiring production DB data sources into the simulation data interface.",
+      "tags": [
+        "simulation",
+        "data-access",
+        "data-blob"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "type": "file",
+      "name": "update_provided_multiple_prices.py",
+      "filePath": "sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "summary": "Ad-hoc interactive init script that rebuilds and splices multiple prices for a user-chosen instrument from DB prices and CSV roll calendars.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "initialization",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "type": "file",
+      "name": "adjustedprices_from_db_multiple_to_db.py",
+      "filePath": "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "summary": "Init pipeline that computes back-adjusted prices from DB multiple prices and writes them back to the DB and/or CSV for all or single instruments.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "initialization",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "type": "file",
+      "name": "build_multiple_prices_from_raw_data.py",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "summary": "Core init algorithm that stitches per-contract closing prices into a continuous multiple-price stack (price/forward/carry columns) using a roll calendar.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "multiple-prices",
+        "algorithm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysinit/futures/build_roll_calendars.py",
+      "type": "file",
+      "name": "build_roll_calendars.py",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "summary": "Largest init module: generates approximate roll calendars from roll parameters, then adjusts each roll date to the nearest valid date with matching current/next prices, and can back out calendars from existing multiple prices.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysinit/futures/clone_data_for_instrument.py",
+      "type": "file",
+      "name": "clone_data_for_instrument.py",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "summary": "Init utility that clones per-contract, multiple, adjusted price and roll-calendar data from one instrument to another, with optional inversion/scaling/offset.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "initialization",
+        "cloning"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysinit/futures/clone_large_to_small_contracts.py",
+      "type": "file",
+      "name": "clone_large_to_small_contracts.py",
+      "filePath": "sysinit/futures/clone_large_to_small_contracts.py",
+      "summary": "Thin runner mapping full-size instruments to their mini/micro equivalents and invoking clone_data_for_instrument for each pair.",
+      "tags": [
+        "script",
+        "entry-point",
+        "initialization",
+        "cloning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/futures/rolls_parameters.py:rollParametersData",
+      "type": "class",
+      "name": "rollParametersData",
+      "filePath": "sysdata/futures/rolls_parameters.py",
+      "lineRange": [
+        14,
+        108
+      ],
+      "summary": "Abstract base defining the roll parameters interface with keyed get/add/delete by instrument.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "roll-parameters"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/parquet/parquet_multiple_prices.py:parquetFuturesMultiplePricesData",
+      "type": "class",
+      "name": "parquetFuturesMultiplePricesData",
+      "filePath": "sysdata/parquet/parquet_multiple_prices.py",
+      "lineRange": [
+        20,
+        79
+      ],
+      "summary": "Parquet-backed multiple prices store implementing the get/add/delete primitives via a parquet access layer.",
+      "tags": [
+        "data-access",
+        "parquet",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/parquet/parquet_multiple_prices.py:_change_contracts_to_str",
+      "type": "function",
+      "name": "_change_contracts_to_str",
+      "filePath": "sysdata/parquet/parquet_multiple_prices.py",
+      "lineRange": [
+        82,
+        93
+      ],
+      "summary": "Converts the per-contract identifier columns of a multiple-prices DataFrame to strings for parquet storage.",
+      "tags": [
+        "serialization",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/sim/csv_futures_sim_test_data.py:CsvFuturesSimTestData",
+      "type": "class",
+      "name": "CsvFuturesSimTestData",
+      "filePath": "sysdata/sim/csv_futures_sim_test_data.py",
+      "lineRange": [
+        20,
+        111
+      ],
+      "summary": "CSV-backed simulation data fixture exposing adjusted/multiple/carry/fx accessors for backtest tests.",
+      "tags": [
+        "simulation",
+        "test-data",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/sim/futures_sim_data.py:futuresSimData",
+      "type": "class",
+      "name": "futuresSimData",
+      "filePath": "sysdata/sim/futures_sim_data.py",
+      "lineRange": [
+        26,
+        260
+      ],
+      "summary": "Abstract simulation data interface providing price, carry, cost, FX, roll and instrument-metadata accessors for the backtesting engine.",
+      "tags": [
+        "simulation",
+        "data-model",
+        "abstract-base"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/sim/futures_sim_data_with_data_blob.py:genericBlobUsingFuturesSimData",
+      "type": "class",
+      "name": "genericBlobUsingFuturesSimData",
+      "filePath": "sysdata/sim/futures_sim_data_with_data_blob.py",
+      "lineRange": [
+        23,
+        131
+      ],
+      "summary": "Concrete simulation data object that resolves price/fx/instrument/roll data via a production dataBlob.",
+      "tags": [
+        "simulation",
+        "data-access",
+        "data-blob"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysinit/futures/adjustedprices_from_db_multiple_to_db.py:process_adjusted_prices_all_instruments",
+      "type": "function",
+      "name": "process_adjusted_prices_all_instruments",
+      "filePath": "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "lineRange": [
+        25,
+        37
+      ],
+      "summary": "Iterates all instruments computing and storing adjusted prices from DB multiple prices.",
+      "tags": [
+        "data-pipeline",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/adjustedprices_from_db_multiple_to_db.py:process_adjusted_prices_single_instrument",
+      "type": "function",
+      "name": "process_adjusted_prices_single_instrument",
+      "filePath": "sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "lineRange": [
+        40,
+        69
+      ],
+      "summary": "Computes back-adjusted prices for one instrument from its multiple prices and writes to DB and/or CSV.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "adjusted-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysinit/futures/build_multiple_prices_from_raw_data.py:rollCalendarWithRollIndex",
+      "type": "class",
+      "name": "rollCalendarWithRollIndex",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        21,
+        33
+      ],
+      "summary": "Iterator wrapper over a roll calendar tracking the current roll row while building a price stack.",
+      "tags": [
+        "algorithm",
+        "iterator"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:create_multiple_price_stack_from_raw_data",
+      "type": "function",
+      "name": "create_multiple_price_stack_from_raw_data",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        60,
+        90
+      ],
+      "summary": "Builds a continuous multiple-price stack from per-contract closing prices by walking the roll calendar.",
+      "tags": [
+        "data-pipeline",
+        "algorithm",
+        "multiple-prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_price_data_between_rolls",
+      "type": "function",
+      "name": "_get_price_data_between_rolls",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        93,
+        123
+      ],
+      "summary": "Extracts the slice of contract price data covering the period between two consecutive rolls.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_calc_roll_date_info",
+      "type": "function",
+      "name": "_calc_roll_date_info",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        126,
+        149
+      ],
+      "summary": "Derives roll-date boundary information for the current roll-calendar row.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_calc_contract_date_info",
+      "type": "function",
+      "name": "_calc_contract_date_info",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        152,
+        177
+      ],
+      "summary": "Resolves current/next/carry contract dates and validates them against available price data.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_current_next_carry_data",
+      "type": "function",
+      "name": "_get_current_next_carry_data",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        202,
+        226
+      ],
+      "summary": "Assembles current, next and carry price series for the current roll window.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_next_price_data",
+      "type": "function",
+      "name": "_get_next_price_data",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        229,
+        265
+      ],
+      "summary": "Builds the next-contract price column for the roll window.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_carry_price_data",
+      "type": "function",
+      "name": "_get_carry_price_data",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        268,
+        302
+      ],
+      "summary": "Builds the carry-contract price column for the roll window.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_build_all_price_data",
+      "type": "function",
+      "name": "_build_all_price_data",
+      "filePath": "sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "lineRange": [
+        316,
+        337
+      ],
+      "summary": "Concatenates the per-window price/forward/carry frames into the full multiple-price stack.",
+      "tags": [
+        "data-pipeline",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:generate_approximate_calendar",
+      "type": "function",
+      "name": "generate_approximate_calendar",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        20,
+        46
+      ],
+      "summary": "Generates an approximate roll calendar from roll parameters and the set of available contract prices.",
+      "tags": [
+        "roll-calendar",
+        "algorithm",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_create_approx_calendar_from_earliest_contract",
+      "type": "function",
+      "name": "_create_approx_calendar_from_earliest_contract",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        91,
+        114
+      ],
+      "summary": "Walks forward from the earliest contract creating an approximate roll-calendar row per contract.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_get_new_row_of_roll_calendar",
+      "type": "function",
+      "name": "_get_new_row_of_roll_calendar",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        117,
+        167
+      ],
+      "summary": "Builds a single approximate roll-calendar row (current/next/carry contracts and roll date) from the current contract.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:adjust_to_price_series",
+      "type": "function",
+      "name": "adjust_to_price_series",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        176,
+        233
+      ],
+      "summary": "Adjusts every approximate roll date to the nearest valid date where current and next contracts both have prices.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_get_local_data_for_row_number",
+      "type": "function",
+      "name": "_get_local_data_for_row_number",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        236,
+        257
+      ],
+      "summary": "Gathers the local prior/current/next row context needed to adjust a single roll date.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_adjust_row_of_approx_roll_calendar",
+      "type": "function",
+      "name": "_adjust_row_of_approx_roll_calendar",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        267,
+        290
+      ],
+      "summary": "Adjusts one roll-calendar rows roll date using matching price data, optionally ignoring carry.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_get_set_of_prices",
+      "type": "function",
+      "name": "_get_set_of_prices",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        308,
+        343
+      ],
+      "summary": "Collects the current/next/carry price series required to validate a candidate roll date.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_get_carry_contract_and_prices",
+      "type": "function",
+      "name": "_get_carry_contract_and_prices",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        346,
+        369
+      ],
+      "summary": "Resolves the carry contract and its price series for the row being adjusted.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_find_best_matching_roll_date",
+      "type": "function",
+      "name": "_find_best_matching_roll_date",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        415,
+        439
+      ],
+      "summary": "Finds the closest valid roll date to the approximate date where paired prices exist, avoiding a blocked date.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_add_carry_calendar",
+      "type": "function",
+      "name": "_add_carry_calendar",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        537,
+        570
+      ],
+      "summary": "Appends carry-contract information to a completed roll calendar.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:back_out_roll_calendar_from_multiple_prices",
+      "type": "function",
+      "name": "back_out_roll_calendar_from_multiple_prices",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        573,
+        586
+      ],
+      "summary": "Reconstructs a roll calendar by inferring roll dates from an existing multiple-prices series.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_get_roll_calendar_from_roll_dates_and_unique_prices",
+      "type": "function",
+      "name": "_get_roll_calendar_from_roll_dates_and_unique_prices",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        615,
+        639
+      ],
+      "summary": "Builds roll-calendar rows from inferred roll dates and the de-duplicated multiple-prices series.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/build_roll_calendars.py:_add_extra_row_to_implied_roll_calendar",
+      "type": "function",
+      "name": "_add_extra_row_to_implied_roll_calendar",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        662,
+        688
+      ],
+      "summary": "Appends a final synthetic row to an implied roll calendar so the last contract is covered.",
+      "tags": [
+        "roll-calendar",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysinit/futures/build_roll_calendars.py:_listOfRollCalendarRows",
+      "type": "class",
+      "name": "_listOfRollCalendarRows",
+      "filePath": "sysinit/futures/build_roll_calendars.py",
+      "lineRange": [
+        78,
+        88
+      ],
+      "summary": "List subclass of roll-calendar rows with helpers to convert to a DataFrame and read the last roll date.",
+      "tags": [
+        "roll-calendar",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/clone_data_for_instrument.py:clone_data_for_instrument",
+      "type": "function",
+      "name": "clone_data_for_instrument",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "lineRange": [
+        22,
+        53
+      ],
+      "summary": "Top-level cloning routine copying per-contract, multiple, adjusted and roll-calendar data from one instrument to another.",
+      "tags": [
+        "cloning",
+        "data-pipeline",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/clone_data_for_instrument.py:clone_prices_per_contract",
+      "type": "function",
+      "name": "clone_prices_per_contract",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "lineRange": [
+        56,
+        81
+      ],
+      "summary": "Clones per-contract price data for a list of contract dates, applying inversion/scaling/offset.",
+      "tags": [
+        "cloning",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/clone_data_for_instrument.py:clone_single_contract",
+      "type": "function",
+      "name": "clone_single_contract",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "lineRange": [
+        84,
+        154
+      ],
+      "summary": "Clones the price series of a single contract, optionally inverting, scaling and offsetting prices before writing.",
+      "tags": [
+        "cloning",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysinit/futures/clone_data_for_instrument.py:clone_multiple_prices",
+      "type": "function",
+      "name": "clone_multiple_prices",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "lineRange": [
+        162,
+        182
+      ],
+      "summary": "Clones the multiple-prices series from one instrument to another with optional transforms.",
+      "tags": [
+        "cloning",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/clone_data_for_instrument.py:clone_adjusted_prices",
+      "type": "function",
+      "name": "clone_adjusted_prices",
+      "filePath": "sysinit/futures/clone_data_for_instrument.py",
+      "lineRange": [
+        185,
+        204
+      ],
+      "summary": "Clones the adjusted-prices series from one instrument to another with optional transforms.",
+      "tags": [
+        "cloning",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/futures/rolls_parameters.py",
+      "target": "class:sysdata/futures/rolls_parameters.py:rollParametersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/rolls_parameters.py",
+      "target": "class:sysdata/futures/rolls_parameters.py:rollParametersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "class:sysdata/parquet/parquet_multiple_prices.py:parquetFuturesMultiplePricesData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "class:sysdata/parquet/parquet_multiple_prices.py:parquetFuturesMultiplePricesData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "function:sysdata/parquet/parquet_multiple_prices.py:_change_contracts_to_str",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "class:sysdata/sim/csv_futures_sim_test_data.py:CsvFuturesSimTestData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "class:sysdata/sim/csv_futures_sim_test_data.py:CsvFuturesSimTestData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "class:sysdata/sim/futures_sim_data.py:futuresSimData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "class:sysdata/sim/futures_sim_data.py:futuresSimData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "class:sysdata/sim/futures_sim_data_with_data_blob.py:genericBlobUsingFuturesSimData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "class:sysdata/sim/futures_sim_data_with_data_blob.py:genericBlobUsingFuturesSimData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "function:sysinit/futures/adjustedprices_from_db_multiple_to_db.py:process_adjusted_prices_all_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "function:sysinit/futures/adjustedprices_from_db_multiple_to_db.py:process_adjusted_prices_single_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "class:sysinit/futures/build_multiple_prices_from_raw_data.py:rollCalendarWithRollIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "class:sysinit/futures/build_multiple_prices_from_raw_data.py:rollCalendarWithRollIndex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:create_multiple_price_stack_from_raw_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_price_data_between_rolls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_calc_roll_date_info",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_calc_contract_date_info",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_current_next_carry_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_next_price_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_get_carry_price_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "function:sysinit/futures/build_multiple_prices_from_raw_data.py:_build_all_price_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:generate_approximate_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_create_approx_calendar_from_earliest_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_get_new_row_of_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:adjust_to_price_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_get_local_data_for_row_number",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_adjust_row_of_approx_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_get_set_of_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_get_carry_contract_and_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_find_best_matching_roll_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_add_carry_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:back_out_roll_calendar_from_multiple_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_get_roll_calendar_from_roll_dates_and_unique_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "function:sysinit/futures/build_roll_calendars.py:_add_extra_row_to_implied_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "class:sysinit/futures/build_roll_calendars.py:_listOfRollCalendarRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "class:sysinit/futures/build_roll_calendars.py:_listOfRollCalendarRows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "function:sysinit/futures/clone_data_for_instrument.py:clone_data_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "function:sysinit/futures/clone_data_for_instrument.py:clone_prices_per_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "function:sysinit/futures/clone_data_for_instrument.py:clone_single_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "function:sysinit/futures/clone_data_for_instrument.py:clone_multiple_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "function:sysinit/futures/clone_data_for_instrument.py:clone_adjusted_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/rolls_parameters.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/rolls_parameters.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/rolls_parameters.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "file:sysdata/parquet/parquet_access.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/csv/csv_instrument_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/csv/csv_spot_fx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/csv_futures_sim_test_data.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysdata/sim/sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/futures/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/futures/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/futures/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/futures/rolls_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/futures/spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/fx/spotfx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysdata/sim/futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "target": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "target": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "target": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adhoc/update_provided_multiple_prices.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:sysobjects/roll_parameters_with_price_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/build_roll_calendars.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysobjects/adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_data_for_instrument.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/clone_large_to_small_contracts.py",
+      "target": "file:sysinit/futures/clone_data_for_instrument.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysdata/parquet/parquet_multiple_prices.py:parquetFuturesMultiplePricesData",
+      "target": "class:sysdata/futures/multiple_prices.py:futuresMultiplePricesData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/sim/futures_sim_data_with_data_blob.py:genericBlobUsingFuturesSimData",
+      "target": "class:sysdata/sim/futures_sim_data.py:futuresSimData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

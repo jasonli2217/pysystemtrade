@@ -1,0 +1,1640 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "type": "file",
+      "name": "test_sysinit_futures.py",
+      "filePath": "sysinit/futures/tests/test_sysinit_futures.py",
+      "summary": "Unit tests verifying roll-calendar construction and saved-calendar checks in the sysinit futures initialization workflow.",
+      "tags": [
+        "test",
+        "roll-calendar",
+        "initialization",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysobjects/adjusted_prices.py",
+      "type": "file",
+      "name": "adjusted_prices.py",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "summary": "Defines the futuresAdjustedPrices object and the Panama-stitch algorithm for building a continuous back-adjusted price series from multiple prices.",
+      "tags": [
+        "data-model",
+        "adjusted-prices",
+        "panama-stitch",
+        "futures",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "file",
+      "name": "contract_dates_and_expiries.py",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "summary": "Core domain objects for futures contract dates (single and spread) and expiry dates, including parsing, sorting, and expiry resolution logic.",
+      "tags": [
+        "data-model",
+        "contract-date",
+        "expiry",
+        "futures",
+        "domain-object"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Heavy use of classmethods as alternative constructors and dunder methods (__eq__, __getitem__, __setitem__) to make contractDate behave like a container."
+    },
+    {
+      "id": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "file",
+      "name": "dict_of_futures_per_contract_prices.py",
+      "filePath": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "summary": "Dictionary-style containers holding per-contract futures prices and volumes, with helpers to extract final prices and match dates across contracts.",
+      "tags": [
+        "data-model",
+        "per-contract-prices",
+        "futures",
+        "container",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "file",
+      "name": "dict_of_named_futures_per_contract_prices.py",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "summary": "Containers for named (priced/carry/forward) per-contract final prices tagged with contract IDs, plus merge logic for combining old and new price data.",
+      "tags": [
+        "data-model",
+        "named-contracts",
+        "per-contract-prices",
+        "futures",
+        "serialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/multiple_prices.py",
+      "type": "file",
+      "name": "multiple_prices.py",
+      "filePath": "sysobjects/multiple_prices.py",
+      "summary": "Defines futuresMultiplePrices, the aligned price/forward/carry series with contract labels, including construction from raw data and row-wise updates.",
+      "tags": [
+        "data-model",
+        "multiple-prices",
+        "futures",
+        "serialization",
+        "container"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysobjects/roll_calendars.py",
+      "type": "file",
+      "name": "roll_calendars.py",
+      "filePath": "sysobjects/roll_calendars.py",
+      "summary": "Defines the rollCalendar object describing when to roll between contracts, built from per-contract prices or backed out of multiple prices.",
+      "tags": [
+        "data-model",
+        "roll-calendar",
+        "futures",
+        "domain-object"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysobjects/roll_parameters_with_price_data.py",
+      "type": "file",
+      "name": "roll_parameters_with_price_data.py",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "summary": "Combines roll parameters with price availability to walk forward/backward through held and priced contracts, selecting carry and earliest contracts with data.",
+      "tags": [
+        "roll-parameters",
+        "contract-chain",
+        "futures",
+        "domain-object",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysinit/futures/tests/test_sysinit_futures.py:TestFuturesInit",
+      "type": "class",
+      "name": "TestFuturesInit",
+      "filePath": "sysinit/futures/tests/test_sysinit_futures.py",
+      "lineRange": [
+        10,
+        54
+      ],
+      "summary": "Test case covering roll calendar build and saved-calendar validation in sysinit.",
+      "tags": [
+        "test",
+        "roll-calendar",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/adjusted_prices.py:_panama_stitch",
+      "type": "function",
+      "name": "_panama_stitch",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "lineRange": [
+        70,
+        108
+      ],
+      "summary": "Implements the Panama stitching algorithm to splice multiple-price contract segments into one continuous adjusted series.",
+      "tags": [
+        "panama-stitch",
+        "adjusted-prices",
+        "algorithm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/adjusted_prices.py:_roll_in_panama",
+      "type": "function",
+      "name": "_roll_in_panama",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "lineRange": [
+        111,
+        135
+      ],
+      "summary": "Computes the cumulative price adjustment applied at a single roll point during Panama stitching.",
+      "tags": [
+        "panama-stitch",
+        "adjusted-prices",
+        "algorithm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/adjusted_prices.py:_update_adjusted_prices_from_multiple_no_roll",
+      "type": "function",
+      "name": "_update_adjusted_prices_from_multiple_no_roll",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "lineRange": [
+        141,
+        171
+      ],
+      "summary": "Updates an existing adjusted price series with new multiple prices when no roll has occurred.",
+      "tags": [
+        "adjusted-prices",
+        "update",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/adjusted_prices.py:_calc_new_multiple_prices",
+      "type": "function",
+      "name": "_calc_new_multiple_prices",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "lineRange": [
+        174,
+        192
+      ],
+      "summary": "Derives the new portion of multiple prices to splice onto an existing adjusted series.",
+      "tags": [
+        "adjusted-prices",
+        "update",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/adjusted_prices.py:futuresAdjustedPrices",
+      "type": "class",
+      "name": "futuresAdjustedPrices",
+      "filePath": "sysobjects/adjusted_prices.py",
+      "lineRange": [
+        14,
+        67
+      ],
+      "summary": "Pandas-Series-based object representing a continuous back-adjusted futures price series.",
+      "tags": [
+        "data-model",
+        "adjusted-prices",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:from_contract_numbers_to_contract_string",
+      "type": "function",
+      "name": "from_contract_numbers_to_contract_string",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        23,
+        36
+      ],
+      "summary": "Helper function from_contract_numbers_to_contract_string in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_single_contract_dates",
+      "type": "function",
+      "name": "resolve_date_string_into_list_of_single_contract_dates",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        485,
+        497
+      ],
+      "summary": "Parses a contract date string (possibly a spread) into a list of single contract date objects.",
+      "tags": [
+        "contract-date",
+        "parsing",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_dict",
+      "type": "function",
+      "name": "get_contract_date_object_list_from_dict",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        500,
+        513
+      ],
+      "summary": "Helper function get_contract_date_object_list_from_dict in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_date_str_and_expiry_date",
+      "type": "function",
+      "name": "get_contract_date_object_list_from_date_str_and_expiry_date",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        516,
+        534
+      ],
+      "summary": "Builds single contract date objects from a date string and matching expiry dates.",
+      "tags": [
+        "contract-date",
+        "expiry",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+      "type": "function",
+      "name": "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        537,
+        545
+      ],
+      "summary": "Helper function get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_date_str",
+      "type": "function",
+      "name": "resolve_date_string_into_list_of_date_str",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        548,
+        563
+      ],
+      "summary": "Helper function resolve_date_string_into_list_of_date_str in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:resolve_expiry_date_into_list_of_expiry_dates",
+      "type": "function",
+      "name": "resolve_expiry_date_into_list_of_expiry_dates",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        566,
+        593
+      ],
+      "summary": "Normalizes an expiry date input into a list aligned with the contract date list.",
+      "tags": [
+        "expiry",
+        "contract-date",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:create_contract_date_from_old_style_dict",
+      "type": "function",
+      "name": "create_contract_date_from_old_style_dict",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        596,
+        605
+      ],
+      "summary": "Helper function create_contract_date_from_old_style_dict in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/contract_dates_and_expiries.py:contract_given_tuple",
+      "type": "function",
+      "name": "contract_given_tuple",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        608,
+        619
+      ],
+      "summary": "Helper function contract_given_tuple in contract_dates_and_expiries.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/contract_dates_and_expiries.py:needSingleLegDate",
+      "type": "class",
+      "name": "needSingleLegDate",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        19,
+        20
+      ],
+      "summary": "Class needSingleLegDate defined in contract_dates_and_expiries.py.",
+      "tags": [
+        "data-model",
+        "futures",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/contract_dates_and_expiries.py:expiryDate",
+      "type": "class",
+      "name": "expiryDate",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        42,
+        58
+      ],
+      "summary": "Datetime subclass representing a contract expiry date with string serialization helpers.",
+      "tags": [
+        "data-model",
+        "expiry",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/contract_dates_and_expiries.py:singleContractDate",
+      "type": "class",
+      "name": "singleContractDate",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        61,
+        259
+      ],
+      "summary": "Represents a single futures contract date (YYYYMM/YYYYMMDD) with expiry resolution and serialization.",
+      "tags": [
+        "data-model",
+        "contract-date",
+        "futures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysobjects/contract_dates_and_expiries.py:listOfContractDateStr",
+      "type": "class",
+      "name": "listOfContractDateStr",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        265,
+        270
+      ],
+      "summary": "List of contract date strings with sorting and final-date helpers.",
+      "tags": [
+        "data-model",
+        "contract-date",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/contract_dates_and_expiries.py:contractDate",
+      "type": "class",
+      "name": "contractDate",
+      "filePath": "sysobjects/contract_dates_and_expiries.py",
+      "lineRange": [
+        273,
+        482
+      ],
+      "summary": "Represents a contract that may be a spread of several single contract dates, behaving like a container.",
+      "tags": [
+        "data-model",
+        "contract-date",
+        "spread"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysobjects/dict_of_futures_per_contract_prices.py:get_last_matched_date_and_prices_for_contract_list",
+      "type": "function",
+      "name": "get_last_matched_date_and_prices_for_contract_list",
+      "filePath": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "lineRange": [
+        128,
+        152
+      ],
+      "summary": "Finds the last common date across a list of contracts and returns the matched prices there.",
+      "tags": [
+        "per-contract-prices",
+        "matching",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractFinalPrices",
+      "type": "class",
+      "name": "dictFuturesContractFinalPrices",
+      "filePath": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "lineRange": [
+        11,
+        67
+      ],
+      "summary": "Dict of final prices per contract with matched-price and sorted-date helpers.",
+      "tags": [
+        "data-model",
+        "per-contract-prices",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractVolumes",
+      "type": "class",
+      "name": "dictFuturesContractVolumes",
+      "filePath": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "lineRange": [
+        70,
+        75
+      ],
+      "summary": "Class dictFuturesContractVolumes defined in dict_of_futures_per_contract_prices.py.",
+      "tags": [
+        "data-model",
+        "futures",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractPrices",
+      "type": "class",
+      "name": "dictFuturesContractPrices",
+      "filePath": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "lineRange": [
+        78,
+        125
+      ],
+      "summary": "Dict of full OHLC/volume price frames per contract, exposing final prices and volumes.",
+      "tags": [
+        "data-model",
+        "per-contract-prices",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:contract_name_from_column_name",
+      "type": "function",
+      "name": "contract_name_from_column_name",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        19,
+        20
+      ],
+      "summary": "Helper function contract_name_from_column_name in dict_of_named_futures_per_contract_prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_check_key_list_is_valid_against_names",
+      "type": "function",
+      "name": "_check_key_list_is_valid_against_names",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        39,
+        48
+      ],
+      "summary": "Helper function _check_key_list_is_valid_against_names in dict_of_named_futures_per_contract_prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_futures_contract_final_prices_with_contract_id",
+      "type": "function",
+      "name": "_merge_futures_contract_final_prices_with_contract_id",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        169,
+        194
+      ],
+      "summary": "Merges old and new contract-final-price series carrying contract IDs, validating consistency.",
+      "tags": [
+        "named-contracts",
+        "merge",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_assert_merge_is_valid",
+      "type": "function",
+      "name": "_assert_merge_is_valid",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        197,
+        213
+      ],
+      "summary": "Helper function _assert_merge_is_valid in dict_of_named_futures_per_contract_prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_dictFuturesContractFinalPricesWithContractID",
+      "type": "function",
+      "name": "_merge_dictFuturesContractFinalPricesWithContractID",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        312,
+        337
+      ],
+      "summary": "Merges two dicts of named contract final prices keyed by contract.",
+      "tags": [
+        "named-contracts",
+        "merge",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictNamedFuturesContractFinalPrices",
+      "type": "class",
+      "name": "dictNamedFuturesContractFinalPrices",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        29,
+        36
+      ],
+      "summary": "Class dictNamedFuturesContractFinalPrices defined in dict_of_named_futures_per_contract_prices.py.",
+      "tags": [
+        "data-model",
+        "futures",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:futuresNamedContractFinalPricesWithContractID",
+      "type": "class",
+      "name": "futuresNamedContractFinalPricesWithContractID",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        51,
+        166
+      ],
+      "summary": "Final price series tagged with its contract ID, supporting merging and contract checks.",
+      "tags": [
+        "data-model",
+        "named-contracts",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:setOfNamedContracts",
+      "type": "class",
+      "name": "setOfNamedContracts",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        216,
+        247
+      ],
+      "summary": "Holds the named priced/carry/forward contracts for a single point in time.",
+      "tags": [
+        "data-model",
+        "named-contracts",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictFuturesNamedContractFinalPricesWithContractID",
+      "type": "class",
+      "name": "dictFuturesNamedContractFinalPricesWithContractID",
+      "filePath": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "lineRange": [
+        250,
+        309
+      ],
+      "summary": "Dict of named contract final-price series with contract IDs, supporting cross-dict merges.",
+      "tags": [
+        "data-model",
+        "named-contracts",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/multiple_prices.py:_check_valid_multiple_price_data",
+      "type": "function",
+      "name": "_check_valid_multiple_price_data",
+      "filePath": "sysobjects/multiple_prices.py",
+      "lineRange": [
+        287,
+        292
+      ],
+      "summary": "Helper function _check_valid_multiple_price_data in multiple_prices.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/multiple_prices.py:singleRowMultiplePrices",
+      "type": "class",
+      "name": "singleRowMultiplePrices",
+      "filePath": "sysobjects/multiple_prices.py",
+      "lineRange": [
+        30,
+        66
+      ],
+      "summary": "Represents a single aligned row of price/forward/carry values with contract labels.",
+      "tags": [
+        "data-model",
+        "multiple-prices",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/multiple_prices.py:futuresMultiplePrices",
+      "type": "class",
+      "name": "futuresMultiplePrices",
+      "filePath": "sysobjects/multiple_prices.py",
+      "lineRange": [
+        69,
+        284
+      ],
+      "summary": "DataFrame-based object holding aligned priced/forward/carry prices and contract labels over time.",
+      "tags": [
+        "data-model",
+        "multiple-prices",
+        "futures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysobjects/roll_calendars.py:_check_row_of_row_calendar",
+      "type": "function",
+      "name": "_check_row_of_row_calendar",
+      "filePath": "sysobjects/roll_calendars.py",
+      "lineRange": [
+        120,
+        175
+      ],
+      "summary": "Validates a single roll calendar row against available contract prices, ensuring tradeable dates.",
+      "tags": [
+        "roll-calendar",
+        "validation",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/roll_calendars.py:rollCalendar",
+      "type": "class",
+      "name": "rollCalendar",
+      "filePath": "sysobjects/roll_calendars.py",
+      "lineRange": [
+        17,
+        117
+      ],
+      "summary": "DataFrame-based roll calendar specifying current/next/carry contracts on each roll date.",
+      "tags": [
+        "data-model",
+        "roll-calendar",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysobjects/roll_parameters_with_price_data.py:find_earliest_held_contract_with_price_data",
+      "type": "function",
+      "name": "find_earliest_held_contract_with_price_data",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "lineRange": [
+        227,
+        243
+      ],
+      "summary": "Finds the earliest held contract that has price data given roll parameters and a price dict.",
+      "tags": [
+        "roll-parameters",
+        "contract-chain",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/roll_parameters_with_price_data.py:_find_earliest_held_contract_with_data",
+      "type": "function",
+      "name": "_find_earliest_held_contract_with_data",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "lineRange": [
+        246,
+        267
+      ],
+      "summary": "Recursively walks back the held-contract chain to locate the earliest contract with price data.",
+      "tags": [
+        "roll-parameters",
+        "contract-chain",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/roll_parameters_with_price_data.py:_initial_contract_to_try_with",
+      "type": "function",
+      "name": "_initial_contract_to_try_with",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "lineRange": [
+        270,
+        288
+      ],
+      "summary": "Chooses the initial contract to begin the earliest-contract search from.",
+      "tags": [
+        "roll-parameters",
+        "contract-chain",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysobjects/roll_parameters_with_price_data.py:_check_valid_contract",
+      "type": "function",
+      "name": "_check_valid_contract",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "lineRange": [
+        291,
+        304
+      ],
+      "summary": "Helper function _check_valid_contract in roll_parameters_with_price_data.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysobjects/roll_parameters_with_price_data.py:contractWithRollParametersAndPrices",
+      "type": "class",
+      "name": "contractWithRollParametersAndPrices",
+      "filePath": "sysobjects/roll_parameters_with_price_data.py",
+      "lineRange": [
+        14,
+        224
+      ],
+      "summary": "Wraps a contract with its roll parameters and price availability to navigate the contract chain.",
+      "tags": [
+        "domain-object",
+        "roll-parameters",
+        "contract-chain"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "target": "class:sysinit/futures/tests/test_sysinit_futures.py:TestFuturesInit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "target": "class:sysinit/futures/tests/test_sysinit_futures.py:TestFuturesInit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_panama_stitch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_panama_stitch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_roll_in_panama",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_roll_in_panama",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_update_adjusted_prices_from_multiple_no_roll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_update_adjusted_prices_from_multiple_no_roll",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_calc_new_multiple_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "function:sysobjects/adjusted_prices.py:_calc_new_multiple_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "class:sysobjects/adjusted_prices.py:futuresAdjustedPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "class:sysobjects/adjusted_prices.py:futuresAdjustedPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:from_contract_numbers_to_contract_string",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:from_contract_numbers_to_contract_string",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_single_contract_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_single_contract_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_date_str_and_expiry_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_contract_date_object_list_from_date_str_and_expiry_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_date_str",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_date_string_into_list_of_date_str",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_expiry_date_into_list_of_expiry_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:resolve_expiry_date_into_list_of_expiry_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:create_contract_date_from_old_style_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:create_contract_date_from_old_style_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:contract_given_tuple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "function:sysobjects/contract_dates_and_expiries.py:contract_given_tuple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:needSingleLegDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:needSingleLegDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:expiryDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:expiryDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:singleContractDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:singleContractDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:listOfContractDateStr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:listOfContractDateStr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:contractDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "class:sysobjects/contract_dates_and_expiries.py:contractDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_futures_per_contract_prices.py:get_last_matched_date_and_prices_for_contract_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_futures_per_contract_prices.py:get_last_matched_date_and_prices_for_contract_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractFinalPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractFinalPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractVolumes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractVolumes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_futures_per_contract_prices.py:dictFuturesContractPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:contract_name_from_column_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:contract_name_from_column_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_check_key_list_is_valid_against_names",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_check_key_list_is_valid_against_names",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_futures_contract_final_prices_with_contract_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_futures_contract_final_prices_with_contract_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_assert_merge_is_valid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_assert_merge_is_valid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_dictFuturesContractFinalPricesWithContractID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "function:sysobjects/dict_of_named_futures_per_contract_prices.py:_merge_dictFuturesContractFinalPricesWithContractID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictNamedFuturesContractFinalPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictNamedFuturesContractFinalPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:futuresNamedContractFinalPricesWithContractID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:futuresNamedContractFinalPricesWithContractID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:setOfNamedContracts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:setOfNamedContracts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictFuturesNamedContractFinalPricesWithContractID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "class:sysobjects/dict_of_named_futures_per_contract_prices.py:dictFuturesNamedContractFinalPricesWithContractID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "function:sysobjects/multiple_prices.py:_check_valid_multiple_price_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "function:sysobjects/multiple_prices.py:_check_valid_multiple_price_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "class:sysobjects/multiple_prices.py:singleRowMultiplePrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "class:sysobjects/multiple_prices.py:singleRowMultiplePrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "class:sysobjects/multiple_prices.py:futuresMultiplePrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "class:sysobjects/multiple_prices.py:futuresMultiplePrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "function:sysobjects/roll_calendars.py:_check_row_of_row_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "function:sysobjects/roll_calendars.py:_check_row_of_row_calendar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "class:sysobjects/roll_calendars.py:rollCalendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "class:sysobjects/roll_calendars.py:rollCalendar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:find_earliest_held_contract_with_price_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:find_earliest_held_contract_with_price_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_find_earliest_held_contract_with_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_find_earliest_held_contract_with_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_initial_contract_to_try_with",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_initial_contract_to_try_with",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_check_valid_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "function:sysobjects/roll_parameters_with_price_data.py:_check_valid_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "class:sysobjects/roll_parameters_with_price_data.py:contractWithRollParametersAndPrices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "class:sysobjects/roll_parameters_with_price_data.py:contractWithRollParametersAndPrices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "target": "file:sysdata/csv/csv_futures_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "target": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "file:syscore/pandas/full_merge_with_replacement.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/adjusted_prices.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/contract_dates_and_expiries.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "file:syscore/pandas/merge_data_with_label_column.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "file:sysinit/futures/build_multiple_prices_from_raw_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/multiple_prices.py",
+      "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "file:sysinit/futures/build_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_calendars.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysobjects/roll_parameters_with_price_data.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,822 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysproduction/_DEPRECATED/logs.py",
+      "type": "file",
+      "name": "logs.py",
+      "filePath": "sysproduction/_DEPRECATED/logs.py",
+      "summary": "Deprecated diagLogs diagnostic accessor for the old Mongo-backed log store, retained for backward compatibility.",
+      "tags": [
+        "logging",
+        "deprecated",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/backup_db_to_csv.py",
+      "type": "file",
+      "name": "backup_db_to_csv.py",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "summary": "Production routine that dumps the entire database (prices, fx, positions, orders, capital, optimal positions, roll state, contracts) to CSV backup directories.",
+      "tags": [
+        "backup",
+        "production",
+        "csv",
+        "data-pipeline"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "type": "file",
+      "name": "backup_mongo_data_as_dump.py",
+      "filePath": "sysproduction/backup_mongo_data_as_dump.py",
+      "summary": "Production routine that runs mongodump to export MongoDB data and copies the dump to the configured backup directory.",
+      "tags": [
+        "backup",
+        "production",
+        "mongodb"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/backup_parquet_data_to_remote.py",
+      "type": "file",
+      "name": "backup_parquet_data_to_remote.py",
+      "filePath": "sysproduction/backup_parquet_data_to_remote.py",
+      "summary": "Production routine that mirrors the local Parquet data store to a remote backup directory.",
+      "tags": [
+        "backup",
+        "production",
+        "parquet"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/backup_state_files.py",
+      "type": "file",
+      "name": "backup_state_files.py",
+      "filePath": "sysproduction/backup_state_files.py",
+      "summary": "Production routine that backs up strategy state files to the configured state-file backup directory.",
+      "tags": [
+        "backup",
+        "production",
+        "state-files"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/config.py",
+      "type": "file",
+      "name": "config.py",
+      "filePath": "sysproduction/data/config.py",
+      "summary": "Helpers that strip stale instruments and strategies (per production config) from lists of instruments and instrument strategies.",
+      "tags": [
+        "production",
+        "configuration",
+        "utility",
+        "filtering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/directories.py",
+      "type": "file",
+      "name": "directories.py",
+      "filePath": "sysproduction/data/directories.py",
+      "summary": "Resolves and returns the configured filesystem paths for CSV, Parquet, Mongo dump, state-file, and echo backup/log directories.",
+      "tags": [
+        "production",
+        "configuration",
+        "filesystem",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/production_data_objects.py",
+      "type": "file",
+      "name": "production_data_objects.py",
+      "filePath": "sysproduction/data/production_data_objects.py",
+      "summary": "Registry mapping data-type keys to their concrete CSV/Mongo/Parquet storage classes, used by the data blob to resolve storage backends.",
+      "tags": [
+        "production",
+        "registry",
+        "data-access",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/run_backups.py",
+      "type": "file",
+      "name": "run_backups.py",
+      "filePath": "sysproduction/run_backups.py",
+      "summary": "Production process entry point that schedules and runs the full set of backup routines (db-to-csv, mongo dump, parquet, state files) via the process runner.",
+      "tags": [
+        "backup",
+        "production",
+        "entry-point",
+        "orchestration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysproduction/_DEPRECATED/logs.py:diagLogs",
+      "type": "class",
+      "name": "diagLogs",
+      "filePath": "sysproduction/_DEPRECATED/logs.py",
+      "lineRange": [
+        9,
+        21
+      ],
+      "summary": "Deprecated diagnostic accessor exposing the old Mongo-backed log store through a data blob.",
+      "tags": [
+        "logging",
+        "deprecated",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/backup_db_to_csv.py:get_data_and_create_csv_directories",
+      "type": "function",
+      "name": "get_data_and_create_csv_directories",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "lineRange": [
+        80,
+        150
+      ],
+      "summary": "Builds the data blob and creates the dated CSV backup directory tree used by all db-to-csv backup steps.",
+      "tags": [
+        "backup",
+        "csv",
+        "filesystem"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/backup_db_to_csv.py:backup_db_to_csv",
+      "type": "function",
+      "name": "backup_db_to_csv",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "lineRange": [
+        39,
+        44
+      ],
+      "summary": "Top-level entry that constructs a data blob and runs the full database-to-CSV backup.",
+      "tags": [
+        "backup",
+        "csv",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/backup_db_to_csv.py:backup_futures_contract_prices_for_contract_to_csv",
+      "type": "function",
+      "name": "backup_futures_contract_prices_for_contract_to_csv",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "lineRange": [
+        185,
+        220
+      ],
+      "summary": "Writes per-contract futures price data for one contract to its CSV backup file.",
+      "tags": [
+        "backup",
+        "csv",
+        "prices"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/backup_db_to_csv.py:backup_historical_orders",
+      "type": "function",
+      "name": "backup_historical_orders",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "lineRange": [
+        372,
+        395
+      ],
+      "summary": "Exports historic broker, contract, and strategy order data to CSV backup files.",
+      "tags": [
+        "backup",
+        "csv",
+        "orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysproduction/backup_db_to_csv.py:backupDbToCsv",
+      "type": "class",
+      "name": "backupDbToCsv",
+      "filePath": "sysproduction/backup_db_to_csv.py",
+      "lineRange": [
+        54,
+        77
+      ],
+      "summary": "Wrapper bundling a data blob and CSV backup directory to drive the sequence of backup steps.",
+      "tags": [
+        "backup",
+        "csv"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/backup_mongo_data_as_dump.py:dump_mongo_data",
+      "type": "function",
+      "name": "dump_mongo_data",
+      "filePath": "sysproduction/backup_mongo_data_as_dump.py",
+      "lineRange": [
+        33,
+        56
+      ],
+      "summary": "Runs mongodump against the configured database and copies the resulting dump to the backup directory.",
+      "tags": [
+        "backup",
+        "mongodb"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/run_backups.py:get_list_of_timer_functions_for_backup",
+      "type": "function",
+      "name": "get_list_of_timer_functions_for_backup",
+      "filePath": "sysproduction/run_backups.py",
+      "lineRange": [
+        17,
+        35
+      ],
+      "summary": "Builds the list of timed backup functions (db-to-csv, mongo, parquet, state files) consumed by the process runner.",
+      "tags": [
+        "backup",
+        "orchestration",
+        "scheduling"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "class:sysproduction/_DEPRECATED/logs.py:diagLogs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "class:sysproduction/_DEPRECATED/logs.py:diagLogs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:get_data_and_create_csv_directories",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:get_data_and_create_csv_directories",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_db_to_csv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_db_to_csv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_futures_contract_prices_for_contract_to_csv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_futures_contract_prices_for_contract_to_csv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_historical_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "function:sysproduction/backup_db_to_csv.py:backup_historical_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "class:sysproduction/backup_db_to_csv.py:backupDbToCsv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "class:sysproduction/backup_db_to_csv.py:backupDbToCsv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "target": "function:sysproduction/backup_mongo_data_as_dump.py:dump_mongo_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "target": "function:sysproduction/backup_mongo_data_as_dump.py:dump_mongo_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "function:sysproduction/run_backups.py:get_list_of_timer_functions_for_backup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "function:sysproduction/run_backups.py:get_list_of_timer_functions_for_backup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/_DEPRECATED/logs.py",
+      "target": "file:sysproduction/data/generic_production_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_capital_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_contract_position_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_futures_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_futures_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_historic_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_optimal_position.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_roll_state_storage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_spot_fx.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/csv/csv_strategy_position_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysproduction/data/directories.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysproduction/data/production_data_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_db_to_csv.py",
+      "target": "file:sysproduction/data/strategies.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "target": "file:sysproduction/data/directories.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_parquet_data_to_remote.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_parquet_data_to_remote.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_parquet_data_to_remote.py",
+      "target": "file:sysproduction/data/directories.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_state_files.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_state_files.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/backup_state_files.py",
+      "target": "file:sysproduction/data/directories.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/config.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/config.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/directories.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/directories.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/directories.py",
+      "target": "file:sysproduction/data/backtest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/csv/csv_instrument_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_process_control.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/production_data_objects.py",
+      "target": "file:sysdata/parquet/parquet_spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:syscontrol/run_process.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:sysproduction/backup_db_to_csv.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:sysproduction/backup_mongo_data_as_dump.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:sysproduction/backup_parquet_data_to_remote.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/run_backups.py",
+      "target": "file:sysproduction/backup_state_files.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

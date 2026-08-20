@@ -1,0 +1,1652 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "type": "file",
+      "name": "account_curve_order_simulator.py",
+      "filePath": "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "summary": "Accounting stage variant that derives instrument P&L from a simulated order/fill stream rather than idealised positions.",
+      "tags": [
+        "service",
+        "order-simulation",
+        "accounting",
+        "backtesting",
+        "pandl"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "type": "file",
+      "name": "fills_and_orders.py",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "summary": "Helpers turning simple simulated orders into fills, handling market and limit order fill logic against price series.",
+      "tags": [
+        "utility",
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "type": "file",
+      "name": "hourly_limit_orders.py",
+      "filePath": "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "summary": "Hourly limit-order simulator and accounting stage wiring limit-order fill generation into the order-simulation P&L pipeline.",
+      "tags": [
+        "service",
+        "order-simulation",
+        "limit-orders",
+        "hourly",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "type": "file",
+      "name": "hourly_market_orders.py",
+      "filePath": "systems/accounts/order_simulator/hourly_market_orders.py",
+      "summary": "Hourly market-order simulator and accounting stage building hourly price series data for market-order fill simulation.",
+      "tags": [
+        "service",
+        "order-simulation",
+        "market-orders",
+        "hourly",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "type": "file",
+      "name": "pandl_order_simulator.py",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "summary": "Core OrderSimulator engine iterating daily over series data to generate positions, orders and fills, plus the data structures it produces.",
+      "tags": [
+        "service",
+        "order-simulation",
+        "engine",
+        "backtesting",
+        "fills"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/order_simulator/simple_orders.py",
+      "type": "file",
+      "name": "simple_orders.py",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "summary": "Lightweight dataclasses for simple orders and timestamped orders, with list wrappers used by the order simulator.",
+      "tags": [
+        "data-model",
+        "order-simulation",
+        "orders",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "type": "file",
+      "name": "pandl_SR_cost.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "summary": "P&L calculator applying Sharpe-ratio-based cost deductions per period derived from turnover and a per-trade SR cost.",
+      "tags": [
+        "service",
+        "pandl",
+        "costs",
+        "sr-cost",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "type": "file",
+      "name": "pandl_calculation.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "summary": "Base pandlCalculation class turning positions, prices, fx and capital into a raw (pre-cost) P&L return series across frequencies.",
+      "tags": [
+        "service",
+        "pandl",
+        "engine",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "type": "file",
+      "name": "pandl_calculation_dict.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "summary": "Dictionary of generic-cost P&L calculators able to sum a collection of P&L curves into an aggregate without explicit positions.",
+      "tags": [
+        "data-model",
+        "pandl",
+        "aggregation",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "type": "file",
+      "name": "pandl_cash_costs.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "summary": "P&L calculator computing realistic cash costs (commission, spread, slippage) from individual fills using an instrument cost object.",
+      "tags": [
+        "service",
+        "pandl",
+        "costs",
+        "cash-costs",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "file",
+      "name": "pandl_generic_costs.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "summary": "Generic-cost P&L mixin combining gross returns with cost series to expose net, gross and cost return curves.",
+      "tags": [
+        "service",
+        "pandl",
+        "costs",
+        "accounting",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "type": "file",
+      "name": "pandl_using_fills.py",
+      "filePath": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "summary": "P&L calculation mixin that infers positions from a stream of fills, merging fill prices with market prices for mark-to-market.",
+      "tags": [
+        "service",
+        "pandl",
+        "fills",
+        "accounting",
+        "order-simulation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/factors.py",
+      "type": "file",
+      "name": "factors.py",
+      "filePath": "systems/provided/rules/factors.py",
+      "summary": "Provided trading rules that build a factor signal and a volatility-conditioned variant of it for use in forecasts.",
+      "tags": [
+        "trading-rule",
+        "forecast",
+        "factor",
+        "provided"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/account_curve_order_simulator.py:AccountWithOrderSimulator",
+      "type": "class",
+      "name": "AccountWithOrderSimulator",
+      "filePath": "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "lineRange": [
+        14,
+        175
+      ],
+      "summary": "Accounting stage deriving instrument P&L from a simulated order/fill stream.",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/account_curve_order_simulator.py:_raise_exceptions",
+      "type": "function",
+      "name": "_raise_exceptions",
+      "filePath": "systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "lineRange": [
+        178,
+        188
+      ],
+      "summary": "Function _raise_exceptions in account_curve_order_simulator.py.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_list_of_simple_orders",
+      "type": "function",
+      "name": "fill_list_of_simple_orders",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "lineRange": [
+        15,
+        38
+      ],
+      "summary": "Generates fills for a list of simple orders against a price series.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_order",
+      "type": "function",
+      "name": "fill_from_simple_order",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "lineRange": [
+        41,
+        61
+      ],
+      "summary": "Routes a simple order to the appropriate market or limit fill logic.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_limit_order",
+      "type": "function",
+      "name": "fill_from_simple_limit_order",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "lineRange": [
+        64,
+        88
+      ],
+      "summary": "Determines whether a simple limit order fills and at what price for a bar.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_market_order",
+      "type": "function",
+      "name": "fill_from_simple_market_order",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "lineRange": [
+        91,
+        101
+      ],
+      "summary": "Computes the fill for a simple market order at the bar price.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/fills_and_orders.py:empty_list_of_orders_with_no_fills",
+      "type": "function",
+      "name": "empty_list_of_orders_with_no_fills",
+      "filePath": "systems/accounts/order_simulator/fills_and_orders.py",
+      "lineRange": [
+        109,
+        114
+      ],
+      "summary": "Function empty_list_of_orders_with_no_fills in fills_and_orders.py.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/hourly_limit_orders.py:generate_order_and_fill_at_idx_point_for_limit_orders",
+      "type": "function",
+      "name": "generate_order_and_fill_at_idx_point_for_limit_orders",
+      "filePath": "systems/accounts/order_simulator/hourly_limit_orders.py",
+      "lineRange": [
+        36,
+        65
+      ],
+      "summary": "Generates a limit order and its fill at a single hourly index point.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/hourly_market_orders.py:_build_hourly_series_data_for_order_simulator",
+      "type": "function",
+      "name": "_build_hourly_series_data_for_order_simulator",
+      "filePath": "systems/accounts/order_simulator/hourly_market_orders.py",
+      "lineRange": [
+        23,
+        53
+      ],
+      "summary": "Builds the hourly series data feeding the market-order simulator.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/pandl_order_simulator.py:OrderSimulator",
+      "type": "class",
+      "name": "OrderSimulator",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "lineRange": [
+        36,
+        133
+      ],
+      "summary": "Core engine iterating over daily series data to generate positions, orders and fills.",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/pandl_order_simulator.py:build_daily_series_data_for_order_simulator",
+      "type": "function",
+      "name": "build_daily_series_data_for_order_simulator",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "lineRange": [
+        136,
+        166
+      ],
+      "summary": "Assembles the daily price/position series data consumed by the order simulator.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_positions_orders_and_fills_from_series_data",
+      "type": "function",
+      "name": "generate_positions_orders_and_fills_from_series_data",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "lineRange": [
+        169,
+        212
+      ],
+      "summary": "Iterates the series data to produce positions, orders and fills for the backtest.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/pandl_order_simulator.py:get_order_sim_daily_data_at_idx_point",
+      "type": "function",
+      "name": "get_order_sim_daily_data_at_idx_point",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "lineRange": [
+        221,
+        237
+      ],
+      "summary": "Function get_order_sim_daily_data_at_idx_point in pandl_order_simulator.py.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_order_and_fill_at_idx_point_for_market_orders",
+      "type": "function",
+      "name": "generate_order_and_fill_at_idx_point_for_market_orders",
+      "filePath": "systems/accounts/order_simulator/pandl_order_simulator.py",
+      "lineRange": [
+        240,
+        269
+      ],
+      "summary": "Generates a market order and its fill at a single time index point.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrder",
+      "type": "class",
+      "name": "SimpleOrder",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "lineRange": [
+        10,
+        28
+      ],
+      "summary": "Dataclass for a simple order (quantity plus optional limit price).",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrders",
+      "type": "class",
+      "name": "ListOfSimpleOrders",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "lineRange": [
+        34,
+        43
+      ],
+      "summary": "List wrapper of SimpleOrder objects.",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrderWithDate",
+      "type": "class",
+      "name": "SimpleOrderWithDate",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "lineRange": [
+        51,
+        78
+      ],
+      "summary": "Dataclass for a timestamped simple order.",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrdersWithDate",
+      "type": "class",
+      "name": "ListOfSimpleOrdersWithDate",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "lineRange": [
+        81,
+        93
+      ],
+      "summary": "List wrapper of timestamped simple orders.",
+      "tags": [
+        "order-simulation",
+        "backtesting",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/order_simulator/simple_orders.py:empty_list_of_orders_with_date",
+      "type": "function",
+      "name": "empty_list_of_orders_with_date",
+      "filePath": "systems/accounts/order_simulator/simple_orders.py",
+      "lineRange": [
+        96,
+        97
+      ],
+      "summary": "Function empty_list_of_orders_with_date in simple_orders.py.",
+      "tags": [
+        "order-simulation",
+        "fills",
+        "backtesting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_SR_cost.py:pandlCalculationWithSRCosts",
+      "type": "class",
+      "name": "pandlCalculationWithSRCosts",
+      "filePath": "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "lineRange": [
+        13,
+        105
+      ],
+      "summary": "P&L calculator deducting Sharpe-ratio-based costs derived from turnover.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_SR_cost.py:calculate_SR_cost_per_period_of_position_data_match_price_index",
+      "type": "function",
+      "name": "calculate_SR_cost_per_period_of_position_data_match_price_index",
+      "filePath": "systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "lineRange": [
+        108,
+        135
+      ],
+      "summary": "Computes per-period SR-based cost aligned to the price index from position turnover.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_calculation.py:pandlCalculation",
+      "type": "class",
+      "name": "pandlCalculation",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "lineRange": [
+        8,
+        213
+      ],
+      "summary": "Base P&L calculator converting positions/prices/fx/capital into a raw return series.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_calculation.py:apply_weighting",
+      "type": "function",
+      "name": "apply_weighting",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "lineRange": [
+        216,
+        220
+      ],
+      "summary": "Applies a weighting series to a P&L curve.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_calculation.py:calculate_pandl",
+      "type": "function",
+      "name": "calculate_pandl",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation.py",
+      "lineRange": [
+        223,
+        235
+      ],
+      "summary": "Core routine turning positions and price changes into a P&L series.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:pandlCalculationWithoutPositions",
+      "type": "class",
+      "name": "pandlCalculationWithoutPositions",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "lineRange": [
+        7,
+        62
+      ],
+      "summary": "P&L calculator for aggregating pre-computed P&L curves without explicit positions.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:dictOfPandlCalculatorsWithGenericCosts",
+      "type": "class",
+      "name": "dictOfPandlCalculatorsWithGenericCosts",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "lineRange": [
+        65,
+        98
+      ],
+      "summary": "Dict of generic-cost P&L calculators that sums to an aggregate curve.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_calculation_dict.py:sum_list_of_pandl_curves",
+      "type": "function",
+      "name": "sum_list_of_pandl_curves",
+      "filePath": "systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "lineRange": [
+        101,
+        105
+      ],
+      "summary": "Sums a list of P&L curves into a single aggregate curve.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_cash_costs.py:pandlCalculationWithCashCostsAndFills",
+      "type": "class",
+      "name": "pandlCalculationWithCashCostsAndFills",
+      "filePath": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "lineRange": [
+        21,
+        241
+      ],
+      "summary": "P&L calculator computing realistic cash costs from individual fills.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_cash_costs.py:calculate_cost_from_fill_with_cost_object",
+      "type": "function",
+      "name": "calculate_cost_from_fill_with_cost_object",
+      "filePath": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "lineRange": [
+        244,
+        259
+      ],
+      "summary": "Calculates cash cost for a set of fills using an instrument cost object.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_generic_costs.py:pandlCalculationWithGenericCosts",
+      "type": "class",
+      "name": "pandlCalculationWithGenericCosts",
+      "filePath": "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "lineRange": [
+        14,
+        102
+      ],
+      "summary": "Mixin combining gross returns and costs into net/gross/cost curves.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_generic_costs.py:_add_gross_and_costs",
+      "type": "function",
+      "name": "_add_gross_and_costs",
+      "filePath": "systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "lineRange": [
+        105,
+        108
+      ],
+      "summary": "Function _add_gross_and_costs in pandl_generic_costs.py.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/accounts/pandl_calculators/pandl_using_fills.py:pandlCalculationWithFills",
+      "type": "class",
+      "name": "pandlCalculationWithFills",
+      "filePath": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "lineRange": [
+        13,
+        91
+      ],
+      "summary": "Mixin inferring positions from fills and marking to market.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:merge_fill_prices_with_prices",
+      "type": "function",
+      "name": "merge_fill_prices_with_prices",
+      "filePath": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "lineRange": [
+        94,
+        114
+      ],
+      "summary": "Merges fill prices into a market price series for mark-to-market P&L.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:unique_trades_df",
+      "type": "function",
+      "name": "unique_trades_df",
+      "filePath": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "lineRange": [
+        117,
+        126
+      ],
+      "summary": "Collapses fills into a dataframe of unique trades.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:infer_positions_from_fills",
+      "type": "function",
+      "name": "infer_positions_from_fills",
+      "filePath": "systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "lineRange": [
+        129,
+        136
+      ],
+      "summary": "Reconstructs a position series by cumulating signed fill quantities.",
+      "tags": [
+        "pandl",
+        "costs",
+        "accounting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/factors.py:factor_trading_rule",
+      "type": "function",
+      "name": "factor_trading_rule",
+      "filePath": "systems/provided/rules/factors.py",
+      "lineRange": [
+        6,
+        11
+      ],
+      "summary": "Trading rule producing a raw factor-based forecast signal.",
+      "tags": [
+        "trading-rule",
+        "forecast",
+        "factor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/factors.py:conditioned_factor_trading_rule",
+      "type": "function",
+      "name": "conditioned_factor_trading_rule",
+      "filePath": "systems/provided/rules/factors.py",
+      "lineRange": [
+        14,
+        28
+      ],
+      "summary": "Trading rule producing a factor signal conditioned on (divided by) volatility.",
+      "tags": [
+        "trading-rule",
+        "forecast",
+        "factor"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "class:systems/accounts/order_simulator/account_curve_order_simulator.py:AccountWithOrderSimulator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "class:systems/accounts/order_simulator/account_curve_order_simulator.py:AccountWithOrderSimulator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/account_curve_order_simulator.py:_raise_exceptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/account_curve_order_simulator.py:_raise_exceptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_list_of_simple_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_list_of_simple_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_limit_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_limit_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_market_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:fill_from_simple_market_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:empty_list_of_orders_with_no_fills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "function:systems/accounts/order_simulator/fills_and_orders.py:empty_list_of_orders_with_no_fills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "function:systems/accounts/order_simulator/hourly_limit_orders.py:generate_order_and_fill_at_idx_point_for_limit_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "function:systems/accounts/order_simulator/hourly_limit_orders.py:generate_order_and_fill_at_idx_point_for_limit_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "target": "function:systems/accounts/order_simulator/hourly_market_orders.py:_build_hourly_series_data_for_order_simulator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "target": "function:systems/accounts/order_simulator/hourly_market_orders.py:_build_hourly_series_data_for_order_simulator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "class:systems/accounts/order_simulator/pandl_order_simulator.py:OrderSimulator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "class:systems/accounts/order_simulator/pandl_order_simulator.py:OrderSimulator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:build_daily_series_data_for_order_simulator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:build_daily_series_data_for_order_simulator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_positions_orders_and_fills_from_series_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_positions_orders_and_fills_from_series_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:get_order_sim_daily_data_at_idx_point",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:get_order_sim_daily_data_at_idx_point",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_order_and_fill_at_idx_point_for_market_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "function:systems/accounts/order_simulator/pandl_order_simulator.py:generate_order_and_fill_at_idx_point_for_market_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrderWithDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:SimpleOrderWithDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrdersWithDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "class:systems/accounts/order_simulator/simple_orders.py:ListOfSimpleOrdersWithDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "function:systems/accounts/order_simulator/simple_orders.py:empty_list_of_orders_with_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "function:systems/accounts/order_simulator/simple_orders.py:empty_list_of_orders_with_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_SR_cost.py:pandlCalculationWithSRCosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_SR_cost.py:pandlCalculationWithSRCosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_SR_cost.py:calculate_SR_cost_per_period_of_position_data_match_price_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_SR_cost.py:calculate_SR_cost_per_period_of_position_data_match_price_index",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation.py:pandlCalculation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation.py:pandlCalculation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation.py:apply_weighting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation.py:apply_weighting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation.py:calculate_pandl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation.py:calculate_pandl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:pandlCalculationWithoutPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:pandlCalculationWithoutPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:dictOfPandlCalculatorsWithGenericCosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_calculation_dict.py:dictOfPandlCalculatorsWithGenericCosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation_dict.py:sum_list_of_pandl_curves",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_calculation_dict.py:sum_list_of_pandl_curves",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_cash_costs.py:pandlCalculationWithCashCostsAndFills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_cash_costs.py:pandlCalculationWithCashCostsAndFills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_cash_costs.py:calculate_cost_from_fill_with_cost_object",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_cash_costs.py:calculate_cost_from_fill_with_cost_object",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_generic_costs.py:pandlCalculationWithGenericCosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_generic_costs.py:pandlCalculationWithGenericCosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_generic_costs.py:_add_gross_and_costs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_generic_costs.py:_add_gross_and_costs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_using_fills.py:pandlCalculationWithFills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "class:systems/accounts/pandl_calculators/pandl_using_fills.py:pandlCalculationWithFills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:merge_fill_prices_with_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:merge_fill_prices_with_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:unique_trades_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:unique_trades_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:infer_positions_from_fills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "function:systems/accounts/pandl_calculators/pandl_using_fills.py:infer_positions_from_fills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/factors.py",
+      "target": "function:systems/provided/rules/factors.py:factor_trading_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/rules/factors.py",
+      "target": "function:systems/provided/rules/factors.py:factor_trading_rule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/factors.py",
+      "target": "function:systems/provided/rules/factors.py:conditioned_factor_trading_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/rules/factors.py",
+      "target": "function:systems/provided/rules/factors.py:conditioned_factor_trading_rule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "target": "file:systems/accounts/order_simulator/simple_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/accounts/order_simulator/simple_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "target": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "target": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "file:syscore/cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "file:systems/accounts/order_simulator/fills_and_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/pandl_order_simulator.py",
+      "target": "file:systems/accounts/order_simulator/simple_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/order_simulator/simple_orders.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:sysquant/estimators/vol.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_SR_cost.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_calculation_dict.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_cash_costs.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_generic_costs.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+      "target": "file:systems/accounts/pandl_calculators/pandl_calculation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rules/factors.py",
+      "target": "file:sysquant/estimators/vol.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

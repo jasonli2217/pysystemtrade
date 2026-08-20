@@ -1,0 +1,2157 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysproduction/linux/scripts/update_multiple_adjusted_prices",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_sampled_contracts",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_strategy_capital",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_strategy_orders",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_system_backtests",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_total_capital",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/reporting/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/adhoc/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/reporting/data/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/strategy_code/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/tests/test_controls.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/estimators/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/estimators/tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysquant/optimisation/full_handcrafting.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1446,
+      "nonEmptyLines": 1102,
+      "functions": [
+        {
+          "name": "norm_weights",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "list_of_weights"
+          ]
+        },
+        {
+          "name": "get_weights_using_uncertainty_method",
+          "startLine": 56,
+          "endLine": 71,
+          "params": [
+            "cmatrix",
+            "data_points"
+          ]
+        },
+        {
+          "name": "optimised_weights_given_correlation_uncertainty",
+          "startLine": 74,
+          "endLine": 91,
+          "params": [
+            "corr_matrix",
+            "data_points",
+            "p_step"
+          ]
+        },
+        {
+          "name": "optimise_for_corr_matrix_with_uncertainty",
+          "startLine": 97,
+          "endLine": 107,
+          "params": [
+            "corr_matrix",
+            "conf_intervals",
+            "data_points"
+          ]
+        },
+        {
+          "name": "extract_asset_pairwise_correlations_from_matrix",
+          "startLine": 110,
+          "endLine": 115,
+          "params": [
+            "corr_matrix"
+          ]
+        },
+        {
+          "name": "calculate_correlation_points_from_tuples",
+          "startLine": 118,
+          "endLine": 129,
+          "params": [
+            "labelled_correlations",
+            "conf_intervals",
+            "data_points"
+          ]
+        },
+        {
+          "name": "get_correlation_distribution_point",
+          "startLine": 132,
+          "endLine": 140,
+          "params": [
+            "corr_value",
+            "data_points",
+            "conf_interval"
+          ]
+        },
+        {
+          "name": "fisher_transform",
+          "startLine": 143,
+          "endLine": 148,
+          "params": [
+            "corr_value"
+          ]
+        },
+        {
+          "name": "get_fisher_confidence_point",
+          "startLine": 151,
+          "endLine": 161,
+          "params": [
+            "fisher_corr",
+            "data_points",
+            "conf_interval"
+          ]
+        },
+        {
+          "name": "fisher_confidence",
+          "startLine": 164,
+          "endLine": 170,
+          "params": [
+            "data_points",
+            "conf_interval"
+          ]
+        },
+        {
+          "name": "fisher_stdev",
+          "startLine": 173,
+          "endLine": 175,
+          "params": [
+            "data_points"
+          ]
+        },
+        {
+          "name": "get_confidence_point",
+          "startLine": 178,
+          "endLine": 181,
+          "params": [
+            "conf_interval"
+          ]
+        },
+        {
+          "name": "inverse_fisher",
+          "startLine": 184,
+          "endLine": 185,
+          "params": [
+            "fisher_corr_value"
+          ]
+        },
+        {
+          "name": "three_asset_corr_matrix",
+          "startLine": 188,
+          "endLine": 198,
+          "params": [
+            "labelled_correlations"
+          ]
+        },
+        {
+          "name": "optimise_for_corr_matrix",
+          "startLine": 201,
+          "endLine": 209,
+          "params": [
+            "corr_matrix"
+          ]
+        },
+        {
+          "name": "apply_min_weight",
+          "startLine": 212,
+          "endLine": 216,
+          "params": [
+            "average_weights"
+          ]
+        },
+        {
+          "name": "min_weight",
+          "startLine": 219,
+          "endLine": 223,
+          "params": [
+            "weight"
+          ]
+        },
+        {
+          "name": "multiplier_from_relative_SR",
+          "startLine": 231,
+          "endLine": 238,
+          "params": [
+            "relative_SR",
+            "avg_correlation",
+            "years_of_data"
+          ]
+        },
+        {
+          "name": "mini_bootstrap_ratio_given_SR_diff",
+          "startLine": 241,
+          "endLine": 286,
+          "params": [
+            "SR_diff",
+            "avg_correlation",
+            "years_of_data",
+            "avg_SR",
+            "std",
+            "how_many_assets",
+            "p_step"
+          ]
+        },
+        {
+          "name": "weight_ratio",
+          "startLine": 289,
+          "endLine": 299,
+          "params": [
+            "weights"
+          ]
+        },
+        {
+          "name": "weights_given_SR_diff",
+          "startLine": 302,
+          "endLine": 339,
+          "params": [
+            "SR_diff",
+            "avg_correlation",
+            "confidence_interval",
+            "years_of_data",
+            "avg_SR",
+            "std",
+            "how_many_assets"
+          ]
+        },
+        {
+          "name": "optimise_using_correlation",
+          "startLine": 342,
+          "endLine": 347,
+          "params": [
+            "mean_list",
+            "avg_correlation",
+            "std"
+          ]
+        },
+        {
+          "name": "boring_corr_matrix",
+          "startLine": 350,
+          "endLine": 368,
+          "params": [
+            "size",
+            "offdiag",
+            "diag"
+          ]
+        },
+        {
+          "name": "calculate_confident_mean_difference",
+          "startLine": 371,
+          "endLine": 379,
+          "params": [
+            "std",
+            "years_of_data",
+            "mean_difference",
+            "confidence_interval",
+            "avg_correlation"
+          ]
+        },
+        {
+          "name": "calculate_omega_difference",
+          "startLine": 382,
+          "endLine": 387,
+          "params": [
+            "std",
+            "years_of_data",
+            "avg_correlation"
+          ]
+        },
+        {
+          "name": "adjust_weights_for_SR",
+          "startLine": 390,
+          "endLine": 412,
+          "params": [
+            "weights",
+            "SR_list",
+            "years_of_data",
+            "avg_correlation"
+          ]
+        },
+        {
+          "name": "calc_correlation",
+          "startLine": 1267,
+          "endLine": 1271,
+          "params": [
+            "instrument_returns"
+          ]
+        },
+        {
+          "name": "minimum_many_years_of_data_in_dataframe",
+          "startLine": 1274,
+          "endLine": 1279,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "how_many_years_of_data_in_dataframe",
+          "startLine": 1282,
+          "endLine": 1291,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "how_many_years_of_data_in_pd_series",
+          "startLine": 1294,
+          "endLine": 1308,
+          "params": [
+            "data_series"
+          ]
+        },
+        {
+          "name": "get_avg_corr",
+          "startLine": 1311,
+          "endLine": 1327,
+          "params": [
+            "sigma"
+          ]
+        },
+        {
+          "name": "cluster_correlation_matrix",
+          "startLine": 1330,
+          "endLine": 1336,
+          "params": [
+            "corr_matrix",
+            "max_cluster_size"
+          ]
+        },
+        {
+          "name": "optimise",
+          "startLine": 1339,
+          "endLine": 1369,
+          "params": [
+            "sigma",
+            "mean_list"
+          ]
+        },
+        {
+          "name": "sigma_from_corr_and_std",
+          "startLine": 1372,
+          "endLine": 1374,
+          "params": [
+            "stdev_list",
+            "corrmatrix"
+          ]
+        },
+        {
+          "name": "fix_mus",
+          "startLine": 1377,
+          "endLine": 1391,
+          "params": [
+            "mean_list"
+          ]
+        },
+        {
+          "name": "un_fix_weights",
+          "startLine": 1394,
+          "endLine": 1409,
+          "params": [
+            "mean_list",
+            "weights"
+          ]
+        },
+        {
+          "name": "fix_sigma",
+          "startLine": 1412,
+          "endLine": 1427,
+          "params": [
+            "sigma"
+          ]
+        },
+        {
+          "name": "neg_SR",
+          "startLine": 1430,
+          "endLine": 1436,
+          "params": [
+            "weights",
+            "sigma",
+            "mus"
+          ]
+        },
+        {
+          "name": "addem",
+          "startLine": 1439,
+          "endLine": 1441,
+          "params": [
+            "weights"
+          ]
+        },
+        {
+          "name": "variance",
+          "startLine": 1444,
+          "endLine": 1446,
+          "params": [
+            "weights",
+            "sigma"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "diagobject",
+          "startLine": 39,
+          "endLine": 44,
+          "methods": [
+            "__init__",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Portfolio",
+          "startLine": 415,
+          "endLine": 1264,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "_missing_data_instruments",
+            "_clean_instruments_remove_missing",
+            "_cluster_breakdown",
+            "_cluster_breakdown_using_risk_partition",
+            "_create_single_subportfolio",
+            "_create_child_subportfolios",
+            "_require_partioned_portfolio",
+            "_create_all_subportfolios",
+            "show_subportfolio_tree",
+            "_diags_as_dataframe",
+            "_calculate_weights_standalone_portfolio",
+            "_calculate_portfolio_returns",
+            "_calculate_portfolio_returns_std",
+            "_calculate_diversification_mult",
+            "_calculate_sub_portfolio_returns",
+            "_calculate_weights_aggregated_portfolio",
+            "_calculate_volatility_weights",
+            "_calculate_cash_weights_no_risk_target",
+            "_calculate_cash_weights_with_risk_target_partitioned",
+            "_calculate_cash_weights_with_risk_target",
+            "_calculate_cash_weights",
+            "_weights_with_missing_data",
+            "volatility_weights_with_missing_data",
+            "cash_weights_with_missing_data",
+            "volatility_weights",
+            "cash_weights",
+            "sub_portfolios",
+            "portfolio_returns",
+            "portfolio_std",
+            "div_mult",
+            "diags"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "diagobject",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "norm_weights",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "get_weights_using_uncertainty_method",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "optimised_weights_given_correlation_uncertainty",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_for_corr_matrix_with_uncertainty",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "extract_asset_pairwise_correlations_from_matrix",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_correlation_points_from_tuples",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "get_correlation_distribution_point",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "fisher_transform",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "get_fisher_confidence_point",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "fisher_confidence",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "fisher_stdev",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "get_confidence_point",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "inverse_fisher",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "three_asset_corr_matrix",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_for_corr_matrix",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "apply_min_weight",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "min_weight",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "multiplier_from_relative_SR",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "mini_bootstrap_ratio_given_SR_diff",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "weight_ratio",
+          "line": 289,
+          "isDefault": false
+        },
+        {
+          "name": "weights_given_SR_diff",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "optimise_using_correlation",
+          "line": 342,
+          "isDefault": false
+        },
+        {
+          "name": "boring_corr_matrix",
+          "line": 350,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_confident_mean_difference",
+          "line": 371,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_omega_difference",
+          "line": 382,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_weights_for_SR",
+          "line": 390,
+          "isDefault": false
+        },
+        {
+          "name": "Portfolio",
+          "line": 415,
+          "isDefault": false
+        },
+        {
+          "name": "calc_correlation",
+          "line": 1267,
+          "isDefault": false
+        },
+        {
+          "name": "minimum_many_years_of_data_in_dataframe",
+          "line": 1274,
+          "isDefault": false
+        },
+        {
+          "name": "how_many_years_of_data_in_dataframe",
+          "line": 1282,
+          "isDefault": false
+        },
+        {
+          "name": "how_many_years_of_data_in_pd_series",
+          "line": 1294,
+          "isDefault": false
+        },
+        {
+          "name": "get_avg_corr",
+          "line": 1311,
+          "isDefault": false
+        },
+        {
+          "name": "cluster_correlation_matrix",
+          "line": 1330,
+          "isDefault": false
+        },
+        {
+          "name": "optimise",
+          "line": 1339,
+          "isDefault": false
+        },
+        {
+          "name": "sigma_from_corr_and_std",
+          "line": 1372,
+          "isDefault": false
+        },
+        {
+          "name": "fix_mus",
+          "line": 1377,
+          "isDefault": false
+        },
+        {
+          "name": "un_fix_weights",
+          "line": 1394,
+          "isDefault": false
+        },
+        {
+          "name": "fix_sigma",
+          "line": 1412,
+          "isDefault": false
+        },
+        {
+          "name": "neg_SR",
+          "line": 1430,
+          "isDefault": false
+        },
+        {
+          "name": "addem",
+          "line": 1439,
+          "isDefault": false
+        },
+        {
+          "name": "variance",
+          "line": 1444,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "norm_weights",
+          "callee": "list",
+          "lineNumber": 48
+        },
+        {
+          "caller": "norm_weights",
+          "callee": "np.array",
+          "lineNumber": 48
+        },
+        {
+          "caller": "norm_weights",
+          "callee": "np.sum",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "len",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "len",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "len",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "Exception",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "optimised_weights_given_correlation_uncertainty",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_weights_using_uncertainty_method",
+          "callee": "apply_min_weight",
+          "lineNumber": 69
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "np.arange",
+          "lineNumber": 77
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "labelledCorrelations",
+          "lineNumber": 82
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "optimise_for_corr_matrix_with_uncertainty",
+          "lineNumber": 83
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "list_of_weights.append",
+          "lineNumber": 86
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "np.array",
+          "lineNumber": 88
+        },
+        {
+          "caller": "optimised_weights_given_correlation_uncertainty",
+          "callee": "np.nanmean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "optimise_for_corr_matrix_with_uncertainty",
+          "callee": "extract_asset_pairwise_correlations_from_matrix",
+          "lineNumber": 98
+        },
+        {
+          "caller": "optimise_for_corr_matrix_with_uncertainty",
+          "callee": "calculate_correlation_points_from_tuples",
+          "lineNumber": 99
+        },
+        {
+          "caller": "optimise_for_corr_matrix_with_uncertainty",
+          "callee": "three_asset_corr_matrix",
+          "lineNumber": 102
+        },
+        {
+          "caller": "optimise_for_corr_matrix_with_uncertainty",
+          "callee": "optimise_for_corr_matrix",
+          "lineNumber": 105
+        },
+        {
+          "caller": "extract_asset_pairwise_correlations_from_matrix",
+          "callee": "labelledCorrelations",
+          "lineNumber": 115
+        },
+        {
+          "caller": "calculate_correlation_points_from_tuples",
+          "callee": "get_correlation_distribution_point",
+          "lineNumber": 122
+        },
+        {
+          "caller": "calculate_correlation_points_from_tuples",
+          "callee": "zip",
+          "lineNumber": 123
+        },
+        {
+          "caller": "calculate_correlation_points_from_tuples",
+          "callee": "labelledCorrelations",
+          "lineNumber": 127
+        },
+        {
+          "caller": "get_correlation_distribution_point",
+          "callee": "fisher_transform",
+          "lineNumber": 133
+        },
+        {
+          "caller": "get_correlation_distribution_point",
+          "callee": "get_fisher_confidence_point",
+          "lineNumber": 134
+        },
+        {
+          "caller": "get_correlation_distribution_point",
+          "callee": "inverse_fisher",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fisher_transform",
+          "callee": "np.log",
+          "lineNumber": 148
+        },
+        {
+          "caller": "get_fisher_confidence_point",
+          "callee": "fisher_confidence",
+          "lineNumber": 153
+        },
+        {
+          "caller": "get_fisher_confidence_point",
+          "callee": "fisher_confidence",
+          "lineNumber": 156
+        },
+        {
+          "caller": "fisher_confidence",
+          "callee": "fisher_stdev",
+          "lineNumber": 166
+        },
+        {
+          "caller": "fisher_confidence",
+          "callee": "get_confidence_point",
+          "lineNumber": 168
+        },
+        {
+          "caller": "get_confidence_point",
+          "callee": "norm.ppf",
+          "lineNumber": 179
+        },
+        {
+          "caller": "inverse_fisher",
+          "callee": "np.exp",
+          "lineNumber": 185
+        },
+        {
+          "caller": "inverse_fisher",
+          "callee": "np.exp",
+          "lineNumber": 185
+        },
+        {
+          "caller": "three_asset_corr_matrix",
+          "callee": "np.array",
+          "lineNumber": 197
+        },
+        {
+          "caller": "optimise_for_corr_matrix",
+          "callee": "np.full",
+          "lineNumber": 206
+        },
+        {
+          "caller": "optimise_for_corr_matrix",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "optimise_for_corr_matrix",
+          "callee": "sigma_from_corr_and_std",
+          "lineNumber": 207
+        },
+        {
+          "caller": "optimise_for_corr_matrix",
+          "callee": "optimise",
+          "lineNumber": 209
+        },
+        {
+          "caller": "apply_min_weight",
+          "callee": "min_weight",
+          "lineNumber": 213
+        },
+        {
+          "caller": "apply_min_weight",
+          "callee": "norm_weights",
+          "lineNumber": 214
+        },
+        {
+          "caller": "multiplier_from_relative_SR",
+          "callee": "mini_bootstrap_ratio_given_SR_diff",
+          "lineNumber": 234
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.arange",
+          "lineNumber": 263
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "weights_given_SR_diff",
+          "lineNumber": 265
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.array",
+          "lineNumber": 277
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.nanmean",
+          "lineNumber": 278
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "weight_ratio",
+          "lineNumber": 279
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.sign",
+          "lineNumber": 281
+        },
+        {
+          "caller": "mini_bootstrap_ratio_given_SR_diff",
+          "callee": "np.sign",
+          "lineNumber": 281
+        },
+        {
+          "caller": "weight_ratio",
+          "callee": "len",
+          "lineNumber": 296
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "calculate_confident_mean_difference",
+          "lineNumber": 329
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "optimise_using_correlation",
+          "lineNumber": 337
+        },
+        {
+          "caller": "weights_given_SR_diff",
+          "callee": "list",
+          "lineNumber": 339
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "boring_corr_matrix",
+          "lineNumber": 343
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "len",
+          "lineNumber": 343
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "np.full",
+          "lineNumber": 344
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "len",
+          "lineNumber": 344
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "sigma_from_corr_and_std",
+          "lineNumber": 345
+        },
+        {
+          "caller": "optimise_using_correlation",
+          "callee": "optimise",
+          "lineNumber": 347
+        },
+        {
+          "caller": "boring_corr_matrix",
+          "callee": "range",
+          "lineNumber": 358
+        },
+        {
+          "caller": "boring_corr_matrix",
+          "callee": "_od",
+          "lineNumber": 366
+        },
+        {
+          "caller": "boring_corr_matrix",
+          "callee": "np.array",
+          "lineNumber": 367
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "calculate_omega_difference",
+          "lineNumber": 374
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "stats.norm(mean_difference, omega_difference).ppf",
+          "lineNumber": 375
+        },
+        {
+          "caller": "calculate_confident_mean_difference",
+          "callee": "stats.norm",
+          "lineNumber": 375
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "len",
+          "lineNumber": 399
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "len",
+          "lineNumber": 399
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.nanmean",
+          "lineNumber": 401
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "float",
+          "lineNumber": 404
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "multiplier_from_relative_SR",
+          "lineNumber": 404
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "list",
+          "lineNumber": 408
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.array",
+          "lineNumber": 408
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "np.array",
+          "lineNumber": 408
+        },
+        {
+          "caller": "adjust_weights_for_SR",
+          "callee": "norm_weights",
+          "lineNumber": 410
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._clean_instruments_remove_missing",
+          "lineNumber": 439
+        },
+        {
+          "caller": "__init__",
+          "callee": "list",
+          "lineNumber": 441
+        },
+        {
+          "caller": "__init__",
+          "callee": "calc_correlation",
+          "lineNumber": 442
+        },
+        {
+          "caller": "__init__",
+          "callee": "np.array",
+          "lineNumber": 443
+        },
+        {
+          "caller": "__init__",
+          "callee": "instrument_returns.std",
+          "lineNumber": 443
+        },
+        {
+          "caller": "__init__",
+          "callee": "np.array",
+          "lineNumber": 444
+        },
+        {
+          "caller": "__init__",
+          "callee": "instrument_returns.mean",
+          "lineNumber": 444
+        },
+        {
+          "caller": "__init__",
+          "callee": "minimum_many_years_of_data_in_dataframe",
+          "lineNumber": 447
+        },
+        {
+          "caller": "__repr__",
+          "callee": "len",
+          "lineNumber": 456
+        },
+        {
+          "caller": "_missing_data_instruments",
+          "callee": "instrument_returns.isna().sum",
+          "lineNumber": 465
+        },
+        {
+          "caller": "_missing_data_instruments",
+          "callee": "instrument_returns.isna",
+          "lineNumber": 465
+        },
+        {
+          "caller": "_missing_data_instruments",
+          "callee": "len",
+          "lineNumber": 466
+        },
+        {
+          "caller": "_missing_data_instruments",
+          "callee": "zip",
+          "lineNumber": 469
+        },
+        {
+          "caller": "_clean_instruments_remove_missing",
+          "callee": "self._missing_data_instruments",
+          "lineNumber": 483
+        },
+        {
+          "caller": "_cluster_breakdown",
+          "callee": "cluster_correlation_matrix",
+          "lineNumber": 500
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "self.log",
+          "lineNumber": 511
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "sum",
+          "lineNumber": 517
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "Exception",
+          "lineNumber": 522
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "len",
+          "lineNumber": 526
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "self.log",
+          "lineNumber": 527
+        },
+        {
+          "caller": "_cluster_breakdown_using_risk_partition",
+          "callee": "_cluster_id",
+          "lineNumber": 539
+        },
+        {
+          "caller": "_create_single_subportfolio",
+          "callee": "Portfolio",
+          "lineNumber": 555
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "len",
+          "lineNumber": 569
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self._require_partioned_portfolio",
+          "lineNumber": 572
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self.log",
+          "lineNumber": 574
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self._cluster_breakdown_using_risk_partition",
+          "lineNumber": 575
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self.log",
+          "lineNumber": 577
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self._cluster_breakdown",
+          "lineNumber": 578
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "list",
+          "lineNumber": 580
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "set",
+          "lineNumber": 580
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "enumerate",
+          "lineNumber": 584
+        },
+        {
+          "caller": "_create_child_subportfolios",
+          "callee": "self._create_single_subportfolio",
+          "lineNumber": 591
+        },
+        {
+          "caller": "_create_all_subportfolios",
+          "callee": "self._create_child_subportfolios",
+          "lineNumber": 623
+        },
+        {
+          "caller": "_create_all_subportfolios",
+          "callee": "single_sub_portfolio._create_all_subportfolios",
+          "lineNumber": 632
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "str",
+          "lineNumber": 644
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "descrlist.append",
+          "lineNumber": 647
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "len",
+          "lineNumber": 648
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "enumerate",
+          "lineNumber": 651
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "descrlist.append",
+          "lineNumber": 652
+        },
+        {
+          "caller": "show_subportfolio_tree",
+          "callee": "sub_portfolio.show_subportfolio_tree",
+          "lineNumber": 653
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "diagobject",
+          "lineNumber": 663
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "str",
+          "lineNumber": 670
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "pd.DataFrame",
+          "lineNumber": 678
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "list",
+          "lineNumber": 679
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "len",
+          "lineNumber": 691
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "pd.DataFrame",
+          "lineNumber": 704
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "diagobject",
+          "lineNumber": 724
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "list",
+          "lineNumber": 730
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "pd.DataFrame",
+          "lineNumber": 733
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "diagobject",
+          "lineNumber": 746
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "len",
+          "lineNumber": 748
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "list",
+          "lineNumber": 755
+        },
+        {
+          "caller": "_diags_as_dataframe",
+          "callee": "pd.DataFrame",
+          "lineNumber": 757
+        },
+        {
+          "caller": "_calculate_weights_standalone_portfolio",
+          "callee": "len",
+          "lineNumber": 774
+        },
+        {
+          "caller": "_calculate_weights_standalone_portfolio",
+          "callee": "get_weights_using_uncertainty_method",
+          "lineNumber": 777
+        },
+        {
+          "caller": "_calculate_weights_standalone_portfolio",
+          "callee": "len",
+          "lineNumber": 778
+        },
+        {
+          "caller": "_calculate_weights_standalone_portfolio",
+          "callee": "get_avg_corr",
+          "lineNumber": 787
+        },
+        {
+          "caller": "_calculate_weights_standalone_portfolio",
+          "callee": "adjust_weights_for_SR",
+          "lineNumber": 788
+        },
+        {
+          "caller": "_calculate_portfolio_returns",
+          "callee": "pd.DataFrame",
+          "lineNumber": 806
+        },
+        {
+          "caller": "_calculate_portfolio_returns",
+          "callee": "len",
+          "lineNumber": 807
+        },
+        {
+          "caller": "_calculate_portfolio_returns",
+          "callee": "portfolio_returns_df.sum",
+          "lineNumber": 813
+        },
+        {
+          "caller": "_calculate_portfolio_returns_std",
+          "callee": "self.portfolio_returns.std",
+          "lineNumber": 818
+        },
+        {
+          "caller": "_calculate_diversification_mult",
+          "callee": "np.array",
+          "lineNumber": 827
+        },
+        {
+          "caller": "_calculate_diversification_mult",
+          "callee": "np.dot",
+          "lineNumber": 830
+        },
+        {
+          "caller": "_calculate_diversification_mult",
+          "callee": "np.dot",
+          "lineNumber": 830
+        },
+        {
+          "caller": "_calculate_diversification_mult",
+          "callee": "vol_weights.transpose",
+          "lineNumber": 830
+        },
+        {
+          "caller": "_calculate_sub_portfolio_returns",
+          "callee": "pd.concat",
+          "lineNumber": 846
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "self._calculate_sub_portfolio_returns",
+          "lineNumber": 857
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "Portfolio",
+          "lineNumber": 860
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "len",
+          "lineNumber": 876
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "len",
+          "lineNumber": 876
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "Exception",
+          "lineNumber": 880
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "len",
+          "lineNumber": 883
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "len",
+          "lineNumber": 884
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "zip",
+          "lineNumber": 900
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "Exception",
+          "lineNumber": 905
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "sub_portfolio.instruments.index",
+          "lineNumber": 914
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "dm_by_instrument_list.append",
+          "lineNumber": 920
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "instrument_vol_weight_in_sub_list.append",
+          "lineNumber": 921
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "sub_portfolio_vol_weight_list.append",
+          "lineNumber": 922
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "Exception",
+          "lineNumber": 925
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "vol_weights.append",
+          "lineNumber": 929
+        },
+        {
+          "caller": "_calculate_weights_aggregated_portfolio",
+          "callee": "norm_weights",
+          "lineNumber": 931
+        },
+        {
+          "caller": "_calculate_volatility_weights",
+          "callee": "self._calculate_weights_standalone_portfolio",
+          "lineNumber": 951
+        },
+        {
+          "caller": "_calculate_volatility_weights",
+          "callee": "self._calculate_weights_aggregated_portfolio",
+          "lineNumber": 953
+        },
+        {
+          "caller": "_calculate_cash_weights_no_risk_target",
+          "callee": "zip",
+          "lineNumber": 966
+        },
+        {
+          "caller": "_calculate_cash_weights_no_risk_target",
+          "callee": "norm_weights",
+          "lineNumber": 968
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "self._require_partioned_portfolio",
+          "lineNumber": 979
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "len",
+          "lineNumber": 980
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "self._calculate_sub_portfolio_returns",
+          "lineNumber": 995
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "len",
+          "lineNumber": 997
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "sub_portfolio_returns.corr",
+          "lineNumber": 999
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "Exception",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "Exception",
+          "lineNumber": 1030
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "self.log",
+          "lineNumber": 1042
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "norm_weights",
+          "lineNumber": 1048
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target_partitioned",
+          "callee": "Portfolio",
+          "lineNumber": 1055
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "self.log",
+          "lineNumber": 1071
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "Portfolio",
+          "lineNumber": 1075
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "self.log",
+          "lineNumber": 1092
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "list",
+          "lineNumber": 1093
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "np.array",
+          "lineNumber": 1093
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "self.log",
+          "lineNumber": 1106
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "list",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "np.array",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "self.log",
+          "lineNumber": 1116
+        },
+        {
+          "caller": "_calculate_cash_weights_with_risk_target",
+          "callee": "self._calculate_cash_weights_with_risk_target_partitioned",
+          "lineNumber": 1118
+        },
+        {
+          "caller": "_calculate_cash_weights",
+          "callee": "self._calculate_cash_weights_no_risk_target",
+          "lineNumber": 1137
+        },
+        {
+          "caller": "_calculate_cash_weights",
+          "callee": "self._calculate_cash_weights_no_risk_target",
+          "lineNumber": 1140
+        },
+        {
+          "caller": "_calculate_cash_weights",
+          "callee": "self._calculate_cash_weights_with_risk_target",
+          "lineNumber": 1143
+        },
+        {
+          "caller": "_weights_with_missing_data",
+          "callee": "dict",
+          "lineNumber": 1155
+        },
+        {
+          "caller": "_weights_with_missing_data",
+          "callee": "zip",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "_weights_with_missing_data",
+          "callee": "new_weights.append",
+          "lineNumber": 1164
+        },
+        {
+          "caller": "_weights_with_missing_data",
+          "callee": "new_weights.append",
+          "lineNumber": 1166
+        },
+        {
+          "caller": "_weights_with_missing_data",
+          "callee": "Exception",
+          "lineNumber": 1168
+        },
+        {
+          "caller": "volatility_weights_with_missing_data",
+          "callee": "self._weights_with_missing_data",
+          "lineNumber": 1178
+        },
+        {
+          "caller": "cash_weights_with_missing_data",
+          "callee": "self._weights_with_missing_data",
+          "lineNumber": 1188
+        },
+        {
+          "caller": "volatility_weights",
+          "callee": "hasattr",
+          "lineNumber": 1198
+        },
+        {
+          "caller": "volatility_weights",
+          "callee": "self._calculate_volatility_weights",
+          "lineNumber": 1201
+        },
+        {
+          "caller": "cash_weights",
+          "callee": "hasattr",
+          "lineNumber": 1208
+        },
+        {
+          "caller": "cash_weights",
+          "callee": "self._calculate_cash_weights",
+          "lineNumber": 1211
+        },
+        {
+          "caller": "sub_portfolios",
+          "callee": "hasattr",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "sub_portfolios",
+          "callee": "self._create_all_subportfolios",
+          "lineNumber": 1221
+        },
+        {
+          "caller": "portfolio_returns",
+          "callee": "hasattr",
+          "lineNumber": 1228
+        },
+        {
+          "caller": "portfolio_returns",
+          "callee": "self._calculate_portfolio_returns",
+          "lineNumber": 1231
+        },
+        {
+          "caller": "portfolio_std",
+          "callee": "hasattr",
+          "lineNumber": 1238
+        },
+        {
+          "caller": "portfolio_std",
+          "callee": "self._calculate_portfolio_returns_std",
+          "lineNumber": 1241
+        },
+        {
+          "caller": "div_mult",
+          "callee": "hasattr",
+          "lineNumber": 1248
+        },
+        {
+          "caller": "div_mult",
+          "callee": "self._calculate_diversification_mult",
+          "lineNumber": 1251
+        },
+        {
+          "caller": "diags",
+          "callee": "hasattr",
+          "lineNumber": 1258
+        },
+        {
+          "caller": "diags",
+          "callee": "self._diags_as_dataframe",
+          "lineNumber": 1261
+        },
+        {
+          "caller": "calc_correlation",
+          "callee": "recent_instrument_returns.corr",
+          "lineNumber": 1269
+        },
+        {
+          "caller": "minimum_many_years_of_data_in_dataframe",
+          "callee": "how_many_years_of_data_in_dataframe",
+          "lineNumber": 1275
+        },
+        {
+          "caller": "minimum_many_years_of_data_in_dataframe",
+          "callee": "years_of_data_dict.values",
+          "lineNumber": 1276
+        },
+        {
+          "caller": "minimum_many_years_of_data_in_dataframe",
+          "callee": "min",
+          "lineNumber": 1277
+        },
+        {
+          "caller": "how_many_years_of_data_in_dataframe",
+          "callee": "dict",
+          "lineNumber": 1289
+        },
+        {
+          "caller": "how_many_years_of_data_in_dataframe",
+          "callee": "data.apply",
+          "lineNumber": 1289
+        },
+        {
+          "caller": "how_many_years_of_data_in_pd_series",
+          "callee": "data_series.first_valid_index",
+          "lineNumber": 1301
+        },
+        {
+          "caller": "how_many_years_of_data_in_pd_series",
+          "callee": "data_series.last_valid_index",
+          "lineNumber": 1302
+        },
+        {
+          "caller": "how_many_years_of_data_in_pd_series",
+          "callee": "float",
+          "lineNumber": 1306
+        },
+        {
+          "caller": "get_avg_corr",
+          "callee": "copy",
+          "lineNumber": 1320
+        },
+        {
+          "caller": "get_avg_corr",
+          "callee": "np.fill_diagonal",
+          "lineNumber": 1321
+        },
+        {
+          "caller": "get_avg_corr",
+          "callee": "np.all",
+          "lineNumber": 1322
+        },
+        {
+          "caller": "get_avg_corr",
+          "callee": "np.isnan",
+          "lineNumber": 1322
+        },
+        {
+          "caller": "get_avg_corr",
+          "callee": "np.nanmean",
+          "lineNumber": 1325
+        },
+        {
+          "caller": "cluster_correlation_matrix",
+          "callee": "sch.distance.pdist",
+          "lineNumber": 1331
+        },
+        {
+          "caller": "cluster_correlation_matrix",
+          "callee": "sch.linkage",
+          "lineNumber": 1332
+        },
+        {
+          "caller": "cluster_correlation_matrix",
+          "callee": "sch.fcluster",
+          "lineNumber": 1333
+        },
+        {
+          "caller": "cluster_correlation_matrix",
+          "callee": "list",
+          "lineNumber": 1334
+        },
+        {
+          "caller": "optimise",
+          "callee": "fix_mus",
+          "lineNumber": 1341
+        },
+        {
+          "caller": "optimise",
+          "callee": "fix_sigma",
+          "lineNumber": 1344
+        },
+        {
+          "caller": "optimise",
+          "callee": "np.array(mean_list, ndmin=2).transpose",
+          "lineNumber": 1346
+        },
+        {
+          "caller": "optimise",
+          "callee": "np.array",
+          "lineNumber": 1346
+        },
+        {
+          "caller": "optimise",
+          "callee": "minimize",
+          "lineNumber": 1353
+        },
+        {
+          "caller": "optimise",
+          "callee": "un_fix_weights",
+          "lineNumber": 1367
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag(stdev_list).dot(corrmatrix).dot",
+          "lineNumber": 1373
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag(stdev_list).dot",
+          "lineNumber": 1373
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag",
+          "lineNumber": 1373
+        },
+        {
+          "caller": "sigma_from_corr_and_std",
+          "callee": "np.diag",
+          "lineNumber": 1373
+        },
+        {
+          "caller": "_fixit",
+          "callee": "np.isnan",
+          "lineNumber": 1384
+        },
+        {
+          "caller": "fix_mus",
+          "callee": "_fixit",
+          "lineNumber": 1389
+        },
+        {
+          "caller": "un_fix_weights",
+          "callee": "_unfixit",
+          "lineNumber": 1406
+        },
+        {
+          "caller": "un_fix_weights",
+          "callee": "zip",
+          "lineNumber": 1406
+        },
+        {
+          "caller": "_fixit",
+          "callee": "np.isnan",
+          "lineNumber": 1418
+        },
+        {
+          "caller": "fix_sigma",
+          "callee": "_fixit",
+          "lineNumber": 1423
+        },
+        {
+          "caller": "fix_sigma",
+          "callee": "np.array",
+          "lineNumber": 1425
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "np.matrix",
+          "lineNumber": 1432
+        },
+        {
+          "caller": "neg_SR",
+          "callee": "variance",
+          "lineNumber": 1434
+        },
+        {
+          "caller": "addem",
+          "callee": "sum",
+          "lineNumber": 1441
+        },
+        {
+          "caller": "variance",
+          "callee": "weights.transpose",
+          "lineNumber": 1446
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 42,
+        "functionCount": 40,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/accounts/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/accounts/curves/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/accounts/order_simulator/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/attenuate_vol/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "systems/provided/basic/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

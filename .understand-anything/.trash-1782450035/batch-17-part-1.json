@@ -1,0 +1,812 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "type": "file",
+      "name": "multiple_and_adjusted_from_csv_to_db.py",
+      "filePath": "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "summary": "Initialization script that loads multiple and adjusted futures prices from provided CSV files into the database for one or all instruments.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "futures",
+        "csv",
+        "migration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "type": "file",
+      "name": "multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "summary": "Builds multiple-price series (priced/forward/carry contracts) from per-contract DB prices and CSV roll calendars, writing results to DB and/or CSV.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "multiple-prices",
+        "roll-calendar",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysinit/futures/repocsv_adjusted_prices.py",
+      "type": "file",
+      "name": "repocsv_adjusted_prices.py",
+      "filePath": "sysinit/futures/repocsv_adjusted_prices.py",
+      "summary": "Utility script that re-exports adjusted prices from the database back to CSV files for the legacy data repository.",
+      "tags": [
+        "data-pipeline",
+        "export",
+        "adjusted-prices",
+        "csv",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/repocsv_multiple_prices.py",
+      "type": "file",
+      "name": "repocsv_multiple_prices.py",
+      "filePath": "sysinit/futures/repocsv_multiple_prices.py",
+      "summary": "Utility script that re-exports multiple prices from the database back to CSV files for the legacy data repository.",
+      "tags": [
+        "data-pipeline",
+        "export",
+        "multiple-prices",
+        "csv",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "type": "file",
+      "name": "rollcalendars_from_db_multipleprices.py",
+      "filePath": "sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "summary": "Reconstructs roll calendars by backing them out of existing multiple-price series in the database and writes them to CSV.",
+      "tags": [
+        "roll-calendar",
+        "initialization",
+        "futures",
+        "csv",
+        "data-pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "type": "file",
+      "name": "rollcalendars_from_db_prices_to_csv.py",
+      "filePath": "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "summary": "Generates roll calendars from per-contract DB prices and roll parameters, with interactive checks, then writes them to CSV.",
+      "tags": [
+        "roll-calendar",
+        "initialization",
+        "futures",
+        "interactive",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "type": "file",
+      "name": "rollcalendars_from_providedcsv_prices.py",
+      "filePath": "sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "summary": "Generates roll calendars from provided multiple-price CSV files using the simulation CSV data source.",
+      "tags": [
+        "roll-calendar",
+        "initialization",
+        "futures",
+        "csv",
+        "data-pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "type": "file",
+      "name": "safely_modify_roll_parameters.py",
+      "filePath": "sysinit/futures/safely_modify_roll_parameters.py",
+      "summary": "Interactive workflow that safely changes an instrument's roll parameters and rebuilds dependent roll calendars, multiple and adjusted prices.",
+      "tags": [
+        "roll-parameters",
+        "interactive",
+        "initialization",
+        "futures",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_futures_contract_prices",
+      "type": "function",
+      "name": "init_db_with_csv_futures_contract_prices",
+      "filePath": "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "lineRange": [
+        10,
+        26
+      ],
+      "summary": "Loads multiple and adjusted prices from CSV into the DB for every instrument found in the multiple-price path.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_prices_for_code",
+      "type": "function",
+      "name": "init_db_with_csv_prices_for_code",
+      "filePath": "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "lineRange": [
+        29,
+        49
+      ],
+      "summary": "Loads and writes multiple and adjusted prices from CSV into the DB for a single instrument code.",
+      "tags": [
+        "data-pipeline",
+        "initialization",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:_get_data_inputs",
+      "type": "function",
+      "name": "_get_data_inputs",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "lineRange": [
+        34,
+        45
+      ],
+      "summary": "Helper function _get_data_inputs in multipleprices_from_db_prices_and_csv_calendars_to_db.py.",
+      "tags": [
+        "function",
+        "futures",
+        "helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_all_instruments",
+      "type": "function",
+      "name": "process_multiple_prices_all_instruments",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "lineRange": [
+        48,
+        72
+      ],
+      "summary": "Iterates all instruments with roll calendars and builds their multiple prices.",
+      "tags": [
+        "data-pipeline",
+        "multiple-prices",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_single_instrument",
+      "type": "function",
+      "name": "process_multiple_prices_single_instrument",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "lineRange": [
+        75,
+        137
+      ],
+      "summary": "Constructs the multiple-price series for one instrument from contract prices and a roll calendar, optionally writing to DB and CSV.",
+      "tags": [
+        "data-pipeline",
+        "multiple-prices",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:adjust_roll_calendar",
+      "type": "function",
+      "name": "adjust_roll_calendar",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "lineRange": [
+        140,
+        151
+      ],
+      "summary": "Adjusts a roll calendar to align its dates with available contract prices.",
+      "tags": [
+        "roll-calendar",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:add_phantom_row",
+      "type": "function",
+      "name": "add_phantom_row",
+      "filePath": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "lineRange": [
+        154,
+        188
+      ],
+      "summary": "Appends a phantom final row to a roll calendar so the last contract's prices are included.",
+      "tags": [
+        "roll-calendar",
+        "futures",
+        "data-pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:build_and_write_roll_calendar",
+      "type": "function",
+      "name": "build_and_write_roll_calendar",
+      "filePath": "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "lineRange": [
+        22,
+        86
+      ],
+      "summary": "Builds a roll calendar from per-contract prices and roll parameters, optionally checking and writing it to CSV.",
+      "tags": [
+        "roll-calendar",
+        "initialization",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:check_saved_roll_calendar",
+      "type": "function",
+      "name": "check_saved_roll_calendar",
+      "filePath": "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "lineRange": [
+        89,
+        119
+      ],
+      "summary": "Loads a previously saved roll calendar and validates it against the underlying contract prices.",
+      "tags": [
+        "roll-calendar",
+        "validation",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/rollcalendars_from_providedcsv_prices.py:generate_roll_calendars_from_provided_multiple_csv_prices",
+      "type": "function",
+      "name": "generate_roll_calendars_from_provided_multiple_csv_prices",
+      "filePath": "sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "lineRange": [
+        11,
+        38
+      ],
+      "summary": "Generates roll calendars for all instruments using provided multiple-price CSVs via the sim data source.",
+      "tags": [
+        "roll-calendar",
+        "initialization",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/safely_modify_roll_parameters.py:safely_modify_roll_parameters",
+      "type": "function",
+      "name": "safely_modify_roll_parameters",
+      "filePath": "sysinit/futures/safely_modify_roll_parameters.py",
+      "lineRange": [
+        30,
+        147
+      ],
+      "summary": "Interactive driver that walks through changing roll parameters and rebuilding all dependent data safely.",
+      "tags": [
+        "roll-parameters",
+        "interactive",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/safely_modify_roll_parameters.py:modified_roll_parameters",
+      "type": "function",
+      "name": "modified_roll_parameters",
+      "filePath": "sysinit/futures/safely_modify_roll_parameters.py",
+      "lineRange": [
+        150,
+        201
+      ],
+      "summary": "Prompts the user to edit roll parameter fields for an instrument and returns the modified object.",
+      "tags": [
+        "roll-parameters",
+        "interactive",
+        "futures"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_futures_contract_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_futures_contract_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_prices_for_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "function:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py:init_db_with_csv_prices_for_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:_get_data_inputs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:_get_data_inputs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_all_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_all_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_single_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:process_multiple_prices_single_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:adjust_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:adjust_roll_calendar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:add_phantom_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "function:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py:add_phantom_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:build_and_write_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:build_and_write_roll_calendar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:check_saved_roll_calendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "function:sysinit/futures/rollcalendars_from_db_prices_to_csv.py:check_saved_roll_calendar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "function:sysinit/futures/rollcalendars_from_providedcsv_prices.py:generate_roll_calendars_from_provided_multiple_csv_prices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "function:sysinit/futures/rollcalendars_from_providedcsv_prices.py:generate_roll_calendars_from_provided_multiple_csv_prices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "function:sysinit/futures/safely_modify_roll_parameters.py:safely_modify_roll_parameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "function:sysinit/futures/safely_modify_roll_parameters.py:safely_modify_roll_parameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "function:sysinit/futures/safely_modify_roll_parameters.py:modified_roll_parameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "function:sysinit/futures/safely_modify_roll_parameters.py:modified_roll_parameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysinit/futures/build_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysobjects/dict_of_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysobjects/multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_adjusted_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_adjusted_prices.py",
+      "target": "file:sysdata/csv/csv_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_adjusted_prices.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_multiple_prices.py",
+      "target": "file:sysdata/csv/csv_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_multiple_prices.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "target": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "target": "file:sysobjects/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysdata/csv/csv_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysdata/futures/rolls_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysobjects/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "file:sysdata/csv/csv_roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "target": "file:sysobjects/roll_calendars.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysinit/futures/adjustedprices_from_db_multiple_to_db.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysobjects/rolls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "target": "file:sysinit/futures/tests/test_sysinit_futures.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

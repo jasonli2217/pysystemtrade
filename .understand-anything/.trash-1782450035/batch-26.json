@@ -1,0 +1,489 @@
+{
+  "nodes": [
+    {
+      "id": "file:_learning_sandbox/chapter15.ipynb",
+      "type": "file",
+      "name": "chapter15.ipynb",
+      "filePath": "_learning_sandbox/chapter15.ipynb",
+      "summary": "Jupyter learning notebook working through Chapter 15 material, used as a personal sandbox for exploring pysystemtrade concepts.",
+      "tags": ["notebook", "learning", "sandbox", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:_learning_sandbox/intro.ipynb",
+      "type": "file",
+      "name": "intro.ipynb",
+      "filePath": "_learning_sandbox/intro.ipynb",
+      "summary": "Large introductory Jupyter notebook in the personal learning sandbox that experiments with core pysystemtrade APIs and trading concepts.",
+      "tags": ["notebook", "learning", "sandbox", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:.coveragerc",
+      "type": "config",
+      "name": ".coveragerc",
+      "filePath": ".coveragerc",
+      "summary": "Coverage.py configuration controlling which source paths are measured and which lines are excluded from test coverage reports.",
+      "tags": ["configuration", "test", "coverage", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/mlc_config.json",
+      "type": "pipeline",
+      "name": "mlc_config.json",
+      "filePath": ".github/workflows/mlc_config.json",
+      "summary": "Markdown-link-check configuration used by CI to define URL replacement patterns when validating documentation links.",
+      "tags": ["ci-cd", "configuration", "documentation", "infrastructure"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/.understandignore",
+      "type": "config",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "Ignore-pattern file telling the Understand-Anything analyzer which paths to exclude when scanning the codebase.",
+      "tags": ["configuration", "tooling", "ignore-file"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "Configuration for the Understand-Anything plugin, setting options such as the output language for generated analysis.",
+      "tags": ["configuration", "tooling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dashboard/static/css/styles.css",
+      "type": "file",
+      "name": "styles.css",
+      "filePath": "dashboard/static/css/styles.css",
+      "summary": "Stylesheet for the production monitoring dashboard, defining table layouts, status colour coding, and tab styling.",
+      "tags": ["stylesheet", "dashboard", "ui", "frontend"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dashboard/static/js/update.js",
+      "type": "file",
+      "name": "update.js",
+      "filePath": "dashboard/static/js/update.js",
+      "summary": "Front-end jQuery script that polls the dashboard backend via AJAX and refreshes every monitoring panel (capital, costs, forex, liquidity, P&L, processes, reconciliation, risk, rolls, strategy, trades).",
+      "tags": ["dashboard", "frontend", "ajax", "ui", "event-handler"],
+      "complexity": "complex",
+      "languageNotes": "Heavy reliance on jQuery selectors and $.ajax callbacks to populate HTML tables dynamically."
+    },
+    {
+      "id": "file:dashboard/templates/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "dashboard/templates/index.html",
+      "summary": "Flask template providing the tabbed HTML structure for the production monitoring dashboard, with table scaffolding that update.js populates.",
+      "tags": ["dashboard", "frontend", "template", "ui"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "data/__init__.py",
+      "summary": "Empty package initializer marking the data directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:data/tools/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "data/tools/__init__.py",
+      "summary": "Empty package initializer marking the data/tools directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:data/tools/example use ContractComparison.ipynb",
+      "type": "file",
+      "name": "example use ContractComparison.ipynb",
+      "filePath": "data/tools/example use ContractComparison.ipynb",
+      "summary": "Example Jupyter notebook demonstrating use of the ContractComparison data tool for comparing futures contract data.",
+      "tags": ["notebook", "example", "data-tools", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "docs/__init__.py",
+      "summary": "Empty package initializer marking the docs directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/doc_generation/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "docs/doc_generation/__init__.py",
+      "summary": "Empty package initializer marking the docs/doc_generation directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/gh-md-toc",
+      "type": "file",
+      "name": "gh-md-toc",
+      "filePath": "docs/gh-md-toc",
+      "summary": "Shell script utility that generates GitHub-flavoured Markdown tables of contents for documentation files.",
+      "tags": ["script", "documentation", "utility", "tooling"],
+      "complexity": "complex",
+      "languageNotes": "POSIX shell script with no extension, used as a documentation tooling helper."
+    },
+    {
+      "id": "file:docs/notebooks/introduction_with_fxdata.ipynb",
+      "type": "file",
+      "name": "introduction_with_fxdata.ipynb",
+      "filePath": "docs/notebooks/introduction_with_fxdata.ipynb",
+      "summary": "Documentation notebook introducing pysystemtrade workflows using FX data examples.",
+      "tags": ["notebook", "documentation", "tutorial", "example"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:examples/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "examples/__init__.py",
+      "summary": "Empty package initializer marking the examples directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:examples/introduction/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "examples/introduction/__init__.py",
+      "summary": "Empty package initializer marking the examples/introduction directory as a Python package.",
+      "tags": ["entry-point", "package-init", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:examples/introduction/asimpletradingrule.ipynb",
+      "type": "file",
+      "name": "asimpletradingrule.ipynb",
+      "filePath": "examples/introduction/asimpletradingrule.ipynb",
+      "summary": "Introductory example notebook walking through building a single trading rule in pysystemtrade.",
+      "tags": ["notebook", "example", "tutorial", "trading-rule"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:examples/introduction/prebakedsystems.ipynb",
+      "type": "file",
+      "name": "prebakedsystems.ipynb",
+      "filePath": "examples/introduction/prebakedsystems.ipynb",
+      "summary": "Short example notebook demonstrating how to load and run the pre-baked trading systems shipped with pysystemtrade.",
+      "tags": ["notebook", "example", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:examples/introduction/simplesystem.ipynb",
+      "type": "file",
+      "name": "simplesystem.ipynb",
+      "filePath": "examples/introduction/simplesystem.ipynb",
+      "summary": "Brief example notebook showing how to assemble a simple end-to-end trading system from pysystemtrade stages.",
+      "tags": ["notebook", "example", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:examples/logging/logging_server.service",
+      "type": "service",
+      "name": "logging_server.service",
+      "filePath": "examples/logging/logging_server.service",
+      "summary": "Example systemd unit file for running the pysystemtrade logging server as a managed background service.",
+      "tags": ["infrastructure", "systemd", "logging", "deployment"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:examples/production/private_config_example.yaml",
+      "type": "config",
+      "name": "private_config_example.yaml",
+      "filePath": "examples/production/private_config_example.yaml",
+      "summary": "Template private configuration for production deployments, documenting broker account, email alerting, Interactive Brokers connection, and MongoDB settings.",
+      "tags": ["configuration", "production", "broker", "deployment"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:MANIFEST.in",
+      "type": "config",
+      "name": "MANIFEST.in",
+      "filePath": "MANIFEST.in",
+      "summary": "Packaging manifest declaring which non-Python data files are included in the distributed pysystemtrade package.",
+      "tags": ["configuration", "packaging", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:setup.py",
+      "type": "file",
+      "name": "setup.py",
+      "filePath": "setup.py",
+      "summary": "Setuptools build script defining package metadata, dependencies, and data-file inclusion for installing pysystemtrade.",
+      "tags": ["build-system", "packaging", "configuration", "entry-point"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_capital",
+      "type": "function",
+      "name": "update_capital",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [1, 15],
+      "summary": "Fetches capital data via AJAX and updates the capital timestamp indicator, colour-coding it by staleness.",
+      "tags": ["dashboard", "ajax", "ui-update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_costs",
+      "type": "function",
+      "name": "update_costs",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [17, 48],
+      "summary": "Retrieves trading cost data and rebuilds the costs summary and detail tables in the dashboard.",
+      "tags": ["dashboard", "ajax", "ui-update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_forex",
+      "type": "function",
+      "name": "update_forex",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [50, 65],
+      "summary": "Fetches FX balance data and populates the forex table on the dashboard.",
+      "tags": ["dashboard", "ajax", "ui-update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_liquidity",
+      "type": "function",
+      "name": "update_liquidity",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [67, 97],
+      "summary": "Loads instrument liquidity metrics and renders them with formatted risk values into the liquidity table.",
+      "tags": ["dashboard", "ajax", "ui-update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_pandl",
+      "type": "function",
+      "name": "update_pandl",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [99, 125],
+      "summary": "Fetches profit-and-loss data and populates per-instrument, per-strategy, and per-asset-class P&L tables.",
+      "tags": ["dashboard", "ajax", "ui-update", "pandl"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_processes",
+      "type": "function",
+      "name": "update_processes",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [127, 224],
+      "summary": "Refreshes the process-monitoring panel, rendering process status, config, and price-update freshness with staleness-based colour coding.",
+      "tags": ["dashboard", "ajax", "ui-update", "monitoring"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_reconcile",
+      "type": "function",
+      "name": "update_reconcile",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [226, 286],
+      "summary": "Loads reconciliation data and builds strategy, contract, and broker position-break tables, flagging breaks and gateway status.",
+      "tags": ["dashboard", "ajax", "ui-update", "reconciliation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_risk",
+      "type": "function",
+      "name": "update_risk",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [288, 332],
+      "summary": "Fetches risk data and renders the correlation matrix plus detailed per-instrument risk metrics into dashboard tables.",
+      "tags": ["dashboard", "ajax", "ui-update", "risk"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_rolls",
+      "type": "function",
+      "name": "update_rolls",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [334, 373],
+      "summary": "Loads contract roll status and details, rendering roll tables and colour-coding the roll status indicator.",
+      "tags": ["dashboard", "ajax", "ui-update", "rolls"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_strategy",
+      "type": "function",
+      "name": "update_strategy",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [375, 389],
+      "summary": "Fetches per-strategy summary data and populates the strategy table on the dashboard.",
+      "tags": ["dashboard", "ajax", "ui-update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:update_trades",
+      "type": "function",
+      "name": "update_trades",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [391, 476],
+      "summary": "Loads trade execution data and builds overview, delay, and slippage tables with formatted execution-quality metrics.",
+      "tags": ["dashboard", "ajax", "ui-update", "trades"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dashboard/static/js/update.js:roll_post",
+      "type": "function",
+      "name": "roll_post",
+      "filePath": "dashboard/static/js/update.js",
+      "lineRange": [478, 544],
+      "summary": "Posts a roll action for an instrument to the backend, rendering returned price tables and updating the roll UI state machine.",
+      "tags": ["dashboard", "ajax", "event-handler", "rolls"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:setup.py:package_files",
+      "type": "function",
+      "name": "package_files",
+      "filePath": "setup.py",
+      "lineRange": [26, 33],
+      "summary": "Recursively walks a directory collecting relative paths of files matching a given extension, used to include data files in the package.",
+      "tags": ["build-system", "packaging", "utility"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_capital",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_costs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_forex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_liquidity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_pandl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_processes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_reconcile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_risk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_rolls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:update_trades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dashboard/static/js/update.js",
+      "target": "function:dashboard/static/js/update.js:roll_post",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:dashboard/static/js/update.js:roll_post",
+      "target": "function:dashboard/static/js/update.js:update_rolls",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:setup.py",
+      "target": "function:setup.py:package_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:setup.py",
+      "target": "function:setup.py:package_files",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:dashboard/templates/index.html",
+      "target": "file:dashboard/static/js/update.js",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:dashboard/templates/index.html",
+      "target": "file:dashboard/static/css/styles.css",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:MANIFEST.in",
+      "target": "file:setup.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

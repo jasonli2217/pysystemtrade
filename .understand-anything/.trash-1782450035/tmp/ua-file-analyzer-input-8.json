@@ -1,0 +1,351 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "syslogdiag/log_to_screen.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/mongo_email_control.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/pst_logger.py",
+      "language": "python",
+      "sizeLines": 352,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/adapter.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/filters.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/handlers.py",
+      "language": "python",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/logger.py",
+      "language": "python",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/pyyaml_env.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/server.py",
+      "language": "python",
+      "sizeLines": 128,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogging/tests/logging_tests.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/contracts.py",
+      "language": "python",
+      "sizeLines": 388,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/optimal_positions.py",
+      "language": "python",
+      "sizeLines": 443,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/override.py",
+      "language": "python",
+      "sizeLines": 219,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/position_limits.py",
+      "language": "python",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/positions.py",
+      "language": "python",
+      "sizeLines": 447,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/process_control.py",
+      "language": "python",
+      "sizeLines": 387,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/trade_limits.py",
+      "language": "python",
+      "sizeLines": 200,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/production/tradeable_object.py",
+      "language": "python",
+      "sizeLines": 245,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysobjects/spreads.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/_DEPRECATED/logs.py",
+      "language": "python",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/backup_db_to_csv.py",
+      "language": "python",
+      "sizeLines": 493,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/backup_mongo_data_as_dump.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/backup_parquet_data_to_remote.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/backup_state_files.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/config.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/directories.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/production_data_objects.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/run_backups.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "syslogdiag/log_to_screen.py": [
+      "syslogdiag/log_entry.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/mongo_email_control.py": [
+      "syscore/dateutils.py",
+      "sysdata/mongodb/mongo_generic.py",
+      "syslogdiag/email_control.py",
+      "syslogging/logger.py"
+    ],
+    "syslogdiag/pst_logger.py": [
+      "syscore/constants.py",
+      "syslogdiag/log_entry.py"
+    ],
+    "syslogging/__init__.py": [],
+    "syslogging/adapter.py": [
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogging/filters.py": [],
+    "syslogging/handlers.py": [
+      "syslogdiag/emailing.py"
+    ],
+    "syslogging/logger.py": [
+      "syscore/fileutils.py",
+      "syslogging/__init__.py",
+      "syslogging/adapter.py",
+      "syslogging/filters.py",
+      "syslogging/pyyaml_env.py"
+    ],
+    "syslogging/pyyaml_env.py": [],
+    "syslogging/server.py": [
+      "syslogging/handlers.py",
+      "syslogging/logger.py"
+    ],
+    "syslogging/tests/logging_tests.py": [
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysobjects/contracts.py": [
+      "syscore/constants.py",
+      "syslogging/logger.py",
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysobjects/production/optimal_positions.py": [
+      "sysobjects/production/positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/override.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/trade_qty.py"
+    ],
+    "sysobjects/production/position_limits.py": [
+      "syscore/genutils.py",
+      "sysexecution/orders/base_orders.py",
+      "sysexecution/trade_qty.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/positions.py": [
+      "syscore/genutils.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/process_control.py": [
+      "syscontrol/list_running_pids.py",
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/fileutils.py"
+    ],
+    "sysobjects/production/trade_limits.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysobjects/production/tradeable_object.py": [
+      "sysobjects/contract_dates_and_expiries.py",
+      "sysobjects/contracts.py",
+      "sysobjects/instruments.py"
+    ],
+    "sysobjects/spreads.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py"
+    ],
+    "sysproduction/_DEPRECATED/logs.py": [
+      "sysdata/_DEPRECATED/mongo_log.py",
+      "sysdata/data_blob.py",
+      "syslogdiag/_DEPRECATED/database_log.py",
+      "sysproduction/data/generic_production_data.py"
+    ],
+    "sysproduction/backup_db_to_csv.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/pandas/pdutils.py",
+      "sysdata/config/production_config.py",
+      "sysdata/csv/csv_adjusted_prices.py",
+      "sysdata/csv/csv_capital_data.py",
+      "sysdata/csv/csv_contract_position_data.py",
+      "sysdata/csv/csv_futures_contract_prices.py",
+      "sysdata/csv/csv_futures_contracts.py",
+      "sysdata/csv/csv_historic_orders.py",
+      "sysdata/csv/csv_multiple_prices.py",
+      "sysdata/csv/csv_optimal_position.py",
+      "sysdata/csv/csv_roll_state_storage.py",
+      "sysdata/csv/csv_spot_fx.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/csv/csv_spreads.py",
+      "sysdata/csv/csv_strategy_position_data.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/directories.py",
+      "sysproduction/data/production_data_objects.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysproduction/backup_mongo_data_as_dump.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/backup_parquet_data_to_remote.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/backup_state_files.py": [
+      "sysdata/config/production_config.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/directories.py"
+    ],
+    "sysproduction/data/config.py": [
+      "sysdata/config/production_config.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysproduction/data/directories.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "sysproduction/data/backtest.py"
+    ],
+    "sysproduction/data/production_data_objects.py": [
+      "sysdata/csv/csv_instrument_data.py",
+      "sysdata/csv/csv_roll_parameters.py",
+      "sysdata/mongodb/mongo_futures_contracts.py",
+      "sysdata/mongodb/mongo_historic_orders.py",
+      "sysdata/mongodb/mongo_order_stack.py",
+      "sysdata/mongodb/mongo_process_control.py",
+      "sysdata/mongodb/mongo_roll_state_storage.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_capital.py",
+      "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_historic_contract_positions.py",
+      "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_optimal_positions.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/parquet/parquet_spreads.py"
+    ],
+    "sysproduction/run_backups.py": [
+      "syscontrol/run_process.py",
+      "sysdata/data_blob.py",
+      "sysproduction/backup_db_to_csv.py",
+      "sysproduction/backup_mongo_data_as_dump.py",
+      "sysproduction/backup_parquet_data_to_remote.py",
+      "sysproduction/backup_state_files.py"
+    ]
+  }
+}

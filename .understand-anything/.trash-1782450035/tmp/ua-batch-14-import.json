@@ -1,0 +1,213 @@
+{
+  "syscore/genutils.py": [],
+  "syscore/interactive/progress_bar.py": [],
+  "syscore/pandas/find_data.py": [
+    "syscore/constants.py",
+    "syscore/pandas/__init__.py"
+  ],
+  "sysexecution/strategies/dynamic_optimised_positions.py": [
+    "sysdata/data_blob.py",
+    "sysexecution/orders/instrument_orders.py",
+    "sysexecution/orders/list_of_orders.py",
+    "sysexecution/strategies/strategy_order_handling.py",
+    "sysobjects/production/optimal_positions.py",
+    "sysobjects/production/override.py",
+    "sysobjects/production/position_limits.py",
+    "sysobjects/production/tradeable_object.py",
+    "sysproduction/data/capital.py",
+    "sysproduction/data/controls.py",
+    "sysproduction/data/optimal_positions.py",
+    "sysproduction/data/prices.py",
+    "sysproduction/data/risk.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/covariance.py",
+    "sysquant/estimators/mean_estimator.py",
+    "sysquant/optimisation/weights.py",
+    "systems/provided/dynamic_small_system_optimise/buffering.py",
+    "systems/provided/dynamic_small_system_optimise/optimisation.py",
+    "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py"
+  ],
+  "sysinit/futures/check_instrument_lists.py": [
+    "syscore/interactive/progress_bar.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/prices.py",
+    "systems/provided/rob_system/run_system.py"
+  ],
+  "sysproduction/data/instruments.py": [
+    "sysdata/data_blob.py",
+    "sysdata/futures/instruments.py",
+    "sysdata/futures/spread_costs.py",
+    "sysobjects/instruments.py",
+    "sysobjects/spot_fx_prices.py",
+    "sysproduction/data/config.py",
+    "sysproduction/data/currency_data.py",
+    "sysproduction/data/generic_production_data.py",
+    "sysproduction/data/production_data_objects.py"
+  ],
+  "sysproduction/data/risk.py": [
+    "syscore/constants.py",
+    "syscore/dateutils.py",
+    "syscore/objects.py",
+    "syscore/pandas/frequency.py",
+    "sysproduction/data/capital.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/prices.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/covariance.py",
+    "sysquant/estimators/stdev_estimator.py",
+    "sysquant/fitting_dates.py"
+  ],
+  "sysproduction/interactive_controls.py": [
+    "syscore/dateutils.py",
+    "syscore/genutils.py",
+    "syscore/interactive/display.py",
+    "syscore/interactive/input.py",
+    "syscore/interactive/menus.py",
+    "sysdata/data_blob.py",
+    "sysinit/futures/safely_modify_roll_parameters.py",
+    "sysobjects/contracts.py",
+    "sysobjects/production/override.py",
+    "sysobjects/production/process_control.py",
+    "sysobjects/production/tradeable_object.py",
+    "sysproduction/backup_db_to_csv.py",
+    "sysproduction/data/broker.py",
+    "sysproduction/data/contracts.py",
+    "sysproduction/data/control_process.py",
+    "sysproduction/data/controls.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/prices.py",
+    "sysproduction/data/strategies.py",
+    "sysproduction/reporting/api.py",
+    "sysproduction/reporting/data/constants.py",
+    "sysproduction/reporting/data/risk.py",
+    "sysproduction/reporting/data/volume.py"
+  ],
+  "sysproduction/reporting/adhoc/instrument_list.py": [
+    "syscore/interactive/progress_bar.py",
+    "sysdata/data_blob.py",
+    "sysproduction/data/broker.py",
+    "sysproduction/data/contracts.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/reporting/data/costs.py",
+    "sysproduction/reporting/report_configs.py",
+    "sysproduction/reporting/reporting_functions.py"
+  ],
+  "sysproduction/reporting/data/constants.py": [],
+  "sysproduction/reporting/data/costs.py": [
+    "syscore/constants.py",
+    "syscore/exceptions.py",
+    "syscore/genutils.py",
+    "syscore/interactive/progress_bar.py",
+    "sysdata/data_blob.py",
+    "sysobjects/contracts.py",
+    "sysproduction/data/broker.py",
+    "sysproduction/data/contracts.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/prices.py",
+    "sysproduction/data/risk.py",
+    "sysproduction/reporting/data/trades.py"
+  ],
+  "sysproduction/reporting/data/duplicate_remove_markets.py": [
+    "syscore/constants.py",
+    "syscore/genutils.py",
+    "sysdata/config/instruments.py",
+    "sysproduction/data/config.py",
+    "sysproduction/reporting/data/constants.py",
+    "sysproduction/reporting/data/costs.py",
+    "sysproduction/reporting/data/risk.py",
+    "sysproduction/reporting/data/volume.py",
+    "sysproduction/reporting/reporting_functions.py"
+  ],
+  "sysproduction/reporting/data/risk.py": [
+    "syscore/constants.py",
+    "syscore/dateutils.py",
+    "syscore/genutils.py",
+    "syscore/interactive/progress_bar.py",
+    "syscore/pandas/frequency.py",
+    "sysdata/data_blob.py",
+    "sysobjects/production/tradeable_object.py",
+    "sysproduction/data/capital.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/positions.py",
+    "sysproduction/data/prices.py",
+    "sysproduction/data/risk.py",
+    "sysproduction/reporting/data/constants.py",
+    "sysquant/estimators/clustering_correlations.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/covariance.py",
+    "sysquant/estimators/stdev_estimator.py",
+    "sysquant/optimisation/weights.py"
+  ],
+  "sysproduction/reporting/data/trades.py": [
+    "syscore/genutils.py",
+    "syscore/pandas/pdutils.py",
+    "sysproduction/data/broker.py",
+    "sysproduction/data/instruments.py",
+    "sysproduction/data/orders.py",
+    "sysproduction/reporting/data/risk.py"
+  ],
+  "sysproduction/reporting/data/volume.py": [
+    "syscore/constants.py",
+    "syscore/dateutils.py",
+    "syscore/genutils.py",
+    "syscore/interactive/progress_bar.py",
+    "sysdata/data_blob.py",
+    "sysproduction/data/contracts.py",
+    "sysproduction/data/prices.py",
+    "sysproduction/reporting/data/risk.py"
+  ],
+  "sysquant/estimators/clustering_correlations.py": [
+    "syscore/genutils.py",
+    "sysquant/estimators/correlations.py"
+  ],
+  "sysquant/estimators/correlation_estimator.py": [
+    "syscore/constants.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/exponential_correlation.py",
+    "sysquant/estimators/generic_estimator.py",
+    "sysquant/fitting_dates.py"
+  ],
+  "sysquant/estimators/correlation_over_time.py": [
+    "syscore/interactive/progress_bar.py",
+    "sysquant/estimators/correlation_estimator.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/fitting_dates.py"
+  ],
+  "sysquant/estimators/correlations.py": [
+    "syscore/constants.py",
+    "syscore/pandas/pdutils.py",
+    "sysquant/estimators/generic_estimator.py",
+    "sysquant/fitting_dates.py"
+  ],
+  "sysquant/estimators/covariance.py": [
+    "syscore/constants.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/stdev_estimator.py",
+    "sysquant/optimisation/shared.py",
+    "sysquant/optimisation/weights.py"
+  ],
+  "sysquant/estimators/diversification_multipliers.py": [
+    "sysquant/estimators/correlations.py",
+    "sysquant/optimisation/weights.py"
+  ],
+  "sysquant/estimators/estimates.py": [
+    "syscore/genutils.py",
+    "syscore/pandas/frequency.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/mean_estimator.py",
+    "sysquant/estimators/stdev_estimator.py"
+  ],
+  "sysquant/estimators/exponential_correlation.py": [
+    "syscore/constants.py",
+    "syscore/genutils.py",
+    "sysquant/estimators/correlations.py",
+    "sysquant/estimators/generic_estimator.py",
+    "sysquant/fitting_dates.py"
+  ],
+  "sysquant/estimators/forecast_scalar.py": [
+    "syscore/genutils.py"
+  ],
+  "sysquant/estimators/generic_estimator.py": [
+    "sysquant/fitting_dates.py"
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysdata/parquet/parquet_adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_capital.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "language": "python",
+      "sizeLines": 234,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_contract_positions.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_optimal_positions.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_spotfx_prices.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_spreads.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/broker_client_id.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/capital.py",
+      "language": "python",
+      "sizeLines": 516,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/historic_contract_positions.py",
+      "language": "python",
+      "sizeLines": 312,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/historic_strategy_positions.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/locks.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/optimal_positions.py",
+      "language": "python",
+      "sizeLines": 187,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/override.py",
+      "language": "python",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/position_limits.py",
+      "language": "python",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/process_control_data.py",
+      "language": "python",
+      "sizeLines": 210,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/roll_state.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/temporary_close.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/temporary_override.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/trade_limits.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/repocsv_spread_costs.py",
+      "language": "python",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "language": "python",
+      "sizeLines": 540,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "language": "python",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/_DEPRECATED/database_log.py",
+      "language": "python",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/email_control.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/emailing.py",
+      "language": "python",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/log_entry.py",
+      "language": "python",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/log_to_file.py",
+      "language": "python",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysdata/parquet/parquet_adjusted_prices.py": [
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/parquet/parquet_capital.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/parquet/parquet_futures_per_contract_prices.py": [
+      "syscore/dateutils.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/parquet/parquet_historic_contract_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/parquet/parquet_historic_strategy_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_spotfx_prices.py": [
+      "sysdata/fx/spotfx.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/parquet/parquet_spreads.py": [
+      "sysdata/futures/spreads.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/production/broker_client_id.py": [
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/capital.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/capital.py"
+    ],
+    "sysdata/production/historic_contract_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysdata/production/historic_strategy_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/locks.py": [
+      "syscore/exceptions.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/position_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/process_control_data.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py"
+    ],
+    "sysdata/production/roll_state.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/roll_state.py"
+    ],
+    "sysdata/production/temporary_close.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py"
+    ],
+    "sysdata/production/temporary_override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/production/trade_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/trade_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysinit/futures/repocsv_spread_costs.py": [
+      "syscore/genutils.py",
+      "syscore/interactive/input.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/mongodb/mongo_spread_costs.py"
+    ],
+    "sysinit/transfer/backup_arctic_to_parquet.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/input.py",
+      "sysdata/arctic/arctic_adjusted_prices.py",
+      "sysdata/arctic/arctic_capital.py",
+      "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_multiple_prices.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysdata/arctic/arctic_spotfx_prices.py",
+      "sysdata/arctic/arctic_spreads.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_futures_contracts.py",
+      "sysdata/mongodb/mongo_historic_orders.py",
+      "sysdata/mongodb/mongo_roll_state_storage.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_capital.py",
+      "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_historic_contract_positions.py",
+      "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_optimal_positions.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/parquet/parquet_spreads.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/directories.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysinit/transfer/positions_from_timed_storage_to_arctic.py": [
+      "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "syslogdiag/_DEPRECATED/database_log.py": [
+      "sysdata/base_data.py",
+      "syslogdiag/log_to_screen.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/email_control.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "syslogdiag/emailing.py": [
+      "sysdata/config/production_config.py"
+    ],
+    "syslogdiag/log_entry.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "syslogdiag/log_to_file.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogdiag/log_entry.py",
+      "syslogdiag/pst_logger.py"
+    ]
+  }
+}

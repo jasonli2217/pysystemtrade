@@ -1,0 +1,7100 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 31,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "dashboard/app.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 335,
+      "nonEmptyLines": 268,
+      "functions": [
+        {
+          "name": "get_data",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "get_reporting_api",
+          "startLine": 44,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "cleanup_data",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "exception"
+          ]
+        },
+        {
+          "name": "dict_of_df_to_dict",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "d",
+            "orient"
+          ]
+        },
+        {
+          "name": "index",
+          "startLine": 68,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "capital",
+          "startLine": 73,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "costs",
+          "startLine": 82,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "forex",
+          "startLine": 92,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "liquidity",
+          "startLine": 99,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "pandl",
+          "startLine": 105,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "processes",
+          "startLine": 123,
+          "endLine": 155,
+          "params": []
+        },
+        {
+          "name": "reconcile",
+          "startLine": 159,
+          "endLine": 183,
+          "params": []
+        },
+        {
+          "name": "rolls",
+          "startLine": 187,
+          "endLine": 195,
+          "params": []
+        },
+        {
+          "name": "rolls_post",
+          "startLine": 199,
+          "endLine": 256,
+          "params": []
+        },
+        {
+          "name": "risk",
+          "startLine": 260,
+          "endLine": 267,
+          "params": []
+        },
+        {
+          "name": "trades",
+          "startLine": 271,
+          "endLine": 297,
+          "params": []
+        },
+        {
+          "name": "strategy",
+          "startLine": 301,
+          "endLine": 302,
+          "params": []
+        },
+        {
+          "name": "visible_on_lan",
+          "startLine": 305,
+          "endLine": 311,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_data",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "get_reporting_api",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "cleanup_data",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "dict_of_df_to_dict",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "index",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "capital",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "costs",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "forex",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "liquidity",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "pandl",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "processes",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "reconcile",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "rolls",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "rolls_post",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "risk",
+          "line": 259,
+          "isDefault": false
+        },
+        {
+          "name": "trades",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "strategy",
+          "line": 300,
+          "isDefault": false
+        },
+        {
+          "name": "visible_on_lan",
+          "line": 305,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_data",
+          "callee": "hasattr",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_data",
+          "callee": "dataBlob",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_reporting_api",
+          "callee": "reportingApi",
+          "lineNumber": 45
+        },
+        {
+          "caller": "cleanup_data",
+          "callee": "hasattr",
+          "lineNumber": 53
+        },
+        {
+          "caller": "cleanup_data",
+          "callee": "g.data.close",
+          "lineNumber": 54
+        },
+        {
+          "caller": "dict_of_df_to_dict",
+          "callee": "json.loads",
+          "lineNumber": 60
+        },
+        {
+          "caller": "dict_of_df_to_dict",
+          "callee": "v.to_json",
+          "lineNumber": 60
+        },
+        {
+          "caller": "dict_of_df_to_dict",
+          "callee": "isinstance",
+          "lineNumber": 61
+        },
+        {
+          "caller": "dict_of_df_to_dict",
+          "callee": "d.items",
+          "lineNumber": 63
+        },
+        {
+          "caller": "index",
+          "callee": "render_template",
+          "lineNumber": 69
+        },
+        {
+          "caller": "capital",
+          "callee": "dataCapital",
+          "lineNumber": 74
+        },
+        {
+          "caller": "capital",
+          "callee": "capital_data.get_series_of_all_global_capital",
+          "lineNumber": 75
+        },
+        {
+          "caller": "capital",
+          "callee": "capital_series.last",
+          "lineNumber": 77
+        },
+        {
+          "caller": "costs",
+          "callee": "reporting_api.table_of_sr_costs",
+          "lineNumber": 84
+        },
+        {
+          "caller": "costs",
+          "callee": "reporting_api.table_of_slippage_comparison",
+          "lineNumber": 85
+        },
+        {
+          "caller": "costs",
+          "callee": "dict_of_df_to_dict",
+          "lineNumber": 87
+        },
+        {
+          "caller": "forex",
+          "callee": "asyncio.set_event_loop",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forex",
+          "callee": "asyncio.new_event_loop",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forex",
+          "callee": "dataBroker",
+          "lineNumber": 94
+        },
+        {
+          "caller": "forex",
+          "callee": "data_broker.broker_fx_balances",
+          "lineNumber": 95
+        },
+        {
+          "caller": "liquidity",
+          "callee": "reporting_api.liquidity_data().to_dict",
+          "lineNumber": 100
+        },
+        {
+          "caller": "liquidity",
+          "callee": "reporting_api.liquidity_data",
+          "lineNumber": 100
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_pandl_for_instruments_across_strategies().Body.to_dict",
+          "lineNumber": 109
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_pandl_for_instruments_across_strategies",
+          "lineNumber": 109
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_strategy_pandl_and_residual().Body.to_dict",
+          "lineNumber": 114
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_strategy_pandl_and_residual",
+          "lineNumber": 114
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_sector_pandl().Body.to_dict",
+          "lineNumber": 115
+        },
+        {
+          "caller": "pandl",
+          "callee": "reporting_api.table_sector_pandl",
+          "lineNumber": 115
+        },
+        {
+          "caller": "processes",
+          "callee": "asyncio.set_event_loop",
+          "lineNumber": 124
+        },
+        {
+          "caller": "processes",
+          "callee": "asyncio.new_event_loop",
+          "lineNumber": 124
+        },
+        {
+          "caller": "processes",
+          "callee": "dataControlProcess",
+          "lineNumber": 126
+        },
+        {
+          "caller": "processes",
+          "callee": "data_control.check_if_pid_running_and_if_not_finish_all_processes",
+          "lineNumber": 127
+        },
+        {
+          "caller": "processes",
+          "callee": "reporting_api.table_of_control_config_list_for_all_processes",
+          "lineNumber": 130
+        },
+        {
+          "caller": "processes",
+          "callee": "reporting_api.table_of_control_status_list_for_all_processes",
+          "lineNumber": 131
+        },
+        {
+          "caller": "processes",
+          "callee": "reporting_api.table_of_process_status_list_for_all_processes",
+          "lineNumber": 132
+        },
+        {
+          "caller": "processes",
+          "callee": "reporting_api.table_of_last_price_updates().Body.reset_index",
+          "lineNumber": 134
+        },
+        {
+          "caller": "processes",
+          "callee": "reporting_api.table_of_last_price_updates",
+          "lineNumber": 134
+        },
+        {
+          "caller": "processes",
+          "callee": "dict_of_df_to_dict",
+          "lineNumber": 138
+        },
+        {
+          "caller": "processes",
+          "callee": "retval[\"config\"].keys",
+          "lineNumber": 141
+        },
+        {
+          "caller": "processes",
+          "callee": "retval[\"config\"].get",
+          "lineNumber": 143
+        },
+        {
+          "caller": "processes",
+          "callee": "retval[\"control\"].get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "processes",
+          "callee": "retval[\"process\"].get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "processes",
+          "callee": "retval.pop",
+          "lineNumber": 148
+        },
+        {
+          "caller": "processes",
+          "callee": "describe_trading_server_login_data",
+          "lineNumber": 150
+        },
+        {
+          "caller": "reconcile",
+          "callee": "asyncio.set_event_loop",
+          "lineNumber": 162
+        },
+        {
+          "caller": "reconcile",
+          "callee": "asyncio.new_event_loop",
+          "lineNumber": 162
+        },
+        {
+          "caller": "reconcile",
+          "callee": "reporting_api.table_of_optimal_positions",
+          "lineNumber": 163
+        },
+        {
+          "caller": "reconcile",
+          "callee": "reporting_api.table_of_ib_positions",
+          "lineNumber": 164
+        },
+        {
+          "caller": "reconcile",
+          "callee": "reporting_api.table_of_my_positions",
+          "lineNumber": 165
+        },
+        {
+          "caller": "reconcile",
+          "callee": "retval[\"ib\"].set_index",
+          "lineNumber": 170
+        },
+        {
+          "caller": "reconcile",
+          "callee": "retval[\"my\"].set_index",
+          "lineNumber": 173
+        },
+        {
+          "caller": "reconcile",
+          "callee": "retval[\"optimal\"][\"optimal\"].astype",
+          "lineNumber": 181
+        },
+        {
+          "caller": "reconcile",
+          "callee": "dict_of_df_to_dict",
+          "lineNumber": 182
+        },
+        {
+          "caller": "rolls",
+          "callee": "reporting_api.table_of_roll_data",
+          "lineNumber": 188
+        },
+        {
+          "caller": "rolls",
+          "callee": "json.loads",
+          "lineNumber": 189
+        },
+        {
+          "caller": "rolls",
+          "callee": "rolls.to_json",
+          "lineNumber": 189
+        },
+        {
+          "caller": "rolls",
+          "callee": "setup_roll_data_with_state_reporting",
+          "lineNumber": 192
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rollingAdjustedAndMultiplePrices",
+          "lineNumber": 206
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 210
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 210
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "v.items",
+          "lineNumber": 210
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_multiple_prices.tail(number_to_return)\n            .to_dict(orient=\"index\")\n            .items",
+          "lineNumber": 211
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_multiple_prices.tail(number_to_return)\n            .to_dict",
+          "lineNumber": 211
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_multiple_prices.tail",
+          "lineNumber": 211
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 217
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 217
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "v.items",
+          "lineNumber": 217
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.updated_multiple_prices.tail(number_to_return + 5)\n            .to_dict(orient=\"index\")\n            .items",
+          "lineNumber": 218
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.updated_multiple_prices.tail(number_to_return + 5)\n            .to_dict",
+          "lineNumber": 218
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.updated_multiple_prices.tail",
+          "lineNumber": 218
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 223
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "round",
+          "lineNumber": 223
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_adjusted_prices.tail(number_to_return)\n            .to_dict()\n            .items",
+          "lineNumber": 224
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_adjusted_prices.tail(number_to_return)\n            .to_dict",
+          "lineNumber": 224
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.current_adjusted_prices.tail",
+          "lineNumber": 224
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "str",
+          "lineNumber": 229
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "round",
+          "lineNumber": 229
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.new_adjusted_prices.tail(number_to_return + 5)\n            .to_dict()\n            .items",
+          "lineNumber": 230
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.new_adjusted_prices.tail(number_to_return + 5)\n            .to_dict",
+          "lineNumber": 230
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "rolling.new_adjusted_prices.tail",
+          "lineNumber": 230
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "current_adjusted.keys",
+          "lineNumber": 236
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "current_adjusted.keys",
+          "lineNumber": 240
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "list",
+          "lineNumber": 242
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "new_adjusted.keys",
+          "lineNumber": 242
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "setup_roll_data_with_state_reporting",
+          "lineNumber": 248
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "modify_roll_state",
+          "lineNumber": 249
+        },
+        {
+          "caller": "rolls_post",
+          "callee": "setup_roll_data_with_state_reporting",
+          "lineNumber": 252
+        },
+        {
+          "caller": "risk",
+          "callee": "reporting_api.table_of_correlations",
+          "lineNumber": 262
+        },
+        {
+          "caller": "risk",
+          "callee": "reporting_api.table_of_strategy_risk",
+          "lineNumber": 263
+        },
+        {
+          "caller": "risk",
+          "callee": "reporting_api.table_of_instrument_risk",
+          "lineNumber": 264
+        },
+        {
+          "caller": "risk",
+          "callee": "dict_of_df_to_dict",
+          "lineNumber": 266
+        },
+        {
+          "caller": "trades",
+          "callee": "reporting_api.table_of_orders_overview",
+          "lineNumber": 276
+        },
+        {
+          "caller": "trades",
+          "callee": "reporting_api.table_of_order_delays",
+          "lineNumber": 280
+        },
+        {
+          "caller": "trades",
+          "callee": "reporting_api.table_of_raw_slippage",
+          "lineNumber": 284
+        },
+        {
+          "caller": "trades",
+          "callee": "reporting_api.table_of_vol_slippage",
+          "lineNumber": 288
+        },
+        {
+          "caller": "trades",
+          "callee": "reporting_api.table_of_cash_slippage",
+          "lineNumber": 292
+        },
+        {
+          "caller": "trades",
+          "callee": "dict_of_df_to_dict",
+          "lineNumber": 296
+        },
+        {
+          "caller": "visible_on_lan",
+          "callee": "get_control_config",
+          "lineNumber": 306
+        },
+        {
+          "caller": "visible_on_lan",
+          "callee": "config.get_element_or_default",
+          "lineNumber": 307
+        },
+        {
+          "caller": "visible_on_lan",
+          "callee": "str2Bool",
+          "lineNumber": 309
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 18,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/broker_execution_stack.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "brokerExecutionStackData",
+          "startLine": 14,
+          "endLine": 56,
+          "methods": [
+            "__init__",
+            "get_list_of_broker_orders_with_account_id",
+            "get_list_of_orders_from_storage",
+            "match_db_broker_order_to_order_from_brokers",
+            "cancel_order_given_control_object",
+            "cancel_order_on_stack",
+            "check_order_is_cancelled",
+            "check_order_is_cancelled_given_control_object",
+            "modify_limit_price_given_control_object",
+            "data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "brokerExecutionStackData",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 15
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syscontrol/list_running_pids.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "describe_trading_server_login_data",
+          "startLine": 13,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "list_of_all_running_pids",
+          "startLine": 28,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "get_trading_server_login_data",
+          "startLine": 39,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "remote_list_of_running_pids",
+          "startLine": 52,
+          "endLine": 74,
+          "params": [
+            "trading_server_login_data"
+          ]
+        },
+        {
+          "name": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "startLine": 77,
+          "endLine": 82,
+          "params": [
+            "raw_text"
+          ]
+        },
+        {
+          "name": "local_list_of_all_running_pids",
+          "startLine": 85,
+          "endLine": 93,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "describe_trading_server_login_data",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "list_of_all_running_pids",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "get_trading_server_login_data",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "remote_list_of_running_pids",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "local_list_of_all_running_pids",
+          "line": 85,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "describe_trading_server_login_data",
+          "callee": "get_trading_server_login_data",
+          "lineNumber": 15
+        },
+        {
+          "caller": "describe_trading_server_login_data",
+          "callee": "str",
+          "lineNumber": 20
+        },
+        {
+          "caller": "describe_trading_server_login_data",
+          "callee": "str",
+          "lineNumber": 21
+        },
+        {
+          "caller": "describe_trading_server_login_data",
+          "callee": "str",
+          "lineNumber": 22
+        },
+        {
+          "caller": "list_of_all_running_pids",
+          "callee": "get_trading_server_login_data",
+          "lineNumber": 30
+        },
+        {
+          "caller": "list_of_all_running_pids",
+          "callee": "local_list_of_all_running_pids",
+          "lineNumber": 32
+        },
+        {
+          "caller": "list_of_all_running_pids",
+          "callee": "remote_list_of_running_pids",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_trading_server_login_data",
+          "callee": "get_production_config",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_trading_server_login_data",
+          "callee": "production_config.get_element",
+          "lineNumber": 41
+        },
+        {
+          "caller": "remote_list_of_running_pids",
+          "callee": "subprocess.check_output",
+          "lineNumber": 59
+        },
+        {
+          "caller": "remote_list_of_running_pids",
+          "callee": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "callee": "raw_text.splitlines",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "callee": "line.decode",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convert_raw_binary_text_output_into_list_of_pid_ints",
+          "callee": "int",
+          "lineNumber": 80
+        },
+        {
+          "caller": "local_list_of_all_running_pids",
+          "callee": "psutil.process_iter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "local_list_of_all_running_pids",
+          "callee": "psid_list.append",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscontrol/monitor.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 144,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "monitor",
+          "startLine": 13,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "get_list_of_process_names",
+          "startLine": 98,
+          "endLine": 100,
+          "params": [
+            "process_observatory"
+          ]
+        },
+        {
+          "name": "get_running_mode_str_for_process",
+          "startLine": 103,
+          "endLine": 107,
+          "params": [
+            "process_observatory",
+            "process_name"
+          ]
+        },
+        {
+          "name": "get_control_for_process",
+          "startLine": 110,
+          "endLine": 114,
+          "params": [
+            "process_observatory",
+            "process_name"
+          ]
+        },
+        {
+          "name": "check_if_pid_running_and_if_not_finish",
+          "startLine": 117,
+          "endLine": 119,
+          "params": [
+            "process_observatory"
+          ]
+        },
+        {
+          "name": "generate_html",
+          "startLine": 125,
+          "endLine": 140,
+          "params": [
+            "process_observatory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "internal_logger",
+          "startLine": 28,
+          "endLine": 36,
+          "methods": [
+            "append_msg",
+            "html_repr"
+          ],
+          "properties": []
+        },
+        {
+          "name": "processMonitor",
+          "startLine": 39,
+          "endLine": 95,
+          "methods": [
+            "__init__",
+            "data",
+            "log_messages",
+            "process_dict_to_html_table",
+            "log_messages_to_html",
+            "update_all_status_with_process_control",
+            "update_status",
+            "send_update_message",
+            "change_status",
+            "get_current_status"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "monitor",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "internal_logger",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "processMonitor",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_process_names",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "get_running_mode_str_for_process",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "get_control_for_process",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "check_if_pid_running_and_if_not_finish",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "generate_html",
+          "line": 125,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "monitor",
+          "callee": "dataBlob",
+          "lineNumber": 14
+        },
+        {
+          "caller": "monitor",
+          "callee": "processMonitor",
+          "lineNumber": 15
+        },
+        {
+          "caller": "monitor",
+          "callee": "check_if_pid_running_and_if_not_finish",
+          "lineNumber": 17
+        },
+        {
+          "caller": "monitor",
+          "callee": "process_observatory.update_all_status_with_process_control",
+          "lineNumber": 18
+        },
+        {
+          "caller": "monitor",
+          "callee": "generate_html",
+          "lineNumber": 19
+        },
+        {
+          "caller": "monitor",
+          "callee": "time.sleep",
+          "lineNumber": 20
+        },
+        {
+          "caller": "append_msg",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "append_msg",
+          "callee": "self.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "html_repr",
+          "callee": "\"<br/>\".join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "html_repr",
+          "callee": "file.write",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__init__",
+          "callee": "internal_logger",
+          "lineNumber": 43
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.update_all_status_with_process_control",
+          "lineNumber": 46
+        },
+        {
+          "caller": "process_dict_to_html_table",
+          "callee": "dataControlProcess",
+          "lineNumber": 57
+        },
+        {
+          "caller": "process_dict_to_html_table",
+          "callee": "data_control.get_dict_of_control_processes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "process_dict_to_html_table",
+          "callee": "dict_of_process.to_html_table_in_file",
+          "lineNumber": 59
+        },
+        {
+          "caller": "log_messages_to_html",
+          "callee": "self.log_messages.html_repr",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_all_status_with_process_control",
+          "callee": "get_list_of_process_names",
+          "lineNumber": 65
+        },
+        {
+          "caller": "update_all_status_with_process_control",
+          "callee": "get_running_mode_str_for_process",
+          "lineNumber": 67
+        },
+        {
+          "caller": "update_all_status_with_process_control",
+          "callee": "self.update_status",
+          "lineNumber": 70
+        },
+        {
+          "caller": "update_status",
+          "callee": "self.get_current_status",
+          "lineNumber": 73
+        },
+        {
+          "caller": "update_status",
+          "callee": "self.change_status",
+          "lineNumber": 77
+        },
+        {
+          "caller": "update_status",
+          "callee": "self.send_update_message",
+          "lineNumber": 78
+        },
+        {
+          "caller": "send_update_message",
+          "callee": "date_as_short_pattern_or_question_if_missing",
+          "lineNumber": 86
+        },
+        {
+          "caller": "send_update_message",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 86
+        },
+        {
+          "caller": "send_update_message",
+          "callee": "self.log_messages.append_msg",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get_current_status",
+          "callee": "copy",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_current_status",
+          "callee": "self.get",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_list_of_process_names",
+          "callee": "diagControlProcess",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_list_of_process_names",
+          "callee": "diag_control.get_list_of_process_names",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_running_mode_str_for_process",
+          "callee": "get_control_for_process",
+          "lineNumber": 106
+        },
+        {
+          "caller": "get_control_for_process",
+          "callee": "diagControlProcess",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_control_for_process",
+          "callee": "diag_control.get_control_for_process_name",
+          "lineNumber": 112
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "dataControlProcess",
+          "lineNumber": 118
+        },
+        {
+          "caller": "check_if_pid_running_and_if_not_finish",
+          "callee": "data_control.check_if_pid_running_and_if_not_finish_all_processes",
+          "lineNumber": 119
+        },
+        {
+          "caller": "generate_html",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 126
+        },
+        {
+          "caller": "generate_html",
+          "callee": "describe_trading_server_login_data",
+          "lineNumber": 127
+        },
+        {
+          "caller": "generate_html",
+          "callee": "str",
+          "lineNumber": 128
+        },
+        {
+          "caller": "generate_html",
+          "callee": "open",
+          "lineNumber": 129
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generate_html",
+          "callee": "str",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generate_html",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 131
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 132
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 136
+        },
+        {
+          "caller": "generate_html",
+          "callee": "process_observatory.process_dict_to_html_table",
+          "lineNumber": 137
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 138
+        },
+        {
+          "caller": "generate_html",
+          "callee": "process_observatory.log_messages_to_html",
+          "lineNumber": 139
+        },
+        {
+          "caller": "generate_html",
+          "callee": "file.write",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 8,
+        "functionCount": 6,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "syscontrol/report_process_status.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 110,
+      "functions": [
+        {
+          "name": "_store_name",
+          "startLine": 117,
+          "endLine": 118,
+          "params": [
+            "reason",
+            "condition"
+          ]
+        },
+        {
+          "name": "_split_name",
+          "startLine": 121,
+          "endLine": 122,
+          "params": [
+            "keyname"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "reportStatus",
+          "startLine": 11,
+          "endLine": 114,
+          "methods": [
+            "__init__",
+            "log",
+            "log_status",
+            "clear_status",
+            "clear_all_status",
+            "_have_we_logged_recently",
+            "_time_for_another_log",
+            "_minutes_elapsed_since_log",
+            "_log_and_mark_timing",
+            "_mark_timing_of_log",
+            "_have_we_logged_clear_already",
+            "_have_we_never_logged_at_all_before",
+            "_get_all_keys_in_store",
+            "_log_clear_and_mark",
+            "_mark_log_of_clear",
+            "_get_last_log_time",
+            "_set_last_log_time",
+            "_get_log_store"
+          ],
+          "properties": []
+        },
+        {
+          "name": "reportProcessStatus",
+          "startLine": 125,
+          "endLine": 151,
+          "methods": [
+            "report_wait_condition",
+            "clear_all_reasons_for_condition",
+            "clear_wait_condition",
+            "_get_all_reasons_for_condition",
+            "_get_all_paired_keys_in_store"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "reportStatus",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_store_name",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "_split_name",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "reportProcessStatus",
+          "line": 125,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 15
+        },
+        {
+          "caller": "log_status",
+          "callee": "self._have_we_logged_recently",
+          "lineNumber": 23
+        },
+        {
+          "caller": "log_status",
+          "callee": "self._log_and_mark_timing",
+          "lineNumber": 28
+        },
+        {
+          "caller": "clear_status",
+          "callee": "self._have_we_never_logged_at_all_before",
+          "lineNumber": 31
+        },
+        {
+          "caller": "clear_status",
+          "callee": "self._have_we_logged_clear_already",
+          "lineNumber": 36
+        },
+        {
+          "caller": "clear_status",
+          "callee": "self._log_clear_and_mark",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_have_we_logged_recently",
+          "callee": "self._get_last_log_time",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_have_we_logged_recently",
+          "callee": "self._time_for_another_log",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_time_for_another_log",
+          "callee": "self._minutes_elapsed_since_log",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_minutes_elapsed_since_log",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_minutes_elapsed_since_log",
+          "callee": "elapsed_time.total_seconds",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_log_and_mark_timing",
+          "callee": "self.log.debug",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_log_and_mark_timing",
+          "callee": "self._mark_timing_of_log",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_mark_timing_of_log",
+          "callee": "self._set_last_log_time",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_mark_timing_of_log",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_have_we_logged_clear_already",
+          "callee": "self._get_last_log_time",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_have_we_never_logged_at_all_before",
+          "callee": "self._get_last_log_time",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_get_all_keys_in_store",
+          "callee": "self._get_log_store",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_all_keys_in_store",
+          "callee": "list",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_get_all_keys_in_store",
+          "callee": "log_store.keys",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_log_clear_and_mark",
+          "callee": "self.log.debug",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_log_clear_and_mark",
+          "callee": "self._mark_log_of_clear",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_mark_log_of_clear",
+          "callee": "self._set_last_log_time",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_get_last_log_time",
+          "callee": "self._get_log_store",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_get_last_log_time",
+          "callee": "log_store.get",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_set_last_log_time",
+          "callee": "self._get_log_store",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_get_log_store",
+          "callee": "getattr",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_split_name",
+          "callee": "keyname.split",
+          "lineNumber": 122
+        },
+        {
+          "caller": "report_wait_condition",
+          "callee": "_store_name",
+          "lineNumber": 127
+        },
+        {
+          "caller": "report_wait_condition",
+          "callee": "super().log_status",
+          "lineNumber": 128
+        },
+        {
+          "caller": "report_wait_condition",
+          "callee": "super",
+          "lineNumber": 128
+        },
+        {
+          "caller": "clear_all_reasons_for_condition",
+          "callee": "self._get_all_reasons_for_condition",
+          "lineNumber": 131
+        },
+        {
+          "caller": "clear_all_reasons_for_condition",
+          "callee": "self.clear_wait_condition",
+          "lineNumber": 133
+        },
+        {
+          "caller": "clear_wait_condition",
+          "callee": "_store_name",
+          "lineNumber": 138
+        },
+        {
+          "caller": "clear_wait_condition",
+          "callee": "super().clear_status",
+          "lineNumber": 139
+        },
+        {
+          "caller": "clear_wait_condition",
+          "callee": "super",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_get_all_reasons_for_condition",
+          "callee": "self._get_all_paired_keys_in_store",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_get_all_paired_keys_in_store",
+          "callee": "self._get_all_keys_in_store",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_get_all_paired_keys_in_store",
+          "callee": "_split_name",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "syscontrol/run_process.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 423,
+      "nonEmptyLines": 317,
+      "functions": [
+        {
+          "name": "_start_or_wait",
+          "startLine": 170,
+          "endLine": 181,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_is_okay_to_start",
+          "startLine": 184,
+          "endLine": 200,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_if_process_status_is_okay_to_run",
+          "startLine": 206,
+          "endLine": 238,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_is_it_time_to_run",
+          "startLine": 241,
+          "endLine": 254,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_has_previous_process_finished",
+          "startLine": 257,
+          "endLine": 276,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_is_okay_to_wait_before_starting",
+          "startLine": 279,
+          "endLine": 298,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_if_okay_to_wait_before_starting_process",
+          "startLine": 301,
+          "endLine": 332,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "wait_for_next_method_run_time",
+          "startLine": 338,
+          "endLine": 349,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "check_for_pause_and_log",
+          "startLine": 355,
+          "endLine": 370,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_for_stop",
+          "startLine": 374,
+          "endLine": 400,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_for_stop_control_process",
+          "startLine": 403,
+          "endLine": 409,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_if_all_methods_finished",
+          "startLine": 412,
+          "endLine": 416,
+          "params": [
+            "process_to_run"
+          ]
+        },
+        {
+          "name": "_check_for_finish_time",
+          "startLine": 419,
+          "endLine": 423,
+          "params": [
+            "process_to_run"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "processToRun",
+          "startLine": 41,
+          "endLine": 164,
+          "methods": [
+            "__init__",
+            "process_name",
+            "data",
+            "list_of_timer_functions",
+            "_setup",
+            "log",
+            "data_control",
+            "diag_process",
+            "wait_reporter",
+            "run_process",
+            "_run_on_start",
+            "_main_loop_over_methods",
+            "_kwargs_for_method_and_process",
+            "_finish",
+            "_kwargs_for_exit_only_method_and_process",
+            "_finish_control_process"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "processToRun",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "_start_or_wait",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "_is_okay_to_start",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "_check_if_process_status_is_okay_to_run",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "_is_it_time_to_run",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "_has_previous_process_finished",
+          "line": 257,
+          "isDefault": false
+        },
+        {
+          "name": "_is_okay_to_wait_before_starting",
+          "line": 279,
+          "isDefault": false
+        },
+        {
+          "name": "_check_if_okay_to_wait_before_starting_process",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "wait_for_next_method_run_time",
+          "line": 338,
+          "isDefault": false
+        },
+        {
+          "name": "check_for_pause_and_log",
+          "line": 355,
+          "isDefault": false
+        },
+        {
+          "name": "_check_for_stop",
+          "line": 374,
+          "isDefault": false
+        },
+        {
+          "name": "_check_for_stop_control_process",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "_check_if_all_methods_finished",
+          "line": 412,
+          "isDefault": false
+        },
+        {
+          "name": "_check_for_finish_time",
+          "line": 419,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_list_of_timer_functions",
+          "lineNumber": 54
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._setup",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_setup",
+          "callee": "dataControlProcess",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_setup",
+          "callee": "diagControlProcess",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_setup",
+          "callee": "reportProcessStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "run_process",
+          "callee": "_start_or_wait",
+          "lineNumber": 100
+        },
+        {
+          "caller": "run_process",
+          "callee": "self._run_on_start",
+          "lineNumber": 105
+        },
+        {
+          "caller": "run_process",
+          "callee": "self._main_loop_over_methods",
+          "lineNumber": 106
+        },
+        {
+          "caller": "run_process",
+          "callee": "self._finish",
+          "lineNumber": 107
+        },
+        {
+          "caller": "run_process",
+          "callee": "config.get_element_or_default",
+          "lineNumber": 110
+        },
+        {
+          "caller": "run_process",
+          "callee": "self.log.critical",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_run_on_start",
+          "callee": "self.data_control.start_process",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "time.sleep",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "_check_for_stop",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "wait_for_next_method_run_time",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "_check_for_stop",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "check_for_pause_and_log",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "self._kwargs_for_method_and_process",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_main_loop_over_methods",
+          "callee": "timer_class.check_and_run",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_kwargs_for_method_and_process",
+          "callee": "self.diag_process.get_configured_kwargs_for_process_name_and_method",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_finish",
+          "callee": "self._kwargs_for_exit_only_method_and_process",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_finish",
+          "callee": "self.list_of_timer_functions.run_methods_which_run_on_exit_only",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_finish",
+          "callee": "self._finish_control_process",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_finish",
+          "callee": "self.data.close",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_kwargs_for_exit_only_method_and_process",
+          "callee": "self.diag_process.get_configured_kwargs_for_process_name_and_methods_that_run_on_completion",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_finish_control_process",
+          "callee": "self.data_control.finish_process",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_finish_control_process",
+          "callee": "self.log.warning",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_finish_control_process",
+          "callee": "self.log.debug",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_start_or_wait",
+          "callee": "_is_okay_to_start",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_start_or_wait",
+          "callee": "_is_okay_to_wait_before_starting",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_start_or_wait",
+          "callee": "time.sleep",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_is_okay_to_start",
+          "callee": "_check_if_process_status_is_okay_to_run",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_is_okay_to_start",
+          "callee": "_is_it_time_to_run",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_is_okay_to_start",
+          "callee": "_has_previous_process_finished",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "data_control.check_if_okay_to_start_process",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "wait_reporter.clear_all_reasons_for_condition",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "process_running.log.critical",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_check_if_process_status_is_okay_to_run",
+          "callee": "str",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_is_it_time_to_run",
+          "callee": "diag_process.is_it_time_to_run",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_is_it_time_to_run",
+          "callee": "wait_reporter.clear_wait_condition",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_is_it_time_to_run",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_has_previous_process_finished",
+          "callee": "diag_process.has_previous_process_finished_in_last_day",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_has_previous_process_finished",
+          "callee": "wait_reporter.clear_wait_condition",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_has_previous_process_finished",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_is_okay_to_wait_before_starting",
+          "callee": "_check_for_stop",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_is_okay_to_wait_before_starting",
+          "callee": "_check_if_okay_to_wait_before_starting_process",
+          "lineNumber": 296
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "data_control.check_if_okay_to_start_process",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "log.warning",
+          "lineNumber": 311
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "log.warning",
+          "lineNumber": 317
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "str",
+          "lineNumber": 330
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "log.critical",
+          "lineNumber": 331
+        },
+        {
+          "caller": "_check_if_okay_to_wait_before_starting_process",
+          "callee": "Exception",
+          "lineNumber": 332
+        },
+        {
+          "caller": "wait_for_next_method_run_time",
+          "callee": "list_of_timer_functions.seconds_until_next_method_runs",
+          "lineNumber": 340
+        },
+        {
+          "caller": "wait_for_next_method_run_time",
+          "callee": "min",
+          "lineNumber": 342
+        },
+        {
+          "caller": "wait_for_next_method_run_time",
+          "callee": "process_to_run.log.debug",
+          "lineNumber": 347
+        },
+        {
+          "caller": "wait_for_next_method_run_time",
+          "callee": "sys.stdout.flush",
+          "lineNumber": 348
+        },
+        {
+          "caller": "wait_for_next_method_run_time",
+          "callee": "time.sleep",
+          "lineNumber": 349
+        },
+        {
+          "caller": "check_for_pause_and_log",
+          "callee": "data_control.check_if_should_pause_process",
+          "lineNumber": 357
+        },
+        {
+          "caller": "check_for_pause_and_log",
+          "callee": "wait_reporter.report_wait_condition",
+          "lineNumber": 365
+        },
+        {
+          "caller": "check_for_pause_and_log",
+          "callee": "wait_reporter.clear_wait_condition",
+          "lineNumber": 368
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "_check_for_stop_control_process",
+          "lineNumber": 382
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "_check_if_all_methods_finished",
+          "lineNumber": 383
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "_check_for_finish_time",
+          "lineNumber": 384
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "log.debug",
+          "lineNumber": 389
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "log.debug",
+          "lineNumber": 392
+        },
+        {
+          "caller": "_check_for_stop",
+          "callee": "log.debug",
+          "lineNumber": 395
+        },
+        {
+          "caller": "_check_for_stop_control_process",
+          "callee": "data_control.check_if_process_status_stopped",
+          "lineNumber": 407
+        },
+        {
+          "caller": "_check_if_all_methods_finished",
+          "callee": "list_of_timer_functions.check_all_finished",
+          "lineNumber": 414
+        },
+        {
+          "caller": "_check_for_finish_time",
+          "callee": "diag_process.is_it_time_to_stop",
+          "lineNumber": 423
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syscontrol/strategy_tools.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "get_strategy_method",
+          "startLine": 44,
+          "endLine": 52,
+          "params": [
+            "data",
+            "strategy_name",
+            "process_name",
+            "function_name"
+          ]
+        },
+        {
+          "name": "get_strategy_class_instance",
+          "startLine": 55,
+          "endLine": 71,
+          "params": [
+            "data",
+            "strategy_name",
+            "process_name"
+          ]
+        },
+        {
+          "name": "get_class_object_and_other_arguments",
+          "startLine": 74,
+          "endLine": 89,
+          "params": [
+            "data",
+            "strategy_name",
+            "process_name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "strategyRunner",
+          "startLine": 8,
+          "endLine": 41,
+          "methods": [
+            "__init__",
+            "strategy_name",
+            "function_name",
+            "process_name",
+            "strategy_method",
+            "run_strategy_method"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "strategyRunner",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "get_strategy_method",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "get_strategy_class_instance",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "get_class_object_and_other_arguments",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_strategy_method",
+          "lineNumber": 18
+        },
+        {
+          "caller": "run_strategy_method",
+          "callee": "method",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_strategy_method",
+          "callee": "get_strategy_class_instance",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get_strategy_method",
+          "callee": "getattr",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_strategy_class_instance",
+          "callee": "get_class_object_and_other_arguments",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_strategy_class_instance",
+          "callee": "dataBlob",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_strategy_class_instance",
+          "callee": "strategy_data.log.debug",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_strategy_class_instance",
+          "callee": "strategy_class_object",
+          "lineNumber": 67
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "get_strategy_class_object_config",
+          "lineNumber": 77
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "copy",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "resolve_function",
+          "lineNumber": 81
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "config_this_process.pop",
+          "lineNumber": 81
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "config_this_process.pop",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_class_object_and_other_arguments",
+          "callee": "config_this_process.pop",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syscontrol/timer_functions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 369,
+      "nonEmptyLines": 278,
+      "functions": [
+        {
+          "name": "get_list_of_timer_functions",
+          "startLine": 335,
+          "endLine": 347,
+          "params": [
+            "data",
+            "process_name",
+            "list_of_timer_names_and_functions_as_strings"
+          ]
+        },
+        {
+          "name": "_get_timer_class",
+          "startLine": 350,
+          "endLine": 369,
+          "params": [
+            "data",
+            "process_name",
+            "entry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "timerClassWithFunction",
+          "startLine": 17,
+          "endLine": 308,
+          "methods": [
+            "__init__",
+            "_log_on_startup",
+            "data",
+            "parameters",
+            "process_name",
+            "log",
+            "frequency_minutes",
+            "method_name",
+            "minutes_between_heartbeats",
+            "run_on_completion_only",
+            "max_executions",
+            "actual_executions",
+            "reached_maximum_executions",
+            "report_status",
+            "log_msg",
+            "check_and_run",
+            "check_if_okay_to_run",
+            "check_if_okay_to_run_if_runs_at_end_only",
+            "check_if_okay_to_run_normal_run",
+            "check_if_okay_to_run_normal_run_if_not_last_run",
+            "check_if_enough_time_has_passed_and_report_status",
+            "check_if_enough_time_has_elapsed_since_last_run",
+            "minutes_until_next_run",
+            "log_heartbeat_if_required",
+            "log_heartbeat",
+            "minutes_since_last_run",
+            "when_last_run",
+            "minutes_since_last_heartbeat",
+            "when_last_heartbeat",
+            "completed_max_runs",
+            "setup_about_to_run_method",
+            "increment_executions",
+            "set_time_of_last_run",
+            "store_in_db_run_start_method",
+            "run_function",
+            "finished_running_method",
+            "store_in_db_log_run_end_method",
+            "log_msg_when_completed_last_run"
+          ],
+          "properties": []
+        },
+        {
+          "name": "listOfTimerFunctions",
+          "startLine": 311,
+          "endLine": 332,
+          "methods": [
+            "check_all_finished",
+            "run_methods_which_run_on_exit_only",
+            "seconds_until_next_method_runs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "timerClassWithFunction",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "listOfTimerFunctions",
+          "line": 311,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "_get_timer_class",
+          "line": 350,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "reportStatus",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._log_on_startup",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_log_on_startup",
+          "callee": "log.debug",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_log_on_startup",
+          "callee": "log.debug",
+          "lineNumber": 50
+        },
+        {
+          "caller": "log_msg",
+          "callee": "self.log.debug",
+          "lineNumber": 109
+        },
+        {
+          "caller": "check_and_run",
+          "callee": "self.log_heartbeat_if_required",
+          "lineNumber": 116
+        },
+        {
+          "caller": "check_and_run",
+          "callee": "self.check_if_okay_to_run",
+          "lineNumber": 117
+        },
+        {
+          "caller": "check_and_run",
+          "callee": "self.setup_about_to_run_method",
+          "lineNumber": 121
+        },
+        {
+          "caller": "check_and_run",
+          "callee": "self.run_function",
+          "lineNumber": 122
+        },
+        {
+          "caller": "check_and_run",
+          "callee": "self.finished_running_method",
+          "lineNumber": 123
+        },
+        {
+          "caller": "check_if_okay_to_run",
+          "callee": "self.check_if_okay_to_run_if_runs_at_end_only",
+          "lineNumber": 127
+        },
+        {
+          "caller": "check_if_okay_to_run",
+          "callee": "self.check_if_okay_to_run_normal_run",
+          "lineNumber": 131
+        },
+        {
+          "caller": "check_if_okay_to_run_if_runs_at_end_only",
+          "callee": "self.log_msg",
+          "lineNumber": 136
+        },
+        {
+          "caller": "check_if_okay_to_run_if_runs_at_end_only",
+          "callee": "self.report_status.log_status",
+          "lineNumber": 146
+        },
+        {
+          "caller": "check_if_okay_to_run_normal_run",
+          "callee": "self.check_if_okay_to_run_normal_run_if_not_last_run",
+          "lineNumber": 160
+        },
+        {
+          "caller": "check_if_okay_to_run_normal_run_if_not_last_run",
+          "callee": "self.completed_max_runs",
+          "lineNumber": 165
+        },
+        {
+          "caller": "check_if_okay_to_run_normal_run_if_not_last_run",
+          "callee": "self.check_if_enough_time_has_passed_and_report_status",
+          "lineNumber": 170
+        },
+        {
+          "caller": "check_if_enough_time_has_passed_and_report_status",
+          "callee": "self.check_if_enough_time_has_elapsed_since_last_run",
+          "lineNumber": 179
+        },
+        {
+          "caller": "check_if_enough_time_has_passed_and_report_status",
+          "callee": "self.report_status.log_status",
+          "lineNumber": 185
+        },
+        {
+          "caller": "check_if_enough_time_has_passed_and_report_status",
+          "callee": "self.report_status.clear_status",
+          "lineNumber": 187
+        },
+        {
+          "caller": "check_if_enough_time_has_elapsed_since_last_run",
+          "callee": "self.minutes_until_next_run",
+          "lineNumber": 192
+        },
+        {
+          "caller": "check_if_enough_time_has_elapsed_since_last_run",
+          "callee": "np.isnan",
+          "lineNumber": 193
+        },
+        {
+          "caller": "minutes_until_next_run",
+          "callee": "self.completed_max_runs",
+          "lineNumber": 203
+        },
+        {
+          "caller": "minutes_until_next_run",
+          "callee": "self.minutes_since_last_run",
+          "lineNumber": 206
+        },
+        {
+          "caller": "minutes_until_next_run",
+          "callee": "max",
+          "lineNumber": 209
+        },
+        {
+          "caller": "log_heartbeat_if_required",
+          "callee": "self.minutes_since_last_heartbeat",
+          "lineNumber": 214
+        },
+        {
+          "caller": "log_heartbeat_if_required",
+          "callee": "self.log_heartbeat",
+          "lineNumber": 216
+        },
+        {
+          "caller": "log_heartbeat",
+          "callee": "str",
+          "lineNumber": 222
+        },
+        {
+          "caller": "log_heartbeat",
+          "callee": "self.log_msg",
+          "lineNumber": 234
+        },
+        {
+          "caller": "log_heartbeat",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 236
+        },
+        {
+          "caller": "minutes_since_last_run",
+          "callee": "self.when_last_run",
+          "lineNumber": 239
+        },
+        {
+          "caller": "minutes_since_last_run",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 240
+        },
+        {
+          "caller": "minutes_since_last_run",
+          "callee": "delta.total_seconds",
+          "lineNumber": 242
+        },
+        {
+          "caller": "when_last_run",
+          "callee": "getattr",
+          "lineNumber": 247
+        },
+        {
+          "caller": "minutes_since_last_heartbeat",
+          "callee": "self.when_last_heartbeat",
+          "lineNumber": 252
+        },
+        {
+          "caller": "minutes_since_last_heartbeat",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 253
+        },
+        {
+          "caller": "minutes_since_last_heartbeat",
+          "callee": "delta.total_seconds",
+          "lineNumber": 255
+        },
+        {
+          "caller": "when_last_heartbeat",
+          "callee": "getattr",
+          "lineNumber": 260
+        },
+        {
+          "caller": "setup_about_to_run_method",
+          "callee": "self.increment_executions",
+          "lineNumber": 278
+        },
+        {
+          "caller": "setup_about_to_run_method",
+          "callee": "self.set_time_of_last_run",
+          "lineNumber": 279
+        },
+        {
+          "caller": "setup_about_to_run_method",
+          "callee": "self.store_in_db_run_start_method",
+          "lineNumber": 280
+        },
+        {
+          "caller": "set_time_of_last_run",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 286
+        },
+        {
+          "caller": "store_in_db_run_start_method",
+          "callee": "dataControlProcess",
+          "lineNumber": 289
+        },
+        {
+          "caller": "store_in_db_run_start_method",
+          "callee": "data_process.log_start_run_for_method",
+          "lineNumber": 290
+        },
+        {
+          "caller": "run_function",
+          "callee": "self._function",
+          "lineNumber": 294
+        },
+        {
+          "caller": "finished_running_method",
+          "callee": "self.store_in_db_log_run_end_method",
+          "lineNumber": 297
+        },
+        {
+          "caller": "finished_running_method",
+          "callee": "self.log_msg_when_completed_last_run",
+          "lineNumber": 298
+        },
+        {
+          "caller": "store_in_db_log_run_end_method",
+          "callee": "dataControlProcess",
+          "lineNumber": 301
+        },
+        {
+          "caller": "store_in_db_log_run_end_method",
+          "callee": "data_process.log_end_run_for_method",
+          "lineNumber": 302
+        },
+        {
+          "caller": "log_msg_when_completed_last_run",
+          "callee": "self.completed_max_runs",
+          "lineNumber": 305
+        },
+        {
+          "caller": "log_msg_when_completed_last_run",
+          "callee": "self.log_msg",
+          "lineNumber": 306
+        },
+        {
+          "caller": "check_all_finished",
+          "callee": "len",
+          "lineNumber": 313
+        },
+        {
+          "caller": "check_all_finished",
+          "callee": "timer_class.completed_max_runs",
+          "lineNumber": 316
+        },
+        {
+          "caller": "check_all_finished",
+          "callee": "all",
+          "lineNumber": 317
+        },
+        {
+          "caller": "run_methods_which_run_on_exit_only",
+          "callee": "timer_class.check_and_run",
+          "lineNumber": 323
+        },
+        {
+          "caller": "seconds_until_next_method_runs",
+          "callee": "timer_object.minutes_until_next_run",
+          "lineNumber": 327
+        },
+        {
+          "caller": "seconds_until_next_method_runs",
+          "callee": "np.nanmin",
+          "lineNumber": 329
+        },
+        {
+          "caller": "get_list_of_timer_functions",
+          "callee": "_get_timer_class",
+          "lineNumber": 341
+        },
+        {
+          "caller": "get_list_of_timer_functions",
+          "callee": "listOfTimerFunctions",
+          "lineNumber": 345
+        },
+        {
+          "caller": "_get_timer_class",
+          "callee": "getattr",
+          "lineNumber": 355
+        },
+        {
+          "caller": "_get_timer_class",
+          "callee": "diagControlProcess",
+          "lineNumber": 357
+        },
+        {
+          "caller": "_get_timer_class",
+          "callee": "diag_process.get_method_timer_parameters",
+          "lineNumber": 358
+        },
+        {
+          "caller": "_get_timer_class",
+          "callee": "timerClassWithFunction",
+          "lineNumber": 365
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "syscontrol/timer_parameters.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "timerClassParameters",
+          "startLine": 5,
+          "endLine": 11,
+          "methods": [],
+          "properties": [
+            "method_name",
+            "process_name",
+            "frequency_minutes",
+            "max_executions",
+            "run_on_completion_only",
+            "minutes_between_heartbeats"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "timerClassParameters",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syscore/constants.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "named_object",
+          "startLine": 4,
+          "endLine": 9,
+          "methods": [
+            "__init__",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "status",
+          "startLine": 16,
+          "endLine": 17,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "named_object",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "status",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "str",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "syscore/interactive/date_input.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 170,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "get_report_dates",
+          "startLine": 12,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "get_datetime_input",
+          "startLine": 68,
+          "endLine": 93,
+          "params": [
+            "prompt",
+            "allow_default_datetime_of_now",
+            "allow_calendar_days",
+            "allow_period"
+          ]
+        },
+        {
+          "name": "_create_input_string_for_datetime_input",
+          "startLine": 104,
+          "endLine": 122,
+          "params": [
+            "prompt",
+            "allow_default_datetime_of_now",
+            "allow_calendar_days",
+            "allow_period"
+          ]
+        },
+        {
+          "name": "_get_input_for_datetime_prompt",
+          "startLine": 125,
+          "endLine": 158,
+          "params": [
+            "input_str",
+            "allow_default_datetime_of_now",
+            "allow_calendar_days",
+            "allow_period"
+          ]
+        },
+        {
+          "name": "_resolve_datetime_input_str",
+          "startLine": 161,
+          "endLine": 170,
+          "params": [
+            "ans"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_report_dates",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "get_datetime_input",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "_create_input_string_for_datetime_input",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_get_input_for_datetime_prompt",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_datetime_input_str",
+          "line": 161,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_report_dates",
+          "callee": "get_datetime_input",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "n_days_ago",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "Exception",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "get_datetime_input",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "n_days_ago",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "type",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "Exception",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get_report_dates",
+          "callee": "calculate_start_and_end_dates",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_datetime_input",
+          "callee": "_create_input_string_for_datetime_input",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_datetime_input",
+          "callee": "_get_input_for_datetime_prompt",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "input",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "get_date_from_period_and_end_date",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "int",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "_resolve_datetime_input_str",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_get_input_for_datetime_prompt",
+          "callee": "print",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "len",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "len",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "datetime.datetime.strptime",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "len",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "len",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_resolve_datetime_input_str",
+          "callee": "datetime.datetime.strptime",
+          "lineNumber": 165
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscore/interactive/display.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "print_with_landing_strips_around",
+          "startLine": 6,
+          "endLine": 14,
+          "params": [
+            "str_to_match",
+            "strip"
+          ]
+        },
+        {
+          "name": "landing_strip_around_string",
+          "startLine": 17,
+          "endLine": 23,
+          "params": [
+            "str_to_match",
+            "strip"
+          ]
+        },
+        {
+          "name": "landing_strip_from_str",
+          "startLine": 26,
+          "endLine": 32,
+          "params": [
+            "str_to_match",
+            "strip"
+          ]
+        },
+        {
+          "name": "landing_strip",
+          "startLine": 35,
+          "endLine": 36,
+          "params": [
+            "width",
+            "strip"
+          ]
+        },
+        {
+          "name": "centralise_text",
+          "startLine": 39,
+          "endLine": 57,
+          "params": [
+            "text",
+            "str_to_match",
+            "pad_with"
+          ]
+        },
+        {
+          "name": "measure_width",
+          "startLine": 60,
+          "endLine": 65,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "calculate_multiplication_factor_for_nice_repr_of_value",
+          "startLine": 68,
+          "endLine": 95,
+          "params": [
+            "some_value"
+          ]
+        },
+        {
+          "name": "set_pd_print_options",
+          "startLine": 98,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "print_with_landing_strips_around",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "landing_strip_around_string",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "landing_strip_from_str",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "landing_strip",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "centralise_text",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "measure_width",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "calculate_multiplication_factor_for_nice_repr_of_value",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "set_pd_print_options",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "print_with_landing_strips_around",
+          "callee": "landing_strip_around_string",
+          "lineNumber": 13
+        },
+        {
+          "caller": "print_with_landing_strips_around",
+          "callee": "print",
+          "lineNumber": 14
+        },
+        {
+          "caller": "landing_strip_around_string",
+          "callee": "landing_strip_from_str",
+          "lineNumber": 22
+        },
+        {
+          "caller": "landing_strip_from_str",
+          "callee": "measure_width",
+          "lineNumber": 31
+        },
+        {
+          "caller": "landing_strip_from_str",
+          "callee": "landing_strip",
+          "lineNumber": 32
+        },
+        {
+          "caller": "centralise_text",
+          "callee": "measure_width",
+          "lineNumber": 46
+        },
+        {
+          "caller": "centralise_text",
+          "callee": "len",
+          "lineNumber": 47
+        },
+        {
+          "caller": "centralise_text",
+          "callee": "int",
+          "lineNumber": 50
+        },
+        {
+          "caller": "measure_width",
+          "callee": "text.find",
+          "lineNumber": 61
+        },
+        {
+          "caller": "measure_width",
+          "callee": "len",
+          "lineNumber": 63
+        },
+        {
+          "caller": "calculate_multiplication_factor_for_nice_repr_of_value",
+          "callee": "magnitude",
+          "lineNumber": 92
+        },
+        {
+          "caller": "set_pd_print_options",
+          "callee": "pd.set_option",
+          "lineNumber": 100
+        },
+        {
+          "caller": "set_pd_print_options",
+          "callee": "pd.set_option",
+          "lineNumber": 101
+        },
+        {
+          "caller": "set_pd_print_options",
+          "callee": "pd.set_option",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscore/interactive/menus.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 254,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "print_menu_of_values_and_get_response",
+          "startLine": 135,
+          "endLine": 151,
+          "params": [
+            "menu_of_options_as_list",
+            "default_str"
+          ]
+        },
+        {
+          "name": "_get_index_of_default_option",
+          "startLine": 154,
+          "endLine": 167,
+          "params": [
+            "menu_of_options_as_list",
+            "default_str"
+          ]
+        },
+        {
+          "name": "_list_menu_to_dict_menu",
+          "startLine": 170,
+          "endLine": 177,
+          "params": [
+            "menu_of_options_as_list"
+          ]
+        },
+        {
+          "name": "print_menu_and_get_desired_option_index",
+          "startLine": 180,
+          "endLine": 212,
+          "params": [
+            "menu_of_options",
+            "default_option_index",
+            "default_str"
+          ]
+        },
+        {
+          "name": "_resolve_default_for_dict_of_menu_options",
+          "startLine": 215,
+          "endLine": 244,
+          "params": [
+            "menu_of_options",
+            "default_option_index",
+            "default_str"
+          ]
+        },
+        {
+          "name": "_print_options_menu",
+          "startLine": 247,
+          "endLine": 254,
+          "params": [
+            "menu_of_options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "interactiveMenu",
+          "startLine": 13,
+          "endLine": 132,
+          "methods": [
+            "__init__",
+            "run_menu",
+            "propose_options_and_get_input",
+            "_propose_options_and_get_input_at_top_level",
+            "_propose_options_and_get_input_at_sub_level",
+            "at_top_level",
+            "location",
+            "location",
+            "current_submenu",
+            "top_level_menu",
+            "nested_menu",
+            "dict_of_function",
+            "args",
+            "kwargs"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "interactiveMenu",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "print_menu_of_values_and_get_response",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "_get_index_of_default_option",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "_list_menu_to_dict_menu",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "print_menu_and_get_desired_option_index",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_default_for_dict_of_menu_options",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "_print_options_menu",
+          "line": 247,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_menu",
+          "callee": "self.propose_options_and_get_input",
+          "lineNumber": 56
+        },
+        {
+          "caller": "run_menu",
+          "callee": "print",
+          "lineNumber": 58
+        },
+        {
+          "caller": "run_menu",
+          "callee": "method_chosen",
+          "lineNumber": 64
+        },
+        {
+          "caller": "propose_options_and_get_input",
+          "callee": "self._propose_options_and_get_input_at_top_level",
+          "lineNumber": 68
+        },
+        {
+          "caller": "propose_options_and_get_input",
+          "callee": "self._propose_options_and_get_input_at_sub_level",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_propose_options_and_get_input_at_top_level",
+          "callee": "print_menu_and_get_desired_option_index",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_propose_options_and_get_input_at_sub_level",
+          "callee": "print_menu_and_get_desired_option_index",
+          "lineNumber": 86
+        },
+        {
+          "caller": "print_menu_of_values_and_get_response",
+          "callee": "_get_index_of_default_option",
+          "lineNumber": 138
+        },
+        {
+          "caller": "print_menu_of_values_and_get_response",
+          "callee": "_list_menu_to_dict_menu",
+          "lineNumber": 142
+        },
+        {
+          "caller": "print_menu_of_values_and_get_response",
+          "callee": "print_menu_and_get_desired_option_index",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_get_index_of_default_option",
+          "callee": "type",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_get_index_of_default_option",
+          "callee": "copy",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_get_index_of_default_option",
+          "callee": "copy_menu_of_options_as_list.index",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_get_index_of_default_option",
+          "callee": "copy_menu_of_options_as_list.append",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_get_index_of_default_option",
+          "callee": "copy_menu_of_options_as_list.index",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_list_menu_to_dict_menu",
+          "callee": "dict",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_list_menu_to_dict_menu",
+          "callee": "enumerate",
+          "lineNumber": 174
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "_print_options_menu",
+          "lineNumber": 183
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "_resolve_default_for_dict_of_menu_options",
+          "lineNumber": 190
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "sorted",
+          "lineNumber": 195
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "copy_menu_of_options.keys",
+          "lineNumber": 195
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 199
+        },
+        {
+          "caller": "print_menu_and_get_desired_option_index",
+          "callee": "print",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_resolve_default_for_dict_of_menu_options",
+          "callee": "copy",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_resolve_default_for_dict_of_menu_options",
+          "callee": "sorted",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_resolve_default_for_dict_of_menu_options",
+          "callee": "copy_menu_of_options.keys",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "sorted",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "menu_of_options.keys",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "print",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "str",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "print",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_print_options_menu",
+          "callee": "Exception",
+          "lineNumber": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "syscore/text.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "sort_dict_by_underscore_length",
+          "startLine": 8,
+          "endLine": 26,
+          "params": [
+            "some_dict"
+          ]
+        },
+        {
+          "name": "sort_keywords_by_underscore_length",
+          "startLine": 29,
+          "endLine": 56,
+          "params": [
+            "arg_keys"
+          ]
+        },
+        {
+          "name": "count_leading_underscores_in_string",
+          "startLine": 59,
+          "endLine": 72,
+          "params": [
+            "process_string"
+          ]
+        },
+        {
+          "name": "strip_underscores_from_dict_keys",
+          "startLine": 75,
+          "endLine": 89,
+          "params": [
+            "arg_dict"
+          ]
+        },
+        {
+          "name": "strip_leading_underscores_from_str",
+          "startLine": 92,
+          "endLine": 93,
+          "params": [
+            "process_string"
+          ]
+        },
+        {
+          "name": "force_args_to_same_length",
+          "startLine": 96,
+          "endLine": 123,
+          "params": [
+            "data_args_input",
+            "data",
+            "pad_with"
+          ]
+        },
+        {
+          "name": "camel_case_split",
+          "startLine": 126,
+          "endLine": 127,
+          "params": [
+            "some_str"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sort_dict_by_underscore_length",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "sort_keywords_by_underscore_length",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "count_leading_underscores_in_string",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "strip_underscores_from_dict_keys",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "strip_leading_underscores_from_str",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "force_args_to_same_length",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "camel_case_split",
+          "line": 126,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sort_dict_by_underscore_length",
+          "callee": "list",
+          "lineNumber": 18
+        },
+        {
+          "caller": "sort_dict_by_underscore_length",
+          "callee": "some_dict.keys",
+          "lineNumber": 18
+        },
+        {
+          "caller": "sort_dict_by_underscore_length",
+          "callee": "sort_keywords_by_underscore_length",
+          "lineNumber": 19
+        },
+        {
+          "caller": "sort_dict_by_underscore_length",
+          "callee": "dict",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "dict",
+          "lineNumber": 38
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "count_leading_underscores_in_string",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "list",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "dict_of_keys_and_underscore_counts.values",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "dict_of_keys_and_underscore_counts.items",
+          "lineNumber": 50
+        },
+        {
+          "caller": "sort_keywords_by_underscore_length",
+          "callee": "range",
+          "lineNumber": 53
+        },
+        {
+          "caller": "count_leading_underscores_in_string",
+          "callee": "len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "count_leading_underscores_in_string",
+          "callee": "Exception",
+          "lineNumber": 65
+        },
+        {
+          "caller": "count_leading_underscores_in_string",
+          "callee": "count_leading_underscores_in_string",
+          "lineNumber": 70
+        },
+        {
+          "caller": "strip_underscores_from_dict_keys",
+          "callee": "dict",
+          "lineNumber": 82
+        },
+        {
+          "caller": "strip_underscores_from_dict_keys",
+          "callee": "strip_leading_underscores_from_str",
+          "lineNumber": 84
+        },
+        {
+          "caller": "strip_underscores_from_dict_keys",
+          "callee": "arg_dict.items",
+          "lineNumber": 85
+        },
+        {
+          "caller": "strip_leading_underscores_from_str",
+          "callee": "re.sub",
+          "lineNumber": 93
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "copy",
+          "lineNumber": 105
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 107
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "padded_data_args.append",
+          "lineNumber": 110
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "padded_data_args.append",
+          "lineNumber": 113
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "data_args.pop",
+          "lineNumber": 113
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 117
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "print",
+          "lineNumber": 118
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 120
+        },
+        {
+          "caller": "force_args_to_same_length",
+          "callee": "len",
+          "lineNumber": 120
+        },
+        {
+          "caller": "camel_case_split",
+          "callee": "re.split",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/csv/csv_spot_fx.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "ConfigCsvFXPrices",
+          "startLine": 18,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "date_column",
+            "date_format",
+            "price_column"
+          ]
+        },
+        {
+          "name": "csvFxPricesData",
+          "startLine": 31,
+          "endLine": 124,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "datapath",
+            "config",
+            "get_list_of_fxcodes",
+            "_get_fx_prices_without_checking",
+            "_delete_fx_prices_without_any_warning_be_careful",
+            "_add_fx_prices_without_checking_for_existing_entry",
+            "_filename_given_fx_code"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ConfigCsvFXPrices",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "csvFxPricesData",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 50
+        },
+        {
+          "caller": "__init__",
+          "callee": "ConfigCsvFXPrices",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "files_with_extension_in_pathname",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self._filename_given_fx_code",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "pd_readcsv",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "fxPrices.create_empty",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "pd.Series",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "fxPrices",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "fx_data.sort_index",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_delete_fx_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "self._filename_given_fx_code",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "fx_price_data.to_csv",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "self.log.debug",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_filename_given_fx_code",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysdata/data_blob.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 421,
+      "nonEmptyLines": 335,
+      "functions": [
+        {
+          "name": "identifying_name",
+          "startLine": 384,
+          "endLine": 421,
+          "params": [
+            "split_up_name",
+            "keep_original_prefix",
+            "use_prefix"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dataBlob",
+          "startLine": 14,
+          "endLine": 378,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "add_class_list",
+            "add_class_object",
+            "_get_resolved_instance_of_class",
+            "_get_class_adding_method",
+            "_get_class_prefix",
+            "_add_ib_class",
+            "_add_mongo_class",
+            "_add_arctic_class",
+            "_add_parquet_class",
+            "_add_csv_class",
+            "_get_csv_paths_for_class",
+            "csv_data_paths",
+            "_get_specific_logger",
+            "_get_new_name",
+            "_add_new_class_with_new_name",
+            "_already_existing_class_name",
+            "_add_attr_to_list",
+            "update_log",
+            "__enter__",
+            "__exit__",
+            "close",
+            "ib_conn",
+            "_get_new_ib_connection",
+            "_get_next_client_id_for_ib",
+            "mongo_db",
+            "parquet_access",
+            "parquet_root_directory",
+            "_get_new_mongo_db",
+            "config",
+            "_raise_and_log_error",
+            "log",
+            "log_name"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dataBlob",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "identifying_name",
+          "line": 384,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "self.add_class_list",
+          "lineNumber": 72
+        },
+        {
+          "caller": "__init__",
+          "callee": "copy",
+          "lineNumber": 74
+        },
+        {
+          "caller": "__repr__",
+          "callee": "\",\".join",
+          "lineNumber": 77
+        },
+        {
+          "caller": "add_class_list",
+          "callee": "self.add_class_object",
+          "lineNumber": 81
+        },
+        {
+          "caller": "add_class_object",
+          "callee": "get_class_name",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add_class_object",
+          "callee": "self._get_new_name",
+          "lineNumber": 85
+        },
+        {
+          "caller": "add_class_object",
+          "callee": "self._already_existing_class_name",
+          "lineNumber": 86
+        },
+        {
+          "caller": "add_class_object",
+          "callee": "self._get_resolved_instance_of_class",
+          "lineNumber": 87
+        },
+        {
+          "caller": "add_class_object",
+          "callee": "self._add_new_class_with_new_name",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_resolved_instance_of_class",
+          "callee": "self._get_class_adding_method",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_get_resolved_instance_of_class",
+          "callee": "class_adding_method",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_get_class_adding_method",
+          "callee": "self._get_class_prefix",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_get_class_adding_method",
+          "callee": "dict",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_get_class_adding_method",
+          "callee": "class_dict.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_get_class_adding_method",
+          "callee": "get_class_name",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_get_class_adding_method",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_get_class_prefix",
+          "callee": "get_class_name",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_get_class_prefix",
+          "callee": "camel_case_split",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_add_ib_class",
+          "callee": "self._get_specific_logger",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_add_ib_class",
+          "callee": "class_object",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_add_ib_class",
+          "callee": "get_class_name",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_add_ib_class",
+          "callee": "str",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_add_ib_class",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_add_mongo_class",
+          "callee": "self._get_specific_logger",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_add_mongo_class",
+          "callee": "class_object",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_add_mongo_class",
+          "callee": "get_class_name",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_add_mongo_class",
+          "callee": "str",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_add_mongo_class",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_add_arctic_class",
+          "callee": "self._get_specific_logger",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_add_arctic_class",
+          "callee": "class_object",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_add_arctic_class",
+          "callee": "get_class_name",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_add_arctic_class",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_add_arctic_class",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_add_parquet_class",
+          "callee": "self._get_specific_logger",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_add_parquet_class",
+          "callee": "class_object",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_add_parquet_class",
+          "callee": "get_class_name",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_add_parquet_class",
+          "callee": "str",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_add_parquet_class",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "self._get_csv_paths_for_class",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "self._get_specific_logger",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "class_object",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "get_class_name",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "str",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_add_csv_class",
+          "callee": "self._raise_and_log_error",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_get_csv_paths_for_class",
+          "callee": "get_class_name",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_get_csv_paths_for_class",
+          "callee": "csv_data_paths.get",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_get_csv_paths_for_class",
+          "callee": "self.log.warning",
+          "lineNumber": 215
+        },
+        {
+          "caller": "csv_data_paths",
+          "callee": "getattr",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_get_specific_logger",
+          "callee": "get_class_name",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_get_specific_logger",
+          "callee": "get_logger",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_get_new_name",
+          "callee": "camel_case_split",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_get_new_name",
+          "callee": "identifying_name",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_add_new_class_with_new_name",
+          "callee": "self._already_existing_class_name",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_add_new_class_with_new_name",
+          "callee": "setattr",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_add_new_class_with_new_name",
+          "callee": "self._add_attr_to_list",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_already_existing_class_name",
+          "callee": "getattr",
+          "lineNumber": 255
+        },
+        {
+          "caller": "_add_attr_to_list",
+          "callee": "self._attr_list.append",
+          "lineNumber": 262
+        },
+        {
+          "caller": "__exit__",
+          "callee": "self.close",
+          "lineNumber": 275
+        },
+        {
+          "caller": "close",
+          "callee": "self.ib_conn.close_connection",
+          "lineNumber": 279
+        },
+        {
+          "caller": "close",
+          "callee": "self.db_ib_broker_client_id.release_clientid",
+          "lineNumber": 280
+        },
+        {
+          "caller": "close",
+          "callee": "self.ib_conn.client_id",
+          "lineNumber": 280
+        },
+        {
+          "caller": "ib_conn",
+          "callee": "getattr",
+          "lineNumber": 286
+        },
+        {
+          "caller": "ib_conn",
+          "callee": "self._get_new_ib_connection",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "self._get_next_client_id_for_ib",
+          "lineNumber": 297
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "connectionIB",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "self.db_ib_broker_client_id.release_clientid",
+          "lineNumber": 302
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "failed_ids.append",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "self._get_next_client_id_for_ib",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_get_new_ib_connection",
+          "callee": "self.db_ib_broker_client_id.release_clientid",
+          "lineNumber": 310
+        },
+        {
+          "caller": "_get_next_client_id_for_ib",
+          "callee": "self.add_class_object",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_get_next_client_id_for_ib",
+          "callee": "self.db_ib_broker_client_id.return_valid_client_id",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_get_next_client_id_for_ib",
+          "callee": "int",
+          "lineNumber": 318
+        },
+        {
+          "caller": "mongo_db",
+          "callee": "getattr",
+          "lineNumber": 322
+        },
+        {
+          "caller": "mongo_db",
+          "callee": "self._get_new_mongo_db",
+          "lineNumber": 324
+        },
+        {
+          "caller": "parquet_access",
+          "callee": "getattr",
+          "lineNumber": 331
+        },
+        {
+          "caller": "parquet_access",
+          "callee": "ParquetAccess",
+          "lineNumber": 333
+        },
+        {
+          "caller": "parquet_root_directory",
+          "callee": "self.config.get_element",
+          "lineNumber": 343
+        },
+        {
+          "caller": "parquet_root_directory",
+          "callee": "Exception",
+          "lineNumber": 345
+        },
+        {
+          "caller": "_get_new_mongo_db",
+          "callee": "mongoDb",
+          "lineNumber": 350
+        },
+        {
+          "caller": "config",
+          "callee": "getattr",
+          "lineNumber": 356
+        },
+        {
+          "caller": "config",
+          "callee": "get_production_config",
+          "lineNumber": 358
+        },
+        {
+          "caller": "_raise_and_log_error",
+          "callee": "self.log.critical",
+          "lineNumber": 363
+        },
+        {
+          "caller": "_raise_and_log_error",
+          "callee": "Exception",
+          "lineNumber": 364
+        },
+        {
+          "caller": "log",
+          "callee": "getattr",
+          "lineNumber": 368
+        },
+        {
+          "caller": "log",
+          "callee": "get_logger",
+          "lineNumber": 370
+        },
+        {
+          "caller": "log_name",
+          "callee": "getattr",
+          "lineNumber": 377
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "x.lower",
+          "lineNumber": 395
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "lower_split_up_name.pop",
+          "lineNumber": 396
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "lower_split_up_name.pop",
+          "lineNumber": 397
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "Exception",
+          "lineNumber": 404
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "Exception",
+          "lineNumber": 414
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "str",
+          "lineNumber": 416
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "source_dict.keys",
+          "lineNumber": 416
+        },
+        {
+          "caller": "identifying_name",
+          "callee": "\"_\".join",
+          "lineNumber": 421
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/fx/spotfx.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 247,
+      "nonEmptyLines": 188,
+      "classes": [
+        {
+          "name": "fxPricesData",
+          "startLine": 23,
+          "endLine": 247,
+          "methods": [
+            "__repr__",
+            "keys",
+            "__getitem__",
+            "get_fx_prices",
+            "_get_standard_fx_prices",
+            "_get_fx_prices_for_inversion",
+            "_get_fx_cross",
+            "_get_fx_prices_vs_default",
+            "_get_fx_prices",
+            "delete_fx_prices",
+            "is_code_in_data",
+            "add_fx_prices",
+            "update_fx_prices",
+            "get_list_of_fxcodes",
+            "_add_fx_prices_without_checking_for_existing_entry",
+            "_delete_fx_prices_without_any_warning_be_careful",
+            "_get_fx_prices_without_checking"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fxPricesData",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keys",
+          "callee": "self.get_list_of_fxcodes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.get_fx_prices",
+          "lineNumber": 38
+        },
+        {
+          "caller": "get_fx_prices",
+          "callee": "get_fx_tuple_from_code",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_fx_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_fx_prices",
+          "callee": "self._get_standard_fx_prices",
+          "lineNumber": 59
+        },
+        {
+          "caller": "get_fx_prices",
+          "callee": "self._get_fx_prices_for_inversion",
+          "lineNumber": 63
+        },
+        {
+          "caller": "get_fx_prices",
+          "callee": "self._get_fx_cross",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_get_standard_fx_prices",
+          "callee": "get_fx_tuple_from_code",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_get_standard_fx_prices",
+          "callee": "self._get_fx_prices_vs_default",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_get_fx_prices_for_inversion",
+          "callee": "get_fx_tuple_from_code",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_get_fx_prices_for_inversion",
+          "callee": "self._get_fx_prices_vs_default",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_fx_prices_for_inversion",
+          "callee": "self.log.warning",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "get_fx_tuple_from_code",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "self._get_fx_prices_vs_default",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "self._get_fx_prices_vs_default",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "fxPrices.create_empty",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "currency1_vs_default.align",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "aligned_c1.ffill",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_get_fx_cross",
+          "callee": "aligned_c2.ffill",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_get_fx_prices_vs_default",
+          "callee": "self._get_fx_prices",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_get_fx_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_get_fx_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_get_fx_prices",
+          "callee": "fxPrices.create_empty",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_get_fx_prices",
+          "callee": "self._get_fx_prices_without_checking",
+          "lineNumber": 143
+        },
+        {
+          "caller": "delete_fx_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 151
+        },
+        {
+          "caller": "delete_fx_prices",
+          "callee": "self._delete_fx_prices_without_any_warning_be_careful",
+          "lineNumber": 152
+        },
+        {
+          "caller": "delete_fx_prices",
+          "callee": "self.log.info",
+          "lineNumber": 153
+        },
+        {
+          "caller": "delete_fx_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 160
+        },
+        {
+          "caller": "delete_fx_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 165
+        },
+        {
+          "caller": "is_code_in_data",
+          "callee": "self.get_list_of_fxcodes",
+          "lineNumber": 171
+        },
+        {
+          "caller": "add_fx_prices",
+          "callee": "self.is_code_in_data",
+          "lineNumber": 180
+        },
+        {
+          "caller": "add_fx_prices",
+          "callee": "self.log.warning",
+          "lineNumber": 184
+        },
+        {
+          "caller": "add_fx_prices",
+          "callee": "self._add_fx_prices_without_checking_for_existing_entry",
+          "lineNumber": 191
+        },
+        {
+          "caller": "add_fx_prices",
+          "callee": "self.log.info",
+          "lineNumber": 192
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "self.get_fx_prices",
+          "lineNumber": 206
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "old_fx_prices.add_rows_to_existing_data",
+          "lineNumber": 207
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "len",
+          "lineNumber": 214
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "len",
+          "lineNumber": 214
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "len",
+          "lineNumber": 217
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "self.log.debug",
+          "lineNumber": 218
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "self.log.debug",
+          "lineNumber": 221
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "str",
+          "lineNumber": 223
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "self.add_fx_prices",
+          "lineNumber": 228
+        },
+        {
+          "caller": "update_fx_prices",
+          "callee": "self.log.debug",
+          "lineNumber": 230
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "NotImplementedError",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_add_fx_prices_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_delete_fx_prices_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "NotImplementedError",
+          "lineNumber": 247
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_connection.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 245,
+      "nonEmptyLines": 189,
+      "functions": [
+        {
+          "name": "mongo_defaults",
+          "startLine": 19,
+          "endLine": 49,
+          "params": [
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "mongo_clean_ints",
+          "startLine": 215,
+          "endLine": 230,
+          "params": [
+            "dict_to_clean"
+          ]
+        },
+        {
+          "name": "clean_mongo_host",
+          "startLine": 233,
+          "endLine": 245,
+          "params": [
+            "host_string"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MongoClientFactory",
+          "startLine": 52,
+          "endLine": 80,
+          "methods": [
+            "__init__",
+            "get_mongo_client"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoDb",
+          "startLine": 87,
+          "endLine": 121,
+          "methods": [
+            "__init__",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "mongoConnection",
+          "startLine": 124,
+          "endLine": 212,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "get_indexes",
+            "create_index",
+            "create_compound_index"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongo_defaults",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "MongoClientFactory",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "mongoDb",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "mongoConnection",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "mongo_clean_ints",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "clean_mongo_host",
+          "line": 233,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mongo_defaults",
+          "callee": "list",
+          "lineNumber": 30
+        },
+        {
+          "caller": "mongo_defaults",
+          "callee": "kwargs.keys",
+          "lineNumber": 30
+        },
+        {
+          "caller": "mongo_defaults",
+          "callee": "get_production_config",
+          "lineNumber": 31
+        },
+        {
+          "caller": "mongo_defaults",
+          "callee": "getattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "self.mongo_clients.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "host.startswith",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "MongoClient",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "ServerApi",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "MongoClient",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_mongo_client",
+          "callee": "MongoClient",
+          "lineNumber": 78
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongo_defaults",
+          "lineNumber": 100
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongo_client_factory.get_mongo_client",
+          "lineNumber": 110
+        },
+        {
+          "caller": "__repr__",
+          "callee": "clean_mongo_host",
+          "lineNumber": 117
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDb",
+          "lineNumber": 133
+        },
+        {
+          "caller": "__repr__",
+          "callee": "clean_mongo_host",
+          "lineNumber": 153
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "copy",
+          "lineNumber": 161
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "self.collection.index_information",
+          "lineNumber": 161
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "len",
+          "lineNumber": 163
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "raw_index_information.pop",
+          "lineNumber": 167
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "raw_index_information.items",
+          "lineNumber": 173
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "index_names.append",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_indexes",
+          "callee": "index_keys.append",
+          "lineNumber": 176
+        },
+        {
+          "caller": "create_index",
+          "callee": "self.get_indexes",
+          "lineNumber": 181
+        },
+        {
+          "caller": "create_index",
+          "callee": "self.collection.create_index",
+          "lineNumber": 187
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "index_config.pop",
+          "lineNumber": 192
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "keys.items",
+          "lineNumber": 193
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "name_parts.append",
+          "lineNumber": 194
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "str",
+          "lineNumber": 194
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "name_parts.append",
+          "lineNumber": 195
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "str",
+          "lineNumber": 195
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "key_tuples.append",
+          "lineNumber": 196
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "\"_\".join",
+          "lineNumber": 197
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "self.get_indexes",
+          "lineNumber": 199
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "len",
+          "lineNumber": 200
+        },
+        {
+          "caller": "create_compound_index",
+          "callee": "self.collection.create_index",
+          "lineNumber": 210
+        },
+        {
+          "caller": "mongo_clean_ints",
+          "callee": "copy",
+          "lineNumber": 222
+        },
+        {
+          "caller": "mongo_clean_ints",
+          "callee": "new_dict.keys",
+          "lineNumber": 223
+        },
+        {
+          "caller": "mongo_clean_ints",
+          "callee": "isinstance",
+          "lineNumber": 225
+        },
+        {
+          "caller": "mongo_clean_ints",
+          "callee": "isinstance",
+          "lineNumber": 225
+        },
+        {
+          "caller": "mongo_clean_ints",
+          "callee": "float",
+          "lineNumber": 226
+        },
+        {
+          "caller": "clean_mongo_host",
+          "callee": "host_pattern.match",
+          "lineNumber": 241
+        },
+        {
+          "caller": "clean_mongo_host",
+          "callee": "match.group",
+          "lineNumber": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 3,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysdata/mongodb/mongo_margin.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "from_dict_of_entries_to_margin_series",
+          "startLine": 66,
+          "endLine": 78,
+          "params": [
+            "dict_of_entries"
+          ]
+        },
+        {
+          "name": "from_series_of_margin_to_dict_of_entries",
+          "startLine": 81,
+          "endLine": 88,
+          "params": [
+            "series_of_margin"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "mongoMarginData",
+          "startLine": 14,
+          "endLine": 63,
+          "methods": [
+            "__init__",
+            "log",
+            "mongo_data",
+            "_repr__",
+            "get_series_of_strategy_margin",
+            "_get_data_dict_for_strategy_margin",
+            "_write_series_of_strategy_margin",
+            "_get_list_of_strategies_with_margin_including_total"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mongoMarginData",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "from_dict_of_entries_to_margin_series",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "from_series_of_margin_to_dict_of_entries",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "mongoDataWithSingleKey",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_repr__",
+          "callee": "str",
+          "lineNumber": 38
+        },
+        {
+          "caller": "get_series_of_strategy_margin",
+          "callee": "self._get_data_dict_for_strategy_margin",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_series_of_strategy_margin",
+          "callee": "from_dict_of_entries_to_margin_series",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_get_data_dict_for_strategy_margin",
+          "callee": "self.mongo_data.get_result_dict_for_key_without_key_value",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_get_data_dict_for_strategy_margin",
+          "callee": "dict",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_write_series_of_strategy_margin",
+          "callee": "from_series_of_margin_to_dict_of_entries",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_write_series_of_strategy_margin",
+          "callee": "self.mongo_data.add_data",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_get_list_of_strategies_with_margin_including_total",
+          "callee": "self.mongo_data.get_list_of_keys",
+          "lineNumber": 63
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "dict_of_entries.keys",
+          "lineNumber": 67
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "long_to_datetime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "int",
+          "lineNumber": 69
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "list",
+          "lineNumber": 71
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "dict_of_entries.values",
+          "lineNumber": 71
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "pd.Series",
+          "lineNumber": 73
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "pd_series.sort_index",
+          "lineNumber": 76
+        },
+        {
+          "caller": "from_dict_of_entries_to_margin_series",
+          "callee": "seriesOfMargin",
+          "lineNumber": 78
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "list",
+          "lineNumber": 82
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "str",
+          "lineNumber": 83
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "datetime_to_long",
+          "lineNumber": 83
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "list",
+          "lineNumber": 84
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "dict",
+          "lineNumber": 86
+        },
+        {
+          "caller": "from_series_of_margin_to_dict_of_entries",
+          "callee": "zip",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/mongodb/tests/test_mongodb.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "TestMongoDB",
+          "startLine": 4,
+          "endLine": 46,
+          "methods": [
+            "test_hide_password"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestMongoDB",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "clean_mongo_host",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_hide_password",
+          "callee": "print",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysdata/production/margin.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "seriesOfMargin",
+          "startLine": 9,
+          "endLine": 13,
+          "methods": [
+            "final_value"
+          ],
+          "properties": []
+        },
+        {
+          "name": "marginData",
+          "startLine": 16,
+          "endLine": 67,
+          "methods": [
+            "get_series_of_total_margin",
+            "get_current_total_margin",
+            "add_total_margin_entry",
+            "get_list_of_strategies_with_margin",
+            "get_current_strategy_margin",
+            "add_strategy_margin_entry",
+            "get_series_of_strategy_margin",
+            "_get_list_of_strategies_with_margin_including_total",
+            "_write_series_of_strategy_margin"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "seriesOfMargin",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "marginData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "final_value",
+          "callee": "len",
+          "lineNumber": 11
+        },
+        {
+          "caller": "get_series_of_total_margin",
+          "callee": "self.get_series_of_strategy_margin",
+          "lineNumber": 18
+        },
+        {
+          "caller": "get_current_total_margin",
+          "callee": "self.get_current_strategy_margin",
+          "lineNumber": 22
+        },
+        {
+          "caller": "add_total_margin_entry",
+          "callee": "self.add_strategy_margin_entry",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get_list_of_strategies_with_margin",
+          "callee": "self._get_list_of_strategies_with_margin_including_total",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_list_of_strategies_with_margin",
+          "callee": "list_of_strategies.remove",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_current_strategy_margin",
+          "callee": "self.get_series_of_strategy_margin",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_current_strategy_margin",
+          "callee": "series_of_margin.final_value",
+          "lineNumber": 45
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "pd.Series",
+          "lineNumber": 48
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 48
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "self.get_series_of_strategy_margin",
+          "lineNumber": 49
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "pd.concat",
+          "lineNumber": 53
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "self._write_series_of_strategy_margin",
+          "lineNumber": 54
+        },
+        {
+          "caller": "add_strategy_margin_entry",
+          "callee": "seriesOfMargin",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysinit/futures/repocsv_spotfx_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "spotfx_from_csv_and_investing_dot_com",
+          "startLine": 19,
+          "endLine": 64,
+          "params": [
+            "datapath",
+            "ADD_TO_DB",
+            "ADD_TO_CSV",
+            "ADD_EXTRA_DATA"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "spotfx_from_csv_and_investing_dot_com",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "csvFxPricesData",
+          "lineNumber": 24
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "csvFxPricesData",
+          "lineNumber": 27
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "my_csv_fx_prices_data.get_list_of_fxcodes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "print",
+          "lineNumber": 32
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "my_csv_fx_prices_data.get_fx_prices",
+          "lineNumber": 34
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "investingDotCom_csv_fx_prices.get_fx_prices",
+          "lineNumber": 36
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "investingDotCom_csv_fx_prices.get_fx_prices",
+          "lineNumber": 39
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "print",
+          "lineNumber": 42
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "len",
+          "lineNumber": 44
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "len",
+          "lineNumber": 44
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "pd.concat",
+          "lineNumber": 49
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "fx_prices.index.duplicated",
+          "lineNumber": 50
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "print",
+          "lineNumber": 54
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "len",
+          "lineNumber": 54
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "my_csv_fx_prices_data.add_fx_prices",
+          "lineNumber": 57
+        },
+        {
+          "caller": "spotfx_from_csv_and_investing_dot_com",
+          "callee": "db_fx_prices_data.add_fx_prices",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/spotfx_from_db_to_csv.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syslogdiag/email_via_db_interface.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 213,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "send_production_mail_msg_attachment",
+          "startLine": 14,
+          "endLine": 19,
+          "params": [
+            "body",
+            "subject",
+            "filename"
+          ]
+        },
+        {
+          "name": "send_production_mail_msg",
+          "startLine": 22,
+          "endLine": 40,
+          "params": [
+            "data",
+            "body",
+            "subject",
+            "email_is_report"
+          ]
+        },
+        {
+          "name": "send_email_and_record_date_or_store_on_fail",
+          "startLine": 43,
+          "endLine": 56,
+          "params": [
+            "data",
+            "body",
+            "subject",
+            "email_is_report"
+          ]
+        },
+        {
+          "name": "can_we_send_this_email_now",
+          "startLine": 59,
+          "endLine": 74,
+          "params": [
+            "data",
+            "subject",
+            "email_is_report"
+          ]
+        },
+        {
+          "name": "store_and_warn_email",
+          "startLine": 77,
+          "endLine": 83,
+          "params": [
+            "data",
+            "body",
+            "subject",
+            "email_is_report"
+          ]
+        },
+        {
+          "name": "have_we_sent_warning_email_for_this_subject",
+          "startLine": 86,
+          "endLine": 96,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "check_if_sent_in_last_day",
+          "startLine": 99,
+          "endLine": 109,
+          "params": [
+            "last_time_email_sent"
+          ]
+        },
+        {
+          "name": "send_warning_email",
+          "startLine": 112,
+          "endLine": 114,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "get_time_last_email_sent_with_this_subject",
+          "startLine": 117,
+          "endLine": 120,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "record_date_of_email_send",
+          "startLine": 123,
+          "endLine": 125,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "get_time_last_warning_email_sent_with_this_subject",
+          "startLine": 128,
+          "endLine": 133,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "record_date_of_email_warning_send",
+          "startLine": 136,
+          "endLine": 138,
+          "params": [
+            "data",
+            "subject"
+          ]
+        },
+        {
+          "name": "store_message",
+          "startLine": 141,
+          "endLine": 155,
+          "params": [
+            "data",
+            "body",
+            "subject",
+            "email_is_report"
+          ]
+        },
+        {
+          "name": "retrieve_and_delete_stored_messages",
+          "startLine": 158,
+          "endLine": 168,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "get_storage_filename",
+          "startLine": 200,
+          "endLine": 213,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dataEmailControl",
+          "startLine": 171,
+          "endLine": 197,
+          "methods": [
+            "__init__",
+            "get_time_last_email_sent_with_this_subject",
+            "record_date_of_email_send",
+            "get_time_last_warning_email_sent_with_this_subject",
+            "record_date_of_email_warning_send"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "send_production_mail_msg_attachment",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "send_production_mail_msg",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "send_email_and_record_date_or_store_on_fail",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "can_we_send_this_email_now",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "store_and_warn_email",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "have_we_sent_warning_email_for_this_subject",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "check_if_sent_in_last_day",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "send_warning_email",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "get_time_last_email_sent_with_this_subject",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "record_date_of_email_send",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "get_time_last_warning_email_sent_with_this_subject",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "record_date_of_email_warning_send",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "store_message",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "retrieve_and_delete_stored_messages",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "dataEmailControl",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "get_storage_filename",
+          "line": 200,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send_production_mail_msg_attachment",
+          "callee": "send_mail_pdfs",
+          "lineNumber": 19
+        },
+        {
+          "caller": "send_production_mail_msg",
+          "callee": "can_we_send_this_email_now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "send_production_mail_msg",
+          "callee": "send_email_and_record_date_or_store_on_fail",
+          "lineNumber": 33
+        },
+        {
+          "caller": "send_production_mail_msg",
+          "callee": "store_and_warn_email",
+          "lineNumber": 40
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "send_mail_msg",
+          "lineNumber": 47
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "record_date_of_email_send",
+          "lineNumber": 48
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "data.log.debug",
+          "lineNumber": 49
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "data.log.debug",
+          "lineNumber": 52
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "str",
+          "lineNumber": 54
+        },
+        {
+          "caller": "send_email_and_record_date_or_store_on_fail",
+          "callee": "store_message",
+          "lineNumber": 56
+        },
+        {
+          "caller": "can_we_send_this_email_now",
+          "callee": "get_time_last_email_sent_with_this_subject",
+          "lineNumber": 65
+        },
+        {
+          "caller": "can_we_send_this_email_now",
+          "callee": "check_if_sent_in_last_day",
+          "lineNumber": 69
+        },
+        {
+          "caller": "store_and_warn_email",
+          "callee": "have_we_sent_warning_email_for_this_subject",
+          "lineNumber": 78
+        },
+        {
+          "caller": "store_and_warn_email",
+          "callee": "send_warning_email",
+          "lineNumber": 80
+        },
+        {
+          "caller": "store_and_warn_email",
+          "callee": "record_date_of_email_warning_send",
+          "lineNumber": 81
+        },
+        {
+          "caller": "store_and_warn_email",
+          "callee": "store_message",
+          "lineNumber": 83
+        },
+        {
+          "caller": "have_we_sent_warning_email_for_this_subject",
+          "callee": "get_time_last_warning_email_sent_with_this_subject",
+          "lineNumber": 88
+        },
+        {
+          "caller": "have_we_sent_warning_email_for_this_subject",
+          "callee": "check_if_sent_in_last_day",
+          "lineNumber": 94
+        },
+        {
+          "caller": "check_if_sent_in_last_day",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 100
+        },
+        {
+          "caller": "check_if_sent_in_last_day",
+          "callee": "elapsed_time.total_seconds",
+          "lineNumber": 102
+        },
+        {
+          "caller": "send_warning_email",
+          "callee": "send_email_and_record_date_or_store_on_fail",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_time_last_email_sent_with_this_subject",
+          "callee": "dataEmailControl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_time_last_email_sent_with_this_subject",
+          "callee": "email_control.get_time_last_email_sent_with_this_subject",
+          "lineNumber": 119
+        },
+        {
+          "caller": "record_date_of_email_send",
+          "callee": "dataEmailControl",
+          "lineNumber": 124
+        },
+        {
+          "caller": "record_date_of_email_send",
+          "callee": "email_control.record_date_of_email_send",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_time_last_warning_email_sent_with_this_subject",
+          "callee": "dataEmailControl",
+          "lineNumber": 129
+        },
+        {
+          "caller": "get_time_last_warning_email_sent_with_this_subject",
+          "callee": "email_control.get_time_last_warning_email_sent_with_this_subject",
+          "lineNumber": 130
+        },
+        {
+          "caller": "record_date_of_email_warning_send",
+          "callee": "dataEmailControl",
+          "lineNumber": 137
+        },
+        {
+          "caller": "record_date_of_email_warning_send",
+          "callee": "email_control.record_date_of_email_warning_send",
+          "lineNumber": 138
+        },
+        {
+          "caller": "store_message",
+          "callee": "data.log.debug",
+          "lineNumber": 143
+        },
+        {
+          "caller": "store_message",
+          "callee": "get_storage_filename",
+          "lineNumber": 146
+        },
+        {
+          "caller": "store_message",
+          "callee": "open",
+          "lineNumber": 147
+        },
+        {
+          "caller": "store_message",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 149
+        },
+        {
+          "caller": "store_message",
+          "callee": "file.write",
+          "lineNumber": 152
+        },
+        {
+          "caller": "store_message",
+          "callee": "landing_strip",
+          "lineNumber": 152
+        },
+        {
+          "caller": "store_message",
+          "callee": "file.write",
+          "lineNumber": 153
+        },
+        {
+          "caller": "store_message",
+          "callee": "file.write",
+          "lineNumber": 154
+        },
+        {
+          "caller": "store_message",
+          "callee": "file.write",
+          "lineNumber": 155
+        },
+        {
+          "caller": "store_message",
+          "callee": "landing_strip",
+          "lineNumber": 155
+        },
+        {
+          "caller": "retrieve_and_delete_stored_messages",
+          "callee": "get_storage_filename",
+          "lineNumber": 159
+        },
+        {
+          "caller": "retrieve_and_delete_stored_messages",
+          "callee": "open",
+          "lineNumber": 161
+        },
+        {
+          "caller": "retrieve_and_delete_stored_messages",
+          "callee": "file.read",
+          "lineNumber": 162
+        },
+        {
+          "caller": "retrieve_and_delete_stored_messages",
+          "callee": "os.remove",
+          "lineNumber": 163
+        },
+        {
+          "caller": "__init__",
+          "callee": "data.add_class_list",
+          "lineNumber": 176
+        },
+        {
+          "caller": "get_time_last_email_sent_with_this_subject",
+          "callee": "self.data.db_email_control.get_time_last_email_sent_with_this_subject",
+          "lineNumber": 181
+        },
+        {
+          "caller": "record_date_of_email_send",
+          "callee": "self.data.db_email_control.record_date_of_email_send",
+          "lineNumber": 188
+        },
+        {
+          "caller": "get_time_last_warning_email_sent_with_this_subject",
+          "callee": "self.data.db_email_control.get_time_last_warning_email_sent_with_this_subject",
+          "lineNumber": 191
+        },
+        {
+          "caller": "record_date_of_email_warning_send",
+          "callee": "self.data.db_email_control.record_date_of_email_warning_send",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_storage_filename",
+          "callee": "config.get_element_or_default",
+          "lineNumber": 202
+        },
+        {
+          "caller": "get_storage_filename",
+          "callee": "print",
+          "lineNumber": 205
+        },
+        {
+          "caller": "get_storage_filename",
+          "callee": "resolve_path_and_filename_for_package",
+          "lineNumber": 211
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/production/backtest_storage.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 157,
+      "classes": [
+        {
+          "name": "interactiveBacktest",
+          "startLine": 14,
+          "endLine": 201,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "timestamp",
+            "strategy_name",
+            "system",
+            "print_config_dict",
+            "eval_loop",
+            "plot_data_loop",
+            "html_data_loop",
+            "print_data_loop",
+            "interactively_get_data_and_plot_for_stage_and_method",
+            "interactively_get_data_and_print_for_stage_and_method",
+            "interactively_get_data_and_html_for_stage_and_method",
+            "interactively_get_data_for_stage_and_method",
+            "interactively_choose_stage",
+            "interactively_choose_method",
+            "print_information",
+            "get_list_of_stages",
+            "get_stage",
+            "get_list_of_methods_for_stage",
+            "get_result_of_method_for_stage",
+            "get_method_for_stage",
+            "get_instrument_list",
+            "get_trading_rules"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "interactiveBacktest",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "print_config_dict",
+          "callee": "print",
+          "lineNumber": 38
+        },
+        {
+          "caller": "print_config_dict",
+          "callee": "system.config.as_dict",
+          "lineNumber": 38
+        },
+        {
+          "caller": "eval_loop",
+          "callee": "input",
+          "lineNumber": 46
+        },
+        {
+          "caller": "eval_loop",
+          "callee": "eval",
+          "lineNumber": 53
+        },
+        {
+          "caller": "eval_loop",
+          "callee": "print",
+          "lineNumber": 55
+        },
+        {
+          "caller": "eval_loop",
+          "callee": "str",
+          "lineNumber": 55
+        },
+        {
+          "caller": "plot_data_loop",
+          "callee": "self.interactively_get_data_and_plot_for_stage_and_method",
+          "lineNumber": 63
+        },
+        {
+          "caller": "html_data_loop",
+          "callee": "self.interactively_get_data_and_html_for_stage_and_method",
+          "lineNumber": 77
+        },
+        {
+          "caller": "print_data_loop",
+          "callee": "self.interactively_get_data_and_print_for_stage_and_method",
+          "lineNumber": 91
+        },
+        {
+          "caller": "interactively_get_data_and_plot_for_stage_and_method",
+          "callee": "self.interactively_get_data_for_stage_and_method",
+          "lineNumber": 102
+        },
+        {
+          "caller": "interactively_get_data_and_plot_for_stage_and_method",
+          "callee": "data.plot",
+          "lineNumber": 105
+        },
+        {
+          "caller": "interactively_get_data_and_plot_for_stage_and_method",
+          "callee": "pyplot.show",
+          "lineNumber": 106
+        },
+        {
+          "caller": "interactively_get_data_and_print_for_stage_and_method",
+          "callee": "self.interactively_get_data_for_stage_and_method",
+          "lineNumber": 111
+        },
+        {
+          "caller": "interactively_get_data_and_print_for_stage_and_method",
+          "callee": "pd.set_option",
+          "lineNumber": 114
+        },
+        {
+          "caller": "interactively_get_data_and_print_for_stage_and_method",
+          "callee": "pd.set_option",
+          "lineNumber": 115
+        },
+        {
+          "caller": "interactively_get_data_and_print_for_stage_and_method",
+          "callee": "pd.set_option",
+          "lineNumber": 116
+        },
+        {
+          "caller": "interactively_get_data_and_print_for_stage_and_method",
+          "callee": "print",
+          "lineNumber": 117
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "self.interactively_get_data_for_stage_and_method",
+          "lineNumber": 122
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "full_filename_for_file_in_home_dir",
+          "lineNumber": 125
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "pd.DataFrame",
+          "lineNumber": 127
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "data_as_pd.to_html",
+          "lineNumber": 128
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "print",
+          "lineNumber": 129
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "print",
+          "lineNumber": 131
+        },
+        {
+          "caller": "interactively_get_data_and_html_for_stage_and_method",
+          "callee": "str",
+          "lineNumber": 131
+        },
+        {
+          "caller": "interactively_get_data_for_stage_and_method",
+          "callee": "self.interactively_choose_stage",
+          "lineNumber": 136
+        },
+        {
+          "caller": "interactively_get_data_for_stage_and_method",
+          "callee": "self.interactively_choose_method",
+          "lineNumber": 140
+        },
+        {
+          "caller": "interactively_get_data_for_stage_and_method",
+          "callee": "self.print_information",
+          "lineNumber": 141
+        },
+        {
+          "caller": "interactively_get_data_for_stage_and_method",
+          "callee": "self.get_result_of_method_for_stage",
+          "lineNumber": 142
+        },
+        {
+          "caller": "interactively_choose_stage",
+          "callee": "self.get_list_of_stages",
+          "lineNumber": 147
+        },
+        {
+          "caller": "interactively_choose_stage",
+          "callee": "print",
+          "lineNumber": 148
+        },
+        {
+          "caller": "interactively_choose_stage",
+          "callee": "print_menu_of_values_and_get_response",
+          "lineNumber": 149
+        },
+        {
+          "caller": "interactively_choose_method",
+          "callee": "self.get_list_of_methods_for_stage",
+          "lineNumber": 158
+        },
+        {
+          "caller": "interactively_choose_method",
+          "callee": "print",
+          "lineNumber": 159
+        },
+        {
+          "caller": "interactively_choose_method",
+          "callee": "print_menu_of_values_and_get_response",
+          "lineNumber": 160
+        },
+        {
+          "caller": "print_information",
+          "callee": "print",
+          "lineNumber": 165
+        },
+        {
+          "caller": "print_information",
+          "callee": "self.get_instrument_list",
+          "lineNumber": 167
+        },
+        {
+          "caller": "print_information",
+          "callee": "self.get_trading_rules",
+          "lineNumber": 167
+        },
+        {
+          "caller": "get_stage",
+          "callee": "getattr",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_list_of_methods_for_stage",
+          "callee": "self.get_stage",
+          "lineNumber": 177
+        },
+        {
+          "caller": "get_list_of_methods_for_stage",
+          "callee": "stage.methods",
+          "lineNumber": 178
+        },
+        {
+          "caller": "get_result_of_method_for_stage",
+          "callee": "self.get_method_for_stage",
+          "lineNumber": 181
+        },
+        {
+          "caller": "get_result_of_method_for_stage",
+          "callee": "interactively_input_arguments_for_function",
+          "lineNumber": 182
+        },
+        {
+          "caller": "get_result_of_method_for_stage",
+          "callee": "func",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_result_of_method_for_stage",
+          "callee": "print",
+          "lineNumber": 186
+        },
+        {
+          "caller": "get_method_for_stage",
+          "callee": "self.get_stage",
+          "lineNumber": 192
+        },
+        {
+          "caller": "get_method_for_stage",
+          "callee": "getattr",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_instrument_list",
+          "callee": "self.system.get_instrument_list",
+          "lineNumber": 198
+        },
+        {
+          "caller": "get_trading_rules",
+          "callee": "self.system.rules.trading_rules().keys",
+          "lineNumber": 201
+        },
+        {
+          "caller": "get_trading_rules",
+          "callee": "self.system.rules.trading_rules",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/production/capital.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 150,
+      "classes": [
+        {
+          "name": "totalCapitalUpdater",
+          "startLine": 4,
+          "endLine": 185,
+          "methods": [
+            "__init__",
+            "calc_method",
+            "new_broker_account_value",
+            "prev_broker_account_value",
+            "prev_total_capital",
+            "prev_maximum_capital",
+            "prev_pandl_cum_acc",
+            "new_total_capital",
+            "new_maximum_capital",
+            "new_acc_pandl",
+            "profit_and_loss",
+            "check_pandl_size",
+            "calculate_new_total_and_max_capital_given_pandl",
+            "_full_capital_calculation",
+            "_half_capital_calculation",
+            "_fixed_capital_calculation"
+          ],
+          "properties": []
+        },
+        {
+          "name": "LargeCapitalChange",
+          "startLine": 188,
+          "endLine": 189,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "totalCapitalUpdater",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "LargeCapitalChange",
+          "line": 188,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new_total_capital",
+          "callee": "getattr",
+          "lineNumber": 52
+        },
+        {
+          "caller": "new_total_capital",
+          "callee": "Exception",
+          "lineNumber": 54
+        },
+        {
+          "caller": "new_maximum_capital",
+          "callee": "getattr",
+          "lineNumber": 63
+        },
+        {
+          "caller": "new_maximum_capital",
+          "callee": "Exception",
+          "lineNumber": 65
+        },
+        {
+          "caller": "new_acc_pandl",
+          "callee": "getattr",
+          "lineNumber": 74
+        },
+        {
+          "caller": "new_acc_pandl",
+          "callee": "Exception",
+          "lineNumber": 76
+        },
+        {
+          "caller": "check_pandl_size",
+          "callee": "abs",
+          "lineNumber": 89
+        },
+        {
+          "caller": "check_pandl_size",
+          "callee": "LargeCapitalChange",
+          "lineNumber": 91
+        },
+        {
+          "caller": "calculate_new_total_and_max_capital_given_pandl",
+          "callee": "self._full_capital_calculation",
+          "lineNumber": 113
+        },
+        {
+          "caller": "calculate_new_total_and_max_capital_given_pandl",
+          "callee": "self._half_capital_calculation",
+          "lineNumber": 115
+        },
+        {
+          "caller": "calculate_new_total_and_max_capital_given_pandl",
+          "callee": "self._fixed_capital_calculation",
+          "lineNumber": 117
+        },
+        {
+          "caller": "calculate_new_total_and_max_capital_given_pandl",
+          "callee": "Exception",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_half_capital_calculation",
+          "callee": "min",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysobjects/production/roll_state.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "is_double_sided_trade_roll_state",
+          "startLine": 36,
+          "endLine": 37,
+          "params": [
+            "roll_state"
+          ]
+        },
+        {
+          "name": "is_roll_state_requiring_order_generation",
+          "startLine": 40,
+          "endLine": 41,
+          "params": [
+            "roll_state"
+          ]
+        },
+        {
+          "name": "is_type_of_active_rolling_roll_state",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "roll_state"
+          ]
+        },
+        {
+          "name": "explain_roll_state_str",
+          "startLine": 51,
+          "endLine": 52,
+          "params": [
+            "roll_state"
+          ]
+        },
+        {
+          "name": "name_of_roll_state",
+          "startLine": 55,
+          "endLine": 56,
+          "params": [
+            "roll_state"
+          ]
+        },
+        {
+          "name": "complete_roll_state",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "roll_state",
+            "priced_position"
+          ]
+        },
+        {
+          "name": "allowable_roll_state_from_current_and_position",
+          "startLine": 68,
+          "endLine": 104,
+          "params": [
+            "current_roll_state",
+            "priced_position"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_double_sided_trade_roll_state",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "is_roll_state_requiring_order_generation",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "is_type_of_active_rolling_roll_state",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "explain_roll_state_str",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "name_of_roll_state",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "complete_roll_state",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "allowable_roll_state_from_current_and_position",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_type_of_active_rolling_roll_state",
+          "callee": "is_roll_state_requiring_order_generation",
+          "lineNumber": 46
+        },
+        {
+          "caller": "complete_roll_state",
+          "callee": "name_of_roll_state",
+          "lineNumber": 65
+        },
+        {
+          "caller": "allowable_roll_state_from_current_and_position",
+          "callee": "dict",
+          "lineNumber": 74
+        },
+        {
+          "caller": "allowable_roll_state_from_current_and_position",
+          "callee": "complete_roll_state",
+          "lineNumber": 98
+        },
+        {
+          "caller": "allowable_roll_state_from_current_and_position",
+          "callee": "Exception",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/clean_truncate_backtest_states.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "clean_truncate_backtest_states",
+          "startLine": 7,
+          "endLine": 12,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "cleanTruncateBacktestStates",
+          "startLine": 15,
+          "endLine": 35,
+          "methods": [
+            "__init__",
+            "clean_backtest_states"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "clean_truncate_backtest_states",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "cleanTruncateBacktestStates",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clean_truncate_backtest_states",
+          "callee": "dataBlob",
+          "lineNumber": 8
+        },
+        {
+          "caller": "clean_truncate_backtest_states",
+          "callee": "cleanTruncateBacktestStates",
+          "lineNumber": 9
+        },
+        {
+          "caller": "clean_truncate_backtest_states",
+          "callee": "cleaner.clean_backtest_states",
+          "lineNumber": 10
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "get_directory_store_backtests",
+          "lineNumber": 20
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "get_production_config().get_element",
+          "lineNumber": 21
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "get_production_config",
+          "lineNumber": 21
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "self.data.log.debug",
+          "lineNumber": 23
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "delete_old_files_with_extension_in_pathname",
+          "lineNumber": 27
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "delete_old_files_with_extension_in_pathname",
+          "lineNumber": 30
+        },
+        {
+          "caller": "clean_backtest_states",
+          "callee": "delete_old_files_with_extension_in_pathname",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/clean_truncate_echo_files.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "clean_truncate_echo_files",
+          "startLine": 10,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "cleanTruncateEchoFiles",
+          "startLine": 17,
+          "endLine": 31,
+          "methods": [
+            "__init__",
+            "clean_echo_files"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "clean_truncate_echo_files",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "cleanTruncateEchoFiles",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clean_truncate_echo_files",
+          "callee": "dataBlob",
+          "lineNumber": 11
+        },
+        {
+          "caller": "clean_truncate_echo_files",
+          "callee": "cleanTruncateEchoFiles",
+          "lineNumber": 12
+        },
+        {
+          "caller": "clean_truncate_echo_files",
+          "callee": "cleaner.clean_echo_files",
+          "lineNumber": 13
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "get_echo_file_directory",
+          "lineNumber": 22
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "get_echo_extension",
+          "lineNumber": 23
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "self.data.log.debug",
+          "lineNumber": 24
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "rename_files_with_extension_in_pathname_as_archive_files",
+          "lineNumber": 25
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "self.data.log.debug",
+          "lineNumber": 28
+        },
+        {
+          "caller": "clean_echo_files",
+          "callee": "delete_old_files_with_extension_in_pathname",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/clean_truncate_log_files.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "clean_truncate_log_files",
+          "startLine": 5,
+          "endLine": 9,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "cleanTruncateLogFiles",
+          "startLine": 12,
+          "endLine": 20,
+          "methods": [
+            "__init__",
+            "clean_log_files"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "clean_truncate_log_files",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "cleanTruncateLogFiles",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clean_truncate_log_files",
+          "callee": "dataBlob",
+          "lineNumber": 6
+        },
+        {
+          "caller": "clean_truncate_log_files",
+          "callee": "cleanTruncateLogFiles",
+          "lineNumber": 7
+        },
+        {
+          "caller": "clean_truncate_log_files",
+          "callee": "cleaner.clean_log_files",
+          "lineNumber": 8
+        },
+        {
+          "caller": "clean_log_files",
+          "callee": "diagLogs",
+          "lineNumber": 18
+        },
+        {
+          "caller": "clean_log_files",
+          "callee": "self.data.log.debug",
+          "lineNumber": 19
+        },
+        {
+          "caller": "clean_log_files",
+          "callee": "mlog.delete_log_items_from_before_n_days",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

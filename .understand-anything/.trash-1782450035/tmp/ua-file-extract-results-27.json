@@ -1,0 +1,766 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysbrokers/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/config/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_config_trading_hours.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 77,
+      "nonEmptyLines": 77,
+      "sections": [
+        {
+          "heading": "EDOLLAR_example",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "US2_example",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "US10_example",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "US/Central",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "US/Eastern",
+          "level": 1,
+          "line": 57
+        },
+        {
+          "heading": "GB-Eire",
+          "level": 1,
+          "line": 60
+        },
+        {
+          "heading": "MET",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "Japan",
+          "level": 1,
+          "line": 66
+        },
+        {
+          "heading": "HongKong",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "Hongkong",
+          "level": 1,
+          "line": 72
+        },
+        {
+          "heading": "Australia/NSW",
+          "level": 1,
+          "line": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "syscontrol/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscontrol/control_config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 144,
+      "nonEmptyLines": 144,
+      "sections": [
+        {
+          "heading": "process_configuration_start_time",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "process_configuration_stop_time",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "process_configuration_methods",
+          "level": 1,
+          "line": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "syscore/interactive/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syscore/tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/_DEPRECATED/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/config/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/config/defaults.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 377,
+      "nonEmptyLines": 377,
+      "sections": [
+        {
+          "heading": "strategy_capital_allocation",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "backtest_store_directory",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "backtest_max_age",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "backtest_compress",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "csv_backup_directory",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "mongo_dump_directory",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "mongo_dump_all",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "echo_directory",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "offsystem_backup_options",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "ib_ipaddress",
+          "level": 1,
+          "line": 37
+        },
+        {
+          "heading": "ib_port",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "ib_idoffset",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "broker_factory_func",
+          "level": 1,
+          "line": 42
+        },
+        {
+          "heading": "mongo_host",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "mongo_db",
+          "level": 1,
+          "line": 46
+        },
+        {
+          "heading": "mongo_port",
+          "level": 1,
+          "line": 49
+        },
+        {
+          "heading": "parquet_store",
+          "level": 1,
+          "line": 52
+        },
+        {
+          "heading": "echo_extension",
+          "level": 1,
+          "line": 55
+        },
+        {
+          "heading": "max_price_spike",
+          "level": 1,
+          "line": 57
+        },
+        {
+          "heading": "GMT_offset_hours",
+          "level": 1,
+          "line": 59
+        },
+        {
+          "heading": "ignore_future_prices",
+          "level": 1,
+          "line": 61
+        },
+        {
+          "heading": "ignore_prices_with_zero_volumes_intraday",
+          "level": 1,
+          "line": 62
+        },
+        {
+          "heading": "ignore_prices_with_zero_volumes_daily",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "ignore_zero_prices",
+          "level": 1,
+          "line": 64
+        },
+        {
+          "heading": "ignore_negative_prices",
+          "level": 1,
+          "line": 65
+        },
+        {
+          "heading": "intraday_frequency",
+          "level": 1,
+          "line": 68
+        },
+        {
+          "heading": "production_capital_method",
+          "level": 1,
+          "line": 71
+        },
+        {
+          "heading": "stale_instruments",
+          "level": 1,
+          "line": 73
+        },
+        {
+          "heading": "stale_strategies",
+          "level": 1,
+          "line": 75
+        },
+        {
+          "heading": "roll_status_auto_update",
+          "level": 1,
+          "line": 78
+        },
+        {
+          "heading": "execution_algos",
+          "level": 1,
+          "line": 93
+        },
+        {
+          "heading": "log_failed_processes",
+          "level": 1,
+          "line": 103
+        },
+        {
+          "heading": "volatility_calculation",
+          "level": 1,
+          "line": 109
+        },
+        {
+          "heading": "forecast_scalar",
+          "level": 1,
+          "line": 122
+        },
+        {
+          "heading": "instruments_with_threshold",
+          "level": 1,
+          "line": 127
+        },
+        {
+          "heading": "use_forecast_scale_estimates",
+          "level": 1,
+          "line": 128
+        },
+        {
+          "heading": "forecast_scalar_estimate",
+          "level": 1,
+          "line": 130
+        },
+        {
+          "heading": "forecast_cap",
+          "level": 1,
+          "line": 138
+        },
+        {
+          "heading": "average_absolute_forecast",
+          "level": 1,
+          "line": 140
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 145
+        },
+        {
+          "heading": "use_forecast_div_mult_estimates",
+          "level": 1,
+          "line": 147
+        },
+        {
+          "heading": "forecast_correlation_estimate",
+          "level": 1,
+          "line": 149
+        },
+        {
+          "heading": "forecast_div_mult_estimate",
+          "level": 1,
+          "line": 162
+        },
+        {
+          "heading": "use_forecast_weight_estimates",
+          "level": 1,
+          "line": 168
+        },
+        {
+          "heading": "forecast_cost_estimates",
+          "level": 1,
+          "line": 170
+        },
+        {
+          "heading": "forecast_weight_ewma_span",
+          "level": 1,
+          "line": 175
+        },
+        {
+          "heading": "forecast_post_ceiling_cost_SR",
+          "level": 1,
+          "line": 179
+        },
+        {
+          "heading": "forecast_weight_estimate",
+          "level": 1,
+          "line": 181
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 218
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 219
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 220
+        },
+        {
+          "heading": "capital_multiplier",
+          "level": 1,
+          "line": 222
+        },
+        {
+          "heading": "long_only_instruments",
+          "level": 1,
+          "line": 226
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 231
+        },
+        {
+          "heading": "use_instrument_div_mult_estimates",
+          "level": 1,
+          "line": 233
+        },
+        {
+          "heading": "instrument_correlation_estimate",
+          "level": 1,
+          "line": 235
+        },
+        {
+          "heading": "instrument_div_mult_estimate",
+          "level": 1,
+          "line": 247
+        },
+        {
+          "heading": "use_instrument_weight_estimates",
+          "level": 1,
+          "line": 253
+        },
+        {
+          "heading": "instrument_weight_ewma_span",
+          "level": 1,
+          "line": 256
+        },
+        {
+          "heading": "instrument_weight_estimate",
+          "level": 1,
+          "line": 258
+        },
+        {
+          "heading": "buffer_method",
+          "level": 1,
+          "line": 293
+        },
+        {
+          "heading": "buffer_size",
+          "level": 1,
+          "line": 294
+        },
+        {
+          "heading": "buffer_trade_to_edge",
+          "level": 1,
+          "line": 295
+        },
+        {
+          "heading": "use_SR_costs",
+          "level": 1,
+          "line": 297
+        },
+        {
+          "heading": "vol_normalise_currency_costs",
+          "level": 1,
+          "line": 298
+        },
+        {
+          "heading": "multiply_roll_costs_by",
+          "level": 1,
+          "line": 299
+        },
+        {
+          "heading": "instrument_returns_correlation",
+          "level": 1,
+          "line": 308
+        },
+        {
+          "heading": "small_system",
+          "level": 1,
+          "line": 323
+        },
+        {
+          "heading": "regions_with_warn_on_force_orders",
+          "level": 1,
+          "line": 332
+        },
+        {
+          "heading": "duplicate_instruments",
+          "level": 1,
+          "line": 344
+        },
+        {
+          "heading": "exclude_instrument_lists",
+          "level": 1,
+          "line": 349
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 71
+      }
+    },
+    {
+      "path": "sysdata/csv/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/futures/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/mongodb/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/parquet/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/production/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/sim/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysdata/tools/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/algos/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/order_stacks/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/orders/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/stack_handler/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

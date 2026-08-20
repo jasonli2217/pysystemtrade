@@ -1,0 +1,1151 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/positionsizing.py",
+      "type": "file",
+      "name": "positionsizing.py",
+      "filePath": "systems/positionsizing.py",
+      "summary": "Position sizing stage of the system pipeline: converts capped combined forecasts into notional subsystem positions using volatility scalars, instrument value-per-point, and the configured percentage volatility target.",
+      "tags": [
+        "service",
+        "data-model",
+        "position-sizing",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "type": "file",
+      "name": "vol_attenuation_forecast_scale_cap.py",
+      "filePath": "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "summary": "Custom forecast scaling stage that attenuates (dampens) forecasts when instrument volatility is unusually high, subclassing the standard ForecastScaleCap.",
+      "tags": [
+        "service",
+        "forecast",
+        "volatility",
+        "stage"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/basic/system.py",
+      "type": "file",
+      "name": "system.py",
+      "filePath": "systems/provided/basic/system.py",
+      "summary": "Factory functions assembling a basic provided futures trading system from CSV or database simulation data sources with the standard stage stack.",
+      "tags": [
+        "factory",
+        "entry-point",
+        "system-assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "type": "file",
+      "name": "accounts_stage.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "summary": "Specialised accounting stage for the dynamic small-system optimiser, computing P&L from optimised integer positions rather than continuous ones.",
+      "tags": [
+        "service",
+        "accounting",
+        "optimisation",
+        "stage"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/example/daily_with_order_simulation.py",
+      "type": "file",
+      "name": "daily_with_order_simulation.py",
+      "filePath": "systems/provided/example/daily_with_order_simulation.py",
+      "summary": "Example factory building a daily futures system wired to an order simulator for realistic fill modelling.",
+      "tags": [
+        "factory",
+        "example",
+        "order-simulation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "type": "file",
+      "name": "hourly_with_order_simulation.py",
+      "filePath": "systems/provided/example/hourly_with_order_simulation.py",
+      "summary": "Example factory building an hourly futures system with limit and market order simulators for intraday fill modelling.",
+      "tags": [
+        "factory",
+        "example",
+        "order-simulation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/example/simplesystem.py",
+      "type": "file",
+      "name": "simplesystem.py",
+      "filePath": "systems/provided/example/simplesystem.py",
+      "summary": "Minimal example factory assembling a simple futures system from CSV data with the core stage stack.",
+      "tags": [
+        "factory",
+        "example",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/futures_chapter15/basesystem.py",
+      "type": "file",
+      "name": "basesystem.py",
+      "filePath": "systems/provided/futures_chapter15/basesystem.py",
+      "summary": "Factory assembling the canonical 'chapter 15' futures system from Rob Carver's Systematic Trading using fixed (non-estimated) parameters.",
+      "tags": [
+        "factory",
+        "entry-point",
+        "system-assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "type": "file",
+      "name": "estimatedsystem.py",
+      "filePath": "systems/provided/futures_chapter15/estimatedsystem.py",
+      "summary": "Factory assembling the chapter-15 futures system variant that estimates forecast scalars, weights and other parameters from data.",
+      "tags": [
+        "factory",
+        "entry-point",
+        "estimation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/positionsizing.py:PositionSizing",
+      "type": "class",
+      "name": "PositionSizing",
+      "filePath": "systems/positionsizing.py",
+      "lineRange": [
+        20,
+        569
+      ],
+      "summary": "Position sizing stage converting capped combined forecasts into subsystem positions via volatility scaling.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:multiplier_function",
+      "type": "function",
+      "name": "multiplier_function",
+      "filePath": "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "lineRange": [
+        78,
+        82
+      ],
+      "summary": "Helper function multiplier_function in vol_attenuation_forecast_scale_cap.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:volAttenForecastScaleCap",
+      "type": "class",
+      "name": "volAttenForecastScaleCap",
+      "filePath": "systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "lineRange": [
+        6,
+        72
+      ],
+      "summary": "ForecastScaleCap subclass that attenuates forecasts under high-volatility conditions.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/basic/system.py:basic_futures_system",
+      "type": "function",
+      "name": "basic_futures_system",
+      "filePath": "systems/provided/basic/system.py",
+      "lineRange": [
+        23,
+        47
+      ],
+      "summary": "Assembles a basic futures system from a chosen sim-data source and config, wiring the standard stage stack.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/basic/system.py:basic_csv_futures_system",
+      "type": "function",
+      "name": "basic_csv_futures_system",
+      "filePath": "systems/provided/basic/system.py",
+      "lineRange": [
+        50,
+        59
+      ],
+      "summary": "Convenience factory building a basic futures system from CSV simulation data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/basic/system.py:basic_db_futures_system",
+      "type": "function",
+      "name": "basic_db_futures_system",
+      "filePath": "systems/provided/basic/system.py",
+      "lineRange": [
+        62,
+        71
+      ],
+      "summary": "Convenience factory building a basic futures system from database simulation data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/accounts_stage.py:accountForOptimisedStage",
+      "type": "class",
+      "name": "accountForOptimisedStage",
+      "filePath": "systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "lineRange": [
+        12,
+        86
+      ],
+      "summary": "Account stage subclass computing P&L from optimised integer positions.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/example/daily_with_order_simulation.py:futures_system",
+      "type": "function",
+      "name": "futures_system",
+      "filePath": "systems/provided/example/daily_with_order_simulation.py",
+      "lineRange": [
+        28,
+        55
+      ],
+      "summary": "Builds a daily futures system wired to an order simulator.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/example/hourly_with_order_simulation.py:futures_system",
+      "type": "function",
+      "name": "futures_system",
+      "filePath": "systems/provided/example/hourly_with_order_simulation.py",
+      "lineRange": [
+        31,
+        61
+      ],
+      "summary": "Builds an hourly futures system with limit/market order simulators.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/example/simplesystem.py:simplesystem",
+      "type": "function",
+      "name": "simplesystem",
+      "filePath": "systems/provided/example/simplesystem.py",
+      "lineRange": [
+        14,
+        37
+      ],
+      "summary": "Builds a minimal example futures system from CSV data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/futures_chapter15/basesystem.py:futures_system",
+      "type": "function",
+      "name": "futures_system",
+      "filePath": "systems/provided/futures_chapter15/basesystem.py",
+      "lineRange": [
+        22,
+        82
+      ],
+      "summary": "Builds the fixed-parameter chapter-15 futures system.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/futures_chapter15/estimatedsystem.py:futures_system",
+      "type": "function",
+      "name": "futures_system",
+      "filePath": "systems/provided/futures_chapter15/estimatedsystem.py",
+      "lineRange": [
+        22,
+        62
+      ],
+      "summary": "Builds the chapter-15 futures system with estimated parameters.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "class:systems/positionsizing.py:PositionSizing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "class:systems/positionsizing.py:PositionSizing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/positionsizing.py:PositionSizing",
+      "target": "class:systems/stage.py:SystemStage",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "function:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:multiplier_function",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "function:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:multiplier_function",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "class:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:volAttenForecastScaleCap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "class:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:volAttenForecastScaleCap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py:volAttenForecastScaleCap",
+      "target": "class:systems/forecast_scale_cap.py:ForecastScaleCap",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_csv_futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_csv_futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_db_futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "function:systems/provided/basic/system.py:basic_db_futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/accounts_stage.py:accountForOptimisedStage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/accounts_stage.py:accountForOptimisedStage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/provided/dynamic_small_system_optimise/accounts_stage.py:accountForOptimisedStage",
+      "target": "class:systems/accounts/accounts_stage.py:Account",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "function:systems/provided/example/daily_with_order_simulation.py:futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "function:systems/provided/example/daily_with_order_simulation.py:futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "function:systems/provided/example/hourly_with_order_simulation.py:futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "function:systems/provided/example/hourly_with_order_simulation.py:futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "function:systems/provided/example/simplesystem.py:simplesystem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "function:systems/provided/example/simplesystem.py:simplesystem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "function:systems/provided/futures_chapter15/basesystem.py:futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "function:systems/provided/futures_chapter15/basesystem.py:futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "function:systems/provided/futures_chapter15/estimatedsystem.py:futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "function:systems/provided/futures_chapter15/estimatedsystem.py:futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:sysdata/sim/sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:sysdata/sim/db_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/basic/system.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:systems/accounts/curves/account_curve_group.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:systems/accounts/curves/account_curve.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:systems/accounts/curves/dict_of_account_curves.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:sysdata/sim/db_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/accounts/order_simulator/account_curve_order_simulator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/daily_with_order_simulation.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:sysdata/sim/db_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/accounts/order_simulator/hourly_limit_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/accounts/order_simulator/hourly_market_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/hourly_with_order_simulation.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:sysdata/sim/csv_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/accounts/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/estimatedsystem.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:systems/tests/test_position_sizing.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/positionsizing.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/provided/example/simplesystem.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/provided/futures_chapter15/basesystem.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

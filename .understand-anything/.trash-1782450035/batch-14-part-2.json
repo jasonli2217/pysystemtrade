@@ -1,0 +1,1318 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysproduction/reporting/data/constants.py",
+      "type": "file",
+      "name": "constants.py",
+      "filePath": "sysproduction/reporting/data/constants.py",
+      "summary": "Shared constants for the reporting data modules (e.g. column labels and default thresholds).",
+      "tags": [
+        "constants",
+        "reporting",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/reporting/data/costs.py",
+      "type": "file",
+      "name": "costs.py",
+      "filePath": "sysproduction/reporting/data/costs.py",
+      "summary": "Trading-cost reporting data: estimates per-instrument SR costs by blending configured, sampled, and actual-trade spread/commission data into a comparison table.",
+      "tags": [
+        "reporting",
+        "costs",
+        "estimation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/costs.py:best_estimate_from_cost_data",
+      "type": "function",
+      "name": "best_estimate_from_cost_data",
+      "filePath": "sysproduction/reporting/data/costs.py",
+      "lineRange": [
+        182,
+        249
+      ],
+      "summary": "Blends bid/ask, actual-trade, sampling, and configured cost estimates into a single best-estimate spread, weighting by sample counts.",
+      "tags": [
+        "costs",
+        "estimation",
+        "blending"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/costs.py:get_SR_cost_calculation_for_instrument",
+      "type": "function",
+      "name": "get_SR_cost_calculation_for_instrument",
+      "filePath": "sysproduction/reporting/data/costs.py",
+      "lineRange": [
+        32,
+        73
+      ],
+      "summary": "Computes the Sharpe-ratio cost of trading an instrument from spread and commission components.",
+      "tags": [
+        "costs",
+        "sharpe-ratio"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/costs.py:get_combined_df_of_costs",
+      "type": "function",
+      "name": "get_combined_df_of_costs",
+      "filePath": "sysproduction/reporting/data/costs.py",
+      "lineRange": [
+        140,
+        179
+      ],
+      "summary": "Combines configured, sampled, and estimated cost series into one comparison DataFrame.",
+      "tags": [
+        "costs",
+        "pandas",
+        "reporting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/costs.py:get_table_of_SR_costs",
+      "type": "function",
+      "name": "get_table_of_SR_costs",
+      "filePath": "sysproduction/reporting/data/costs.py",
+      "lineRange": [
+        315,
+        344
+      ],
+      "summary": "Produces the report table of SR costs across instruments, optionally excluding some.",
+      "tags": [
+        "costs",
+        "reporting",
+        "sharpe-ratio"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "type": "file",
+      "name": "duplicate_remove_markets.py",
+      "filePath": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "summary": "Logic for identifying duplicate/expensive/low-volume markets and recommending a bad-market exclusion list, rendered as YAML and report tables.",
+      "tags": [
+        "reporting",
+        "instruments",
+        "market-selection",
+        "data-quality"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysproduction/reporting/data/duplicate_remove_markets.py:RemoveMarketData",
+      "type": "class",
+      "name": "RemoveMarketData",
+      "filePath": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "lineRange": [
+        41,
+        291
+      ],
+      "summary": "Aggregates expensive, low-volume, and duplicate markets into recommended bad-market lists with YAML-formatted output.",
+      "tags": [
+        "market-selection",
+        "data-quality",
+        "reporting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/duplicate_remove_markets.py:table_of_duplicate_markets_for_dict_entry",
+      "type": "function",
+      "name": "table_of_duplicate_markets_for_dict_entry",
+      "filePath": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "lineRange": [
+        459,
+        491
+      ],
+      "summary": "Builds a comparison table for a group of duplicate markets, applying cost/volume filters.",
+      "tags": [
+        "market-selection",
+        "reporting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/duplicate_remove_markets.py:get_remove_market_data",
+      "type": "function",
+      "name": "get_remove_market_data",
+      "filePath": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "lineRange": [
+        307,
+        336
+      ],
+      "summary": "Assembles the RemoveMarketData object from production data sources.",
+      "tags": [
+        "market-selection",
+        "data-assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/duplicate_remove_markets.py:calculate_threshold_factor",
+      "type": "function",
+      "name": "calculate_threshold_factor",
+      "filePath": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "lineRange": [
+        546,
+        569
+      ],
+      "summary": "Computes the multiplicative threshold factor applied when filtering markets by cost/volume.",
+      "tags": [
+        "market-selection",
+        "thresholds"
+      ],
+      "complexity": "moderate",
+      "exported": false
+    },
+    {
+      "id": "file:sysproduction/reporting/data/risk.py",
+      "type": "file",
+      "name": "risk.py",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "summary": "Comprehensive risk-reporting data layer: minimum-capital tables, per-instrument and portfolio risk as percent of capital, beta loadings by asset class, and correlation/clustering across strategies.",
+      "tags": [
+        "reporting",
+        "risk",
+        "portfolio",
+        "beta"
+      ],
+      "complexity": "complex",
+      "languageNotes": "The largest module in the batch; computes portfolio risk decomposition and asset-class beta loadings from weights, correlations and stdevs."
+    },
+    {
+      "id": "class:sysproduction/reporting/data/risk.py:portfolioRisks",
+      "type": "class",
+      "name": "portfolioRisks",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        214,
+        318
+      ],
+      "summary": "Computes portfolio-level risk and beta loadings by asset class from weights, correlation matrix and instrument stdevs.",
+      "tags": [
+        "risk",
+        "portfolio",
+        "beta"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/risk.py:from_risk_table_to_min_capital",
+      "type": "function",
+      "name": "from_risk_table_to_min_capital",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        96,
+        148
+      ],
+      "summary": "Derives minimum required capital per instrument from a risk table given risk target, min contracts, IDM and instrument weight.",
+      "tags": [
+        "risk",
+        "capital",
+        "sizing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/risk.py:minimum_capital_table",
+      "type": "function",
+      "name": "minimum_capital_table",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        73,
+        93
+      ],
+      "summary": "Builds the minimum-capital report table across instruments.",
+      "tags": [
+        "risk",
+        "capital",
+        "reporting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/risk.py:get_instrument_risk_table",
+      "type": "function",
+      "name": "get_instrument_risk_table",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        151,
+        175
+      ],
+      "summary": "Assembles the per-instrument risk table used throughout the risk report.",
+      "tags": [
+        "risk",
+        "reporting",
+        "data-assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/risk.py:calculate_beta_loadings_across_asset_classes",
+      "type": "function",
+      "name": "calculate_beta_loadings_across_asset_classes",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        714,
+        732
+      ],
+      "summary": "Computes beta loadings of each instrument relative to its asset class.",
+      "tags": [
+        "risk",
+        "beta",
+        "asset-class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/risk.py:portfolio_beta_for_asset_class",
+      "type": "function",
+      "name": "portfolio_beta_for_asset_class",
+      "filePath": "sysproduction/reporting/data/risk.py",
+      "lineRange": [
+        937,
+        961
+      ],
+      "summary": "Computes the portfolio beta contribution for a single asset class given weights and returns.",
+      "tags": [
+        "risk",
+        "beta",
+        "portfolio"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/reporting/data/trades.py",
+      "type": "file",
+      "name": "trades.py",
+      "filePath": "sysproduction/reporting/data/trades.py",
+      "summary": "Trade-reporting data layer: pulls recent broker orders and computes raw, cash, and vol-normalised slippage plus execution delays for the trades report.",
+      "tags": [
+        "reporting",
+        "trades",
+        "slippage",
+        "execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/trades.py:cash_slippage_row",
+      "type": "function",
+      "name": "cash_slippage_row",
+      "filePath": "sysproduction/reporting/data/trades.py",
+      "lineRange": [
+        209,
+        251
+      ],
+      "summary": "Converts a raw-slippage row into cash terms using contract value and FX.",
+      "tags": [
+        "slippage",
+        "trades",
+        "cash"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/trades.py:vol_slippage_row",
+      "type": "function",
+      "name": "vol_slippage_row",
+      "filePath": "sysproduction/reporting/data/trades.py",
+      "lineRange": [
+        291,
+        333
+      ],
+      "summary": "Normalises a slippage row by recent annual volatility to express slippage in vol units.",
+      "tags": [
+        "slippage",
+        "trades",
+        "volatility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/trades.py:price_calculations_for_order_row",
+      "type": "function",
+      "name": "price_calculations_for_order_row",
+      "filePath": "sysproduction/reporting/data/trades.py",
+      "lineRange": [
+        143,
+        178
+      ],
+      "summary": "Derives mid/fill/limit price metrics for one order row used in slippage calculation.",
+      "tags": [
+        "slippage",
+        "trades",
+        "pricing"
+      ],
+      "complexity": "moderate",
+      "exported": false
+    },
+    {
+      "id": "function:sysproduction/reporting/data/trades.py:delay_row",
+      "type": "function",
+      "name": "delay_row",
+      "filePath": "sysproduction/reporting/data/trades.py",
+      "lineRange": [
+        390,
+        411
+      ],
+      "summary": "Computes the timing-delay metrics (submit to fill) for one order row.",
+      "tags": [
+        "trades",
+        "execution",
+        "timing"
+      ],
+      "complexity": "moderate",
+      "exported": false
+    },
+    {
+      "id": "file:sysproduction/reporting/data/volume.py",
+      "type": "file",
+      "name": "volume.py",
+      "filePath": "sysproduction/reporting/data/volume.py",
+      "summary": "Liquidity-reporting helpers computing average daily contract volume and per-instrument liquidity for the volume report.",
+      "tags": [
+        "reporting",
+        "volume",
+        "liquidity"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/volume.py:get_liquidity_data_df",
+      "type": "function",
+      "name": "get_liquidity_data_df",
+      "filePath": "sysproduction/reporting/data/volume.py",
+      "lineRange": [
+        15,
+        36
+      ],
+      "summary": "Builds the per-instrument liquidity DataFrame for the volume report.",
+      "tags": [
+        "volume",
+        "liquidity",
+        "reporting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/data/volume.py:get_best_average_daily_volume_for_instrument",
+      "type": "function",
+      "name": "get_best_average_daily_volume_for_instrument",
+      "filePath": "sysproduction/reporting/data/volume.py",
+      "lineRange": [
+        63,
+        78
+      ],
+      "summary": "Selects the best available average daily volume estimate for an instrument across its contracts.",
+      "tags": [
+        "volume",
+        "liquidity"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/clustering_correlations.py",
+      "type": "file",
+      "name": "clustering_correlations.py",
+      "filePath": "sysquant/estimators/clustering_correlations.py",
+      "summary": "Hierarchical clustering of a correlation matrix into groups of a target size, returning assets ordered by cluster.",
+      "tags": [
+        "estimation",
+        "correlation",
+        "clustering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/clustering_correlations.py:cluster_correlation_matrix",
+      "type": "function",
+      "name": "cluster_correlation_matrix",
+      "filePath": "sysquant/estimators/clustering_correlations.py",
+      "lineRange": [
+        16,
+        29
+      ],
+      "summary": "Clusters a correlation matrix into groups of the requested size and returns assets in cluster order.",
+      "tags": [
+        "correlation",
+        "clustering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/clustering_correlations.py:get_list_of_clusters_for_correlation_matrix",
+      "type": "function",
+      "name": "get_list_of_clusters_for_correlation_matrix",
+      "filePath": "sysquant/estimators/clustering_correlations.py",
+      "lineRange": [
+        48,
+        63
+      ],
+      "summary": "Runs hierarchical clustering on the numpy correlation matrix and returns cluster index assignments.",
+      "tags": [
+        "correlation",
+        "clustering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/correlation_estimator.py",
+      "type": "file",
+      "name": "correlation_estimator.py",
+      "filePath": "sysquant/estimators/correlation_estimator.py",
+      "summary": "Concrete correlation estimator subclassing the generic estimator, with a helper to estimate the correlation for a single sub-period.",
+      "tags": [
+        "estimation",
+        "correlation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/correlation_estimator.py:correlationEstimator",
+      "type": "class",
+      "name": "correlationEstimator",
+      "filePath": "sysquant/estimators/correlation_estimator.py",
+      "lineRange": [
+        15,
+        46
+      ],
+      "summary": "Generic-estimator subclass that produces cleaned correlation estimates, falling back gracefully when data is missing.",
+      "tags": [
+        "estimation",
+        "correlation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/correlation_estimator.py:correlation_estimator_for_subperiod",
+      "type": "function",
+      "name": "correlation_estimator_for_subperiod",
+      "filePath": "sysquant/estimators/correlation_estimator.py",
+      "lineRange": [
+        49,
+        73
+      ],
+      "summary": "Estimates and cleans the correlation matrix for one fit sub-period with shrinkage and flooring options.",
+      "tags": [
+        "estimation",
+        "correlation",
+        "cleaning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/estimators/correlation_over_time.py",
+      "type": "file",
+      "name": "correlation_over_time.py",
+      "filePath": "sysquant/estimators/correlation_over_time.py",
+      "summary": "Rolling correlation estimation over time, producing a sequence of correlation matrices across fit periods.",
+      "tags": [
+        "estimation",
+        "correlation",
+        "time-series"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/correlation_over_time.py:correlation_over_time",
+      "type": "function",
+      "name": "correlation_over_time",
+      "filePath": "sysquant/estimators/correlation_over_time.py",
+      "lineRange": [
+        29,
+        65
+      ],
+      "summary": "Iterates fit periods to build a time series of correlation estimates from returns data.",
+      "tags": [
+        "correlation",
+        "time-series",
+        "estimation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/estimators/correlation_over_time.py:correlation_over_time_for_returns",
+      "type": "function",
+      "name": "correlation_over_time_for_returns",
+      "filePath": "sysquant/estimators/correlation_over_time.py",
+      "lineRange": [
+        9,
+        26
+      ],
+      "summary": "Convenience wrapper computing correlations over time directly from a returns DataFrame.",
+      "tags": [
+        "correlation",
+        "time-series"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "file:sysproduction/reporting/data/trades.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysdata/config/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/data/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/reporting/data/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/reporting/data/costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/reporting/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/reporting/data/volume.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "file:sysproduction/reporting/reporting_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/data/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/data/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysproduction/reporting/data/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysquant/estimators/clustering_correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:sysproduction/data/orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "file:sysproduction/reporting/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "file:sysproduction/reporting/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/clustering_correlations.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/clustering_correlations.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "file:sysquant/estimators/exponential_correlation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "file:sysquant/estimators/correlation_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:best_estimate_from_cost_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:best_estimate_from_cost_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_SR_cost_calculation_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_SR_cost_calculation_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_combined_df_of_costs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_combined_df_of_costs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_table_of_SR_costs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/costs.py",
+      "target": "function:sysproduction/reporting/data/costs.py:get_table_of_SR_costs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "class:sysproduction/reporting/data/duplicate_remove_markets.py:RemoveMarketData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "class:sysproduction/reporting/data/duplicate_remove_markets.py:RemoveMarketData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "function:sysproduction/reporting/data/duplicate_remove_markets.py:table_of_duplicate_markets_for_dict_entry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "function:sysproduction/reporting/data/duplicate_remove_markets.py:table_of_duplicate_markets_for_dict_entry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "function:sysproduction/reporting/data/duplicate_remove_markets.py:get_remove_market_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "function:sysproduction/reporting/data/duplicate_remove_markets.py:get_remove_market_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/duplicate_remove_markets.py",
+      "target": "function:sysproduction/reporting/data/duplicate_remove_markets.py:calculate_threshold_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "class:sysproduction/reporting/data/risk.py:portfolioRisks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "class:sysproduction/reporting/data/risk.py:portfolioRisks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:from_risk_table_to_min_capital",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:from_risk_table_to_min_capital",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:minimum_capital_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:minimum_capital_table",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:get_instrument_risk_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:get_instrument_risk_table",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:calculate_beta_loadings_across_asset_classes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:calculate_beta_loadings_across_asset_classes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:portfolio_beta_for_asset_class",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/risk.py",
+      "target": "function:sysproduction/reporting/data/risk.py:portfolio_beta_for_asset_class",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:cash_slippage_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:cash_slippage_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:vol_slippage_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:vol_slippage_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:price_calculations_for_order_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/trades.py",
+      "target": "function:sysproduction/reporting/data/trades.py:delay_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "function:sysproduction/reporting/data/volume.py:get_liquidity_data_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/data/volume.py",
+      "target": "function:sysproduction/reporting/data/volume.py:get_best_average_daily_volume_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/clustering_correlations.py",
+      "target": "function:sysquant/estimators/clustering_correlations.py:cluster_correlation_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/clustering_correlations.py",
+      "target": "function:sysquant/estimators/clustering_correlations.py:get_list_of_clusters_for_correlation_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "class:sysquant/estimators/correlation_estimator.py:correlationEstimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "class:sysquant/estimators/correlation_estimator.py:correlationEstimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "function:sysquant/estimators/correlation_estimator.py:correlation_estimator_for_subperiod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_estimator.py",
+      "target": "function:sysquant/estimators/correlation_estimator.py:correlation_estimator_for_subperiod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "function:sysquant/estimators/correlation_over_time.py:correlation_over_time",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/correlation_over_time.py",
+      "target": "function:sysquant/estimators/correlation_over_time.py:correlation_over_time_for_returns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "class:sysquant/estimators/correlation_estimator.py:correlationEstimator",
+      "target": "class:sysquant/estimators/generic_estimator.py:genericEstimator",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

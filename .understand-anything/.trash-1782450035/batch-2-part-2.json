@@ -1,0 +1,854 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/provided/rob_system/rawdata.py",
+      "type": "file",
+      "name": "rawdata.py",
+      "filePath": "systems/provided/rob_system/rawdata.py",
+      "summary": "Extended raw data stage (myFuturesRawData) used by Rob's production system, adding custom volatility and carry preprocessing on top of the base RawData stage.",
+      "tags": [
+        "service",
+        "data-model",
+        "raw-data",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/rob_system/run_system.py",
+      "type": "file",
+      "name": "run_system.py",
+      "filePath": "systems/provided/rob_system/run_system.py",
+      "summary": "Factory assembling Rob's production-style futures system with the dynamic optimiser, custom raw data, vol attenuation, and risk stages.",
+      "tags": [
+        "factory",
+        "entry-point",
+        "system-assembly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/accel.py",
+      "type": "file",
+      "name": "accel.py",
+      "filePath": "systems/provided/rules/accel.py",
+      "summary": "Trading rule computing an acceleration signal as the difference between an EWMAC forecast and its own lag.",
+      "tags": [
+        "trading-rule",
+        "forecast",
+        "signal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/rules/carry.py",
+      "type": "file",
+      "name": "carry.py",
+      "filePath": "systems/provided/rules/carry.py",
+      "summary": "Trading rules computing carry forecasts, including a relative-carry variant, from annualised carry data.",
+      "tags": [
+        "trading-rule",
+        "carry",
+        "forecast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/rules/ewmac.py",
+      "type": "file",
+      "name": "ewmac.py",
+      "filePath": "systems/provided/rules/ewmac.py",
+      "summary": "Core EWMAC (exponentially-weighted moving average crossover) trading rule family with several variants for volatility normalisation.",
+      "tags": [
+        "trading-rule",
+        "ewmac",
+        "forecast",
+        "signal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/mr_wings.py",
+      "type": "file",
+      "name": "mr_wings.py",
+      "filePath": "systems/provided/rules/mr_wings.py",
+      "summary": "Mean-reversion 'wings' trading rule built on top of an EWMAC signal.",
+      "tags": [
+        "trading-rule",
+        "mean-reversion",
+        "forecast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/rawdata.py",
+      "type": "file",
+      "name": "rawdata.py",
+      "filePath": "systems/rawdata.py",
+      "summary": "Base raw data stage of the system pipeline: cleans prices and computes derived series such as daily returns, volatility, and normalised price/carry used by downstream stages.",
+      "tags": [
+        "service",
+        "data-model",
+        "raw-data",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/risk.py",
+      "type": "file",
+      "name": "risk.py",
+      "filePath": "systems/risk.py",
+      "summary": "Risk stage exposing portfolio-level risk metrics (e.g. expected and realised standard deviation, correlation) for the system.",
+      "tags": [
+        "service",
+        "risk",
+        "stage"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/risk_overlay.py",
+      "type": "file",
+      "name": "risk_overlay.py",
+      "filePath": "systems/risk_overlay.py",
+      "summary": "Risk overlay helpers that compute a position-scaling multiplier to cap aggregate portfolio risk against configured limits.",
+      "tags": [
+        "risk",
+        "overlay",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:systems/provided/rob_system/rawdata.py:myFuturesRawData",
+      "type": "class",
+      "name": "myFuturesRawData",
+      "filePath": "systems/provided/rob_system/rawdata.py",
+      "lineRange": [
+        10,
+        295
+      ],
+      "summary": "RawData subclass adding custom volatility/carry preprocessing for Rob's system.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/provided/rob_system/run_system.py:futures_system",
+      "type": "function",
+      "name": "futures_system",
+      "filePath": "systems/provided/rob_system/run_system.py",
+      "lineRange": [
+        29,
+        58
+      ],
+      "summary": "Builds Rob's production-style optimised futures system.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/accel.py:accel",
+      "type": "function",
+      "name": "accel",
+      "filePath": "systems/provided/rules/accel.py",
+      "lineRange": [
+        4,
+        10
+      ],
+      "summary": "Computes an acceleration forecast from an EWMAC signal and its lag.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/carry.py:carry",
+      "type": "function",
+      "name": "carry",
+      "filePath": "systems/provided/rules/carry.py",
+      "lineRange": [
+        1,
+        23
+      ],
+      "summary": "Computes a carry forecast from annualised carry data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/carry.py:relative_carry",
+      "type": "function",
+      "name": "relative_carry",
+      "filePath": "systems/provided/rules/carry.py",
+      "lineRange": [
+        26,
+        41
+      ],
+      "summary": "Computes a carry forecast relative to a cross-sectional median.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults",
+      "type": "function",
+      "name": "ewmac_forecast_with_defaults",
+      "filePath": "systems/provided/rules/ewmac.py",
+      "lineRange": [
+        4,
+        40
+      ],
+      "summary": "EWMAC forecast with default fast/slow spans and volatility normalisation.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults_no_vol",
+      "type": "function",
+      "name": "ewmac_forecast_with_defaults_no_vol",
+      "filePath": "systems/provided/rules/ewmac.py",
+      "lineRange": [
+        43,
+        76
+      ],
+      "summary": "EWMAC forecast variant without volatility normalisation.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/ewmac.py:ewmac",
+      "type": "function",
+      "name": "ewmac",
+      "filePath": "systems/provided/rules/ewmac.py",
+      "lineRange": [
+        79,
+        124
+      ],
+      "summary": "Core EWMAC crossover forecast computed from price and volatility series.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/ewmac.py:ewmac_calc_vol",
+      "type": "function",
+      "name": "ewmac_calc_vol",
+      "filePath": "systems/provided/rules/ewmac.py",
+      "lineRange": [
+        127,
+        172
+      ],
+      "summary": "Helper computing the volatility series used to normalise EWMAC forecasts.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/mr_wings.py:mr_wings",
+      "type": "function",
+      "name": "mr_wings",
+      "filePath": "systems/provided/rules/mr_wings.py",
+      "lineRange": [
+        4,
+        11
+      ],
+      "summary": "Helper function mr_wings in mr_wings.py.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:systems/rawdata.py:RawData",
+      "type": "class",
+      "name": "RawData",
+      "filePath": "systems/rawdata.py",
+      "lineRange": [
+        18,
+        739
+      ],
+      "summary": "Base raw-data stage computing cleaned prices and derived return/volatility series.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/risk.py:Risk",
+      "type": "class",
+      "name": "Risk",
+      "filePath": "systems/risk.py",
+      "lineRange": [
+        15,
+        103
+      ],
+      "summary": "Risk stage exposing portfolio standard deviation, correlation and related risk metrics.",
+      "tags": [
+        "data-model",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/risk_overlay.py:get_risk_multiplier",
+      "type": "function",
+      "name": "get_risk_multiplier",
+      "filePath": "systems/risk_overlay.py",
+      "lineRange": [
+        4,
+        73
+      ],
+      "summary": "Computes a portfolio risk-scaling multiplier from estimated risk versus configured limits.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/risk_overlay.py:multiplier_given_series_and_limit",
+      "type": "function",
+      "name": "multiplier_given_series_and_limit",
+      "filePath": "systems/risk_overlay.py",
+      "lineRange": [
+        76,
+        86
+      ],
+      "summary": "Returns a capped multiplier given a risk series and an absolute limit.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/provided/rob_system/rawdata.py",
+      "target": "class:systems/provided/rob_system/rawdata.py:myFuturesRawData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rob_system/rawdata.py",
+      "target": "class:systems/provided/rob_system/rawdata.py:myFuturesRawData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/provided/rob_system/rawdata.py:myFuturesRawData",
+      "target": "class:systems/rawdata.py:RawData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "function:systems/provided/rob_system/run_system.py:futures_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "function:systems/provided/rob_system/run_system.py:futures_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/accel.py",
+      "target": "function:systems/provided/rules/accel.py:accel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/accel.py",
+      "target": "function:systems/provided/rules/accel.py:accel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/carry.py",
+      "target": "function:systems/provided/rules/carry.py:carry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/carry.py",
+      "target": "function:systems/provided/rules/carry.py:carry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/carry.py",
+      "target": "function:systems/provided/rules/carry.py:relative_carry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/carry.py",
+      "target": "function:systems/provided/rules/carry.py:relative_carry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults_no_vol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_forecast_with_defaults_no_vol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_calc_vol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "function:systems/provided/rules/ewmac.py:ewmac_calc_vol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/mr_wings.py",
+      "target": "function:systems/provided/rules/mr_wings.py:mr_wings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/mr_wings.py",
+      "target": "function:systems/provided/rules/mr_wings.py:mr_wings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "class:systems/rawdata.py:RawData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "class:systems/rawdata.py:RawData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/rawdata.py:RawData",
+      "target": "class:systems/stage.py:SystemStage",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "class:systems/risk.py:Risk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "class:systems/risk.py:Risk",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:systems/risk.py:Risk",
+      "target": "class:systems/stage.py:SystemStage",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:systems/risk_overlay.py",
+      "target": "function:systems/risk_overlay.py:get_risk_multiplier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/risk_overlay.py",
+      "target": "function:systems/risk_overlay.py:get_risk_multiplier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/risk_overlay.py",
+      "target": "function:systems/risk_overlay.py:multiplier_given_series_and_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/risk_overlay.py",
+      "target": "function:systems/risk_overlay.py:multiplier_given_series_and_limit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rob_system/rawdata.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/rawdata.py",
+      "target": "file:systems/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/rawdata.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:sysdata/sim/db_futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/basesystem.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/forecast_combine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/forecasting.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/positionsizing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/provided/attenuate_vol/vol_attenuation_forecast_scale_cap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/provided/rob_system/rawdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rob_system/run_system.py",
+      "target": "file:systems/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rules/accel.py",
+      "target": "file:systems/provided/rules/ewmac.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "file:sysquant/estimators/vol.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rules/mr_wings.py",
+      "target": "file:systems/provided/rules/ewmac.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:sysdata/sim/futures_sim_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:sysobjects/carry_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:syscore/pandas/list_of_df.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/risk.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/rules/carry.py",
+      "target": "file:systems/tests/test_forecasts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "file:systems/tests/test_forecasts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:systems/tests/test_forecasts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:systems/tests/testdata.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/provided/rules/ewmac.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:tests/test_examples.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:systems/rawdata.py",
+      "target": "file:systems/tests/testfuturesrawdata.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

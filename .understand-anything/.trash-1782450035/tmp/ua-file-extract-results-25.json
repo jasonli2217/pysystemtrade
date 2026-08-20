@@ -1,0 +1,317 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "systems/provided/example/daily_with_order_simulation.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "buffer_method",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "systems/provided/example/estimateexampleconfig.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 60,
+      "nonEmptyLines": 58,
+      "sections": [
+        {
+          "heading": "use_forecast_scale_estimates",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "use_forecast_weight_estimates",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "use_instrument_weight_estimates",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "forecast_cap",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "rule_variations",
+          "level": 1,
+          "line": 43
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 52
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 53
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "instruments",
+          "level": 1,
+          "line": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "systems/provided/example/exampleconfig.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 59,
+      "nonEmptyLines": 59,
+      "sections": [
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "forecast_cap",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 31
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 44
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 46
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 50
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "forecast_weight_estimate",
+          "level": 1,
+          "line": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "systems/provided/example/hourly_with_order_simulator.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "buffer_method",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "systems/provided/example/simplesystemconfig.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "percentage_vol_target",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "notional_trading_capital",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "base_currency",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "trading_rules",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "forecast_weights",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "forecast_div_multiplier",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "instrument_weights",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "instrument_div_multiplier",
+          "level": 1,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

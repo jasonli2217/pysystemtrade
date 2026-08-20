@@ -1,0 +1,1309 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "type": "file",
+      "name": "broker_futures_contract_price_data.py",
+      "filePath": "sysbrokers/broker_futures_contract_price_data.py",
+      "summary": "Abstract broker interface for per-contract futures price data, defining how live tick data, recent fills and historic prices are fetched from a broker for execution and sampling.",
+      "tags": [
+        "data-model",
+        "service",
+        "abstract-base",
+        "broker"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/broker_futures_contract_price_data.py:brokerFuturesContractPriceData",
+      "type": "class",
+      "name": "brokerFuturesContractPriceData",
+      "filePath": "sysbrokers/broker_futures_contract_price_data.py",
+      "lineRange": [
+        18,
+        60
+      ],
+      "summary": "Abstract base extending the generic per-contract price data store with broker-specific methods for live tick data and contract resolution used by execution algos.",
+      "tags": [
+        "abstract-base",
+        "broker",
+        "price-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "type": "file",
+      "name": "mongo_historic_orders.py",
+      "filePath": "sysdata/mongodb/mongo_historic_orders.py",
+      "summary": "MongoDB-backed persistence of historic instrument, contract and broker orders, serializing order objects to documents for the production order audit trail.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "mongodb",
+        "historic-orders"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_historic_orders.py:mongoGenericHistoricOrdersData",
+      "type": "class",
+      "name": "mongoGenericHistoricOrdersData",
+      "filePath": "sysdata/mongodb/mongo_historic_orders.py",
+      "lineRange": [
+        29,
+        122
+      ],
+      "summary": "MongoDB historic-orders store (mongoGenericHistoricOrdersData) persisting and retrieving order objects keyed by order id for the production audit trail.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "historic-orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_historic_orders.py:mongoStrategyHistoricOrdersData",
+      "type": "class",
+      "name": "mongoStrategyHistoricOrdersData",
+      "filePath": "sysdata/mongodb/mongo_historic_orders.py",
+      "lineRange": [
+        125,
+        164
+      ],
+      "summary": "MongoDB historic-orders store (mongoStrategyHistoricOrdersData) persisting and retrieving order objects keyed by order id for the production audit trail.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "historic-orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_historic_orders.py:mongoContractHistoricOrdersData",
+      "type": "class",
+      "name": "mongoContractHistoricOrdersData",
+      "filePath": "sysdata/mongodb/mongo_historic_orders.py",
+      "lineRange": [
+        167,
+        177
+      ],
+      "summary": "MongoDB historic-orders store (mongoContractHistoricOrdersData) persisting and retrieving order objects keyed by order id for the production audit trail.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "historic-orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_historic_orders.py:mongoBrokerHistoricOrdersData",
+      "type": "class",
+      "name": "mongoBrokerHistoricOrdersData",
+      "filePath": "sysdata/mongodb/mongo_historic_orders.py",
+      "lineRange": [
+        180,
+        230
+      ],
+      "summary": "MongoDB historic-orders store (mongoBrokerHistoricOrdersData) persisting and retrieving order objects keyed by order id for the production audit trail.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "historic-orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/mongodb/mongo_order_stack.py",
+      "type": "file",
+      "name": "mongo_order_stack.py",
+      "filePath": "sysdata/mongodb/mongo_order_stack.py",
+      "summary": "MongoDB implementations of the instrument, contract and broker order stacks, persisting live order state to a Mongo collection.",
+      "tags": [
+        "data-model",
+        "persistence",
+        "mongodb",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_order_stack.py:mongoOrderStackData",
+      "type": "class",
+      "name": "mongoOrderStackData",
+      "filePath": "sysdata/mongodb/mongo_order_stack.py",
+      "lineRange": [
+        19,
+        117
+      ],
+      "summary": "MongoDB order-stack store (mongoOrderStackData) persisting live order objects and their lifecycle state to Mongo.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_order_stack.py:mongoInstrumentOrderStackData",
+      "type": "class",
+      "name": "mongoInstrumentOrderStackData",
+      "filePath": "sysdata/mongodb/mongo_order_stack.py",
+      "lineRange": [
+        120,
+        125
+      ],
+      "summary": "MongoDB order-stack store (mongoInstrumentOrderStackData) persisting live order objects and their lifecycle state to Mongo.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_order_stack.py:mongoContractOrderStackData",
+      "type": "class",
+      "name": "mongoContractOrderStackData",
+      "filePath": "sysdata/mongodb/mongo_order_stack.py",
+      "lineRange": [
+        128,
+        133
+      ],
+      "summary": "MongoDB order-stack store (mongoContractOrderStackData) persisting live order objects and their lifecycle state to Mongo.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/mongodb/mongo_order_stack.py:mongoBrokerOrderStackData",
+      "type": "class",
+      "name": "mongoBrokerOrderStackData",
+      "filePath": "sysdata/mongodb/mongo_order_stack.py",
+      "lineRange": [
+        136,
+        141
+      ],
+      "summary": "MongoDB order-stack store (mongoBrokerOrderStackData) persisting live order objects and their lifecycle state to Mongo.",
+      "tags": [
+        "mongodb",
+        "persistence",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/production/historic_orders.py",
+      "type": "file",
+      "name": "historic_orders.py",
+      "filePath": "sysdata/production/historic_orders.py",
+      "summary": "Abstract production data interface for historic orders, defining the storage API for strategy, contract and broker order histories independent of backend.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "historic-orders"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/historic_orders.py:genericOrdersData",
+      "type": "class",
+      "name": "genericOrdersData",
+      "filePath": "sysdata/production/historic_orders.py",
+      "lineRange": [
+        33,
+        67
+      ],
+      "summary": "Abstract historic-orders data interface (genericOrdersData) declaring storage and retrieval methods for order audit records.",
+      "tags": [
+        "abstract-base",
+        "data-model",
+        "historic-orders"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/production/historic_orders.py:strategyHistoricOrdersData",
+      "type": "class",
+      "name": "strategyHistoricOrdersData",
+      "filePath": "sysdata/production/historic_orders.py",
+      "lineRange": [
+        70,
+        106
+      ],
+      "summary": "Abstract historic-orders data interface (strategyHistoricOrdersData) declaring storage and retrieval methods for order audit records.",
+      "tags": [
+        "abstract-base",
+        "data-model",
+        "historic-orders"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/production/historic_orders.py:contractHistoricOrdersData",
+      "type": "class",
+      "name": "contractHistoricOrdersData",
+      "filePath": "sysdata/production/historic_orders.py",
+      "lineRange": [
+        109,
+        110
+      ],
+      "summary": "Abstract historic-orders data interface (contractHistoricOrdersData) declaring storage and retrieval methods for order audit records.",
+      "tags": [
+        "abstract-base",
+        "data-model",
+        "historic-orders"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/production/historic_orders.py:brokerHistoricOrdersData",
+      "type": "class",
+      "name": "brokerHistoricOrdersData",
+      "filePath": "sysdata/production/historic_orders.py",
+      "lineRange": [
+        113,
+        147
+      ],
+      "summary": "Abstract historic-orders data interface (brokerHistoricOrdersData) declaring storage and retrieval methods for order audit records.",
+      "tags": [
+        "abstract-base",
+        "data-model",
+        "historic-orders"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/tools/cleaner.py",
+      "type": "file",
+      "name": "cleaner.py",
+      "filePath": "sysdata/tools/cleaner.py",
+      "summary": "Price-cleaning utilities that filter out implausible futures price spikes based on configurable thresholds before prices are used downstream.",
+      "tags": [
+        "utility",
+        "validation",
+        "price-cleaning",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/tools/cleaner.py:apply_price_cleaning",
+      "type": "function",
+      "name": "apply_price_cleaning",
+      "filePath": "sysdata/tools/cleaner.py",
+      "lineRange": [
+        28,
+        93
+      ],
+      "summary": "Applies configured price-spike filtering to a contract price series, removing or capping implausible values.",
+      "tags": [
+        "validation",
+        "price-cleaning",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/tools/cleaner.py:get_config_for_price_filtering",
+      "type": "function",
+      "name": "get_config_for_price_filtering",
+      "filePath": "sysdata/tools/cleaner.py",
+      "lineRange": [
+        101,
+        135
+      ],
+      "summary": "Builds the price-filtering configuration object from defaults and supplied overrides.",
+      "tags": [
+        "config",
+        "utility",
+        "price-cleaning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/tools/cleaner.py:interactively_get_config_overrides_for_cleaning",
+      "type": "function",
+      "name": "interactively_get_config_overrides_for_cleaning",
+      "filePath": "sysdata/tools/cleaner.py",
+      "lineRange": [
+        138,
+        147
+      ],
+      "summary": "Prompts the user interactively for price-cleaning configuration overrides.",
+      "tags": [
+        "utility",
+        "interactive",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/algo.py",
+      "type": "file",
+      "name": "algo.py",
+      "filePath": "sysexecution/algos/algo.py",
+      "summary": "Base execution algorithm class defining the common lifecycle (prepare order, submit to broker, manage controls, collect benchmark prices) that concrete algos extend.",
+      "tags": [
+        "service",
+        "abstract-base",
+        "execution-algo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/algos/algo.py:benchmarkPriceCollection",
+      "type": "class",
+      "name": "benchmarkPriceCollection",
+      "filePath": "sysexecution/algos/algo.py",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Lightweight container holding benchmark price snapshots collected around order submission for transaction-cost analysis.",
+      "tags": [
+        "data-model",
+        "execution-algo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo.py:Algo",
+      "type": "class",
+      "name": "Algo",
+      "filePath": "sysexecution/algos/algo.py",
+      "lineRange": [
+        40,
+        256
+      ],
+      "summary": "Base execution algorithm orchestrating order submission to the broker, control management and benchmark price collection, subclassed by market/limit/best algos.",
+      "tags": [
+        "abstract-base",
+        "execution-algo",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysexecution/algos/algo_adaptive.py",
+      "type": "file",
+      "name": "algo_adaptive.py",
+      "filePath": "sysexecution/algos/algo_adaptive.py",
+      "summary": "Adaptive market execution algo that submits IB adaptive market orders, a thin subclass of the market algo.",
+      "tags": [
+        "execution-algo",
+        "service",
+        "broker"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_adaptive.py:algoAdaptiveMkt",
+      "type": "class",
+      "name": "algoAdaptiveMkt",
+      "filePath": "sysexecution/algos/algo_adaptive.py",
+      "lineRange": [
+        5,
+        12
+      ],
+      "summary": "Adaptive market execution algorithm submitting Interactive Brokers adaptive market orders.",
+      "tags": [
+        "execution-algo",
+        "broker"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/algo_limit_orders.py",
+      "type": "file",
+      "name": "algo_limit_orders.py",
+      "filePath": "sysexecution/algos/algo_limit_orders.py",
+      "summary": "Limit-order execution algos including a basic limit algo and a stop-loss variant that place and manage resting limit orders at the broker.",
+      "tags": [
+        "execution-algo",
+        "service",
+        "limit-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_limit_orders.py:algoLimit",
+      "type": "class",
+      "name": "algoLimit",
+      "filePath": "sysexecution/algos/algo_limit_orders.py",
+      "lineRange": [
+        6,
+        35
+      ],
+      "summary": "Limit-order execution algorithm placing and managing a resting limit order at the broker.",
+      "tags": [
+        "execution-algo",
+        "limit-order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_limit_orders.py:algoStopLoss",
+      "type": "class",
+      "name": "algoStopLoss",
+      "filePath": "sysexecution/algos/algo_limit_orders.py",
+      "lineRange": [
+        38,
+        58
+      ],
+      "summary": "Stop-loss execution algorithm variant of the limit algo for protective exit orders.",
+      "tags": [
+        "execution-algo",
+        "limit-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/algo_market.py",
+      "type": "file",
+      "name": "algo_market.py",
+      "filePath": "sysexecution/algos/algo_market.py",
+      "summary": "Market-order execution algo that submits an immediate market order to the broker and tracks fills to completion.",
+      "tags": [
+        "execution-algo",
+        "service",
+        "market-order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_market.py:algoMarket",
+      "type": "class",
+      "name": "algoMarket",
+      "filePath": "sysexecution/algos/algo_market.py",
+      "lineRange": [
+        18,
+        134
+      ],
+      "summary": "Market-order execution algorithm submitting an immediate broker market order and monitoring it until filled.",
+      "tags": [
+        "execution-algo",
+        "market-order",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "class:sysbrokers/broker_futures_contract_price_data.py:brokerFuturesContractPriceData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "class:sysbrokers/broker_futures_contract_price_data.py:brokerFuturesContractPriceData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoGenericHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoGenericHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoStrategyHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoStrategyHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoContractHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoContractHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoBrokerHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "class:sysdata/mongodb/mongo_historic_orders.py:mongoBrokerHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoInstrumentOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoInstrumentOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoContractOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoContractOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoBrokerOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "class:sysdata/mongodb/mongo_order_stack.py:mongoBrokerOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:genericOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:genericOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:strategyHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:strategyHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:contractHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:contractHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:brokerHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "class:sysdata/production/historic_orders.py:brokerHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:apply_price_cleaning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:apply_price_cleaning",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:get_config_for_price_filtering",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:get_config_for_price_filtering",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:interactively_get_config_overrides_for_cleaning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "function:sysdata/tools/cleaner.py:interactively_get_config_overrides_for_cleaning",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "class:sysexecution/algos/algo.py:benchmarkPriceCollection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "class:sysexecution/algos/algo.py:Algo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "class:sysexecution/algos/algo.py:benchmarkPriceCollection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "class:sysexecution/algos/algo.py:Algo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_adaptive.py",
+      "target": "class:sysexecution/algos/algo_adaptive.py:algoAdaptiveMkt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_adaptive.py",
+      "target": "class:sysexecution/algos/algo_adaptive.py:algoAdaptiveMkt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "class:sysexecution/algos/algo_limit_orders.py:algoLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "class:sysexecution/algos/algo_limit_orders.py:algoStopLoss",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "class:sysexecution/algos/algo_limit_orders.py:algoLimit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "class:sysexecution/algos/algo_limit_orders.py:algoStopLoss",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "class:sysexecution/algos/algo_market.py:algoMarket",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "class:sysexecution/algos/algo_market.py:algoMarket",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysdata/futures/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysexecution/tick_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_futures_contract_price_data.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysdata/production/historic_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/mongodb/mongo_order_stack.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysobjects/fills.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/tools/cleaner.py",
+      "target": "file:sysobjects/futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysexecution/tick_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_adaptive.py",
+      "target": "file:sysexecution/algos/algo_market.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_adaptive.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "file:sysexecution/algos/algo.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_limit_orders.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "file:sysexecution/algos/algo.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "file:sysexecution/algos/common_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_market.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysexecution/algos/algo_market.py:algoMarket",
+      "target": "class:sysexecution/algos/algo.py:Algo",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/algos/algo_limit_orders.py:algoLimit",
+      "target": "class:sysexecution/algos/algo.py:Algo",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/algos/algo_adaptive.py:algoAdaptiveMkt",
+      "target": "class:sysexecution/algos/algo_market.py:algoMarket",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/mongodb/mongo_order_stack.py:mongoInstrumentOrderStackData",
+      "target": "class:sysexecution/order_stacks/instrument_order_stack.py:instrumentOrderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/mongodb/mongo_order_stack.py:mongoContractOrderStackData",
+      "target": "class:sysexecution/order_stacks/contract_order_stack.py:contractOrderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysdata/mongodb/mongo_order_stack.py:mongoBrokerOrderStackData",
+      "target": "class:sysexecution/order_stacks/broker_order_stack.py:brokerOrderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

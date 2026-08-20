@@ -1,0 +1,777 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/production/historic_contract_positions.py",
+      "type": "file",
+      "name": "historic_contract_positions.py",
+      "filePath": "sysdata/production/historic_contract_positions.py",
+      "summary": "Abstract production data store for historic per-contract positions, with query/update/delete methods and helpers to infer whether positions existed in a date range.",
+      "tags": [
+        "data-model",
+        "service",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/historic_strategy_positions.py",
+      "type": "file",
+      "name": "historic_strategy_positions.py",
+      "filePath": "sysdata/production/historic_strategy_positions.py",
+      "summary": "Abstract production data store for historic instrument-strategy positions, with query/update/delete methods over position series.",
+      "tags": [
+        "data-model",
+        "service",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/locks.py",
+      "type": "file",
+      "name": "locks.py",
+      "filePath": "sysdata/production/locks.py",
+      "summary": "Abstract in-memory data store tracking which instruments are locked from trading.",
+      "tags": [
+        "data-model",
+        "service",
+        "concurrency",
+        "trading-control"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/optimal_positions.py",
+      "type": "file",
+      "name": "optimal_positions.py",
+      "filePath": "sysdata/production/optimal_positions.py",
+      "summary": "Abstract production data store for optimal positions produced by the system, exposing list/query/update operations across instrument strategies.",
+      "tags": [
+        "data-model",
+        "service",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/override.py",
+      "type": "file",
+      "name": "override.py",
+      "filePath": "sysdata/production/override.py",
+      "summary": "Abstract production data store for trading overrides at strategy, instrument, and instrument-strategy level, combining them into a cumulative override.",
+      "tags": [
+        "data-model",
+        "service",
+        "trading-control",
+        "business-logic"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/position_limits.py",
+      "type": "file",
+      "name": "position_limits.py",
+      "filePath": "sysdata/production/position_limits.py",
+      "summary": "Abstract production data store for absolute position limits per instrument and per instrument-strategy.",
+      "tags": [
+        "data-model",
+        "service",
+        "positions",
+        "trading-control"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/process_control_data.py",
+      "type": "file",
+      "name": "process_control_data.py",
+      "filePath": "sysdata/production/process_control_data.py",
+      "summary": "Abstract production data store controlling background process lifecycle: start/finish/pause status, PID tracking, and per-method run timing.",
+      "tags": [
+        "data-model",
+        "service",
+        "process-control",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/roll_state.py",
+      "type": "file",
+      "name": "roll_state.py",
+      "filePath": "sysdata/production/roll_state.py",
+      "summary": "Abstract production data store for per-instrument futures roll state, mapping roll-state names to enum values.",
+      "tags": [
+        "data-model",
+        "service",
+        "futures-roll",
+        "trading-control"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/temporary_close.py",
+      "type": "file",
+      "name": "temporary_close.py",
+      "filePath": "sysdata/production/temporary_close.py",
+      "summary": "Abstract production data store that temporarily stashes an instrument's position limit while it is closed, restoring it later.",
+      "tags": [
+        "data-model",
+        "service",
+        "positions",
+        "trading-control"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysdata/production/temporary_override.py",
+      "type": "file",
+      "name": "temporary_override.py",
+      "filePath": "sysdata/production/temporary_override.py",
+      "summary": "Abstract production data store that temporarily stashes an instrument's override while a temporary override is active.",
+      "tags": [
+        "data-model",
+        "service",
+        "trading-control",
+        "positions"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "class:sysdata/production/historic_contract_positions.py:contractPositionData",
+      "type": "class",
+      "name": "contractPositionData",
+      "filePath": "sysdata/production/historic_contract_positions.py",
+      "lineRange": [
+        13,
+        262
+      ],
+      "summary": "Abstract historic contract-position store with query/update/delete and date-range position-existence logic.",
+      "tags": [
+        "data-model",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysdata/production/historic_contract_positions.py:any_positions_since_start_date",
+      "type": "function",
+      "name": "any_positions_since_start_date",
+      "filePath": "sysdata/production/historic_contract_positions.py",
+      "lineRange": [
+        265,
+        297
+      ],
+      "summary": "Returns whether a contract held any position within a date window, inferring the starting position when needed.",
+      "tags": [
+        "utility",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/production/historic_strategy_positions.py:strategyPositionData",
+      "type": "class",
+      "name": "strategyPositionData",
+      "filePath": "sysdata/production/historic_strategy_positions.py",
+      "lineRange": [
+        19,
+        252
+      ],
+      "summary": "Abstract historic instrument-strategy position store with query/update/delete and listing helpers.",
+      "tags": [
+        "data-model",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/production/locks.py:lockData",
+      "type": "class",
+      "name": "lockData",
+      "filePath": "sysdata/production/locks.py",
+      "lineRange": [
+        8,
+        36
+      ],
+      "summary": "Abstract in-memory store of instruments locked from trading.",
+      "tags": [
+        "data-model",
+        "concurrency",
+        "trading-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/optimal_positions.py:optimalPositionData",
+      "type": "class",
+      "name": "optimalPositionData",
+      "filePath": "sysdata/production/optimal_positions.py",
+      "lineRange": [
+        28,
+        187
+      ],
+      "summary": "Abstract optimal-position store exposing list/query/update operations across instrument strategies.",
+      "tags": [
+        "data-model",
+        "positions",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/production/override.py:overrideData",
+      "type": "class",
+      "name": "overrideData",
+      "filePath": "sysdata/production/override.py",
+      "lineRange": [
+        16,
+        112
+      ],
+      "summary": "Abstract override store combining strategy, instrument, and instrument-strategy overrides into a cumulative value.",
+      "tags": [
+        "data-model",
+        "trading-control",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/production/position_limits.py:positionLimitData",
+      "type": "class",
+      "name": "positionLimitData",
+      "filePath": "sysdata/production/position_limits.py",
+      "lineRange": [
+        23,
+        98
+      ],
+      "summary": "Abstract store for absolute position limits per instrument and instrument-strategy.",
+      "tags": [
+        "data-model",
+        "positions",
+        "trading-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/process_control_data.py:controlProcessData",
+      "type": "class",
+      "name": "controlProcessData",
+      "filePath": "sysdata/production/process_control_data.py",
+      "lineRange": [
+        15,
+        210
+      ],
+      "summary": "Abstract store managing background process control: status changes, PID checks, and per-method run timing.",
+      "tags": [
+        "data-model",
+        "process-control",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysdata/production/roll_state.py:rollStateData",
+      "type": "class",
+      "name": "rollStateData",
+      "filePath": "sysdata/production/roll_state.py",
+      "lineRange": [
+        11,
+        50
+      ],
+      "summary": "Abstract store of per-instrument futures roll state.",
+      "tags": [
+        "data-model",
+        "futures-roll",
+        "trading-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/temporary_close.py:temporaryCloseData",
+      "type": "class",
+      "name": "temporaryCloseData",
+      "filePath": "sysdata/production/temporary_close.py",
+      "lineRange": [
+        7,
+        50
+      ],
+      "summary": "Abstract store that temporarily stashes a position limit while an instrument is closed.",
+      "tags": [
+        "data-model",
+        "positions",
+        "trading-control"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/production/temporary_override.py:temporaryOverrideData",
+      "type": "class",
+      "name": "temporaryOverrideData",
+      "filePath": "sysdata/production/temporary_override.py",
+      "lineRange": [
+        7,
+        49
+      ],
+      "summary": "Abstract store that temporarily stashes an override while a temporary override is active.",
+      "tags": [
+        "data-model",
+        "trading-control",
+        "positions"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "file:sysobjects/production/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "file:sysobjects/production/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/locks.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/locks.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "file:sysobjects/production/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "file:sysobjects/production/position_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "file:sysobjects/production/process_control.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "file:sysobjects/production/roll_state.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_close.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_close.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_close.py",
+      "target": "file:sysobjects/production/position_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_override.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_override.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/temporary_override.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "class:sysdata/production/historic_contract_positions.py:contractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "class:sysdata/production/historic_contract_positions.py:contractPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "function:sysdata/production/historic_contract_positions.py:any_positions_since_start_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/historic_contract_positions.py",
+      "target": "function:sysdata/production/historic_contract_positions.py:any_positions_since_start_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "class:sysdata/production/historic_strategy_positions.py:strategyPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/historic_strategy_positions.py",
+      "target": "class:sysdata/production/historic_strategy_positions.py:strategyPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/locks.py",
+      "target": "class:sysdata/production/locks.py:lockData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/locks.py",
+      "target": "class:sysdata/production/locks.py:lockData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "class:sysdata/production/optimal_positions.py:optimalPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/optimal_positions.py",
+      "target": "class:sysdata/production/optimal_positions.py:optimalPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "class:sysdata/production/override.py:overrideData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/override.py",
+      "target": "class:sysdata/production/override.py:overrideData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "class:sysdata/production/position_limits.py:positionLimitData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/position_limits.py",
+      "target": "class:sysdata/production/position_limits.py:positionLimitData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "class:sysdata/production/process_control_data.py:controlProcessData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/process_control_data.py",
+      "target": "class:sysdata/production/process_control_data.py:controlProcessData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "class:sysdata/production/roll_state.py:rollStateData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/roll_state.py",
+      "target": "class:sysdata/production/roll_state.py:rollStateData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/temporary_close.py",
+      "target": "class:sysdata/production/temporary_close.py:temporaryCloseData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/temporary_close.py",
+      "target": "class:sysdata/production/temporary_close.py:temporaryCloseData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/production/temporary_override.py",
+      "target": "class:sysdata/production/temporary_override.py:temporaryOverrideData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/temporary_override.py",
+      "target": "class:sysdata/production/temporary_override.py:temporaryOverrideData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

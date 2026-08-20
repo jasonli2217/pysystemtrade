@@ -1,0 +1,27 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {"path": "docs/IB.md", "language": "markdown", "sizeLines": 299, "fileCategory": "docs"},
+    {"path": "docs/backtesting.md", "language": "markdown", "sizeLines": 4670, "fileCategory": "docs"},
+    {"path": "docs/dashboard_and_monitor.md", "language": "markdown", "sizeLines": 70, "fileCategory": "docs"},
+    {"path": "docs/data.md", "language": "markdown", "sizeLines": 1034, "fileCategory": "docs"},
+    {"path": "docs/installation.md", "language": "markdown", "sizeLines": 352, "fileCategory": "docs"},
+    {"path": "docs/instruments.md", "language": "markdown", "sizeLines": 651, "fileCategory": "docs"},
+    {"path": "docs/introduction.md", "language": "markdown", "sizeLines": 747, "fileCategory": "docs"},
+    {"path": "docs/list_of_futures_product_pages.md", "language": "markdown", "sizeLines": 69, "fileCategory": "docs"},
+    {"path": "docs/production.md", "language": "markdown", "sizeLines": 4074, "fileCategory": "docs"},
+    {"path": "docs/production_strategy_changes.md", "language": "markdown", "sizeLines": 224, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "docs/IB.md": [],
+    "docs/backtesting.md": [],
+    "docs/dashboard_and_monitor.md": [],
+    "docs/data.md": [],
+    "docs/installation.md": [],
+    "docs/instruments.md": [],
+    "docs/introduction.md": [],
+    "docs/list_of_futures_product_pages.md": [],
+    "docs/production.md": [],
+    "docs/production_strategy_changes.md": []
+  }
+}

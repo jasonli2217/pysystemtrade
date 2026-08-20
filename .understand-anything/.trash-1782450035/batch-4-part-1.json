@@ -1,0 +1,1383 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/data/backtest.py",
+   "type": "file",
+   "name": "backtest.py",
+   "filePath": "sysproduction/data/backtest.py",
+   "summary": "Production data layer for loading, storing, and reconstructing saved backtest system states (pickled cache + config) for a given strategy and timestamp.",
+   "tags": [
+    "service",
+    "data-model",
+    "serialization",
+    "backtest"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:user_choose_backtest",
+   "type": "function",
+   "name": "user_choose_backtest",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    34,
+    44
+   ],
+   "summary": "Function user choose backtest (11 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:interactively_choose_strategy_name_timestamp_for_backtest",
+   "type": "function",
+   "name": "interactively_choose_strategy_name_timestamp_for_backtest",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    47,
+    53
+   ],
+   "summary": "Function interactively choose strategy name timestamp for backtest (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:interactively_choose_timestamp",
+   "type": "function",
+   "name": "interactively_choose_timestamp",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    56,
+    68
+   ],
+   "summary": "Function interactively choose timestamp (13 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_list_of_timestamps_for_strategy",
+   "type": "function",
+   "name": "get_list_of_timestamps_for_strategy",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    96,
+    102
+   ],
+   "summary": "Function get list of timestamps for strategy (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:create_system_with_saved_state",
+   "type": "function",
+   "name": "create_system_with_saved_state",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    105,
+    117
+   ],
+   "summary": "Function create system with saved state (13 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_system_caller",
+   "type": "function",
+   "name": "get_system_caller",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    120,
+    140
+   ],
+   "summary": "Function get system caller (21 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_loader_config",
+   "type": "function",
+   "name": "get_loader_config",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    143,
+    160
+   ],
+   "summary": "Function get loader config (18 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_strategy_class_backtest_loader_config_without_warning",
+   "type": "function",
+   "name": "get_strategy_class_backtest_loader_config_without_warning",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    163,
+    170
+   ],
+   "summary": "Function get strategy class backtest loader config without warning (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:load_backtest_state",
+   "type": "function",
+   "name": "load_backtest_state",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    173,
+    188
+   ],
+   "summary": "Function load backtest state (16 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:store_backtest_state",
+   "type": "function",
+   "name": "store_backtest_state",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    191,
+    216
+   ],
+   "summary": "Function store backtest state (26 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:ensure_backtest_directory_exists",
+   "type": "function",
+   "name": "ensure_backtest_directory_exists",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    219,
+    221
+   ],
+   "summary": "Function ensure backtest directory exists (3 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:rchop",
+   "type": "function",
+   "name": "rchop",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    224,
+    227
+   ],
+   "summary": "Function rchop (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_list_of_pickle_files_for_strategy",
+   "type": "function",
+   "name": "get_list_of_pickle_files_for_strategy",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    230,
+    234
+   ],
+   "summary": "Function get list of pickle files for strategy (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_backtest_pickle_filename",
+   "type": "function",
+   "name": "get_backtest_pickle_filename",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    237,
+    247
+   ],
+   "summary": "Function get backtest pickle filename (11 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_backtest_config_filename",
+   "type": "function",
+   "name": "get_backtest_config_filename",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    250,
+    256
+   ],
+   "summary": "Function get backtest config filename (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_backtest_filename_prefix",
+   "type": "function",
+   "name": "get_backtest_filename_prefix",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    259,
+    264
+   ],
+   "summary": "Function get backtest filename prefix (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_backtest_directory_for_strategy",
+   "type": "function",
+   "name": "get_backtest_directory_for_strategy",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    267,
+    274
+   ],
+   "summary": "Function get backtest directory for strategy (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:get_directory_store_backtests",
+   "type": "function",
+   "name": "get_directory_store_backtests",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    277,
+    281
+   ],
+   "summary": "Function get directory store backtests (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:pickle_state",
+   "type": "function",
+   "name": "pickle_state",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    284,
+    293
+   ],
+   "summary": "Function pickle state (10 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/backtest.py:copy_config_file",
+   "type": "function",
+   "name": "copy_config_file",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    296,
+    309
+   ],
+   "summary": "Function copy config file (14 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/backtest.py:dataBacktest",
+   "type": "class",
+   "name": "dataBacktest",
+   "filePath": "sysproduction/data/backtest.py",
+   "lineRange": [
+    71,
+    93
+   ],
+   "summary": "Class dataBacktest with 3 methods (23 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/data/capital.py",
+   "type": "file",
+   "name": "capital.py",
+   "filePath": "sysproduction/data/capital.py",
+   "summary": "Production data layer exposing capital and margin queries/updates: total capital, broker account value, per-strategy capital, and margin tracking.",
+   "tags": [
+    "service",
+    "data-model",
+    "capital",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/capital.py:capital_for_strategy",
+   "type": "function",
+   "name": "capital_for_strategy",
+   "filePath": "sysproduction/data/capital.py",
+   "lineRange": [
+    230,
+    237
+   ],
+   "summary": "Function capital for strategy (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/capital.py:dataCapital",
+   "type": "class",
+   "name": "dataCapital",
+   "filePath": "sysproduction/data/capital.py",
+   "lineRange": [
+    22,
+    193
+   ],
+   "summary": "Class dataCapital with 26 methods (172 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/data/capital.py:dataMargin",
+   "type": "class",
+   "name": "dataMargin",
+   "filePath": "sysproduction/data/capital.py",
+   "lineRange": [
+    196,
+    227
+   ],
+   "summary": "Class dataMargin with 9 methods (32 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/data/control_process.py",
+   "type": "file",
+   "name": "control_process.py",
+   "filePath": "sysproduction/data/control_process.py",
+   "summary": "Production data and diagnostic layer governing process control: start/stop/pause status, run scheduling, and method timing configuration for the live trading processes.",
+   "tags": [
+    "service",
+    "control",
+    "scheduling",
+    "production"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/data/control_process.py:get_list_of_strategies_for_process",
+   "type": "function",
+   "name": "get_list_of_strategies_for_process",
+   "filePath": "sysproduction/data/control_process.py",
+   "lineRange": [
+    434,
+    438
+   ],
+   "summary": "Function get list of strategies for process (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/control_process.py:get_strategy_class_object_config",
+   "type": "function",
+   "name": "get_strategy_class_object_config",
+   "filePath": "sysproduction/data/control_process.py",
+   "lineRange": [
+    441,
+    456
+   ],
+   "summary": "Function get strategy class object config (16 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/control_process.py:dataControlProcess",
+   "type": "class",
+   "name": "dataControlProcess",
+   "filePath": "sysproduction/data/control_process.py",
+   "lineRange": [
+    28,
+    126
+   ],
+   "summary": "Class dataControlProcess with 18 methods (99 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/data/control_process.py:diagControlProcess",
+   "type": "class",
+   "name": "diagControlProcess",
+   "filePath": "sysproduction/data/control_process.py",
+   "lineRange": [
+    129,
+    431
+   ],
+   "summary": "Class diagControlProcess with 33 methods (303 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/data/currency_data.py",
+   "type": "file",
+   "name": "currency_data.py",
+   "filePath": "sysproduction/data/currency_data.py",
+   "summary": "Production data layer for FX prices and currency conversion: fetching rates, converting currency values to base, and updating stored FX prices.",
+   "tags": [
+    "service",
+    "data-model",
+    "fx",
+    "currency"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/currency_data.py:get_list_of_fxcodes",
+   "type": "function",
+   "name": "get_list_of_fxcodes",
+   "filePath": "sysproduction/data/currency_data.py",
+   "lineRange": [
+    109,
+    114
+   ],
+   "summary": "Function get list of fxcodes (6 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/currency_data.py:get_valid_fx_code_from_user",
+   "type": "function",
+   "name": "get_valid_fx_code_from_user",
+   "filePath": "sysproduction/data/currency_data.py",
+   "lineRange": [
+    117,
+    130
+   ],
+   "summary": "Function get valid fx code from user (14 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/currency_data.py:dataCurrency",
+   "type": "class",
+   "name": "dataCurrency",
+   "filePath": "sysproduction/data/currency_data.py",
+   "lineRange": [
+    13,
+    106
+   ],
+   "summary": "Class dataCurrency with 11 methods (94 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/data/generic_production_data.py",
+   "type": "file",
+   "name": "generic_production_data.py",
+   "filePath": "sysproduction/data/generic_production_data.py",
+   "summary": "Base class providing the generic production data layer with shared caching, logging, and data-source wiring inherited by all sysproduction data classes.",
+   "tags": [
+    "service",
+    "base-class",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "class",
+   "name": "productionDataLayerGeneric",
+   "filePath": "sysproduction/data/generic_production_data.py",
+   "lineRange": [
+    6,
+    28
+   ],
+   "summary": "Class productionDataLayerGeneric with 5 methods (23 lines).",
+   "tags": [
+    "base-class",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:user_choose_backtest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:user_choose_backtest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:interactively_choose_strategy_name_timestamp_for_backtest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:interactively_choose_strategy_name_timestamp_for_backtest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:interactively_choose_timestamp",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:interactively_choose_timestamp",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_list_of_timestamps_for_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_list_of_timestamps_for_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:create_system_with_saved_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:create_system_with_saved_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_system_caller",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_system_caller",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_loader_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_loader_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_strategy_class_backtest_loader_config_without_warning",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_strategy_class_backtest_loader_config_without_warning",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:load_backtest_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:load_backtest_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:store_backtest_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:store_backtest_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:ensure_backtest_directory_exists",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:ensure_backtest_directory_exists",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:rchop",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:rchop",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_list_of_pickle_files_for_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_list_of_pickle_files_for_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_pickle_filename",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_pickle_filename",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_config_filename",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_config_filename",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_filename_prefix",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_filename_prefix",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_directory_for_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_backtest_directory_for_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_directory_store_backtests",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:get_directory_store_backtests",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:pickle_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:pickle_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:copy_config_file",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "function:sysproduction/data/backtest.py:copy_config_file",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "class:sysproduction/data/backtest.py:dataBacktest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "class:sysproduction/data/backtest.py:dataBacktest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:sysobjects/production/backtest_storage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/backtest.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/backtest.py:dataBacktest",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "function:sysproduction/data/capital.py:capital_for_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "function:sysproduction/data/capital.py:capital_for_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "class:sysproduction/data/capital.py:dataCapital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "class:sysproduction/data/capital.py:dataCapital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "class:sysproduction/data/capital.py:dataMargin",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "class:sysproduction/data/capital.py:dataMargin",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysdata/mongodb/mongo_margin.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysdata/production/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysdata/production/margin.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/capital.py",
+   "target": "file:systems/accounts/from_returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/capital.py:dataCapital",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:sysproduction/data/capital.py:dataMargin",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "function:sysproduction/data/control_process.py:get_list_of_strategies_for_process",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "function:sysproduction/data/control_process.py:get_list_of_strategies_for_process",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "function:sysproduction/data/control_process.py:get_strategy_class_object_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "function:sysproduction/data/control_process.py:get_strategy_class_object_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "class:sysproduction/data/control_process.py:dataControlProcess",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "class:sysproduction/data/control_process.py:dataControlProcess",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "class:sysproduction/data/control_process.py:diagControlProcess",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "class:sysproduction/data/control_process.py:diagControlProcess",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:syscontrol/timer_parameters.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:sysdata/config/control_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:sysdata/production/process_control_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/control_process.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/control_process.py:dataControlProcess",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:sysproduction/data/control_process.py:diagControlProcess",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "function:sysproduction/data/currency_data.py:get_list_of_fxcodes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "function:sysproduction/data/currency_data.py:get_list_of_fxcodes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "function:sysproduction/data/currency_data.py:get_valid_fx_code_from_user",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "function:sysproduction/data/currency_data.py:get_valid_fx_code_from_user",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "class:sysproduction/data/currency_data.py:dataCurrency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "class:sysproduction/data/currency_data.py:dataCurrency",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:sysdata/fx/spotfx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/currency_data.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/currency_data.py:dataCurrency",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/generic_production_data.py",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/generic_production_data.py",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/generic_production_data.py",
+   "target": "file:syscore/cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/generic_production_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/generic_production_data.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

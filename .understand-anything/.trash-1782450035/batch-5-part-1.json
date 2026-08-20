@@ -1,0 +1,1244 @@
+{
+  "nodes": [
+    {
+      "id": "file:data/tools/contract_comparison.py",
+      "type": "file",
+      "name": "contract_comparison.py",
+      "filePath": "data/tools/contract_comparison.py",
+      "summary": "ContractComparison reporting tool comparing roll-adjacent futures contracts by volume and price.",
+      "tags": [
+        "utility",
+        "reporting",
+        "data-model",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/doc_generation/list_of_futures_product_pages_generator.py",
+      "type": "file",
+      "name": "list_of_futures_product_pages_generator.py",
+      "filePath": "docs/doc_generation/list_of_futures_product_pages_generator.py",
+      "summary": "Doc-generation script that writes an HTML table of futures instruments linked to their exchange product pages.",
+      "tags": [
+        "script",
+        "documentation",
+        "html",
+        "data-pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/doc_generation/symbol_product_page_map.py",
+      "type": "file",
+      "name": "symbol_product_page_map.py",
+      "filePath": "docs/doc_generation/symbol_product_page_map.py",
+      "summary": "Static lookup dictionary mapping instrument symbols to their exchange product-page URLs.",
+      "tags": [
+        "data-model",
+        "configuration",
+        "reference-data",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:examples/logging/poc.py",
+      "type": "file",
+      "name": "poc.py",
+      "filePath": "examples/logging/poc.py",
+      "summary": "Proof-of-concept example demonstrating the syslogging logger API and attribute usage.",
+      "tags": [
+        "example",
+        "logging",
+        "proof-of-concept"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/ib_client_id.py",
+      "type": "file",
+      "name": "ib_client_id.py",
+      "filePath": "sysbrokers/IB/client/ib_client_id.py",
+      "summary": "Interactive Brokers client-id data accessor selecting an available IB connection client id.",
+      "tags": [
+        "service",
+        "broker-integration",
+        "ib",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "type": "file",
+      "name": "ib_connection_defaults.py",
+      "filePath": "sysbrokers/IB/ib_connection_defaults.py",
+      "summary": "Resolves default IB gateway connection settings (ip address, port, account) from production config.",
+      "tags": [
+        "configuration",
+        "broker-integration",
+        "ib",
+        "defaults"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_contract_commission_data.py",
+      "type": "file",
+      "name": "broker_contract_commission_data.py",
+      "filePath": "sysbrokers/broker_contract_commission_data.py",
+      "summary": "Abstract broker interface for retrieving per-contract commission data.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "data-model",
+        "commission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_contract_position_data.py",
+      "type": "file",
+      "name": "broker_contract_position_data.py",
+      "filePath": "sysbrokers/broker_contract_position_data.py",
+      "summary": "Abstract broker interface for reading and updating positions held per futures contract.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "positions",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysbrokers/broker_instrument_data.py",
+      "type": "file",
+      "name": "broker_instrument_data.py",
+      "filePath": "sysbrokers/broker_instrument_data.py",
+      "summary": "Abstract broker interface mapping broker contract objects to instrument codes.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "instrument-data",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/broker_static_data.py",
+      "type": "file",
+      "name": "broker_static_data.py",
+      "filePath": "sysbrokers/broker_static_data.py",
+      "summary": "Abstract broker interface exposing static account and client metadata.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "static-data",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syscore/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syscore/__init__.py",
+      "summary": "Package initializer for the syscore core utilities package.",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "package-init"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syscore/fileutils.py",
+      "type": "file",
+      "name": "fileutils.py",
+      "filePath": "syscore/fileutils.py",
+      "summary": "Filesystem utility library for resolving package-relative paths, archiving, and age-based file cleanup.",
+      "tags": [
+        "utility",
+        "filesystem",
+        "path-resolution",
+        "helpers"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:syscore/tests/test_fileutils.py",
+      "type": "file",
+      "name": "test_fileutils.py",
+      "filePath": "syscore/tests/test_fileutils.py",
+      "summary": "Unit tests covering path resolution and filename utilities for both Unix and Windows conventions.",
+      "tags": [
+        "test",
+        "filesystem",
+        "unit-test",
+        "path-resolution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "type": "file",
+      "name": "mongo_log.py",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "summary": "Deprecated MongoDB-backed log storage and retrieval for diagnostic log entries.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "mongodb",
+        "data-store"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "type": "file",
+      "name": "mongo_optimal_position_TO_DEPRECATE.py",
+      "filePath": "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "summary": "Deprecated MongoDB store for optimal position time-series data.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions",
+        "data-store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:data/tools/contract_comparison.py:ContractComparison",
+      "type": "class",
+      "name": "ContractComparison",
+      "filePath": "data/tools/contract_comparison.py",
+      "lineRange": [
+        9,
+        181
+      ],
+      "summary": "Compares price and volume series across adjacent futures contracts to support roll analysis.",
+      "tags": [
+        "data-model",
+        "reporting",
+        "futures",
+        "comparison"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/IB/client/ib_client_id.py:ibBrokerClientIdData",
+      "type": "class",
+      "name": "ibBrokerClientIdData",
+      "filePath": "sysbrokers/IB/client/ib_client_id.py",
+      "lineRange": [
+        9,
+        25
+      ],
+      "summary": "Wraps client-id allocation data for selecting a free IB connection client id.",
+      "tags": [
+        "broker-integration",
+        "ib",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysbrokers/IB/ib_connection_defaults.py:ib_defaults",
+      "type": "function",
+      "name": "ib_defaults",
+      "filePath": "sysbrokers/IB/ib_connection_defaults.py",
+      "lineRange": [
+        7,
+        37
+      ],
+      "summary": "Builds an IB connection-config dict from explicit args falling back to production config defaults.",
+      "tags": [
+        "configuration",
+        "broker-integration",
+        "ib",
+        "defaults"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/broker_contract_commission_data.py:brokerFuturesContractCommissionData",
+      "type": "class",
+      "name": "brokerFuturesContractCommissionData",
+      "filePath": "sysbrokers/broker_contract_commission_data.py",
+      "lineRange": [
+        9,
+        21
+      ],
+      "summary": "Abstract interface defining how per-contract commission is fetched from a broker.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "commission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/broker_contract_position_data.py:brokerContractPositionData",
+      "type": "class",
+      "name": "brokerContractPositionData",
+      "filePath": "sysbrokers/broker_contract_position_data.py",
+      "lineRange": [
+        10,
+        48
+      ],
+      "summary": "Abstract interface for reading, updating, and deleting positions held per futures contract at the broker.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysbrokers/broker_instrument_data.py:brokerFuturesInstrumentData",
+      "type": "class",
+      "name": "brokerFuturesInstrumentData",
+      "filePath": "sysbrokers/broker_instrument_data.py",
+      "lineRange": [
+        7,
+        27
+      ],
+      "summary": "Abstract interface mapping broker contract objects to internal instrument codes.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "instrument-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysbrokers/broker_static_data.py:brokerStaticData",
+      "type": "class",
+      "name": "brokerStaticData",
+      "filePath": "sysbrokers/broker_static_data.py",
+      "lineRange": [
+        6,
+        22
+      ],
+      "summary": "Abstract interface exposing static broker account, client id, and broker name metadata.",
+      "tags": [
+        "abstract-class",
+        "broker-integration",
+        "static-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:rename_files_with_extension_in_pathname_as_archive_files",
+      "type": "function",
+      "name": "rename_files_with_extension_in_pathname_as_archive_files",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        20,
+        38
+      ],
+      "summary": "Renames all files with a given extension in a path to timestamped archive files.",
+      "tags": [
+        "filesystem",
+        "archiving"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:rename_file_as_archive",
+      "type": "function",
+      "name": "rename_file_as_archive",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        41,
+        54
+      ],
+      "summary": "Renames a single file to an archive copy with a date suffix.",
+      "tags": [
+        "filesystem",
+        "archiving"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:delete_old_files_with_extension_in_pathname",
+      "type": "function",
+      "name": "delete_old_files_with_extension_in_pathname",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        57,
+        70
+      ],
+      "summary": "Deletes files in a path whose age exceeds a threshold in days.",
+      "tags": [
+        "filesystem",
+        "cleanup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:resolve_path_and_filename_for_package",
+      "type": "function",
+      "name": "resolve_path_and_filename_for_package",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        98,
+        144
+      ],
+      "summary": "Resolves a package-relative path and filename into an absolute filesystem path.",
+      "tags": [
+        "filesystem",
+        "path-resolution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/fileutils.py:get_resolved_pathname",
+      "type": "function",
+      "name": "get_resolved_pathname",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        147,
+        175
+      ],
+      "summary": "Resolves a dotted or slash-delimited package path into an absolute directory path.",
+      "tags": [
+        "filesystem",
+        "path-resolution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/fileutils.py:_make_absolute",
+      "type": "function",
+      "name": "_make_absolute",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        182,
+        193
+      ],
+      "summary": "Converts a path list into an absolute path string, handling leading separators.",
+      "tags": [
+        "filesystem",
+        "path-resolution",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:_transform_path_into_list",
+      "type": "function",
+      "name": "_transform_path_into_list",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        196,
+        227
+      ],
+      "summary": "Normalizes a path string (dotted or slashed) into a list of path components.",
+      "tags": [
+        "filesystem",
+        "path-resolution",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/fileutils.py:_extract_filename_from_combined_path_and_filename_list",
+      "type": "function",
+      "name": "_extract_filename_from_combined_path_and_filename_list",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        238,
+        251
+      ],
+      "summary": "Splits a combined path/filename list back into directory and filename parts.",
+      "tags": [
+        "filesystem",
+        "path-resolution",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:files_with_extension_in_pathname",
+      "type": "function",
+      "name": "files_with_extension_in_pathname",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        273,
+        284
+      ],
+      "summary": "Lists filenames with a given extension under a package-relative path.",
+      "tags": [
+        "filesystem",
+        "listing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/fileutils.py:files_with_extension_in_resolved_pathname",
+      "type": "function",
+      "name": "files_with_extension_in_resolved_pathname",
+      "filePath": "syscore/fileutils.py",
+      "lineRange": [
+        287,
+        299
+      ],
+      "summary": "Lists filenames with a given extension under an already-resolved absolute path.",
+      "tags": [
+        "filesystem",
+        "listing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syscore/tests/test_fileutils.py:TestFileUtilsUnix",
+      "type": "class",
+      "name": "TestFileUtilsUnix",
+      "filePath": "syscore/tests/test_fileutils.py",
+      "lineRange": [
+        17,
+        208
+      ],
+      "summary": "Test suite exercising path/filename resolution utilities under Unix-style path conventions.",
+      "tags": [
+        "test",
+        "unit-test",
+        "filesystem",
+        "path-resolution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:syscore/tests/test_fileutils.py:TestFileUtilsWindoze",
+      "type": "class",
+      "name": "TestFileUtilsWindoze",
+      "filePath": "syscore/tests/test_fileutils.py",
+      "lineRange": [
+        212,
+        405
+      ],
+      "summary": "Test suite exercising path/filename resolution utilities under Windows-style path conventions.",
+      "tags": [
+        "test",
+        "unit-test",
+        "filesystem",
+        "path-resolution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:syscore/tests/test_fileutils.py:project_dir",
+      "type": "function",
+      "name": "project_dir",
+      "filePath": "syscore/tests/test_fileutils.py",
+      "lineRange": [
+        11,
+        13
+      ],
+      "summary": "Pytest fixture/helper returning the project root directory for path resolution tests.",
+      "tags": [
+        "test",
+        "fixture",
+        "filesystem"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_log.py:mongoLogData",
+      "type": "class",
+      "name": "mongoLogData",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "lineRange": [
+        22,
+        74
+      ],
+      "summary": "Deprecated MongoDB-backed accessor for reading and pruning diagnostic log entries.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "mongodb"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_log.py:mongoLogEntry",
+      "type": "class",
+      "name": "mongoLogEntry",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "lineRange": [
+        120,
+        146
+      ],
+      "summary": "Deprecated log-entry value object reconstructed from a MongoDB document.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/_DEPRECATED/mongo_log.py:add_before_n_days_to_attribute_dict",
+      "type": "function",
+      "name": "add_before_n_days_to_attribute_dict",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "lineRange": [
+        77,
+        86
+      ],
+      "summary": "Adds a 'before N days' cutoff filter to a Mongo query attribute dict.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "query-builder",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/_DEPRECATED/mongo_log.py:add_after_n_days_to_attribute_dict",
+      "type": "function",
+      "name": "add_after_n_days_to_attribute_dict",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "lineRange": [
+        89,
+        98
+      ],
+      "summary": "Adds an 'after N days' cutoff filter to a Mongo query attribute dict.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "query-builder",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/_DEPRECATED/mongo_log.py:add_timestamp_cutoff_to_attribute_dict",
+      "type": "function",
+      "name": "add_timestamp_cutoff_to_attribute_dict",
+      "filePath": "sysdata/_DEPRECATED/mongo_log.py",
+      "lineRange": [
+        101,
+        111
+      ],
+      "summary": "Adds a timestamp cutoff condition to a Mongo query attribute dict.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "query-builder",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py:mongoOptimalPositionData",
+      "type": "class",
+      "name": "mongoOptimalPositionData",
+      "filePath": "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "lineRange": [
+        10,
+        23
+      ],
+      "summary": "Deprecated MongoDB store for optimal position time-series entries.",
+      "tags": [
+        "deprecated",
+        "mongodb",
+        "positions"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:data/tools/contract_comparison.py",
+      "target": "class:data/tools/contract_comparison.py:ContractComparison",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:data/tools/contract_comparison.py",
+      "target": "class:data/tools/contract_comparison.py:ContractComparison",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "class:sysbrokers/IB/client/ib_client_id.py:ibBrokerClientIdData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "class:sysbrokers/IB/client/ib_client_id.py:ibBrokerClientIdData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "target": "function:sysbrokers/IB/ib_connection_defaults.py:ib_defaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "target": "function:sysbrokers/IB/ib_connection_defaults.py:ib_defaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "class:sysbrokers/broker_contract_commission_data.py:brokerFuturesContractCommissionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "class:sysbrokers/broker_contract_commission_data.py:brokerFuturesContractCommissionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "class:sysbrokers/broker_contract_position_data.py:brokerContractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "class:sysbrokers/broker_contract_position_data.py:brokerContractPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_instrument_data.py",
+      "target": "class:sysbrokers/broker_instrument_data.py:brokerFuturesInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/broker_instrument_data.py",
+      "target": "class:sysbrokers/broker_instrument_data.py:brokerFuturesInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysbrokers/broker_static_data.py",
+      "target": "class:sysbrokers/broker_static_data.py:brokerStaticData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysbrokers/broker_static_data.py",
+      "target": "class:sysbrokers/broker_static_data.py:brokerStaticData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:rename_files_with_extension_in_pathname_as_archive_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:rename_files_with_extension_in_pathname_as_archive_files",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:rename_file_as_archive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:rename_file_as_archive",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:delete_old_files_with_extension_in_pathname",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:delete_old_files_with_extension_in_pathname",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:resolve_path_and_filename_for_package",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:resolve_path_and_filename_for_package",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:get_resolved_pathname",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:get_resolved_pathname",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_make_absolute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_make_absolute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_transform_path_into_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_transform_path_into_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_extract_filename_from_combined_path_and_filename_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:_extract_filename_from_combined_path_and_filename_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:files_with_extension_in_pathname",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:files_with_extension_in_pathname",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:files_with_extension_in_resolved_pathname",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "function:syscore/fileutils.py:files_with_extension_in_resolved_pathname",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/tests/test_fileutils.py",
+      "target": "class:syscore/tests/test_fileutils.py:TestFileUtilsUnix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/tests/test_fileutils.py",
+      "target": "class:syscore/tests/test_fileutils.py:TestFileUtilsWindoze",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:syscore/tests/test_fileutils.py",
+      "target": "function:syscore/tests/test_fileutils.py:project_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_log.py:mongoLogData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_log.py:mongoLogEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "function:sysdata/_DEPRECATED/mongo_log.py:add_before_n_days_to_attribute_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "function:sysdata/_DEPRECATED/mongo_log.py:add_after_n_days_to_attribute_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "function:sysdata/_DEPRECATED/mongo_log.py:add_timestamp_cutoff_to_attribute_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "target": "class:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py:mongoOptimalPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:data/tools/contract_comparison.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:data/tools/contract_comparison.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:docs/doc_generation/list_of_futures_product_pages_generator.py",
+      "target": "file:docs/doc_generation/symbol_product_page_map.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:docs/doc_generation/list_of_futures_product_pages_generator.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:examples/logging/poc.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "file:sysdata/production/broker_client_id.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/client/ib_client_id.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/IB/ib_connection_defaults.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "file:sysdata/futures/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_commission_data.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "file:sysdata/production/historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_contract_position_data.py",
+      "target": "file:sysobjects/production/positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_instrument_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_instrument_data.py",
+      "target": "file:sysdata/futures/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_instrument_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_static_data.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_static_data.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysbrokers/broker_static_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "file:syscore/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/tests/test_fileutils.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:sysdata/mongodb/mongo_connection.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:syslogdiag/log_entry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_log.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "target": "file:sysdata/mongodb/mongo_generic.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/fileutils.py",
+      "target": "file:syscore/tests/test_fileutils.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

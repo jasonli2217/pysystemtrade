@@ -1,0 +1,6545 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysinit/futures/multiple_and_adjusted_from_csv_to_db.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "init_db_with_csv_futures_contract_prices",
+          "startLine": 10,
+          "endLine": 26,
+          "params": [
+            "multiple_price_datapath",
+            "adj_price_datapath"
+          ]
+        },
+        {
+          "name": "init_db_with_csv_prices_for_code",
+          "startLine": 29,
+          "endLine": 49,
+          "params": [
+            "instrument_code",
+            "multiple_price_datapath",
+            "adj_price_datapath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init_db_with_csv_futures_contract_prices",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "init_db_with_csv_prices_for_code",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init_db_with_csv_futures_contract_prices",
+          "callee": "csvFuturesMultiplePricesData",
+          "lineNumber": 13
+        },
+        {
+          "caller": "init_db_with_csv_futures_contract_prices",
+          "callee": "csvFuturesAdjustedPricesData",
+          "lineNumber": 14
+        },
+        {
+          "caller": "init_db_with_csv_futures_contract_prices",
+          "callee": "input",
+          "lineNumber": 15
+        },
+        {
+          "caller": "init_db_with_csv_futures_contract_prices",
+          "callee": "csv_multiple_prices.get_list_of_instruments",
+          "lineNumber": 20
+        },
+        {
+          "caller": "init_db_with_csv_futures_contract_prices",
+          "callee": "init_db_with_csv_prices_for_code",
+          "lineNumber": 22
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "print",
+          "lineNumber": 34
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "csvFuturesMultiplePricesData",
+          "lineNumber": 35
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "csv_mult_data.get_multiple_prices",
+          "lineNumber": 38
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "db_mult_data.add_multiple_prices",
+          "lineNumber": 39
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "csvFuturesAdjustedPricesData",
+          "lineNumber": 43
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "csv_adj_data.get_adjusted_prices",
+          "lineNumber": 46
+        },
+        {
+          "caller": "init_db_with_csv_prices_for_code",
+          "callee": "db_adj_data.add_adjusted_prices",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/multipleprices_from_db_prices_and_csv_calendars_to_db.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 164,
+      "functions": [
+        {
+          "name": "_get_data_inputs",
+          "startLine": 34,
+          "endLine": 45,
+          "params": [
+            "csv_roll_data_path",
+            "csv_multiple_data_path"
+          ]
+        },
+        {
+          "name": "process_multiple_prices_all_instruments",
+          "startLine": 48,
+          "endLine": 72,
+          "params": [
+            "csv_multiple_data_path",
+            "csv_roll_data_path",
+            "ADD_TO_DB",
+            "ADD_TO_CSV"
+          ]
+        },
+        {
+          "name": "process_multiple_prices_single_instrument",
+          "startLine": 75,
+          "endLine": 137,
+          "params": [
+            "instrument_code",
+            "target_instrument_code",
+            "adjust_calendar_to_prices",
+            "csv_multiple_data_path",
+            "csv_roll_data_path",
+            "roll_parameters",
+            "roll_calendar",
+            "ADD_TO_DB",
+            "ADD_TO_CSV"
+          ]
+        },
+        {
+          "name": "adjust_roll_calendar",
+          "startLine": 140,
+          "endLine": 151,
+          "params": [
+            "instrument_code",
+            "roll_calendar"
+          ]
+        },
+        {
+          "name": "add_phantom_row",
+          "startLine": 154,
+          "endLine": 188,
+          "params": [
+            "roll_calendar",
+            "dict_of_futures_contract_prices",
+            "roll_parameters"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_get_data_inputs",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "process_multiple_prices_all_instruments",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "process_multiple_prices_single_instrument",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_roll_calendar",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "add_phantom_row",
+          "line": 154,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_get_data_inputs",
+          "callee": "csvRollCalendarData",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_get_data_inputs",
+          "callee": "csvFuturesMultiplePricesData",
+          "lineNumber": 38
+        },
+        {
+          "caller": "process_multiple_prices_all_instruments",
+          "callee": "_get_data_inputs",
+          "lineNumber": 59
+        },
+        {
+          "caller": "process_multiple_prices_all_instruments",
+          "callee": "db_individual_futures_prices.get_list_of_instrument_codes_with_merged_price_data",
+          "lineNumber": 61
+        },
+        {
+          "caller": "process_multiple_prices_all_instruments",
+          "callee": "print",
+          "lineNumber": 65
+        },
+        {
+          "caller": "process_multiple_prices_all_instruments",
+          "callee": "process_multiple_prices_single_instrument",
+          "lineNumber": 66
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "_get_data_inputs",
+          "lineNumber": 93
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "db_individual_futures_prices.get_merged_prices_for_instrument",
+          "lineNumber": 96
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "dict_of_futures_contract_prices.final_prices",
+          "lineNumber": 99
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "csv_roll_calendars.get_roll_calendar",
+          "lineNumber": 103
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "csvRollParametersData",
+          "lineNumber": 107
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "m.get_roll_parameters",
+          "lineNumber": 108
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "add_phantom_row",
+          "lineNumber": 110
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "adjust_roll_calendar",
+          "lineNumber": 115
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "add_phantom_row",
+          "lineNumber": 118
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "futuresMultiplePrices.create_from_raw_data",
+          "lineNumber": 122
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "print",
+          "lineNumber": 126
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "db_multiple_prices.add_multiple_prices",
+          "lineNumber": 129
+        },
+        {
+          "caller": "process_multiple_prices_single_instrument",
+          "callee": "csv_multiple_prices.add_multiple_prices",
+          "lineNumber": 133
+        },
+        {
+          "caller": "adjust_roll_calendar",
+          "callee": "print",
+          "lineNumber": 142
+        },
+        {
+          "caller": "adjust_roll_calendar",
+          "callee": "db_prices_per_contract.get_merged_prices_for_instrument",
+          "lineNumber": 143
+        },
+        {
+          "caller": "adjust_roll_calendar",
+          "callee": "dict_of_prices.final_prices",
+          "lineNumber": 146
+        },
+        {
+          "caller": "adjust_roll_calendar",
+          "callee": "adjust_to_price_series",
+          "lineNumber": 147
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 160
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 162
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "datetime.timedelta",
+          "lineNumber": 162
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "str",
+          "lineNumber": 163
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 164
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "contractDate",
+          "lineNumber": 165
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "current_contract.next_held_contract",
+          "lineNumber": 167
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "current_contract.carry_contract",
+          "lineNumber": 168
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "dict_of_futures_contract_prices.keys",
+          "lineNumber": 170
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "print",
+          "lineNumber": 174
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "pd.DataFrame",
+          "lineNumber": 177
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "dict",
+          "lineNumber": 178
+        },
+        {
+          "caller": "add_phantom_row",
+          "callee": "pd.concat",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/repocsv_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/repocsv_multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_db_multipleprices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_db_prices_to_csv.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "build_and_write_roll_calendar",
+          "startLine": 22,
+          "endLine": 86,
+          "params": [
+            "instrument_code",
+            "output_datapath",
+            "write",
+            "check_before_writing",
+            "input_prices",
+            "roll_parameters_data",
+            "roll_parameters"
+          ]
+        },
+        {
+          "name": "check_saved_roll_calendar",
+          "startLine": 89,
+          "endLine": 119,
+          "params": [
+            "instrument_code",
+            "input_datapath",
+            "input_prices"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "build_and_write_roll_calendar",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "check_saved_roll_calendar",
+          "line": 89,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "print",
+          "lineNumber": 32
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "print",
+          "lineNumber": 36
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "csvRollParametersData",
+          "lineNumber": 45
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "roll_parameters_data.get_roll_parameters",
+          "lineNumber": 46
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "csvRollCalendarData",
+          "lineNumber": 48
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "prices.get_merged_prices_for_instrument",
+          "lineNumber": 50
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "dict_of_all_futures_contract_prices.final_prices",
+          "lineNumber": 53
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "print",
+          "lineNumber": 56
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "rollCalendar.create_from_prices",
+          "lineNumber": 57
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "roll_calendar.check_if_date_index_monotonic",
+          "lineNumber": 62
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "roll_calendar.check_dates_are_valid_for_prices",
+          "lineNumber": 65
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 71
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "print",
+          "lineNumber": 79
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "csv_roll_calendars.add_roll_calendar",
+          "lineNumber": 80
+        },
+        {
+          "caller": "build_and_write_roll_calendar",
+          "callee": "print",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "print",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "csvRollCalendarData",
+          "lineNumber": 97
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "csv_roll_calendars.get_roll_calendar",
+          "lineNumber": 99
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "prices.get_merged_prices_for_instrument",
+          "lineNumber": 106
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "dict_of_all_futures_contract_prices.final_prices",
+          "lineNumber": 109
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "print",
+          "lineNumber": 111
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "roll_calendar.check_if_date_index_monotonic",
+          "lineNumber": 114
+        },
+        {
+          "caller": "check_saved_roll_calendar",
+          "callee": "roll_calendar.check_dates_are_valid_for_prices",
+          "lineNumber": 117
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/rollcalendars_from_providedcsv_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "startLine": 11,
+          "endLine": 38,
+          "params": [
+            "output_datapath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "print",
+          "lineNumber": 15
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "print",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "input",
+          "lineNumber": 18
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "str",
+          "lineNumber": 20
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "csvRollCalendarData",
+          "lineNumber": 22
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "csvFuturesSimData",
+          "lineNumber": 23
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "sim_futures_data.get_instrument_list",
+          "lineNumber": 25
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "print",
+          "lineNumber": 28
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "sim_futures_data.get_multiple_prices",
+          "lineNumber": 29
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "rollCalendar.back_out_from_multiple_prices",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "print",
+          "lineNumber": 32
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "print",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generate_roll_calendars_from_provided_multiple_csv_prices",
+          "callee": "csv_roll_calendars.add_roll_calendar",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/safely_modify_roll_parameters.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 206,
+      "nonEmptyLines": 182,
+      "functions": [
+        {
+          "name": "safely_modify_roll_parameters",
+          "startLine": 30,
+          "endLine": 147,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "modified_roll_parameters",
+          "startLine": 150,
+          "endLine": 201,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "safely_modify_roll_parameters",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "modified_roll_parameters",
+          "line": 150,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 31
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 32
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 33
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "modified_roll_parameters",
+          "lineNumber": 36
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "input",
+          "lineNumber": 40
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "build_and_write_roll_calendar",
+          "lineNumber": 44
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 55
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "process_multiple_prices_single_instrument",
+          "lineNumber": 58
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "process_adjusted_prices_single_instrument",
+          "lineNumber": 64
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "diagPrices",
+          "lineNumber": 71
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "diag_prices.get_multiple_prices",
+          "lineNumber": 72
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "diag_prices.get_adjusted_prices",
+          "lineNumber": 73
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 75
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "pd.concat",
+          "lineNumber": 80
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "prices.plot",
+          "lineNumber": 85
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "pd.concat",
+          "lineNumber": 87
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "carry_price.plot",
+          "lineNumber": 91
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "pd.concat",
+          "lineNumber": 95
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "net_carry_compare.plot",
+          "lineNumber": 97
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "pd.concat",
+          "lineNumber": 99
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "adj_compare.plot",
+          "lineNumber": 101
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "input",
+          "lineNumber": 102
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "show",
+          "lineNumber": 103
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 105
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 109
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "dataBlob",
+          "lineNumber": 113
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "dict",
+          "lineNumber": 114
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "dataContracts",
+          "lineNumber": 116
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "data_contracts.update_roll_parameters",
+          "lineNumber": 118
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 123
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "input",
+          "lineNumber": 126
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "updatePrices",
+          "lineNumber": 128
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "update_prices.add_multiple_prices",
+          "lineNumber": 129
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 134
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "update_prices.add_adjusted_prices",
+          "lineNumber": 137
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 142
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 144
+        },
+        {
+          "caller": "safely_modify_roll_parameters",
+          "callee": "print",
+          "lineNumber": 145
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "print",
+          "lineNumber": 151
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "dataContracts",
+          "lineNumber": 152
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "data_contracts.get_roll_parameters",
+          "lineNumber": 153
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "print",
+          "lineNumber": 154
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "str",
+          "lineNumber": 154
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 157
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "str",
+          "lineNumber": 160
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 162
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 167
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 172
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "get_input_from_user_and_convert_to_type",
+          "lineNumber": 177
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "rollParameters",
+          "lineNumber": 184
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "print",
+          "lineNumber": 192
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "str",
+          "lineNumber": 192
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "print",
+          "lineNumber": 195
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "str",
+          "lineNumber": 195
+        },
+        {
+          "caller": "modified_roll_parameters",
+          "callee": "true_if_answer_is_yes",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/tests/test_sysinit_futures.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "TestFuturesInit",
+          "startLine": 10,
+          "endLine": 54,
+          "methods": [
+            "test_build_roll_calendar",
+            "test_check_saved_roll_calendar"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestFuturesInit",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_build_roll_calendar",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_build_roll_calendar",
+          "callee": "csvFuturesContractPriceData",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_build_roll_calendar",
+          "callee": "str",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_build_roll_calendar",
+          "callee": "build_and_write_roll_calendar",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_build_roll_calendar",
+          "callee": "csvRollParametersData",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_check_saved_roll_calendar",
+          "callee": "csvFuturesContractPriceData",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_check_saved_roll_calendar",
+          "callee": "check_saved_roll_calendar",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "_panama_stitch",
+          "startLine": 70,
+          "endLine": 108,
+          "params": [
+            "multiple_prices_input",
+            "forward_fill"
+          ]
+        },
+        {
+          "name": "_roll_in_panama",
+          "startLine": 111,
+          "endLine": 135,
+          "params": [
+            "adjusted_prices_values",
+            "previous_row",
+            "current_row"
+          ]
+        },
+        {
+          "name": "_update_adjusted_prices_from_multiple_no_roll",
+          "startLine": 141,
+          "endLine": 171,
+          "params": [
+            "existing_adjusted_prices",
+            "updated_multiple_prices"
+          ]
+        },
+        {
+          "name": "_calc_new_multiple_prices",
+          "startLine": 174,
+          "endLine": 192,
+          "params": [
+            "existing_adjusted_prices",
+            "updated_multiple_prices"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "futuresAdjustedPrices",
+          "startLine": 14,
+          "endLine": 67,
+          "methods": [
+            "__init__",
+            "create_empty",
+            "stitch_multiple_prices",
+            "update_with_multiple_prices_no_roll"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "futuresAdjustedPrices",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_panama_stitch",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "_roll_in_panama",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "_update_adjusted_prices_from_multiple_no_roll",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "_calc_new_multiple_prices",
+          "line": 174,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 21
+        },
+        {
+          "caller": "create_empty",
+          "callee": "futuresContractPrices",
+          "lineNumber": 29
+        },
+        {
+          "caller": "create_empty",
+          "callee": "pd.Series",
+          "lineNumber": 29
+        },
+        {
+          "caller": "stitch_multiple_prices",
+          "callee": "_panama_stitch",
+          "lineNumber": 50
+        },
+        {
+          "caller": "stitch_multiple_prices",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_with_multiple_prices_no_roll",
+          "callee": "_update_adjusted_prices_from_multiple_no_roll",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "copy",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "multiple_prices.ffill",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "Exception",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "adjusted_prices_values.append",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "_roll_in_panama",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_panama_stitch",
+          "callee": "pd.Series",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_roll_in_panama",
+          "callee": "np.isnan",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_roll_in_panama",
+          "callee": "Exception",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_roll_in_panama",
+          "callee": "str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_roll_in_panama",
+          "callee": "adjusted_prices_values.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_update_adjusted_prices_from_multiple_no_roll",
+          "callee": "_calc_new_multiple_prices",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_update_adjusted_prices_from_multiple_no_roll",
+          "callee": "new_multiple_price_data.check_all_contracts_equal_to",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_update_adjusted_prices_from_multiple_no_roll",
+          "callee": "new_adjusted_prices.dropna",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_update_adjusted_prices_from_multiple_no_roll",
+          "callee": "full_merge_of_existing_series",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_update_adjusted_prices_from_multiple_no_roll",
+          "callee": "futuresAdjustedPrices",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_calc_new_multiple_prices",
+          "callee": "updated_multiple_prices.as_dict",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_calc_new_multiple_prices",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_calc_new_multiple_prices",
+          "callee": "prices_in_multiple_prices.prices_after_date",
+          "lineNumber": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/contract_dates_and_expiries.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 619,
+      "nonEmptyLines": 461,
+      "functions": [
+        {
+          "name": "from_contract_numbers_to_contract_string",
+          "startLine": 23,
+          "endLine": 36,
+          "params": [
+            "new_year_number",
+            "new_month_number",
+            "new_day_number"
+          ]
+        },
+        {
+          "name": "resolve_date_string_into_list_of_single_contract_dates",
+          "startLine": 485,
+          "endLine": 497,
+          "params": [
+            "date_str",
+            "expiry_date",
+            "approx_expiry_offset"
+          ]
+        },
+        {
+          "name": "get_contract_date_object_list_from_dict",
+          "startLine": 500,
+          "endLine": 513,
+          "params": [
+            "date_str"
+          ]
+        },
+        {
+          "name": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "startLine": 516,
+          "endLine": 534,
+          "params": [
+            "date_str",
+            "expiry_date",
+            "approx_expiry_offset"
+          ]
+        },
+        {
+          "name": "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+          "startLine": 537,
+          "endLine": 545,
+          "params": [
+            "date_str",
+            "expiry_date"
+          ]
+        },
+        {
+          "name": "resolve_date_string_into_list_of_date_str",
+          "startLine": 548,
+          "endLine": 563,
+          "params": [
+            "date_str"
+          ]
+        },
+        {
+          "name": "resolve_expiry_date_into_list_of_expiry_dates",
+          "startLine": 566,
+          "endLine": 593,
+          "params": [
+            "expiry_date",
+            "date_str_as_list"
+          ]
+        },
+        {
+          "name": "create_contract_date_from_old_style_dict",
+          "startLine": 596,
+          "endLine": 605,
+          "params": [
+            "contractDate",
+            "results_dict"
+          ]
+        },
+        {
+          "name": "contract_given_tuple",
+          "startLine": 608,
+          "endLine": 619,
+          "params": [
+            "contract_date",
+            "year_value",
+            "month_str"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "needSingleLegDate",
+          "startLine": 19,
+          "endLine": 20,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "expiryDate",
+          "startLine": 42,
+          "endLine": 58,
+          "methods": [
+            "as_tuple",
+            "from_str",
+            "as_str"
+          ],
+          "properties": []
+        },
+        {
+          "name": "singleContractDate",
+          "startLine": 61,
+          "endLine": 259,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "__eq__",
+            "date_str",
+            "_init_with_yymm",
+            "_init_with_yymmdd",
+            "_get_expiry_date_from_approx_expiry",
+            "expiry_date",
+            "only_has_month",
+            "update_expiry_date",
+            "update_expiry_date_with_new_offset",
+            "as_dict",
+            "create_from_dict",
+            "year",
+            "month",
+            "day",
+            "is_day_defined",
+            "letter_month",
+            "date_str_to_year_month",
+            "as_date",
+            "_as_date_tuple",
+            "_date_str_with_no_trailing_zeros"
+          ],
+          "properties": []
+        },
+        {
+          "name": "listOfContractDateStr",
+          "startLine": 265,
+          "endLine": 270,
+          "methods": [
+            "sorted_date_str",
+            "final_date_str"
+          ],
+          "properties": []
+        },
+        {
+          "name": "contractDate",
+          "startLine": 273,
+          "endLine": 482,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "__eq__",
+            "list_of_single_contract_dates",
+            "list_of_date_str",
+            "index_of_sorted_contract_dates",
+            "sort_with_idx",
+            "key",
+            "is_spread_contract",
+            "first_contract_date",
+            "nth_single_contract_as_contract_date",
+            "nth_contract_date",
+            "only_has_month",
+            "expiry_date",
+            "date_str",
+            "date_str_to_year_month",
+            "update_single_expiry_date",
+            "update_expiry_date_with_new_offset",
+            "update_nth_expiry_date",
+            "as_dict",
+            "create_from_dict",
+            "year",
+            "month",
+            "day",
+            "is_day_defined",
+            "letter_month",
+            "__len__",
+            "__getitem__",
+            "__setitem__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "needSingleLegDate",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "from_contract_numbers_to_contract_string",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "expiryDate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "singleContractDate",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "listOfContractDateStr",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "contractDate",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_date_string_into_list_of_single_contract_dates",
+          "line": 485,
+          "isDefault": false
+        },
+        {
+          "name": "get_contract_date_object_list_from_dict",
+          "line": 500,
+          "isDefault": false
+        },
+        {
+          "name": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "line": 516,
+          "isDefault": false
+        },
+        {
+          "name": "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+          "line": 537,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_date_string_into_list_of_date_str",
+          "line": 548,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_expiry_date_into_list_of_expiry_dates",
+          "line": 566,
+          "isDefault": false
+        },
+        {
+          "name": "create_contract_date_from_old_style_dict",
+          "line": 596,
+          "isDefault": false
+        },
+        {
+          "name": "contract_given_tuple",
+          "line": 608,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_contract_numbers_to_contract_string",
+          "callee": "\"{0:02d}\".format",
+          "lineNumber": 26
+        },
+        {
+          "caller": "from_contract_numbers_to_contract_string",
+          "callee": "str",
+          "lineNumber": 27
+        },
+        {
+          "caller": "from_contract_numbers_to_contract_string",
+          "callee": "\"{0:02d}\".format",
+          "lineNumber": 32
+        },
+        {
+          "caller": "from_str",
+          "callee": "datetime.datetime.strptime",
+          "lineNumber": 49
+        },
+        {
+          "caller": "from_str",
+          "callee": "Exception",
+          "lineNumber": 51
+        },
+        {
+          "caller": "from_str",
+          "callee": "expiryDate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "as_str",
+          "callee": "self.strftime",
+          "lineNumber": 58
+        },
+        {
+          "caller": "__init__",
+          "callee": "isinstance",
+          "lineNumber": 95
+        },
+        {
+          "caller": "__init__",
+          "callee": "int",
+          "lineNumber": 96
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 98
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._init_with_yymm",
+          "lineNumber": 99
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._init_with_yymmdd",
+          "lineNumber": 101
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 103
+        },
+        {
+          "caller": "__init__",
+          "callee": "str",
+          "lineNumber": 103
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_init_with_yymm",
+          "callee": "\"\".join",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_init_with_yymmdd",
+          "callee": "self._init_with_yymm",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_get_expiry_date_from_approx_expiry",
+          "callee": "self.as_date",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_get_expiry_date_from_approx_expiry",
+          "callee": "datetime.timedelta",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_get_expiry_date_from_approx_expiry",
+          "callee": "np_convert",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_get_expiry_date_from_approx_expiry",
+          "callee": "expiryDate",
+          "lineNumber": 161
+        },
+        {
+          "caller": "expiry_date",
+          "callee": "self._get_expiry_date_from_approx_expiry",
+          "lineNumber": 170
+        },
+        {
+          "caller": "update_expiry_date_with_new_offset",
+          "callee": "self._get_expiry_date_from_approx_expiry",
+          "lineNumber": 183
+        },
+        {
+          "caller": "update_expiry_date_with_new_offset",
+          "callee": "self.update_expiry_date",
+          "lineNumber": 184
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self.expiry_date.as_tuple",
+          "lineNumber": 188
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self._date_str_with_no_trailing_zeros",
+          "lineNumber": 192
+        },
+        {
+          "caller": "as_dict",
+          "callee": "dict",
+          "lineNumber": 194
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "results_dict.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "expiryDate",
+          "lineNumber": 206
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "contractDate",
+          "lineNumber": 210
+        },
+        {
+          "caller": "year",
+          "callee": "int",
+          "lineNumber": 213
+        },
+        {
+          "caller": "month",
+          "callee": "int",
+          "lineNumber": 216
+        },
+        {
+          "caller": "day",
+          "callee": "self.is_day_defined",
+          "lineNumber": 219
+        },
+        {
+          "caller": "day",
+          "callee": "int",
+          "lineNumber": 222
+        },
+        {
+          "caller": "letter_month",
+          "callee": "contract_month_from_number",
+          "lineNumber": 231
+        },
+        {
+          "caller": "letter_month",
+          "callee": "self.month",
+          "lineNumber": 231
+        },
+        {
+          "caller": "date_str_to_year_month",
+          "callee": "self.letter_month",
+          "lineNumber": 234
+        },
+        {
+          "caller": "date_str_to_year_month",
+          "callee": "self.year",
+          "lineNumber": 235
+        },
+        {
+          "caller": "as_date",
+          "callee": "self._as_date_tuple",
+          "lineNumber": 240
+        },
+        {
+          "caller": "as_date",
+          "callee": "datetime.datetime",
+          "lineNumber": 242
+        },
+        {
+          "caller": "_as_date_tuple",
+          "callee": "self.day",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_as_date_tuple",
+          "callee": "self.year",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_as_date_tuple",
+          "callee": "self.month",
+          "lineNumber": 250
+        },
+        {
+          "caller": "sorted_date_str",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 267
+        },
+        {
+          "caller": "sorted_date_str",
+          "callee": "sorted",
+          "lineNumber": 267
+        },
+        {
+          "caller": "final_date_str",
+          "callee": "self.sorted_date_str",
+          "lineNumber": 270
+        },
+        {
+          "caller": "__init__",
+          "callee": "singleContractDate",
+          "lineNumber": 327
+        },
+        {
+          "caller": "__init__",
+          "callee": "resolve_date_string_into_list_of_single_contract_dates",
+          "lineNumber": 329
+        },
+        {
+          "caller": "__eq__",
+          "callee": "len",
+          "lineNumber": 342
+        },
+        {
+          "caller": "__eq__",
+          "callee": "len",
+          "lineNumber": 342
+        },
+        {
+          "caller": "__eq__",
+          "callee": "zip",
+          "lineNumber": 349
+        },
+        {
+          "caller": "__eq__",
+          "callee": "all",
+          "lineNumber": 354
+        },
+        {
+          "caller": "index_of_sorted_contract_dates",
+          "callee": "sorted",
+          "lineNumber": 371
+        },
+        {
+          "caller": "index_of_sorted_contract_dates",
+          "callee": "range",
+          "lineNumber": 371
+        },
+        {
+          "caller": "index_of_sorted_contract_dates",
+          "callee": "len",
+          "lineNumber": 371
+        },
+        {
+          "caller": "is_spread_contract",
+          "callee": "len",
+          "lineNumber": 384
+        },
+        {
+          "caller": "first_contract_date",
+          "callee": "needSingleLegDate",
+          "lineNumber": 392
+        },
+        {
+          "caller": "first_contract_date",
+          "callee": "str",
+          "lineNumber": 394
+        },
+        {
+          "caller": "nth_single_contract_as_contract_date",
+          "callee": "self.nth_contract_date",
+          "lineNumber": 400
+        },
+        {
+          "caller": "nth_single_contract_as_contract_date",
+          "callee": "contract_as_single_contract.as_dict",
+          "lineNumber": 402
+        },
+        {
+          "caller": "nth_single_contract_as_contract_date",
+          "callee": "contractDate",
+          "lineNumber": 405
+        },
+        {
+          "caller": "date_str",
+          "callee": "\"_\".join",
+          "lineNumber": 420
+        },
+        {
+          "caller": "update_single_expiry_date",
+          "callee": "self.update_nth_expiry_date",
+          "lineNumber": 430
+        },
+        {
+          "caller": "update_expiry_date_with_new_offset",
+          "callee": "self.nth_contract_date",
+          "lineNumber": 434
+        },
+        {
+          "caller": "update_expiry_date_with_new_offset",
+          "callee": "single_contract_date.update_expiry_date_with_new_offset",
+          "lineNumber": 435
+        },
+        {
+          "caller": "update_nth_expiry_date",
+          "callee": "self.nth_contract_date",
+          "lineNumber": 438
+        },
+        {
+          "caller": "update_nth_expiry_date",
+          "callee": "single_contract_date.update_expiry_date",
+          "lineNumber": 439
+        },
+        {
+          "caller": "as_dict",
+          "callee": "contract_date.as_dict",
+          "lineNumber": 444
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "results_dict.keys",
+          "lineNumber": 453
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "contractDate",
+          "lineNumber": 455
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "create_contract_date_from_old_style_dict",
+          "lineNumber": 458
+        },
+        {
+          "caller": "year",
+          "callee": "self.first_contract_date.year",
+          "lineNumber": 461
+        },
+        {
+          "caller": "month",
+          "callee": "self.first_contract_date.month",
+          "lineNumber": 464
+        },
+        {
+          "caller": "day",
+          "callee": "self.first_contract_date.day",
+          "lineNumber": 467
+        },
+        {
+          "caller": "is_day_defined",
+          "callee": "self.first_contract_date.is_day_defined",
+          "lineNumber": 470
+        },
+        {
+          "caller": "letter_month",
+          "callee": "self.first_contract_date.letter_month",
+          "lineNumber": 473
+        },
+        {
+          "caller": "__len__",
+          "callee": "len",
+          "lineNumber": 476
+        },
+        {
+          "caller": "resolve_date_string_into_list_of_single_contract_dates",
+          "callee": "type",
+          "lineNumber": 488
+        },
+        {
+          "caller": "resolve_date_string_into_list_of_single_contract_dates",
+          "callee": "get_contract_date_object_list_from_dict",
+          "lineNumber": 489
+        },
+        {
+          "caller": "resolve_date_string_into_list_of_single_contract_dates",
+          "callee": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "lineNumber": 492
+        },
+        {
+          "caller": "get_contract_date_object_list_from_dict",
+          "callee": "Exception",
+          "lineNumber": 504
+        },
+        {
+          "caller": "get_contract_date_object_list_from_dict",
+          "callee": "singleContractDate.create_from_dict",
+          "lineNumber": 509
+        },
+        {
+          "caller": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "callee": "resolve_date_string_into_list_of_date_str",
+          "lineNumber": 519
+        },
+        {
+          "caller": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "callee": "resolve_expiry_date_into_list_of_expiry_dates",
+          "lineNumber": 520
+        },
+        {
+          "caller": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "callee": "singleContractDate",
+          "lineNumber": 524
+        },
+        {
+          "caller": "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "callee": "zip",
+          "lineNumber": 529
+        },
+        {
+          "caller": "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+          "callee": "resolve_date_string_into_list_of_date_str",
+          "lineNumber": 540
+        },
+        {
+          "caller": "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+          "callee": "resolve_expiry_date_into_list_of_expiry_dates",
+          "lineNumber": 541
+        },
+        {
+          "caller": "resolve_date_string_into_list_of_date_str",
+          "callee": "type",
+          "lineNumber": 559
+        },
+        {
+          "caller": "resolve_date_string_into_list_of_date_str",
+          "callee": "date_str.split",
+          "lineNumber": 562
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "len",
+          "lineNumber": 568
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "type",
+          "lineNumber": 570
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "len",
+          "lineNumber": 572
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "len",
+          "lineNumber": 572
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "Exception",
+          "lineNumber": 574
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "type",
+          "lineNumber": 580
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "len",
+          "lineNumber": 582
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "Exception",
+          "lineNumber": 584
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "Exception",
+          "lineNumber": 590
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "str",
+          "lineNumber": 592
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "str",
+          "lineNumber": 592
+        },
+        {
+          "caller": "resolve_expiry_date_into_list_of_expiry_dates",
+          "callee": "type",
+          "lineNumber": 592
+        },
+        {
+          "caller": "create_contract_date_from_old_style_dict",
+          "callee": "results_dict.get",
+          "lineNumber": 598
+        },
+        {
+          "caller": "create_contract_date_from_old_style_dict",
+          "callee": "expiryDate",
+          "lineNumber": 601
+        },
+        {
+          "caller": "create_contract_date_from_old_style_dict",
+          "callee": "contractDate",
+          "lineNumber": 605
+        },
+        {
+          "caller": "contract_given_tuple",
+          "callee": "contract_date.day",
+          "lineNumber": 612
+        },
+        {
+          "caller": "contract_given_tuple",
+          "callee": "month_from_contract_letter",
+          "lineNumber": 614
+        },
+        {
+          "caller": "contract_given_tuple",
+          "callee": "from_contract_numbers_to_contract_string",
+          "lineNumber": 615
+        },
+        {
+          "caller": "contract_given_tuple",
+          "callee": "contractDate",
+          "lineNumber": 619
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 14,
+        "functionCount": 9,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "sysobjects/dict_of_futures_per_contract_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "get_last_matched_date_and_prices_for_contract_list",
+          "startLine": 128,
+          "endLine": 152,
+          "params": [
+            "dict_of_prices",
+            "contracts_to_match",
+            "list_of_contract_date_str"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dictFuturesContractFinalPrices",
+          "startLine": 11,
+          "endLine": 67,
+          "methods": [
+            "__repr__",
+            "sorted_contract_date_str",
+            "_get_and_set_sorted_contract_date_str",
+            "last_contract_date_str",
+            "joint_data",
+            "matched_prices"
+          ],
+          "properties": []
+        },
+        {
+          "name": "dictFuturesContractVolumes",
+          "startLine": 70,
+          "endLine": 75,
+          "methods": [
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "dictFuturesContractPrices",
+          "startLine": 78,
+          "endLine": 125,
+          "methods": [
+            "__repr__",
+            "final_prices",
+            "daily_volumes"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dictFuturesContractFinalPrices",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "dictFuturesContractVolumes",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "dictFuturesContractPrices",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "get_last_matched_date_and_prices_for_contract_list",
+          "line": 128,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__repr__",
+          "callee": "len",
+          "lineNumber": 13
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.keys",
+          "lineNumber": 14
+        },
+        {
+          "caller": "sorted_contract_date_str",
+          "callee": "getattr",
+          "lineNumber": 24
+        },
+        {
+          "caller": "sorted_contract_date_str",
+          "callee": "self._get_and_set_sorted_contract_date_str",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_get_and_set_sorted_contract_date_str",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_get_and_set_sorted_contract_date_str",
+          "callee": "self.keys",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_get_and_set_sorted_contract_date_str",
+          "callee": "all_contract_date_str.sorted_date_str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "last_contract_date_str",
+          "callee": "self.sorted_contract_date_str",
+          "lineNumber": 40
+        },
+        {
+          "caller": "last_contract_date_str",
+          "callee": "all_contract_date_str_sorted.final_date_str",
+          "lineNumber": 42
+        },
+        {
+          "caller": "joint_data",
+          "callee": "pd.Series",
+          "lineNumber": 46
+        },
+        {
+          "caller": "joint_data",
+          "callee": "self.items",
+          "lineNumber": 46
+        },
+        {
+          "caller": "joint_data",
+          "callee": "pd.concat",
+          "lineNumber": 48
+        },
+        {
+          "caller": "matched_prices",
+          "callee": "self.keys",
+          "lineNumber": 56
+        },
+        {
+          "caller": "matched_prices",
+          "callee": "self.joint_data",
+          "lineNumber": 58
+        },
+        {
+          "caller": "matched_prices",
+          "callee": "joint_data_to_match.dropna",
+          "lineNumber": 61
+        },
+        {
+          "caller": "matched_prices",
+          "callee": "len",
+          "lineNumber": 63
+        },
+        {
+          "caller": "__repr__",
+          "callee": "len",
+          "lineNumber": 72
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.keys",
+          "lineNumber": 73
+        },
+        {
+          "caller": "__repr__",
+          "callee": "len",
+          "lineNumber": 88
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.keys",
+          "lineNumber": 89
+        },
+        {
+          "caller": "final_prices",
+          "callee": "list",
+          "lineNumber": 99
+        },
+        {
+          "caller": "final_prices",
+          "callee": "self.keys",
+          "lineNumber": 99
+        },
+        {
+          "caller": "final_prices",
+          "callee": "self[contract_id].return_final_prices",
+          "lineNumber": 102
+        },
+        {
+          "caller": "final_prices",
+          "callee": "final_price_dict_as_list.append",
+          "lineNumber": 104
+        },
+        {
+          "caller": "final_prices",
+          "callee": "dictFuturesContractFinalPrices",
+          "lineNumber": 106
+        },
+        {
+          "caller": "daily_volumes",
+          "callee": "list",
+          "lineNumber": 116
+        },
+        {
+          "caller": "daily_volumes",
+          "callee": "self.keys",
+          "lineNumber": 116
+        },
+        {
+          "caller": "daily_volumes",
+          "callee": "self[contract_id].daily_volumes",
+          "lineNumber": 119
+        },
+        {
+          "caller": "daily_volumes",
+          "callee": "volume_dict_as_list.append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "daily_volumes",
+          "callee": "dictFuturesContractVolumes",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "dict_of_prices.final_prices",
+          "lineNumber": 133
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "dict_of_final_prices.matched_prices",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "dict_of_final_prices.joint_data",
+          "lineNumber": 142
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "list",
+          "lineNumber": 144
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "len",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysobjects/dict_of_named_futures_per_contract_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 337,
+      "nonEmptyLines": 258,
+      "functions": [
+        {
+          "name": "contract_name_from_column_name",
+          "startLine": 19,
+          "endLine": 20,
+          "params": [
+            "column_name"
+          ]
+        },
+        {
+          "name": "_check_key_list_is_valid_against_names",
+          "startLine": 39,
+          "endLine": 48,
+          "params": [
+            "some_dict"
+          ]
+        },
+        {
+          "name": "_merge_futures_contract_final_prices_with_contract_id",
+          "startLine": 169,
+          "endLine": 194,
+          "params": [
+            "original_data",
+            "new_data"
+          ]
+        },
+        {
+          "name": "_assert_merge_is_valid",
+          "startLine": 197,
+          "endLine": 213,
+          "params": [
+            "original_data",
+            "new_data"
+          ]
+        },
+        {
+          "name": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "startLine": 312,
+          "endLine": 337,
+          "params": [
+            "first_dict",
+            "second_dict"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dictNamedFuturesContractFinalPrices",
+          "startLine": 29,
+          "endLine": 36,
+          "methods": [
+            "__init__",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "futuresNamedContractFinalPricesWithContractID",
+          "startLine": 51,
+          "endLine": 166,
+          "methods": [
+            "__init__",
+            "price_column_name",
+            "contract_column_name",
+            "prices",
+            "ts_of_contract_str",
+            "as_pd",
+            "create_with_single_contractid",
+            "prices_after_date",
+            "final_contract",
+            "check_all_contracts_equal_to",
+            "merge_data"
+          ],
+          "properties": []
+        },
+        {
+          "name": "setOfNamedContracts",
+          "startLine": 216,
+          "endLine": 247,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "list_of_date_str",
+            "price",
+            "carry",
+            "forward",
+            "furthest_out_contract_date"
+          ],
+          "properties": []
+        },
+        {
+          "name": "dictFuturesNamedContractFinalPricesWithContractID",
+          "startLine": 250,
+          "endLine": 309,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "create_from_two_dicts",
+            "merge_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "contract_name_from_column_name",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "dictNamedFuturesContractFinalPrices",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_check_key_list_is_valid_against_names",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "futuresNamedContractFinalPricesWithContractID",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "_merge_futures_contract_final_prices_with_contract_id",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "_assert_merge_is_valid",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "setOfNamedContracts",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "dictFuturesNamedContractFinalPricesWithContractID",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "line": 312,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "_check_key_list_is_valid_against_names",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.keys",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "list",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "some_dict.keys",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "keys.sort",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "Exception",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "str",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_check_key_list_is_valid_against_names",
+          "callee": "str",
+          "lineNumber": 47
+        },
+        {
+          "caller": "__init__",
+          "callee": "pd.concat",
+          "lineNumber": 70
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 75
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 75
+        },
+        {
+          "caller": "as_pd",
+          "callee": "pd.DataFrame",
+          "lineNumber": 97
+        },
+        {
+          "caller": "create_with_single_contractid",
+          "callee": "len",
+          "lineNumber": 114
+        },
+        {
+          "caller": "create_with_single_contractid",
+          "callee": "pd.Series",
+          "lineNumber": 115
+        },
+        {
+          "caller": "create_with_single_contractid",
+          "callee": "futuresNamedContractFinalPricesWithContractID",
+          "lineNumber": 117
+        },
+        {
+          "caller": "prices_after_date",
+          "callee": "futuresNamedContractFinalPricesWithContractID",
+          "lineNumber": 124
+        },
+        {
+          "caller": "check_all_contracts_equal_to",
+          "callee": "str",
+          "lineNumber": 148
+        },
+        {
+          "caller": "check_all_contracts_equal_to",
+          "callee": "int",
+          "lineNumber": 148
+        },
+        {
+          "caller": "check_all_contracts_equal_to",
+          "callee": "all",
+          "lineNumber": 151
+        },
+        {
+          "caller": "merge_data",
+          "callee": "_merge_futures_contract_final_prices_with_contract_id",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_merge_futures_contract_final_prices_with_contract_id",
+          "callee": "len",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_merge_futures_contract_final_prices_with_contract_id",
+          "callee": "_assert_merge_is_valid",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_merge_futures_contract_final_prices_with_contract_id",
+          "callee": "merge_data_series_with_label_column",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_merge_futures_contract_final_prices_with_contract_id",
+          "callee": "futuresNamedContractFinalPricesWithContractID",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_assert_merge_is_valid",
+          "callee": "original_data.final_contract",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_assert_merge_is_valid",
+          "callee": "new_data.check_all_contracts_equal_to",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_assert_merge_is_valid",
+          "callee": "Exception",
+          "lineNumber": 206
+        },
+        {
+          "caller": "_assert_merge_is_valid",
+          "callee": "Exception",
+          "lineNumber": 213
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 218
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 218
+        },
+        {
+          "caller": "__init__",
+          "callee": "_check_key_list_is_valid_against_names",
+          "lineNumber": 219
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 222
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.items",
+          "lineNumber": 222
+        },
+        {
+          "caller": "list_of_date_str",
+          "callee": "self.values",
+          "lineNumber": 226
+        },
+        {
+          "caller": "list_of_date_str",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 227
+        },
+        {
+          "caller": "furthest_out_contract_date",
+          "callee": "list",
+          "lineNumber": 244
+        },
+        {
+          "caller": "furthest_out_contract_date",
+          "callee": "self.values",
+          "lineNumber": 244
+        },
+        {
+          "caller": "furthest_out_contract_date",
+          "callee": "max",
+          "lineNumber": 245
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 260
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 260
+        },
+        {
+          "caller": "__init__",
+          "callee": "_check_key_list_is_valid_against_names",
+          "lineNumber": 261
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 264
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.keys",
+          "lineNumber": 265
+        },
+        {
+          "caller": "create_from_two_dicts",
+          "callee": "Exception",
+          "lineNumber": 286
+        },
+        {
+          "caller": "create_from_two_dicts",
+          "callee": "futuresNamedContractFinalPricesWithContractID.create_with_single_contractid",
+          "lineNumber": 291
+        },
+        {
+          "caller": "create_from_two_dicts",
+          "callee": "dictFuturesNamedContractFinalPricesWithContractID",
+          "lineNumber": 296
+        },
+        {
+          "caller": "merge_data",
+          "callee": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "callee": "Exception",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "callee": "current_data.merge_data",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_merge_dictFuturesContractFinalPricesWithContractID",
+          "callee": "dictFuturesNamedContractFinalPricesWithContractID",
+          "lineNumber": 335
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 9,
+        "functionCount": 5,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "sysobjects/multiple_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 297,
+      "nonEmptyLines": 226,
+      "functions": [
+        {
+          "name": "_check_valid_multiple_price_data",
+          "startLine": 287,
+          "endLine": 292,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "singleRowMultiplePrices",
+          "startLine": 30,
+          "endLine": 66,
+          "methods": [
+            "concat_with_multiple_prices",
+            "as_aligned_pd_row"
+          ],
+          "properties": [
+            "price",
+            "carry",
+            "forward",
+            "price_contract",
+            "carry_contract",
+            "forward_contract"
+          ]
+        },
+        {
+          "name": "futuresMultiplePrices",
+          "startLine": 69,
+          "endLine": 284,
+          "methods": [
+            "__init__",
+            "create_from_raw_data",
+            "create_empty",
+            "inverse",
+            "add_offset_to_prices",
+            "current_contract_dict",
+            "as_dict",
+            "from_merged_dict",
+            "sort_index",
+            "update_multiple_prices_with_dict",
+            "drop_trailing_nan",
+            "add_one_row_with_time_delta",
+            "forward_fill_contracts"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "singleRowMultiplePrices",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "futuresMultiplePrices",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "_check_valid_multiple_price_data",
+          "line": 287,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "concat_with_multiple_prices",
+          "callee": "datetime.timedelta",
+          "lineNumber": 39
+        },
+        {
+          "caller": "concat_with_multiple_prices",
+          "callee": "self.as_aligned_pd_row",
+          "lineNumber": 42
+        },
+        {
+          "caller": "concat_with_multiple_prices",
+          "callee": "pd.concat",
+          "lineNumber": 44
+        },
+        {
+          "caller": "concat_with_multiple_prices",
+          "callee": "pd.DataFrame",
+          "lineNumber": 44
+        },
+        {
+          "caller": "concat_with_multiple_prices",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 46
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 55
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 56
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 57
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "dict",
+          "lineNumber": 60
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "new_dict.items",
+          "lineNumber": 61
+        },
+        {
+          "caller": "as_aligned_pd_row",
+          "callee": "pd.DataFrame",
+          "lineNumber": 64
+        },
+        {
+          "caller": "__init__",
+          "callee": "_check_valid_multiple_price_data",
+          "lineNumber": 71
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 72
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 72
+        },
+        {
+          "caller": "create_from_raw_data",
+          "callee": "create_multiple_price_stack_from_raw_data",
+          "lineNumber": 91
+        },
+        {
+          "caller": "create_from_raw_data",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 95
+        },
+        {
+          "caller": "create_empty",
+          "callee": "pd.DataFrame",
+          "lineNumber": 106
+        },
+        {
+          "caller": "create_empty",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 108
+        },
+        {
+          "caller": "inverse",
+          "callee": "copy",
+          "lineNumber": 113
+        },
+        {
+          "caller": "inverse",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 117
+        },
+        {
+          "caller": "add_offset_to_prices",
+          "callee": "copy",
+          "lineNumber": 120
+        },
+        {
+          "caller": "add_offset_to_prices",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 124
+        },
+        {
+          "caller": "current_contract_dict",
+          "callee": "len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "current_contract_dict",
+          "callee": "dict",
+          "lineNumber": 131
+        },
+        {
+          "caller": "current_contract_dict",
+          "callee": "contract_column_names.items",
+          "lineNumber": 132
+        },
+        {
+          "caller": "current_contract_dict",
+          "callee": "setOfNamedContracts",
+          "lineNumber": 134
+        },
+        {
+          "caller": "as_dict",
+          "callee": "contract_name_from_column_name",
+          "lineNumber": 147
+        },
+        {
+          "caller": "as_dict",
+          "callee": "futuresNamedContractFinalPricesWithContractID",
+          "lineNumber": 150
+        },
+        {
+          "caller": "as_dict",
+          "callee": "dictFuturesNamedContractFinalPricesWithContractID",
+          "lineNumber": 156
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "price_column_names.keys",
+          "lineNumber": 173
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "Exception",
+          "lineNumber": 178
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "multiple_prices_list.append",
+          "lineNumber": 182
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "relevant_data.as_pd",
+          "lineNumber": 182
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "pd.concat",
+          "lineNumber": 184
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "multiple_prices_data_frame[list_of_contract_column_names].ffill",
+          "lineNumber": 190
+        },
+        {
+          "caller": "from_merged_dict",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 192
+        },
+        {
+          "caller": "sort_index",
+          "callee": "pd.DataFrame",
+          "lineNumber": 197
+        },
+        {
+          "caller": "sort_index",
+          "callee": "df.sort_index",
+          "lineNumber": 198
+        },
+        {
+          "caller": "sort_index",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 200
+        },
+        {
+          "caller": "update_multiple_prices_with_dict",
+          "callee": "self.as_dict",
+          "lineNumber": 222
+        },
+        {
+          "caller": "update_multiple_prices_with_dict",
+          "callee": "current_prices_dict.merge_data",
+          "lineNumber": 225
+        },
+        {
+          "caller": "update_multiple_prices_with_dict",
+          "callee": "futuresMultiplePrices.from_merged_dict",
+          "lineNumber": 229
+        },
+        {
+          "caller": "drop_trailing_nan",
+          "callee": "copy",
+          "lineNumber": 239
+        },
+        {
+          "caller": "drop_trailing_nan",
+          "callee": "len",
+          "lineNumber": 242
+        },
+        {
+          "caller": "drop_trailing_nan",
+          "callee": "new_multiple_prices.isna",
+          "lineNumber": 244
+        },
+        {
+          "caller": "drop_trailing_nan",
+          "callee": "all",
+          "lineNumber": 246
+        },
+        {
+          "caller": "drop_trailing_nan",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 258
+        },
+        {
+          "caller": "add_one_row_with_time_delta",
+          "callee": "single_row_prices.concat_with_multiple_prices",
+          "lineNumber": 272
+        },
+        {
+          "caller": "add_one_row_with_time_delta",
+          "callee": "new_multiple_prices.forward_fill_contracts",
+          "lineNumber": 275
+        },
+        {
+          "caller": "forward_fill_contracts",
+          "callee": "copy",
+          "lineNumber": 280
+        },
+        {
+          "caller": "forward_fill_contracts",
+          "callee": "combined_df[colname].ffill",
+          "lineNumber": 282
+        },
+        {
+          "caller": "forward_fill_contracts",
+          "callee": "futuresMultiplePrices",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_check_valid_multiple_price_data",
+          "callee": "sorted",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_check_valid_multiple_price_data",
+          "callee": "Exception",
+          "lineNumber": 292
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysobjects/roll_calendars.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 136,
+      "functions": [
+        {
+          "name": "_check_row_of_row_calendar",
+          "startLine": 120,
+          "endLine": 175,
+          "params": [
+            "calendar_row",
+            "dict_of_futures_contract_prices"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "rollCalendar",
+          "startLine": 17,
+          "endLine": 117,
+          "methods": [
+            "create_from_prices",
+            "back_out_from_multiple_prices",
+            "check_if_date_index_monotonic",
+            "check_dates_are_valid_for_prices"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollCalendar",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "_check_row_of_row_calendar",
+          "line": 120,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create_from_prices",
+          "callee": "generate_approximate_calendar",
+          "lineNumber": 51
+        },
+        {
+          "caller": "create_from_prices",
+          "callee": "adjust_to_price_series",
+          "lineNumber": 55
+        },
+        {
+          "caller": "create_from_prices",
+          "callee": "rollCalendar",
+          "lineNumber": 59
+        },
+        {
+          "caller": "back_out_from_multiple_prices",
+          "callee": "back_out_roll_calendar_from_multiple_prices",
+          "lineNumber": 74
+        },
+        {
+          "caller": "back_out_from_multiple_prices",
+          "callee": "rollCalendar",
+          "lineNumber": 77
+        },
+        {
+          "caller": "check_if_date_index_monotonic",
+          "callee": "print",
+          "lineNumber": 83
+        },
+        {
+          "caller": "check_if_date_index_monotonic",
+          "callee": "print",
+          "lineNumber": 88
+        },
+        {
+          "caller": "check_dates_are_valid_for_prices",
+          "callee": "range",
+          "lineNumber": 106
+        },
+        {
+          "caller": "check_dates_are_valid_for_prices",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "check_dates_are_valid_for_prices",
+          "callee": "_check_row_of_row_calendar",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "str",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "str",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "str",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "np.isnan",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "np.isnan",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_check_row_of_row_calendar",
+          "callee": "print",
+          "lineNumber": 172
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/roll_parameters_with_price_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 304,
+      "nonEmptyLines": 243,
+      "functions": [
+        {
+          "name": "find_earliest_held_contract_with_price_data",
+          "startLine": 227,
+          "endLine": 243,
+          "params": [
+            "roll_parameters_object",
+            "price_dict"
+          ]
+        },
+        {
+          "name": "_find_earliest_held_contract_with_data",
+          "startLine": 246,
+          "endLine": 267,
+          "params": [
+            "list_of_contract_dates",
+            "roll_parameters_object",
+            "price_dict"
+          ]
+        },
+        {
+          "name": "_initial_contract_to_try_with",
+          "startLine": 270,
+          "endLine": 288,
+          "params": [
+            "list_of_contract_dates",
+            "roll_parameters_object",
+            "price_dict"
+          ]
+        },
+        {
+          "name": "_check_valid_contract",
+          "startLine": 291,
+          "endLine": 304,
+          "params": [
+            "try_contract",
+            "list_of_contract_dates"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "contractWithRollParametersAndPrices",
+          "startLine": 14,
+          "endLine": 224,
+          "methods": [
+            "__init__",
+            "contract",
+            "prices",
+            "roll_parameters",
+            "date_str",
+            "desired_roll_date",
+            "update_expiry_with_offset_from_parameters",
+            "next_held_contract",
+            "next_priced_contract",
+            "previous_priced_contract",
+            "previous_held_contract",
+            "find_next_held_contract_with_price_data",
+            "find_next_priced_contract_with_price_data",
+            "_find_next_contract_with_price_data",
+            "find_previous_priced_contract_with_price_data",
+            "find_previous_held_contract_with_price_data",
+            "_find_previous_contract_with_price_data",
+            "find_best_carry_contract_with_price_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "contractWithRollParametersAndPrices",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "find_earliest_held_contract_with_price_data",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "_find_earliest_held_contract_with_data",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "_initial_contract_to_try_with",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "_check_valid_contract",
+          "line": 291,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_expiry_with_offset_from_parameters",
+          "callee": "self.contract.contract_date.update_expiry_date_with_new_offset",
+          "lineNumber": 55
+        },
+        {
+          "caller": "next_held_contract",
+          "callee": "self.contract.next_held_contract",
+          "lineNumber": 58
+        },
+        {
+          "caller": "next_held_contract",
+          "callee": "contractWithRollParametersAndPrices",
+          "lineNumber": 59
+        },
+        {
+          "caller": "next_priced_contract",
+          "callee": "self.contract.next_priced_contract",
+          "lineNumber": 64
+        },
+        {
+          "caller": "next_priced_contract",
+          "callee": "contractWithRollParametersAndPrices",
+          "lineNumber": 65
+        },
+        {
+          "caller": "previous_priced_contract",
+          "callee": "self.contract.previous_priced_contract",
+          "lineNumber": 71
+        },
+        {
+          "caller": "previous_priced_contract",
+          "callee": "contractWithRollParametersAndPrices",
+          "lineNumber": 73
+        },
+        {
+          "caller": "previous_held_contract",
+          "callee": "self.contract.previous_held_contract",
+          "lineNumber": 79
+        },
+        {
+          "caller": "previous_held_contract",
+          "callee": "contractWithRollParametersAndPrices",
+          "lineNumber": 81
+        },
+        {
+          "caller": "find_next_held_contract_with_price_data",
+          "callee": "self._find_next_contract_with_price_data",
+          "lineNumber": 92
+        },
+        {
+          "caller": "find_next_priced_contract_with_price_data",
+          "callee": "self._find_next_contract_with_price_data",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_find_next_contract_with_price_data",
+          "callee": "getattr",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_find_next_contract_with_price_data",
+          "callee": "self.prices.sorted_contract_date_str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_find_next_contract_with_price_data",
+          "callee": "print",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_find_next_contract_with_price_data",
+          "callee": "getattr",
+          "lineNumber": 141
+        },
+        {
+          "caller": "find_previous_priced_contract_with_price_data",
+          "callee": "self._find_previous_contract_with_price_data",
+          "lineNumber": 153
+        },
+        {
+          "caller": "find_previous_held_contract_with_price_data",
+          "callee": "self._find_previous_contract_with_price_data",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_find_previous_contract_with_price_data",
+          "callee": "getattr",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_find_previous_contract_with_price_data",
+          "callee": "self.prices.sorted_contract_date_str",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_find_previous_contract_with_price_data",
+          "callee": "print",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_find_previous_contract_with_price_data",
+          "callee": "getattr",
+          "lineNumber": 201
+        },
+        {
+          "caller": "find_best_carry_contract_with_price_data",
+          "callee": "self.find_next_priced_contract_with_price_data",
+          "lineNumber": 218
+        },
+        {
+          "caller": "find_best_carry_contract_with_price_data",
+          "callee": "self.find_previous_priced_contract_with_price_data",
+          "lineNumber": 220
+        },
+        {
+          "caller": "find_best_carry_contract_with_price_data",
+          "callee": "Exception",
+          "lineNumber": 222
+        },
+        {
+          "caller": "find_earliest_held_contract_with_price_data",
+          "callee": "price_dict.sorted_contract_date_str",
+          "lineNumber": 237
+        },
+        {
+          "caller": "find_earliest_held_contract_with_price_data",
+          "callee": "_find_earliest_held_contract_with_data",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_find_earliest_held_contract_with_data",
+          "callee": "_initial_contract_to_try_with",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_find_earliest_held_contract_with_data",
+          "callee": "_check_valid_contract",
+          "lineNumber": 257
+        },
+        {
+          "caller": "_find_earliest_held_contract_with_data",
+          "callee": "try_contract.find_next_held_contract_with_price_data",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_initial_contract_to_try_with",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 276
+        },
+        {
+          "caller": "_initial_contract_to_try_with",
+          "callee": "contractDate",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_initial_contract_to_try_with",
+          "callee": "contractWithRollParametersAndPrices",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_check_valid_contract",
+          "callee": "try_contract.find_best_carry_contract_with_price_data",
+          "lineNumber": 298
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysobjects/rolls.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 448,
+      "nonEmptyLines": 344,
+      "classes": [
+        {
+          "name": "rollCycle",
+          "startLine": 12,
+          "endLine": 178,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "__len__",
+            "__eq__",
+            "cyclestring",
+            "iterate_contract_date",
+            "_previous_year_month_given_tuple",
+            "_next_year_month_given_tuple",
+            "_next_month",
+            "_previous_month",
+            "_offset_month",
+            "_where_month",
+            "_month_is_first",
+            "_month_is_last",
+            "_as_list",
+            "check_is_month_in_rollcycle"
+          ],
+          "properties": []
+        },
+        {
+          "name": "rollParameters",
+          "startLine": 184,
+          "endLine": 277,
+          "methods": [
+            "__init__",
+            "roll_offset_day",
+            "carry_offset",
+            "approx_expiry_offset",
+            "__eq__",
+            "__repr__",
+            "priced_rollcycle",
+            "hold_rollcycle",
+            "global_rollcycle",
+            "create_from_dict",
+            "as_dict",
+            "rolls_per_year_in_hold_cycle"
+          ],
+          "properties": []
+        },
+        {
+          "name": "contractDateWithRollParameters",
+          "startLine": 280,
+          "endLine": 448,
+          "methods": [
+            "__init__",
+            "roll_parameters",
+            "contract_date",
+            "date_str",
+            "__repr__",
+            "next_priced_contract",
+            "previous_priced_contract",
+            "next_held_contract",
+            "previous_held_contract",
+            "_closest_next_valid_priced_contract",
+            "_closest_previous_valid_priced_contract",
+            "_closest_next_valid_held_contract",
+            "_closest_previous_valid_held_contract",
+            "_next_month_contract",
+            "_previous_month_contract",
+            "_iterate_contract",
+            "_valid_date_in_priced_rollcycle",
+            "_valid_date_in_hold_rollcycle",
+            "_valid_date_in_named_rollcycle",
+            "carry_contract",
+            "desired_roll_date",
+            "get_contracts_from_recently_to_contract_date"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rollCycle",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "rollParameters",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "contractDateWithRollParameters",
+          "line": 280,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "isinstance",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "\"\".join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__init__",
+          "callee": "sorted",
+          "lineNumber": 22
+        },
+        {
+          "caller": "__len__",
+          "callee": "len",
+          "lineNumber": 28
+        },
+        {
+          "caller": "iterate_contract_date",
+          "callee": "contract_date.date_str_to_year_month",
+          "lineNumber": 40
+        },
+        {
+          "caller": "iterate_contract_date",
+          "callee": "self._next_year_month_given_tuple",
+          "lineNumber": 42
+        },
+        {
+          "caller": "iterate_contract_date",
+          "callee": "self._previous_year_month_given_tuple",
+          "lineNumber": 46
+        },
+        {
+          "caller": "iterate_contract_date",
+          "callee": "Exception",
+          "lineNumber": 50
+        },
+        {
+          "caller": "iterate_contract_date",
+          "callee": "contract_given_tuple",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_previous_year_month_given_tuple",
+          "callee": "self._previous_month",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_previous_year_month_given_tuple",
+          "callee": "self._month_is_first",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_next_year_month_given_tuple",
+          "callee": "self._next_month",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_next_year_month_given_tuple",
+          "callee": "self._month_is_last",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_next_month",
+          "callee": "self._offset_month",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_previous_month",
+          "callee": "self._offset_month",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_offset_month",
+          "callee": "self._where_month",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_offset_month",
+          "callee": "len",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_where_month",
+          "callee": "self.check_is_month_in_rollcycle",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_where_month",
+          "callee": "Exception",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_where_month",
+          "callee": "self.cyclestring.index",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_month_is_first",
+          "callee": "self._where_month",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_month_is_last",
+          "callee": "self._where_month",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_month_is_last",
+          "callee": "len",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_as_list",
+          "callee": "month_from_contract_letter",
+          "lineNumber": 164
+        },
+        {
+          "caller": "__init__",
+          "callee": "rollCycle",
+          "lineNumber": 211
+        },
+        {
+          "caller": "__init__",
+          "callee": "rollCycle",
+          "lineNumber": 212
+        },
+        {
+          "caller": "__init__",
+          "callee": "int",
+          "lineNumber": 215
+        },
+        {
+          "caller": "__init__",
+          "callee": "int",
+          "lineNumber": 216
+        },
+        {
+          "caller": "__init__",
+          "callee": "int",
+          "lineNumber": 217
+        },
+        {
+          "caller": "__repr__",
+          "callee": "self.as_dict",
+          "lineNumber": 242
+        },
+        {
+          "caller": "__repr__",
+          "callee": "\", \".join",
+          "lineNumber": 243
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 244
+        },
+        {
+          "caller": "__repr__",
+          "callee": "dict_rep.keys",
+          "lineNumber": 244
+        },
+        {
+          "caller": "create_from_dict",
+          "callee": "rollData",
+          "lineNumber": 262
+        },
+        {
+          "caller": "as_dict",
+          "callee": "dict",
+          "lineNumber": 267
+        },
+        {
+          "caller": "rolls_per_year_in_hold_cycle",
+          "callee": "len",
+          "lineNumber": 277
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 305
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 306
+        },
+        {
+          "caller": "next_priced_contract",
+          "callee": "self._closest_previous_valid_priced_contract",
+          "lineNumber": 310
+        },
+        {
+          "caller": "next_priced_contract",
+          "callee": "contract._iterate_contract",
+          "lineNumber": 311
+        },
+        {
+          "caller": "previous_priced_contract",
+          "callee": "self._closest_next_valid_priced_contract",
+          "lineNumber": 314
+        },
+        {
+          "caller": "previous_priced_contract",
+          "callee": "contract._iterate_contract",
+          "lineNumber": 315
+        },
+        {
+          "caller": "next_held_contract",
+          "callee": "self._closest_previous_valid_held_contract",
+          "lineNumber": 318
+        },
+        {
+          "caller": "next_held_contract",
+          "callee": "contract._iterate_contract",
+          "lineNumber": 319
+        },
+        {
+          "caller": "previous_held_contract",
+          "callee": "self._closest_next_valid_held_contract",
+          "lineNumber": 322
+        },
+        {
+          "caller": "previous_held_contract",
+          "callee": "contract._iterate_contract",
+          "lineNumber": 323
+        },
+        {
+          "caller": "_closest_next_valid_priced_contract",
+          "callee": "valid_contract_to_return._valid_date_in_priced_rollcycle",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_closest_next_valid_priced_contract",
+          "callee": "valid_contract_to_return._next_month_contract",
+          "lineNumber": 330
+        },
+        {
+          "caller": "_closest_previous_valid_priced_contract",
+          "callee": "valid_contract_to_return._valid_date_in_priced_rollcycle",
+          "lineNumber": 337
+        },
+        {
+          "caller": "_closest_previous_valid_priced_contract",
+          "callee": "valid_contract_to_return._previous_month_contract",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_closest_next_valid_held_contract",
+          "callee": "valid_contract_to_return._valid_date_in_hold_rollcycle",
+          "lineNumber": 347
+        },
+        {
+          "caller": "_closest_next_valid_held_contract",
+          "callee": "valid_contract_to_return._next_month_contract",
+          "lineNumber": 348
+        },
+        {
+          "caller": "_closest_previous_valid_held_contract",
+          "callee": "valid_contract_to_return._valid_date_in_hold_rollcycle",
+          "lineNumber": 355
+        },
+        {
+          "caller": "_closest_previous_valid_held_contract",
+          "callee": "valid_contract_to_return._previous_month_contract",
+          "lineNumber": 357
+        },
+        {
+          "caller": "_next_month_contract",
+          "callee": "self._iterate_contract",
+          "lineNumber": 362
+        },
+        {
+          "caller": "_previous_month_contract",
+          "callee": "self._iterate_contract",
+          "lineNumber": 365
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "getattr",
+          "lineNumber": 375
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "self._valid_date_in_named_rollcycle",
+          "lineNumber": 378
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "Exception",
+          "lineNumber": 380
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "str",
+          "lineNumber": 382
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "str",
+          "lineNumber": 382
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "rollcycle_to_use.iterate_contract_date",
+          "lineNumber": 385
+        },
+        {
+          "caller": "_iterate_contract",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 391
+        },
+        {
+          "caller": "_valid_date_in_priced_rollcycle",
+          "callee": "self._valid_date_in_named_rollcycle",
+          "lineNumber": 398
+        },
+        {
+          "caller": "_valid_date_in_hold_rollcycle",
+          "callee": "self._valid_date_in_named_rollcycle",
+          "lineNumber": 401
+        },
+        {
+          "caller": "_valid_date_in_named_rollcycle",
+          "callee": "getattr",
+          "lineNumber": 404
+        },
+        {
+          "caller": "_valid_date_in_named_rollcycle",
+          "callee": "self.contract_date.letter_month",
+          "lineNumber": 405
+        },
+        {
+          "caller": "_valid_date_in_named_rollcycle",
+          "callee": "relevant_rollcycle.check_is_month_in_rollcycle",
+          "lineNumber": 407
+        },
+        {
+          "caller": "carry_contract",
+          "callee": "self.previous_priced_contract",
+          "lineNumber": 411
+        },
+        {
+          "caller": "carry_contract",
+          "callee": "self.next_priced_contract",
+          "lineNumber": 413
+        },
+        {
+          "caller": "carry_contract",
+          "callee": "Exception",
+          "lineNumber": 415
+        },
+        {
+          "caller": "desired_roll_date",
+          "callee": "datetime.timedelta",
+          "lineNumber": 419
+        },
+        {
+          "caller": "desired_roll_date",
+          "callee": "np_convert",
+          "lineNumber": 420
+        },
+        {
+          "caller": "get_contracts_from_recently_to_contract_date",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 432
+        },
+        {
+          "caller": "get_contracts_from_recently_to_contract_date",
+          "callee": "datetime.timedelta",
+          "lineNumber": 432
+        },
+        {
+          "caller": "get_contracts_from_recently_to_contract_date",
+          "callee": "copy",
+          "lineNumber": 434
+        },
+        {
+          "caller": "get_contracts_from_recently_to_contract_date",
+          "callee": "contract_dates.append",
+          "lineNumber": 443
+        },
+        {
+          "caller": "get_contracts_from_recently_to_contract_date",
+          "callee": "current_contract_date_with_roll_parameters.previous_priced_contract",
+          "lineNumber": 445
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "sysproduction/data/contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 424,
+      "nonEmptyLines": 332,
+      "functions": [
+        {
+          "name": "get_valid_contract_object_from_user",
+          "startLine": 280,
+          "endLine": 294,
+          "params": [
+            "data",
+            "instrument_code",
+            "only_include_priced_contracts"
+          ]
+        },
+        {
+          "name": "get_valid_instrument_code_and_contractid_from_user",
+          "startLine": 297,
+          "endLine": 337,
+          "params": [
+            "data",
+            "instrument_code",
+            "only_include_priced_contracts"
+          ]
+        },
+        {
+          "name": "get_dates_to_choose_from",
+          "startLine": 340,
+          "endLine": 360,
+          "params": [
+            "data",
+            "instrument_code",
+            "only_priced_contracts"
+          ]
+        },
+        {
+          "name": "label_up_contracts_with_date_list",
+          "startLine": 369,
+          "endLine": 395,
+          "params": [
+            "contract_date_list",
+            "current_contracts"
+          ]
+        },
+        {
+          "name": "label_up_current_contracts",
+          "startLine": 398,
+          "endLine": 424,
+          "params": [
+            "current_contracts"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "dataContracts",
+          "startLine": 32,
+          "endLine": 277,
+          "methods": [
+            "_add_required_classes_to_data",
+            "db_contract_data",
+            "db_multiple_prices_data",
+            "db_roll_parameters",
+            "days_until_roll",
+            "days_until_price_expiry",
+            "days_until_carry_expiry",
+            "is_contract_in_data",
+            "mark_contract_as_sampling",
+            "mark_contract_as_not_sampling",
+            "update_expiry_date",
+            "add_contract_data",
+            "get_all_contract_objects_for_instrument_code",
+            "get_labelled_list_of_contracts_from_contract_date_list",
+            "get_all_sampled_contracts",
+            "get_labelled_dict_of_current_contracts",
+            "get_current_contract_dict",
+            "update_roll_parameters",
+            "get_roll_parameters",
+            "get_contract_from_db",
+            "get_contract_from_db_given_code_and_id",
+            "get_actual_expiry",
+            "get_priced_contract_id",
+            "_get_carry_contract_id",
+            "get_forward_contract_id",
+            "get_priced_expiry",
+            "get_carry_expiry",
+            "when_to_roll_priced_contract",
+            "get_contract_date_object_with_roll_parameters",
+            "_get_contract_date_object",
+            "delete_all_contracts_for_instrument"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dataContracts",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "get_valid_contract_object_from_user",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "get_valid_instrument_code_and_contractid_from_user",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "get_dates_to_choose_from",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "label_up_contracts_with_date_list",
+          "line": 369,
+          "isDefault": false
+        },
+        {
+          "name": "label_up_current_contracts",
+          "line": 398,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "data.add_class_list",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 39
+        },
+        {
+          "caller": "days_until_roll",
+          "callee": "self.when_to_roll_priced_contract",
+          "lineNumber": 58
+        },
+        {
+          "caller": "days_until_roll",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 59
+        },
+        {
+          "caller": "days_until_price_expiry",
+          "callee": "self.get_priced_expiry",
+          "lineNumber": 65
+        },
+        {
+          "caller": "days_until_price_expiry",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 66
+        },
+        {
+          "caller": "days_until_carry_expiry",
+          "callee": "self.get_carry_expiry",
+          "lineNumber": 72
+        },
+        {
+          "caller": "days_until_carry_expiry",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 73
+        },
+        {
+          "caller": "is_contract_in_data",
+          "callee": "self.db_contract_data.is_contract_in_data",
+          "lineNumber": 82
+        },
+        {
+          "caller": "mark_contract_as_sampling",
+          "callee": "self.get_contract_from_db",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mark_contract_as_sampling",
+          "callee": "contract_to_modify.sampling_on",
+          "lineNumber": 89
+        },
+        {
+          "caller": "mark_contract_as_sampling",
+          "callee": "self.add_contract_data",
+          "lineNumber": 91
+        },
+        {
+          "caller": "mark_contract_as_not_sampling",
+          "callee": "self.get_contract_from_db",
+          "lineNumber": 94
+        },
+        {
+          "caller": "mark_contract_as_not_sampling",
+          "callee": "contract_to_modify.sampling_off",
+          "lineNumber": 97
+        },
+        {
+          "caller": "mark_contract_as_not_sampling",
+          "callee": "self.add_contract_data",
+          "lineNumber": 99
+        },
+        {
+          "caller": "update_expiry_date",
+          "callee": "self.get_contract_from_db",
+          "lineNumber": 104
+        },
+        {
+          "caller": "update_expiry_date",
+          "callee": "contract_to_modify.update_single_expiry_date",
+          "lineNumber": 106
+        },
+        {
+          "caller": "update_expiry_date",
+          "callee": "self.add_contract_data",
+          "lineNumber": 108
+        },
+        {
+          "caller": "add_contract_data",
+          "callee": "self.db_contract_data.add_contract_data",
+          "lineNumber": 113
+        },
+        {
+          "caller": "get_all_contract_objects_for_instrument_code",
+          "callee": "self.db_contract_data.get_all_contract_objects_for_instrument_code",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_labelled_list_of_contracts_from_contract_date_list",
+          "callee": "self.get_current_contract_dict",
+          "lineNumber": 132
+        },
+        {
+          "caller": "get_labelled_list_of_contracts_from_contract_date_list",
+          "callee": "label_up_contracts_with_date_list",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_all_sampled_contracts",
+          "callee": "self.get_all_contract_objects_for_instrument_code",
+          "lineNumber": 143
+        },
+        {
+          "caller": "get_all_sampled_contracts",
+          "callee": "all_contracts.currently_sampling",
+          "lineNumber": 146
+        },
+        {
+          "caller": "get_labelled_dict_of_current_contracts",
+          "callee": "self.get_current_contract_dict",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_labelled_dict_of_current_contracts",
+          "callee": "label_up_current_contracts",
+          "lineNumber": 153
+        },
+        {
+          "caller": "get_labelled_dict_of_current_contracts",
+          "callee": "dict",
+          "lineNumber": 157
+        },
+        {
+          "caller": "get_current_contract_dict",
+          "callee": "self.db_multiple_prices_data.get_multiple_prices",
+          "lineNumber": 162
+        },
+        {
+          "caller": "get_current_contract_dict",
+          "callee": "multiple_prices.current_contract_dict",
+          "lineNumber": 165
+        },
+        {
+          "caller": "update_roll_parameters",
+          "callee": "self.db_roll_parameters.add_roll_parameters",
+          "lineNumber": 176
+        },
+        {
+          "caller": "update_roll_parameters",
+          "callee": "self.log.debug",
+          "lineNumber": 182
+        },
+        {
+          "caller": "get_roll_parameters",
+          "callee": "self.db_roll_parameters.get_roll_parameters",
+          "lineNumber": 185
+        },
+        {
+          "caller": "get_contract_from_db",
+          "callee": "self.get_contract_from_db_given_code_and_id",
+          "lineNumber": 189
+        },
+        {
+          "caller": "get_contract_from_db_given_code_and_id",
+          "callee": "self.db_contract_data.get_contract_object",
+          "lineNumber": 198
+        },
+        {
+          "caller": "get_actual_expiry",
+          "callee": "self.get_contract_from_db_given_code_and_id",
+          "lineNumber": 205
+        },
+        {
+          "caller": "get_priced_contract_id",
+          "callee": "self.get_current_contract_dict",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_get_carry_contract_id",
+          "callee": "self.get_current_contract_dict",
+          "lineNumber": 220
+        },
+        {
+          "caller": "get_forward_contract_id",
+          "callee": "self.get_current_contract_dict",
+          "lineNumber": 225
+        },
+        {
+          "caller": "get_priced_expiry",
+          "callee": "self.get_priced_contract_id",
+          "lineNumber": 230
+        },
+        {
+          "caller": "get_priced_expiry",
+          "callee": "self.get_actual_expiry",
+          "lineNumber": 231
+        },
+        {
+          "caller": "get_carry_expiry",
+          "callee": "self._get_carry_contract_id",
+          "lineNumber": 234
+        },
+        {
+          "caller": "get_carry_expiry",
+          "callee": "self.get_actual_expiry",
+          "lineNumber": 235
+        },
+        {
+          "caller": "when_to_roll_priced_contract",
+          "callee": "self.get_priced_contract_id",
+          "lineNumber": 238
+        },
+        {
+          "caller": "when_to_roll_priced_contract",
+          "callee": "self.get_contract_date_object_with_roll_parameters",
+          "lineNumber": 241
+        },
+        {
+          "caller": "get_contract_date_object_with_roll_parameters",
+          "callee": "self.get_roll_parameters",
+          "lineNumber": 251
+        },
+        {
+          "caller": "get_contract_date_object_with_roll_parameters",
+          "callee": "self._get_contract_date_object",
+          "lineNumber": 252
+        },
+        {
+          "caller": "get_contract_date_object_with_roll_parameters",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_get_contract_date_object",
+          "callee": "self.get_contract_from_db_given_code_and_id",
+          "lineNumber": 265
+        },
+        {
+          "caller": "delete_all_contracts_for_instrument",
+          "callee": "self.db_contract_data.delete_all_contracts_for_instrument",
+          "lineNumber": 275
+        },
+        {
+          "caller": "get_valid_contract_object_from_user",
+          "callee": "get_valid_instrument_code_and_contractid_from_user",
+          "lineNumber": 288
+        },
+        {
+          "caller": "get_valid_contract_object_from_user",
+          "callee": "futuresContract",
+          "lineNumber": 293
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "dataContracts",
+          "lineNumber": 302
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 307
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "get_dates_to_choose_from",
+          "lineNumber": 309
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "print",
+          "lineNumber": 316
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "diag_contracts.get_labelled_list_of_contracts_from_contract_date_list",
+          "lineNumber": 321
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "print",
+          "lineNumber": 326
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "str",
+          "lineNumber": 326
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "print",
+          "lineNumber": 327
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "input",
+          "lineNumber": 328
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "len",
+          "lineNumber": 329
+        },
+        {
+          "caller": "get_valid_instrument_code_and_contractid_from_user",
+          "callee": "print",
+          "lineNumber": 334
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "dataContracts",
+          "lineNumber": 343
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "diagPrices",
+          "lineNumber": 344
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "diag_prices.contract_dates_with_price_data_for_instrument_code",
+          "lineNumber": 347
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "diag_contracts.get_all_contract_objects_for_instrument_code",
+          "lineNumber": 352
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "contract_list.list_of_dates",
+          "lineNumber": 355
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 357
+        },
+        {
+          "caller": "get_dates_to_choose_from",
+          "callee": "dates_to_choose_from.sorted_date_str",
+          "lineNumber": 358
+        },
+        {
+          "caller": "label_up_contracts_with_date_list",
+          "callee": "contract_names.append",
+          "lineNumber": 393
+        },
+        {
+          "caller": "label_up_current_contracts",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 422
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/data/prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 525,
+      "nonEmptyLines": 420,
+      "functions": [
+        {
+          "name": "get_valid_instrument_code_from_user",
+          "startLine": 378,
+          "endLine": 413,
+          "params": [
+            "data",
+            "allow_all",
+            "allow_exit",
+            "all_code",
+            "exit_code",
+            "source"
+          ]
+        },
+        {
+          "name": "get_list_of_instruments",
+          "startLine": 416,
+          "endLine": 434,
+          "params": [
+            "data",
+            "source"
+          ]
+        },
+        {
+          "name": "recent_average_price",
+          "startLine": 437,
+          "endLine": 445,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_current_price_of_instrument",
+          "startLine": 448,
+          "endLine": 455,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_price_series",
+          "startLine": 458,
+          "endLine": 462,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_current_price_series",
+          "startLine": 465,
+          "endLine": 469,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_cash_cost_in_base_for_instrument",
+          "startLine": 472,
+          "endLine": 486,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "last_currency_fx",
+          "startLine": 489,
+          "endLine": 495,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "modify_price_when_contract_has_changed",
+          "startLine": 498,
+          "endLine": 525,
+          "params": [
+            "data",
+            "instrument_code",
+            "new_contract_date",
+            "original_contract_date",
+            "original_price"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "diagPrices",
+          "startLine": 50,
+          "endLine": 242,
+          "methods": [
+            "_add_required_classes_to_data",
+            "get_intraday_frequency_for_historical_download",
+            "get_adjusted_prices",
+            "get_list_of_instruments_in_multiple_prices",
+            "get_multiple_prices",
+            "get_merged_prices_for_contract_object",
+            "get_prices_at_frequency_for_contract_object",
+            "get_current_priced_contract_prices_for_instrument",
+            "get_list_of_instruments_with_contract_prices",
+            "contract_dates_with_price_data_for_instrument_code",
+            "get_last_matched_date_and_prices_for_contract_list",
+            "get_dict_of_prices_for_contract_list",
+            "get_spreads",
+            "get_list_of_instruments_with_spread_data",
+            "remove_stale_instruments",
+            "get_stale_instruments",
+            "db_futures_adjusted_prices_data",
+            "db_futures_multiple_prices_data",
+            "db_futures_contract_price_data",
+            "db_spreads_for_instrument_data"
+          ],
+          "properties": []
+        },
+        {
+          "name": "updatePrices",
+          "startLine": 245,
+          "endLine": 372,
+          "methods": [
+            "_add_required_classes_to_data",
+            "overwrite_merged_prices_for_contract",
+            "overwrite_prices_at_frequency_for_contract",
+            "update_prices_at_frequency_for_contract",
+            "add_multiple_prices",
+            "add_adjusted_prices",
+            "delete_merged_contract_prices_for_instrument_code",
+            "delete_contract_prices_at_frequency_for_instrument_code",
+            "delete_adjusted_prices",
+            "delete_multiple_prices",
+            "add_spread_entry",
+            "delete_spreads",
+            "db_futures_adjusted_prices_data",
+            "db_futures_multiple_prices_data",
+            "db_futures_contract_price_data",
+            "db_spreads_for_instrument_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "diagPrices",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "updatePrices",
+          "line": 245,
+          "isDefault": false
+        },
+        {
+          "name": "get_valid_instrument_code_from_user",
+          "line": 378,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_instruments",
+          "line": 416,
+          "isDefault": false
+        },
+        {
+          "name": "recent_average_price",
+          "line": 437,
+          "isDefault": false
+        },
+        {
+          "name": "get_current_price_of_instrument",
+          "line": 448,
+          "isDefault": false
+        },
+        {
+          "name": "get_price_series",
+          "line": 458,
+          "isDefault": false
+        },
+        {
+          "name": "get_current_price_series",
+          "line": 465,
+          "isDefault": false
+        },
+        {
+          "name": "get_cash_cost_in_base_for_instrument",
+          "line": 472,
+          "isDefault": false
+        },
+        {
+          "name": "last_currency_fx",
+          "line": 489,
+          "isDefault": false
+        },
+        {
+          "name": "modify_price_when_contract_has_changed",
+          "line": 498,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "data.add_class_list",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_intraday_frequency_for_historical_download",
+          "callee": "config.get_element",
+          "lineNumber": 65
+        },
+        {
+          "caller": "get_intraday_frequency_for_historical_download",
+          "callee": "from_config_frequency_to_frequency",
+          "lineNumber": 67
+        },
+        {
+          "caller": "get_intraday_frequency_for_historical_download",
+          "callee": "str",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_intraday_frequency_for_historical_download",
+          "callee": "self.log.critical",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_adjusted_prices",
+          "callee": "self.db_futures_adjusted_prices_data.get_adjusted_prices",
+          "lineNumber": 81
+        },
+        {
+          "caller": "get_list_of_instruments_in_multiple_prices",
+          "callee": "self.db_futures_multiple_prices_data.get_list_of_instruments",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_list_of_instruments_in_multiple_prices",
+          "callee": "self.remove_stale_instruments",
+          "lineNumber": 94
+        },
+        {
+          "caller": "get_multiple_prices",
+          "callee": "self.db_futures_multiple_prices_data.get_multiple_prices",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_merged_prices_for_contract_object",
+          "callee": "self.db_futures_contract_price_data.get_merged_prices_for_contract_object",
+          "lineNumber": 109
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "self.db_futures_contract_price_data.get_prices_at_frequency_for_contract_object",
+          "lineNumber": 119
+        },
+        {
+          "caller": "get_current_priced_contract_prices_for_instrument",
+          "callee": "self.get_multiple_prices",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_list_of_instruments_with_contract_prices",
+          "callee": "self.db_futures_contract_price_data.get_list_of_instrument_codes_with_merged_price_data",
+          "lineNumber": 137
+        },
+        {
+          "caller": "get_list_of_instruments_with_contract_prices",
+          "callee": "self.remove_stale_instruments",
+          "lineNumber": 141
+        },
+        {
+          "caller": "contract_dates_with_price_data_for_instrument_code",
+          "callee": "self.db_futures_contract_price_data.contract_dates_with_merged_price_data_for_instrument_code",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "self.get_dict_of_prices_for_contract_list",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_last_matched_date_and_prices_for_contract_list",
+          "callee": "get_last_matched_date_and_prices_for_contract_list",
+          "lineNumber": 181
+        },
+        {
+          "caller": "get_dict_of_prices_for_contract_list",
+          "callee": "futuresContract",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_dict_of_prices_for_contract_list",
+          "callee": "self.get_merged_prices_for_contract_object",
+          "lineNumber": 194
+        },
+        {
+          "caller": "get_dict_of_prices_for_contract_list",
+          "callee": "dictFuturesContractPrices",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_spreads",
+          "callee": "self.db_spreads_for_instrument_data.get_spreads",
+          "lineNumber": 202
+        },
+        {
+          "caller": "get_list_of_instruments_with_spread_data",
+          "callee": "self.db_spreads_for_instrument_data.get_list_of_instruments",
+          "lineNumber": 208
+        },
+        {
+          "caller": "get_list_of_instruments_with_spread_data",
+          "callee": "self.remove_stale_instruments",
+          "lineNumber": 211
+        },
+        {
+          "caller": "remove_stale_instruments",
+          "callee": "self.get_stale_instruments",
+          "lineNumber": 216
+        },
+        {
+          "caller": "get_stale_instruments",
+          "callee": "get_list_of_stale_instruments",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "data.add_class_list",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_add_required_classes_to_data",
+          "callee": "get_class_for_data_type",
+          "lineNumber": 253
+        },
+        {
+          "caller": "overwrite_merged_prices_for_contract",
+          "callee": "self.db_futures_contract_price_data.write_merged_prices_for_contract_object",
+          "lineNumber": 264
+        },
+        {
+          "caller": "overwrite_prices_at_frequency_for_contract",
+          "callee": "self.db_futures_contract_price_data.write_prices_at_frequency_for_contract_object",
+          "lineNumber": 274
+        },
+        {
+          "caller": "update_prices_at_frequency_for_contract",
+          "callee": "self.db_futures_contract_price_data.update_prices_at_frequency_for_contract",
+          "lineNumber": 290
+        },
+        {
+          "caller": "add_multiple_prices",
+          "callee": "self.db_futures_multiple_prices_data.add_multiple_prices",
+          "lineNumber": 306
+        },
+        {
+          "caller": "add_adjusted_prices",
+          "callee": "self.db_futures_adjusted_prices_data.add_adjusted_prices",
+          "lineNumber": 318
+        },
+        {
+          "caller": "delete_merged_contract_prices_for_instrument_code",
+          "callee": "self.db_futures_contract_price_data.delete_merged_prices_for_instrument_code",
+          "lineNumber": 327
+        },
+        {
+          "caller": "delete_contract_prices_at_frequency_for_instrument_code",
+          "callee": "self.db_futures_contract_price_data.delete_prices_at_frequency_for_instrument_code",
+          "lineNumber": 334
+        },
+        {
+          "caller": "delete_adjusted_prices",
+          "callee": "self.db_futures_adjusted_prices_data.delete_adjusted_prices",
+          "lineNumber": 339
+        },
+        {
+          "caller": "delete_multiple_prices",
+          "callee": "self.db_futures_multiple_prices_data.delete_multiple_prices",
+          "lineNumber": 344
+        },
+        {
+          "caller": "add_spread_entry",
+          "callee": "self.db_spreads_for_instrument_data.add_spread_entry",
+          "lineNumber": 349
+        },
+        {
+          "caller": "delete_spreads",
+          "callee": "self.db_spreads_for_instrument_data.delete_spreads",
+          "lineNumber": 354
+        },
+        {
+          "caller": "get_valid_instrument_code_from_user",
+          "callee": "dataBlob",
+          "lineNumber": 387
+        },
+        {
+          "caller": "get_valid_instrument_code_from_user",
+          "callee": "get_list_of_instruments",
+          "lineNumber": 388
+        },
+        {
+          "caller": "get_valid_instrument_code_from_user",
+          "callee": "input",
+          "lineNumber": 396
+        },
+        {
+          "caller": "get_valid_instrument_code_from_user",
+          "callee": "print",
+          "lineNumber": 408
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "diagPrices",
+          "lineNumber": 419
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "price_data.get_list_of_instruments_in_multiple_prices",
+          "lineNumber": 421
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "price_data.get_list_of_instruments_with_contract_prices",
+          "lineNumber": 423
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "diagInstruments",
+          "lineNumber": 425
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "instrument_data.get_list_of_instruments",
+          "lineNumber": 426
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "Exception",
+          "lineNumber": 428
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "instrument_list.sort",
+          "lineNumber": 432
+        },
+        {
+          "caller": "recent_average_price",
+          "callee": "diagPrices",
+          "lineNumber": 438
+        },
+        {
+          "caller": "recent_average_price",
+          "callee": "diag_prices.get_adjusted_prices",
+          "lineNumber": 439
+        },
+        {
+          "caller": "recent_average_price",
+          "callee": "len",
+          "lineNumber": 440
+        },
+        {
+          "caller": "recent_average_price",
+          "callee": "n_days_ago",
+          "lineNumber": 442
+        },
+        {
+          "caller": "recent_average_price",
+          "callee": "recent_prices.mean",
+          "lineNumber": 445
+        },
+        {
+          "caller": "get_current_price_of_instrument",
+          "callee": "get_price_series",
+          "lineNumber": 449
+        },
+        {
+          "caller": "get_current_price_of_instrument",
+          "callee": "len",
+          "lineNumber": 450
+        },
+        {
+          "caller": "get_price_series",
+          "callee": "diagPrices",
+          "lineNumber": 459
+        },
+        {
+          "caller": "get_price_series",
+          "callee": "diag_prices.get_adjusted_prices",
+          "lineNumber": 460
+        },
+        {
+          "caller": "get_current_price_series",
+          "callee": "diagPrices",
+          "lineNumber": 466
+        },
+        {
+          "caller": "get_current_price_series",
+          "callee": "diag_prices.get_current_priced_contract_prices_for_instrument",
+          "lineNumber": 467
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "diagInstruments",
+          "lineNumber": 473
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "diag_instruments.get_cost_object",
+          "lineNumber": 474
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "get_block_size",
+          "lineNumber": 476
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "recent_average_price",
+          "lineNumber": 477
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "costs_object.calculate_cost_instrument_currency",
+          "lineNumber": 478
+        },
+        {
+          "caller": "get_cash_cost_in_base_for_instrument",
+          "callee": "last_currency_fx",
+          "lineNumber": 483
+        },
+        {
+          "caller": "last_currency_fx",
+          "callee": "dataCurrency",
+          "lineNumber": 490
+        },
+        {
+          "caller": "last_currency_fx",
+          "callee": "diagInstruments",
+          "lineNumber": 491
+        },
+        {
+          "caller": "last_currency_fx",
+          "callee": "diag_instruments.get_currency",
+          "lineNumber": 492
+        },
+        {
+          "caller": "last_currency_fx",
+          "callee": "data_currency.get_last_fx_rate_to_base",
+          "lineNumber": 493
+        },
+        {
+          "caller": "modify_price_when_contract_has_changed",
+          "callee": "diagPrices",
+          "lineNumber": 508
+        },
+        {
+          "caller": "modify_price_when_contract_has_changed",
+          "callee": "diag_prices.get_last_matched_date_and_prices_for_contract_list",
+          "lineNumber": 513
+        },
+        {
+          "caller": "modify_price_when_contract_has_changed",
+          "callee": "np.isnan",
+          "lineNumber": 518
+        }
+      ],
+      "metrics": {
+        "importCount": 20,
+        "exportCount": 11,
+        "functionCount": 9,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysproduction/linux/scripts/run.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "resolve_func",
+          "startLine": 17,
+          "endLine": 47,
+          "params": [
+            "func_reference_name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolve_func",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolve_func",
+          "callee": "func_reference_name.rsplit",
+          "lineNumber": 18
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "len",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "Exception",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "split_func.pop",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "split_func.pop",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "importlib.import_module",
+          "lineNumber": 32
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "Exception",
+          "lineNumber": 34
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "getattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "resolve_func",
+          "callee": "Exception",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/run_daily_update_multiple_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "run_daily_update_multiple_adjusted_prices",
+          "startLine": 7,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "get_list_of_timer_functions_for_price_update",
+          "startLine": 15,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run_daily_update_multiple_adjusted_prices",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_timer_functions_for_price_update",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run_daily_update_multiple_adjusted_prices",
+          "callee": "dataBlob",
+          "lineNumber": 9
+        },
+        {
+          "caller": "run_daily_update_multiple_adjusted_prices",
+          "callee": "get_list_of_timer_functions_for_price_update",
+          "lineNumber": 10
+        },
+        {
+          "caller": "run_daily_update_multiple_adjusted_prices",
+          "callee": "processToRun",
+          "lineNumber": 11
+        },
+        {
+          "caller": "run_daily_update_multiple_adjusted_prices",
+          "callee": "price_process.run_process",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_price_update",
+          "callee": "dataBlob",
+          "lineNumber": 16
+        },
+        {
+          "caller": "get_list_of_timer_functions_for_price_update",
+          "callee": "updateMultipleAdjustedPrices",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/update_multiple_adjusted_prices.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 226,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "update_multiple_adjusted_prices",
+          "startLine": 37,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "update_multiple_adjusted_prices_with_data",
+          "startLine": 85,
+          "endLine": 101,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "update_multiple_adjusted_prices_for_instrument",
+          "startLine": 104,
+          "endLine": 131,
+          "params": [
+            "instrument_code",
+            "data"
+          ]
+        },
+        {
+          "name": "calc_updated_multiple_prices",
+          "startLine": 134,
+          "endLine": 151,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "calc_update_adjusted_prices",
+          "startLine": 154,
+          "endLine": 174,
+          "params": [
+            "data",
+            "instrument_code",
+            "updated_multiple_prices"
+          ]
+        },
+        {
+          "name": "get_dict_of_new_prices_and_contractid",
+          "startLine": 177,
+          "endLine": 206,
+          "params": [
+            "instrument_code",
+            "contract_date_dict",
+            "data"
+          ]
+        },
+        {
+          "name": "update_with_new_prices",
+          "startLine": 209,
+          "endLine": 222,
+          "params": [
+            "data",
+            "instrument_code",
+            "updated_multiple_prices",
+            "updated_adjusted_prices"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "updateMultipleAdjustedPrices",
+          "startLine": 76,
+          "endLine": 82,
+          "methods": [
+            "__init__",
+            "update_multiple_adjusted_prices"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_multiple_adjusted_prices",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "updateMultipleAdjustedPrices",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "update_multiple_adjusted_prices_with_data",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "update_multiple_adjusted_prices_for_instrument",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "calc_updated_multiple_prices",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "calc_update_adjusted_prices",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "get_dict_of_new_prices_and_contractid",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "update_with_new_prices",
+          "line": 209,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "dataBlob",
+          "lineNumber": 44
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "updateMultipleAdjustedPrices",
+          "lineNumber": 45
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 47
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "update_multiple_adjusted_prices_object.update_multiple_adjusted_prices",
+          "lineNumber": 51
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 63
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "update_multiple_adjusted_prices_object.update_multiple_adjusted_prices",
+          "lineNumber": 69
+        },
+        {
+          "caller": "update_multiple_adjusted_prices",
+          "callee": "update_multiple_adjusted_prices_with_data",
+          "lineNumber": 82
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_with_data",
+          "callee": "diagPrices",
+          "lineNumber": 88
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_with_data",
+          "callee": "diag_prices.get_list_of_instruments_in_multiple_prices",
+          "lineNumber": 90
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_with_data",
+          "callee": "update_multiple_adjusted_prices_for_instrument",
+          "lineNumber": 96
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_with_data",
+          "callee": "data.log.critical",
+          "lineNumber": 98
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_with_data",
+          "callee": "str",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_for_instrument",
+          "callee": "data.log.debug",
+          "lineNumber": 116
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_for_instrument",
+          "callee": "calc_updated_multiple_prices",
+          "lineNumber": 121
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_for_instrument",
+          "callee": "calc_update_adjusted_prices",
+          "lineNumber": 122
+        },
+        {
+          "caller": "update_multiple_adjusted_prices_for_instrument",
+          "callee": "update_with_new_prices",
+          "lineNumber": 126
+        },
+        {
+          "caller": "calc_updated_multiple_prices",
+          "callee": "diagPrices",
+          "lineNumber": 137
+        },
+        {
+          "caller": "calc_updated_multiple_prices",
+          "callee": "diag_prices.get_multiple_prices",
+          "lineNumber": 140
+        },
+        {
+          "caller": "calc_updated_multiple_prices",
+          "callee": "existing_multiple_prices.current_contract_dict",
+          "lineNumber": 142
+        },
+        {
+          "caller": "calc_updated_multiple_prices",
+          "callee": "get_dict_of_new_prices_and_contractid",
+          "lineNumber": 144
+        },
+        {
+          "caller": "calc_updated_multiple_prices",
+          "callee": "existing_multiple_prices.update_multiple_prices_with_dict",
+          "lineNumber": 147
+        },
+        {
+          "caller": "calc_update_adjusted_prices",
+          "callee": "diagPrices",
+          "lineNumber": 157
+        },
+        {
+          "caller": "calc_update_adjusted_prices",
+          "callee": "diag_prices.get_adjusted_prices",
+          "lineNumber": 158
+        },
+        {
+          "caller": "calc_update_adjusted_prices",
+          "callee": "existing_adjusted_prices.update_with_multiple_prices_no_roll",
+          "lineNumber": 161
+        },
+        {
+          "caller": "calc_update_adjusted_prices",
+          "callee": "data.log.critical",
+          "lineNumber": 171
+        },
+        {
+          "caller": "calc_update_adjusted_prices",
+          "callee": "Exception",
+          "lineNumber": 172
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "diagPrices",
+          "lineNumber": 187
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "dict",
+          "lineNumber": 190
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "contract_date_dict.items",
+          "lineNumber": 191
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "futuresContract",
+          "lineNumber": 192
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "diag_prices.get_merged_prices_for_contract_object",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "price_series.return_final_prices",
+          "lineNumber": 194
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "dictNamedFuturesContractFinalPrices",
+          "lineNumber": 196
+        },
+        {
+          "caller": "get_dict_of_new_prices_and_contractid",
+          "callee": "dictFuturesNamedContractFinalPricesWithContractID.create_from_two_dicts",
+          "lineNumber": 201
+        },
+        {
+          "caller": "update_with_new_prices",
+          "callee": "updatePrices",
+          "lineNumber": 215
+        },
+        {
+          "caller": "update_with_new_prices",
+          "callee": "update_prices.add_multiple_prices",
+          "lineNumber": 217
+        },
+        {
+          "caller": "update_with_new_prices",
+          "callee": "update_prices.add_adjusted_prices",
+          "lineNumber": 220
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysproduction/update_sampled_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 453,
+      "nonEmptyLines": 338,
+      "functions": [
+        {
+          "name": "update_sampled_contracts",
+          "startLine": 17,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "update_active_contracts_with_data",
+          "startLine": 76,
+          "endLine": 86,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "update_active_contracts_for_instrument",
+          "startLine": 89,
+          "endLine": 104,
+          "params": [
+            "instrument_code",
+            "data"
+          ]
+        },
+        {
+          "name": "get_contract_chain",
+          "startLine": 107,
+          "endLine": 115,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_furthest_out_contract_with_roll_parameters",
+          "startLine": 118,
+          "endLine": 128,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "get_furthest_out_contract_date",
+          "startLine": 131,
+          "endLine": 139,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "startLine": 142,
+          "endLine": 152,
+          "params": [
+            "data",
+            "instrument_code",
+            "furthest_out_contract_date"
+          ]
+        },
+        {
+          "name": "create_contract_object_chain",
+          "startLine": 155,
+          "endLine": 163,
+          "params": [
+            "furthest_out_contract",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "create_contract_date_chain",
+          "startLine": 166,
+          "endLine": 177,
+          "params": [
+            "furthest_out_contract"
+          ]
+        },
+        {
+          "name": "create_contract_object_chain_from_contract_date_chain",
+          "startLine": 180,
+          "endLine": 194,
+          "params": [
+            "instrument_code",
+            "contract_date_chain"
+          ]
+        },
+        {
+          "name": "update_contract_database_with_contract_chain",
+          "startLine": 197,
+          "endLine": 220,
+          "params": [
+            "instrument_code",
+            "required_contract_chain",
+            "data"
+          ]
+        },
+        {
+          "name": "get_list_of_currently_sampling_contracts_in_db",
+          "startLine": 223,
+          "endLine": 232,
+          "params": [
+            "data",
+            "instrument_code"
+          ]
+        },
+        {
+          "name": "add_missing_contracts_to_database",
+          "startLine": 235,
+          "endLine": 247,
+          "params": [
+            "list_of_contracts_missing_from_db_or_not_sampling",
+            "data"
+          ]
+        },
+        {
+          "name": "add_missing_or_not_sampling_contract_to_database",
+          "startLine": 250,
+          "endLine": 264,
+          "params": [
+            "data",
+            "contract_to_add"
+          ]
+        },
+        {
+          "name": "mark_existing_contract_as_sampling",
+          "startLine": 267,
+          "endLine": 277,
+          "params": [
+            "contract_to_add",
+            "data"
+          ]
+        },
+        {
+          "name": "add_new_contract_with_sampling_on",
+          "startLine": 280,
+          "endLine": 294,
+          "params": [
+            "contract_to_add",
+            "data"
+          ]
+        },
+        {
+          "name": "update_expiries_and_sampling_status_for_contracts",
+          "startLine": 297,
+          "endLine": 318,
+          "params": [
+            "instrument_code",
+            "data",
+            "contract_chain"
+          ]
+        },
+        {
+          "name": "update_expiry_and_sampling_status_for_contract",
+          "startLine": 321,
+          "endLine": 384,
+          "params": [
+            "contract_object",
+            "data",
+            "contract_chain"
+          ]
+        },
+        {
+          "name": "get_contract_expiry_from_broker",
+          "startLine": 387,
+          "endLine": 395,
+          "params": [
+            "contract",
+            "data"
+          ]
+        },
+        {
+          "name": "update_contract_object_with_new_expiry_date",
+          "startLine": 398,
+          "endLine": 411,
+          "params": [
+            "data",
+            "broker_expiry_date",
+            "contract_object"
+          ]
+        },
+        {
+          "name": "check_key_contracts_have_not_expired",
+          "startLine": 414,
+          "endLine": 431,
+          "params": [
+            "instrument_code",
+            "data"
+          ]
+        },
+        {
+          "name": "get_list_of_key_contract_ids",
+          "startLine": 434,
+          "endLine": 439,
+          "params": [
+            "instrument_code",
+            "data"
+          ]
+        },
+        {
+          "name": "has_contract_expired",
+          "startLine": 442,
+          "endLine": 449,
+          "params": [
+            "instrument_code",
+            "contract_id",
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "updateSampledContracts",
+          "startLine": 67,
+          "endLine": 73,
+          "methods": [
+            "__init__",
+            "update_sampled_contracts"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "update_sampled_contracts",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "updateSampledContracts",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "update_active_contracts_with_data",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "update_active_contracts_for_instrument",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "get_contract_chain",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "get_furthest_out_contract_with_roll_parameters",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "get_furthest_out_contract_date",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "create_contract_object_chain",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "create_contract_date_chain",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "create_contract_object_chain_from_contract_date_chain",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "update_contract_database_with_contract_chain",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_currently_sampling_contracts_in_db",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "add_missing_contracts_to_database",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "add_missing_or_not_sampling_contract_to_database",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "mark_existing_contract_as_sampling",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "add_new_contract_with_sampling_on",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "update_expiries_and_sampling_status_for_contracts",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "update_expiry_and_sampling_status_for_contract",
+          "line": 321,
+          "isDefault": false
+        },
+        {
+          "name": "get_contract_expiry_from_broker",
+          "line": 387,
+          "isDefault": false
+        },
+        {
+          "name": "update_contract_object_with_new_expiry_date",
+          "line": 398,
+          "isDefault": false
+        },
+        {
+          "name": "check_key_contracts_have_not_expired",
+          "line": 414,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_key_contract_ids",
+          "line": 434,
+          "isDefault": false
+        },
+        {
+          "name": "has_contract_expired",
+          "line": 442,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "dataBlob",
+          "lineNumber": 39
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "updateSampledContracts",
+          "lineNumber": 40
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 41
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "update_contracts_object.update_sampled_contracts",
+          "lineNumber": 45
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "get_valid_instrument_code_from_user",
+          "lineNumber": 56
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "update_contracts_object.update_sampled_contracts",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_sampled_contracts",
+          "callee": "update_active_contracts_with_data",
+          "lineNumber": 73
+        },
+        {
+          "caller": "update_active_contracts_with_data",
+          "callee": "diagPrices",
+          "lineNumber": 79
+        },
+        {
+          "caller": "update_active_contracts_with_data",
+          "callee": "diag_prices.get_list_of_instruments_in_multiple_prices",
+          "lineNumber": 81
+        },
+        {
+          "caller": "update_active_contracts_with_data",
+          "callee": "update_active_contracts_for_instrument",
+          "lineNumber": 86
+        },
+        {
+          "caller": "update_active_contracts_for_instrument",
+          "callee": "get_contract_chain",
+          "lineNumber": 92
+        },
+        {
+          "caller": "update_active_contracts_for_instrument",
+          "callee": "update_contract_database_with_contract_chain",
+          "lineNumber": 95
+        },
+        {
+          "caller": "update_active_contracts_for_instrument",
+          "callee": "update_expiries_and_sampling_status_for_contracts",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update_active_contracts_for_instrument",
+          "callee": "check_key_contracts_have_not_expired",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_contract_chain",
+          "callee": "get_furthest_out_contract_with_roll_parameters",
+          "lineNumber": 108
+        },
+        {
+          "caller": "get_contract_chain",
+          "callee": "create_contract_object_chain",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_furthest_out_contract_with_roll_parameters",
+          "callee": "get_furthest_out_contract_date",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_furthest_out_contract_with_roll_parameters",
+          "callee": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_furthest_out_contract_date",
+          "callee": "diagPrices",
+          "lineNumber": 132
+        },
+        {
+          "caller": "get_furthest_out_contract_date",
+          "callee": "diag_prices.get_multiple_prices",
+          "lineNumber": 135
+        },
+        {
+          "caller": "get_furthest_out_contract_date",
+          "callee": "multiple_prices.current_contract_dict",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_furthest_out_contract_date",
+          "callee": "current_contract_dict.furthest_out_contract_date",
+          "lineNumber": 137
+        },
+        {
+          "caller": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "callee": "dataContracts",
+          "lineNumber": 145
+        },
+        {
+          "caller": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "callee": "diag_contracts.get_roll_parameters",
+          "lineNumber": 146
+        },
+        {
+          "caller": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "callee": "contractDateWithRollParameters",
+          "lineNumber": 148
+        },
+        {
+          "caller": "create_furthest_out_contract_with_roll_parameters_from_contract_date",
+          "callee": "contractDate",
+          "lineNumber": 149
+        },
+        {
+          "caller": "create_contract_object_chain",
+          "callee": "create_contract_date_chain",
+          "lineNumber": 158
+        },
+        {
+          "caller": "create_contract_object_chain",
+          "callee": "create_contract_object_chain_from_contract_date_chain",
+          "lineNumber": 159
+        },
+        {
+          "caller": "create_contract_date_chain",
+          "callee": "furthest_out_contract.next_priced_contract",
+          "lineNumber": 171
+        },
+        {
+          "caller": "create_contract_date_chain",
+          "callee": "final_contract.get_contracts_from_recently_to_contract_date",
+          "lineNumber": 175
+        },
+        {
+          "caller": "create_contract_object_chain_from_contract_date_chain",
+          "callee": "futuresInstrument",
+          "lineNumber": 185
+        },
+        {
+          "caller": "create_contract_object_chain_from_contract_date_chain",
+          "callee": "futuresContract",
+          "lineNumber": 188
+        },
+        {
+          "caller": "create_contract_object_chain_from_contract_date_chain",
+          "callee": "listOfFuturesContracts",
+          "lineNumber": 192
+        },
+        {
+          "caller": "update_contract_database_with_contract_chain",
+          "callee": "get_list_of_currently_sampling_contracts_in_db",
+          "lineNumber": 210
+        },
+        {
+          "caller": "update_contract_database_with_contract_chain",
+          "callee": "required_contract_chain.difference",
+          "lineNumber": 215
+        },
+        {
+          "caller": "update_contract_database_with_contract_chain",
+          "callee": "add_missing_contracts_to_database",
+          "lineNumber": 218
+        },
+        {
+          "caller": "get_list_of_currently_sampling_contracts_in_db",
+          "callee": "dataContracts",
+          "lineNumber": 226
+        },
+        {
+          "caller": "get_list_of_currently_sampling_contracts_in_db",
+          "callee": "data_contracts.get_all_sampled_contracts",
+          "lineNumber": 228
+        },
+        {
+          "caller": "add_missing_contracts_to_database",
+          "callee": "add_missing_or_not_sampling_contract_to_database",
+          "lineNumber": 247
+        },
+        {
+          "caller": "add_missing_or_not_sampling_contract_to_database",
+          "callee": "dataContracts",
+          "lineNumber": 255
+        },
+        {
+          "caller": "add_missing_or_not_sampling_contract_to_database",
+          "callee": "data_contracts.is_contract_in_data",
+          "lineNumber": 257
+        },
+        {
+          "caller": "add_missing_or_not_sampling_contract_to_database",
+          "callee": "mark_existing_contract_as_sampling",
+          "lineNumber": 262
+        },
+        {
+          "caller": "add_missing_or_not_sampling_contract_to_database",
+          "callee": "add_new_contract_with_sampling_on",
+          "lineNumber": 264
+        },
+        {
+          "caller": "mark_existing_contract_as_sampling",
+          "callee": "dataContracts",
+          "lineNumber": 270
+        },
+        {
+          "caller": "mark_existing_contract_as_sampling",
+          "callee": "data_contracts.mark_contract_as_sampling",
+          "lineNumber": 271
+        },
+        {
+          "caller": "mark_existing_contract_as_sampling",
+          "callee": "data.log.debug",
+          "lineNumber": 273
+        },
+        {
+          "caller": "mark_existing_contract_as_sampling",
+          "callee": "str",
+          "lineNumber": 274
+        },
+        {
+          "caller": "mark_existing_contract_as_sampling",
+          "callee": "contract_to_add.log_attributes",
+          "lineNumber": 275
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "dataContracts",
+          "lineNumber": 281
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "contract_to_add.sampling_on",
+          "lineNumber": 284
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "data_contracts.add_contract_data",
+          "lineNumber": 288
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "data.log.debug",
+          "lineNumber": 290
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "str",
+          "lineNumber": 291
+        },
+        {
+          "caller": "add_new_contract_with_sampling_on",
+          "callee": "contract_to_add.log_attributes",
+          "lineNumber": 292
+        },
+        {
+          "caller": "update_expiries_and_sampling_status_for_contracts",
+          "callee": "dataContracts",
+          "lineNumber": 308
+        },
+        {
+          "caller": "update_expiries_and_sampling_status_for_contracts",
+          "callee": "diag_contracts.get_all_contract_objects_for_instrument_code",
+          "lineNumber": 310
+        },
+        {
+          "caller": "update_expiries_and_sampling_status_for_contracts",
+          "callee": "all_contracts_in_db.currently_sampling",
+          "lineNumber": 313
+        },
+        {
+          "caller": "update_expiries_and_sampling_status_for_contracts",
+          "callee": "update_expiry_and_sampling_status_for_contract",
+          "lineNumber": 316
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 336
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "dataContracts",
+          "lineNumber": 337
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data_contracts.get_contract_from_db",
+          "lineNumber": 339
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "get_contract_expiry_from_broker",
+          "lineNumber": 343
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data.log.debug",
+          "lineNumber": 345
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "str",
+          "lineNumber": 347
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data.log.debug",
+          "lineNumber": 355
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "str",
+          "lineNumber": 357
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "str",
+          "lineNumber": 357
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "update_contract_object_with_new_expiry_date",
+          "lineNumber": 362
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data_contracts.get_contract_from_db",
+          "lineNumber": 369
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "db_contract.expired",
+          "lineNumber": 371
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data_contracts.mark_contract_as_not_sampling",
+          "lineNumber": 379
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "data.log.debug",
+          "lineNumber": 380
+        },
+        {
+          "caller": "update_expiry_and_sampling_status_for_contract",
+          "callee": "str",
+          "lineNumber": 382
+        },
+        {
+          "caller": "get_contract_expiry_from_broker",
+          "callee": "dataBroker",
+          "lineNumber": 390
+        },
+        {
+          "caller": "get_contract_expiry_from_broker",
+          "callee": "data_broker.get_actual_expiry_date_for_single_contract",
+          "lineNumber": 391
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "dataContracts",
+          "lineNumber": 401
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "data_contracts.update_expiry_date",
+          "lineNumber": 402
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "data.log.debug",
+          "lineNumber": 406
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "str",
+          "lineNumber": 408
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "str",
+          "lineNumber": 408
+        },
+        {
+          "caller": "update_contract_object_with_new_expiry_date",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 409
+        },
+        {
+          "caller": "check_key_contracts_have_not_expired",
+          "callee": "get_list_of_key_contract_ids",
+          "lineNumber": 415
+        },
+        {
+          "caller": "check_key_contracts_have_not_expired",
+          "callee": "has_contract_expired",
+          "lineNumber": 419
+        },
+        {
+          "caller": "check_key_contracts_have_not_expired",
+          "callee": "any",
+          "lineNumber": 425
+        },
+        {
+          "caller": "check_key_contracts_have_not_expired",
+          "callee": "data.log.critical",
+          "lineNumber": 426
+        },
+        {
+          "caller": "check_key_contracts_have_not_expired",
+          "callee": "data.log.debug",
+          "lineNumber": 431
+        },
+        {
+          "caller": "get_list_of_key_contract_ids",
+          "callee": "dataContracts",
+          "lineNumber": 435
+        },
+        {
+          "caller": "get_list_of_key_contract_ids",
+          "callee": "data_contracts.get_labelled_dict_of_current_contracts",
+          "lineNumber": 436
+        },
+        {
+          "caller": "has_contract_expired",
+          "callee": "dataContracts",
+          "lineNumber": 445
+        },
+        {
+          "caller": "has_contract_expired",
+          "callee": "futuresContract",
+          "lineNumber": 446
+        },
+        {
+          "caller": "has_contract_expired",
+          "callee": "data_contracts.get_contract_from_db",
+          "lineNumber": 447
+        },
+        {
+          "caller": "has_contract_expired",
+          "callee": "actual_contract.expired",
+          "lineNumber": 449
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 24,
+        "functionCount": 23,
+        "classCount": 1
+      }
+    }
+  ]
+}

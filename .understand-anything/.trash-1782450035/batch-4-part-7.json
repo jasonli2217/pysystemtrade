@@ -1,0 +1,1170 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/reporting/data/commissions.py",
+   "type": "file",
+   "name": "commissions.py",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "summary": "Reporting data module computing configured versus broker block commission costs per instrument for the commissions report.",
+   "tags": [
+    "reporting",
+    "data-model",
+    "commissions",
+    "costs"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:filter_tradeable_instruments_for_commission_report",
+   "type": "function",
+   "name": "filter_tradeable_instruments_for_commission_report",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    18,
+    47
+   ],
+   "summary": "Function filter tradeable instruments for commission report (30 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_index",
+   "type": "function",
+   "name": "df_of_configure_and_broker_block_cost_sorted_by_index",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    50,
+    56
+   ],
+   "summary": "Function df of configure and broker block cost sorted by index (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_diff",
+   "type": "function",
+   "name": "df_of_configure_and_broker_block_cost_sorted_by_diff",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    59,
+    91
+   ],
+   "summary": "Function df of configure and broker block cost sorted by diff (33 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:update_valid_and_missing_costs_for_instrument_code",
+   "type": "function",
+   "name": "update_valid_and_missing_costs_for_instrument_code",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    94,
+    134
+   ],
+   "summary": "Function update valid and missing costs for instrument code (41 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:update_missing_values_with_currencies_and_errors",
+   "type": "function",
+   "name": "update_missing_values_with_currencies_and_errors",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    137,
+    148
+   ],
+   "summary": "Function update missing values with currencies and errors (12 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:update_valid_costs",
+   "type": "function",
+   "name": "update_valid_costs",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    151,
+    164
+   ],
+   "summary": "Function update valid costs (14 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:create_df_in_commission_report",
+   "type": "function",
+   "name": "create_df_in_commission_report",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    167,
+    176
+   ],
+   "summary": "Function create df in commission report (10 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_instrument_list",
+   "type": "function",
+   "name": "get_instrument_list",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    184,
+    190
+   ],
+   "summary": "Function get instrument list (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_current_configured_block_costs",
+   "type": "function",
+   "name": "get_current_configured_block_costs",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    193,
+    204
+   ],
+   "summary": "Function get current configured block costs (12 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_configured_block_cost_for_instrument",
+   "type": "function",
+   "name": "get_configured_block_cost_for_instrument",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    207,
+    220
+   ],
+   "summary": "Function get configured block cost for instrument (14 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_broker_block_costs",
+   "type": "function",
+   "name": "get_broker_block_costs",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    223,
+    232
+   ],
+   "summary": "Function get broker block costs (10 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_series_of_priced_contracts",
+   "type": "function",
+   "name": "get_series_of_priced_contracts",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    235,
+    249
+   ],
+   "summary": "Function get series of priced contracts (15 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_costs_given_priced_contracts",
+   "type": "function",
+   "name": "get_costs_given_priced_contracts",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    252,
+    261
+   ],
+   "summary": "Function get costs given priced contracts (10 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/commissions.py:get_block_cost_for_single_contract",
+   "type": "function",
+   "name": "get_block_cost_for_single_contract",
+   "filePath": "sysproduction/reporting/data/commissions.py",
+   "lineRange": [
+    264,
+    271
+   ],
+   "summary": "Function get block cost for single contract (8 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/data/pricechanges.py",
+   "type": "file",
+   "name": "pricechanges.py",
+   "filePath": "sysproduction/reporting/data/pricechanges.py",
+   "summary": "Reporting data module: the marketMovers class computes percentage and absolute price changes and volatility-adjusted moves across instruments over periods or date ranges.",
+   "tags": [
+    "reporting",
+    "data-model",
+    "price-change",
+    "market-moves"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/pricechanges.py:get_price_change_from_series_for_period",
+   "type": "function",
+   "name": "get_price_change_from_series_for_period",
+   "filePath": "sysproduction/reporting/data/pricechanges.py",
+   "lineRange": [
+    197,
+    203
+   ],
+   "summary": "Function get price change from series for period (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/pricechanges.py:get_percentage_change_from_series_for_period",
+   "type": "function",
+   "name": "get_percentage_change_from_series_for_period",
+   "filePath": "sysproduction/reporting/data/pricechanges.py",
+   "lineRange": [
+    206,
+    214
+   ],
+   "summary": "Function get percentage change from series for period (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/pricechanges.py:get_stdev_at_start_date_for_instrument",
+   "type": "function",
+   "name": "get_stdev_at_start_date_for_instrument",
+   "filePath": "sysproduction/reporting/data/pricechanges.py",
+   "lineRange": [
+    217,
+    225
+   ],
+   "summary": "Function get stdev at start date for instrument (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/reporting/data/pricechanges.py:marketMovers",
+   "type": "class",
+   "name": "marketMovers",
+   "filePath": "sysproduction/reporting/data/pricechanges.py",
+   "lineRange": [
+    19,
+    194
+   ],
+   "summary": "Class marketMovers with 16 methods (176 lines).",
+   "tags": [
+    "class",
+    "data-model",
+    "class"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/reporting/data/rolls.py",
+   "type": "file",
+   "name": "rolls.py",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "summary": "Reporting data module handling roll analytics: roll-data tables, multiple/adjusted price updates on roll, and price inference/rollback during contract rolls.",
+   "tags": [
+    "reporting",
+    "data-model",
+    "roll",
+    "futures"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:get_roll_data_for_instrument",
+   "type": "function",
+   "name": "get_roll_data_for_instrument",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    26,
+    72
+   ],
+   "summary": "Function get roll data for instrument (47 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_versus_price",
+   "type": "function",
+   "name": "relative_volume_in_forward_contract_versus_price",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    75,
+    83
+   ],
+   "summary": "Function relative volume in forward contract versus price (9 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_and_price",
+   "type": "function",
+   "name": "relative_volume_in_forward_contract_and_price",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    86,
+    98
+   ],
+   "summary": "Function relative volume in forward contract and price (13 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:volume_contracts_in_forward_contract",
+   "type": "function",
+   "name": "volume_contracts_in_forward_contract",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    101,
+    112
+   ],
+   "summary": "Function volume contracts in forward contract (12 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:compare_old_and_new_prices",
+   "type": "function",
+   "name": "compare_old_and_new_prices",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    209,
+    214
+   ],
+   "summary": "Function compare old and new prices (6 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:update_multiple_prices_on_roll",
+   "type": "function",
+   "name": "update_multiple_prices_on_roll",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    217,
+    333
+   ],
+   "summary": "Function update multiple prices on roll (117 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:get_final_matched_price_from_contract_object",
+   "type": "function",
+   "name": "get_final_matched_price_from_contract_object",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    336,
+    348
+   ],
+   "summary": "Function get final matched price from contract object (13 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:get_or_infer_latest_price",
+   "type": "function",
+   "name": "get_or_infer_latest_price",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    358,
+    387
+   ],
+   "summary": "Function get or infer latest price (30 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:infer_latest_price",
+   "type": "function",
+   "name": "infer_latest_price",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    390,
+    430
+   ],
+   "summary": "Function infer latest price (41 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:last_price_data_with_matched_contracts",
+   "type": "function",
+   "name": "last_price_data_with_matched_contracts",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    433,
+    476
+   ],
+   "summary": "Function last price data with matched contracts (44 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:infer_price_from_matched_price_data",
+   "type": "function",
+   "name": "infer_price_from_matched_price_data",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    479,
+    503
+   ],
+   "summary": "Function infer price from matched price data (25 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/rolls.py:rollback_adjustment",
+   "type": "function",
+   "name": "rollback_adjustment",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    506,
+    528
+   ],
+   "summary": "Function rollback adjustment (23 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/reporting/data/rolls.py:rollingAdjustedAndMultiplePrices",
+   "type": "class",
+   "name": "rollingAdjustedAndMultiplePrices",
+   "filePath": "sysproduction/reporting/data/rolls.py",
+   "lineRange": [
+    115,
+    206
+   ],
+   "summary": "Class rollingAdjustedAndMultiplePrices with 8 methods (92 lines).",
+   "tags": [
+    "class",
+    "data-model",
+    "class"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:filter_tradeable_instruments_for_commission_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:filter_tradeable_instruments_for_commission_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_index",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_index",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_diff",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:df_of_configure_and_broker_block_cost_sorted_by_diff",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_valid_and_missing_costs_for_instrument_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_valid_and_missing_costs_for_instrument_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_missing_values_with_currencies_and_errors",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_missing_values_with_currencies_and_errors",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_valid_costs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:update_valid_costs",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:create_df_in_commission_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:create_df_in_commission_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_instrument_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_instrument_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_current_configured_block_costs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_current_configured_block_costs",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_configured_block_cost_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_configured_block_cost_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_broker_block_costs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_broker_block_costs",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_series_of_priced_contracts",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_series_of_priced_contracts",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_costs_given_priced_contracts",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_costs_given_priced_contracts",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_block_cost_for_single_contract",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "function:sysproduction/reporting/data/commissions.py:get_block_cost_for_single_contract",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysdata/config/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/commissions.py",
+   "target": "file:sysproduction/data/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_price_change_from_series_for_period",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_price_change_from_series_for_period",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_percentage_change_from_series_for_period",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_percentage_change_from_series_for_period",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_stdev_at_start_date_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "function:sysproduction/reporting/data/pricechanges.py:get_stdev_at_start_date_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "class:sysproduction/reporting/data/pricechanges.py:marketMovers",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "class:sysproduction/reporting/data/pricechanges.py:marketMovers",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "file:syscore/cache.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pricechanges.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_roll_data_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_roll_data_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_versus_price",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_versus_price",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_and_price",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:relative_volume_in_forward_contract_and_price",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:volume_contracts_in_forward_contract",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:volume_contracts_in_forward_contract",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:compare_old_and_new_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:compare_old_and_new_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:update_multiple_prices_on_roll",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:update_multiple_prices_on_roll",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_final_matched_price_from_contract_object",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_final_matched_price_from_contract_object",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_or_infer_latest_price",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:get_or_infer_latest_price",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:infer_latest_price",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:infer_latest_price",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:last_price_data_with_matched_contracts",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:last_price_data_with_matched_contracts",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:infer_price_from_matched_price_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:infer_price_from_matched_price_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:rollback_adjustment",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "function:sysproduction/reporting/data/rolls.py:rollback_adjustment",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "class:sysproduction/reporting/data/rolls.py:rollingAdjustedAndMultiplePrices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "class:sysproduction/reporting/data/rolls.py:rollingAdjustedAndMultiplePrices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysobjects/adjusted_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysobjects/dict_of_named_futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysobjects/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysobjects/multiple_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/rolls.py",
+   "target": "file:sysproduction/data/volumes.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

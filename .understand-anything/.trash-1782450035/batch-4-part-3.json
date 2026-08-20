@@ -1,0 +1,1804 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/interactive_diagnostics.py",
+   "type": "file",
+   "name": "interactive_diagnostics.py",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "summary": "Interactive CLI entry point offering a menu of diagnostic actions: running reports, inspecting prices, positions, orders, capital, configs, and trading hours.",
+   "tags": [
+    "entry-point",
+    "cli",
+    "diagnostics",
+    "reporting"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:interactive_diagnostics",
+   "type": "function",
+   "name": "interactive_diagnostics",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    71,
+    79
+   ],
+   "summary": "Function interactive diagnostics (9 lines).",
+   "tags": [
+    "entry-point",
+    "cli",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:not_defined",
+   "type": "function",
+   "name": "not_defined",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    142,
+    143
+   ],
+   "summary": "Function not defined (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:backtest_plot",
+   "type": "function",
+   "name": "backtest_plot",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    146,
+    149
+   ],
+   "summary": "Function backtest plot (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:backtest_python",
+   "type": "function",
+   "name": "backtest_python",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    152,
+    155
+   ],
+   "summary": "Function backtest python (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:backtest_print",
+   "type": "function",
+   "name": "backtest_print",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    158,
+    161
+   ],
+   "summary": "Function backtest print (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:backtest_html",
+   "type": "function",
+   "name": "backtest_html",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    164,
+    167
+   ],
+   "summary": "Function backtest html (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:roll_report",
+   "type": "function",
+   "name": "roll_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    171,
+    177
+   ],
+   "summary": "Function roll report (7 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:pandl_report",
+   "type": "function",
+   "name": "pandl_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    180,
+    184
+   ],
+   "summary": "Function pandl report (5 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:status_report",
+   "type": "function",
+   "name": "status_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    187,
+    189
+   ],
+   "summary": "Function status report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:trade_report",
+   "type": "function",
+   "name": "trade_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    192,
+    196
+   ],
+   "summary": "Function trade report (5 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:reconcile_report",
+   "type": "function",
+   "name": "reconcile_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    199,
+    201
+   ],
+   "summary": "Function reconcile report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:strategy_report",
+   "type": "function",
+   "name": "strategy_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    204,
+    217
+   ],
+   "summary": "Function strategy report (14 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:risk_report",
+   "type": "function",
+   "name": "risk_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    220,
+    222
+   ],
+   "summary": "Function risk report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:cost_report",
+   "type": "function",
+   "name": "cost_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    225,
+    227
+   ],
+   "summary": "Function cost report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:slippage_report",
+   "type": "function",
+   "name": "slippage_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    230,
+    234
+   ],
+   "summary": "Function slippage report (5 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:commission_report",
+   "type": "function",
+   "name": "commission_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    237,
+    239
+   ],
+   "summary": "Function commission report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:liquidity_report",
+   "type": "function",
+   "name": "liquidity_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    242,
+    244
+   ],
+   "summary": "Function liquidity report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:instrument_risk_report",
+   "type": "function",
+   "name": "instrument_risk_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    247,
+    249
+   ],
+   "summary": "Function instrument risk report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:min_capital_report",
+   "type": "function",
+   "name": "min_capital_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    252,
+    254
+   ],
+   "summary": "Function min capital report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:duplicate_market_report",
+   "type": "function",
+   "name": "duplicate_market_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    257,
+    259
+   ],
+   "summary": "Function duplicate market report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:remove_markets_report",
+   "type": "function",
+   "name": "remove_markets_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    262,
+    264
+   ],
+   "summary": "Function remove markets report (3 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:market_monitor_report",
+   "type": "function",
+   "name": "market_monitor_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    267,
+    279
+   ],
+   "summary": "Function market monitor report (13 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:account_curve_report",
+   "type": "function",
+   "name": "account_curve_report",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    282,
+    294
+   ],
+   "summary": "Function account curve report (13 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:email_or_print_or_file",
+   "type": "function",
+   "name": "email_or_print_or_file",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    297,
+    314
+   ],
+   "summary": "Function email or print or file (18 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:retrieve_emails",
+   "type": "function",
+   "name": "retrieve_emails",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    318,
+    320
+   ],
+   "summary": "Function retrieve emails (3 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:individual_prices",
+   "type": "function",
+   "name": "individual_prices",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    324,
+    333
+   ],
+   "summary": "Function individual prices (10 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:multiple_prices",
+   "type": "function",
+   "name": "multiple_prices",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    336,
+    342
+   ],
+   "summary": "Function multiple prices (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:adjusted_prices",
+   "type": "function",
+   "name": "adjusted_prices",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    345,
+    351
+   ],
+   "summary": "Function adjusted prices (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:fx_prices",
+   "type": "function",
+   "name": "fx_prices",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    354,
+    360
+   ],
+   "summary": "Function fx prices (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "fx"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:spreads",
+   "type": "function",
+   "name": "spreads",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    363,
+    370
+   ],
+   "summary": "Function spreads (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:capital_strategy",
+   "type": "function",
+   "name": "capital_strategy",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    373,
+    388
+   ],
+   "summary": "Function capital strategy (16 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:total_current_capital",
+   "type": "function",
+   "name": "total_current_capital",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    391,
+    399
+   ],
+   "summary": "Function total current capital (9 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:optimal_positions",
+   "type": "function",
+   "name": "optimal_positions",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    402,
+    428
+   ],
+   "summary": "Function optimal positions (27 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:get_valid_code_from_list",
+   "type": "function",
+   "name": "get_valid_code_from_list",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    431,
+    439
+   ],
+   "summary": "Function get valid code from list (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:actual_instrument_position",
+   "type": "function",
+   "name": "actual_instrument_position",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    442,
+    470
+   ],
+   "summary": "Function actual instrument position (29 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:actual_contract_position",
+   "type": "function",
+   "name": "actual_contract_position",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    473,
+    498
+   ],
+   "summary": "Function actual contract position (26 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:list_of_instrument_orders",
+   "type": "function",
+   "name": "list_of_instrument_orders",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    501,
+    508
+   ],
+   "summary": "Function list of instrument orders (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:get_order_pd",
+   "type": "function",
+   "name": "get_order_pd",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    511,
+    527
+   ],
+   "summary": "Function get order pd (17 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:list_of_contract_orders",
+   "type": "function",
+   "name": "list_of_contract_orders",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    530,
+    537
+   ],
+   "summary": "Function list of contract orders (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:list_of_broker_orders",
+   "type": "function",
+   "name": "list_of_broker_orders",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    540,
+    547
+   ],
+   "summary": "Function list of broker orders (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:view_individual_order",
+   "type": "function",
+   "name": "view_individual_order",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    550,
+    577
+   ],
+   "summary": "Function view individual order (28 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:view_instrument_config",
+   "type": "function",
+   "name": "view_instrument_config",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    580,
+    589
+   ],
+   "summary": "Function view instrument config (10 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:view_contract_config",
+   "type": "function",
+   "name": "view_contract_config",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    592,
+    606
+   ],
+   "summary": "Function view contract config (15 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:print_trading_hours_for_all_instruments",
+   "type": "function",
+   "name": "print_trading_hours_for_all_instruments",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    609,
+    611
+   ],
+   "summary": "Function print trading hours for all instruments (3 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:display_a_dict_of_trading_hours",
+   "type": "function",
+   "name": "display_a_dict_of_trading_hours",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    614,
+    624
+   ],
+   "summary": "Function display a dict of trading hours (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:nice_print_list_of_trading_hours",
+   "type": "function",
+   "name": "nice_print_list_of_trading_hours",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    630,
+    636
+   ],
+   "summary": "Function nice print list of trading hours (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:nice_print_trading_hours",
+   "type": "function",
+   "name": "nice_print_trading_hours",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    639,
+    656
+   ],
+   "summary": "Function nice print trading hours (18 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_all_instruments",
+   "type": "function",
+   "name": "get_trading_hours_for_all_instruments",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    659,
+    682
+   ],
+   "summary": "Function get trading hours for all instruments (24 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:check_trading_hours",
+   "type": "function",
+   "name": "check_trading_hours",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    685,
+    687
+   ],
+   "summary": "Function check trading hours (3 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:check_trading_hours_one_day",
+   "type": "function",
+   "name": "check_trading_hours_one_day",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    690,
+    700
+   ],
+   "summary": "Function check trading hours one day (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_instrument",
+   "type": "function",
+   "name": "get_trading_hours_for_instrument",
+   "filePath": "sysproduction/interactive_diagnostics.py",
+   "lineRange": [
+    703,
+    717
+   ],
+   "summary": "Function get trading hours for instrument (15 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:interactive_diagnostics",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:interactive_diagnostics",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:not_defined",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:not_defined",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_plot",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_plot",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_python",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_python",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_print",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_print",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_html",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:backtest_html",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:roll_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:roll_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:pandl_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:pandl_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:status_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:status_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:trade_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:trade_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:reconcile_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:reconcile_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:strategy_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:strategy_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:risk_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:risk_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:cost_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:cost_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:slippage_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:slippage_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:commission_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:commission_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:liquidity_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:liquidity_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:instrument_risk_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:instrument_risk_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:min_capital_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:min_capital_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:duplicate_market_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:duplicate_market_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:remove_markets_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:remove_markets_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:market_monitor_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:market_monitor_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:account_curve_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:account_curve_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:email_or_print_or_file",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:email_or_print_or_file",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:retrieve_emails",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:retrieve_emails",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:individual_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:individual_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:multiple_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:multiple_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:adjusted_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:adjusted_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:fx_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:fx_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:spreads",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:spreads",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:capital_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:capital_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:total_current_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:total_current_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:optimal_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:optimal_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_valid_code_from_list",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_valid_code_from_list",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:actual_instrument_position",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:actual_instrument_position",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:actual_contract_position",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:actual_contract_position",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_instrument_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_instrument_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_order_pd",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_order_pd",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_contract_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_contract_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_broker_orders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:list_of_broker_orders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_individual_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_individual_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_instrument_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_instrument_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_contract_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:view_contract_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:print_trading_hours_for_all_instruments",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:print_trading_hours_for_all_instruments",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:display_a_dict_of_trading_hours",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:display_a_dict_of_trading_hours",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:nice_print_list_of_trading_hours",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:nice_print_list_of_trading_hours",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:nice_print_trading_hours",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:nice_print_trading_hours",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_all_instruments",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_all_instruments",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:check_trading_hours",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:check_trading_hours",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:check_trading_hours_one_day",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:check_trading_hours_one_day",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "function:sysproduction/interactive_diagnostics.py:get_trading_hours_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/interactive/date_input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/interactive/input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syscore/interactive/progress_bar.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:syslogdiag/email_via_db_interface.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/backtest.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_diagnostics.py",
+   "target": "file:sysproduction/reporting/strategies_report.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

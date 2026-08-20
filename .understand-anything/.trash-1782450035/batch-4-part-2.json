@@ -1,0 +1,1033 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/data/optimal_positions.py",
+   "type": "file",
+   "name": "optimal_positions.py",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "summary": "Production data layer for optimal positions: querying current/historical optimal positions per instrument-strategy and filtering stale or raw strategy tags.",
+   "tags": [
+    "service",
+    "data-model",
+    "optimal-position",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:remove_raw_strategies",
+   "type": "function",
+   "name": "remove_raw_strategies",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    160,
+    167
+   ],
+   "summary": "Function remove raw strategies (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:is_not_raw_strategy",
+   "type": "function",
+   "name": "is_not_raw_strategy",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    170,
+    171
+   ],
+   "summary": "Function is not raw strategy (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:is_raw_strategy",
+   "type": "function",
+   "name": "is_raw_strategy",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    174,
+    175
+   ],
+   "summary": "Function is raw strategy (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "function",
+   "name": "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    178,
+    191
+   ],
+   "summary": "Function remove raw from list of optimal positions and instrument strategies (14 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:is_not_raw_optimal_position_and_instrument_strategy",
+   "type": "function",
+   "name": "is_not_raw_optimal_position_and_instrument_strategy",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    194,
+    199
+   ],
+   "summary": "Function is not raw optimal position and instrument strategy (6 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:is_not_raw_instrument_strategy",
+   "type": "function",
+   "name": "is_not_raw_instrument_strategy",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    202,
+    203
+   ],
+   "summary": "Function is not raw instrument strategy (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:instrument_strategy_with_raw_tag",
+   "type": "function",
+   "name": "instrument_strategy_with_raw_tag",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    206,
+    216
+   ],
+   "summary": "Function instrument strategy with raw tag (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:strategy_name_with_raw_tag",
+   "type": "function",
+   "name": "strategy_name_with_raw_tag",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    219,
+    220
+   ],
+   "summary": "Function strategy name with raw tag (2 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "function",
+   "name": "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    223,
+    234
+   ],
+   "summary": "Function remove stale strategies and instruments from list of optimal positions and instrument strategies (12 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "function",
+   "name": "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    237,
+    247
+   ],
+   "summary": "Function remove stale strategies from list of optimal positions and instrument strategies (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/optimal_positions.py:remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "function",
+   "name": "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    250,
+    260
+   ],
+   "summary": "Function remove stale instruments from list of optimal positions and instrument strategies (11 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/optimal_positions.py:dataOptimalPositions",
+   "type": "class",
+   "name": "dataOptimalPositions",
+   "filePath": "sysproduction/data/optimal_positions.py",
+   "lineRange": [
+    26,
+    154
+   ],
+   "summary": "Class dataOptimalPositions with 12 methods (129 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/data/reports.py",
+   "type": "file",
+   "name": "reports.py",
+   "filePath": "sysproduction/data/reports.py",
+   "summary": "Production data layer that resolves reporting configuration from YAML, producing the set of report configs to run.",
+   "tags": [
+    "service",
+    "configuration",
+    "reporting",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/reports.py:populate_reporting_config_from_yaml_input",
+   "type": "function",
+   "name": "populate_reporting_config_from_yaml_input",
+   "filePath": "sysproduction/data/reports.py",
+   "lineRange": [
+    35,
+    56
+   ],
+   "summary": "Function populate reporting config from yaml input (22 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/reports.py:_resolve_config_for_named_report",
+   "type": "function",
+   "name": "_resolve_config_for_named_report",
+   "filePath": "sysproduction/data/reports.py",
+   "lineRange": [
+    59,
+    73
+   ],
+   "summary": "Function  resolve config for named report (15 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/reports.py:_resolve_config_from_config_pair",
+   "type": "function",
+   "name": "_resolve_config_from_config_pair",
+   "filePath": "sysproduction/data/reports.py",
+   "lineRange": [
+    76,
+    84
+   ],
+   "summary": "Function  resolve config from config pair (9 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/reports.py:dataReports",
+   "type": "class",
+   "name": "dataReports",
+   "filePath": "sysproduction/data/reports.py",
+   "lineRange": [
+    10,
+    32
+   ],
+   "summary": "Class dataReports with 3 methods (23 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/data/strategies.py",
+   "type": "file",
+   "name": "strategies.py",
+   "filePath": "sysproduction/data/strategies.py",
+   "summary": "Production data and diagnostic layer for strategy configuration: listing strategies from config, positions, and optimal positions, plus interactive strategy selection.",
+   "tags": [
+    "service",
+    "data-model",
+    "strategy",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/strategies.py:get_list_of_strategies",
+   "type": "function",
+   "name": "get_list_of_strategies",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    50,
+    59
+   ],
+   "summary": "Function get list of strategies (10 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_config",
+   "type": "function",
+   "name": "get_list_of_strategies_from_config",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    62,
+    66
+   ],
+   "summary": "Function get list of strategies from config (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_positions",
+   "type": "function",
+   "name": "get_list_of_strategies_from_positions",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    69,
+    73
+   ],
+   "summary": "Function get list of strategies from positions (5 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_optimal_positions",
+   "type": "function",
+   "name": "get_list_of_strategies_from_optimal_positions",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    76,
+    84
+   ],
+   "summary": "Function get list of strategies from optimal positions (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/strategies.py:get_valid_strategy_name_from_user",
+   "type": "function",
+   "name": "get_valid_strategy_name_from_user",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    87,
+    114
+   ],
+   "summary": "Function get valid strategy name from user (28 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/strategies.py:diagStrategiesConfig",
+   "type": "class",
+   "name": "diagStrategiesConfig",
+   "filePath": "sysproduction/data/strategies.py",
+   "lineRange": [
+    11,
+    47
+   ],
+   "summary": "Class diagStrategiesConfig with 6 methods (37 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/data/volumes.py",
+   "type": "file",
+   "name": "volumes.py",
+   "filePath": "sysproduction/data/volumes.py",
+   "summary": "Production diagnostic layer computing smoothed and normalised trading volumes for futures contracts used in liquidity and roll decisions.",
+   "tags": [
+    "service",
+    "data-model",
+    "volume",
+    "liquidity"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/volumes.py:normalise_volumes",
+   "type": "function",
+   "name": "normalise_volumes",
+   "filePath": "sysproduction/data/volumes.py",
+   "lineRange": [
+    91,
+    98
+   ],
+   "summary": "Function normalise volumes (8 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/volumes.py:get_smoothed_volume_ignoring_old_data",
+   "type": "function",
+   "name": "get_smoothed_volume_ignoring_old_data",
+   "filePath": "sysproduction/data/volumes.py",
+   "lineRange": [
+    101,
+    116
+   ],
+   "summary": "Function get smoothed volume ignoring old data (16 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/volumes.py:diagVolumes",
+   "type": "class",
+   "name": "diagVolumes",
+   "filePath": "sysproduction/data/volumes.py",
+   "lineRange": [
+    20,
+    88
+   ],
+   "summary": "Class diagVolumes with 6 methods (69 lines).",
+   "tags": [
+    "service",
+    "data-model",
+    "production"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_raw_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_raw_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_raw_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_raw_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_optimal_position_and_instrument_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_optimal_position_and_instrument_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_instrument_strategy",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:is_not_raw_instrument_strategy",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:instrument_strategy_with_raw_tag",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:instrument_strategy_with_raw_tag",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:strategy_name_with_raw_tag",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:strategy_name_with_raw_tag",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "function:sysproduction/data/optimal_positions.py:remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "class:sysproduction/data/optimal_positions.py:dataOptimalPositions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "class:sysproduction/data/optimal_positions.py:dataOptimalPositions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysdata/production/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysobjects/production/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysproduction/data/config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/optimal_positions.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/optimal_positions.py:dataOptimalPositions",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:populate_reporting_config_from_yaml_input",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:populate_reporting_config_from_yaml_input",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:_resolve_config_for_named_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:_resolve_config_for_named_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:_resolve_config_from_config_pair",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "function:sysproduction/data/reports.py:_resolve_config_from_config_pair",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "class:sysproduction/data/reports.py:dataReports",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "class:sysproduction/data/reports.py:dataReports",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/reports.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/reports.py:dataReports",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_optimal_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_list_of_strategies_from_optimal_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_valid_strategy_name_from_user",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "function:sysproduction/data/strategies.py:get_valid_strategy_name_from_user",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "class:sysproduction/data/strategies.py:diagStrategiesConfig",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "class:sysproduction/data/strategies.py:diagStrategiesConfig",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/strategies.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/strategies.py:diagStrategiesConfig",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "function:sysproduction/data/volumes.py:normalise_volumes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "function:sysproduction/data/volumes.py:normalise_volumes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "function:sysproduction/data/volumes.py:get_smoothed_volume_ignoring_old_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "function:sysproduction/data/volumes.py:get_smoothed_volume_ignoring_old_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "class:sysproduction/data/volumes.py:diagVolumes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "class:sysproduction/data/volumes.py:diagVolumes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:sysdata/futures/futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/volumes.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysproduction/data/volumes.py:diagVolumes",
+   "target": "class:sysproduction/data/generic_production_data.py:productionDataLayerGeneric",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  }
+ ]
+}

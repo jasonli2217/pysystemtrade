@@ -1,0 +1,3589 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysquant/estimators/mean_estimator.py",
+      "type": "file",
+      "name": "mean_estimator.py",
+      "filePath": "sysquant/estimators/mean_estimator.py",
+      "summary": "Estimates the expected (mean) returns of assets for portfolio optimisation, providing both exponentially-weighted and simple subperiod mean estimators with annualisation helpers.",
+      "tags": [
+        "estimator",
+        "data-model",
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/mean_estimator.py:meanEstimates",
+      "type": "class",
+      "name": "meanEstimates",
+      "filePath": "sysquant/estimators/mean_estimator.py",
+      "lineRange": [
+        18,
+        31
+      ],
+      "summary": "Dict-like container of per-asset mean return estimates with subsetting and missing-data helpers.",
+      "tags": [
+        "data-model",
+        "estimator"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysquant/estimators/mean_estimator.py:exponentialMeans",
+      "type": "class",
+      "name": "exponentialMeans",
+      "filePath": "sysquant/estimators/mean_estimator.py",
+      "lineRange": [
+        34,
+        84
+      ],
+      "summary": "Exponentially-weighted mean estimator that computes EWMA means over a dataset and extracts fit-period estimates.",
+      "tags": [
+        "estimator",
+        "exponential",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/mean_estimator.py:meanEstimator",
+      "type": "class",
+      "name": "meanEstimator",
+      "filePath": "sysquant/estimators/mean_estimator.py",
+      "lineRange": [
+        97,
+        123
+      ],
+      "summary": "Generic mean estimator wrapper that dispatches between subperiod calculation and exponential estimation.",
+      "tags": [
+        "estimator",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/estimators/mean_estimator.py:mean_estimator_for_subperiod",
+      "type": "function",
+      "name": "mean_estimator_for_subperiod",
+      "filePath": "sysquant/estimators/mean_estimator.py",
+      "lineRange": [
+        126,
+        148
+      ],
+      "summary": "Computes simple per-asset annualised mean estimates over a single fit period.",
+      "tags": [
+        "estimator",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/estimators/pooled_correlation.py",
+      "type": "file",
+      "name": "pooled_correlation.py",
+      "filePath": "sysquant/estimators/pooled_correlation.py",
+      "summary": "Computes a single pooled correlation matrix across multiple instruments' returns by stacking and downsampling their data.",
+      "tags": [
+        "estimator",
+        "correlation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/estimators/pooled_correlation.py:pooled_correlation_estimator",
+      "type": "function",
+      "name": "pooled_correlation_estimator",
+      "filePath": "sysquant/estimators/pooled_correlation.py",
+      "lineRange": [
+        12,
+        37
+      ],
+      "summary": "Forward-fills, downsamples and stacks a list of returns DataFrames to produce one pooled correlation estimate.",
+      "tags": [
+        "estimator",
+        "correlation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "file",
+      "name": "stdev_estimator.py",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "summary": "Estimates asset return standard deviations (volatility) for optimisation, offering exponentially-weighted and simple subperiod estimators plus a time series of stdevs with shock helpers.",
+      "tags": [
+        "estimator",
+        "volatility",
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/estimators/stdev_estimator.py:stdevEstimates",
+      "type": "class",
+      "name": "stdevEstimates",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "lineRange": [
+        23,
+        39
+      ],
+      "summary": "Dict-like container of per-asset standard-deviation estimates with subsetting and missing-data helpers.",
+      "tags": [
+        "data-model",
+        "estimator"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysquant/estimators/stdev_estimator.py:seriesOfStdevEstimates",
+      "type": "class",
+      "name": "seriesOfStdevEstimates",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "lineRange": [
+        42,
+        66
+      ],
+      "summary": "Time-indexed series of stdev estimates supporting lookup on a date and rolling-quantile shock scenarios.",
+      "tags": [
+        "data-model",
+        "estimator",
+        "volatility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/stdev_estimator.py:exponentialStdev",
+      "type": "class",
+      "name": "exponentialStdev",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "lineRange": [
+        69,
+        121
+      ],
+      "summary": "Exponentially-weighted volatility estimator computing EWMA stdevs and per-fit-period estimates.",
+      "tags": [
+        "estimator",
+        "exponential",
+        "volatility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysquant/estimators/stdev_estimator.py:stdevEstimator",
+      "type": "class",
+      "name": "stdevEstimator",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "lineRange": [
+        137,
+        159
+      ],
+      "summary": "Generic stdev estimator wrapper dispatching between subperiod and exponential estimation.",
+      "tags": [
+        "estimator",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/estimators/stdev_estimator.py:stdev_estimator_for_subperiod",
+      "type": "function",
+      "name": "stdev_estimator_for_subperiod",
+      "filePath": "sysquant/estimators/stdev_estimator.py",
+      "lineRange": [
+        162,
+        181
+      ],
+      "summary": "Computes simple per-asset annualised volatility estimates over a single fit period.",
+      "tags": [
+        "estimator",
+        "volatility",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/estimators/tests/test_mean_estimator.py",
+      "type": "file",
+      "name": "test_mean_estimator.py",
+      "filePath": "sysquant/estimators/tests/test_mean_estimator.py",
+      "summary": "Unit test verifying that the exponential mean estimator returns an empty mean estimate when asked for a fit period before any data exists.",
+      "tags": [
+        "test",
+        "estimator",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/fitting_dates.py",
+      "type": "file",
+      "name": "fitting_dates.py",
+      "filePath": "sysquant/fitting_dates.py",
+      "summary": "Generates in-sample/out-of-sample fitting date periods used to roll estimator and optimisation calculations through time (expanding or rolling windows).",
+      "tags": [
+        "utility",
+        "optimisation",
+        "data-model",
+        "quant"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/fitting_dates.py:fitDates",
+      "type": "class",
+      "name": "fitDates",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        9,
+        28
+      ],
+      "summary": "Value object describing one fit/period window with fit and out-of-sample start/end dates.",
+      "tags": [
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysquant/fitting_dates.py:listOfFittingDates",
+      "type": "class",
+      "name": "listOfFittingDates",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        31,
+        47
+      ],
+      "summary": "List of fitDates with helpers to find the most recent period before a given date.",
+      "tags": [
+        "data-model",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/fitting_dates.py:generate_fitting_dates",
+      "type": "function",
+      "name": "generate_fitting_dates",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        57,
+        83
+      ],
+      "summary": "Builds the list of fitting date periods from a dataset given a date method (expanding/rolling/in-sample).",
+      "tags": [
+        "utility",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/fitting_dates.py:generate_fitting_dates_given_start_and_end_date",
+      "type": "function",
+      "name": "generate_fitting_dates_given_start_and_end_date",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        86,
+        139
+      ],
+      "summary": "Core routine constructing fit periods between an explicit start and end date for a given roll method.",
+      "tags": [
+        "utility",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/fitting_dates.py:_list_of_starting_dates_per_period",
+      "type": "function",
+      "name": "_list_of_starting_dates_per_period",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        157,
+        178
+      ],
+      "summary": "Builds the reversed list of period start dates at the requested interval frequency.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/fitting_dates.py:_fit_dates_for_period_index",
+      "type": "function",
+      "name": "_fit_dates_for_period_index",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        181,
+        203
+      ],
+      "summary": "Computes the fit window and period window for a single period index given the roll method.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/fitting_dates.py:_add_dummy_period_if_required",
+      "type": "function",
+      "name": "_add_dummy_period_if_required",
+      "filePath": "sysquant/fitting_dates.py",
+      "lineRange": [
+        206,
+        224
+      ],
+      "summary": "Prepends a no-data dummy period so early dates are covered before the first real fit.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/SR_adjustment.py",
+      "type": "file",
+      "name": "SR_adjustment.py",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "summary": "Adjusts portfolio weights for differences in Sharpe ratio between assets using a mini-bootstrap interpolation, implementing Carver's handcrafting SR-adjustment step.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "weighting"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR_costs",
+      "type": "function",
+      "name": "adjust_dataframe_of_weights_for_SR_costs",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        12,
+        31
+      ],
+      "summary": "Adjusts a DataFrame of weights downward for per-asset SR cost penalties.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR",
+      "type": "function",
+      "name": "adjust_dataframe_of_weights_for_SR",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        34,
+        55
+      ],
+      "summary": "Applies SR adjustment row-by-row across a DataFrame of weights over time.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:adjust_list_of_weight_lists_for_SR",
+      "type": "function",
+      "name": "adjust_list_of_weight_lists_for_SR",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        58,
+        74
+      ],
+      "summary": "Applies SR adjustment to each weight list in a list of lists.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:adjust_weights_for_SR",
+      "type": "function",
+      "name": "adjust_weights_for_SR",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        77,
+        93
+      ],
+      "summary": "Adjusts a single set of weights for relative Sharpe ratios and renormalises.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:mini_bootstrap_ratio_given_SR_diff",
+      "type": "function",
+      "name": "mini_bootstrap_ratio_given_SR_diff",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        108,
+        155
+      ],
+      "summary": "Estimates the weight multiplier for a given SR difference via a small bootstrap simulation.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "simulation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/SR_adjustment.py:weights_given_SR_diff",
+      "type": "function",
+      "name": "weights_given_SR_diff",
+      "filePath": "sysquant/optimisation/SR_adjustment.py",
+      "lineRange": [
+        172,
+        211
+      ],
+      "summary": "Computes optimal weights between two assets for a given SR difference and confidence interval.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysquant/optimisation/cleaning.py",
+      "type": "file",
+      "name": "cleaning.py",
+      "filePath": "sysquant/optimisation/cleaning.py",
+      "summary": "Cleans portfolio weights by backfilling missing assets with neutral (must-have) weights, used to stabilise optimisation when assets lack history.",
+      "tags": [
+        "optimisation",
+        "validation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/cleaning.py:clean_weights",
+      "type": "function",
+      "name": "clean_weights",
+      "filePath": "sysquant/optimisation/cleaning.py",
+      "lineRange": [
+        20,
+        39
+      ],
+      "summary": "Replaces missing weights with must-have neutral defaults, returning a portfolioWeights object.",
+      "tags": [
+        "optimisation",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/cleaning.py:clean_list_of_weights",
+      "type": "function",
+      "name": "clean_list_of_weights",
+      "filePath": "sysquant/optimisation/cleaning.py",
+      "lineRange": [
+        52,
+        139
+      ],
+      "summary": "Core cleaning routine that fills NaN weights from must-have flags scaled by a fraction.",
+      "tags": [
+        "optimisation",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/cleaning.py:get_must_have_dict_from_data",
+      "type": "function",
+      "name": "get_must_have_dict_from_data",
+      "filePath": "sysquant/optimisation/cleaning.py",
+      "lineRange": [
+        7,
+        17
+      ],
+      "summary": "Derives a per-asset must-have flag dict from which columns of the data have at least one value.",
+      "tags": [
+        "optimisation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "type": "file",
+      "name": "call_optimiser.py",
+      "filePath": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "summary": "Dispatches to the appropriate optimisation method (equal weights, one period, shrinkage, handcraft) from a registry and handles the no-valid-data case.",
+      "tags": [
+        "optimisation",
+        "factory",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/call_optimiser.py:optimiser_for_method",
+      "type": "function",
+      "name": "optimiser_for_method",
+      "filePath": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "lineRange": [
+        21,
+        46
+      ],
+      "summary": "Splits estimates into valid/invalid assets, runs the chosen optimiser on valid data and recombines with zero weights for missing assets.",
+      "tags": [
+        "optimisation",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/call_optimiser.py:call_optimiser",
+      "type": "function",
+      "name": "call_optimiser",
+      "filePath": "sysquant/optimisation/optimisers/call_optimiser.py",
+      "lineRange": [
+        60,
+        72
+      ],
+      "summary": "Looks up the optimisation function in the registry by method name and invokes it.",
+      "tags": [
+        "optimisation",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/equal_weights.py",
+      "type": "file",
+      "name": "equal_weights.py",
+      "filePath": "sysquant/optimisation/optimisers/equal_weights.py",
+      "summary": "Trivial optimiser returning one-over-N equal portfolio weights for the supplied estimates.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "type": "file",
+      "name": "handcraft.py",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "summary": "Implements Carver's handcrafting optimiser: recursively clusters correlated assets into sub-portfolios, assigns one-over-N risk weights and adjusts for Sharpe ratio and diversification.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "weighting",
+        "clustering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/handcraft.py:handcraft_optimisation",
+      "type": "function",
+      "name": "handcraft_optimisation",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "lineRange": [
+        21,
+        35
+      ],
+      "summary": "Entry point that builds handcrafted risk weights for valid data and wraps them with estimates.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysquant/optimisation/optimisers/handcraft.py:handcraftPortfolio",
+      "type": "class",
+      "name": "handcraftPortfolio",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "lineRange": [
+        54,
+        140
+      ],
+      "summary": "Represents a (possibly nested) handcrafted portfolio computing risk weights, diversification multiplier and SR adjustments recursively over clustered sub-portfolios.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/handcraft.py:get_handcrafted_portfolio_weights_for_valid_data",
+      "type": "function",
+      "name": "get_handcrafted_portfolio_weights_for_valid_data",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "lineRange": [
+        38,
+        48
+      ],
+      "summary": "Builds a handcraftPortfolio and returns its risk weights, optionally equalising vols/SR.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/handcraft.py:aggregate_risk_weights_over_sub_portfolios",
+      "type": "function",
+      "name": "aggregate_risk_weights_over_sub_portfolios",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "lineRange": [
+        194,
+        229
+      ],
+      "summary": "Combines sub-portfolio risk weights weighted by each sub-portfolio's allocation and diversification.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/optimisers/handcraft.py:adjust_weights_for_SR_on_handcrafted_portfolio",
+      "type": "function",
+      "name": "adjust_weights_for_SR_on_handcrafted_portfolio",
+      "filePath": "sysquant/optimisation/optimisers/handcraft.py",
+      "lineRange": [
+        146,
+        167
+      ],
+      "summary": "Applies the SR adjustment to a handcrafted portfolio's raw risk weights.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/one_period.py",
+      "type": "file",
+      "name": "one_period.py",
+      "filePath": "sysquant/optimisation/optimisers/one_period.py",
+      "summary": "Thin optimiser that runs a single-period mean-variance optimisation on the supplied estimates.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "type": "file",
+      "name": "shrinkage.py",
+      "filePath": "sysquant/optimisation/optimisers/shrinkage.py",
+      "summary": "Optimiser that shrinks correlations and mean estimates toward neutral targets before running a single-period optimisation.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "type": "file",
+      "name": "portfolio_optimiser.py",
+      "filePath": "sysquant/optimisation/portfolio_optimiser.py",
+      "summary": "Orchestrates portfolio weight estimation for a single fit period: builds correlation/mean/stdev estimators from config, assembles Estimates, runs the chosen optimiser and cleans the resulting weights.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "service",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/optimisation/portfolio_optimiser.py:portfolioOptimiser",
+      "type": "class",
+      "name": "portfolioOptimiser",
+      "filePath": "sysquant/optimisation/portfolio_optimiser.py",
+      "lineRange": [
+        26,
+        190
+      ],
+      "summary": "Configurable optimiser that resolves estimator functions, computes per-period estimates and produces cleaned portfolio weights via the selected method.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "service",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysquant/optimisation/shared.py",
+      "type": "file",
+      "name": "shared.py",
+      "filePath": "sysquant/optimisation/shared.py",
+      "summary": "Shared mean-variance optimisation primitives: builds covariance from correlation and stdev, runs the scipy SLSQP optimiser to maximise Sharpe ratio, and provides NaN-handling fixers.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:optimise_given_estimates",
+      "type": "function",
+      "name": "optimise_given_estimates",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        15,
+        33
+      ],
+      "summary": "Top-level optimiser that equalises estimates as requested then optimises and wraps the resulting weights.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:optimise_from_processed_estimates",
+      "type": "function",
+      "name": "optimise_from_processed_estimates",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        36,
+        50
+      ],
+      "summary": "Builds sigma from correlation and stdev then runs the mean-variance optimisation.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:optimise_from_sigma_and_mean_list",
+      "type": "function",
+      "name": "optimise_from_sigma_and_mean_list",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        58,
+        79
+      ],
+      "summary": "Runs the constrained SLSQP optimisation maximising negative-Sharpe over the covariance and means.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:fix_vector",
+      "type": "function",
+      "name": "fix_vector",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        102,
+        117
+      ],
+      "summary": "Replaces NaN entries in a vector with a sentinel value for optimisation, recording their positions.",
+      "tags": [
+        "optimisation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:fix_matrix",
+      "type": "function",
+      "name": "fix_matrix",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        156,
+        172
+      ],
+      "summary": "Replaces NaN rows/columns in a matrix with sentinel values so optimisation can proceed.",
+      "tags": [
+        "optimisation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/shared.py:neg_SR",
+      "type": "function",
+      "name": "neg_SR",
+      "filePath": "sysquant/optimisation/shared.py",
+      "lineRange": [
+        175,
+        181
+      ],
+      "summary": "Objective function returning negative Sharpe ratio for a candidate weight vector.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/optimisation/weights.py",
+      "type": "file",
+      "name": "weights.py",
+      "filePath": "sysquant/optimisation/weights.py",
+      "summary": "Core data model for portfolio weights: a dict-like portfolioWeights class with arithmetic, subsetting, integer rounding and portfolio-stdev calculation, plus a time series of weights and one-over-N helpers.",
+      "tags": [
+        "data-model",
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/optimisation/weights.py:portfolioWeights",
+      "type": "class",
+      "name": "portfolioWeights",
+      "filePath": "sysquant/optimisation/weights.py",
+      "lineRange": [
+        15,
+        168
+      ],
+      "summary": "Dict-like per-asset weight container supporting arithmetic operators, reordering, integer rounding, sub-portfolio aggregation and portfolio standard-deviation computation.",
+      "tags": [
+        "data-model",
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysquant/optimisation/weights.py:seriesOfPortfolioWeights",
+      "type": "class",
+      "name": "seriesOfPortfolioWeights",
+      "filePath": "sysquant/optimisation/weights.py",
+      "lineRange": [
+        171,
+        180
+      ],
+      "summary": "Time-indexed DataFrame of portfolio weights with date lookup and leverage helpers.",
+      "tags": [
+        "data-model",
+        "optimisation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/optimisation/weights.py:one_over_n_weights_given_asset_names",
+      "type": "function",
+      "name": "one_over_n_weights_given_asset_names",
+      "filePath": "sysquant/optimisation/weights.py",
+      "lineRange": [
+        210,
+        214
+      ],
+      "summary": "Returns equal one-over-N portfolioWeights for a list of asset names.",
+      "tags": [
+        "optimisation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysquant/portfolio_risk.py",
+      "type": "file",
+      "name": "portfolio_risk.py",
+      "filePath": "sysquant/portfolio_risk.py",
+      "summary": "Computes portfolio-level risk over time from per-asset weights, correlations and standard deviations, including covariance matrix assembly for each date.",
+      "tags": [
+        "quant",
+        "risk",
+        "optimisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/portfolio_risk.py:calc_portfolio_risk_series",
+      "type": "function",
+      "name": "calc_portfolio_risk_series",
+      "filePath": "sysquant/portfolio_risk.py",
+      "lineRange": [
+        30,
+        59
+      ],
+      "summary": "Iterates dates to compute a time series of annualised portfolio standard deviation from weights and a covariance matrix.",
+      "tags": [
+        "quant",
+        "risk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysquant/portfolio_risk.py:get_covariance_matrix",
+      "type": "function",
+      "name": "get_covariance_matrix",
+      "filePath": "sysquant/portfolio_risk.py",
+      "lineRange": [
+        62,
+        82
+      ],
+      "summary": "Builds a covariance matrix for a date from the correlation list and stdev estimates.",
+      "tags": [
+        "quant",
+        "risk"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysquant/portfolio_risk.py:calc_sum_annualised_risk_given_portfolio_weights",
+      "type": "function",
+      "name": "calc_sum_annualised_risk_given_portfolio_weights",
+      "filePath": "sysquant/portfolio_risk.py",
+      "lineRange": [
+        18,
+        27
+      ],
+      "summary": "Computes the simple sum of absolute weighted annualised risk across instruments.",
+      "tags": [
+        "quant",
+        "risk"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/diagoutput.py",
+      "type": "file",
+      "name": "diagoutput.py",
+      "filePath": "systems/diagoutput.py",
+      "summary": "Diagnostic reporting stage that inspects a backtest system to check forecast scaling, export estimated config parameters as YAML, and explain calculation details per instrument.",
+      "tags": [
+        "service",
+        "reporting",
+        "diagnostics"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/diagoutput.py:systemDiag",
+      "type": "class",
+      "name": "systemDiag",
+      "filePath": "systems/diagoutput.py",
+      "lineRange": [
+        10,
+        390
+      ],
+      "summary": "Wraps a system to extract estimated forecast scalars, weights, diversification multipliers and full calculation breakdowns for diagnostics and YAML config export.",
+      "tags": [
+        "service",
+        "reporting",
+        "diagnostics"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/forecast_mapping.py",
+      "type": "file",
+      "name": "forecast_mapping.py",
+      "filePath": "systems/forecast_mapping.py",
+      "summary": "Implements forecast mapping that non-linearly rescales raw forecasts to reduce small positions, per Carver's position-inertia/forecast-mapping technique.",
+      "tags": [
+        "quant",
+        "forecast",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/forecast_mapping.py:estimate_mapping_params",
+      "type": "function",
+      "name": "estimate_mapping_params",
+      "filePath": "systems/forecast_mapping.py",
+      "lineRange": [
+        6,
+        35
+      ],
+      "summary": "Derives forecast-mapping parameters (threshold, cap, slope) from a single scaling parameter.",
+      "tags": [
+        "quant",
+        "forecast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/forecast_mapping.py:map_forecast_value_scalar",
+      "type": "function",
+      "name": "map_forecast_value_scalar",
+      "filePath": "systems/forecast_mapping.py",
+      "lineRange": [
+        38,
+        69
+      ],
+      "summary": "Maps a single forecast value through the piecewise-linear mapping function.",
+      "tags": [
+        "quant",
+        "forecast"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/forecast_mapping.py:map_forecast_value",
+      "type": "function",
+      "name": "map_forecast_value",
+      "filePath": "systems/forecast_mapping.py",
+      "lineRange": [
+        72,
+        94
+      ],
+      "summary": "Applies the forecast mapping element-wise across a forecast series.",
+      "tags": [
+        "quant",
+        "forecast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "file",
+      "name": "buffering.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "summary": "Tracking-error buffering for the dynamic optimised system: computes how far to move from prior toward optimal positions to balance trading cost against tracking error.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "buffering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "function",
+      "name": "adjust_weights_with_factor",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        33,
+        51
+      ],
+      "summary": "Blends prior and optimised weights by an adjustment factor and rounds the resulting trades to contract space.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "function",
+      "name": "calculate_adjustment_factor",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        15,
+        30
+      ],
+      "summary": "Computes the buffer adjustment factor from the speed control and the prior tracking error.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "function",
+      "name": "calculate_adjusting_trades_rounding_in_contract_space",
+      "filePath": "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "lineRange": [
+        54,
+        65
+      ],
+      "summary": "Rounds weight-space adjusting trades into whole-contract space.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "type": "file",
+      "name": "data_for_optimisation.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "summary": "Holds and lazily converts all per-instrument inputs (optimal/prior weights, covariance, costs, constraints) into numpy arrays for the dynamic greedy optimiser.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "class",
+      "name": "dataForOptimisation",
+      "filePath": "systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "lineRange": [
+        12,
+        252
+      ],
+      "summary": "Caching container that transforms portfolioWeights/covariance/cost inputs into aligned numpy arrays and constraint vectors keyed on valid-data instruments.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "type": "file",
+      "name": "greedy_algo.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "summary": "Greedy integer optimisation algorithm that incrementally adds contracts in the direction that most improves the objective until no improvement is found.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "function",
+      "name": "greedy_algo_across_integer_values",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        6,
+        35
+      ],
+      "summary": "Greedily steps integer position values to minimise the objective, returning the best solution found.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "function",
+      "name": "_find_possible_new_best_live",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        38,
+        69
+      ],
+      "summary": "Evaluates each candidate single-step move from the current solution to find an improvement.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "function",
+      "name": "_update_at_limit",
+      "filePath": "systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "lineRange": [
+        72,
+        90
+      ],
+      "summary": "Marks instruments that have hit their min/max constraint so they are skipped in further steps.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "type": "file",
+      "name": "optimisation.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "summary": "Defines the greedy objective function for the dynamic small-system optimiser: minimises tracking error against optimal positions plus trading costs subject to constraints, with buffering on small tracking errors.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "objective-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "class",
+      "name": "objectiveFunctionForGreedy",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "lineRange": [
+        33,
+        339
+      ],
+      "summary": "Objective function object computing tracking error, costs and constraint penalties for candidate integer positions, driving the greedy optimiser and applying buffering.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "objective-function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "type": "file",
+      "name": "optimised_positions_stage.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "summary": "Backtest system stage that produces dynamically-optimised integer positions: gathers covariance, costs, constraints and per-contract values, runs the greedy optimiser per date and assembles the optimised position DataFrame.",
+      "tags": [
+        "service",
+        "optimisation",
+        "quant",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "class",
+      "name": "optimisedPositions",
+      "filePath": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "lineRange": [
+        35,
+        382
+      ],
+      "summary": "System stage computing dynamically optimised positions by building per-date objective instances, running the greedy optimiser and deriving costs, deflators and covariance inputs.",
+      "tags": [
+        "service",
+        "optimisation",
+        "quant",
+        "stage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "type": "file",
+      "name": "set_up_constraints.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "summary": "Builds per-instrument minima, maxima, trade direction and starting weights for the dynamic optimiser from reduce-only/no-trade/long-only constraints and prior positions.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "constraints",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "class",
+      "name": "minMaxAndDirectionAndStart",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        13,
+        36
+      ],
+      "summary": "Container exposing per-code minima, maxima, direction and starting weights as portfolioWeights across instruments.",
+      "tags": [
+        "optimisation",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "function",
+      "name": "calculate_min_max_and_direction_and_start",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        47,
+        61
+      ],
+      "summary": "Computes the full set of constraint vectors across all instrument codes from the input data.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "function",
+      "name": "calculate_minima_and_maxima",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        127,
+        166
+      ],
+      "summary": "Derives the min and max allowable weight for one instrument from its constraints and prior weight.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "constraints"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "function",
+      "name": "calculations_for_code",
+      "filePath": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "lineRange": [
+        98,
+        124
+      ],
+      "summary": "Computes minima, maxima, direction and starting weight for a single instrument code.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "type": "file",
+      "name": "optimise_small_system.py",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "summary": "Static small-system optimiser that greedily selects an ordered set of instruments by net post-cost Sharpe ratio, using handcrafting to size a capital-constrained portfolio.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "instrument-selection"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "function",
+      "name": "find_best_ordered_set_of_instruments",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        20,
+        69
+      ],
+      "summary": "Greedily builds an ordered list of instruments, adding the one that most improves portfolio net Sharpe at each step.",
+      "tags": [
+        "optimisation",
+        "quant",
+        "instrument-selection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "function",
+      "name": "find_next_instrument",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        106,
+        129
+      ],
+      "summary": "Finds the next-best instrument to add to the current set by post-cost SR.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "function",
+      "name": "SR_for_instrument_list",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        132,
+        153
+      ],
+      "summary": "Estimates the net Sharpe ratio of a candidate instrument list via handcrafting and size penalties.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "function",
+      "name": "build_estimates",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        156,
+        174
+      ],
+      "summary": "Assembles mean/stdev/correlation Estimates for a subset of instruments for handcrafting.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "function",
+      "name": "estimate_SR_given_weights",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        177,
+        198
+      ],
+      "summary": "Estimates portfolio SR for given risk weights using the cost-aware mean function.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "function",
+      "name": "net_SR_for_instrument_in_system",
+      "filePath": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "lineRange": [
+        256,
+        275
+      ],
+      "summary": "Computes the net post-cost, size-penalised Sharpe ratio for a single instrument in the system.",
+      "tags": [
+        "optimisation",
+        "quant"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:meanEstimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:exponentialMeans",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:meanEstimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "function:sysquant/estimators/mean_estimator.py:mean_estimator_for_subperiod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:meanEstimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:exponentialMeans",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "class:sysquant/estimators/mean_estimator.py:meanEstimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "function:sysquant/estimators/mean_estimator.py:mean_estimator_for_subperiod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/mean_estimator.py",
+      "target": "function:syscore/pandas/find_data.py:get_max_index_before_datetime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "file:syscore/pandas/list_of_df.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "file:sysquant/estimators/correlation_over_time.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "function:sysquant/estimators/pooled_correlation.py:pooled_correlation_estimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "function:sysquant/estimators/pooled_correlation.py:pooled_correlation_estimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "function:sysquant/estimators/correlation_over_time.py:correlation_over_time",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/pooled_correlation.py",
+      "target": "function:syscore/pandas/list_of_df.py:stacked_df_with_added_time_from_list",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:stdevEstimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:seriesOfStdevEstimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:exponentialStdev",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:stdevEstimator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "function:sysquant/estimators/stdev_estimator.py:stdev_estimator_for_subperiod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:stdevEstimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:seriesOfStdevEstimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:exponentialStdev",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "class:sysquant/estimators/stdev_estimator.py:stdevEstimator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "function:sysquant/estimators/stdev_estimator.py:stdev_estimator_for_subperiod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/stdev_estimator.py",
+      "target": "function:syscore/pandas/find_data.py:get_row_of_df_aligned_to_weights_as_dict",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/estimators/tests/test_mean_estimator.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/tests/test_mean_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/estimators/tests/test_mean_estimator.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:sysquant/estimators/tests/test_mean_estimator.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "file:syscore/pandas/list_of_df.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "class:sysquant/fitting_dates.py:fitDates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "class:sysquant/fitting_dates.py:listOfFittingDates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:generate_fitting_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:generate_fitting_dates_given_start_and_end_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:_list_of_starting_dates_per_period",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:_fit_dates_for_period_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:_add_dummy_period_if_required",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "class:sysquant/fitting_dates.py:fitDates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "class:sysquant/fitting_dates.py:listOfFittingDates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:generate_fitting_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/fitting_dates.py",
+      "target": "function:sysquant/fitting_dates.py:generate_fitting_dates_given_start_and_end_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR_costs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_list_of_weight_lists_for_SR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_weights_for_SR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:mini_bootstrap_ratio_given_SR_diff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:weights_given_SR_diff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR_costs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_dataframe_of_weights_for_SR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_weights_for_SR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:mini_bootstrap_ratio_given_SR_diff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/SR_adjustment.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:weights_given_SR_diff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:clean_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:clean_list_of_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:get_must_have_dict_from_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:get_must_have_dict_from_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:clean_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:clean_list_of_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:sysquant/optimisation/cleaning.py:get_lists_from_dicts_of_weights_and_must_haves",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/cleaning.py",
+      "target": "function:syscore/pandas/pdutils.py:get_index_of_columns_in_df_with_at_least_one_value",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/optimisation/optimisers/equal_weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/optimisation/optimisers/one_period.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:optimiser_for_method",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:call_optimiser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:optimiser_for_method",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:weights_and_estimates_with_no_valid_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:call_optimiser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/equal_weights.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/equal_weights.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/equal_weights.py",
+      "target": "function:sysquant/optimisation/optimisers/equal_weights.py:equal_weights_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/estimators/clustering_correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/estimators/diversification_multipliers.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/optimisation/SR_adjustment.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:handcraft_optimisation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "class:sysquant/optimisation/optimisers/handcraft.py:handcraftPortfolio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:get_handcrafted_portfolio_weights_for_valid_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:aggregate_risk_weights_over_sub_portfolios",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:adjust_weights_for_SR_on_handcrafted_portfolio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:handcraft_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "class:sysquant/optimisation/optimisers/handcraft.py:handcraftPortfolio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:get_handcrafted_portfolio_weights_for_valid_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:adjust_weights_for_SR_on_handcrafted_portfolio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/optimisers/handcraft.py:aggregate_risk_weights_over_sub_portfolios",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/optimisation/SR_adjustment.py:adjust_weights_for_SR",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/estimators/clustering_correlations.py:cluster_correlation_matrix",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "target": "function:sysquant/estimators/diversification_multipliers.py:diversification_mult_single_period",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/one_period.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/one_period.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/one_period.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/one_period.py",
+      "target": "function:sysquant/optimisation/optimisers/one_period.py:one_period_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/one_period.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_given_estimates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "target": "function:sysquant/optimisation/optimisers/shrinkage.py:shrinkage_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/optimisers/shrinkage.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_given_estimates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/estimators/generic_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/optimisation/cleaning.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/optimisation/optimisers/call_optimiser.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "file:sysquant/returns.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "class:sysquant/optimisation/portfolio_optimiser.py:portfolioOptimiser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "class:sysquant/optimisation/portfolio_optimiser.py:portfolioOptimiser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "function:sysquant/optimisation/cleaning.py:clean_weights",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "function:sysquant/optimisation/cleaning.py:get_must_have_dict_from_data",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "function:sysquant/optimisation/optimisers/call_optimiser.py:optimiser_for_method",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "function:syslogging/logger.py:get_logger",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/portfolio_optimiser.py",
+      "target": "function:syscore/objects.py:resolve_function",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_given_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_from_processed_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_from_sigma_and_mean_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_vector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:neg_SR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_given_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_from_processed_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:sigma_from_corr_and_std",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:optimise_from_sigma_and_mean_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:un_fix_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_sigma",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:neg_SR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:variance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:addem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_vector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_mus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_stdev",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/shared.py",
+      "target": "function:sysquant/optimisation/shared.py:fix_correlation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "file:sysquant/estimators/correlation_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "class:sysquant/optimisation/weights.py:portfolioWeights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "class:sysquant/optimisation/weights.py:seriesOfPortfolioWeights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "function:sysquant/optimisation/weights.py:one_over_n_weights_given_asset_names",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "class:sysquant/optimisation/weights.py:portfolioWeights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "class:sysquant/optimisation/weights.py:seriesOfPortfolioWeights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "class:sysquant/optimisation/weights.py:estimatesWithPortfolioWeights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "function:sysquant/optimisation/weights.py:one_over_n_portfolio_weights_from_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "function:sysquant/optimisation/weights.py:one_over_n_weights_given_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/optimisation/weights.py",
+      "target": "function:sysquant/optimisation/weights.py:one_over_n_weights_given_asset_names",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:calc_portfolio_risk_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:get_covariance_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:calc_sum_annualised_risk_given_portfolio_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:calc_sum_annualised_risk_given_portfolio_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:calc_portfolio_risk_series",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:get_covariance_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:get_correlation_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/portfolio_risk.py:get_stdev_estimate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysquant/portfolio_risk.py",
+      "target": "function:sysquant/estimators/correlations.py:create_boring_corr_matrix",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "file:systems/forecast_mapping.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "class:systems/diagoutput.py:systemDiag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "class:systems/diagoutput.py:systemDiag",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "function:systems/diagoutput.py:forecast_error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/diagoutput.py",
+      "target": "function:systems/forecast_mapping.py:estimate_mapping_params",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:estimate_mapping_params",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:map_forecast_value_scalar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:map_forecast_value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:estimate_mapping_params",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:map_forecast_value_scalar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/forecast_mapping.py",
+      "target": "function:systems/forecast_mapping.py:map_forecast_value",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/buffering.py:speedControlForDynamicOpt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjusting_trades_rounding_in_contract_space",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_find_possible_new_best_live",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:_update_at_limit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/greedy_algo.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:constraintsForDynamicOpt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/greedy_algo.py:greedy_algo_across_integer_values",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:calculate_adjustment_factor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/buffering.py:adjust_weights_with_factor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/data_for_optimisation.py:dataForOptimisation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "target": "function:syslogging/logger.py:get_logger",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/pandas/find_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:syscore/pandas/strategy_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/portfolio.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "file:systems/system_cache.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:optimisedPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py:calculate_cost_per_notional_weight_as_proportion_of_capital",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/optimisation.py:objectiveFunctionForGreedy",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/buffering.py:speedControlForDynamicOpt",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "function:sysquant/estimators/covariance.py:covariance_from_stdev_and_correlation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "target": "class:sysquant/optimisation/weights.py:seriesOfPortfolioWeights",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "class:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:minMaxAndDirectionAndStartForCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_min_max_and_direction_and_start",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:get_data_and_calculate_for_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculations_for_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_minima_and_maxima",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_direction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+      "target": "function:systems/provided/dynamic_small_system_optimise/set_up_constraints.py:calculate_starting_weight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/estimators/estimates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/optimisation/optimisers/handcraft.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "file:sysquant/optimisation/shared.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_ordered_set_of_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:get_correlation_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_best_market",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:find_next_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:SR_for_instrument_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:build_estimates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_SR_given_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:mean_estimates_from_SR_function_actual_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:estimate_portfolio_sizes_given_weights",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument_in_system",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:calculate_maximum_position",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:calculate_trading_cost",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:net_SR_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:systems/provided/static_small_system_optimise/optimise_small_system.py:size_penalty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "class:sysquant/optimisation/optimisers/handcraft.py:handcraftPortfolio",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "function:sysquant/optimisation/shared.py:neg_SR",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/static_small_system_optimise/optimise_small_system.py",
+      "target": "class:sysquant/estimators/estimates.py:Estimates",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

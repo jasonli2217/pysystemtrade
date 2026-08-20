@@ -1,0 +1,43 @@
+{
+  "batchIndex": 20,
+  "files": [
+    {
+      "path": ".github/workflows/action.yml",
+      "language": "yaml",
+      "sizeLines": 16,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/lint.yml",
+      "language": "yaml",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/os-test.yml",
+      "language": "yaml",
+      "sizeLines": 32,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/quick-test.yml",
+      "language": "yaml",
+      "sizeLines": 33,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/slow-test.yml",
+      "language": "yaml",
+      "sizeLines": 37,
+      "fileCategory": "infra"
+    }
+  ],
+  "batchImportData": {
+    ".github/workflows/action.yml": [],
+    ".github/workflows/lint.yml": [],
+    ".github/workflows/os-test.yml": [],
+    ".github/workflows/quick-test.yml": [],
+    ".github/workflows/slow-test.yml": []
+  },
+  "neighborMap": {}
+}

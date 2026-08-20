@@ -1,0 +1,2768 @@
+{
+ "nodes": [
+  {
+   "id": "file:dashboard/app.py",
+   "type": "file",
+   "name": "app.py",
+   "filePath": "dashboard/app.py",
+   "summary": "Flask web dashboard for the live production system, exposing routes that render capital, costs, FX, P&L, process status, reconciliation, rolls, risk and trades views backed by the reporting API.",
+   "tags": [
+    "entry-point",
+    "api-handler",
+    "dashboard",
+    "reporting",
+    "web"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Flask app using before/after request hooks (get_data/cleanup_data) and asyncio event-loop setup per request for broker calls."
+  },
+  {
+   "id": "function:dashboard/app.py:processes",
+   "type": "function",
+   "name": "processes",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    123,
+    155
+   ],
+   "summary": "Builds the process-control overview by combining config, control and process status tables plus trading-server login data into a JSON response.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:reconcile",
+   "type": "function",
+   "name": "reconcile",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    159,
+    183
+   ],
+   "summary": "Assembles a reconciliation view comparing optimal, IB broker and internal positions for the trades dashboard.",
+   "tags": [
+    "api-handler",
+    "reconciliation",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:rolls_post",
+   "type": "function",
+   "name": "rolls_post",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    199,
+    256
+   ],
+   "summary": "Handles POST roll actions, computing current/updated multiple and adjusted prices and applying roll-state changes for the selected instrument.",
+   "tags": [
+    "api-handler",
+    "rolls",
+    "event-handler"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:dashboard/app.py:trades",
+   "type": "function",
+   "name": "trades",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    271,
+    297
+   ],
+   "summary": "Compiles order overview, delays and slippage tables (raw, vol, cash) into a JSON payload for the trades view.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "trades"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:pandl",
+   "type": "function",
+   "name": "pandl",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    105,
+    119
+   ],
+   "summary": "Returns P&L tables across instruments, strategies and sectors for the dashboard P&L view.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "pandl"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "function",
+   "name": "dict_of_df_to_dict",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    58,
+    64
+   ],
+   "summary": "Utility converting a dict of DataFrames into a JSON-serialisable nested dict using a chosen pandas orient.",
+   "tags": [
+    "utility",
+    "serialization"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysbrokers/broker_execution_stack.py",
+   "type": "file",
+   "name": "broker_execution_stack.py",
+   "filePath": "sysbrokers/broker_execution_stack.py",
+   "summary": "Abstract broker execution stack interface defining the contract for placing, matching, cancelling and modifying broker orders, to be implemented per-broker (e.g. IB).",
+   "tags": [
+    "data-model",
+    "broker",
+    "execution",
+    "abstract"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "class",
+   "name": "brokerExecutionStackData",
+   "filePath": "sysbrokers/broker_execution_stack.py",
+   "lineRange": [
+    14,
+    56
+   ],
+   "summary": "Abstract base for broker order-stack access, declaring NotImplemented methods for listing, matching, cancelling and modifying broker orders.",
+   "tags": [
+    "broker",
+    "execution",
+    "abstract",
+    "order-stack"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/list_running_pids.py",
+   "type": "file",
+   "name": "list_running_pids.py",
+   "filePath": "syscontrol/list_running_pids.py",
+   "summary": "Lists running process IDs either locally (via psutil) or remotely (via SSH subprocess) to support the production process monitor.",
+   "tags": [
+    "utility",
+    "process-control",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "function",
+   "name": "remote_list_of_running_pids",
+   "filePath": "syscontrol/list_running_pids.py",
+   "lineRange": [
+    52,
+    74
+   ],
+   "summary": "Runs an SSH command against the trading server to fetch the list of running Python PIDs over the network.",
+   "tags": [
+    "process-control",
+    "monitoring",
+    "ssh"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "function",
+   "name": "describe_trading_server_login_data",
+   "filePath": "syscontrol/list_running_pids.py",
+   "lineRange": [
+    13,
+    25
+   ],
+   "summary": "Produces a human-readable description of the configured trading-server SSH login details.",
+   "tags": [
+    "process-control",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/monitor.py",
+   "type": "file",
+   "name": "monitor.py",
+   "filePath": "syscontrol/monitor.py",
+   "summary": "Continuously monitors all production processes, updating per-process status and rendering an HTML status page for the live trading system.",
+   "tags": [
+    "monitoring",
+    "process-control",
+    "entry-point",
+    "html"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/monitor.py:processMonitor",
+   "type": "class",
+   "name": "processMonitor",
+   "filePath": "syscontrol/monitor.py",
+   "lineRange": [
+    39,
+    95
+   ],
+   "summary": "Tracks and updates the running status of every control process, logging status changes and producing HTML tables/messages.",
+   "tags": [
+    "monitoring",
+    "process-control",
+    "html"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscontrol/monitor.py:generate_html",
+   "type": "function",
+   "name": "generate_html",
+   "filePath": "syscontrol/monitor.py",
+   "lineRange": [
+    125,
+    140
+   ],
+   "summary": "Writes the monitor status HTML page combining process tables and log messages to disk.",
+   "tags": [
+    "monitoring",
+    "html",
+    "reporting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/report_process_status.py",
+   "type": "file",
+   "name": "report_process_status.py",
+   "filePath": "syscontrol/report_process_status.py",
+   "summary": "Throttled status-logging helpers that record process wait conditions and avoid log spam by tracking last-log timing per status key.",
+   "tags": [
+    "process-control",
+    "logging",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "class",
+   "name": "reportStatus",
+   "filePath": "syscontrol/report_process_status.py",
+   "lineRange": [
+    11,
+    114
+   ],
+   "summary": "Base throttled logger that records status messages only when enough time has elapsed, tracking per-key last-log timestamps.",
+   "tags": [
+    "logging",
+    "process-control",
+    "throttling"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "class",
+   "name": "reportProcessStatus",
+   "filePath": "syscontrol/report_process_status.py",
+   "lineRange": [
+    125,
+    151
+   ],
+   "summary": "Specialises reportStatus to log and clear process wait conditions keyed by reason and condition.",
+   "tags": [
+    "logging",
+    "process-control",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/run_process.py",
+   "type": "file",
+   "name": "run_process.py",
+   "filePath": "syscontrol/run_process.py",
+   "summary": "Core production process runner: manages start/wait gating, the main loop over timer methods, pause/stop handling and clean finish for a scheduled trading process.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "entry-point",
+    "orchestration"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Heavy use of free functions operating on a processToRun object to keep the control-flow logic flat and testable."
+  },
+  {
+   "id": "class:syscontrol/run_process.py:processToRun",
+   "type": "class",
+   "name": "processToRun",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    41,
+    164
+   ],
+   "summary": "Encapsulates a runnable production process, wiring its timer functions, control data and diagnostics and driving the run/finish lifecycle.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "orchestration"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_if_process_status_is_okay_to_run",
+   "type": "function",
+   "name": "_check_if_process_status_is_okay_to_run",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    206,
+    238
+   ],
+   "summary": "Checks control-status flags (start allowed, time, previous run) and reports wait conditions to decide whether a process may start.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_if_okay_to_wait_before_starting_process",
+   "type": "function",
+   "name": "_check_if_okay_to_wait_before_starting_process",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    301,
+    332
+   ],
+   "summary": "Determines whether the process should wait rather than start, reporting and clearing wait conditions accordingly.",
+   "tags": [
+    "process-control",
+    "scheduler"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_for_stop",
+   "type": "function",
+   "name": "_check_for_stop",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    374,
+    400
+   ],
+   "summary": "Evaluates stop conditions (control-process stop, all methods finished, finish time) to decide when to end the run loop.",
+   "tags": [
+    "process-control",
+    "scheduler"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:wait_for_next_method_run_time",
+   "type": "function",
+   "name": "wait_for_next_method_run_time",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    338,
+    349
+   ],
+   "summary": "Sleeps until the next scheduled timer method is due, flushing stdout for log visibility.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "timing"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscontrol/strategy_tools.py",
+   "type": "file",
+   "name": "strategy_tools.py",
+   "filePath": "syscontrol/strategy_tools.py",
+   "summary": "Resolves and instantiates per-strategy class instances and methods from production config so processes can dispatch to strategy-specific logic.",
+   "tags": [
+    "process-control",
+    "strategy",
+    "factory"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "class",
+   "name": "strategyRunner",
+   "filePath": "syscontrol/strategy_tools.py",
+   "lineRange": [
+    8,
+    41
+   ],
+   "summary": "Wraps a strategy's configured class/method so a production process can invoke the right strategy code with resolved arguments.",
+   "tags": [
+    "strategy",
+    "factory",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "function",
+   "name": "get_class_object_and_other_arguments",
+   "filePath": "syscontrol/strategy_tools.py",
+   "lineRange": [
+    74,
+    89
+   ],
+   "summary": "Reads production config to resolve the strategy class object and its extra constructor arguments for a process.",
+   "tags": [
+    "strategy",
+    "factory",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/timer_functions.py",
+   "type": "file",
+   "name": "timer_functions.py",
+   "filePath": "syscontrol/timer_functions.py",
+   "summary": "Defines the timer abstraction that decides when each process method should run, tracking run frequency, run-on-start/exit and completion state.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "timing"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "class",
+   "name": "timerClassWithFunction",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    17,
+    308
+   ],
+   "summary": "Wraps a single process method with its scheduling parameters, deciding when to run it and tracking its last/next run and finished state.",
+   "tags": [
+    "scheduler",
+    "timing",
+    "process-control"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "class",
+   "name": "listOfTimerFunctions",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    311,
+    332
+   ],
+   "summary": "Collection of timerClassWithFunction objects with helpers for next-run timing and all-finished checks across a process.",
+   "tags": [
+    "scheduler",
+    "timing",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "function",
+   "name": "get_list_of_timer_functions",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    335,
+    347
+   ],
+   "summary": "Builds the list of timer functions for a named process from its configured methods and parameters.",
+   "tags": [
+    "scheduler",
+    "factory",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/timer_parameters.py",
+   "type": "file",
+   "name": "timer_parameters.py",
+   "filePath": "syscontrol/timer_parameters.py",
+   "summary": "Small dataclass holding the scheduling parameters (frequency, run-on-start/exit flags) for a single process timer.",
+   "tags": [
+    "data-model",
+    "scheduler",
+    "config"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/constants.py",
+   "type": "file",
+   "name": "constants.py",
+   "filePath": "syscore/constants.py",
+   "summary": "Defines named_object sentinel values and a status type used as lightweight typed constants throughout the codebase.",
+   "tags": [
+    "type-definition",
+    "utility",
+    "constants"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/interactive/date_input.py",
+   "type": "file",
+   "name": "date_input.py",
+   "filePath": "syscore/interactive/date_input.py",
+   "summary": "Interactive command-line helpers for prompting the user for report dates and datetime values with sensible defaults.",
+   "tags": [
+    "utility",
+    "interactive",
+    "date",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "function",
+   "name": "get_report_dates",
+   "filePath": "syscore/interactive/date_input.py",
+   "lineRange": [
+    12,
+    62
+   ],
+   "summary": "Interactively prompts the user to choose a reporting date range (rolling, calendar or custom) for production reports.",
+   "tags": [
+    "interactive",
+    "date",
+    "reporting",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "function",
+   "name": "get_datetime_input",
+   "filePath": "syscore/interactive/date_input.py",
+   "lineRange": [
+    68,
+    93
+   ],
+   "summary": "Prompts and validates a single datetime (or date) value from the user with an optional default.",
+   "tags": [
+    "interactive",
+    "date",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/interactive/display.py",
+   "type": "file",
+   "name": "display.py",
+   "filePath": "syscore/interactive/display.py",
+   "summary": "Text-display utilities for the CLI: centring, landing strips, width measurement and pandas print options for nicely formatted console output.",
+   "tags": [
+    "utility",
+    "interactive",
+    "display",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/interactive/display.py:centralise_text",
+   "type": "function",
+   "name": "centralise_text",
+   "filePath": "syscore/interactive/display.py",
+   "lineRange": [
+    39,
+    57
+   ],
+   "summary": "Centres a string within a given width using a fill character for tidy console output.",
+   "tags": [
+    "utility",
+    "display",
+    "formatting"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syscore/interactive/display.py:calculate_multiplication_factor_for_nice_repr_of_value",
+   "type": "function",
+   "name": "calculate_multiplication_factor_for_nice_repr_of_value",
+   "filePath": "syscore/interactive/display.py",
+   "lineRange": [
+    68,
+    95
+   ],
+   "summary": "Computes a scaling factor so small float values are displayed with a readable number of significant digits.",
+   "tags": [
+    "utility",
+    "display",
+    "formatting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/interactive/menus.py",
+   "type": "file",
+   "name": "menus.py",
+   "filePath": "syscore/interactive/menus.py",
+   "summary": "Interactive console menu system letting the user pick options from lists or dict-based menus, used by production interactive scripts.",
+   "tags": [
+    "utility",
+    "interactive",
+    "menu",
+    "cli"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscore/interactive/menus.py:interactiveMenu",
+   "type": "class",
+   "name": "interactiveMenu",
+   "filePath": "syscore/interactive/menus.py",
+   "lineRange": [
+    13,
+    132
+   ],
+   "summary": "Stateful nested menu driver that presents grouped options and returns the user's chosen action across menu levels.",
+   "tags": [
+    "interactive",
+    "menu",
+    "cli"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscore/interactive/menus.py:print_menu_and_get_desired_option_index",
+   "type": "function",
+   "name": "print_menu_and_get_desired_option_index",
+   "filePath": "syscore/interactive/menus.py",
+   "lineRange": [
+    180,
+    212
+   ],
+   "summary": "Prints a dict-based menu and returns the index of the option the user selects, honouring a default.",
+   "tags": [
+    "interactive",
+    "menu",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscore/text.py",
+   "type": "file",
+   "name": "text.py",
+   "filePath": "syscore/text.py",
+   "summary": "String/text utilities including underscore-aware key sorting, underscore stripping, argument-length normalisation and camelCase splitting.",
+   "tags": [
+    "utility",
+    "text",
+    "string"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/text.py:force_args_to_same_length",
+   "type": "function",
+   "name": "force_args_to_same_length",
+   "filePath": "syscore/text.py",
+   "lineRange": [
+    96,
+    123
+   ],
+   "summary": "Normalises a set of argument lists to the same length by padding so they can be zipped together.",
+   "tags": [
+    "utility",
+    "text"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/text.py:sort_keywords_by_underscore_length",
+   "type": "function",
+   "name": "sort_keywords_by_underscore_length",
+   "filePath": "syscore/text.py",
+   "lineRange": [
+    29,
+    56
+   ],
+   "summary": "Sorts keyword strings by their number of leading underscores to order config keys consistently.",
+   "tags": [
+    "utility",
+    "text",
+    "sorting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "file",
+   "name": "csv_spot_fx.py",
+   "filePath": "sysdata/csv/csv_spot_fx.py",
+   "summary": "CSV-backed implementation of spot FX price storage, reading and writing currency price series to disk for backtests and data import.",
+   "tags": [
+    "data-model",
+    "csv",
+    "fx",
+    "storage"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysdata/csv/csv_spot_fx.py:csvFxPricesData",
+   "type": "class",
+   "name": "csvFxPricesData",
+   "filePath": "sysdata/csv/csv_spot_fx.py",
+   "lineRange": [
+    31,
+    124
+   ],
+   "summary": "Reads and writes spot FX price series to CSV files, implementing the fxPricesData interface for the CSV backend.",
+   "tags": [
+    "data-access",
+    "csv",
+    "fx",
+    "storage"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/data_blob.py",
+   "type": "file",
+   "name": "data_blob.py",
+   "filePath": "sysdata/data_blob.py",
+   "summary": "Central dependency-injection container that lazily constructs and caches data-source objects (Mongo, Parquet, IB, CSV) and shared logging/config for the whole system.",
+   "tags": [
+    "service",
+    "data-access",
+    "dependency-injection",
+    "entry-point"
+   ],
+   "complexity": "complex",
+   "languageNotes": "The dataBlob dynamically resolves class names to storage backends via naming conventions, acting as a service locator."
+  },
+  {
+   "id": "class:sysdata/data_blob.py:dataBlob",
+   "type": "class",
+   "name": "dataBlob",
+   "filePath": "sysdata/data_blob.py",
+   "lineRange": [
+    14,
+    378
+   ],
+   "summary": "Service-locator object that wires together database connections, config and logging and lazily instantiates data classes on demand.",
+   "tags": [
+    "service",
+    "dependency-injection",
+    "data-access"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysdata/data_blob.py:identifying_name",
+   "type": "function",
+   "name": "identifying_name",
+   "filePath": "sysdata/data_blob.py",
+   "lineRange": [
+    384,
+    421
+   ],
+   "summary": "Derives a canonical identifying name for a data class instance from its class name and backend, used for caching in the blob.",
+   "tags": [
+    "utility",
+    "data-access"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/fx/spotfx.py",
+   "type": "file",
+   "name": "spotfx.py",
+   "filePath": "sysdata/fx/spotfx.py",
+   "summary": "Abstract base for spot FX price data, providing currency-pair lookup, cross-rate derivation and update logic independent of storage backend.",
+   "tags": [
+    "data-model",
+    "fx",
+    "abstract",
+    "data-access"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysdata/fx/spotfx.py:fxPricesData",
+   "type": "class",
+   "name": "fxPricesData",
+   "filePath": "sysdata/fx/spotfx.py",
+   "lineRange": [
+    23,
+    247
+   ],
+   "summary": "Backend-agnostic spot FX price interface offering get/update of currency-pair price series and derivation of crosses against the default currency.",
+   "tags": [
+    "data-access",
+    "fx",
+    "abstract"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysdata/mongodb/mongo_connection.py",
+   "type": "file",
+   "name": "mongo_connection.py",
+   "filePath": "sysdata/mongodb/mongo_connection.py",
+   "summary": "Manages MongoDB connectivity, providing a client factory, database wrapper and collection-connection helper plus host/int cleaning utilities.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "database",
+    "connection"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysdata/mongodb/mongo_connection.py:mongoConnection",
+   "type": "class",
+   "name": "mongoConnection",
+   "filePath": "sysdata/mongodb/mongo_connection.py",
+   "lineRange": [
+    124,
+    212
+   ],
+   "summary": "Represents a connection to a specific Mongo collection, exposing the collection handle and connection metadata.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "database"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysdata/mongodb/mongo_connection.py:MongoClientFactory",
+   "type": "class",
+   "name": "MongoClientFactory",
+   "filePath": "sysdata/mongodb/mongo_connection.py",
+   "lineRange": [
+    52,
+    80
+   ],
+   "summary": "Singleton-style factory that creates and caches a single shared MongoClient per host configuration.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "singleton",
+    "factory"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysdata/mongodb/mongo_connection.py:mongo_defaults",
+   "type": "function",
+   "name": "mongo_defaults",
+   "filePath": "sysdata/mongodb/mongo_connection.py",
+   "lineRange": [
+    19,
+    49
+   ],
+   "summary": "Resolves Mongo host, database and port defaults from production config with fallbacks.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/mongodb/mongo_margin.py",
+   "type": "file",
+   "name": "mongo_margin.py",
+   "filePath": "sysdata/mongodb/mongo_margin.py",
+   "summary": "MongoDB-backed storage for margin time series, converting between the margin series objects and Mongo document entries.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "margin",
+    "storage"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysdata/mongodb/mongo_margin.py:mongoMarginData",
+   "type": "class",
+   "name": "mongoMarginData",
+   "filePath": "sysdata/mongodb/mongo_margin.py",
+   "lineRange": [
+    14,
+    63
+   ],
+   "summary": "Stores and retrieves margin series in MongoDB, implementing the marginData interface for the Mongo backend.",
+   "tags": [
+    "data-access",
+    "mongodb",
+    "margin"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/mongodb/tests/test_mongodb.py",
+   "type": "file",
+   "name": "test_mongodb.py",
+   "filePath": "sysdata/mongodb/tests/test_mongodb.py",
+   "summary": "Unit test verifying basic MongoDB connection behaviour against the mongo_connection module.",
+   "tags": [
+    "test",
+    "mongodb",
+    "data-access"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysdata/mongodb/tests/test_mongodb.py:TestMongoDB",
+   "type": "class",
+   "name": "TestMongoDB",
+   "filePath": "sysdata/mongodb/tests/test_mongodb.py",
+   "lineRange": [
+    4,
+    46
+   ],
+   "summary": "Test case exercising MongoDB connection setup to confirm the connection wrapper works as expected.",
+   "tags": [
+    "test",
+    "mongodb"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/production/margin.py",
+   "type": "file",
+   "name": "margin.py",
+   "filePath": "sysdata/production/margin.py",
+   "summary": "Abstract margin data interface and the seriesOfMargin object representing a time series of account margin values.",
+   "tags": [
+    "data-model",
+    "margin",
+    "abstract"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysdata/production/margin.py:marginData",
+   "type": "class",
+   "name": "marginData",
+   "filePath": "sysdata/production/margin.py",
+   "lineRange": [
+    16,
+    67
+   ],
+   "summary": "Backend-agnostic interface for reading and appending account margin series in the production system.",
+   "tags": [
+    "data-access",
+    "margin",
+    "abstract"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysinit/futures/repocsv_spotfx_prices.py",
+   "type": "file",
+   "name": "repocsv_spotfx_prices.py",
+   "filePath": "sysinit/futures/repocsv_spotfx_prices.py",
+   "summary": "Initialisation script that copies repo spot FX price CSVs into the configured FX price store.",
+   "tags": [
+    "script",
+    "fx",
+    "data-import",
+    "initialisation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "type": "file",
+   "name": "spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "filePath": "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "summary": "Initialisation script importing spot FX prices from CSV and Investing.com files into the production FX database.",
+   "tags": [
+    "script",
+    "fx",
+    "data-import",
+    "initialisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "function",
+   "name": "spotfx_from_csv_and_investing_dot_com",
+   "filePath": "sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "lineRange": [
+    19,
+    64
+   ],
+   "summary": "Loads spot FX price series from CSV/Investing.com sources and writes them into the production currency data store.",
+   "tags": [
+    "fx",
+    "data-import",
+    "initialisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "type": "file",
+   "name": "spotfx_from_db_to_csv.py",
+   "filePath": "sysinit/futures/spotfx_from_db_to_csv.py",
+   "summary": "Initialisation script exporting spot FX prices from the production database back out to CSV files.",
+   "tags": [
+    "script",
+    "fx",
+    "data-export",
+    "initialisation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syslogdiag/email_via_db_interface.py",
+   "type": "file",
+   "name": "email_via_db_interface.py",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "summary": "Production email layer that sends mail (with rate-limited warnings) and falls back to storing messages in the DB when email delivery fails.",
+   "tags": [
+    "service",
+    "email",
+    "logging",
+    "notification"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Implements de-duplication of warning emails and store-and-forward of messages via a Mongo-backed control object."
+  },
+  {
+   "id": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "class",
+   "name": "dataEmailControl",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    171,
+    197
+   ],
+   "summary": "Mongo-backed control object tracking last-sent times for emails and stored-message handling to support rate limiting and retries.",
+   "tags": [
+    "email",
+    "data-access",
+    "logging"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "function",
+   "name": "send_email_and_record_date_or_store_on_fail",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    43,
+    56
+   ],
+   "summary": "Attempts to send a production email and, on failure, stores the message in the DB for later retry.",
+   "tags": [
+    "email",
+    "notification",
+    "logging"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "function",
+   "name": "can_we_send_this_email_now",
+   "filePath": "syslogdiag/email_via_db_interface.py",
+   "lineRange": [
+    59,
+    74
+   ],
+   "summary": "Checks the recorded send history to decide whether a warning email may be sent now or should be throttled.",
+   "tags": [
+    "email",
+    "throttling",
+    "logging"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysobjects/production/backtest_storage.py",
+   "type": "file",
+   "name": "backtest_storage.py",
+   "filePath": "sysobjects/production/backtest_storage.py",
+   "summary": "Provides the interactiveBacktest object that loads and navigates stored backtest System states for inspection in interactive sessions.",
+   "tags": [
+    "data-model",
+    "backtest",
+    "storage",
+    "interactive"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "class",
+   "name": "interactiveBacktest",
+   "filePath": "sysobjects/production/backtest_storage.py",
+   "lineRange": [
+    14,
+    201
+   ],
+   "summary": "Wraps a pickled backtest System state, offering interactive menus to explore its stages, instruments and diagnostic outputs.",
+   "tags": [
+    "backtest",
+    "storage",
+    "interactive"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysobjects/production/capital.py",
+   "type": "file",
+   "name": "capital.py",
+   "filePath": "sysobjects/production/capital.py",
+   "summary": "Capital accounting logic that updates total brokerage and system capital, handling P&L application and large-capital-change protection.",
+   "tags": [
+    "data-model",
+    "capital",
+    "accounting"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "class",
+   "name": "totalCapitalUpdater",
+   "filePath": "sysobjects/production/capital.py",
+   "lineRange": [
+    4,
+    185
+   ],
+   "summary": "Computes updated broker, maximum and accumulated capital figures from new account values, guarding against implausibly large jumps.",
+   "tags": [
+    "capital",
+    "accounting",
+    "calculation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysobjects/production/roll_state.py",
+   "type": "file",
+   "name": "roll_state.py",
+   "filePath": "sysobjects/production/roll_state.py",
+   "summary": "Defines the futures roll-state enumeration and helper predicates governing which roll-state transitions and order generation are allowed.",
+   "tags": [
+    "data-model",
+    "rolls",
+    "state-machine"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "function",
+   "name": "allowable_roll_state_from_current_and_position",
+   "filePath": "sysobjects/production/roll_state.py",
+   "lineRange": [
+    68,
+    104
+   ],
+   "summary": "Computes the set of valid next roll states given the current roll state and contract position.",
+   "tags": [
+    "rolls",
+    "state-machine",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_backtest_states.py",
+   "type": "file",
+   "name": "clean_truncate_backtest_states.py",
+   "filePath": "sysproduction/clean_truncate_backtest_states.py",
+   "summary": "Production housekeeping script that truncates old stored backtest state files to manage disk usage.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "backtest",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "class",
+   "name": "cleanTruncateBacktestStates",
+   "filePath": "sysproduction/clean_truncate_backtest_states.py",
+   "lineRange": [
+    15,
+    35
+   ],
+   "summary": "Runnable cleanup object that deletes outdated backtest state files via the data blob.",
+   "tags": [
+    "housekeeping",
+    "backtest",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_echo_files.py",
+   "type": "file",
+   "name": "clean_truncate_echo_files.py",
+   "filePath": "sysproduction/clean_truncate_echo_files.py",
+   "summary": "Production housekeeping script that truncates old echo (stdout capture) files to manage disk usage.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "class",
+   "name": "cleanTruncateEchoFiles",
+   "filePath": "sysproduction/clean_truncate_echo_files.py",
+   "lineRange": [
+    17,
+    31
+   ],
+   "summary": "Runnable cleanup object that removes outdated echo files from the production log directory.",
+   "tags": [
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/clean_truncate_log_files.py",
+   "type": "file",
+   "name": "clean_truncate_log_files.py",
+   "filePath": "sysproduction/clean_truncate_log_files.py",
+   "summary": "Production housekeeping script that truncates old log records via the deprecated logs interface.",
+   "tags": [
+    "script",
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "class",
+   "name": "cleanTruncateLogFiles",
+   "filePath": "sysproduction/clean_truncate_log_files.py",
+   "lineRange": [
+    12,
+    20
+   ],
+   "summary": "Runnable cleanup object that purges old log entries through the data blob.",
+   "tags": [
+    "housekeeping",
+    "logging",
+    "cleanup"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:syscontrol/list_running_pids.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysdata/config/control_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/interactive_update_roll_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/reporting/data/rolls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscontrol/list_running_pids.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscontrol/report_process_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscontrol/timer_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysobjects/production/process_control.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syscontrol/report_process_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syscontrol/timer_parameters.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "file:syscore/maths.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "file:syscore/pandas/__init__.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/menus.py",
+   "target": "file:syscore/interactive/input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/text.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:syscore/pandas/pdutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:sysdata/fx/spotfx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:sysbrokers/IB/ib_connection.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:syscore/text.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:sysdata/mongodb/mongo_connection.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:sysdata/mongodb/mongo_IB_client_id.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:sysdata/parquet/parquet_access.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "file:syscore/pandas/merge_data_keeping_past_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "file:sysdata/base_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:sysdata/mongodb/mongo_generic.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:sysdata/production/margin.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/mongodb/tests/test_mongodb.py",
+   "target": "file:sysdata/mongodb/mongo_connection.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/production/margin.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/repocsv_spotfx_prices.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/repocsv_spotfx_prices.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_db_to_csv.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syslogdiag/emailing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "file:syslogdiag/mongo_email_control.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "file:syscore/interactive/run_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "file:sysproduction/data/backtest.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "file:sysproduction/data/directories.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "file:sysproduction/_DEPRECATED/logs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:processes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:processes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:reconcile",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:reconcile",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:rolls_post",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:rolls_post",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:trades",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:trades",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:pandl",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:pandl",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "class:syscontrol/monitor.py:processMonitor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "class:syscontrol/monitor.py:processMonitor",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "function:syscontrol/monitor.py:generate_html",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "function:syscontrol/monitor.py:generate_html",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "class:syscontrol/run_process.py:processToRun",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "class:syscontrol/run_process.py:processToRun",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_if_process_status_is_okay_to_run",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_if_okay_to_wait_before_starting_process",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_for_stop",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:wait_for_next_method_run_time",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "function:syscore/interactive/display.py:centralise_text",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "function:syscore/interactive/display.py:centralise_text",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "function:syscore/interactive/display.py:calculate_multiplication_factor_for_nice_repr_of_value",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/display.py",
+   "target": "function:syscore/interactive/display.py:calculate_multiplication_factor_for_nice_repr_of_value",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/menus.py",
+   "target": "class:syscore/interactive/menus.py:interactiveMenu",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/menus.py",
+   "target": "class:syscore/interactive/menus.py:interactiveMenu",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/menus.py",
+   "target": "function:syscore/interactive/menus.py:print_menu_and_get_desired_option_index",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/menus.py",
+   "target": "function:syscore/interactive/menus.py:print_menu_and_get_desired_option_index",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/text.py",
+   "target": "function:syscore/text.py:force_args_to_same_length",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/text.py",
+   "target": "function:syscore/text.py:force_args_to_same_length",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/text.py",
+   "target": "function:syscore/text.py:sort_keywords_by_underscore_length",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/text.py",
+   "target": "function:syscore/text.py:sort_keywords_by_underscore_length",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "class:sysdata/csv/csv_spot_fx.py:csvFxPricesData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/csv/csv_spot_fx.py",
+   "target": "class:sysdata/csv/csv_spot_fx.py:csvFxPricesData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "class:sysdata/data_blob.py:dataBlob",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "class:sysdata/data_blob.py:dataBlob",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "function:sysdata/data_blob.py:identifying_name",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/data_blob.py",
+   "target": "function:sysdata/data_blob.py:identifying_name",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "class:sysdata/fx/spotfx.py:fxPricesData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/fx/spotfx.py",
+   "target": "class:sysdata/fx/spotfx.py:fxPricesData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "class:sysdata/mongodb/mongo_connection.py:mongoConnection",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "class:sysdata/mongodb/mongo_connection.py:mongoConnection",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "class:sysdata/mongodb/mongo_connection.py:MongoClientFactory",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "class:sysdata/mongodb/mongo_connection.py:MongoClientFactory",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "function:sysdata/mongodb/mongo_connection.py:mongo_defaults",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "function:sysdata/mongodb/mongo_connection.py:mongo_defaults",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "class:sysdata/mongodb/mongo_margin.py:mongoMarginData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_margin.py",
+   "target": "class:sysdata/mongodb/mongo_margin.py:mongoMarginData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/mongodb/tests/test_mongodb.py",
+   "target": "class:sysdata/mongodb/tests/test_mongodb.py:TestMongoDB",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/mongodb/tests/test_mongodb.py",
+   "target": "class:sysdata/mongodb/tests/test_mongodb.py:TestMongoDB",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/production/margin.py",
+   "target": "class:sysdata/production/margin.py:marginData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/production/margin.py",
+   "target": "class:sysdata/production/margin.py:marginData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py",
+   "target": "function:sysinit/futures/spotfx_from_csvAndInvestingDotCom_to_db.py:spotfx_from_csv_and_investing_dot_com",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "class:syslogdiag/email_via_db_interface.py:dataEmailControl",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:send_email_and_record_date_or_store_on_fail",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syslogdiag/email_via_db_interface.py",
+   "target": "function:syslogdiag/email_via_db_interface.py:can_we_send_this_email_now",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/backtest_storage.py",
+   "target": "class:sysobjects/production/backtest_storage.py:interactiveBacktest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/capital.py",
+   "target": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/capital.py",
+   "target": "class:sysobjects/production/capital.py:totalCapitalUpdater",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysobjects/production/roll_state.py",
+   "target": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysobjects/production/roll_state.py",
+   "target": "function:sysobjects/production/roll_state.py:allowable_roll_state_from_current_and_position",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_backtest_states.py",
+   "target": "class:sysproduction/clean_truncate_backtest_states.py:cleanTruncateBacktestStates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_echo_files.py",
+   "target": "class:sysproduction/clean_truncate_echo_files.py:cleanTruncateEchoFiles",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/clean_truncate_log_files.py",
+   "target": "class:sysproduction/clean_truncate_log_files.py:cleanTruncateLogFiles",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:syscontrol/monitor.py:generate_html",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:dashboard/app.py:processes",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "class:syscontrol/run_process.py:processToRun",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "depends_on",
+   "direction": "forward",
+   "weight": 0.6
+  },
+  {
+   "source": "class:syscontrol/run_process.py:processToRun",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "depends_on",
+   "direction": "forward",
+   "weight": 0.6
+  },
+  {
+   "source": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:sysdata/csv/csv_spot_fx.py:csvFxPricesData",
+   "target": "class:sysdata/fx/spotfx.py:fxPricesData",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "class:sysdata/mongodb/mongo_margin.py:mongoMarginData",
+   "target": "class:sysdata/production/margin.py:marginData",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  },
+  {
+   "source": "file:sysdata/mongodb/mongo_connection.py",
+   "target": "file:sysdata/mongodb/tests/test_mongodb.py",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  }
+ ]
+}

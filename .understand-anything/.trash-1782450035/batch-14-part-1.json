@@ -1,0 +1,1527 @@
+{
+  "nodes": [
+    {
+      "id": "file:syscore/genutils.py",
+      "type": "file",
+      "name": "genutils.py",
+      "filePath": "syscore/genutils.py",
+      "summary": "General-purpose Python utility helpers (list set operations, number formatting, sign/NaN handling, HCF math, interval intersection) used pervasively across the codebase.",
+      "tags": [
+        "utility",
+        "helpers",
+        "list-operations",
+        "math"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Pure-stdlib helpers with a mix of typed and untyped functions; a frequent low-level dependency."
+    },
+    {
+      "id": "function:syscore/genutils.py:return_another_value_if_nan",
+      "type": "function",
+      "name": "return_another_value_if_nan",
+      "filePath": "syscore/genutils.py",
+      "lineRange": [
+        161,
+        193
+      ],
+      "summary": "Returns a fallback value when the input is NaN/None, handling scalars and various nan-like representations.",
+      "tags": [
+        "utility",
+        "nan-handling",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/genutils.py:list_of_ints_with_highest_common_factor_positive_first",
+      "type": "function",
+      "name": "list_of_ints_with_highest_common_factor_positive_first",
+      "filePath": "syscore/genutils.py",
+      "lineRange": [
+        315,
+        347
+      ],
+      "summary": "Reduces a list of ints by their highest common factor, normalising sign so the first element is positive.",
+      "tags": [
+        "utility",
+        "math",
+        "normalisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/genutils.py:intersection_intervals",
+      "type": "function",
+      "name": "intersection_intervals",
+      "filePath": "syscore/genutils.py",
+      "lineRange": [
+        363,
+        384
+      ],
+      "summary": "Computes the overlapping intersection across a collection of numeric intervals.",
+      "tags": [
+        "utility",
+        "intervals",
+        "math"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/genutils.py:str_of_int",
+      "type": "function",
+      "name": "str_of_int",
+      "filePath": "syscore/genutils.py",
+      "lineRange": [
+        115,
+        135
+      ],
+      "summary": "Formats an integer to a string with sensible handling of large/edge values.",
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syscore/genutils.py:quickTimer",
+      "type": "class",
+      "name": "quickTimer",
+      "filePath": "syscore/genutils.py",
+      "lineRange": [
+        216,
+        239
+      ],
+      "summary": "Lightweight timer that tracks elapsed time against a limit to flag finished/unfinished states.",
+      "tags": [
+        "utility",
+        "timer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syscore/interactive/progress_bar.py",
+      "type": "file",
+      "name": "progress_bar.py",
+      "filePath": "syscore/interactive/progress_bar.py",
+      "summary": "Console progress bar with time-remaining estimation, iterated over long-running batch jobs across production and estimation code.",
+      "tags": [
+        "utility",
+        "progress-bar",
+        "cli",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syscore/interactive/progress_bar.py:progressBar",
+      "type": "class",
+      "name": "progressBar",
+      "filePath": "syscore/interactive/progress_bar.py",
+      "lineRange": [
+        7,
+        175
+      ],
+      "summary": "Stateful progress bar that renders blocks and elapsed/remaining time estimates as iterations advance.",
+      "tags": [
+        "progress-bar",
+        "cli",
+        "stateful"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:syscore/pandas/find_data.py",
+      "type": "file",
+      "name": "find_data.py",
+      "filePath": "syscore/pandas/find_data.py",
+      "summary": "Pandas helpers for locating the row of a DataFrame or Series aligned to (or just before) a given date.",
+      "tags": [
+        "utility",
+        "pandas",
+        "time-series"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syscore/pandas/find_data.py:get_row_of_df_aligned_to_weights_as_dict",
+      "type": "function",
+      "name": "get_row_of_df_aligned_to_weights_as_dict",
+      "filePath": "syscore/pandas/find_data.py",
+      "lineRange": [
+        9,
+        28
+      ],
+      "summary": "Returns the DataFrame row nearest a date as a dict, used to align data to weight dates.",
+      "tags": [
+        "pandas",
+        "time-series",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/pandas/find_data.py:get_row_of_series",
+      "type": "function",
+      "name": "get_row_of_series",
+      "filePath": "syscore/pandas/find_data.py",
+      "lineRange": [
+        31,
+        50
+      ],
+      "summary": "Returns the Series value aligned to a relevant date.",
+      "tags": [
+        "pandas",
+        "time-series",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syscore/pandas/find_data.py:get_row_of_series_before_date",
+      "type": "function",
+      "name": "get_row_of_series_before_date",
+      "filePath": "syscore/pandas/find_data.py",
+      "lineRange": [
+        53,
+        70
+      ],
+      "summary": "Returns the most recent Series value strictly before a given date.",
+      "tags": [
+        "pandas",
+        "time-series",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "type": "file",
+      "name": "dynamic_optimised_positions.py",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "summary": "Order-generator strategy that converts raw optimal positions into integer-contract optimised positions via a dynamic small-system optimiser, then emits the trades needed to reach them.",
+      "tags": [
+        "strategy",
+        "optimisation",
+        "order-generation",
+        "execution"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Bridges the estimation/optimisation layer (correlations, covariance, weights) with live order generation."
+    },
+    {
+      "id": "class:sysexecution/strategies/dynamic_optimised_positions.py:orderGeneratorForDynamicPositions",
+      "type": "class",
+      "name": "orderGeneratorForDynamicPositions",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        64,
+        140
+      ],
+      "summary": "Order generator that builds, writes and returns optimised positions data and the required orders to reach them.",
+      "tags": [
+        "order-generation",
+        "strategy",
+        "execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/strategies/dynamic_optimised_positions.py:dataForObjectiveInstance",
+      "type": "class",
+      "name": "dataForObjectiveInstance",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        168,
+        197
+      ],
+      "summary": "Container bundling prior/optimal weights and constraints fed into the optimisation objective.",
+      "tags": [
+        "data-model",
+        "optimisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_data_for_objective_instance",
+      "type": "function",
+      "name": "get_data_for_objective_instance",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        200,
+        288
+      ],
+      "summary": "Assembles all inputs (per-contract values, costs, constraints, covariance) into a dataForObjectiveInstance for the optimiser.",
+      "tags": [
+        "optimisation",
+        "data-assembly"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_optimised_positions_data_dict_given_optimisation",
+      "type": "function",
+      "name": "get_optimised_positions_data_dict_given_optimisation",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        547,
+        590
+      ],
+      "summary": "Runs the optimisation objective and maps the resulting weights back to per-instrument optimised position entries.",
+      "tags": [
+        "optimisation",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/strategies/dynamic_optimised_positions.py:trade_given_optimal_and_actual_positions",
+      "type": "function",
+      "name": "trade_given_optimal_and_actual_positions",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        700,
+        739
+      ],
+      "summary": "Computes the trade for one instrument by differencing its optimised target against the current position.",
+      "tags": [
+        "order-generation",
+        "positions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_covariance_matrix_for_instrument_returns_for_optimisation",
+      "type": "function",
+      "name": "get_covariance_matrix_for_instrument_returns_for_optimisation",
+      "filePath": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "lineRange": [
+        463,
+        477
+      ],
+      "summary": "Builds the covariance matrix of instrument returns used by the optimiser.",
+      "tags": [
+        "optimisation",
+        "covariance",
+        "risk"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysinit/futures/check_instrument_lists.py",
+      "type": "file",
+      "name": "check_instrument_lists.py",
+      "filePath": "sysinit/futures/check_instrument_lists.py",
+      "summary": "Initialisation/diagnostic script that audits the configured instrument universe for high correlations, zero commissions, and missing or no-trade markets.",
+      "tags": [
+        "script",
+        "diagnostics",
+        "instruments",
+        "initialisation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/check_instrument_lists.py:check_for_high_correlations",
+      "type": "function",
+      "name": "check_for_high_correlations",
+      "filePath": "sysinit/futures/check_instrument_lists.py",
+      "lineRange": [
+        22,
+        54
+      ],
+      "summary": "Reports instrument pairs whose return correlation exceeds a threshold, flagging near-duplicate markets.",
+      "tags": [
+        "diagnostics",
+        "correlation",
+        "instruments"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/check_instrument_lists.py:print_missing_and_no_trade_markets",
+      "type": "function",
+      "name": "print_missing_and_no_trade_markets",
+      "filePath": "sysinit/futures/check_instrument_lists.py",
+      "lineRange": [
+        79,
+        102
+      ],
+      "summary": "Prints instruments that are missing from data or configured as no-trade.",
+      "tags": [
+        "diagnostics",
+        "instruments",
+        "reporting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/data/instruments.py",
+      "type": "file",
+      "name": "instruments.py",
+      "filePath": "sysproduction/data/instruments.py",
+      "summary": "Production data access layer for instrument metadata and trading costs (spread/commission, point size, currency, asset class) backed by the data blob.",
+      "tags": [
+        "data-access",
+        "instruments",
+        "service",
+        "costs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysproduction/data/instruments.py:diagInstruments",
+      "type": "class",
+      "name": "diagInstruments",
+      "filePath": "sysproduction/data/instruments.py",
+      "lineRange": [
+        38,
+        152
+      ],
+      "summary": "Diagnostic accessor exposing instrument metadata and cost objects (spread, commission, point size, currency, asset class).",
+      "tags": [
+        "data-access",
+        "instruments",
+        "costs"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysproduction/data/instruments.py:updateSpreadCosts",
+      "type": "class",
+      "name": "updateSpreadCosts",
+      "filePath": "sysproduction/data/instruments.py",
+      "lineRange": [
+        18,
+        35
+      ],
+      "summary": "Writer that updates stored spread-cost data for instruments.",
+      "tags": [
+        "data-access",
+        "instruments",
+        "costs",
+        "writer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysproduction/data/risk.py",
+      "type": "file",
+      "name": "risk.py",
+      "filePath": "sysproduction/data/risk.py",
+      "summary": "Production risk-data helpers: builds covariance/correlation matrices for instrument returns, per-instrument annualised/daily stdevs, and per-contract exposure used by risk reporting and position sizing.",
+      "tags": [
+        "data-access",
+        "risk",
+        "covariance",
+        "volatility"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Deliberately replicates the simulation's correlation-list construction so production risk matches backtest risk."
+    },
+    {
+      "id": "function:sysproduction/data/risk.py:get_covariance_matrix_for_instrument_returns",
+      "type": "function",
+      "name": "get_covariance_matrix_for_instrument_returns",
+      "filePath": "sysproduction/data/risk.py",
+      "lineRange": [
+        26,
+        44
+      ],
+      "summary": "Builds the covariance matrix for a list of instruments from correlation and stdev estimates.",
+      "tags": [
+        "risk",
+        "covariance",
+        "estimation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/risk.py:get_correlation_matrix_for_instrument_returns",
+      "type": "function",
+      "name": "get_correlation_matrix_for_instrument_returns",
+      "filePath": "sysproduction/data/risk.py",
+      "lineRange": [
+        47,
+        60
+      ],
+      "summary": "Estimates the correlation matrix of instrument returns using configured estimation parameters.",
+      "tags": [
+        "risk",
+        "correlation",
+        "estimation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysproduction/data/risk.py:_replicate_creation_of_correlation_list_in_sim",
+      "type": "function",
+      "name": "_replicate_creation_of_correlation_list_in_sim",
+      "filePath": "sysproduction/data/risk.py",
+      "lineRange": [
+        63,
+        76
+      ],
+      "summary": "Re-creates the simulation's correlation-list construction so production risk numbers match the backtest.",
+      "tags": [
+        "risk",
+        "correlation",
+        "consistency"
+      ],
+      "complexity": "simple",
+      "exported": false
+    },
+    {
+      "id": "file:sysproduction/interactive_controls.py",
+      "type": "file",
+      "name": "interactive_controls.py",
+      "filePath": "sysproduction/interactive_controls.py",
+      "summary": "Interactive operator menu for managing trade/position limits, instrument and strategy overrides, process controls, slippage cost updates, and instrument deletion in the live production system.",
+      "tags": [
+        "interactive",
+        "cli",
+        "controls",
+        "production",
+        "entry-point"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large menu-driven control surface wiring together many production data accessors and reporting modules."
+    },
+    {
+      "id": "function:sysproduction/interactive_controls.py:get_list_of_changes_to_make_to_slippage",
+      "type": "function",
+      "name": "get_list_of_changes_to_make_to_slippage",
+      "filePath": "sysproduction/interactive_controls.py",
+      "lineRange": [
+        846,
+        917
+      ],
+      "summary": "Compares configured vs sampled slippage and builds the list of cost changes an operator can apply.",
+      "tags": [
+        "controls",
+        "costs",
+        "slippage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysproduction/interactive_controls.py:get_auto_population_parameters",
+      "type": "function",
+      "name": "get_auto_population_parameters",
+      "filePath": "sysproduction/interactive_controls.py",
+      "lineRange": [
+        309,
+        352
+      ],
+      "summary": "Prompts the operator for the parameters used to auto-populate trade limits.",
+      "tags": [
+        "controls",
+        "limits",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/interactive_controls.py:get_maximum_position_given_risk_concentration_limit",
+      "type": "function",
+      "name": "get_maximum_position_given_risk_concentration_limit",
+      "filePath": "sysproduction/interactive_controls.py",
+      "lineRange": [
+        469,
+        506
+      ],
+      "summary": "Derives the maximum allowed position for an instrument given a risk-concentration limit.",
+      "tags": [
+        "controls",
+        "risk",
+        "limits"
+      ],
+      "complexity": "moderate",
+      "exported": false
+    },
+    {
+      "id": "function:sysproduction/interactive_controls.py:check_price_multipliers_consistent_for_instrument",
+      "type": "function",
+      "name": "check_price_multipliers_consistent_for_instrument",
+      "filePath": "sysproduction/interactive_controls.py",
+      "lineRange": [
+        977,
+        1027
+      ],
+      "summary": "Validates that an instrument's price multipliers are internally consistent across data sources.",
+      "tags": [
+        "controls",
+        "validation",
+        "instruments"
+      ],
+      "complexity": "complex",
+      "exported": false
+    },
+    {
+      "id": "function:sysproduction/interactive_controls.py:set_trade_limit_for_instrument",
+      "type": "function",
+      "name": "set_trade_limit_for_instrument",
+      "filePath": "sysproduction/interactive_controls.py",
+      "lineRange": [
+        255,
+        278
+      ],
+      "summary": "Computes and stores an auto-populated trade limit for a single instrument.",
+      "tags": [
+        "controls",
+        "limits"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "type": "file",
+      "name": "instrument_list.py",
+      "filePath": "sysproduction/reporting/adhoc/instrument_list.py",
+      "summary": "Ad-hoc report compiling per-instrument metadata (broker/contract details, costs) into a DataFrame for the instrument-list report.",
+      "tags": [
+        "reporting",
+        "instruments",
+        "adhoc"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_list_report",
+      "type": "function",
+      "name": "instrument_list_report",
+      "filePath": "sysproduction/reporting/adhoc/instrument_list.py",
+      "lineRange": [
+        21,
+        59
+      ],
+      "summary": "Builds the full instrument-list report by gathering metadata across the instrument universe.",
+      "tags": [
+        "reporting",
+        "instruments"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_results_as_pd_df_row",
+      "type": "function",
+      "name": "instrument_results_as_pd_df_row",
+      "filePath": "sysproduction/reporting/adhoc/instrument_list.py",
+      "lineRange": [
+        62,
+        88
+      ],
+      "summary": "Assembles one instrument's metadata into a single report DataFrame row.",
+      "tags": [
+        "reporting",
+        "instruments",
+        "pandas"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:syscore/pandas/find_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/pandas/find_data.py",
+      "target": "file:syscore/pandas/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysexecution/strategies/strategy_order_handling.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysobjects/production/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysobjects/production/position_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysproduction/data/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysproduction/data/controls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysproduction/data/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysproduction/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysquant/estimators/mean_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:sysquant/optimisation/weights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/buffering.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "file:systems/provided/rob_system/run_system.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysdata/futures/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysdata/futures/spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysobjects/spot_fx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysproduction/data/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysproduction/data/currency_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysproduction/data/generic_production_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "file:sysproduction/data/production_data_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:syscore/objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:syscore/pandas/frequency.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysproduction/data/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysquant/estimators/correlations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysquant/estimators/covariance.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysquant/estimators/stdev_estimator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "file:sysquant/fitting_dates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:syscore/interactive/display.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:syscore/interactive/menus.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysinit/futures/safely_modify_roll_parameters.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysobjects/production/override.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysobjects/production/process_control.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/backup_db_to_csv.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/control_process.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/controls.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/data/strategies.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/reporting/api.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/reporting/data/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/reporting/data/risk.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "file:sysproduction/reporting/data/volume.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:syscore/interactive/progress_bar.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/data/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/data/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/reporting/data/costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/reporting/report_configs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "file:sysproduction/reporting/reporting_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:return_another_value_if_nan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:return_another_value_if_nan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:list_of_ints_with_highest_common_factor_positive_first",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:list_of_ints_with_highest_common_factor_positive_first",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:intersection_intervals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:intersection_intervals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:str_of_int",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "function:syscore/genutils.py:str_of_int",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "class:syscore/genutils.py:quickTimer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/genutils.py",
+      "target": "class:syscore/genutils.py:quickTimer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/interactive/progress_bar.py",
+      "target": "class:syscore/interactive/progress_bar.py:progressBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/interactive/progress_bar.py",
+      "target": "class:syscore/interactive/progress_bar.py:progressBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syscore/pandas/find_data.py",
+      "target": "function:syscore/pandas/find_data.py:get_row_of_df_aligned_to_weights_as_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/pandas/find_data.py",
+      "target": "function:syscore/pandas/find_data.py:get_row_of_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syscore/pandas/find_data.py",
+      "target": "function:syscore/pandas/find_data.py:get_row_of_series_before_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "class:sysexecution/strategies/dynamic_optimised_positions.py:orderGeneratorForDynamicPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "class:sysexecution/strategies/dynamic_optimised_positions.py:orderGeneratorForDynamicPositions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "class:sysexecution/strategies/dynamic_optimised_positions.py:dataForObjectiveInstance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "class:sysexecution/strategies/dynamic_optimised_positions.py:dataForObjectiveInstance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_data_for_objective_instance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_data_for_objective_instance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_optimised_positions_data_dict_given_optimisation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_optimised_positions_data_dict_given_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:trade_given_optimal_and_actual_positions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:trade_given_optimal_and_actual_positions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_covariance_matrix_for_instrument_returns_for_optimisation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysexecution/strategies/dynamic_optimised_positions.py",
+      "target": "function:sysexecution/strategies/dynamic_optimised_positions.py:get_covariance_matrix_for_instrument_returns_for_optimisation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "function:sysinit/futures/check_instrument_lists.py:check_for_high_correlations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "function:sysinit/futures/check_instrument_lists.py:check_for_high_correlations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "function:sysinit/futures/check_instrument_lists.py:print_missing_and_no_trade_markets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/check_instrument_lists.py",
+      "target": "function:sysinit/futures/check_instrument_lists.py:print_missing_and_no_trade_markets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "class:sysproduction/data/instruments.py:diagInstruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "class:sysproduction/data/instruments.py:diagInstruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "class:sysproduction/data/instruments.py:updateSpreadCosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/data/instruments.py",
+      "target": "class:sysproduction/data/instruments.py:updateSpreadCosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "function:sysproduction/data/risk.py:get_covariance_matrix_for_instrument_returns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "function:sysproduction/data/risk.py:get_covariance_matrix_for_instrument_returns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "function:sysproduction/data/risk.py:get_correlation_matrix_for_instrument_returns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "function:sysproduction/data/risk.py:get_correlation_matrix_for_instrument_returns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/data/risk.py",
+      "target": "function:sysproduction/data/risk.py:_replicate_creation_of_correlation_list_in_sim",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:get_list_of_changes_to_make_to_slippage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:get_list_of_changes_to_make_to_slippage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:get_auto_population_parameters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:get_auto_population_parameters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:get_maximum_position_given_risk_concentration_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:check_price_multipliers_consistent_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:set_trade_limit_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/interactive_controls.py",
+      "target": "function:sysproduction/interactive_controls.py:set_trade_limit_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_list_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_list_report",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_results_as_pd_df_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysproduction/reporting/adhoc/instrument_list.py",
+      "target": "function:sysproduction/reporting/adhoc/instrument_list.py:instrument_results_as_pd_df_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,1211 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysexecution/algos/algo_original_best.py",
+      "type": "file",
+      "name": "algo_original_best.py",
+      "filePath": "sysexecution/algos/algo_original_best.py",
+      "summary": "Carver's original 'best execution' algo that works orders passively at the spread, periodically reassessing aggressiveness and crossing the spread near deadlines.",
+      "tags": [
+        "execution-algo",
+        "service",
+        "best-execution"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large stateful algo with timing/aggressiveness heuristics; the core of pysystemtrade's default order execution."
+    },
+    {
+      "id": "class:sysexecution/algos/algo_original_best.py:algoOriginalBest",
+      "type": "class",
+      "name": "algoOriginalBest",
+      "filePath": "sysexecution/algos/algo_original_best.py",
+      "lineRange": [
+        56,
+        480
+      ],
+      "summary": "Original best-execution algorithm that posts passive limit orders at the inside spread and escalates to crossing the spread as the order deadline approaches.",
+      "tags": [
+        "execution-algo",
+        "best-execution",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysexecution/algos/algo_snaps.py",
+      "type": "file",
+      "name": "algo_snaps.py",
+      "filePath": "sysexecution/algos/algo_snaps.py",
+      "summary": "Snap execution algos (market, mid, primary) that fire a single immediate order at a chosen price reference, used for quick one-shot fills.",
+      "tags": [
+        "execution-algo",
+        "service",
+        "snap-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_snaps.py:algoSnapMkt",
+      "type": "class",
+      "name": "algoSnapMkt",
+      "filePath": "sysexecution/algos/algo_snaps.py",
+      "lineRange": [
+        10,
+        13
+      ],
+      "summary": "Snap execution algorithm (algoSnapMkt) firing a single immediate order at a fixed price reference.",
+      "tags": [
+        "execution-algo",
+        "snap-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_snaps.py:algoSnapMid",
+      "type": "class",
+      "name": "algoSnapMid",
+      "filePath": "sysexecution/algos/algo_snaps.py",
+      "lineRange": [
+        22,
+        25
+      ],
+      "summary": "Snap execution algorithm (algoSnapMid) firing a single immediate order at a fixed price reference.",
+      "tags": [
+        "execution-algo",
+        "snap-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/algo_snaps.py:algoSnapPrim",
+      "type": "class",
+      "name": "algoSnapPrim",
+      "filePath": "sysexecution/algos/algo_snaps.py",
+      "lineRange": [
+        29,
+        32
+      ],
+      "summary": "Snap execution algorithm (algoSnapPrim) firing a single immediate order at a fixed price reference.",
+      "tags": [
+        "execution-algo",
+        "snap-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "type": "file",
+      "name": "allocate_algo_to_order.py",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "summary": "Allocation logic that picks the appropriate execution algo for each contract order based on order characteristics and per-instrument configuration overrides.",
+      "tags": [
+        "service",
+        "factory",
+        "execution-algo",
+        "allocation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_algo_to_list_of_contract_orders",
+      "type": "function",
+      "name": "allocate_algo_to_list_of_contract_orders",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "lineRange": [
+        28,
+        51
+      ],
+      "summary": "Iterates a list of contract orders and assigns each the appropriate execution algo according to config and order type.",
+      "tags": [
+        "allocation",
+        "execution-algo",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/algos/allocate_algo_to_order.py:check_and_if_required_allocate_algo_to_single_contract_order",
+      "type": "function",
+      "name": "check_and_if_required_allocate_algo_to_single_contract_order",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "lineRange": [
+        75,
+        136
+      ],
+      "summary": "Determines and assigns the execution algo for a single contract order, honouring per-instrument overrides and order limits.",
+      "tags": [
+        "allocation",
+        "execution-algo",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_best_execution_no_limit",
+      "type": "function",
+      "name": "allocate_for_best_execution_no_limit",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "lineRange": [
+        171,
+        182
+      ],
+      "summary": "Allocates the best-execution algo to an order that has no price limit.",
+      "tags": [
+        "allocation",
+        "execution-algo",
+        "best-execution"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_limit_order",
+      "type": "function",
+      "name": "allocate_for_limit_order",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "lineRange": [
+        185,
+        196
+      ],
+      "summary": "Allocates the limit-order execution algo to a price-limited order.",
+      "tags": [
+        "allocation",
+        "execution-algo",
+        "limit-order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/algos/allocate_algo_to_order.py:AlgoConfig",
+      "type": "class",
+      "name": "AlgoConfig",
+      "filePath": "sysexecution/algos/allocate_algo_to_order.py",
+      "lineRange": [
+        55,
+        60
+      ],
+      "summary": "Configuration container describing which algo classes map to market, best-execution and limit order cases.",
+      "tags": [
+        "config",
+        "data-model",
+        "allocation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/common_functions.py",
+      "type": "file",
+      "name": "common_functions.py",
+      "filePath": "sysexecution/algos/common_functions.py",
+      "summary": "Shared helper functions for execution algos covering post-trade processing, order cancellation and inside-spread limit price checks.",
+      "tags": [
+        "utility",
+        "execution-algo",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/algos/common_functions.py:post_trade_processing",
+      "type": "function",
+      "name": "post_trade_processing",
+      "filePath": "sysexecution/algos/common_functions.py",
+      "lineRange": [
+        15,
+        29
+      ],
+      "summary": "Performs post-trade bookkeeping after an order completes, updating stacks and records.",
+      "tags": [
+        "utility",
+        "order-management",
+        "execution-algo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/algos/common_functions.py:cancel_order",
+      "type": "function",
+      "name": "cancel_order",
+      "filePath": "sysexecution/algos/common_functions.py",
+      "lineRange": [
+        32,
+        58
+      ],
+      "summary": "Cancels a working broker order and waits for cancellation confirmation.",
+      "tags": [
+        "utility",
+        "order-management",
+        "cancellation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysexecution/algos/common_functions.py:check_current_limit_price_at_inside_spread",
+      "type": "function",
+      "name": "check_current_limit_price_at_inside_spread",
+      "filePath": "sysexecution/algos/common_functions.py",
+      "lineRange": [
+        64,
+        85
+      ],
+      "summary": "Checks whether the current limit price sits inside the bid/ask spread, used to decide repricing.",
+      "tags": [
+        "utility",
+        "validation",
+        "limit-order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "file",
+      "name": "broker_order_stack.py",
+      "filePath": "sysexecution/order_stacks/broker_order_stack.py",
+      "summary": "Broker order stack plus the orderWithControls wrapper that tracks a live broker order's control object and fill state during execution.",
+      "tags": [
+        "data-model",
+        "order-stack",
+        "broker"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/broker_order_stack.py:brokerOrderStackData",
+      "type": "class",
+      "name": "brokerOrderStackData",
+      "filePath": "sysexecution/order_stacks/broker_order_stack.py",
+      "lineRange": [
+        10,
+        39
+      ],
+      "summary": "Broker-level order stack storing live broker orders and their lifecycle state.",
+      "tags": [
+        "order-stack",
+        "broker"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/broker_order_stack.py:orderWithControls",
+      "type": "class",
+      "name": "orderWithControls",
+      "filePath": "sysexecution/order_stacks/broker_order_stack.py",
+      "lineRange": [
+        42,
+        136
+      ],
+      "summary": "Wrapper pairing a broker order with its broker control object and tracking fill progress, used by execution algos to manage a live order.",
+      "tags": [
+        "order-management",
+        "broker",
+        "execution-algo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "type": "file",
+      "name": "contract_order_stack.py",
+      "filePath": "sysexecution/order_stacks/contract_order_stack.py",
+      "summary": "Contract order stack specialising the generic order stack for contract-level orders awaiting execution.",
+      "tags": [
+        "data-model",
+        "order-stack"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/contract_order_stack.py:contractOrderStackData",
+      "type": "class",
+      "name": "contractOrderStackData",
+      "filePath": "sysexecution/order_stacks/contract_order_stack.py",
+      "lineRange": [
+        9,
+        100
+      ],
+      "summary": "Contract-level order stack managing contract orders and their parent/child links to instrument and broker orders.",
+      "tags": [
+        "order-stack",
+        "order-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "type": "file",
+      "name": "instrument_order_stack.py",
+      "filePath": "sysexecution/order_stacks/instrument_order_stack.py",
+      "summary": "Instrument order stack specialising the generic stack for instrument-level orders, including trade/remainder reconciliation helpers.",
+      "tags": [
+        "data-model",
+        "order-stack"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/instrument_order_stack.py:instrumentOrderStackData",
+      "type": "class",
+      "name": "instrumentOrderStackData",
+      "filePath": "sysexecution/order_stacks/instrument_order_stack.py",
+      "lineRange": [
+        12,
+        186
+      ],
+      "summary": "Instrument-level order stack managing strategy-instrument orders and reconciling existing positions against new desired trades.",
+      "tags": [
+        "order-stack",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/instrument_order_stack.py:zeroOrderException",
+      "type": "class",
+      "name": "zeroOrderException",
+      "filePath": "sysexecution/order_stacks/instrument_order_stack.py",
+      "lineRange": [
+        8,
+        9
+      ],
+      "summary": "Exception signalling that a computed trade nets to zero quantity.",
+      "tags": [
+        "exception",
+        "order-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/order_stacks/instrument_order_stack.py:calculate_existing_trades_and_remainder",
+      "type": "function",
+      "name": "calculate_existing_trades_and_remainder",
+      "filePath": "sysexecution/order_stacks/instrument_order_stack.py",
+      "lineRange": [
+        189,
+        200
+      ],
+      "summary": "Computes the already-traded quantity and remaining trade for an order given existing fills.",
+      "tags": [
+        "order-management",
+        "calculation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "file",
+      "name": "order_stack.py",
+      "filePath": "sysexecution/order_stacks/order_stack.py",
+      "summary": "Core generic order-stack engine providing put/get/lock/cancel and parent-child linkage operations shared by the instrument, contract and broker stacks.",
+      "tags": [
+        "data-model",
+        "order-stack",
+        "engine"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Central 561-line state machine with locking and rollback semantics underpinning all order persistence."
+    },
+    {
+      "id": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "class",
+      "name": "orderStackData",
+      "filePath": "sysexecution/order_stacks/order_stack.py",
+      "lineRange": [
+        27,
+        561
+      ],
+      "summary": "Generic order-stack base providing add/remove/lock/cancel, status transitions and parent-child linking for orders, subclassed by the typed stacks.",
+      "tags": [
+        "order-stack",
+        "engine",
+        "order-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/order_stack.py:missingOrder",
+      "type": "class",
+      "name": "missingOrder",
+      "filePath": "sysexecution/order_stacks/order_stack.py",
+      "lineRange": [
+        15,
+        16
+      ],
+      "summary": "Order-stack exception (missingOrder) signalling a stack operation outcome such as missing/locked order or rollback failure.",
+      "tags": [
+        "exception",
+        "order-stack"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/order_stack.py:lockedOrder",
+      "type": "class",
+      "name": "lockedOrder",
+      "filePath": "sysexecution/order_stacks/order_stack.py",
+      "lineRange": [
+        19,
+        20
+      ],
+      "summary": "Order-stack exception (lockedOrder) signalling a stack operation outcome such as missing/locked order or rollback failure.",
+      "tags": [
+        "exception",
+        "order-stack"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/order_stacks/order_stack.py:failureWithRollback",
+      "type": "class",
+      "name": "failureWithRollback",
+      "filePath": "sysexecution/order_stacks/order_stack.py",
+      "lineRange": [
+        23,
+        24
+      ],
+      "summary": "Order-stack exception (failureWithRollback) signalling a stack operation outcome such as missing/locked order or rollback failure.",
+      "tags": [
+        "exception",
+        "order-stack"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/orders/base_orders.py",
+      "type": "file",
+      "name": "base_orders.py",
+      "filePath": "sysexecution/orders/base_orders.py",
+      "summary": "Defines the abstract Order base class and order-resolution helpers used by instrument, contract and broker orders across the execution layer.",
+      "tags": [
+        "data-model",
+        "abstract-base",
+        "order"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "class",
+      "name": "Order",
+      "filePath": "sysexecution/orders/base_orders.py",
+      "lineRange": [
+        45,
+        450
+      ],
+      "summary": "Abstract order base carrying tradeable object, quantity, fills, order id and parent/child links, providing fill arithmetic and serialization shared by all order types.",
+      "tags": [
+        "order",
+        "abstract-base",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "class",
+      "name": "orderType",
+      "filePath": "sysexecution/orders/base_orders.py",
+      "lineRange": [
+        21,
+        42
+      ],
+      "summary": "Base order-type descriptor mapping order type strings to behaviour, subclassed per order category.",
+      "tags": [
+        "order",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysexecution/orders/base_orders.py:overFilledOrder",
+      "type": "class",
+      "name": "overFilledOrder",
+      "filePath": "sysexecution/orders/base_orders.py",
+      "lineRange": [
+        17,
+        18
+      ],
+      "summary": "Exception raised when an order is filled beyond its requested quantity.",
+      "tags": [
+        "exception",
+        "order"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysexecution/orders/base_orders.py:resolve_multi_leg_price_to_single_price",
+      "type": "function",
+      "name": "resolve_multi_leg_price_to_single_price",
+      "filePath": "sysexecution/orders/base_orders.py",
+      "lineRange": [
+        482,
+        503
+      ],
+      "summary": "Collapses a multi-leg (spread) price list into a single net price for an order.",
+      "tags": [
+        "order",
+        "calculation",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "class:sysexecution/algos/algo_original_best.py:algoOriginalBest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "class:sysexecution/algos/algo_original_best.py:algoOriginalBest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapMkt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapMkt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapMid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapMid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapPrim",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "class:sysexecution/algos/algo_snaps.py:algoSnapPrim",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_algo_to_list_of_contract_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_algo_to_list_of_contract_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:check_and_if_required_allocate_algo_to_single_contract_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:check_and_if_required_allocate_algo_to_single_contract_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_best_execution_no_limit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_best_execution_no_limit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_limit_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "function:sysexecution/algos/allocate_algo_to_order.py:allocate_for_limit_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "class:sysexecution/algos/allocate_algo_to_order.py:AlgoConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "class:sysexecution/algos/allocate_algo_to_order.py:AlgoConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:post_trade_processing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:post_trade_processing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:cancel_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:cancel_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:check_current_limit_price_at_inside_spread",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "function:sysexecution/algos/common_functions.py:check_current_limit_price_at_inside_spread",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "class:sysexecution/order_stacks/broker_order_stack.py:brokerOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "class:sysexecution/order_stacks/broker_order_stack.py:orderWithControls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "class:sysexecution/order_stacks/broker_order_stack.py:brokerOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "class:sysexecution/order_stacks/broker_order_stack.py:orderWithControls",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "target": "class:sysexecution/order_stacks/contract_order_stack.py:contractOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "target": "class:sysexecution/order_stacks/contract_order_stack.py:contractOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "class:sysexecution/order_stacks/instrument_order_stack.py:instrumentOrderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "class:sysexecution/order_stacks/instrument_order_stack.py:zeroOrderException",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "function:sysexecution/order_stacks/instrument_order_stack.py:calculate_existing_trades_and_remainder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "function:sysexecution/order_stacks/instrument_order_stack.py:calculate_existing_trades_and_remainder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "class:sysexecution/order_stacks/instrument_order_stack.py:instrumentOrderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "class:sysexecution/order_stacks/instrument_order_stack.py:zeroOrderException",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "class:sysexecution/order_stacks/order_stack.py:missingOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "class:sysexecution/order_stacks/order_stack.py:lockedOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "class:sysexecution/order_stacks/order_stack.py:failureWithRollback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "class:sysexecution/orders/base_orders.py:overFilledOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "function:sysexecution/orders/base_orders.py:resolve_multi_leg_price_to_single_price",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "function:sysexecution/orders/base_orders.py:resolve_multi_leg_price_to_single_price",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "class:sysexecution/orders/base_orders.py:Order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "class:sysexecution/orders/base_orders.py:orderType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/algos/algo.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/algos/common_functions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:sysexecution/tick_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_original_best.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "file:sysexecution/algos/algo_market.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/algo_snaps.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/allocate_algo_to_order.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/algos/common_functions.py",
+      "target": "file:sysproduction/data/broker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "file:sysexecution/orders/broker_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/broker_order_stack.py",
+      "target": "file:sysexecution/tick_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "target": "file:sysexecution/orders/contract_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/contract_order_stack.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "file:sysexecution/order_stacks/order_stack.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "file:sysexecution/orders/instrument_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/instrument_order_stack.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "file:sysexecution/orders/base_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "file:sysexecution/orders/list_of_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/order_stacks/order_stack.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "file:sysexecution/orders/named_order_objects.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "file:sysexecution/trade_qty.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysexecution/orders/base_orders.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:sysexecution/order_stacks/instrument_order_stack.py:instrumentOrderStackData",
+      "target": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/order_stacks/contract_order_stack.py:contractOrderStackData",
+      "target": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/order_stacks/broker_order_stack.py:brokerOrderStackData",
+      "target": "class:sysexecution/order_stacks/order_stack.py:orderStackData",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:sysexecution/algos/algo_original_best.py:algoOriginalBest",
+      "target": "class:sysexecution/algos/algo.py:Algo",
+      "type": "inherits",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

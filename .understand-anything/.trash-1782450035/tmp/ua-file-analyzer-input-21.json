@@ -1,0 +1,25 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {"path": ".pre-commit-config.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": ".travis.yml", "language": "yaml", "sizeLines": 19, "fileCategory": "config"},
+    {"path": "AGENTS.md", "language": "markdown", "sizeLines": 34, "fileCategory": "docs"},
+    {"path": "CHANGELOG.md", "language": "markdown", "sizeLines": 672, "fileCategory": "docs"},
+    {"path": "CONTRIBUTING.md", "language": "markdown", "sizeLines": 243, "fileCategory": "docs"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 79, "fileCategory": "docs"},
+    {"path": "pyproject.toml", "language": "toml", "sizeLines": 98, "fileCategory": "config"},
+    {"path": "requirements.txt", "language": "txt", "sizeLines": 22, "fileCategory": "docs"},
+    {"path": "tox.ini", "language": "config", "sizeLines": 16, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    ".pre-commit-config.yaml": [],
+    ".travis.yml": [],
+    "AGENTS.md": [],
+    "CHANGELOG.md": [],
+    "CONTRIBUTING.md": [],
+    "README.md": [],
+    "pyproject.toml": [],
+    "requirements.txt": [],
+    "tox.ini": []
+  }
+}

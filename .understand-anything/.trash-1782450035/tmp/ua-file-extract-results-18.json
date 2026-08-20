@@ -1,0 +1,4330 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "examples/data/subscription_test.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "subscription_test",
+          "startLine": 16,
+          "endLine": 40,
+          "params": [
+            "ib_config"
+          ]
+        },
+        {
+          "name": "sorted_ContractDetails",
+          "startLine": 43,
+          "endLine": 44,
+          "params": [
+            "contract_details"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 47,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "subscription_test",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "sorted_ContractDetails",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "subscription_test",
+          "callee": "ib_async.util.logToConsole",
+          "lineNumber": 17
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "IB",
+          "lineNumber": 18
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib_config.IBSymbol.tolist",
+          "lineNumber": 21
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib_config.Instrument.tolist",
+          "lineNumber": 22
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib.connectAsync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "enumerate",
+          "lineNumber": 26
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib_config[\n                    ib_config.IBSymbol == ib_symbol\n                ].IBExchange.item",
+          "lineNumber": 28
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "Future",
+          "lineNumber": 31
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "coros.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib.reqContractDetailsAsync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "failed.append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "exceptions.append",
+          "lineNumber": 35
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "str",
+          "lineNumber": 35
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "asyncio.gather",
+          "lineNumber": 36
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "sorted_ContractDetails",
+          "lineNumber": 37
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "zip",
+          "lineNumber": 37
+        },
+        {
+          "caller": "subscription_test",
+          "callee": "ib.disconnect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sorted_ContractDetails",
+          "callee": "sorted",
+          "lineNumber": 44
+        },
+        {
+          "caller": "main",
+          "callee": "read_ib_config_from_file",
+          "lineNumber": 48
+        },
+        {
+          "caller": "main",
+          "callee": "asyncio.run",
+          "lineNumber": 49
+        },
+        {
+          "caller": "main",
+          "callee": "subscription_test",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_accounting_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "clean_up_account_summary",
+          "startLine": 162,
+          "endLine": 181,
+          "params": [
+            "account_summary_rawdata"
+          ]
+        },
+        {
+          "name": "_unique_list_from_total",
+          "startLine": 184,
+          "endLine": 189,
+          "params": [
+            "account_summary_data",
+            "tag_name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ibAccountingClient",
+          "startLine": 13,
+          "endLine": 159,
+          "methods": [
+            "broker_get_account_value_across_currency",
+            "broker_get_excess_liquidity_value_across_currency",
+            "_get_named_value_across_currency",
+            "_get_named_value_for_currency_across_accounts",
+            "_get_list_of_currencies_for_named_values",
+            "_get_named_value_across_accounts",
+            "_get_named_account_value_for_single_account",
+            "_ib_get_account_summary",
+            "account_summary_data",
+            "_is_ib_account_summary_cache_stale",
+            "_get_elapsed_seconds_since_last_cache_update",
+            "_ib_update_account_summary_cache",
+            "_record_cache_update",
+            "_ib_get_account_summary_from_broker"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibAccountingClient",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "clean_up_account_summary",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "_unique_list_from_total",
+          "line": 184,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_get_account_value_across_currency",
+          "callee": "self._get_named_value_across_currency",
+          "lineNumber": 17
+        },
+        {
+          "caller": "broker_get_excess_liquidity_value_across_currency",
+          "callee": "self._get_named_value_across_currency",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_get_named_value_across_currency",
+          "callee": "self._get_list_of_currencies_for_named_values",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_get_named_value_across_currency",
+          "callee": "list",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_get_named_value_across_currency",
+          "callee": "currencyValue",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_get_named_value_across_currency",
+          "callee": "self._get_named_value_for_currency_across_accounts",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_get_named_value_across_currency",
+          "callee": "listOfCurrencyValues",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_get_named_value_for_currency_across_accounts",
+          "callee": "self._get_named_value_across_accounts",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_get_named_value_for_currency_across_accounts",
+          "callee": "liquidiation_values_across_accounts_dict.keys",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_get_named_value_for_currency_across_accounts",
+          "callee": "liquidiation_values_across_accounts_dict[account_id].get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_get_named_value_for_currency_across_accounts",
+          "callee": "sum",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "self._get_named_value_across_accounts",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "list",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "account_dict.keys",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "liquidiation_values_across_accounts_dict.values",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "sum",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "list",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_get_list_of_currencies_for_named_values",
+          "callee": "set",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_get_named_value_across_accounts",
+          "callee": "self._ib_get_account_summary",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_get_named_value_across_accounts",
+          "callee": "account_summary_dict.keys",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_get_named_value_across_accounts",
+          "callee": "dict",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_get_named_value_across_accounts",
+          "callee": "self._get_named_account_value_for_single_account",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_get_named_account_value_for_single_account",
+          "callee": "self._ib_get_account_summary",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_ib_get_account_summary",
+          "callee": "self._is_ib_account_summary_cache_stale",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_ib_get_account_summary",
+          "callee": "self._ib_update_account_summary_cache",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_is_ib_account_summary_cache_stale",
+          "callee": "self._get_elapsed_seconds_since_last_cache_update",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_get_elapsed_seconds_since_last_cache_update",
+          "callee": "getattr",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_get_elapsed_seconds_since_last_cache_update",
+          "callee": "(\n            datetime.datetime.now() - account_summary_data_update\n        ).total_seconds",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_get_elapsed_seconds_since_last_cache_update",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_ib_update_account_summary_cache",
+          "callee": "self._ib_get_account_summary_from_broker",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_ib_update_account_summary_cache",
+          "callee": "self._record_cache_update",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_record_cache_update",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_ib_get_account_summary_from_broker",
+          "callee": "self.ib.accountSummary",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_ib_get_account_summary_from_broker",
+          "callee": "clean_up_account_summary",
+          "lineNumber": 157
+        },
+        {
+          "caller": "clean_up_account_summary",
+          "callee": "_unique_list_from_total",
+          "lineNumber": 163
+        },
+        {
+          "caller": "clean_up_account_summary",
+          "callee": "_unique_list_from_total",
+          "lineNumber": 164
+        },
+        {
+          "caller": "clean_up_account_summary",
+          "callee": "float",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_unique_list_from_total",
+          "callee": "getattr",
+          "lineNumber": 186
+        },
+        {
+          "caller": "_unique_list_from_total",
+          "callee": "list",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_unique_list_from_total",
+          "callee": "set",
+          "lineNumber": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 117,
+      "classes": [
+        {
+          "name": "ibClient",
+          "startLine": 29,
+          "endLine": 153,
+          "methods": [
+            "__init__",
+            "cache",
+            "ib_connection",
+            "ib",
+            "client_id",
+            "log",
+            "refresh",
+            "get_instrument_code_from_broker_contract_object",
+            "get_instrument_code_from_broker_identity_for_contract",
+            "ib_config",
+            "_get_and_set_ib_config_from_file",
+            "broker_identity_for_contract",
+            "get_contract_details",
+            "_get_contract_details"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibClient",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 37
+        },
+        {
+          "caller": "__init__",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__init__",
+          "callee": "datetime.timedelta",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__init__",
+          "callee": "Cache",
+          "lineNumber": 46
+        },
+        {
+          "caller": "refresh",
+          "callee": "self.ib.sleep",
+          "lineNumber": 69
+        },
+        {
+          "caller": "get_instrument_code_from_broker_contract_object",
+          "callee": "self.broker_identity_for_contract",
+          "lineNumber": 74
+        },
+        {
+          "caller": "get_instrument_code_from_broker_contract_object",
+          "callee": "self.get_instrument_code_from_broker_identity_for_contract",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_instrument_code_from_broker_identity_for_contract",
+          "callee": "get_instrument_code_from_broker_instrument_identity",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ib_config",
+          "callee": "getattr",
+          "lineNumber": 96
+        },
+        {
+          "caller": "ib_config",
+          "callee": "self._get_and_set_ib_config_from_file",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_get_and_set_ib_config_from_file",
+          "callee": "read_ib_config_from_file",
+          "lineNumber": 103
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "self.get_contract_details",
+          "lineNumber": 111
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "IBInstrumentIdentity",
+          "lineNumber": 117
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "str",
+          "lineNumber": 118
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "float",
+          "lineNumber": 119
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "str",
+          "lineNumber": 120
+        },
+        {
+          "caller": "broker_identity_for_contract",
+          "callee": "str",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_contract_details",
+          "callee": "self._get_contract_details",
+          "lineNumber": 130
+        },
+        {
+          "caller": "get_contract_details",
+          "callee": "len",
+          "lineNumber": 134
+        },
+        {
+          "caller": "get_contract_details",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "get_contract_details",
+          "callee": "self.log.critical",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_get_contract_details",
+          "callee": "self.ib.reqContractDetails",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_contracts_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 607,
+      "nonEmptyLines": 511,
+      "classes": [
+        {
+          "name": "ibContractsClient",
+          "startLine": 39,
+          "endLine": 607,
+          "methods": [
+            "broker_get_futures_contract_list",
+            "broker_get_single_contract_expiry_date",
+            "ib_get_trading_hours",
+            "_ib_get_uncached_trading_hours",
+            "ib_get_trading_hours_from_IB",
+            "ib_get_saved_weekly_trading_hours_for_contract",
+            "ib_get_saved_weekly_trading_hours_custom_for_contract",
+            "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+            "ib_get_timezoneid",
+            "get_all_saved_weekly_trading_hours",
+            "_get_all_saved_weekly_trading_hours_from_file",
+            "ib_get_min_tick_size",
+            "ib_get_price_magnifier",
+            "ib_get_contract_details",
+            "ib_futures_contract",
+            "ib_futures_contract_with_legs",
+            "_get_stored_or_live_contract",
+            "cache",
+            "_get_ib_futures_contract_from_broker",
+            "_get_vanilla_ib_futures_contract_with_legs",
+            "_get_spread_ib_futures_contract",
+            "_get_vanilla_ib_futures_contract",
+            "ib_resolve_unique_contract",
+            "ib_get_contract_with_conId",
+            "_get_contract_chain_for_symbol",
+            "ib_get_contract_chain"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibContractsClient",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_get_futures_contract_list",
+          "callee": "ib_futures_instrument",
+          "lineNumber": 47
+        },
+        {
+          "caller": "broker_get_futures_contract_list",
+          "callee": "self.ib_get_contract_chain",
+          "lineNumber": 48
+        },
+        {
+          "caller": "broker_get_single_contract_expiry_date",
+          "callee": "futures_contract_with_ib_data.log_attributes",
+          "lineNumber": 71
+        },
+        {
+          "caller": "broker_get_single_contract_expiry_date",
+          "callee": "futures_contract_with_ib_data.is_spread_contract",
+          "lineNumber": 72
+        },
+        {
+          "caller": "broker_get_single_contract_expiry_date",
+          "callee": "self.log.warning",
+          "lineNumber": 73
+        },
+        {
+          "caller": "broker_get_single_contract_expiry_date",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 79
+        },
+        {
+          "caller": "broker_get_single_contract_expiry_date",
+          "callee": "self.log.warning",
+          "lineNumber": 85
+        },
+        {
+          "caller": "ib_get_trading_hours",
+          "callee": "self.cache.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "self.ib_get_trading_hours_from_IB",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "self.log.warning",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "self.ib_get_saved_weekly_trading_hours_for_contract",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_ib_get_uncached_trading_hours",
+          "callee": "intersection_of_any_weekly_and_list_of_normal_trading_hours",
+          "lineNumber": 128
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "self.ib_get_contract_details",
+          "lineNumber": 138
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "get_trading_hours_from_contract_details",
+          "lineNumber": 141
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "self.log.warning",
+          "lineNumber": 145
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "str",
+          "lineNumber": 147
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "str",
+          "lineNumber": 147
+        },
+        {
+          "caller": "ib_get_trading_hours_from_IB",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 148
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_contract",
+          "callee": "self.ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "lineNumber": 160
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_contract",
+          "callee": "self.ib_get_saved_weekly_trading_hours_custom_for_contract",
+          "lineNumber": 169
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_contract",
+          "callee": "weekly_hours_for_timezone.intersect",
+          "lineNumber": 188
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_custom_for_contract",
+          "callee": "self.get_all_saved_weekly_trading_hours",
+          "lineNumber": 198
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_custom_for_contract",
+          "callee": "all_saved_trading_hours.get",
+          "lineNumber": 199
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_custom_for_contract",
+          "callee": "weekdayDictOfListOfTradingHoursAnyDay.create_empty",
+          "lineNumber": 205
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 213
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "self.ib_get_timezoneid",
+          "lineNumber": 216
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 219
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "str",
+          "lineNumber": 221
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "self.get_all_saved_weekly_trading_hours",
+          "lineNumber": 226
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "all_saved_trading_hours.get",
+          "lineNumber": 227
+        },
+        {
+          "caller": "ib_get_saved_weekly_trading_hours_for_timezone_of_contract",
+          "callee": "self.log.critical",
+          "lineNumber": 235
+        },
+        {
+          "caller": "ib_get_timezoneid",
+          "callee": "self.ib_get_contract_details",
+          "lineNumber": 242
+        },
+        {
+          "caller": "ib_get_timezoneid",
+          "callee": "self.log.warning",
+          "lineNumber": 247
+        },
+        {
+          "caller": "ib_get_timezoneid",
+          "callee": "str",
+          "lineNumber": 249
+        },
+        {
+          "caller": "ib_get_timezoneid",
+          "callee": "str",
+          "lineNumber": 249
+        },
+        {
+          "caller": "ib_get_timezoneid",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 250
+        },
+        {
+          "caller": "get_all_saved_weekly_trading_hours",
+          "callee": "self.cache.get",
+          "lineNumber": 258
+        },
+        {
+          "caller": "_get_all_saved_weekly_trading_hours_from_file",
+          "callee": "get_saved_trading_hours",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_get_all_saved_weekly_trading_hours_from_file",
+          "callee": "self.log.critical",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_get_all_saved_weekly_trading_hours_from_file",
+          "callee": "dictOfDictOfWeekdayTradingHours",
+          "lineNumber": 267
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 274
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 276
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "self.log.warning",
+          "lineNumber": 280
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "self.ib.reqContractDetails",
+          "lineNumber": 286
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "self.log.warning",
+          "lineNumber": 291
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "str",
+          "lineNumber": 293
+        },
+        {
+          "caller": "ib_get_min_tick_size",
+          "callee": "str",
+          "lineNumber": 293
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 303
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 305
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "self.log.warning",
+          "lineNumber": 309
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "self.ib.reqContractDetails",
+          "lineNumber": 314
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "self.log.warning",
+          "lineNumber": 319
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "str",
+          "lineNumber": 321
+        },
+        {
+          "caller": "ib_get_price_magnifier",
+          "callee": "str",
+          "lineNumber": 321
+        },
+        {
+          "caller": "ib_get_contract_details",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 330
+        },
+        {
+          "caller": "ib_get_contract_details",
+          "callee": "self.log.warning",
+          "lineNumber": 334
+        },
+        {
+          "caller": "ib_get_contract_details",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 336
+        },
+        {
+          "caller": "ib_get_contract_details",
+          "callee": "self.ib.reqContractDetails",
+          "lineNumber": 342
+        },
+        {
+          "caller": "ib_futures_contract",
+          "callee": "self.ib_futures_contract_with_legs",
+          "lineNumber": 354
+        },
+        {
+          "caller": "ib_futures_contract_with_legs",
+          "callee": "copy",
+          "lineNumber": 376
+        },
+        {
+          "caller": "ib_futures_contract_with_legs",
+          "callee": "contract_object_to_use.is_spread_contract",
+          "lineNumber": 377
+        },
+        {
+          "caller": "ib_futures_contract_with_legs",
+          "callee": "contract_object_to_use.new_contract_with_first_contract_date",
+          "lineNumber": 379
+        },
+        {
+          "caller": "ib_futures_contract_with_legs",
+          "callee": "self._get_stored_or_live_contract",
+          "lineNumber": 382
+        },
+        {
+          "caller": "_get_stored_or_live_contract",
+          "callee": "self.cache.get",
+          "lineNumber": 396
+        },
+        {
+          "caller": "cache",
+          "callee": "getattr",
+          "lineNumber": 409
+        },
+        {
+          "caller": "cache",
+          "callee": "Cache",
+          "lineNumber": 411
+        },
+        {
+          "caller": "_get_ib_futures_contract_from_broker",
+          "callee": "contract_object_with_ib_data.is_spread_contract",
+          "lineNumber": 432
+        },
+        {
+          "caller": "_get_ib_futures_contract_from_broker",
+          "callee": "self._get_spread_ib_futures_contract",
+          "lineNumber": 433
+        },
+        {
+          "caller": "_get_ib_futures_contract_from_broker",
+          "callee": "self._get_vanilla_ib_futures_contract_with_legs",
+          "lineNumber": 440
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract_with_legs",
+          "callee": "self._get_vanilla_ib_futures_contract",
+          "lineNumber": 454
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract_with_legs",
+          "callee": "ibcontractWithLegs",
+          "lineNumber": 459
+        },
+        {
+          "caller": "_get_spread_ib_futures_contract",
+          "callee": "Exception",
+          "lineNumber": 476
+        },
+        {
+          "caller": "_get_spread_ib_futures_contract",
+          "callee": "ib_futures_instrument",
+          "lineNumber": 479
+        },
+        {
+          "caller": "_get_spread_ib_futures_contract",
+          "callee": "self._get_vanilla_ib_futures_contract",
+          "lineNumber": 484
+        },
+        {
+          "caller": "_get_spread_ib_futures_contract",
+          "callee": "_add_legs_to_ib_contract",
+          "lineNumber": 492
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract",
+          "callee": "get_ib_contract_with_specific_expiry",
+          "lineNumber": 514
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract",
+          "callee": "self.ib_get_contract_chain",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract",
+          "callee": "resolve_unique_contract_from_ibcontract_list",
+          "lineNumber": 526
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 531
+        },
+        {
+          "caller": "_get_vanilla_ib_futures_contract",
+          "callee": "str",
+          "lineNumber": 533
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "self.ib_get_contract_chain",
+          "lineNumber": 552
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "len",
+          "lineNumber": 554
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "log.warning",
+          "lineNumber": 555
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "str",
+          "lineNumber": 557
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "len",
+          "lineNumber": 561
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "log.warning",
+          "lineNumber": 562
+        },
+        {
+          "caller": "ib_resolve_unique_contract",
+          "callee": "str",
+          "lineNumber": 562
+        },
+        {
+          "caller": "ib_get_contract_with_conId",
+          "callee": "self._get_contract_chain_for_symbol",
+          "lineNumber": 570
+        },
+        {
+          "caller": "ib_get_contract_with_conId",
+          "callee": "conId_list.index",
+          "lineNumber": 573
+        },
+        {
+          "caller": "_get_contract_chain_for_symbol",
+          "callee": "ib_futures_instrument_just_symbol",
+          "lineNumber": 582
+        },
+        {
+          "caller": "_get_contract_chain_for_symbol",
+          "callee": "self.ib_get_contract_chain",
+          "lineNumber": 583
+        },
+        {
+          "caller": "ib_get_contract_chain",
+          "callee": "self.get_contract_details",
+          "lineNumber": 597
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_fx_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 77,
+      "classes": [
+        {
+          "name": "ibFxClient",
+          "startLine": 17,
+          "endLine": 100,
+          "methods": [
+            "broker_fx_balances",
+            "broker_fx_market_order",
+            "_create_fx_market_order_for_submission",
+            "broker_get_daily_fx_data",
+            "ib_spotfx_contract"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFxClient",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_fx_balances",
+          "callee": "self.ib.accountValues",
+          "lineNumber": 20
+        },
+        {
+          "caller": "broker_fx_balances",
+          "callee": "self.ib.accountValues",
+          "lineNumber": 22
+        },
+        {
+          "caller": "broker_fx_balances",
+          "callee": "extract_fx_balances_from_account_summary",
+          "lineNumber": 24
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "self.ib_spotfx_contract",
+          "lineNumber": 44
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "self._create_fx_market_order_for_submission",
+          "lineNumber": 46
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "self.ib.placeOrder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "ibcontractWithLegs",
+          "lineNumber": 52
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "tradeWithContract",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_create_fx_market_order_for_submission",
+          "callee": "resolveBS",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_create_fx_market_order_for_submission",
+          "callee": "MarketOrder",
+          "lineNumber": 61
+        },
+        {
+          "caller": "broker_get_daily_fx_data",
+          "callee": "self.log.debug",
+          "lineNumber": 79
+        },
+        {
+          "caller": "broker_get_daily_fx_data",
+          "callee": "self.ib_spotfx_contract",
+          "lineNumber": 82
+        },
+        {
+          "caller": "broker_get_daily_fx_data",
+          "callee": "self.log.warning",
+          "lineNumber": 84
+        },
+        {
+          "caller": "broker_get_daily_fx_data",
+          "callee": "self._get_generic_data_for_contract",
+          "lineNumber": 88
+        },
+        {
+          "caller": "broker_get_daily_fx_data",
+          "callee": "self.log.debug",
+          "lineNumber": 92
+        },
+        {
+          "caller": "ib_spotfx_contract",
+          "callee": "Forex",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ib_spotfx_contract",
+          "callee": "self.ib_resolve_unique_contract",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_orders_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 191,
+      "classes": [
+        {
+          "name": "ibOrdersClient",
+          "startLine": 39,
+          "endLine": 225,
+          "methods": [
+            "broker_get_orders",
+            "add_contract_legs_to_order",
+            "broker_submit_order",
+            "_build_ib_order",
+            "ib_cancel_order",
+            "modify_limit_price_given_original_objects"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibOrdersClient",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_get_orders",
+          "callee": "self.refresh",
+          "lineNumber": 48
+        },
+        {
+          "caller": "broker_get_orders",
+          "callee": "self.ib.reqAllOpenOrders",
+          "lineNumber": 51
+        },
+        {
+          "caller": "broker_get_orders",
+          "callee": "self.ib.trades",
+          "lineNumber": 52
+        },
+        {
+          "caller": "broker_get_orders",
+          "callee": "self.add_contract_legs_to_order",
+          "lineNumber": 63
+        },
+        {
+          "caller": "broker_get_orders",
+          "callee": "listOfTradesWithContracts",
+          "lineNumber": 67
+        },
+        {
+          "caller": "add_contract_legs_to_order",
+          "callee": "getattr",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add_contract_legs_to_order",
+          "callee": "self.ib_get_contract_with_conId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "add_contract_legs_to_order",
+          "callee": "legs_data.append",
+          "lineNumber": 80
+        },
+        {
+          "caller": "add_contract_legs_to_order",
+          "callee": "ibcontractWithLegs",
+          "lineNumber": 82
+        },
+        {
+          "caller": "add_contract_legs_to_order",
+          "callee": "tradeWithContract",
+          "lineNumber": 85
+        },
+        {
+          "caller": "broker_submit_order",
+          "callee": "self.ib_futures_contract_with_legs",
+          "lineNumber": 111
+        },
+        {
+          "caller": "broker_submit_order",
+          "callee": "self._build_ib_order",
+          "lineNumber": 120
+        },
+        {
+          "caller": "broker_submit_order",
+          "callee": "self.ib.whatIfOrder",
+          "lineNumber": 128
+        },
+        {
+          "caller": "broker_submit_order",
+          "callee": "self.ib.placeOrder",
+          "lineNumber": 130
+        },
+        {
+          "caller": "broker_submit_order",
+          "callee": "tradeWithContract",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "resolveBS_for_list",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibMarketOrder",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "self.log.critical",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibLimitOrder",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "self.log.critical",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibStopOrder",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibOrder",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibOrder",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibOrder",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "ibMarketOrder",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "TagValue",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_build_ib_order",
+          "callee": "self.log.critical",
+          "lineNumber": 195
+        },
+        {
+          "caller": "ib_cancel_order",
+          "callee": "self.ib.cancelOrder",
+          "lineNumber": 204
+        },
+        {
+          "caller": "modify_limit_price_given_original_objects",
+          "callee": "self.ib.placeOrder",
+          "lineNumber": 217
+        },
+        {
+          "caller": "modify_limit_price_given_original_objects",
+          "callee": "tradeWithContract",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_positions_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "ibPositionsClient",
+          "startLine": 9,
+          "endLine": 23,
+          "methods": [
+            "broker_get_positions"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibPositionsClient",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_get_positions",
+          "callee": "self.ib.positions",
+          "lineNumber": 18
+        },
+        {
+          "caller": "broker_get_positions",
+          "callee": "from_ib_positions_to_dict",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/client/ib_price_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 355,
+      "nonEmptyLines": 293,
+      "classes": [
+        {
+          "name": "tickerWithBS",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ibPriceClient",
+          "startLine": 36,
+          "endLine": 355,
+          "methods": [
+            "broker_get_historical_futures_data_for_contract",
+            "get_ticker_object_with_BS",
+            "get_ib_ticker_object",
+            "cancel_market_data_for_contract",
+            "cancel_market_data_for_contract_and_trade_qty",
+            "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+            "_get_generic_data_for_contract",
+            "_raw_ib_data_to_df",
+            "_ib_timestamp_to_datetime",
+            "_adjust_ib_time_to_local",
+            "_ib_get_historical_data_of_duration_and_barSize",
+            "_get_barsize_and_duration_from_frequency",
+            "_avoid_pacing_violation",
+            "_pause_for_pacing"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "tickerWithBS",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "ibPriceClient",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 51
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "contract_object_with_ib_broker_config.log_attributes",
+          "lineNumber": 53
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 57
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 61
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "str",
+          "lineNumber": 63
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "self._get_generic_data_for_contract",
+          "lineNumber": 67
+        },
+        {
+          "caller": "broker_get_historical_futures_data_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_ticker_object_with_BS",
+          "callee": "self.get_ib_ticker_object",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get_ticker_object_with_BS",
+          "callee": "resolveBS_for_list",
+          "lineNumber": 86
+        },
+        {
+          "caller": "get_ticker_object_with_BS",
+          "callee": "tickerWithBS",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "self.log.warning",
+          "lineNumber": 103
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "str",
+          "lineNumber": 105
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 106
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "self.ib.reqMarketDataType",
+          "lineNumber": 111
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "self.ib.reqMktData",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_ib_ticker_object",
+          "callee": "self.ib.ticker",
+          "lineNumber": 113
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "self.cancel_market_data_for_contract_and_trade_qty",
+          "lineNumber": 120
+        },
+        {
+          "caller": "cancel_market_data_for_contract_and_trade_qty",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cancel_market_data_for_contract_and_trade_qty",
+          "callee": "self.log.warning",
+          "lineNumber": 133
+        },
+        {
+          "caller": "cancel_market_data_for_contract_and_trade_qty",
+          "callee": "str",
+          "lineNumber": 135
+        },
+        {
+          "caller": "cancel_market_data_for_contract_and_trade_qty",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cancel_market_data_for_contract_and_trade_qty",
+          "callee": "self.ib.cancelMktData",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "contract_object_with_ib_data.log_attributes",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "contract_object_with_ib_data.is_spread_contract",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "self.log.critical",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "Exception",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "self.ib_futures_contract",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "self.log.warning",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "datetime.timedelta",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "self.ib.reqMarketDataType",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_ib_get_recent_bid_ask_tick_data_using_reqHistoricalTicks",
+          "callee": "self.ib.reqHistoricalTicks",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_get_generic_data_for_contract",
+          "callee": "self._get_barsize_and_duration_from_frequency",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_get_generic_data_for_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_get_generic_data_for_contract",
+          "callee": "self._ib_get_historical_data_of_duration_and_barSize",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_get_generic_data_for_contract",
+          "callee": "self._raw_ib_data_to_df",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_raw_ib_data_to_df",
+          "callee": "self.log.warning",
+          "lineNumber": 216
+        },
+        {
+          "caller": "_raw_ib_data_to_df",
+          "callee": "self._ib_timestamp_to_datetime",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_ib_timestamp_to_datetime",
+          "callee": "self._adjust_ib_time_to_local",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_ib_timestamp_to_datetime",
+          "callee": "replace_midnight_with_notional_closing_time",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_adjust_ib_time_to_local",
+          "callee": "getattr",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_adjust_ib_time_to_local",
+          "callee": "timestamp_ib_with_tz.astimezone",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_adjust_ib_time_to_local",
+          "callee": "tz.tzlocal",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_adjust_ib_time_to_local",
+          "callee": "strip_timezone_fromdatetime",
+          "lineNumber": 255
+        },
+        {
+          "caller": "_ib_get_historical_data_of_duration_and_barSize",
+          "callee": "self._avoid_pacing_violation",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_ib_get_historical_data_of_duration_and_barSize",
+          "callee": "self.ib.reqMarketDataType",
+          "lineNumber": 278
+        },
+        {
+          "caller": "_ib_get_historical_data_of_duration_and_barSize",
+          "callee": "self.ib.reqHistoricalData",
+          "lineNumber": 279
+        },
+        {
+          "caller": "_ib_get_historical_data_of_duration_and_barSize",
+          "callee": "util.df",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_ib_get_historical_data_of_duration_and_barSize",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "dict",
+          "lineNumber": 297
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "dict",
+          "lineNumber": 309
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "barsize_lookup.keys",
+          "lineNumber": 321
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "duration_lookup.keys",
+          "lineNumber": 322
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "Exception",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "str",
+          "lineNumber": 326
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "str",
+          "lineNumber": 326
+        },
+        {
+          "caller": "_get_barsize_and_duration_from_frequency",
+          "callee": "barsize_lookup.keys",
+          "lineNumber": 326
+        },
+        {
+          "caller": "_avoid_pacing_violation",
+          "callee": "self._pause_for_pacing",
+          "lineNumber": 336
+        },
+        {
+          "caller": "_avoid_pacing_violation",
+          "callee": "self.log.debug",
+          "lineNumber": 338
+        },
+        {
+          "caller": "_avoid_pacing_violation",
+          "callee": "(\n                        last_call_datetime\n                        + datetime.timedelta(seconds=PACING_INTERVAL_SECONDS)\n                        - datetime.datetime.now()\n                    ).total_seconds",
+          "lineNumber": 340
+        },
+        {
+          "caller": "_avoid_pacing_violation",
+          "callee": "datetime.timedelta",
+          "lineNumber": 342
+        },
+        {
+          "caller": "_avoid_pacing_violation",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 343
+        },
+        {
+          "caller": "_pause_for_pacing",
+          "callee": "datetime.datetime.now",
+          "lineNumber": 351
+        },
+        {
+          "caller": "_pause_for_pacing",
+          "callee": "time_since_last_call.total_seconds",
+          "lineNumber": 352
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysbrokers/IB/config/ib_fx_config.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "get_ib_config_from_file",
+          "startLine": 17,
+          "endLine": 24,
+          "params": [
+            "log"
+          ]
+        },
+        {
+          "name": "config_info_for_code",
+          "startLine": 27,
+          "endLine": 34,
+          "params": [
+            "config_data",
+            "currency_code"
+          ]
+        },
+        {
+          "name": "get_list_of_codes",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "config_data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_ib_config_from_file",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "config_info_for_code",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "get_list_of_codes",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_ib_config_from_file",
+          "callee": "pd.read_csv",
+          "lineNumber": 19
+        },
+        {
+          "caller": "get_ib_config_from_file",
+          "callee": "log.warning",
+          "lineNumber": 21
+        },
+        {
+          "caller": "config_info_for_code",
+          "callee": "ibFXConfig",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get_list_of_codes",
+          "callee": "list",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysbrokers/IB/config/ib_instrument_config.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 159,
+      "functions": [
+        {
+          "name": "read_ib_config_from_file",
+          "startLine": 25,
+          "endLine": 32,
+          "params": [
+            "log"
+          ]
+        },
+        {
+          "name": "get_instrument_object_from_config",
+          "startLine": 35,
+          "endLine": 65,
+          "params": [
+            "instrument_code",
+            "config",
+            "log"
+          ]
+        },
+        {
+          "name": "_get_instrument_object_from_valid_config",
+          "startLine": 68,
+          "endLine": 100,
+          "params": [
+            "instrument_code",
+            "config"
+          ]
+        },
+        {
+          "name": "get_instrument_code_from_broker_instrument_identity",
+          "startLine": 111,
+          "endLine": 157,
+          "params": [
+            "config",
+            "ib_instrument_identity",
+            "log"
+          ]
+        },
+        {
+          "name": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "startLine": 160,
+          "endLine": 181,
+          "params": [
+            "config",
+            "ib_instrument_identity"
+          ]
+        },
+        {
+          "name": "_get_relevant_config_rows_from_broker_instrument_identity_fields",
+          "startLine": 184,
+          "endLine": 193,
+          "params": [
+            "config",
+            "ib_code",
+            "ib_multiplier",
+            "ib_exchange"
+          ]
+        },
+        {
+          "name": "get_instrument_list_from_ib_config",
+          "startLine": 196,
+          "endLine": 198,
+          "params": [
+            "config"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IBconfig",
+          "startLine": 16,
+          "endLine": 17,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "IBInstrumentIdentity",
+          "startLine": 104,
+          "endLine": 108,
+          "methods": [],
+          "properties": [
+            "ib_code",
+            "ib_multiplier",
+            "ib_exchange",
+            "ib_valid_exchange"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IBconfig",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "read_ib_config_from_file",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "get_instrument_object_from_config",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "_get_instrument_object_from_valid_config",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "IBInstrumentIdentity",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "get_instrument_code_from_broker_instrument_identity",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "_get_relevant_config_rows_from_broker_instrument_identity_fields",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "get_instrument_list_from_ib_config",
+          "line": 196,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "read_ib_config_from_file",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "read_ib_config_from_file",
+          "callee": "pd.read_csv",
+          "lineNumber": 27
+        },
+        {
+          "caller": "read_ib_config_from_file",
+          "callee": "log.warning",
+          "lineNumber": 29
+        },
+        {
+          "caller": "read_ib_config_from_file",
+          "callee": "IBconfig",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "get_logger",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "read_ib_config_from_file",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "log.warning",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "get_instrument_list_from_ib_config",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "log.warning",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_instrument_object_from_config",
+          "callee": "_get_instrument_object_from_valid_config",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "return_another_value_if_nan",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "return_another_value_if_nan",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "return_another_value_if_nan",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "futuresInstrument",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "ibInstrumentConfigData",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_get_instrument_object_from_valid_config",
+          "callee": "futuresInstrumentWithIBConfigData",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "get_logger",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "_get_relevant_config_rows_from_broker_instrument_identity_fields",
+          "lineNumber": 121
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "len",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "lineNumber": 132
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "log.critical",
+          "lineNumber": 146
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "Exception",
+          "lineNumber": 147
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "log.critical",
+          "lineNumber": 154
+        },
+        {
+          "caller": "get_instrument_code_from_broker_instrument_identity",
+          "callee": "Exception",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "callee": "ib_valid_exchange.split",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "callee": "_get_relevant_config_rows_from_broker_instrument_identity_fields",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "callee": "len",
+          "lineNumber": 177
+        },
+        {
+          "caller": "get_instrument_list_from_ib_config",
+          "callee": "list",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 9,
+        "functionCount": 7,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_Fx_prices_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 108,
+      "classes": [
+        {
+          "name": "ibFxPricesData",
+          "startLine": 17,
+          "endLine": 138,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "ibconnection",
+            "ib_client",
+            "get_list_of_fxcodes",
+            "_get_fx_prices_without_checking",
+            "_get_fx_prices_with_ib_config",
+            "_get_raw_fx_prices",
+            "_get_config_info_for_code",
+            "_get_ib_fx_config",
+            "_get_and_set_ib_config_from_file"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFxPricesData",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibFxClient",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "self._get_ib_fx_config",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "self.log.warning",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_list_of_fxcodes",
+          "callee": "get_list_of_codes",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self._get_config_info_for_code",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "fxPrices.create_empty",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_get_fx_prices_without_checking",
+          "callee": "self._get_fx_prices_with_ib_config",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "self._get_raw_fx_prices",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "len",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "self.log.warning",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "str",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "fxPrices.create_empty",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "fxPrices",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "self.log.debug",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_get_fx_prices_with_ib_config",
+          "callee": "len",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_get_raw_fx_prices",
+          "callee": "self.ib_client.broker_get_daily_fx_data",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_get_raw_fx_prices",
+          "callee": "pd.Series",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_get_config_info_for_code",
+          "callee": "self._get_ib_fx_config",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_get_config_info_for_code",
+          "callee": "self.log.warning",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_get_config_info_for_code",
+          "callee": "config_info_for_code",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_get_ib_fx_config",
+          "callee": "getattr",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_get_ib_fx_config",
+          "callee": "self._get_and_set_ib_config_from_file",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_get_and_set_ib_config_from_file",
+          "callee": "get_ib_config_from_file",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_broker_commissions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "get_commission_and_currency_from_ib_order",
+          "startLine": 69,
+          "endLine": 75,
+          "params": [
+            "ib_order"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ibFuturesContractCommissionData",
+          "startLine": 16,
+          "endLine": 66,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "ibconnection",
+            "execution_stack",
+            "get_commission_for_contract"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFuturesContractCommissionData",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "get_commission_and_currency_from_ib_order",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "self.data.config.get_element",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "brokerOrder",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "self.execution_stack.what_if_order",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "quickTimer",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "currencyValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "get_commission_for_contract",
+          "callee": "get_commission_and_currency_from_ib_order",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_commission_and_currency_from_ib_order",
+          "callee": "currencyValue",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_capital_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ibCapitalData",
+          "startLine": 12,
+          "endLine": 56,
+          "methods": [
+            "__init__",
+            "ibconnection",
+            "ib_client",
+            "__repr__",
+            "get_account_value_across_currency",
+            "get_excess_liquidity_value_across_currency"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibCapitalData",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibAccountingClient",
+          "lineNumber": 30
+        },
+        {
+          "caller": "get_account_value_across_currency",
+          "callee": "self.ib_client.broker_get_account_value_across_currency",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get_excess_liquidity_value_across_currency",
+          "callee": "self.ib_client.broker_get_excess_liquidity_value_across_currency",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_connection.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "get_broker_account",
+          "startLine": 130,
+          "endLine": 133,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "connectionIB",
+          "startLine": 19,
+          "endLine": 127,
+          "methods": [
+            "__init__",
+            "_init_connection",
+            "ib",
+            "log",
+            "__repr__",
+            "client_id",
+            "account",
+            "close_connection"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "connectionIB",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "get_broker_account",
+          "line": 130,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "ib_defaults",
+          "lineNumber": 42
+        },
+        {
+          "caller": "__init__",
+          "callee": "dict",
+          "lineNumber": 43
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 53
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._init_connection",
+          "lineNumber": 65
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.log.critical",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "IB",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "get_broker_account",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "self.log.error",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "ib.connect",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "ib.connect",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_init_connection",
+          "callee": "time.sleep",
+          "lineNumber": 96
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 110
+        },
+        {
+          "caller": "close_connection",
+          "callee": "self.log.debug",
+          "lineNumber": 120
+        },
+        {
+          "caller": "close_connection",
+          "callee": "str",
+          "lineNumber": 120
+        },
+        {
+          "caller": "close_connection",
+          "callee": "self.ib.disconnect",
+          "lineNumber": 123
+        },
+        {
+          "caller": "close_connection",
+          "callee": "self.log.warning",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_broker_account",
+          "callee": "get_production_config",
+          "lineNumber": 131
+        },
+        {
+          "caller": "get_broker_account",
+          "callee": "production_config.get_element",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_contract_position_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "ibContractPositionData",
+          "startLine": 16,
+          "endLine": 130,
+          "methods": [
+            "__init__",
+            "ibconnection",
+            "ib_client",
+            "__repr__",
+            "futures_contract_data",
+            "futures_instrument_data",
+            "get_all_current_positions_as_list_with_contract_objects",
+            "_get_contract_position_for_raw_entry",
+            "_get_instrument_code_from_ib_position_entry",
+            "_get_all_futures_positions_as_raw_list",
+            "get_position_as_df_for_contract_object",
+            "update_position_for_contract_object",
+            "delete_last_position_for_contract_object",
+            "_get_series_for_args_dict",
+            "_update_entry_for_args_dict",
+            "_delete_last_entry_for_args_dict",
+            "_get_list_of_args_dict",
+            "get_list_of_instruments_with_any_position"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibContractPositionData",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 23
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibPositionsClient",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "self._get_all_futures_positions_as_raw_list",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "self._get_contract_position_for_raw_entry",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "current_positions.append",
+          "lineNumber": 66
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "listOfContractPositions",
+          "lineNumber": 68
+        },
+        {
+          "caller": "get_all_current_positions_as_list_with_contract_objects",
+          "callee": "list_of_contract_positions.sum_for_contract",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_get_contract_position_for_raw_entry",
+          "callee": "self._get_instrument_code_from_ib_position_entry",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_get_contract_position_for_raw_entry",
+          "callee": "futuresContract",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_get_contract_position_for_raw_entry",
+          "callee": "contractPosition",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_get_instrument_code_from_ib_position_entry",
+          "callee": "self.futures_instrument_data.get_instrument_code_from_broker_contract_object",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_get_all_futures_positions_as_raw_list",
+          "callee": "self.ib_client.refresh",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_get_all_futures_positions_as_raw_list",
+          "callee": "self.ib_client.broker_get_positions",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_get_all_futures_positions_as_raw_list",
+          "callee": "all_positions.get",
+          "lineNumber": 104
+        },
+        {
+          "caller": "get_position_as_df_for_contract_object",
+          "callee": "Exception",
+          "lineNumber": 109
+        },
+        {
+          "caller": "update_position_for_contract_object",
+          "callee": "Exception",
+          "lineNumber": 112
+        },
+        {
+          "caller": "delete_last_position_for_contract_object",
+          "callee": "Exception",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_get_series_for_args_dict",
+          "callee": "Exception",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_update_entry_for_args_dict",
+          "callee": "Exception",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_delete_last_entry_for_args_dict",
+          "callee": "Exception",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_get_list_of_args_dict",
+          "callee": "Exception",
+          "lineNumber": 127
+        },
+        {
+          "caller": "get_list_of_instruments_with_any_position",
+          "callee": "Exception",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 188,
+      "functions": [
+        {
+          "name": "resolve_multiple_expiries",
+          "startLine": 39,
+          "endLine": 68,
+          "params": [
+            "ibcontract_list",
+            "futures_instrument_with_ib_data"
+          ]
+        },
+        {
+          "name": "resolve_multiple_expiries_for_EUREX",
+          "startLine": 71,
+          "endLine": 76,
+          "params": [
+            "ibcontract_list"
+          ]
+        },
+        {
+          "name": "resolve_multiple_expiries_for_LME",
+          "startLine": 79,
+          "endLine": 84,
+          "params": [
+            "ibcontract_list"
+          ]
+        },
+        {
+          "name": "resolve_multiple_expiries_for_GAS_US",
+          "startLine": 87,
+          "endLine": 92,
+          "params": [
+            "ibcontract_list"
+          ]
+        },
+        {
+          "name": "resolve_multiple_expiries_for_VIX",
+          "startLine": 95,
+          "endLine": 101,
+          "params": [
+            "ibcontract_list"
+          ]
+        },
+        {
+          "name": "resolve_multiple_expiries_for_generic_futures",
+          "startLine": 104,
+          "endLine": 122,
+          "params": [
+            "ibcontract_list",
+            "is_monthly_function"
+          ]
+        },
+        {
+          "name": "_is_vix_symbol_monthly",
+          "startLine": 125,
+          "endLine": 133,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "_is_eurex_symbol_monthly",
+          "startLine": 136,
+          "endLine": 141,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "_is_lme_symbol_monthly",
+          "startLine": 144,
+          "endLine": 150,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "_is_gas_us_symbol_monthly",
+          "startLine": 153,
+          "endLine": 161,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "_is_eurex_symbol_daily",
+          "startLine": 164,
+          "endLine": 165,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "get_ib_contract_with_specific_expiry",
+          "startLine": 180,
+          "endLine": 198,
+          "params": [
+            "futures_instrument_with_ib_data",
+            "contract_date"
+          ]
+        },
+        {
+          "name": "resolve_unique_contract_from_ibcontract_list",
+          "startLine": 201,
+          "endLine": 219,
+          "params": [
+            "ibcontract_list",
+            "futures_instrument_with_ib_data"
+          ]
+        },
+        {
+          "name": "_add_legs_to_ib_contract",
+          "startLine": 222,
+          "endLine": 239,
+          "params": [
+            "ibcontract",
+            "trade_list_for_multiple_legs",
+            "resolved_legs"
+          ]
+        },
+        {
+          "name": "_get_ib_combo_leg",
+          "startLine": 242,
+          "endLine": 252,
+          "params": [
+            "ratio",
+            "resolved_leg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ibcontractWithLegs",
+          "startLine": 171,
+          "endLine": 177,
+          "methods": [
+            "__init__",
+            "__repr__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolve_multiple_expiries",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multiple_expiries_for_EUREX",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multiple_expiries_for_LME",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multiple_expiries_for_GAS_US",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multiple_expiries_for_VIX",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_multiple_expiries_for_generic_futures",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_is_vix_symbol_monthly",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "_is_eurex_symbol_monthly",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "_is_lme_symbol_monthly",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "_is_gas_us_symbol_monthly",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "_is_eurex_symbol_daily",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "ibcontractWithLegs",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "get_ib_contract_with_specific_expiry",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "resolve_unique_contract_from_ibcontract_list",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "_add_legs_to_ib_contract",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "_get_ib_combo_leg",
+          "line": 242,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "Exception",
+          "lineNumber": 49
+        },
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "resolve_multiple_expiries_for_VIX",
+          "lineNumber": 56
+        },
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "resolve_multiple_expiries_for_EUREX",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "resolve_multiple_expiries_for_LME",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "resolve_multiple_expiries_for_GAS_US",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolve_multiple_expiries",
+          "callee": "Exception",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_EUREX",
+          "callee": "resolve_multiple_expiries_for_generic_futures",
+          "lineNumber": 72
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_LME",
+          "callee": "resolve_multiple_expiries_for_generic_futures",
+          "lineNumber": 80
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_GAS_US",
+          "callee": "resolve_multiple_expiries_for_generic_futures",
+          "lineNumber": 88
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_VIX",
+          "callee": "resolve_multiple_expiries_for_generic_futures",
+          "lineNumber": 97
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_generic_futures",
+          "callee": "is_monthly_function",
+          "lineNumber": 111
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_generic_futures",
+          "callee": "Exception",
+          "lineNumber": 113
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_generic_futures",
+          "callee": "are_monthly.count",
+          "lineNumber": 115
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_generic_futures",
+          "callee": "are_monthly.index",
+          "lineNumber": 116
+        },
+        {
+          "caller": "resolve_multiple_expiries_for_generic_futures",
+          "callee": "Exception",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_is_vix_symbol_monthly",
+          "callee": "re.match",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_is_vix_symbol_monthly",
+          "callee": "re.match",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_is_vix_symbol_monthly",
+          "callee": "Exception",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_is_eurex_symbol_monthly",
+          "callee": "_is_eurex_symbol_daily",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_is_lme_symbol_monthly",
+          "callee": "int",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_is_lme_symbol_monthly",
+          "callee": "Exception",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_is_gas_us_symbol_monthly",
+          "callee": "re.match",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_is_gas_us_symbol_monthly",
+          "callee": "re.match",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_is_gas_us_symbol_monthly",
+          "callee": "Exception",
+          "lineNumber": 161
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 177
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 177
+        },
+        {
+          "caller": "get_ib_contract_with_specific_expiry",
+          "callee": "ib_futures_instrument",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_ib_contract_with_specific_expiry",
+          "callee": "str",
+          "lineNumber": 185
+        },
+        {
+          "caller": "get_ib_contract_with_specific_expiry",
+          "callee": "contract_date.is_day_defined",
+          "lineNumber": 187
+        },
+        {
+          "caller": "resolve_unique_contract_from_ibcontract_list",
+          "callee": "len",
+          "lineNumber": 205
+        },
+        {
+          "caller": "resolve_unique_contract_from_ibcontract_list",
+          "callee": "Exception",
+          "lineNumber": 207
+        },
+        {
+          "caller": "resolve_unique_contract_from_ibcontract_list",
+          "callee": "len",
+          "lineNumber": 209
+        },
+        {
+          "caller": "resolve_unique_contract_from_ibcontract_list",
+          "callee": "resolve_multiple_expiries",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_add_legs_to_ib_contract",
+          "callee": "list_of_ints_with_highest_common_factor_positive_first",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_add_legs_to_ib_contract",
+          "callee": "_get_ib_combo_leg",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_add_legs_to_ib_contract",
+          "callee": "zip",
+          "lineNumber": 233
+        },
+        {
+          "caller": "_add_legs_to_ib_contract",
+          "callee": "ibcontractWithLegs",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "ComboLeg",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "int",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "str",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "resolveBS",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "int",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_get_ib_combo_leg",
+          "callee": "str",
+          "lineNumber": 250
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contract_price_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 335,
+      "nonEmptyLines": 276,
+      "classes": [
+        {
+          "name": "ibTickerObject",
+          "startLine": 22,
+          "endLine": 45,
+          "methods": [
+            "__init__",
+            "refresh",
+            "bid",
+            "ask",
+            "bid_size",
+            "ask_size"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ibFuturesContractPriceData",
+          "startLine": 48,
+          "endLine": 335,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "ibconnection",
+            "ib_client",
+            "futures_contract_data",
+            "futures_instrument_data",
+            "has_merged_price_data_for_contract",
+            "get_list_of_instrument_codes_with_merged_price_data",
+            "contracts_with_merged_price_data_for_instrument_code",
+            "get_contracts_with_merged_price_data",
+            "get_prices_at_frequency_for_potentially_expired_contract_object",
+            "_get_merged_prices_for_contract_object_no_checking",
+            "get_prices_at_frequency_for_contract_object",
+            "_get_prices_at_frequency_for_contract_object_no_checking",
+            "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+            "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+            "get_ticker_object_for_order",
+            "get_ticker_object_for_contract",
+            "get_ticker_object_for_contract_and_trade_qty",
+            "cancel_market_data_for_contract",
+            "cancel_market_data_for_order"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibTickerObject",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "ibFuturesContractPriceData",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "sign_from_BS",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 29
+        },
+        {
+          "caller": "refresh",
+          "callee": "self._broker_client.refresh",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 57
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 59
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 59
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 71
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibPriceClient",
+          "lineNumber": 73
+        },
+        {
+          "caller": "has_merged_price_data_for_contract",
+          "callee": "self.futures_contract_data.get_contract_object_with_IB_data",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_list_of_instrument_codes_with_merged_price_data",
+          "callee": "self.futures_instrument_data.get_list_of_instruments",
+          "lineNumber": 110
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "self.futures_instrument_data.get_futures_instrument_object_with_IB_data",
+          "lineNumber": 118
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "self.ib_client.broker_get_futures_contract_list",
+          "lineNumber": 122
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "futuresContract",
+          "lineNumber": 127
+        },
+        {
+          "caller": "contracts_with_merged_price_data_for_instrument_code",
+          "callee": "listOfFuturesContracts",
+          "lineNumber": 130
+        },
+        {
+          "caller": "get_contracts_with_merged_price_data",
+          "callee": "NotImplementedError",
+          "lineNumber": 135
+        },
+        {
+          "caller": "get_prices_at_frequency_for_potentially_expired_contract_object",
+          "callee": "self._get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_get_merged_prices_for_contract_object_no_checking",
+          "callee": "Exception",
+          "lineNumber": 148
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "self._get_prices_at_frequency_for_contract_object_no_checking",
+          "lineNumber": 159
+        },
+        {
+          "caller": "get_prices_at_frequency_for_contract_object",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking",
+          "callee": "self._get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "callee": "self.futures_contract_data.get_contract_object_with_IB_data",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "callee": "self.log.warning",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "callee": "str",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "callee": "futures_contract_object.log_attributes",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_contract_object_no_checking_with_expiry_flag",
+          "callee": "self._get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "lineNumber": 210
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "contract_object_with_ib_broker_config.log_attributes",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "self.ib_client.broker_get_historical_futures_data_for_contract",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "str",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "len",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "self.log.warning",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "str",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_get_prices_at_frequency_for_ibcontract_object_no_checking",
+          "callee": "futuresContractPrices",
+          "lineNumber": 251
+        },
+        {
+          "caller": "get_ticker_object_for_order",
+          "callee": "self.get_ticker_object_for_contract_and_trade_qty",
+          "lineNumber": 257
+        },
+        {
+          "caller": "get_ticker_object_for_contract",
+          "callee": "self.get_ticker_object_for_contract_and_trade_qty",
+          "lineNumber": 267
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "self.futures_contract_data.get_contract_object_with_IB_data",
+          "lineNumber": 278
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "self.log.warning",
+          "lineNumber": 283
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "str",
+          "lineNumber": 284
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "futures_contract.log_attributes",
+          "lineNumber": 285
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "self.ib_client.get_ticker_object_with_BS",
+          "lineNumber": 290
+        },
+        {
+          "caller": "get_ticker_object_for_contract_and_trade_qty",
+          "callee": "ibTickerObject",
+          "lineNumber": 295
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "self.futures_contract_data.get_contract_object_with_IB_data",
+          "lineNumber": 302
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 305
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "str",
+          "lineNumber": 306
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "contract.log_attributes",
+          "lineNumber": 307
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 310
+        },
+        {
+          "caller": "cancel_market_data_for_contract",
+          "callee": "self.ib_client.cancel_market_data_for_contract",
+          "lineNumber": 312
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "self.futures_contract_data.get_contract_object_with_IB_data",
+          "lineNumber": 320
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "self.log.warning",
+          "lineNumber": 325
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "str",
+          "lineNumber": 326
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "order.log_attributes",
+          "lineNumber": 327
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "futuresContractPrices.create_empty",
+          "lineNumber": 330
+        },
+        {
+          "caller": "cancel_market_data_for_order",
+          "callee": "self.ib_client.cancel_market_data_for_contract_and_trade_qty",
+          "lineNumber": 332
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_futures_contracts_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 234,
+      "nonEmptyLines": 193,
+      "classes": [
+        {
+          "name": "ibFuturesContractData",
+          "startLine": 18,
+          "endLine": 234,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "ibconnection",
+            "ib_client",
+            "ib_futures_instrument_data",
+            "get_list_of_contract_dates_for_instrument_code",
+            "get_contract_object_with_IB_data",
+            "get_actual_expiry_date_for_single_contract",
+            "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+            "_get_contract_object_with_IB_metadata",
+            "_get_futures_instrument_object_with_IB_data",
+            "get_min_tick_size_for_contract",
+            "get_price_magnifier_for_contract",
+            "get_trading_hours_for_contract"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFuturesContractData",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 42
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibContractsClient",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get_list_of_contract_dates_for_instrument_code",
+          "callee": "self._get_futures_instrument_object_with_IB_data",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get_list_of_contract_dates_for_instrument_code",
+          "callee": "self.ib_client.broker_get_futures_contract_list",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_list_of_contract_dates_for_instrument_code",
+          "callee": "listOfContractDateStr",
+          "lineNumber": 64
+        },
+        {
+          "caller": "get_contract_object_with_IB_data",
+          "callee": "self._get_contract_object_with_IB_metadata",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_contract_object_with_IB_data",
+          "callee": "futures_contract_with_ib_data.update_expiry_dates_one_at_a_time_with_method",
+          "lineNumber": 81
+        },
+        {
+          "caller": "get_actual_expiry_date_for_single_contract",
+          "callee": "futures_contract.is_spread_contract",
+          "lineNumber": 98
+        },
+        {
+          "caller": "get_actual_expiry_date_for_single_contract",
+          "callee": "self.log.warning",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_actual_expiry_date_for_single_contract",
+          "callee": "futures_contract.log_attributes",
+          "lineNumber": 101
+        },
+        {
+          "caller": "get_actual_expiry_date_for_single_contract",
+          "callee": "self.get_contract_object_with_IB_data",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+          "callee": "futures_contract_with_ib_data.is_spread_contract",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+          "callee": "self.log.warning",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+          "callee": "futures_contract_with_ib_data.log_attributes",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+          "callee": "self.ib_client.broker_get_single_contract_expiry_date",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_get_actual_expiry_date_given_single_contract_with_ib_metadata",
+          "callee": "expiryDate.from_str",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_get_contract_object_with_IB_metadata",
+          "callee": "self._get_futures_instrument_object_with_IB_data",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_get_contract_object_with_IB_metadata",
+          "callee": "contract_object.new_contract_with_replaced_instrument_object",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_get_futures_instrument_object_with_IB_data",
+          "callee": "self.ib_futures_instrument_data.get_futures_instrument_object_with_IB_data",
+          "lineNumber": 157
+        },
+        {
+          "caller": "get_min_tick_size_for_contract",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 163
+        },
+        {
+          "caller": "get_min_tick_size_for_contract",
+          "callee": "self.get_contract_object_with_IB_data",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_min_tick_size_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 169
+        },
+        {
+          "caller": "get_min_tick_size_for_contract",
+          "callee": "self.ib_client.ib_get_min_tick_size",
+          "lineNumber": 175
+        },
+        {
+          "caller": "get_min_tick_size_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 179
+        },
+        {
+          "caller": "get_price_magnifier_for_contract",
+          "callee": "contract_object.log_attributes",
+          "lineNumber": 187
+        },
+        {
+          "caller": "get_price_magnifier_for_contract",
+          "callee": "self.get_contract_object_with_IB_data",
+          "lineNumber": 189
+        },
+        {
+          "caller": "get_price_magnifier_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get_price_magnifier_for_contract",
+          "callee": "self.ib_client.ib_get_price_magnifier",
+          "lineNumber": 199
+        },
+        {
+          "caller": "get_price_magnifier_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 203
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "futures_contract.log_attributes",
+          "lineNumber": 216
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "self.get_contract_object_with_IB_data",
+          "lineNumber": 219
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 223
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "self.ib_client.ib_get_trading_hours",
+          "lineNumber": 227
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "self.log.debug",
+          "lineNumber": 231
+        },
+        {
+          "caller": "get_trading_hours_for_contract",
+          "callee": "listOfTradingHours",
+          "lineNumber": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_fx_handling.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "ibFxHandlingData",
+          "startLine": 11,
+          "endLine": 53,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "ibconnection",
+            "ib_client",
+            "broker_fx_balances",
+            "broker_fx_market_order"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFxHandlingData",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibFxClient",
+          "lineNumber": 33
+        },
+        {
+          "caller": "broker_fx_balances",
+          "callee": "self.ib_client.broker_fx_balances",
+          "lineNumber": 40
+        },
+        {
+          "caller": "broker_fx_market_order",
+          "callee": "self.ib_client.broker_fx_market_order",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_instruments.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "ib_futures_instrument_just_symbol",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "ib_futures_instrument",
+          "startLine": 74,
+          "endLine": 99,
+          "params": [
+            "futures_instrument_with_ib_data"
+          ]
+        },
+        {
+          "name": "_resolve_multiplier",
+          "startLine": 102,
+          "endLine": 110,
+          "params": [
+            "multiplier_passed"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ibInstrumentConfigData",
+          "startLine": 16,
+          "endLine": 52,
+          "methods": [
+            "effective_multiplier",
+            "__repr__",
+            "as_dict"
+          ],
+          "properties": [
+            "symbol",
+            "exchange",
+            "currency",
+            "ibMultiplier",
+            "priceMagnifier",
+            "ignoreWeekly"
+          ]
+        },
+        {
+          "name": "futuresInstrumentWithIBConfigData",
+          "startLine": 56,
+          "endLine": 71,
+          "methods": [
+            "instrument_code",
+            "broker_symbol",
+            "meta_data"
+          ],
+          "properties": [
+            "instrument",
+            "ib_data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ib_futures_instrument_just_symbol",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "ibInstrumentConfigData",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "futuresInstrumentWithIBConfigData",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "ib_futures_instrument",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_multiplier",
+          "line": 102,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ib_futures_instrument_just_symbol",
+          "callee": "Future",
+          "lineNumber": 8
+        },
+        {
+          "caller": "as_dict",
+          "callee": "dict",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ib_futures_instrument",
+          "callee": "Future",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ib_futures_instrument",
+          "callee": "_resolve_multiplier",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_resolve_multiplier",
+          "callee": "float",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_resolve_multiplier",
+          "callee": "round",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_resolve_multiplier",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_resolve_multiplier",
+          "callee": "int",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_resolve_multiplier",
+          "callee": "str",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "sysbrokers/IB/ib_instruments_data.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 97,
+      "classes": [
+        {
+          "name": "ibFuturesInstrumentData",
+          "startLine": 22,
+          "endLine": 121,
+          "methods": [
+            "__init__",
+            "__repr__",
+            "get_instrument_code_from_broker_contract_object",
+            "_get_instrument_data_without_checking",
+            "get_futures_instrument_object_with_IB_data",
+            "get_list_of_instruments",
+            "ib_config",
+            "ib_client",
+            "ibconnection",
+            "_get_and_set_ib_config_from_file",
+            "_delete_instrument_data_without_any_warning_be_careful",
+            "_add_instrument_data_without_checking_for_existing_entry"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ibFuturesInstrumentData",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "get_logger",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 29
+        },
+        {
+          "caller": "__repr__",
+          "callee": "str",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get_instrument_code_from_broker_contract_object",
+          "callee": "self.ib_client.get_instrument_code_from_broker_contract_object",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_get_instrument_data_without_checking",
+          "callee": "self.get_futures_instrument_object_with_IB_data",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get_futures_instrument_object_with_IB_data",
+          "callee": "get_instrument_object_from_config",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "self.log.warning",
+          "lineNumber": 70
+        },
+        {
+          "caller": "get_list_of_instruments",
+          "callee": "get_instrument_list_from_ib_config",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ib_config",
+          "callee": "getattr",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ib_config",
+          "callee": "self._get_and_set_ib_config_from_file",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ib_client",
+          "callee": "getattr",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ib_client",
+          "callee": "ibClient",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_get_and_set_ib_config_from_file",
+          "callee": "read_ib_config_from_file",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_delete_instrument_data_without_any_warning_be_careful",
+          "callee": "NotImplementedError",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_add_instrument_data_without_checking_for_existing_entry",
+          "callee": "NotImplementedError",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "nodes": [
+    {
+      "id": "file:systems/provided/dynamic_small_system_optimise/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/dynamic_small_system_optimise/__init__.py",
+      "summary": "Empty package marker that makes the dynamic_small_system_optimise directory an importable Python package for the dynamic optimisation system.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/example/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/example/__init__.py",
+      "summary": "Empty package marker that makes the example system directory an importable Python package.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/futures_chapter15/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/futures_chapter15/__init__.py",
+      "summary": "Empty package marker for the futures_chapter15 system package, the reference trading system from Rob Carver's Systematic Trading chapter 15.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:systems/provided/futures_chapter15/futuresconfig.yaml",
+      "type": "config",
+      "name": "futuresconfig.yaml",
+      "filePath": "systems/provided/futures_chapter15/futuresconfig.yaml",
+      "summary": "Fixed-parameter backtest configuration for the chapter 15 futures system, defining trading rules (EWMAC, carry), forecast caps and weights, instrument weights, volatility target, and asset-class groupings.",
+      "tags": ["configuration", "backtest", "trading-rules", "futures"],
+      "complexity": "moderate",
+      "languageNotes": "Hand-tuned YAML config with fixed forecast and instrument weights (no estimation), suitable for a deterministic backtest."
+    },
+    {
+      "id": "config:systems/provided/futures_chapter15/futuresestimateconfig.yaml",
+      "type": "config",
+      "name": "futuresestimateconfig.yaml",
+      "filePath": "systems/provided/futures_chapter15/futuresestimateconfig.yaml",
+      "summary": "Estimated-parameter variant of the chapter 15 futures config that enables forecast scalar, forecast weight, forecast diversification multiplier, and instrument weight estimation from data rather than fixed values.",
+      "tags": ["configuration", "backtest", "estimation", "futures"],
+      "complexity": "moderate",
+      "languageNotes": "Sets use_*_estimates flags to true so weights and scalars are fitted in-sample/out-of-sample instead of being hard-coded."
+    },
+    {
+      "id": "file:systems/provided/rob_system/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/rob_system/__init__.py",
+      "summary": "Empty package marker for the rob_system package, Rob Carver's full production-style trading system.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:systems/provided/rob_system/config.yaml",
+      "type": "config",
+      "name": "config.yaml",
+      "filePath": "systems/provided/rob_system/config.yaml",
+      "summary": "Large production configuration for the rob_system, defining the full trading-rule set, attenuation, volatility calculation, forecast scalars and caps, risk overlay, and extensive per-instrument forecast and instrument weight tables.",
+      "tags": ["configuration", "production", "trading-rules", "risk-management"],
+      "complexity": "complex",
+      "languageNotes": "Very large (~7700 lines) YAML driven mostly by exhaustive per-instrument forecast_weights and instrument_weights blocks."
+    },
+    {
+      "id": "file:systems/provided/rules/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/rules/__init__.py",
+      "summary": "Empty package marker that makes the rules directory an importable package of standalone trading-rule functions.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/rules/_TO_DELETE_OLD.py",
+      "type": "file",
+      "name": "_TO_DELETE_OLD.py",
+      "filePath": "systems/provided/rules/_TO_DELETE_OLD.py",
+      "summary": "Deprecated collection of trading-rule functions (breakout, short/long bias, relative carry, cross-sectional mean reversion) flagged for deletion; functionality now split into dedicated rule modules.",
+      "tags": ["trading-rules", "deprecated", "dead-code", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/rules/_TO_DELETE_OLD.py:breakout",
+      "type": "function",
+      "name": "breakout",
+      "filePath": "systems/provided/rules/_TO_DELETE_OLD.py",
+      "lineRange": [6, 40],
+      "summary": "Breakout trading rule that scales price relative to its rolling max/min range over a lookback window and smooths the resulting forecast with an EWMA.",
+      "tags": ["trading-rule", "breakout", "forecast"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:systems/provided/rules/_TO_DELETE_OLD.py:cross_sectional_mean_reversion",
+      "type": "function",
+      "name": "cross_sectional_mean_reversion",
+      "filePath": "systems/provided/rules/_TO_DELETE_OLD.py",
+      "lineRange": [101, 129],
+      "summary": "Cross-sectional mean-reversion rule measuring an instrument's normalised-price outperformance versus its asset class over a horizon and smoothing the negative signal.",
+      "tags": ["trading-rule", "mean-reversion", "cross-sectional"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/breakout.py",
+      "type": "file",
+      "name": "breakout.py",
+      "filePath": "systems/provided/rules/breakout.py",
+      "summary": "Standalone breakout trading-rule module computing a smoothed forecast from where price sits within its rolling high/low range over a lookback period.",
+      "tags": ["trading-rule", "breakout", "forecast", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/breakout.py:breakout",
+      "type": "function",
+      "name": "breakout",
+      "filePath": "systems/provided/rules/breakout.py",
+      "lineRange": [4, 38],
+      "summary": "Computes a breakout forecast by normalising price against its rolling max/min midpoint over a lookback window and smoothing the result with an EWMA.",
+      "tags": ["trading-rule", "breakout", "forecast"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/cs_mr.py",
+      "type": "file",
+      "name": "cs_mr.py",
+      "filePath": "systems/provided/rules/cs_mr.py",
+      "summary": "Cross-sectional mean-reversion trading-rule module that generates a contrarian forecast from an instrument's relative outperformance against its asset class.",
+      "tags": ["trading-rule", "mean-reversion", "cross-sectional", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/cs_mr.py:cross_sectional_mean_reversion",
+      "type": "function",
+      "name": "cross_sectional_mean_reversion",
+      "filePath": "systems/provided/rules/cs_mr.py",
+      "lineRange": [1, 29],
+      "summary": "Generates a cross-sectional mean-reversion forecast from the smoothed, horizon-averaged outperformance of an instrument's normalised price relative to its asset-class average.",
+      "tags": ["trading-rule", "mean-reversion", "cross-sectional", "forecast"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/rules/rel_mom.py",
+      "type": "file",
+      "name": "rel_mom.py",
+      "filePath": "systems/provided/rules/rel_mom.py",
+      "summary": "Relative-momentum trading-rule module producing a forecast from an instrument's persistent outperformance versus its asset class over a horizon.",
+      "tags": ["trading-rule", "momentum", "cross-sectional", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:systems/provided/rules/rel_mom.py:relative_momentum",
+      "type": "function",
+      "name": "relative_momentum",
+      "filePath": "systems/provided/rules/rel_mom.py",
+      "lineRange": [4, 34],
+      "summary": "Computes a relative-momentum forecast from the EWMA-smoothed, horizon-shifted outperformance of an instrument's normalised price against its asset-class average.",
+      "tags": ["trading-rule", "momentum", "cross-sectional", "forecast"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:systems/provided/scalper/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/scalper/__init__.py",
+      "summary": "Empty package marker that makes the scalper system directory an importable Python package.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/static_small_system_optimise/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/static_small_system_optimise/__init__.py",
+      "summary": "Empty package marker for the static_small_system_optimise package, the static portfolio optimisation system.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/provided/workhorse/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/provided/workhorse/__init__.py",
+      "summary": "Empty package marker that makes the workhorse system directory an importable Python package.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/tests/__init__.py",
+      "summary": "Empty package marker that makes the systems/tests directory an importable test package.",
+      "tags": ["entry-point", "package-marker", "test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:systems/tools/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "systems/tools/__init__.py",
+      "summary": "Empty package marker that makes the systems/tools directory an importable Python package.",
+      "tags": ["entry-point", "package-marker", "python"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/conftest.py",
+      "type": "file",
+      "name": "conftest.py",
+      "filePath": "tests/conftest.py",
+      "summary": "Pytest configuration hooks that add a --runslow command-line option and a 'slow' marker, skipping slow-marked tests unless explicitly enabled.",
+      "tags": ["test", "configuration", "pytest", "fixtures"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/conftest.py:pytest_collection_modifyitems",
+      "type": "function",
+      "name": "pytest_collection_modifyitems",
+      "filePath": "tests/conftest.py",
+      "lineRange": [14, 21],
+      "summary": "Pytest collection hook that applies a skip marker to all tests tagged 'slow' unless the --runslow option was provided.",
+      "tags": ["test", "pytest", "hook"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_static.py",
+      "type": "file",
+      "name": "test_static.py",
+      "filePath": "tests/test_static.py",
+      "summary": "Static-analysis test that runs flake8 across the codebase via subprocess and asserts there are no lint violations.",
+      "tags": ["test", "static-analysis", "linting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_static.py:test_flake8",
+      "type": "function",
+      "name": "test_flake8",
+      "filePath": "tests/test_static.py",
+      "lineRange": [10, 19],
+      "summary": "Invokes flake8 as a subprocess and asserts a zero return code to enforce clean static analysis across the project.",
+      "tags": ["test", "static-analysis", "linting"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:systems/provided/rules/_TO_DELETE_OLD.py",
+      "target": "function:systems/provided/rules/_TO_DELETE_OLD.py:breakout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/_TO_DELETE_OLD.py",
+      "target": "function:systems/provided/rules/_TO_DELETE_OLD.py:breakout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/_TO_DELETE_OLD.py",
+      "target": "function:systems/provided/rules/_TO_DELETE_OLD.py:cross_sectional_mean_reversion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/_TO_DELETE_OLD.py",
+      "target": "function:systems/provided/rules/_TO_DELETE_OLD.py:cross_sectional_mean_reversion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/breakout.py",
+      "target": "function:systems/provided/rules/breakout.py:breakout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/breakout.py",
+      "target": "function:systems/provided/rules/breakout.py:breakout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/cs_mr.py",
+      "target": "function:systems/provided/rules/cs_mr.py:cross_sectional_mean_reversion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/cs_mr.py",
+      "target": "function:systems/provided/rules/cs_mr.py:cross_sectional_mean_reversion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:systems/provided/rules/rel_mom.py",
+      "target": "function:systems/provided/rules/rel_mom.py:relative_momentum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:systems/provided/rules/rel_mom.py",
+      "target": "function:systems/provided/rules/rel_mom.py:relative_momentum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/conftest.py",
+      "target": "function:tests/conftest.py:pytest_collection_modifyitems",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_static.py",
+      "target": "function:tests/test_static.py:test_flake8",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "config:systems/provided/futures_chapter15/futuresconfig.yaml",
+      "target": "file:systems/provided/futures_chapter15/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:systems/provided/futures_chapter15/futuresestimateconfig.yaml",
+      "target": "file:systems/provided/futures_chapter15/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:systems/provided/rob_system/config.yaml",
+      "target": "file:systems/provided/rob_system/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

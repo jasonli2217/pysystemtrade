@@ -1,0 +1,1676 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/data/broker.py",
+   "type": "file",
+   "name": "broker.py",
+   "filePath": "sysproduction/data/broker.py",
+   "summary": "Unified dataBroker facade over all broker data sources (prices, positions, FX, execution, capital), the main production gateway to Interactive Brokers.",
+   "tags": [
+    "production",
+    "broker",
+    "data-access",
+    "facade"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/data/controls.py",
+   "type": "file",
+   "name": "controls.py",
+   "filePath": "sysproduction/data/controls.py",
+   "summary": "Production control data layer for trade limits, position limits, overrides, locks and client IDs, gating what orders the system is allowed to place.",
+   "tags": [
+    "production",
+    "risk-controls",
+    "data-access",
+    "limits"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/data/orders.py",
+   "type": "file",
+   "name": "orders.py",
+   "filePath": "sysproduction/data/orders.py",
+   "summary": "dataOrders facade exposing the instrument, contract and broker order stacks plus the historic order store to production code.",
+   "tags": [
+    "production",
+    "order-management",
+    "data-access",
+    "facade"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/data/positions.py",
+   "type": "file",
+   "name": "positions.py",
+   "filePath": "sysproduction/data/positions.py",
+   "summary": "Position data layer (diagPositions/updatePositions) reading and writing contract and strategy positions, optimal positions and roll state.",
+   "tags": [
+    "production",
+    "positions",
+    "data-access",
+    "facade"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "type": "file",
+   "name": "interactive_manual_check_historical_prices.py",
+   "filePath": "sysproduction/interactive_manual_check_historical_prices.py",
+   "summary": "Interactive production script for manually reviewing and approving historical price updates for an instrument before they are stored.",
+   "tags": [
+    "production",
+    "script",
+    "interactive",
+    "market-data"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/interactive_order_stack.py",
+   "type": "file",
+   "name": "interactive_order_stack.py",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "summary": "Large interactive menu-driven production tool for inspecting and manipulating the order stacks: manual trades, fills, rolls, locks and balance trades.",
+   "tags": [
+    "production",
+    "script",
+    "interactive",
+    "order-management"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysproduction/reporting/data/pandl.py",
+   "type": "file",
+   "name": "pandl.py",
+   "filePath": "sysproduction/reporting/data/pandl.py",
+   "summary": "Reporting layer that computes percentage and capital P&L series per contract, instrument and strategy from fills, prices and FX.",
+   "tags": [
+    "production",
+    "reporting",
+    "pandl",
+    "analytics"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/broker.py:dataBroker",
+   "type": "class",
+   "name": "dataBroker",
+   "filePath": "sysproduction/data/broker.py",
+   "lineRange": [
+    47,
+    538
+   ],
+   "summary": "Unified facade aggregating all broker data sources for production, the main gateway to Interactive Brokers.",
+   "tags": [
+    "broker",
+    "data-access",
+    "facade",
+    "production"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:dataTradeLimits",
+   "type": "class",
+   "name": "dataTradeLimits",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    121,
+    218
+   ],
+   "summary": "Data access for per-instrument/strategy trade limits used to throttle trading volume.",
+   "tags": [
+    "risk-controls",
+    "limits",
+    "data-access"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:diagOverrides",
+   "type": "class",
+   "name": "diagOverrides",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    224,
+    427
+   ],
+   "summary": "Read access to instrument/strategy overrides that scale or block trading.",
+   "tags": [
+    "risk-controls",
+    "overrides",
+    "data-access"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:updateOverrides",
+   "type": "class",
+   "name": "updateOverrides",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    430,
+    509
+   ],
+   "summary": "Write access for applying and clearing trading overrides.",
+   "tags": [
+    "risk-controls",
+    "overrides",
+    "data-access"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:dataPositionLimits",
+   "type": "class",
+   "name": "dataPositionLimits",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    512,
+    821
+   ],
+   "summary": "Data access enforcing maximum position limits per instrument and strategy.",
+   "tags": [
+    "risk-controls",
+    "limits",
+    "data-access"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:dataLocks",
+   "type": "class",
+   "name": "dataLocks",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    97,
+    118
+   ],
+   "summary": "Manages per-instrument trading locks to prevent concurrent processing.",
+   "tags": [
+    "risk-controls",
+    "locks",
+    "data-access"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/controls.py:dataBrokerClientIDs",
+   "type": "class",
+   "name": "dataBrokerClientIDs",
+   "filePath": "sysproduction/data/controls.py",
+   "lineRange": [
+    83,
+    94
+   ],
+   "summary": "Allocates and releases broker client IDs.",
+   "tags": [
+    "broker",
+    "data-access"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/data/orders.py:dataOrders",
+   "type": "class",
+   "name": "dataOrders",
+   "filePath": "sysproduction/data/orders.py",
+   "lineRange": [
+    38,
+    229
+   ],
+   "summary": "Facade exposing the instrument, contract and broker order stacks and historic order store.",
+   "tags": [
+    "order-management",
+    "data-access",
+    "facade"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/positions.py:diagPositions",
+   "type": "class",
+   "name": "diagPositions",
+   "filePath": "sysproduction/data/positions.py",
+   "lineRange": [
+    47,
+    386
+   ],
+   "summary": "Read access for contract and strategy positions, optimal positions and roll state.",
+   "tags": [
+    "positions",
+    "data-access",
+    "production"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysproduction/data/positions.py:updatePositions",
+   "type": "class",
+   "name": "updatePositions",
+   "filePath": "sysproduction/data/positions.py",
+   "lineRange": [
+    389,
+    539
+   ],
+   "summary": "Write access for updating contract/strategy positions and roll state.",
+   "tags": [
+    "positions",
+    "data-access",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/data/positions.py:get_list_of_instruments_with_current_positions",
+   "type": "function",
+   "name": "get_list_of_instruments_with_current_positions",
+   "filePath": "sysproduction/data/positions.py",
+   "lineRange": [
+    561,
+    565
+   ],
+   "summary": "Returns instruments that currently hold a non-zero position.",
+   "tags": [
+    "positions",
+    "helper"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_manual_check_historical_prices.py:interactive_manual_check_historical_prices",
+   "type": "function",
+   "name": "interactive_manual_check_historical_prices",
+   "filePath": "sysproduction/interactive_manual_check_historical_prices.py",
+   "lineRange": [
+    20,
+    53
+   ],
+   "summary": "Interactive loop to review and approve historical price updates for an instrument.",
+   "tags": [
+    "interactive",
+    "market-data",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:get_broker_order_details_for_balance_trade",
+   "type": "function",
+   "name": "get_broker_order_details_for_balance_trade",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    214,
+    279
+   ],
+   "summary": "Collects broker order details from the user to build a balance trade.",
+   "tags": [
+    "interactive",
+    "order-management",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:create_manual_trade",
+   "type": "function",
+   "name": "create_manual_trade",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    386,
+    441
+   ],
+   "summary": "Drives the interactive creation of a manual order across the stacks.",
+   "tags": [
+    "interactive",
+    "order-management",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:enter_manual_contract_order",
+   "type": "function",
+   "name": "enter_manual_contract_order",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    481,
+    543
+   ],
+   "summary": "Prompts the user to enter a manual contract order and places it on the stack.",
+   "tags": [
+    "interactive",
+    "order-management",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:generate_generic_manual_fill",
+   "type": "function",
+   "name": "generate_generic_manual_fill",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    546,
+    599
+   ],
+   "summary": "Interactively records a manual fill against an order on a chosen stack.",
+   "tags": [
+    "interactive",
+    "fills",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:create_fx_trade",
+   "type": "function",
+   "name": "create_fx_trade",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    628,
+    681
+   ],
+   "summary": "Interactively creates and submits an FX trade through the broker.",
+   "tags": [
+    "interactive",
+    "broker",
+    "script"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_order_stack.py:view_positions",
+   "type": "function",
+   "name": "view_positions",
+   "filePath": "sysproduction/interactive_order_stack.py",
+   "lineRange": [
+    899,
+    929
+   ],
+   "summary": "Displays optimal, my and broker positions plus breaks for review.",
+   "tags": [
+    "interactive",
+    "positions",
+    "script"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/reporting/data/pandl.py:pandlCalculateAndStore",
+   "type": "class",
+   "name": "pandlCalculateAndStore",
+   "filePath": "sysproduction/reporting/data/pandl.py",
+   "lineRange": [
+    68,
+    307
+   ],
+   "summary": "Computes and caches percentage and capital P&L series across contracts, instruments and strategies.",
+   "tags": [
+    "reporting",
+    "pandl",
+    "analytics"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_contract",
+   "type": "function",
+   "name": "get_perc_pandl_series_for_contract",
+   "filePath": "sysproduction/reporting/data/pandl.py",
+   "lineRange": [
+    364,
+    385
+   ],
+   "summary": "Builds the percentage P&L series for a single contract from fills and prices.",
+   "tags": [
+    "pandl",
+    "analytics"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_strategy_instrument_vs_total_capital",
+   "type": "function",
+   "name": "get_perc_pandl_series_for_strategy_instrument_vs_total_capital",
+   "filePath": "sysproduction/reporting/data/pandl.py",
+   "lineRange": [
+    388,
+    422
+   ],
+   "summary": "Computes percentage P&L for a strategy/instrument relative to total capital.",
+   "tags": [
+    "pandl",
+    "analytics"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "class:sysproduction/data/broker.py:dataBroker",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "class:sysproduction/data/broker.py:dataBroker",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataTradeLimits",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataTradeLimits",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:diagOverrides",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:diagOverrides",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:updateOverrides",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:updateOverrides",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataPositionLimits",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataPositionLimits",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataLocks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataLocks",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataBrokerClientIDs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "class:sysproduction/data/controls.py:dataBrokerClientIDs",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "class:sysproduction/data/orders.py:dataOrders",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "class:sysproduction/data/orders.py:dataOrders",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "class:sysproduction/data/positions.py:diagPositions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "class:sysproduction/data/positions.py:diagPositions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "class:sysproduction/data/positions.py:updatePositions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "class:sysproduction/data/positions.py:updatePositions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "function:sysproduction/data/positions.py:get_list_of_instruments_with_current_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "function:sysproduction/data/positions.py:get_list_of_instruments_with_current_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_historical_prices.py:interactive_manual_check_historical_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "function:sysproduction/interactive_manual_check_historical_prices.py:interactive_manual_check_historical_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:get_broker_order_details_for_balance_trade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:get_broker_order_details_for_balance_trade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:create_manual_trade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:create_manual_trade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:enter_manual_contract_order",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:enter_manual_contract_order",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:generate_generic_manual_fill",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:generate_generic_manual_fill",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:create_fx_trade",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:create_fx_trade",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:view_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "function:sysproduction/interactive_order_stack.py:view_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "class:sysproduction/reporting/data/pandl.py:pandlCalculateAndStore",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "class:sysproduction/reporting/data/pandl.py:pandlCalculateAndStore",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_contract",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_contract",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_strategy_instrument_vs_total_capital",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "function:sysproduction/reporting/data/pandl.py:get_perc_pandl_series_for_strategy_instrument_vs_total_capital",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_capital_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_contract_commission_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_contract_position_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_execution_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_factory.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_futures_contract_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_futures_contract_price_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_fx_handling.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_fx_prices_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_instrument_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysbrokers/broker_static_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysdata/tools/cleaner.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/tick_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysexecution/trade_qty.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/contract_dates_and_expiries.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/futures_per_contract_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/production/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/production/trading_hours/trading_hours.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/broker.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/config/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_IB_client_id.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_lock_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_override.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_position_limits.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_temporary_close.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_temporary_override.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/mongodb/mongo_trade_limits.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/broker_client_id.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/locks.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/override.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/position_limits.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/temporary_close.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/temporary_override.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysdata/production/trade_limits.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysexecution/trade_qty.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysobjects/production/override.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysobjects/production/position_limits.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysproduction/data/config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/controls.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysdata/production/historic_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/order_stacks/contract_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/order_stacks/instrument_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysobjects/fills.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/orders.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysdata/production/historic_contract_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysdata/production/historic_strategy_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysdata/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysexecution/trade_qty.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysobjects/production/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysproduction/data/generic_production_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/positions.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "file:sysdata/tools/cleaner.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_manual_check_historical_prices.py",
+   "target": "file:sysproduction/update_historical_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysbrokers/IB/ib_connection.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/interactive/date_input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/interactive/input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/algos/allocate_algo_to_order.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/orders/contract_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/orders/instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/orders/named_order_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/stack_handler/balance_trades.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysexecution/stack_handler/stack_handler.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_order_stack.py",
+   "target": "file:sysproduction/data/strategies.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/data/pandl.py",
+   "target": "file:systems/accounts/pandl_calculators/pandl_using_fills.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

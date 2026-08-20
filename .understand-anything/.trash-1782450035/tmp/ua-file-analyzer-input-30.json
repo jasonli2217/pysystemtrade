@@ -1,0 +1,182 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysproduction/linux/scripts/update_multiple_adjusted_prices",
+      "language": "unknown",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_sampled_contracts",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_strategy_capital",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_strategy_orders",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_system_backtests",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/linux/scripts/update_total_capital",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/adhoc/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/strategy_code/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/tests/test_controls.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/full_handcrafting.py",
+      "language": "python",
+      "sizeLines": 1446,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/optimisation/optimisers/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/curves/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/order_simulator/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/accounts/pandl_calculators/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/attenuate_vol/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "systems/provided/basic/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysproduction/linux/scripts/update_multiple_adjusted_prices": [],
+    "sysproduction/linux/scripts/update_sampled_contracts": [],
+    "sysproduction/linux/scripts/update_strategy_capital": [],
+    "sysproduction/linux/scripts/update_strategy_orders": [],
+    "sysproduction/linux/scripts/update_system_backtests": [],
+    "sysproduction/linux/scripts/update_total_capital": [],
+    "sysproduction/reporting/__init__.py": [],
+    "sysproduction/reporting/adhoc/__init__.py": [],
+    "sysproduction/reporting/data/__init__.py": [],
+    "sysproduction/strategy_code/__init__.py": [],
+    "sysproduction/tests/test_controls.py": [],
+    "sysquant/__init__.py": [],
+    "sysquant/estimators/__init__.py": [],
+    "sysquant/estimators/tests/__init__.py": [],
+    "sysquant/optimisation/__init__.py": [],
+    "sysquant/optimisation/full_handcrafting.py": [],
+    "sysquant/optimisation/optimisers/__init__.py": [],
+    "systems/__init__.py": [],
+    "systems/accounts/__init__.py": [],
+    "systems/accounts/curves/__init__.py": [],
+    "systems/accounts/order_simulator/__init__.py": [],
+    "systems/accounts/pandl_calculators/__init__.py": [],
+    "systems/provided/__init__.py": [],
+    "systems/provided/attenuate_vol/__init__.py": [],
+    "systems/provided/basic/__init__.py": []
+  }
+}

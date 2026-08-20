@@ -1,0 +1,3144 @@
+{
+  "batchIndex": 14,
+  "files": [
+    {
+      "path": "syscore/genutils.py",
+      "language": "python",
+      "sizeLines": 390,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscore/interactive/progress_bar.py",
+      "language": "python",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscore/pandas/find_data.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/strategies/dynamic_optimised_positions.py",
+      "language": "python",
+      "sizeLines": 739,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/check_instrument_lists.py",
+      "language": "python",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/instruments.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/data/risk.py",
+      "language": "python",
+      "sizeLines": 254,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/interactive_controls.py",
+      "language": "python",
+      "sizeLines": 1105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/adhoc/instrument_list.py",
+      "language": "python",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/constants.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/costs.py",
+      "language": "python",
+      "sizeLines": 344,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/duplicate_remove_markets.py",
+      "language": "python",
+      "sizeLines": 569,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/risk.py",
+      "language": "python",
+      "sizeLines": 961,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/trades.py",
+      "language": "python",
+      "sizeLines": 457,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysproduction/reporting/data/volume.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/clustering_correlations.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/correlation_estimator.py",
+      "language": "python",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/correlation_over_time.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/correlations.py",
+      "language": "python",
+      "sizeLines": 492,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/covariance.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/diversification_multipliers.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/estimates.py",
+      "language": "python",
+      "sizeLines": 261,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/exponential_correlation.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/forecast_scalar.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysquant/estimators/generic_estimator.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "syscore/genutils.py": [],
+    "syscore/interactive/progress_bar.py": [],
+    "syscore/pandas/find_data.py": [
+      "syscore/constants.py",
+      "syscore/pandas/__init__.py"
+    ],
+    "sysexecution/strategies/dynamic_optimised_positions.py": [
+      "sysdata/data_blob.py",
+      "sysexecution/orders/instrument_orders.py",
+      "sysexecution/orders/list_of_orders.py",
+      "sysexecution/strategies/strategy_order_handling.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/optimal_positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/optimisation/weights.py",
+      "systems/provided/dynamic_small_system_optimise/buffering.py",
+      "systems/provided/dynamic_small_system_optimise/optimisation.py",
+      "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py"
+    ],
+    "sysinit/futures/check_instrument_lists.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "systems/provided/rob_system/run_system.py"
+    ],
+    "sysproduction/data/instruments.py": [
+      "sysdata/data_blob.py",
+      "sysdata/futures/instruments.py",
+      "sysdata/futures/spread_costs.py",
+      "sysobjects/instruments.py",
+      "sysobjects/spot_fx_prices.py",
+      "sysproduction/data/config.py",
+      "sysproduction/data/currency_data.py",
+      "sysproduction/data/generic_production_data.py",
+      "sysproduction/data/production_data_objects.py"
+    ],
+    "sysproduction/data/risk.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/objects.py",
+      "syscore/pandas/frequency.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysproduction/interactive_controls.py": [
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/display.py",
+      "syscore/interactive/input.py",
+      "syscore/interactive/menus.py",
+      "sysdata/data_blob.py",
+      "sysinit/futures/safely_modify_roll_parameters.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/process_control.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/backup_db_to_csv.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/control_process.py",
+      "sysproduction/data/controls.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/strategies.py",
+      "sysproduction/reporting/api.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/data/volume.py"
+    ],
+    "sysproduction/reporting/adhoc/instrument_list.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/reporting/data/costs.py",
+      "sysproduction/reporting/report_configs.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/data/constants.py": [],
+    "sysproduction/reporting/data/costs.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysobjects/contracts.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysproduction/reporting/data/trades.py"
+    ],
+    "sysproduction/reporting/data/duplicate_remove_markets.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysdata/config/instruments.py",
+      "sysproduction/data/config.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysproduction/reporting/data/costs.py",
+      "sysproduction/reporting/data/risk.py",
+      "sysproduction/reporting/data/volume.py",
+      "sysproduction/reporting/reporting_functions.py"
+    ],
+    "sysproduction/reporting/data/risk.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "syscore/pandas/frequency.py",
+      "sysdata/data_blob.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/capital.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/positions.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/data/risk.py",
+      "sysproduction/reporting/data/constants.py",
+      "sysquant/estimators/clustering_correlations.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/covariance.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysproduction/reporting/data/trades.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/pdutils.py",
+      "sysproduction/data/broker.py",
+      "sysproduction/data/instruments.py",
+      "sysproduction/data/orders.py",
+      "sysproduction/reporting/data/risk.py"
+    ],
+    "sysproduction/reporting/data/volume.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py",
+      "syscore/genutils.py",
+      "syscore/interactive/progress_bar.py",
+      "sysdata/data_blob.py",
+      "sysproduction/data/contracts.py",
+      "sysproduction/data/prices.py",
+      "sysproduction/reporting/data/risk.py"
+    ],
+    "sysquant/estimators/clustering_correlations.py": [
+      "syscore/genutils.py",
+      "sysquant/estimators/correlations.py"
+    ],
+    "sysquant/estimators/correlation_estimator.py": [
+      "syscore/constants.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/exponential_correlation.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/correlation_over_time.py": [
+      "syscore/interactive/progress_bar.py",
+      "sysquant/estimators/correlation_estimator.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/correlations.py": [
+      "syscore/constants.py",
+      "syscore/pandas/pdutils.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/covariance.py": [
+      "syscore/constants.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/stdev_estimator.py",
+      "sysquant/optimisation/shared.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/estimators/diversification_multipliers.py": [
+      "sysquant/estimators/correlations.py",
+      "sysquant/optimisation/weights.py"
+    ],
+    "sysquant/estimators/estimates.py": [
+      "syscore/genutils.py",
+      "syscore/pandas/frequency.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/mean_estimator.py",
+      "sysquant/estimators/stdev_estimator.py"
+    ],
+    "sysquant/estimators/exponential_correlation.py": [
+      "syscore/constants.py",
+      "syscore/genutils.py",
+      "sysquant/estimators/correlations.py",
+      "sysquant/estimators/generic_estimator.py",
+      "sysquant/fitting_dates.py"
+    ],
+    "sysquant/estimators/forecast_scalar.py": [
+      "syscore/genutils.py"
+    ],
+    "sysquant/estimators/generic_estimator.py": [
+      "sysquant/fitting_dates.py"
+    ]
+  },
+  "neighborMap": {
+    "syscore/genutils.py": [
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/broker_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "brokerOrderType",
+          "brokerOrder",
+          "create_new_broker_order_from_contract_order",
+          "brokerOrderWithParentInformation",
+          "single_fill_from_broker_order"
+        ]
+      },
+      {
+        "path": "systems/forecast_combine.py",
+        "batchIndex": 1,
+        "symbols": [
+          "ForecastCombine",
+          "_cap_combined_forecast",
+          "_get_fixed_weights_from_config",
+          "_get_forecast_weights_for_instrument_with_autogrouping",
+          "_get_fixed_fdm_scalar_value_from_config",
+          "_get_list_of_rules_from_config_for_instrument"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/contract_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "contractOrderType",
+          "contractOrder",
+          "contractOrderKeyArguments",
+          "from_contract_order_args_to_resolved_args",
+          "split_contract_order_args"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "sysproduction/data/control_process.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataControlProcess",
+          "diagControlProcess",
+          "get_list_of_strategies_for_process",
+          "get_strategy_class_object_config"
+        ]
+      },
+      {
+        "path": "systems/rawdata.py",
+        "batchIndex": 2,
+        "symbols": [
+          "RawData"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/instrument_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "instrumentOrderType",
+          "instrumentOrder"
+        ]
+      },
+      {
+        "path": "sysexecution/trade_qty.py",
+        "batchIndex": 19,
+        "symbols": [
+          "tradeQuantity",
+          "listOfTradeQuantity",
+          "change_trade_size_proportionally_to_meet_abs_qty_limit",
+          "reduce_trade_size_proportionally_to_abs_limit_per_leg",
+          "reduce_trade_size_proportionally_so_smallest_leg_is_max_size",
+          "calculate_most_conservative_qty_from_list_of_qty_with_limits_applied"
+        ]
+      },
+      {
+        "path": "sysexecution/stack_handler/spawn_children_from_instrument_orders.py",
+        "batchIndex": 12,
+        "symbols": [
+          "stackHandlerForSpawning",
+          "passive_roll_child_order",
+          "passive_trade_split_over_two_contracts",
+          "list_of_contract_orders_from_list_of_child_date_and_trade",
+          "contract_order_for_direct_instrument_child_date_and_trade",
+          "map_instrument_order_type_to_contract_order_type",
+          "intra_market_instrument_child_orders",
+          "inter_market_instrument_child_orders",
+          "calculate_reference_prices_for_direct_child_orders",
+          "add_reference_price_to_a_direct_child_order",
+          "calculate_adjusted_price_for_a_direct_child_order",
+          "calculate_limit_prices_for_direct_child_orders",
+          "add_limit_price_to_a_direct_child_order"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/base_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "overFilledOrder",
+          "orderType",
+          "Order",
+          "resolve_inputs_to_order",
+          "resolve_orderid",
+          "resolve_parent",
+          "resolve_multi_leg_price_to_single_price"
+        ]
+      },
+      {
+        "path": "sysobjects/contract_dates_and_expiries.py",
+        "batchIndex": 17,
+        "symbols": [
+          "needSingleLegDate",
+          "from_contract_numbers_to_contract_string",
+          "expiryDate",
+          "singleContractDate",
+          "listOfContractDateStr",
+          "contractDate",
+          "resolve_date_string_into_list_of_single_contract_dates",
+          "get_contract_date_object_list_from_dict",
+          "get_contract_date_object_list_from_date_str_and_expiry_date",
+          "get_date_str_list_and_expiry_date_list_from_date_str_and_expiry_date",
+          "resolve_date_string_into_list_of_date_str",
+          "resolve_expiry_date_into_list_of_expiry_dates",
+          "create_contract_date_from_old_style_dict",
+          "contract_given_tuple"
+        ]
+      },
+      {
+        "path": "sysobjects/instruments.py",
+        "batchIndex": 19,
+        "symbols": [
+          "futuresInstrument",
+          "_zero_if_nan",
+          "_string_if_nan",
+          "instrumentMetaData",
+          "futuresInstrumentWithMetaData",
+          "listOfFuturesInstrumentWithMetaData",
+          "assetClassesAndInstruments",
+          "instrumentCosts"
+        ]
+      },
+      {
+        "path": "systems/forecast_scale_cap.py",
+        "batchIndex": 1,
+        "symbols": [
+          "ForecastScaleCap",
+          "_get_instrument_code_depending_on_pooling_status"
+        ]
+      },
+      {
+        "path": "sysexecution/stack_handler/roll_orders.py",
+        "batchIndex": 12,
+        "symbols": [
+          "stackHandlerForRolls",
+          "create_force_roll_orders",
+          "flat_roll_or_close_near_contract",
+          "rollSpreadInformation",
+          "get_roll_spread_information",
+          "get_position_in_priced",
+          "create_instrument_roll_order",
+          "create_instrument_roll_order_for_flat_roll",
+          "create_instrument_roll_order_closing_priced_contract",
+          "get_strategy_name_with_largest_position_for_instrument",
+          "create_contract_roll_orders",
+          "create_contract_orders_close_first_contract",
+          "create_contract_orders_outright",
+          "create_contract_orders_spread",
+          "auto_update_roll_status",
+          "has_reducing_instrument_order_on_stack",
+          "is_order_reducing_order",
+          "is_trade_reducing_position"
+        ]
+      },
+      {
+        "path": "syscore/interactive/input.py",
+        "batchIndex": 16,
+        "symbols": [
+          "true_if_answer_is_yes",
+          "get_input_from_user_and_convert_to_type",
+          "_get_input_and_check_type",
+          "_convert_type_or_throw_expection",
+          "input_field_names_for_named_tuple",
+          "override_tuple_fields",
+          "named_tuple_as_dict"
+        ]
+      },
+      {
+        "path": "sysobjects/rolls.py",
+        "batchIndex": 17,
+        "symbols": [
+          "rollCycle",
+          "rollParameters",
+          "contractDateWithRollParameters"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_multiple_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "csvFuturesMultiplePricesData"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/portfolio_optimiser.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioOptimiser"
+        ]
+      },
+      {
+        "path": "sysquant/returns.py",
+        "batchIndex": 1,
+        "symbols": [
+          "dictOfSR",
+          "dictOfSRacrossAssets",
+          "returnsForOptimisation",
+          "dictOfReturnsForOptimisation",
+          "_adjust_df_for_SR_costs",
+          "_adjust_df_column_for_SR_costs",
+          "_get_average_return_in_dict_for_column",
+          "_equalise_average_returns_for_df",
+          "_equalise_average_returns_for_df_column",
+          "dictOfReturnsForOptimisationWithCosts",
+          "returnsForOptimisationWithCosts",
+          "_turn_singular_account_curve_into_dict",
+          "_singular_account_curve",
+          "_get_annual_SR_for_returns_for_optimisation",
+          "annual_SR_from_daily_returns"
+        ]
+      },
+      {
+        "path": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+        "batchIndex": 13,
+        "symbols": [
+          "pandlCalculationWithCashCostsAndFills",
+          "calculate_cost_from_fill_with_cost_object"
+        ]
+      },
+      {
+        "path": "dashboard/app.py",
+        "batchIndex": 3,
+        "symbols": [
+          "get_data",
+          "get_reporting_api",
+          "cleanup_data",
+          "dict_of_df_to_dict",
+          "index",
+          "capital",
+          "costs",
+          "forex",
+          "liquidity",
+          "pandl",
+          "processes",
+          "reconcile",
+          "rolls",
+          "rolls_post",
+          "risk",
+          "trades",
+          "strategy",
+          "visible_on_lan"
+        ]
+      },
+      {
+        "path": "sysbrokers/IB/ib_broker_commissions.py",
+        "batchIndex": 18,
+        "symbols": [
+          "ibFuturesContractCommissionData",
+          "get_commission_and_currency_from_ib_order"
+        ]
+      },
+      {
+        "path": "sysbrokers/IB/ib_contracts.py",
+        "batchIndex": 18,
+        "symbols": [
+          "resolve_multiple_expiries",
+          "resolve_multiple_expiries_for_EUREX",
+          "resolve_multiple_expiries_for_LME",
+          "resolve_multiple_expiries_for_GAS_US",
+          "resolve_multiple_expiries_for_VIX",
+          "resolve_multiple_expiries_for_generic_futures",
+          "_is_vix_symbol_monthly",
+          "_is_eurex_symbol_monthly",
+          "_is_lme_symbol_monthly",
+          "_is_gas_us_symbol_monthly",
+          "_is_eurex_symbol_daily",
+          "ibcontractWithLegs",
+          "get_ib_contract_with_specific_expiry",
+          "resolve_unique_contract_from_ibcontract_list",
+          "_add_legs_to_ib_contract",
+          "_get_ib_combo_leg"
+        ]
+      },
+      {
+        "path": "sysexecution/tick_data.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataFrameOfRecentTicks",
+          "analyse_tick_data_frame",
+          "extract_final_row_of_tick_data_frame",
+          "extract_nth_row_of_tick_data_frame",
+          "average_bid_offer_spread",
+          "analyse_tick",
+          "_zero_replace_nan",
+          "tickerObject",
+          "adverse_price_movement",
+          "get_df_of_ticks_from_ticker_object",
+          "get_next_n_ticks_from_ticker_object",
+          "from_list_of_ticks_to_dataframe"
+        ]
+      },
+      {
+        "path": "sysobjects/production/override.py",
+        "batchIndex": 8,
+        "symbols": [
+          "lookup_value_and_return_float_or_object",
+          "Override",
+          "_apply_float_override",
+          "_apply_reduce_only",
+          "_apply_no_trading"
+        ]
+      },
+      {
+        "path": "sysobjects/production/positions.py",
+        "batchIndex": 8,
+        "symbols": [
+          "Position",
+          "instrumentPosition",
+          "instrumentStrategyPosition",
+          "contractPosition",
+          "listOfPositions",
+          "listOfInstrumentPositions",
+          "listOfPositionsWithInstruments",
+          "listOfInstrumentStrategyPositions",
+          "listOfContractPositions",
+          "sum_for_instrument",
+          "sum_for_contract",
+          "_position_for_code_in_list",
+          "_position_for_contract_in_list"
+        ]
+      },
+      {
+        "path": "sysobjects/production/trading_hours/trading_hours.py",
+        "batchIndex": 19,
+        "symbols": [
+          "tradingHours",
+          "listOfTradingHours",
+          "split_trading_hours_across_two_weekdays"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/data/status.py",
+        "batchIndex": 4,
+        "symbols": [
+          "get_overrides_in_db_as_df",
+          "get_all_overrides_as_df",
+          "get_trade_limits_as_df",
+          "get_list_of_trade_limits",
+          "get_trade_limit_tuple",
+          "get_process_status_list_for_all_processes_as_df",
+          "get_control_config_list_for_all_processes_as_df",
+          "get_control_status_list_for_all_processes_as_df",
+          "get_control_data_list_for_all_methods_as_df",
+          "get_control_status_list_for_all_methods_as_df",
+          "get_last_price_updates_as_df",
+          "get_last_optimal_position_updates_as_df",
+          "get_list_of_last_price_updates",
+          "get_list_of_last_futures_price_updates",
+          "get_last_futures_price_update_for_instrument",
+          "get_list_of_last_fx_price_updates",
+          "get_last_fx_price_update_for_code",
+          "get_list_of_last_position_updates",
+          "get_list_of_position_updates_for_strategy",
+          "get_last_position_update_for_strategy_instrument",
+          "get_control_config_list_for_all_processes",
+          "get_process_status_list_for_all_processes",
+          "get_control_config_dict_for_process_name",
+          "get_process_status_dict_for_process_name",
+          "get_control_data_list_for_all_methods",
+          "get_control_data_for_single_ordinary_method",
+          "get_method_names_and_process_names",
+          "get_list_of_all_processes",
+          "get_methods_dict",
+          "get_list_of_position_locks",
+          "get_position_limits_as_df",
+          "get_strategy_instrument_limits_as_df",
+          "get_instrument_limits_as_df",
+          "df_from_list_of_limits_and_positions"
+        ]
+      },
+      {
+        "path": "sysobjects/production/position_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "positionLimit",
+          "positionLimitForInstrument",
+          "positionLimitForStrategyInstrument",
+          "positionLimitAndPosition",
+          "apply_position_limit_to_order",
+          "apply_position_limit_to_single_leg_trade"
+        ]
+      },
+      {
+        "path": "systems/accounts/account_costs.py",
+        "batchIndex": 10,
+        "symbols": [
+          "accountCosts"
+        ]
+      },
+      {
+        "path": "sysbrokers/IB/config/ib_instrument_config.py",
+        "batchIndex": 18,
+        "symbols": [
+          "IBconfig",
+          "read_ib_config_from_file",
+          "get_instrument_object_from_config",
+          "_get_instrument_object_from_valid_config",
+          "IBInstrumentIdentity",
+          "get_instrument_code_from_broker_instrument_identity",
+          "_get_relevant_config_rows_from_broker_instrument_identity_using_multiple_valid_exchanges",
+          "_get_relevant_config_rows_from_broker_instrument_identity_fields",
+          "get_instrument_list_from_ib_config"
+        ]
+      },
+      {
+        "path": "sysbrokers/IB/ib_positions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "IBPositionWithExtendedAttr",
+          "extract_fx_balances_from_account_summary",
+          "extract_currency_dict_for_tag_from_account_summary",
+          "positionsFromIB",
+          "from_ib_positions_to_dict",
+          "resolve_ib_stock_position",
+          "resolve_ib_future_position",
+          "resolve_ib_cash_position",
+          "resolveBS_for_list",
+          "resolveBS_for_calendar_spread",
+          "resolveBS"
+        ]
+      },
+      {
+        "path": "syscore/pandas/list_of_df.py",
+        "batchIndex": 10,
+        "symbols": [
+          "listOfDataFrames",
+          "stacked_df_with_added_time_from_list"
+        ]
+      },
+      {
+        "path": "sysexecution/algos/common_functions.py",
+        "batchIndex": 11,
+        "symbols": [
+          "post_trade_processing",
+          "cancel_order",
+          "check_current_limit_price_at_inside_spread"
+        ]
+      },
+      {
+        "path": "sysexecution/stack_handler/cancel_and_modify.py",
+        "batchIndex": 11,
+        "symbols": [
+          "stackHandlerCancelAndModify"
+        ]
+      },
+      {
+        "path": "sysinit/futures/repocsv_spread_costs.py",
+        "batchIndex": 7,
+        "symbols": [
+          "copy_spread_costs_from_csv_to_mongo",
+          "process_new_instruments",
+          "process_modified_instruments",
+          "process_deleted_instruments"
+        ]
+      },
+      {
+        "path": "sysobjects/production/trade_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeLimit",
+          "listOfTradeLimits"
+        ]
+      },
+      {
+        "path": "sysobjects/production/trading_hours/trading_hours_any_day.py",
+        "batchIndex": 19,
+        "symbols": [
+          "tradingHoursAnyDay",
+          "listOfTradingHoursAnyDay"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/set_up_constraints.py",
+        "batchIndex": 15,
+        "symbols": [
+          "minMaxAndDirectionAndStart",
+          "minMaxAndDirectionAndStartForCode",
+          "calculate_min_max_and_direction_and_start",
+          "get_data_and_calculate_for_code",
+          "calculations_for_code",
+          "calculate_minima_and_maxima",
+          "calculate_direction",
+          "calculate_starting_weight"
+        ]
+      },
+      {
+        "path": "systems/tools/autogroup.py",
+        "batchIndex": 2,
+        "symbols": [
+          "calculate_autogroup_weights_given_parameters",
+          "autoGroupPortfolioWeight",
+          "_collapse_tree_of_weights",
+          "config_is_auto_group",
+          "resolve_config_into_parameters_and_weights_for_autogrouping"
+        ]
+      },
+      {
+        "path": "systems/forecast_mapping.py",
+        "batchIndex": 15,
+        "symbols": [
+          "estimate_mapping_params",
+          "map_forecast_value_scalar",
+          "map_forecast_value"
+        ]
+      }
+    ],
+    "syscore/interactive/progress_bar.py": [
+      {
+        "path": "sysproduction/interactive_diagnostics.py",
+        "batchIndex": 4,
+        "symbols": [
+          "interactive_diagnostics",
+          "not_defined",
+          "backtest_plot",
+          "backtest_python",
+          "backtest_print",
+          "backtest_html",
+          "roll_report",
+          "pandl_report",
+          "status_report",
+          "trade_report",
+          "reconcile_report",
+          "strategy_report",
+          "risk_report",
+          "cost_report",
+          "slippage_report",
+          "commission_report",
+          "liquidity_report",
+          "instrument_risk_report",
+          "min_capital_report",
+          "duplicate_market_report",
+          "remove_markets_report",
+          "market_monitor_report",
+          "account_curve_report",
+          "email_or_print_or_file",
+          "retrieve_emails",
+          "individual_prices",
+          "multiple_prices",
+          "adjusted_prices",
+          "fx_prices",
+          "spreads",
+          "capital_strategy",
+          "total_current_capital",
+          "optimal_positions",
+          "get_valid_code_from_list",
+          "actual_instrument_position",
+          "actual_contract_position",
+          "list_of_instrument_orders",
+          "get_order_pd",
+          "list_of_contract_orders",
+          "list_of_broker_orders",
+          "view_individual_order",
+          "view_instrument_config",
+          "view_contract_config",
+          "print_trading_hours_for_all_instruments",
+          "display_a_dict_of_trading_hours",
+          "nice_print_list_of_trading_hours",
+          "nice_print_trading_hours",
+          "get_trading_hours_for_all_instruments",
+          "check_trading_hours",
+          "check_trading_hours_one_day",
+          "get_trading_hours_for_instrument"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimise_over_time.py",
+        "batchIndex": 1,
+        "symbols": [
+          "optimiseWeightsOverTime"
+        ]
+      },
+      {
+        "path": "sysquant/portfolio_risk.py",
+        "batchIndex": 15,
+        "symbols": [
+          "calc_sum_annualised_risk_given_portfolio_weights",
+          "calc_portfolio_risk_series",
+          "get_covariance_matrix",
+          "get_correlation_matrix",
+          "get_stdev_estimate"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimisedPositions",
+          "calculate_cost_per_notional_weight_as_proportion_of_capital"
+        ]
+      },
+      {
+        "path": "systems/provided/scalper/entry.py",
+        "batchIndex": 12,
+        "symbols": [
+          "MRRunner",
+          "pre_start_checks_okay_to_start"
+        ]
+      }
+    ],
+    "syscore/pandas/find_data.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/pandas/__init__.py",
+        "batchIndex": 10,
+        "symbols": []
+      },
+      {
+        "path": "sysquant/estimators/mean_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "meanEstimates",
+          "exponentialMeans",
+          "exponential_mean",
+          "meanEstimator",
+          "mean_estimator_for_subperiod",
+          "simple_mean_estimator_with_min_periods",
+          "empty_mean",
+          "annualise_mean_estimate",
+          "annualised_mean"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "systems/accounts/pandl_calculators/pandl_cash_costs.py",
+        "batchIndex": 13,
+        "symbols": [
+          "pandlCalculationWithCashCostsAndFills",
+          "calculate_cost_from_fill_with_cost_object"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimisedPositions",
+          "calculate_cost_per_notional_weight_as_proportion_of_capital"
+        ]
+      }
+    ],
+    "sysexecution/strategies/dynamic_optimised_positions.py": [
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/instrument_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "instrumentOrderType",
+          "instrumentOrder"
+        ]
+      },
+      {
+        "path": "sysexecution/orders/list_of_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "listOfFillDatetime",
+          "listOfOrders",
+          "calculate_most_conservative_trade_from_list_of_orders_with_limits_applied"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/strategy_order_handling.py",
+        "batchIndex": 12,
+        "symbols": [
+          "orderGeneratorForStrategy"
+        ]
+      },
+      {
+        "path": "sysobjects/production/optimal_positions.py",
+        "batchIndex": 8,
+        "symbols": [
+          "baseOptimalPosition",
+          "optimal_position_fields",
+          "simpleOptimalPosition",
+          "bufferedOptimalPositions",
+          "optimalPositionWithReference",
+          "optimalPositionWithDynamicCalculations",
+          "from_df_row_to_optimal_position",
+          "add_optimal_position_entry_row_to_positions_as_df",
+          "_check_append_positions_okay",
+          "_class_matches_field_list",
+          "infer_class_of_optimal_position_from_field_list",
+          "instrumentStrategyAndOptimalPosition",
+          "instrumentStrategyWithOptimalAndCurrentPosition",
+          "listOfOptimalAndCurrentPositionsAcrossInstrumentStrategies",
+          "listOfOptimalPositionsAcrossInstrumentStrategies"
+        ]
+      },
+      {
+        "path": "sysobjects/production/override.py",
+        "batchIndex": 8,
+        "symbols": [
+          "lookup_value_and_return_float_or_object",
+          "Override",
+          "_apply_float_override",
+          "_apply_reduce_only",
+          "_apply_no_trading"
+        ]
+      },
+      {
+        "path": "sysobjects/production/position_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "positionLimit",
+          "positionLimitForInstrument",
+          "positionLimitForStrategyInstrument",
+          "positionLimitAndPosition",
+          "apply_position_limit_to_order",
+          "apply_position_limit_to_single_leg_trade"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/capital.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataCapital",
+          "dataMargin",
+          "capital_for_strategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      },
+      {
+        "path": "sysproduction/data/optimal_positions.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataOptimalPositions",
+          "remove_raw_strategies",
+          "is_not_raw_strategy",
+          "is_raw_strategy",
+          "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+          "is_not_raw_optimal_position_and_instrument_strategy",
+          "is_not_raw_instrument_strategy",
+          "instrument_strategy_with_raw_tag",
+          "strategy_name_with_raw_tag",
+          "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+          "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+          "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/mean_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "meanEstimates",
+          "exponentialMeans",
+          "exponential_mean",
+          "meanEstimator",
+          "mean_estimator_for_subperiod",
+          "simple_mean_estimator_with_min_periods",
+          "empty_mean",
+          "annualise_mean_estimate",
+          "annualised_mean"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/buffering.py",
+        "batchIndex": 15,
+        "symbols": [
+          "speedControlForDynamicOpt",
+          "calculate_adjustment_factor",
+          "adjust_weights_with_factor",
+          "calculate_adjusting_trades_rounding_in_contract_space"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+        "batchIndex": 15,
+        "symbols": [
+          "constraintsForDynamicOpt",
+          "objectiveFunctionForGreedy"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimisedPositions",
+          "calculate_cost_per_notional_weight_as_proportion_of_capital"
+        ]
+      }
+    ],
+    "sysinit/futures/check_instrument_lists.py": [
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "systems/provided/rob_system/run_system.py",
+        "batchIndex": 2,
+        "symbols": [
+          "futures_system"
+        ]
+      }
+    ],
+    "sysproduction/data/instruments.py": [
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysdata/futures/instruments.py",
+        "batchIndex": 6,
+        "symbols": [
+          "futuresInstrumentData"
+        ]
+      },
+      {
+        "path": "sysdata/futures/spread_costs.py",
+        "batchIndex": 6,
+        "symbols": [
+          "spreadCostData"
+        ]
+      },
+      {
+        "path": "sysobjects/instruments.py",
+        "batchIndex": 19,
+        "symbols": [
+          "futuresInstrument",
+          "_zero_if_nan",
+          "_string_if_nan",
+          "instrumentMetaData",
+          "futuresInstrumentWithMetaData",
+          "listOfFuturesInstrumentWithMetaData",
+          "assetClassesAndInstruments",
+          "instrumentCosts"
+        ]
+      },
+      {
+        "path": "sysobjects/spot_fx_prices.py",
+        "batchIndex": 19,
+        "symbols": [
+          "fxPrices",
+          "listOfCurrencyValues",
+          "get_fx_tuple_from_code"
+        ]
+      },
+      {
+        "path": "sysproduction/data/config.py",
+        "batchIndex": 8,
+        "symbols": [
+          "remove_stale_instruments_and_strategies_from_list_of_instrument_strategies",
+          "remove_stale_instruments_from_list_of_instrument_strategies",
+          "remove_stale_instruments_from_list_of_instruments",
+          "remove_stale_strategies_from_list_of_instrument_strategies",
+          "get_list_of_stale_instruments",
+          "get_list_of_stale_instruments_given_config",
+          "get_list_of_stale_strategies"
+        ]
+      },
+      {
+        "path": "sysproduction/data/currency_data.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataCurrency",
+          "get_list_of_fxcodes",
+          "get_valid_fx_code_from_user"
+        ]
+      },
+      {
+        "path": "sysproduction/data/generic_production_data.py",
+        "batchIndex": 4,
+        "symbols": [
+          "productionDataLayerGeneric"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      },
+      {
+        "path": "sysexecution/strategies/strategy_order_handling.py",
+        "batchIndex": 12,
+        "symbols": [
+          "orderGeneratorForStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysproduction/interactive_diagnostics.py",
+        "batchIndex": 4,
+        "symbols": [
+          "interactive_diagnostics",
+          "not_defined",
+          "backtest_plot",
+          "backtest_python",
+          "backtest_print",
+          "backtest_html",
+          "roll_report",
+          "pandl_report",
+          "status_report",
+          "trade_report",
+          "reconcile_report",
+          "strategy_report",
+          "risk_report",
+          "cost_report",
+          "slippage_report",
+          "commission_report",
+          "liquidity_report",
+          "instrument_risk_report",
+          "min_capital_report",
+          "duplicate_market_report",
+          "remove_markets_report",
+          "market_monitor_report",
+          "account_curve_report",
+          "email_or_print_or_file",
+          "retrieve_emails",
+          "individual_prices",
+          "multiple_prices",
+          "adjusted_prices",
+          "fx_prices",
+          "spreads",
+          "capital_strategy",
+          "total_current_capital",
+          "optimal_positions",
+          "get_valid_code_from_list",
+          "actual_instrument_position",
+          "actual_contract_position",
+          "list_of_instrument_orders",
+          "get_order_pd",
+          "list_of_contract_orders",
+          "list_of_broker_orders",
+          "view_individual_order",
+          "view_instrument_config",
+          "view_contract_config",
+          "print_trading_hours_for_all_instruments",
+          "display_a_dict_of_trading_hours",
+          "nice_print_list_of_trading_hours",
+          "nice_print_trading_hours",
+          "get_trading_hours_for_all_instruments",
+          "check_trading_hours",
+          "check_trading_hours_one_day",
+          "get_trading_hours_for_instrument"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/data/commissions.py",
+        "batchIndex": 4,
+        "symbols": [
+          "filter_tradeable_instruments_for_commission_report",
+          "df_of_configure_and_broker_block_cost_sorted_by_index",
+          "df_of_configure_and_broker_block_cost_sorted_by_diff",
+          "update_valid_and_missing_costs_for_instrument_code",
+          "update_missing_values_with_currencies_and_errors",
+          "update_valid_costs",
+          "create_df_in_commission_report",
+          "get_instrument_list",
+          "get_current_configured_block_costs",
+          "get_configured_block_cost_for_instrument",
+          "get_broker_block_costs",
+          "get_series_of_priced_contracts",
+          "get_costs_given_priced_contracts",
+          "get_block_cost_for_single_contract"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/data/pandl.py",
+        "batchIndex": 12,
+        "symbols": [
+          "get_total_capital_series",
+          "get_strategy_capital_series",
+          "df_to_series",
+          "get_daily_perc_pandl",
+          "get_total_capital_pandl",
+          "pandlCalculateAndStore",
+          "get_df_of_perc_pandl_series_for_instrument_all_strategies_across_contracts_in_date_range",
+          "get_list_of_perc_pandl_series_for_instrument_all_strategies_across_contracts_in_date_range",
+          "get_list_of_contracts_held_for_an_instrument_in_date_range",
+          "get_list_of_instruments_held_for_a_strategy",
+          "get_perc_pandl_series_for_contract",
+          "get_perc_pandl_series_for_strategy_instrument_vs_total_capital",
+          "get_fx_series_for_instrument",
+          "get_price_series_for_contract",
+          "get_current_contract_price_series_for_instrument",
+          "get_position_series_for_instrument_strategy",
+          "get_fills_for_contract",
+          "get_fills_for_instrument",
+          "get_position_series_for_contract",
+          "get_list_of_strategies",
+          "list_pandl_to_df"
+        ]
+      },
+      {
+        "path": "sysproduction/update_historical_prices.py",
+        "batchIndex": 12,
+        "symbols": [
+          "update_historical_prices",
+          "updateHistoricalPrices",
+          "update_historical_prices_with_data",
+          "download_all_instrument_prices_now",
+          "manage_download_over_multiple_time_zones",
+          "get_dict_of_instrument_codes_by_timezone",
+          "get_list_of_instruments_in_region",
+          "manage_download_given_dict_of_instrument_codes",
+          "downloadTimeManager",
+          "update_historical_prices_for_list_of_instrument_codes",
+          "update_historical_prices_for_instrument",
+          "update_historical_prices_for_instrument_and_contract",
+          "get_and_add_prices_for_frequency",
+          "price_updating_or_errors",
+          "report_price_spike",
+          "write_merged_prices_for_contract"
+        ]
+      },
+      {
+        "path": "systems/provided/scalper/entry.py",
+        "batchIndex": 12,
+        "symbols": [
+          "MRRunner",
+          "pre_start_checks_okay_to_start"
+        ]
+      }
+    ],
+    "sysproduction/data/risk.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "syscore/objects.py",
+        "batchIndex": 1,
+        "symbols": [
+          "get_methods",
+          "resolve_function",
+          "resolve_data_method",
+          "_recursively_get_attr_within_list",
+          "hasallattr",
+          "get_class_name"
+        ]
+      },
+      {
+        "path": "syscore/pandas/frequency.py",
+        "batchIndex": 10,
+        "symbols": [
+          "closing_date_rows_in_pd_object",
+          "intraday_date_rows_in_pd_object",
+          "get_intraday_pdf_at_frequency",
+          "merge_data_with_different_freq",
+          "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+          "resample_prices_to_business_day_index",
+          "how_many_times_a_year_is_pd_frequency",
+          "interpolate_data_during_day",
+          "interpolate_for_a_single_day",
+          "reindex_last_monthly_include_first_date",
+          "infer_frequency",
+          "infer_frequency_approx",
+          "_probably_daily_freq",
+          "_probably_hourly_freq",
+          "average_time_delta_for_time_series"
+        ]
+      },
+      {
+        "path": "sysproduction/data/capital.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataCapital",
+          "dataMargin",
+          "capital_for_strategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      }
+    ],
+    "sysproduction/interactive_controls.py": [
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "syscore/interactive/display.py",
+        "batchIndex": 3,
+        "symbols": [
+          "print_with_landing_strips_around",
+          "landing_strip_around_string",
+          "landing_strip_from_str",
+          "landing_strip",
+          "centralise_text",
+          "measure_width",
+          "calculate_multiplication_factor_for_nice_repr_of_value",
+          "set_pd_print_options"
+        ]
+      },
+      {
+        "path": "syscore/interactive/input.py",
+        "batchIndex": 16,
+        "symbols": [
+          "true_if_answer_is_yes",
+          "get_input_from_user_and_convert_to_type",
+          "_get_input_and_check_type",
+          "_convert_type_or_throw_expection",
+          "input_field_names_for_named_tuple",
+          "override_tuple_fields",
+          "named_tuple_as_dict"
+        ]
+      },
+      {
+        "path": "syscore/interactive/menus.py",
+        "batchIndex": 3,
+        "symbols": [
+          "interactiveMenu",
+          "print_menu_of_values_and_get_response",
+          "_get_index_of_default_option",
+          "_list_menu_to_dict_menu",
+          "print_menu_and_get_desired_option_index",
+          "_resolve_default_for_dict_of_menu_options",
+          "_print_options_menu"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysinit/futures/safely_modify_roll_parameters.py",
+        "batchIndex": 17,
+        "symbols": [
+          "safely_modify_roll_parameters",
+          "modified_roll_parameters"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysobjects/production/override.py",
+        "batchIndex": 8,
+        "symbols": [
+          "lookup_value_and_return_float_or_object",
+          "Override",
+          "_apply_float_override",
+          "_apply_reduce_only",
+          "_apply_no_trading"
+        ]
+      },
+      {
+        "path": "sysobjects/production/process_control.py",
+        "batchIndex": 8,
+        "symbols": [
+          "processNotStarted",
+          "processNotRunning",
+          "dictOfRunningMethods",
+          "controlProcess",
+          "dictOfControlProcesses",
+          "is_pid_running"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/backup_db_to_csv.py",
+        "batchIndex": 8,
+        "symbols": [
+          "backup_db_to_csv",
+          "quick_backup_of_all_price_data_including_expired",
+          "backupDbToCsv",
+          "get_data_and_create_csv_directories",
+          "backup_futures_contract_prices_to_csv",
+          "backup_futures_contract_prices_for_instrument_to_csv",
+          "backup_futures_contract_prices_for_contract_to_csv",
+          "backup_fx_to_csv",
+          "backup_multiple_to_csv",
+          "backup_multiple_to_csv_for_instrument",
+          "backup_adj_to_csv",
+          "backup_adj_to_csv_for_instrument",
+          "backup_spreads_to_csv",
+          "backup_spreads_to_csv_for_instrument",
+          "backup_contract_position_data",
+          "backup_strategy_position_data",
+          "backup_historical_orders",
+          "backup_capital",
+          "get_dict_of_strategy_capital",
+          "add_total_capital_to_strategy_capital_dict_return_df",
+          "backup_optimal_positions",
+          "backup_spread_cost_data",
+          "backup_roll_state_data",
+          "backup_contract_data",
+          "backup_csv_dump"
+        ]
+      },
+      {
+        "path": "sysproduction/data/broker.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataBroker"
+        ]
+      },
+      {
+        "path": "sysproduction/data/contracts.py",
+        "batchIndex": 17,
+        "symbols": [
+          "dataContracts",
+          "get_valid_contract_object_from_user",
+          "get_valid_instrument_code_and_contractid_from_user",
+          "get_dates_to_choose_from",
+          "label_up_contracts_with_date_list",
+          "label_up_current_contracts"
+        ]
+      },
+      {
+        "path": "sysproduction/data/control_process.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataControlProcess",
+          "diagControlProcess",
+          "get_list_of_strategies_for_process",
+          "get_strategy_class_object_config"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysproduction/data/strategies.py",
+        "batchIndex": 4,
+        "symbols": [
+          "diagStrategiesConfig",
+          "get_list_of_strategies",
+          "get_list_of_strategies_from_config",
+          "get_list_of_strategies_from_positions",
+          "get_list_of_strategies_from_optimal_positions",
+          "get_valid_strategy_name_from_user"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysproduction/reporting/adhoc/instrument_list.py": [
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysproduction/data/broker.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataBroker"
+        ]
+      },
+      {
+        "path": "sysproduction/data/contracts.py",
+        "batchIndex": 17,
+        "symbols": [
+          "dataContracts",
+          "get_valid_contract_object_from_user",
+          "get_valid_instrument_code_and_contractid_from_user",
+          "get_dates_to_choose_from",
+          "label_up_contracts_with_date_list",
+          "label_up_current_contracts"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/report_configs.py",
+        "batchIndex": 9,
+        "symbols": [
+          "reportConfig"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/reporting_functions.py",
+        "batchIndex": 9,
+        "symbols": [
+          "ParsedReport",
+          "run_report",
+          "run_report_with_data_blob",
+          "run_report_from_config",
+          "parse_report_results",
+          "report_contains_figures",
+          "parse_report_results_contains_text",
+          "parse_table",
+          "parse_body",
+          "parse_header",
+          "parse_report_results_contains_figures",
+          "pandas_display_for_reports",
+          "output_report",
+          "display_report",
+          "display_pdf_report",
+          "email_report",
+          "output_file_report",
+          "resolve_report_filename",
+          "get_directory_for_reporting",
+          "write_text_report_to_file",
+          "PdfOutputWithTempFileName",
+          "_generate_temp_pdf_filename"
+        ]
+      }
+    ],
+    "sysproduction/reporting/data/costs.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysproduction/data/broker.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataBroker"
+        ]
+      },
+      {
+        "path": "sysproduction/data/contracts.py",
+        "batchIndex": 17,
+        "symbols": [
+          "dataContracts",
+          "get_valid_contract_object_from_user",
+          "get_valid_instrument_code_and_contractid_from_user",
+          "get_dates_to_choose_from",
+          "label_up_contracts_with_date_list",
+          "label_up_current_contracts"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysproduction/reporting/data/duplicate_remove_markets.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "sysdata/config/instruments.py",
+        "batchIndex": 1,
+        "symbols": [
+          "get_list_of_bad_instruments_in_config",
+          "get_list_of_untradeable_instruments_in_config",
+          "get_list_of_ignored_instruments_in_config",
+          "get_config_of_excluded_instruments",
+          "generate_matching_duplicate_dict",
+          "get_duplicate_dict_entry",
+          "get_entry_for_key_in_dict",
+          "get_duplicate_list_of_instruments_to_remove_from_config"
+        ]
+      },
+      {
+        "path": "sysproduction/data/config.py",
+        "batchIndex": 8,
+        "symbols": [
+          "remove_stale_instruments_and_strategies_from_list_of_instrument_strategies",
+          "remove_stale_instruments_from_list_of_instrument_strategies",
+          "remove_stale_instruments_from_list_of_instruments",
+          "remove_stale_strategies_from_list_of_instrument_strategies",
+          "get_list_of_stale_instruments",
+          "get_list_of_stale_instruments_given_config",
+          "get_list_of_stale_strategies"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/reporting_functions.py",
+        "batchIndex": 9,
+        "symbols": [
+          "ParsedReport",
+          "run_report",
+          "run_report_with_data_blob",
+          "run_report_from_config",
+          "parse_report_results",
+          "report_contains_figures",
+          "parse_report_results_contains_text",
+          "parse_table",
+          "parse_body",
+          "parse_header",
+          "parse_report_results_contains_figures",
+          "pandas_display_for_reports",
+          "output_report",
+          "display_report",
+          "display_pdf_report",
+          "email_report",
+          "output_file_report",
+          "resolve_report_filename",
+          "get_directory_for_reporting",
+          "write_text_report_to_file",
+          "PdfOutputWithTempFileName",
+          "_generate_temp_pdf_filename"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysproduction/reporting/data/risk.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "syscore/pandas/frequency.py",
+        "batchIndex": 10,
+        "symbols": [
+          "closing_date_rows_in_pd_object",
+          "intraday_date_rows_in_pd_object",
+          "get_intraday_pdf_at_frequency",
+          "merge_data_with_different_freq",
+          "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+          "resample_prices_to_business_day_index",
+          "how_many_times_a_year_is_pd_frequency",
+          "interpolate_data_during_day",
+          "interpolate_for_a_single_day",
+          "reindex_last_monthly_include_first_date",
+          "infer_frequency",
+          "infer_frequency_approx",
+          "_probably_daily_freq",
+          "_probably_hourly_freq",
+          "average_time_delta_for_time_series"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/capital.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataCapital",
+          "dataMargin",
+          "capital_for_strategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/positions.py",
+        "batchIndex": 12,
+        "symbols": [
+          "diagPositions",
+          "updatePositions",
+          "annonate_df_index_with_positions_held",
+          "get_list_of_instruments_with_current_positions"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/adhoc/dynamic_optimisation.py",
+        "batchIndex": 4,
+        "symbols": [
+          "get_notional_risk_target",
+          "dynamic_optimisation_graphical",
+          "get_figures_for_DO",
+          "get_data_for_scatter_plot",
+          "plot_scatter_for_asset_class",
+          "plot_scatter_names_only",
+          "plot_scatter_colors_only",
+          "get_unrounded_weights",
+          "get_optimised_weights",
+          "get_item_from_optimised_weights_list",
+          "get_optimal_position_objects_as_list",
+          "instrument_codes_from_optimal_positions_as_list",
+          "get_standard_deviations_for_instrument_list",
+          "get_pd_df_of_betas_to_plot",
+          "get_pd_df_of_beta_loadings",
+          "dynamic_optimisation_text"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysproduction/reporting/data/trades.py": [
+      {
+        "path": "syscore/pandas/pdutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "rolling_pairwise_correlation",
+          "is_a_series",
+          "is_a_dataframe",
+          "top_and_tail",
+          "sum_series",
+          "uniquets",
+          "get_column_names_in_df_with_at_least_one_value",
+          "get_index_of_columns_in_df_with_at_least_one_value",
+          "pd_readcsv",
+          "add_datetime_index",
+          "remap_columns_in_pd",
+          "from_dict_of_values_to_df",
+          "from_scalar_values_to_ts",
+          "create_arbitrary_pdseries",
+          "dataframe_pad",
+          "check_df_equals",
+          "check_ts_equals",
+          "make_df_from_list_of_named_tuple",
+          "sort_df_ignoring_missing",
+          "apply_with_min_periods",
+          "from_series_to_matching_df_frame",
+          "from_series_to_df_with_column_names",
+          "print_full"
+        ]
+      },
+      {
+        "path": "sysproduction/data/broker.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataBroker"
+        ]
+      },
+      {
+        "path": "sysproduction/data/orders.py",
+        "batchIndex": 12,
+        "symbols": [
+          "dataOrders"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysproduction/reporting/data/volume.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysproduction/data/contracts.py",
+        "batchIndex": 17,
+        "symbols": [
+          "dataContracts",
+          "get_valid_contract_object_from_user",
+          "get_valid_instrument_code_and_contractid_from_user",
+          "get_dates_to_choose_from",
+          "label_up_contracts_with_date_list",
+          "label_up_current_contracts"
+        ]
+      },
+      {
+        "path": "sysproduction/data/prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "diagPrices",
+          "updatePrices",
+          "get_valid_instrument_code_from_user",
+          "get_list_of_instruments",
+          "recent_average_price",
+          "get_current_price_of_instrument",
+          "get_price_series",
+          "get_current_price_series",
+          "get_cash_cost_in_base_for_instrument",
+          "last_currency_fx",
+          "modify_price_when_contract_has_changed"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/api.py",
+        "batchIndex": 4,
+        "symbols": [
+          "reportingApi",
+          "get_liquidity_report_data",
+          "filter_data_for_delays_and_return_table",
+          "filter_data_for_delays",
+          "filter_data_for_max_value_and_return_table",
+          "filter_data_for_max_value"
+        ]
+      }
+    ],
+    "sysquant/estimators/clustering_correlations.py": [
+      {
+        "path": "sysquant/optimisation/optimisers/handcraft.py",
+        "batchIndex": 15,
+        "symbols": [
+          "handcraft_optimisation",
+          "get_handcrafted_portfolio_weights_for_valid_data",
+          "handcraftPortfolio",
+          "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "create_sub_portfolios_from_portfolio",
+          "create_sub_portfolios_given_clusters",
+          "aggregate_risk_weights_over_sub_portfolios",
+          "multiplied_out_risk_weight_for_sub_portfolios"
+        ]
+      }
+    ],
+    "sysquant/estimators/correlation_estimator.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      },
+      {
+        "path": "sysproduction/reporting/adhoc/static_system.py",
+        "batchIndex": 4,
+        "symbols": [
+          "static_system_adhoc_report",
+          "static_system_results_for_capital"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      }
+    ],
+    "sysquant/estimators/correlation_over_time.py": [
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/pooled_correlation.py",
+        "batchIndex": 15,
+        "symbols": [
+          "pooled_correlation_estimator"
+        ]
+      }
+    ],
+    "sysquant/estimators/correlations.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/pandas/pdutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "rolling_pairwise_correlation",
+          "is_a_series",
+          "is_a_dataframe",
+          "top_and_tail",
+          "sum_series",
+          "uniquets",
+          "get_column_names_in_df_with_at_least_one_value",
+          "get_index_of_columns_in_df_with_at_least_one_value",
+          "pd_readcsv",
+          "add_datetime_index",
+          "remap_columns_in_pd",
+          "from_dict_of_values_to_df",
+          "from_scalar_values_to_ts",
+          "create_arbitrary_pdseries",
+          "dataframe_pad",
+          "check_df_equals",
+          "check_ts_equals",
+          "make_df_from_list_of_named_tuple",
+          "sort_df_ignoring_missing",
+          "apply_with_min_periods",
+          "from_series_to_matching_df_frame",
+          "from_series_to_df_with_column_names",
+          "print_full"
+        ]
+      },
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/pooled_correlation.py",
+        "batchIndex": 15,
+        "symbols": [
+          "pooled_correlation_estimator"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/handcraft.py",
+        "batchIndex": 15,
+        "symbols": [
+          "handcraft_optimisation",
+          "get_handcrafted_portfolio_weights_for_valid_data",
+          "handcraftPortfolio",
+          "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "create_sub_portfolios_from_portfolio",
+          "create_sub_portfolios_given_clusters",
+          "aggregate_risk_weights_over_sub_portfolios",
+          "multiplied_out_risk_weight_for_sub_portfolios"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/portfolio_optimiser.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioOptimiser"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/SR_adjustment.py",
+        "batchIndex": 15,
+        "symbols": [
+          "adjust_dataframe_of_weights_for_SR_costs",
+          "adjust_dataframe_of_weights_for_SR",
+          "adjust_list_of_weight_lists_for_SR",
+          "adjust_weights_for_SR",
+          "multiplier_from_relative_SR",
+          "mini_bootstrap_ratio_given_SR_diff",
+          "weight_ratio",
+          "weights_given_SR_diff",
+          "calculate_confident_mean_difference",
+          "calculate_omega_difference",
+          "optimise_using_correlation",
+          "norm_weights"
+        ]
+      },
+      {
+        "path": "sysquant/portfolio_risk.py",
+        "batchIndex": 15,
+        "symbols": [
+          "calc_sum_annualised_risk_given_portfolio_weights",
+          "calc_portfolio_risk_series",
+          "get_covariance_matrix",
+          "get_correlation_matrix",
+          "get_stdev_estimate"
+        ]
+      },
+      {
+        "path": "systems/forecast_combine.py",
+        "batchIndex": 1,
+        "symbols": [
+          "ForecastCombine",
+          "_cap_combined_forecast",
+          "_get_fixed_weights_from_config",
+          "_get_forecast_weights_for_instrument_with_autogrouping",
+          "_get_fixed_fdm_scalar_value_from_config",
+          "_get_list_of_rules_from_config_for_instrument"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimisedPositions",
+          "calculate_cost_per_notional_weight_as_proportion_of_capital"
+        ]
+      },
+      {
+        "path": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+        "batchIndex": 15,
+        "symbols": [
+          "find_best_ordered_set_of_instruments",
+          "get_correlation_matrix",
+          "find_best_market",
+          "find_next_instrument",
+          "SR_for_instrument_list",
+          "build_estimates",
+          "estimate_SR_given_weights",
+          "mean_estimates_from_SR_function_actual_weights",
+          "estimate_portfolio_sizes_given_weights",
+          "net_SR_for_instrument_in_system",
+          "calculate_maximum_position",
+          "calculate_trading_cost",
+          "net_SR_for_instrument",
+          "size_penalty"
+        ]
+      }
+    ],
+    "sysquant/estimators/covariance.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/shared.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimise_given_estimates",
+          "optimise_from_processed_estimates",
+          "sigma_from_corr_and_std",
+          "optimise_from_sigma_and_mean_list",
+          "fix_mus",
+          "fix_stdev",
+          "fix_vector",
+          "un_fix_weights",
+          "fix_sigma",
+          "fix_correlation",
+          "fix_matrix",
+          "neg_SR",
+          "variance",
+          "addem"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "sysquant/portfolio_risk.py",
+        "batchIndex": 15,
+        "symbols": [
+          "calc_sum_annualised_risk_given_portfolio_weights",
+          "calc_portfolio_risk_series",
+          "get_covariance_matrix",
+          "get_correlation_matrix",
+          "get_stdev_estimate"
+        ]
+      },
+      {
+        "path": "systems/portfolio.py",
+        "batchIndex": 1,
+        "symbols": [
+          "Portfolios",
+          "get_portfolio_weights_from_contract_positions"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimisation.py",
+        "batchIndex": 15,
+        "symbols": [
+          "constraintsForDynamicOpt",
+          "objectiveFunctionForGreedy"
+        ]
+      },
+      {
+        "path": "systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimisedPositions",
+          "calculate_cost_per_notional_weight_as_proportion_of_capital"
+        ]
+      }
+    ],
+    "sysquant/estimators/diversification_multipliers.py": [
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/handcraft.py",
+        "batchIndex": 15,
+        "symbols": [
+          "handcraft_optimisation",
+          "get_handcrafted_portfolio_weights_for_valid_data",
+          "handcraftPortfolio",
+          "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "create_sub_portfolios_from_portfolio",
+          "create_sub_portfolios_given_clusters",
+          "aggregate_risk_weights_over_sub_portfolios",
+          "multiplied_out_risk_weight_for_sub_portfolios"
+        ]
+      }
+    ],
+    "sysquant/estimators/estimates.py": [
+      {
+        "path": "syscore/pandas/frequency.py",
+        "batchIndex": 10,
+        "symbols": [
+          "closing_date_rows_in_pd_object",
+          "intraday_date_rows_in_pd_object",
+          "get_intraday_pdf_at_frequency",
+          "merge_data_with_different_freq",
+          "sumup_business_days_over_pd_series_without_double_counting_of_closing_data",
+          "resample_prices_to_business_day_index",
+          "how_many_times_a_year_is_pd_frequency",
+          "interpolate_data_during_day",
+          "interpolate_for_a_single_day",
+          "reindex_last_monthly_include_first_date",
+          "infer_frequency",
+          "infer_frequency_approx",
+          "_probably_daily_freq",
+          "_probably_hourly_freq",
+          "average_time_delta_for_time_series"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/mean_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "meanEstimates",
+          "exponentialMeans",
+          "exponential_mean",
+          "meanEstimator",
+          "mean_estimator_for_subperiod",
+          "simple_mean_estimator_with_min_periods",
+          "empty_mean",
+          "annualise_mean_estimate",
+          "annualised_mean"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/call_optimiser.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimiser_for_method",
+          "weights_and_estimates_with_no_valid_data",
+          "call_optimiser"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/equal_weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "equal_weights_optimisation"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/handcraft.py",
+        "batchIndex": 15,
+        "symbols": [
+          "handcraft_optimisation",
+          "get_handcrafted_portfolio_weights_for_valid_data",
+          "handcraftPortfolio",
+          "adjust_weights_for_SR_on_handcrafted_portfolio",
+          "create_sub_portfolios_from_portfolio",
+          "create_sub_portfolios_given_clusters",
+          "aggregate_risk_weights_over_sub_portfolios",
+          "multiplied_out_risk_weight_for_sub_portfolios"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/one_period.py",
+        "batchIndex": 15,
+        "symbols": [
+          "one_period_optimisation"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/optimisers/shrinkage.py",
+        "batchIndex": 15,
+        "symbols": [
+          "shrinkage_optimisation"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/portfolio_optimiser.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioOptimiser"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/shared.py",
+        "batchIndex": 15,
+        "symbols": [
+          "optimise_given_estimates",
+          "optimise_from_processed_estimates",
+          "sigma_from_corr_and_std",
+          "optimise_from_sigma_and_mean_list",
+          "fix_mus",
+          "fix_stdev",
+          "fix_vector",
+          "un_fix_weights",
+          "fix_sigma",
+          "fix_correlation",
+          "fix_matrix",
+          "neg_SR",
+          "variance",
+          "addem"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/weights.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioWeights",
+          "seriesOfPortfolioWeights",
+          "_int_from_nan",
+          "estimatesWithPortfolioWeights",
+          "one_over_n_portfolio_weights_from_estimates",
+          "one_over_n_weights_given_data",
+          "one_over_n_weights_given_asset_names"
+        ]
+      },
+      {
+        "path": "systems/provided/static_small_system_optimise/optimise_small_system.py",
+        "batchIndex": 15,
+        "symbols": [
+          "find_best_ordered_set_of_instruments",
+          "get_correlation_matrix",
+          "find_best_market",
+          "find_next_instrument",
+          "SR_for_instrument_list",
+          "build_estimates",
+          "estimate_SR_given_weights",
+          "mean_estimates_from_SR_function_actual_weights",
+          "estimate_portfolio_sizes_given_weights",
+          "net_SR_for_instrument_in_system",
+          "calculate_maximum_position",
+          "calculate_trading_cost",
+          "net_SR_for_instrument",
+          "size_penalty"
+        ]
+      }
+    ],
+    "sysquant/estimators/exponential_correlation.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      }
+    ],
+    "sysquant/estimators/generic_estimator.py": [
+      {
+        "path": "sysquant/fitting_dates.py",
+        "batchIndex": 15,
+        "symbols": [
+          "fitDates",
+          "listOfFittingDates",
+          "generate_fitting_dates",
+          "generate_fitting_dates_given_start_and_end_date",
+          "_get_start_and_end_date",
+          "_in_sample_dates",
+          "_list_of_starting_dates_per_period",
+          "_fit_dates_for_period_index",
+          "_add_dummy_period_if_required"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/mean_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "meanEstimates",
+          "exponentialMeans",
+          "exponential_mean",
+          "meanEstimator",
+          "mean_estimator_for_subperiod",
+          "simple_mean_estimator_with_min_periods",
+          "empty_mean",
+          "annualise_mean_estimate",
+          "annualised_mean"
+        ]
+      },
+      {
+        "path": "sysquant/estimators/stdev_estimator.py",
+        "batchIndex": 15,
+        "symbols": [
+          "stdevEstimates",
+          "seriesOfStdevEstimates",
+          "exponentialStdev",
+          "exponential_std_deviation",
+          "stdevEstimator",
+          "stdev_estimator_for_subperiod",
+          "simple_vol_estimator_with_min_periods",
+          "empty_stdev",
+          "annualise_stdev_estimate",
+          "annualised_stdev"
+        ]
+      },
+      {
+        "path": "sysquant/optimisation/portfolio_optimiser.py",
+        "batchIndex": 15,
+        "symbols": [
+          "portfolioOptimiser"
+        ]
+      }
+    ]
+  }
+}

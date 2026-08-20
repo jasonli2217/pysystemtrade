@@ -1,0 +1,1240 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/config/defaults.py",
+      "type": "file",
+      "name": "defaults.py",
+      "filePath": "sysdata/config/defaults.py",
+      "summary": "Loads the system-wide default configuration dictionary from the bundled defaults YAML, providing baseline parameters for the backtesting framework.",
+      "tags": [
+        "configuration",
+        "defaults",
+        "yaml-loader",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/config/defaults.py:get_system_defaults_dict",
+      "type": "function",
+      "name": "get_system_defaults_dict",
+      "filePath": "sysdata/config/defaults.py",
+      "lineRange": [
+        16,
+        27
+      ],
+      "summary": "Loads and returns the system default configuration dictionary from the bundled defaults YAML.",
+      "tags": [
+        "configuration",
+        "defaults",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/config/production_config.py",
+      "type": "file",
+      "name": "production_config.py",
+      "filePath": "sysdata/config/production_config.py",
+      "summary": "Thin helper that constructs a Config object from the private production config YAML for live trading environments.",
+      "tags": [
+        "configuration",
+        "production",
+        "factory",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_capital_data.py",
+      "type": "file",
+      "name": "csv_capital_data.py",
+      "filePath": "sysdata/csv/csv_capital_data.py",
+      "summary": "CSV-backed capital data store; writes a backup snapshot of all account capital to a CSV file.",
+      "tags": [
+        "data-store",
+        "csv",
+        "capital",
+        "backup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_capital_data.py:csvCapitalData",
+      "type": "class",
+      "name": "csvCapitalData",
+      "filePath": "sysdata/csv/csv_capital_data.py",
+      "lineRange": [
+        11,
+        24
+      ],
+      "summary": "CSV capital data store writing backup snapshots of all account capital.",
+      "tags": [
+        "data-store",
+        "csv",
+        "capital",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_contract_position_data.py",
+      "type": "file",
+      "name": "csv_contract_position_data.py",
+      "filePath": "sysdata/csv/csv_contract_position_data.py",
+      "summary": "CSV-backed store for historic per-contract positions, writing updated position series to per-contract CSV files.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_contract_position_data.py:csvContractPositionData",
+      "type": "class",
+      "name": "csvContractPositionData",
+      "filePath": "sysdata/csv/csv_contract_position_data.py",
+      "lineRange": [
+        11,
+        40
+      ],
+      "summary": "CSV store for historic per-contract position series.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_futures_contracts.py",
+      "type": "file",
+      "name": "csv_futures_contracts.py",
+      "filePath": "sysdata/csv/csv_futures_contracts.py",
+      "summary": "CSV implementation of the futures-contract data store, reading and writing contract metadata as per-instrument CSV files.",
+      "tags": [
+        "data-store",
+        "csv",
+        "futures",
+        "contracts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_futures_contracts.py:csvFuturesContractData",
+      "type": "class",
+      "name": "csvFuturesContractData",
+      "filePath": "sysdata/csv/csv_futures_contracts.py",
+      "lineRange": [
+        8,
+        77
+      ],
+      "summary": "CSV store for futures contract metadata, persisting contract lists per instrument.",
+      "tags": [
+        "data-store",
+        "csv",
+        "futures",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_historic_orders.py",
+      "type": "file",
+      "name": "csv_historic_orders.py",
+      "filePath": "sysdata/csv/csv_historic_orders.py",
+      "summary": "CSV stores for historic strategy, contract, and broker orders, serialising order lists to flat CSV files.",
+      "tags": [
+        "data-store",
+        "csv",
+        "orders",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_historic_orders.py:csvStrategyHistoricOrdersData",
+      "type": "class",
+      "name": "csvStrategyHistoricOrdersData",
+      "filePath": "sysdata/csv/csv_historic_orders.py",
+      "lineRange": [
+        29,
+        45
+      ],
+      "summary": "CSV store for historic strategy-level orders.",
+      "tags": [
+        "data-store",
+        "csv",
+        "orders",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_historic_orders.py:csvContractHistoricOrdersData",
+      "type": "class",
+      "name": "csvContractHistoricOrdersData",
+      "filePath": "sysdata/csv/csv_historic_orders.py",
+      "lineRange": [
+        48,
+        64
+      ],
+      "summary": "CSV store for historic contract-level orders.",
+      "tags": [
+        "data-store",
+        "csv",
+        "orders",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_historic_orders.py:csvBrokerHistoricOrdersData",
+      "type": "class",
+      "name": "csvBrokerHistoricOrdersData",
+      "filePath": "sysdata/csv/csv_historic_orders.py",
+      "lineRange": [
+        67,
+        83
+      ],
+      "summary": "CSV store for historic broker-level orders.",
+      "tags": [
+        "data-store",
+        "csv",
+        "orders",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/csv/csv_historic_orders.py:from_list_of_orders_to_df",
+      "type": "function",
+      "name": "from_list_of_orders_to_df",
+      "filePath": "sysdata/csv/csv_historic_orders.py",
+      "lineRange": [
+        13,
+        26
+      ],
+      "summary": "Converts a list of order objects into a pandas DataFrame for CSV serialisation.",
+      "tags": [
+        "data-store",
+        "csv",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_instrument_data.py",
+      "type": "file",
+      "name": "csv_instrument_data.py",
+      "filePath": "sysdata/csv/csv_instrument_data.py",
+      "summary": "CSV implementation of the instrument data store; loads, caches, and writes instrument metadata and slippage configuration from CSV.",
+      "tags": [
+        "data-store",
+        "csv",
+        "instruments",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_instrument_data.py:csvFuturesInstrumentData",
+      "type": "class",
+      "name": "csvFuturesInstrumentData",
+      "filePath": "sysdata/csv/csv_instrument_data.py",
+      "lineRange": [
+        17,
+        107
+      ],
+      "summary": "CSV store for futures instrument metadata, loading and caching instrument config from CSV.",
+      "tags": [
+        "data-store",
+        "csv",
+        "instruments",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysdata/csv/csv_instrument_data.py:get_instrument_with_meta_data_object",
+      "type": "function",
+      "name": "get_instrument_with_meta_data_object",
+      "filePath": "sysdata/csv/csv_instrument_data.py",
+      "lineRange": [
+        110,
+        125
+      ],
+      "summary": "Builds a futures instrument object with attached meta-data from a CSV data row.",
+      "tags": [
+        "data-store",
+        "csv",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysdata/csv/csv_instrument_data.py:get_meta_data_dict_for_instrument",
+      "type": "function",
+      "name": "get_meta_data_dict_for_instrument",
+      "filePath": "sysdata/csv/csv_instrument_data.py",
+      "lineRange": [
+        128,
+        138
+      ],
+      "summary": "Extracts the meta-data dictionary for an instrument from its CSV row.",
+      "tags": [
+        "data-store",
+        "csv",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_optimal_position.py",
+      "type": "file",
+      "name": "csv_optimal_position.py",
+      "filePath": "sysdata/csv/csv_optimal_position.py",
+      "summary": "CSV-backed store for optimal positions per instrument-strategy, writing optimal position series to CSV.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "optimisation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_optimal_position.py:csvOptimalPositionData",
+      "type": "class",
+      "name": "csvOptimalPositionData",
+      "filePath": "sysdata/csv/csv_optimal_position.py",
+      "lineRange": [
+        11,
+        45
+      ],
+      "summary": "CSV store for optimal positions per instrument-strategy.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_roll_state_storage.py",
+      "type": "file",
+      "name": "csv_roll_state_storage.py",
+      "filePath": "sysdata/csv/csv_roll_state_storage.py",
+      "summary": "CSV store for futures roll states, writing all instrument roll-state data to a CSV backup file.",
+      "tags": [
+        "data-store",
+        "csv",
+        "roll-state",
+        "futures"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_roll_state_storage.py:csvRollStateData",
+      "type": "class",
+      "name": "csvRollStateData",
+      "filePath": "sysdata/csv/csv_roll_state_storage.py",
+      "lineRange": [
+        7,
+        28
+      ],
+      "summary": "CSV store for futures roll states across all instruments.",
+      "tags": [
+        "data-store",
+        "csv",
+        "roll-state",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_spread_costs.py",
+      "type": "file",
+      "name": "csv_spread_costs.py",
+      "filePath": "sysdata/csv/csv_spread_costs.py",
+      "summary": "CSV implementation of the spread-cost data store, reading and writing per-instrument trading spread costs from a config CSV.",
+      "tags": [
+        "data-store",
+        "csv",
+        "spread-costs",
+        "trading"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_spread_costs.py:csvSpreadCostData",
+      "type": "class",
+      "name": "csvSpreadCostData",
+      "filePath": "sysdata/csv/csv_spread_costs.py",
+      "lineRange": [
+        15,
+        72
+      ],
+      "summary": "CSV store for per-instrument trading spread costs.",
+      "tags": [
+        "data-store",
+        "csv",
+        "spread-costs",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_spreads.py",
+      "type": "file",
+      "name": "csv_spreads.py",
+      "filePath": "sysdata/csv/csv_spreads.py",
+      "summary": "CSV-backed store for inter-market spread time series per instrument, reading and writing spread data as CSV.",
+      "tags": [
+        "data-store",
+        "csv",
+        "spreads",
+        "futures"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/csv/csv_spreads.py:csvSpreadsForInstrumentData",
+      "type": "class",
+      "name": "csvSpreadsForInstrumentData",
+      "filePath": "sysdata/csv/csv_spreads.py",
+      "lineRange": [
+        18,
+        78
+      ],
+      "summary": "CSV store for inter-market spread time series per instrument.",
+      "tags": [
+        "data-store",
+        "csv",
+        "spreads",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/csv/csv_strategy_position_data.py",
+      "type": "file",
+      "name": "csv_strategy_position_data.py",
+      "filePath": "sysdata/csv/csv_strategy_position_data.py",
+      "summary": "CSV-backed store for historic per-strategy instrument positions, writing updated position series to CSV files.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "strategy"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/csv/csv_strategy_position_data.py:csvStrategyPositionData",
+      "type": "class",
+      "name": "csvStrategyPositionData",
+      "filePath": "sysdata/csv/csv_strategy_position_data.py",
+      "lineRange": [
+        11,
+        44
+      ],
+      "summary": "CSV store for historic per-strategy instrument positions.",
+      "tags": [
+        "data-store",
+        "csv",
+        "positions",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/futures/contracts.py",
+      "type": "file",
+      "name": "contracts.py",
+      "filePath": "sysdata/futures/contracts.py",
+      "summary": "Abstract base data class defining the interface for storing and retrieving futures-contract objects and their dates.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "futures",
+        "contracts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/contracts.py:futuresContractData",
+      "type": "class",
+      "name": "futuresContractData",
+      "filePath": "sysdata/futures/contracts.py",
+      "lineRange": [
+        11,
+        137
+      ],
+      "summary": "Abstract base class defining the futures-contract storage interface.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "futures",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/futures/instruments.py",
+      "type": "file",
+      "name": "instruments.py",
+      "filePath": "sysdata/futures/instruments.py",
+      "summary": "Abstract base data class defining the interface for instrument metadata storage, including slippage and meta-data updates.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "instruments",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:sysdata/futures/instruments.py:futuresInstrumentData",
+      "type": "class",
+      "name": "futuresInstrumentData",
+      "filePath": "sysdata/futures/instruments.py",
+      "lineRange": [
+        16,
+        156
+      ],
+      "summary": "Abstract base class defining the instrument-metadata storage interface.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "instruments",
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:sysdata/futures/spread_costs.py",
+      "type": "file",
+      "name": "spread_costs.py",
+      "filePath": "sysdata/futures/spread_costs.py",
+      "summary": "Abstract base data class for storing and computing per-instrument spread costs across the framework.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "spread-costs",
+        "trading"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:sysdata/futures/spread_costs.py:spreadCostData",
+      "type": "class",
+      "name": "spreadCostData",
+      "filePath": "sysdata/futures/spread_costs.py",
+      "lineRange": [
+        8,
+        41
+      ],
+      "summary": "Abstract base class for spread-cost storage and computation.",
+      "tags": [
+        "data-store",
+        "abstract-base",
+        "spread-costs",
+        "class"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/config/defaults.py",
+      "target": "function:sysdata/config/defaults.py:get_system_defaults_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/config/defaults.py",
+      "target": "function:sysdata/config/defaults.py:get_system_defaults_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "class:sysdata/csv/csv_capital_data.py:csvCapitalData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "class:sysdata/csv/csv_capital_data.py:csvCapitalData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "class:sysdata/csv/csv_contract_position_data.py:csvContractPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "class:sysdata/csv/csv_contract_position_data.py:csvContractPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "class:sysdata/csv/csv_futures_contracts.py:csvFuturesContractData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "class:sysdata/csv/csv_futures_contracts.py:csvFuturesContractData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvStrategyHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvStrategyHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvContractHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvContractHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvBrokerHistoricOrdersData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "class:sysdata/csv/csv_historic_orders.py:csvBrokerHistoricOrdersData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "function:sysdata/csv/csv_historic_orders.py:from_list_of_orders_to_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "function:sysdata/csv/csv_historic_orders.py:from_list_of_orders_to_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "class:sysdata/csv/csv_instrument_data.py:csvFuturesInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "class:sysdata/csv/csv_instrument_data.py:csvFuturesInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "function:sysdata/csv/csv_instrument_data.py:get_instrument_with_meta_data_object",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "function:sysdata/csv/csv_instrument_data.py:get_instrument_with_meta_data_object",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "function:sysdata/csv/csv_instrument_data.py:get_meta_data_dict_for_instrument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "function:sysdata/csv/csv_instrument_data.py:get_meta_data_dict_for_instrument",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "class:sysdata/csv/csv_optimal_position.py:csvOptimalPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "class:sysdata/csv/csv_optimal_position.py:csvOptimalPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "class:sysdata/csv/csv_roll_state_storage.py:csvRollStateData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "class:sysdata/csv/csv_roll_state_storage.py:csvRollStateData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "class:sysdata/csv/csv_spread_costs.py:csvSpreadCostData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "class:sysdata/csv/csv_spread_costs.py:csvSpreadCostData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "class:sysdata/csv/csv_spreads.py:csvSpreadsForInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "class:sysdata/csv/csv_spreads.py:csvSpreadsForInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "class:sysdata/csv/csv_strategy_position_data.py:csvStrategyPositionData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "class:sysdata/csv/csv_strategy_position_data.py:csvStrategyPositionData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "class:sysdata/futures/contracts.py:futuresContractData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "class:sysdata/futures/contracts.py:futuresContractData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/instruments.py",
+      "target": "class:sysdata/futures/instruments.py:futuresInstrumentData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/instruments.py",
+      "target": "class:sysdata/futures/instruments.py:futuresInstrumentData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/futures/spread_costs.py",
+      "target": "class:sysdata/futures/spread_costs.py:spreadCostData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sysdata/futures/spread_costs.py",
+      "target": "class:sysdata/futures/spread_costs.py:spreadCostData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysdata/config/defaults.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/config/defaults.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/config/production_config.py",
+      "target": "file:sysdata/config/configdata.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "file:sysdata/production/capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_capital_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "file:sysdata/production/historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_contract_position_data.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "file:sysdata/futures/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_futures_contracts.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "file:sysdata/production/historic_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_historic_orders.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "file:sysdata/futures/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_instrument_data.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "file:sysdata/production/optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_optimal_position.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "file:sysdata/production/roll_state.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_roll_state_storage.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "file:sysdata/csv/csv_instrument_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "file:sysdata/futures/spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spread_costs.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:syscore/pandas/pdutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:sysdata/futures/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_spreads.py",
+      "target": "file:sysobjects/spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "file:sysdata/production/historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/csv/csv_strategy_position_data.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "file:sysobjects/contract_dates_and_expiries.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/contracts.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/instruments.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/instruments.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/instruments.py",
+      "target": "file:sysobjects/instruments.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/spread_costs.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/futures/spread_costs.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

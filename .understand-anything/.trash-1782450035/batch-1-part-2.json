@@ -1,0 +1,782 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysdata/config/configdata.py",
+   "type": "file",
+   "name": "configdata.py",
+   "filePath": "sysdata/config/configdata.py",
+   "summary": "Core Config class that loads, merges and saves YAML system configuration, filling in defaults and private overrides.",
+   "tags": [
+    "config",
+    "core",
+    "serialization"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysdata/config/control_config.py",
+   "type": "file",
+   "name": "control_config.py",
+   "filePath": "sysdata/config/control_config.py",
+   "summary": "Loads the process-control configuration, merging private control config over defaults.",
+   "tags": [
+    "config",
+    "control",
+    "loader"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/config/fill_config_dict_with_defaults.py",
+   "type": "file",
+   "name": "fill_config_dict_with_defaults.py",
+   "filePath": "sysdata/config/fill_config_dict_with_defaults.py",
+   "summary": "Recursively merges a configuration dict with a defaults dict so missing keys inherit default values.",
+   "tags": [
+    "config",
+    "utility",
+    "defaults"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/config/instruments.py",
+   "type": "file",
+   "name": "instruments.py",
+   "filePath": "sysdata/config/instruments.py",
+   "summary": "Config helpers for identifying bad, untradeable, ignored and duplicate instruments and computing which to remove.",
+   "tags": [
+    "config",
+    "instruments",
+    "filtering"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/config/private_config.py",
+   "type": "file",
+   "name": "private_config.py",
+   "filePath": "sysdata/config/private_config.py",
+   "summary": "Loads the user's private YAML config and resolves the private configuration directory from the environment.",
+   "tags": [
+    "config",
+    "private",
+    "loader"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/sim/csv_futures_sim_data.py",
+   "type": "file",
+   "name": "csv_futures_sim_data.py",
+   "filePath": "sysdata/sim/csv_futures_sim_data.py",
+   "summary": "Concrete simulation data source backed entirely by CSV files for adjusted prices, FX, instruments and costs.",
+   "tags": [
+    "data-source",
+    "simulation",
+    "csv"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysdata/sim/db_futures_sim_data.py",
+   "type": "file",
+   "name": "db_futures_sim_data.py",
+   "filePath": "sysdata/sim/db_futures_sim_data.py",
+   "summary": "Simulation data source backed by database (parquet/mongo) stores for prices, FX and spread costs.",
+   "tags": [
+    "data-source",
+    "simulation",
+    "database"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysdata/sim/sim_data.py",
+   "type": "file",
+   "name": "sim_data.py",
+   "filePath": "sysdata/sim/sim_data.py",
+   "summary": "Abstract simData base class defining the interface backtests use to fetch prices, FX, costs and instrument metadata.",
+   "tags": [
+    "data-source",
+    "simulation",
+    "abstract",
+    "data-model"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysdata/tests/test_config.py",
+   "type": "file",
+   "name": "test_config.py",
+   "filePath": "sysdata/tests/test_config.py",
+   "summary": "Unit tests for the Config loader covering defaults, merging, instrument exclusions and control config.",
+   "tags": [
+    "test",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysdata/config/configdata.py:Config",
+   "type": "class",
+   "name": "Config",
+   "filePath": "sysdata/config/configdata.py",
+   "lineRange": [
+    37,
+    291
+   ],
+   "summary": "System configuration object loading from YAML/dicts, merging defaults and private overrides, and serializing back.",
+   "tags": [
+    "config",
+    "core",
+    "serialization"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysdata/config/control_config.py:get_control_config",
+   "type": "function",
+   "name": "get_control_config",
+   "filePath": "sysdata/config/control_config.py",
+   "lineRange": [
+    10,
+    36
+   ],
+   "summary": "Loads process-control configuration, merging private control config over the bundled defaults.",
+   "tags": [
+    "config",
+    "loader"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysdata/config/fill_config_dict_with_defaults.py:fill_config_dict_with_defaults",
+   "type": "function",
+   "name": "fill_config_dict_with_defaults",
+   "filePath": "sysdata/config/fill_config_dict_with_defaults.py",
+   "lineRange": [
+    1,
+    25
+   ],
+   "summary": "Recursively fills a config dict with values from a defaults dict for any missing or nested keys.",
+   "tags": [
+    "config",
+    "utility",
+    "defaults"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysdata/config/instruments.py:generate_matching_duplicate_dict",
+   "type": "function",
+   "name": "generate_matching_duplicate_dict",
+   "filePath": "sysdata/config/instruments.py",
+   "lineRange": [
+    32,
+    59
+   ],
+   "summary": "Builds a dict pairing include/exclude duplicate-instrument groups from the config.",
+   "tags": [
+    "config",
+    "instruments"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysdata/config/instruments.py:get_entry_for_key_in_dict",
+   "type": "function",
+   "name": "get_entry_for_key_in_dict",
+   "filePath": "sysdata/config/instruments.py",
+   "lineRange": [
+    69,
+    88
+   ],
+   "summary": "Looks up a key within an include/exclude duplicate dict, validating its type.",
+   "tags": [
+    "config",
+    "instruments"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysdata/config/instruments.py:get_duplicate_list_of_instruments_to_remove_from_config",
+   "type": "function",
+   "name": "get_duplicate_list_of_instruments_to_remove_from_config",
+   "filePath": "sysdata/config/instruments.py",
+   "lineRange": [
+    91,
+    107
+   ],
+   "summary": "Computes the flattened list of duplicate instruments that should be removed per config.",
+   "tags": [
+    "config",
+    "instruments",
+    "filtering"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysdata/config/private_config.py:get_private_config_as_dict",
+   "type": "function",
+   "name": "get_private_config_as_dict",
+   "filePath": "sysdata/config/private_config.py",
+   "lineRange": [
+    14,
+    29
+   ],
+   "summary": "Loads the private YAML config file into a dict, returning empty when absent.",
+   "tags": [
+    "config",
+    "private",
+    "loader"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysdata/sim/csv_futures_sim_data.py:csvFuturesSimData",
+   "type": "class",
+   "name": "csvFuturesSimData",
+   "filePath": "sysdata/sim/csv_futures_sim_data.py",
+   "lineRange": [
+    20,
+    46
+   ],
+   "summary": "CSV-backed simulation data source assembling all price/FX/cost data classes into a data blob.",
+   "tags": [
+    "data-source",
+    "csv",
+    "simulation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysdata/sim/db_futures_sim_data.py:dbFuturesSimData",
+   "type": "class",
+   "name": "dbFuturesSimData",
+   "filePath": "sysdata/sim/db_futures_sim_data.py",
+   "lineRange": [
+    27,
+    53
+   ],
+   "summary": "Database-backed simulation data source wiring parquet/mongo data classes into a data blob.",
+   "tags": [
+    "data-source",
+    "database",
+    "simulation"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysdata/sim/sim_data.py:simData",
+   "type": "class",
+   "name": "simData",
+   "filePath": "sysdata/sim/sim_data.py",
+   "lineRange": [
+    17,
+    294
+   ],
+   "summary": "Abstract base defining the backtest data interface: prices, FX, costs, instrument lists and metadata.",
+   "tags": [
+    "data-source",
+    "abstract",
+    "data-model"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysdata/tests/test_config.py:TestConfig",
+   "type": "class",
+   "name": "TestConfig",
+   "filePath": "sysdata/tests/test_config.py",
+   "lineRange": [
+    8,
+    99
+   ],
+   "summary": "TestCase verifying Config loading, default merging, instrument exclusion and control config behaviour.",
+   "tags": [
+    "test",
+    "config"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "class:sysdata/config/configdata.py:Config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "class:sysdata/config/configdata.py:Config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/control_config.py",
+   "target": "function:sysdata/config/control_config.py:get_control_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/control_config.py",
+   "target": "function:sysdata/config/control_config.py:get_control_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/fill_config_dict_with_defaults.py",
+   "target": "function:sysdata/config/fill_config_dict_with_defaults.py:fill_config_dict_with_defaults",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/fill_config_dict_with_defaults.py",
+   "target": "function:sysdata/config/fill_config_dict_with_defaults.py:fill_config_dict_with_defaults",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:generate_matching_duplicate_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:generate_matching_duplicate_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:get_entry_for_key_in_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:get_entry_for_key_in_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:get_duplicate_list_of_instruments_to_remove_from_config",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "function:sysdata/config/instruments.py:get_duplicate_list_of_instruments_to_remove_from_config",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/private_config.py",
+   "target": "function:sysdata/config/private_config.py:get_private_config_as_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/config/private_config.py",
+   "target": "function:sysdata/config/private_config.py:get_private_config_as_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "class:sysdata/sim/csv_futures_sim_data.py:csvFuturesSimData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "class:sysdata/sim/csv_futures_sim_data.py:csvFuturesSimData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "class:sysdata/sim/db_futures_sim_data.py:dbFuturesSimData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "class:sysdata/sim/db_futures_sim_data.py:dbFuturesSimData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "class:sysdata/sim/sim_data.py:simData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "class:sysdata/sim/sim_data.py:simData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "class:sysdata/tests/test_config.py:TestConfig",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "class:sysdata/tests/test_config.py:TestConfig",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:sysdata/config/defaults.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:sysdata/config/fill_config_dict_with_defaults.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:sysdata/config/private_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/configdata.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/control_config.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/control_config.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/control_config.py",
+   "target": "file:sysdata/config/private_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/instruments.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/private_config.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/config/private_config.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_adjusted_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_instrument_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_multiple_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_roll_parameters.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_spot_fx.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_spread_costs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/csv_futures_sim_data.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_instrument_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/csv/csv_roll_parameters.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/mongodb/mongo_spread_costs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/parquet/parquet_adjusted_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/parquet/parquet_multiple_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/parquet/parquet_spotfx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:sysdata/sim/futures_sim_data_with_data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/db_futures_sim_data.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:syscore/pandas/frequency.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:sysdata/base_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:sysobjects/instruments.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/sim/sim_data.py",
+   "target": "file:sysobjects/spot_fx_prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "file:sysbrokers/IB/ib_trading_hours.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "file:sysdata/config/control_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysdata/tests/test_config.py",
+   "target": "file:sysdata/config/private_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:sysdata/sim/sim_data.py:simData",
+   "target": "class:sysdata/base_data.py:baseData",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  }
+ ]
+}

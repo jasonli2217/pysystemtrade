@@ -1,0 +1,2421 @@
+{
+  "batchIndex": 7,
+  "files": [
+    {
+      "path": "sysdata/parquet/parquet_adjusted_prices.py",
+      "language": "python",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_capital.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "language": "python",
+      "sizeLines": 234,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_contract_positions.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_optimal_positions.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_spotfx_prices.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/parquet_spreads.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/broker_client_id.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/capital.py",
+      "language": "python",
+      "sizeLines": 516,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/historic_contract_positions.py",
+      "language": "python",
+      "sizeLines": 312,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/historic_strategy_positions.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/locks.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/optimal_positions.py",
+      "language": "python",
+      "sizeLines": 187,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/override.py",
+      "language": "python",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/position_limits.py",
+      "language": "python",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/process_control_data.py",
+      "language": "python",
+      "sizeLines": 210,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/roll_state.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/temporary_close.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/temporary_override.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/trade_limits.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/futures/repocsv_spread_costs.py",
+      "language": "python",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "language": "python",
+      "sizeLines": 540,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "language": "python",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/_DEPRECATED/database_log.py",
+      "language": "python",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/email_control.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/emailing.py",
+      "language": "python",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/log_entry.py",
+      "language": "python",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syslogdiag/log_to_file.py",
+      "language": "python",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysdata/parquet/parquet_adjusted_prices.py": [
+      "sysdata/futures/adjusted_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/adjusted_prices.py"
+    ],
+    "sysdata/parquet/parquet_capital.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/capital.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/parquet/parquet_futures_per_contract_prices.py": [
+      "syscore/dateutils.py",
+      "sysdata/futures/futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py",
+      "sysobjects/futures_per_contract_prices.py"
+    ],
+    "sysdata/parquet/parquet_historic_contract_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_contract_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/contracts.py"
+    ],
+    "sysdata/parquet/parquet_historic_strategy_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/historic_strategy_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/parquet/parquet_access.py",
+      "sysdata/production/optimal_positions.py",
+      "syslogging/logger.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/parquet/parquet_spotfx_prices.py": [
+      "sysdata/fx/spotfx.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spot_fx_prices.py"
+    ],
+    "sysdata/parquet/parquet_spreads.py": [
+      "sysdata/futures/spreads.py",
+      "sysdata/parquet/parquet_access.py",
+      "syslogging/logger.py",
+      "sysobjects/spreads.py"
+    ],
+    "sysdata/production/broker_client_id.py": [
+      "syscore/constants.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/capital.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/capital.py"
+    ],
+    "sysdata/production/historic_contract_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/positions.py"
+    ],
+    "sysdata/production/historic_strategy_positions.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/locks.py": [
+      "syscore/exceptions.py",
+      "syslogging/logger.py"
+    ],
+    "sysdata/production/optimal_positions.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "sysobjects/production/optimal_positions.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/position_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysdata/production/process_control_data.py": [
+      "syscore/constants.py",
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/process_control.py"
+    ],
+    "sysdata/production/roll_state.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/roll_state.py"
+    ],
+    "sysdata/production/temporary_close.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/position_limits.py"
+    ],
+    "sysdata/production/temporary_override.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/override.py"
+    ],
+    "sysdata/production/trade_limits.py": [
+      "syscore/exceptions.py",
+      "sysdata/base_data.py",
+      "syslogging/logger.py",
+      "sysobjects/production/trade_limits.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "sysinit/futures/repocsv_spread_costs.py": [
+      "syscore/genutils.py",
+      "syscore/interactive/input.py",
+      "sysdata/csv/csv_spread_costs.py",
+      "sysdata/data_blob.py",
+      "sysdata/futures/spread_costs.py",
+      "sysdata/mongodb/mongo_spread_costs.py"
+    ],
+    "sysinit/transfer/backup_arctic_to_parquet.py": [
+      "syscore/dateutils.py",
+      "syscore/exceptions.py",
+      "syscore/interactive/input.py",
+      "sysdata/arctic/arctic_adjusted_prices.py",
+      "sysdata/arctic/arctic_capital.py",
+      "sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_multiple_prices.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysdata/arctic/arctic_spotfx_prices.py",
+      "sysdata/arctic/arctic_spreads.py",
+      "sysdata/data_blob.py",
+      "sysdata/mongodb/mongo_futures_contracts.py",
+      "sysdata/mongodb/mongo_historic_orders.py",
+      "sysdata/mongodb/mongo_roll_state_storage.py",
+      "sysdata/mongodb/mongo_spread_costs.py",
+      "sysdata/parquet/parquet_adjusted_prices.py",
+      "sysdata/parquet/parquet_capital.py",
+      "sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "sysdata/parquet/parquet_historic_contract_positions.py",
+      "sysdata/parquet/parquet_historic_strategy_positions.py",
+      "sysdata/parquet/parquet_multiple_prices.py",
+      "sysdata/parquet/parquet_optimal_positions.py",
+      "sysdata/parquet/parquet_spotfx_prices.py",
+      "sysdata/parquet/parquet_spreads.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py",
+      "sysproduction/data/directories.py",
+      "sysproduction/data/strategies.py"
+    ],
+    "sysinit/transfer/positions_from_timed_storage_to_arctic.py": [
+      "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "sysdata/arctic/arctic_historic_contract_positions.py",
+      "sysdata/arctic/arctic_historic_strategy_positions.py",
+      "sysdata/arctic/arctic_optimal_positions.py",
+      "sysobjects/contracts.py",
+      "sysobjects/production/tradeable_object.py"
+    ],
+    "syslogdiag/_DEPRECATED/database_log.py": [
+      "sysdata/base_data.py",
+      "syslogdiag/log_to_screen.py",
+      "syslogdiag/pst_logger.py"
+    ],
+    "syslogdiag/email_control.py": [
+      "sysdata/base_data.py",
+      "syslogging/logger.py"
+    ],
+    "syslogdiag/emailing.py": [
+      "sysdata/config/production_config.py"
+    ],
+    "syslogdiag/log_entry.py": [
+      "syscore/constants.py",
+      "syscore/dateutils.py"
+    ],
+    "syslogdiag/log_to_file.py": [
+      "syscore/fileutils.py",
+      "sysdata/config/production_config.py",
+      "syslogdiag/email_via_db_interface.py",
+      "syslogdiag/log_entry.py",
+      "syslogdiag/pst_logger.py"
+    ]
+  },
+  "neighborMap": {
+    "sysdata/parquet/parquet_adjusted_prices.py": [
+      {
+        "path": "sysdata/futures/adjusted_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "futuresAdjustedPricesData"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/adjusted_prices.py",
+        "batchIndex": 17,
+        "symbols": [
+          "futuresAdjustedPrices",
+          "_panama_stitch",
+          "_roll_in_panama",
+          "_update_adjusted_prices_from_multiple_no_roll",
+          "_calc_new_multiple_prices"
+        ]
+      },
+      {
+        "path": "sysdata/sim/db_futures_sim_data.py",
+        "batchIndex": 1,
+        "symbols": [
+          "dbFuturesSimData",
+          "get_class_for_data_type"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_capital.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_futures_per_contract_prices.py": [
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "sysdata/futures/futures_per_contract_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "futuresContractPriceData"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysobjects/futures_per_contract_prices.py",
+        "batchIndex": 12,
+        "symbols": [
+          "futuresContractPrices",
+          "futuresContractFinalPrices",
+          "_validate_price_data"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_historic_contract_positions.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_historic_strategy_positions.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_optimal_positions.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_spotfx_prices.py": [
+      {
+        "path": "sysdata/fx/spotfx.py",
+        "batchIndex": 3,
+        "symbols": [
+          "fxPricesData"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/spot_fx_prices.py",
+        "batchIndex": 19,
+        "symbols": [
+          "fxPrices",
+          "listOfCurrencyValues",
+          "get_fx_tuple_from_code"
+        ]
+      },
+      {
+        "path": "sysdata/sim/db_futures_sim_data.py",
+        "batchIndex": 1,
+        "symbols": [
+          "dbFuturesSimData",
+          "get_class_for_data_type"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/parquet/parquet_spreads.py": [
+      {
+        "path": "sysdata/futures/spreads.py",
+        "batchIndex": 6,
+        "symbols": [
+          "spreadsForInstrumentData"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_access.py",
+        "batchIndex": 6,
+        "symbols": [
+          "ParquetAccess",
+          "LocalAccessor"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/spreads.py",
+        "batchIndex": 8,
+        "symbols": [
+          "spreadsForInstrument"
+        ]
+      },
+      {
+        "path": "sysproduction/data/production_data_objects.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_class_for_data_type"
+        ]
+      }
+    ],
+    "sysdata/production/broker_client_id.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysbrokers/IB/client/ib_client_id.py",
+        "batchIndex": 5,
+        "symbols": [
+          "ibBrokerClientIdData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/capital.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "sysobjects/production/capital.py",
+        "batchIndex": 3,
+        "symbols": [
+          "totalCapitalUpdater",
+          "LargeCapitalChange"
+        ]
+      },
+      {
+        "path": "sysbrokers/broker_capital_data.py",
+        "batchIndex": 19,
+        "symbols": [
+          "brokerCapitalData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_capital.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticCapitalData"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_capital_data.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvCapitalData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/capital.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataCapital",
+          "dataMargin",
+          "capital_for_strategy"
+        ]
+      }
+    ],
+    "sysdata/production/historic_contract_positions.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysobjects/production/positions.py",
+        "batchIndex": 8,
+        "symbols": [
+          "Position",
+          "instrumentPosition",
+          "instrumentStrategyPosition",
+          "contractPosition",
+          "listOfPositions",
+          "listOfInstrumentPositions",
+          "listOfPositionsWithInstruments",
+          "listOfInstrumentStrategyPositions",
+          "listOfContractPositions",
+          "sum_for_instrument",
+          "sum_for_contract",
+          "_position_for_code_in_list",
+          "_position_for_contract_in_list"
+        ]
+      },
+      {
+        "path": "sysbrokers/broker_contract_position_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "brokerContractPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_contract_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticContractPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_contract_position_data.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvContractPositionData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/positions.py",
+        "batchIndex": 12,
+        "symbols": [
+          "diagPositions",
+          "updatePositions",
+          "annonate_df_index_with_positions_held",
+          "get_list_of_instruments_with_current_positions"
+        ]
+      }
+    ],
+    "sysdata/production/historic_strategy_positions.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "sysobjects/production/positions.py",
+        "batchIndex": 8,
+        "symbols": [
+          "Position",
+          "instrumentPosition",
+          "instrumentStrategyPosition",
+          "contractPosition",
+          "listOfPositions",
+          "listOfInstrumentPositions",
+          "listOfPositionsWithInstruments",
+          "listOfInstrumentStrategyPositions",
+          "listOfContractPositions",
+          "sum_for_instrument",
+          "sum_for_contract",
+          "_position_for_code_in_list",
+          "_position_for_contract_in_list"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_strategy_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticStrategyPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_strategy_position_data.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvStrategyPositionData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/positions.py",
+        "batchIndex": 12,
+        "symbols": [
+          "diagPositions",
+          "updatePositions",
+          "annonate_df_index_with_positions_held",
+          "get_list_of_instruments_with_current_positions"
+        ]
+      }
+    ],
+    "sysdata/production/locks.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_lock_data.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoLockData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/optimal_positions.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "sysobjects/production/optimal_positions.py",
+        "batchIndex": 8,
+        "symbols": [
+          "baseOptimalPosition",
+          "optimal_position_fields",
+          "simpleOptimalPosition",
+          "bufferedOptimalPositions",
+          "optimalPositionWithReference",
+          "optimalPositionWithDynamicCalculations",
+          "from_df_row_to_optimal_position",
+          "add_optimal_position_entry_row_to_positions_as_df",
+          "_check_append_positions_okay",
+          "_class_matches_field_list",
+          "infer_class_of_optimal_position_from_field_list",
+          "instrumentStrategyAndOptimalPosition",
+          "instrumentStrategyWithOptimalAndCurrentPosition",
+          "listOfOptimalAndCurrentPositionsAcrossInstrumentStrategies",
+          "listOfOptimalPositionsAcrossInstrumentStrategies"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_optimal_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticOptimalPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_optimal_position.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvOptimalPositionData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/optimal_positions.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataOptimalPositions",
+          "remove_raw_strategies",
+          "is_not_raw_strategy",
+          "is_raw_strategy",
+          "remove_raw_from_list_of_optimal_positions_and_instrument_strategies",
+          "is_not_raw_optimal_position_and_instrument_strategy",
+          "is_not_raw_instrument_strategy",
+          "instrument_strategy_with_raw_tag",
+          "strategy_name_with_raw_tag",
+          "remove_stale_strategies_and_instruments_from_list_of_optimal_positions_and_instrument_strategies",
+          "remove_stale_strategies_from_list_of_optimal_positions_and_instrument_strategies",
+          "remove_stale_instruments_from_list_of_optimal_positions_and_instrument_strategies"
+        ]
+      }
+    ],
+    "sysdata/production/override.py": [
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/override.py",
+        "batchIndex": 8,
+        "symbols": [
+          "lookup_value_and_return_float_or_object",
+          "Override",
+          "_apply_float_override",
+          "_apply_reduce_only",
+          "_apply_no_trading"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_override.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoOverrideData",
+          "from_dict_to_override",
+          "from_override_to_dict"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/position_limits.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/position_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "positionLimit",
+          "positionLimitForInstrument",
+          "positionLimitForStrategyInstrument",
+          "positionLimitAndPosition",
+          "apply_position_limit_to_order",
+          "apply_position_limit_to_single_leg_trade"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_position_limits.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoPositionLimitData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/process_control_data.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/process_control.py",
+        "batchIndex": 8,
+        "symbols": [
+          "processNotStarted",
+          "processNotRunning",
+          "dictOfRunningMethods",
+          "controlProcess",
+          "dictOfControlProcesses",
+          "is_pid_running"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_process_control.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoControlProcessData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/control_process.py",
+        "batchIndex": 4,
+        "symbols": [
+          "dataControlProcess",
+          "diagControlProcess",
+          "get_list_of_strategies_for_process",
+          "get_strategy_class_object_config"
+        ]
+      }
+    ],
+    "sysdata/production/roll_state.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/roll_state.py",
+        "batchIndex": 3,
+        "symbols": [
+          "is_double_sided_trade_roll_state",
+          "is_roll_state_requiring_order_generation",
+          "is_type_of_active_rolling_roll_state",
+          "explain_roll_state_str",
+          "name_of_roll_state",
+          "complete_roll_state",
+          "allowable_roll_state_from_current_and_position"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_roll_state_storage.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvRollStateData"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_roll_state_storage.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoRollStateData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/positions.py",
+        "batchIndex": 12,
+        "symbols": [
+          "diagPositions",
+          "updatePositions",
+          "annonate_df_index_with_positions_held",
+          "get_list_of_instruments_with_current_positions"
+        ]
+      }
+    ],
+    "sysdata/production/temporary_close.py": [
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/position_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "positionLimit",
+          "positionLimitForInstrument",
+          "positionLimitForStrategyInstrument",
+          "positionLimitAndPosition",
+          "apply_position_limit_to_order",
+          "apply_position_limit_to_single_leg_trade"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_temporary_close.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoTemporaryCloseData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/temporary_override.py": [
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/override.py",
+        "batchIndex": 8,
+        "symbols": [
+          "lookup_value_and_return_float_or_object",
+          "Override",
+          "_apply_float_override",
+          "_apply_reduce_only",
+          "_apply_no_trading"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_temporary_override.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoTemporaryOverrideData"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysdata/production/trade_limits.py": [
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "sysobjects/production/trade_limits.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeLimit",
+          "listOfTradeLimits"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_trade_limits.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoTradeLimitData",
+          "_from_result_dict_to_isd",
+          "_from_trade_limit_dict_to_required_dict"
+        ]
+      },
+      {
+        "path": "sysproduction/data/controls.py",
+        "batchIndex": 12,
+        "symbols": [
+          "OverrideWithReason",
+          "dataBrokerClientIDs",
+          "dataLocks",
+          "dataTradeLimits",
+          "diagOverrides",
+          "updateOverrides",
+          "dataPositionLimits",
+          "remove_stale_instruments_and_strategies_from_list_of_trade_limits",
+          "remove_stale_instruments_from_list_of_trade_limits",
+          "remove_stale_strategies_from_list_of_trade_limits",
+          "remove_overrides_for_stale_instruments_from_dict_of_overrides"
+        ]
+      }
+    ],
+    "sysinit/futures/repocsv_spread_costs.py": [
+      {
+        "path": "syscore/genutils.py",
+        "batchIndex": 14,
+        "symbols": [
+          "new_removing_existing",
+          "list_intersection",
+          "list_difference",
+          "list_union",
+          "get_unique_list",
+          "get_unique_list_slow",
+          "round_significant_figures",
+          "flatten_list",
+          "str2Bool",
+          "str_of_int",
+          "same_sign",
+          "sign",
+          "return_another_value_if_nan",
+          "are_dicts_equal",
+          "quickTimer",
+          "if_empty_string_return_object",
+          "if_object_matches_return_empty_string",
+          "transfer_object_attributes",
+          "highest_common_factor_for_list",
+          "divide_list_of_ints_by_highest_common_factor",
+          "list_of_ints_with_highest_common_factor_positive_first",
+          "np_convert",
+          "intersection_intervals"
+        ]
+      },
+      {
+        "path": "syscore/interactive/input.py",
+        "batchIndex": 16,
+        "symbols": [
+          "true_if_answer_is_yes",
+          "get_input_from_user_and_convert_to_type",
+          "_get_input_and_check_type",
+          "_convert_type_or_throw_expection",
+          "input_field_names_for_named_tuple",
+          "override_tuple_fields",
+          "named_tuple_as_dict"
+        ]
+      },
+      {
+        "path": "sysdata/csv/csv_spread_costs.py",
+        "batchIndex": 6,
+        "symbols": [
+          "csvSpreadCostData"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysdata/futures/spread_costs.py",
+        "batchIndex": 6,
+        "symbols": [
+          "spreadCostData"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_spread_costs.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoSpreadCostData",
+          "_cost_value_from_dict",
+          "_dict_from_spread_cost"
+        ]
+      }
+    ],
+    "sysinit/transfer/backup_arctic_to_parquet.py": [
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "syscore/exceptions.py",
+        "batchIndex": 19,
+        "symbols": [
+          "missingInstrument",
+          "missingContract",
+          "missingData",
+          "missingFile",
+          "marketClosed",
+          "fillExceedsTrade",
+          "existingData",
+          "orderCannotBeModified",
+          "ContractNotFound"
+        ]
+      },
+      {
+        "path": "syscore/interactive/input.py",
+        "batchIndex": 16,
+        "symbols": [
+          "true_if_answer_is_yes",
+          "get_input_from_user_and_convert_to_type",
+          "_get_input_and_check_type",
+          "_convert_type_or_throw_expection",
+          "input_field_names_for_named_tuple",
+          "override_tuple_fields",
+          "named_tuple_as_dict"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_adjusted_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "arcticFuturesAdjustedPricesData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_capital.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticCapitalData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_futures_per_contract_prices.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticFuturesContractPriceData",
+          "from_key_to_freq_and_contract",
+          "from_contract_and_freq_to_key",
+          "from_tuple_to_key"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_contract_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticContractPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_strategy_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticStrategyPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_multiple_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "arcticFuturesMultiplePricesData",
+          "_change_contracts_to_str"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_optimal_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticOptimalPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_spotfx_prices.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticFxPricesData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_spreads.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticSpreadsForInstrumentData"
+        ]
+      },
+      {
+        "path": "sysdata/data_blob.py",
+        "batchIndex": 3,
+        "symbols": [
+          "dataBlob",
+          "identifying_name"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_futures_contracts.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoFuturesContractData"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_historic_orders.py",
+        "batchIndex": 11,
+        "symbols": [
+          "mongoGenericHistoricOrdersData",
+          "mongoStrategyHistoricOrdersData",
+          "mongoContractHistoricOrdersData",
+          "mongoBrokerHistoricOrdersData"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_roll_state_storage.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoRollStateData"
+        ]
+      },
+      {
+        "path": "sysdata/mongodb/mongo_spread_costs.py",
+        "batchIndex": 6,
+        "symbols": [
+          "mongoSpreadCostData",
+          "_cost_value_from_dict",
+          "_dict_from_spread_cost"
+        ]
+      },
+      {
+        "path": "sysdata/parquet/parquet_multiple_prices.py",
+        "batchIndex": 16,
+        "symbols": [
+          "parquetFuturesMultiplePricesData",
+          "_change_contracts_to_str"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      },
+      {
+        "path": "sysproduction/data/directories.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_main_backup_directory",
+          "get_csv_backup_directory",
+          "get_parquet_backup_directory",
+          "get_csv_dump_dir",
+          "get_mongo_dump_directory",
+          "get_mongo_backup_directory",
+          "get_statefile_directory",
+          "get_statefile_backup_directory",
+          "get_echo_file_directory",
+          "get_echo_extension"
+        ]
+      },
+      {
+        "path": "sysproduction/data/strategies.py",
+        "batchIndex": 4,
+        "symbols": [
+          "diagStrategiesConfig",
+          "get_list_of_strategies",
+          "get_list_of_strategies_from_config",
+          "get_list_of_strategies_from_positions",
+          "get_list_of_strategies_from_optimal_positions",
+          "get_valid_strategy_name_from_user"
+        ]
+      }
+    ],
+    "sysinit/transfer/positions_from_timed_storage_to_arctic.py": [
+      {
+        "path": "sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+        "batchIndex": 5,
+        "symbols": [
+          "mongoOptimalPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+        "batchIndex": 5,
+        "symbols": [
+          "mongoContractPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+        "batchIndex": 5,
+        "symbols": [
+          "mongoStrategyPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_contract_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticContractPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_historic_strategy_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticStrategyPositionData"
+        ]
+      },
+      {
+        "path": "sysdata/arctic/arctic_optimal_positions.py",
+        "batchIndex": 5,
+        "symbols": [
+          "arcticOptimalPositionData"
+        ]
+      },
+      {
+        "path": "sysobjects/contracts.py",
+        "batchIndex": 8,
+        "symbols": [
+          "parametersForFuturesContract",
+          "contract_key_from_code_and_id",
+          "contract_from_code_and_id",
+          "contract_from_key",
+          "futuresContract",
+          "_resolve_args_for_futures_contract",
+          "key_contains_instrument_code",
+          "get_contract_key_from_code_and_id",
+          "get_code_and_id_from_contract_key",
+          "listOfFuturesContracts"
+        ]
+      },
+      {
+        "path": "sysobjects/production/tradeable_object.py",
+        "batchIndex": 8,
+        "symbols": [
+          "tradeableObject",
+          "listOfInstrumentStrategies",
+          "instrumentStrategy",
+          "futuresContractStrategy"
+        ]
+      }
+    ],
+    "syslogdiag/_DEPRECATED/database_log.py": [
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogdiag/log_to_screen.py",
+        "batchIndex": 8,
+        "symbols": [
+          "logtoscreen"
+        ]
+      },
+      {
+        "path": "syslogdiag/pst_logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "pst_logger",
+          "get_update_attributes_list",
+          "get_list_of_disallowed_attributes",
+          "nullLog"
+        ]
+      },
+      {
+        "path": "sysdata/_DEPRECATED/mongo_log.py",
+        "batchIndex": 5,
+        "symbols": [
+          "mongoLogData",
+          "add_before_n_days_to_attribute_dict",
+          "add_after_n_days_to_attribute_dict",
+          "add_timestamp_cutoff_to_attribute_dict",
+          "cutoff_date_as_long_n_days_before",
+          "mongoLogEntry"
+        ]
+      },
+      {
+        "path": "sysproduction/_DEPRECATED/logs.py",
+        "batchIndex": 8,
+        "symbols": [
+          "diagLogs"
+        ]
+      }
+    ],
+    "syslogdiag/email_control.py": [
+      {
+        "path": "sysdata/base_data.py",
+        "batchIndex": 5,
+        "symbols": [
+          "baseData"
+        ]
+      },
+      {
+        "path": "syslogging/logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "get_logger",
+          "_configure_logging",
+          "_configure_sim",
+          "_configure_prod",
+          "_get_log_server_config",
+          "_check_log_server"
+        ]
+      },
+      {
+        "path": "syslogdiag/mongo_email_control.py",
+        "batchIndex": 8,
+        "symbols": [
+          "mongoEmailControlData"
+        ]
+      }
+    ],
+    "syslogdiag/emailing.py": [
+      {
+        "path": "sysdata/config/production_config.py",
+        "batchIndex": 6,
+        "symbols": [
+          "get_production_config"
+        ]
+      },
+      {
+        "path": "syslogdiag/email_via_db_interface.py",
+        "batchIndex": 3,
+        "symbols": [
+          "send_production_mail_msg_attachment",
+          "send_production_mail_msg",
+          "send_email_and_record_date_or_store_on_fail",
+          "can_we_send_this_email_now",
+          "store_and_warn_email",
+          "have_we_sent_warning_email_for_this_subject",
+          "check_if_sent_in_last_day",
+          "send_warning_email",
+          "get_time_last_email_sent_with_this_subject",
+          "record_date_of_email_send",
+          "get_time_last_warning_email_sent_with_this_subject",
+          "record_date_of_email_warning_send",
+          "store_message",
+          "retrieve_and_delete_stored_messages",
+          "dataEmailControl",
+          "get_storage_filename"
+        ]
+      },
+      {
+        "path": "syslogging/handlers.py",
+        "batchIndex": 8,
+        "symbols": [
+          "PstSMTPHandler",
+          "MostRecentHandler",
+          "LogRecordStreamHandler"
+        ]
+      }
+    ],
+    "syslogdiag/log_entry.py": [
+      {
+        "path": "syscore/constants.py",
+        "batchIndex": 3,
+        "symbols": [
+          "named_object",
+          "status"
+        ]
+      },
+      {
+        "path": "syscore/dateutils.py",
+        "batchIndex": 10,
+        "symbols": [
+          "calculate_start_and_end_dates",
+          "_resolve_end_date_given_period_and_explicit_end_date",
+          "_resolve_start_date_given_end_date_calendar_days_and_period",
+          "n_days_ago",
+          "get_date_from_period_and_end_date",
+          "calculate_previous_date_from_period_with_char_number",
+          "calculate_starting_day_of_current_year",
+          "calculate_starting_day_of_current_uk_tax_year",
+          "calculate_starting_day_of_current_month",
+          "calculate_starting_day_of_current_quarter",
+          "preceeding_midnight_of_datetime",
+          "preceeding_midnight_of_date",
+          "following_one_second_before_midnight_of_datetime",
+          "following_one_second_before_midnight_of_date",
+          "from_config_frequency_pandas_resample",
+          "from_frequency_to_times_per_year",
+          "from_config_frequency_to_frequency",
+          "month_from_contract_letter",
+          "contract_month_from_number",
+          "datetime_to_long",
+          "long_to_datetime",
+          "date_as_short_pattern_or_question_if_missing",
+          "create_datetime_marker_string",
+          "from_marker_string_to_datetime",
+          "time_to_string",
+          "time_from_string",
+          "replace_midnight_with_notional_closing_time",
+          "check_time_matches_closing_time_to_second",
+          "strip_timezone_fromdatetime",
+          "generate_equal_dates_within_year",
+          "_calculate_first_date_for_equal_dates",
+          "get_approx_vol_scalar_versus_daily_vol_for_period"
+        ]
+      },
+      {
+        "path": "sysdata/_DEPRECATED/mongo_log.py",
+        "batchIndex": 5,
+        "symbols": [
+          "mongoLogData",
+          "add_before_n_days_to_attribute_dict",
+          "add_after_n_days_to_attribute_dict",
+          "add_timestamp_cutoff_to_attribute_dict",
+          "cutoff_date_as_long_n_days_before",
+          "mongoLogEntry"
+        ]
+      },
+      {
+        "path": "syslogdiag/log_to_screen.py",
+        "batchIndex": 8,
+        "symbols": [
+          "logtoscreen"
+        ]
+      },
+      {
+        "path": "syslogdiag/pst_logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "pst_logger",
+          "get_update_attributes_list",
+          "get_list_of_disallowed_attributes",
+          "nullLog"
+        ]
+      }
+    ],
+    "syslogdiag/log_to_file.py": [
+      {
+        "path": "syscore/fileutils.py",
+        "batchIndex": 5,
+        "symbols": [
+          "rename_files_with_extension_in_pathname_as_archive_files",
+          "rename_file_as_archive",
+          "delete_old_files_with_extension_in_pathname",
+          "delete_file_if_too_old",
+          "get_file_or_folder_age_in_days",
+          "resolve_path_and_filename_for_package",
+          "get_resolved_pathname",
+          "_make_absolute",
+          "_transform_path_into_list",
+          "_add_reserved_characters_to_pathname",
+          "_extract_filename_from_combined_path_and_filename_list",
+          "write_list_of_lists_as_html_table_in_file",
+          "files_with_extension_in_pathname",
+          "files_with_extension_in_resolved_pathname",
+          "full_filename_for_file_in_home_dir",
+          "does_filename_exist",
+          "does_resolved_filename_exist"
+        ]
+      },
+      {
+        "path": "sysdata/config/production_config.py",
+        "batchIndex": 6,
+        "symbols": [
+          "get_production_config"
+        ]
+      },
+      {
+        "path": "syslogdiag/email_via_db_interface.py",
+        "batchIndex": 3,
+        "symbols": [
+          "send_production_mail_msg_attachment",
+          "send_production_mail_msg",
+          "send_email_and_record_date_or_store_on_fail",
+          "can_we_send_this_email_now",
+          "store_and_warn_email",
+          "have_we_sent_warning_email_for_this_subject",
+          "check_if_sent_in_last_day",
+          "send_warning_email",
+          "get_time_last_email_sent_with_this_subject",
+          "record_date_of_email_send",
+          "get_time_last_warning_email_sent_with_this_subject",
+          "record_date_of_email_warning_send",
+          "store_message",
+          "retrieve_and_delete_stored_messages",
+          "dataEmailControl",
+          "get_storage_filename"
+        ]
+      },
+      {
+        "path": "syslogdiag/pst_logger.py",
+        "batchIndex": 8,
+        "symbols": [
+          "pst_logger",
+          "get_update_attributes_list",
+          "get_list_of_disallowed_attributes",
+          "nullLog"
+        ]
+      }
+    ]
+  }
+}

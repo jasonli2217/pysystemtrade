@@ -1,0 +1,1094 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/data/sim_data.py",
+   "type": "file",
+   "name": "sim_data.py",
+   "filePath": "sysproduction/data/sim_data.py",
+   "summary": "Factory returning the appropriate database-backed sim data object for production runs from a data blob.",
+   "tags": [
+    "production",
+    "data-source",
+    "factory"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "type": "file",
+   "name": "run_dynamic_optimised_system.py",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "summary": "Production runner that builds and executes the dynamic optimised system and writes updated optimal positions.",
+   "tags": [
+    "production",
+    "runner",
+    "system-assembly",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysproduction/strategy_code/run_system_classic.py",
+   "type": "file",
+   "name": "run_system_classic.py",
+   "filePath": "sysproduction/strategy_code/run_system_classic.py",
+   "summary": "Production runner for the classic system that computes buffered positions and records optimal position entries.",
+   "tags": [
+    "production",
+    "runner",
+    "system-assembly",
+    "buffering"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysquant/estimators/turnover.py",
+   "type": "file",
+   "name": "turnover.py",
+   "filePath": "sysquant/estimators/turnover.py",
+   "summary": "Lightweight data containers holding turnover figures across assets, trading rules and subsystems.",
+   "tags": [
+    "data-model",
+    "estimation",
+    "turnover"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysquant/optimisation/generic_optimiser.py",
+   "type": "file",
+   "name": "generic_optimiser.py",
+   "filePath": "sysquant/optimisation/generic_optimiser.py",
+   "summary": "Generic portfolio optimiser that pre-processes returns and fits weights over time using a configured method.",
+   "tags": [
+    "optimisation",
+    "portfolio",
+    "service"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysquant/optimisation/optimise_over_time.py",
+   "type": "file",
+   "name": "optimise_over_time.py",
+   "filePath": "sysquant/optimisation/optimise_over_time.py",
+   "summary": "Rolling optimiser that fits portfolio weights across successive fitting-date windows.",
+   "tags": [
+    "optimisation",
+    "portfolio",
+    "rolling"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:sysquant/optimisation/pre_processing.py",
+   "type": "file",
+   "name": "pre_processing.py",
+   "filePath": "sysquant/optimisation/pre_processing.py",
+   "summary": "Pre-processes returns for optimisation: pooling, cost adjustment, SR equalisation and turnover-based cost estimation.",
+   "tags": [
+    "optimisation",
+    "preprocessing",
+    "returns",
+    "costs"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:sysquant/returns.py",
+   "type": "file",
+   "name": "returns.py",
+   "filePath": "sysquant/returns.py",
+   "summary": "Return data structures and helpers for optimisation, including SR dictionaries, cost adjustments and account-curve conversion.",
+   "tags": [
+    "data-model",
+    "returns",
+    "optimisation",
+    "estimation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:systems/accounts/accounts_stage.py",
+   "type": "file",
+   "name": "accounts_stage.py",
+   "filePath": "systems/accounts/accounts_stage.py",
+   "summary": "Thin Account stage that composes accounting mixins (trading rules, multiplier, subsystem) into the system pipeline.",
+   "tags": [
+    "stage",
+    "accounting",
+    "composition"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/data/sim_data.py:get_sim_data_object_for_production",
+   "type": "function",
+   "name": "get_sim_data_object_for_production",
+   "filePath": "sysproduction/data/sim_data.py",
+   "lineRange": [
+    17,
+    33
+   ],
+   "summary": "Returns a configured database sim data object for production runs from a data blob.",
+   "tags": [
+    "production",
+    "factory",
+    "data-source"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/strategy_code/run_dynamic_optimised_system.py:runSystemCarryTrendDynamic",
+   "type": "class",
+   "name": "runSystemCarryTrendDynamic",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "lineRange": [
+    23,
+    46
+   ],
+   "summary": "Production run wrapper that constructs the dynamic optimised carry/trend system.",
+   "tags": [
+    "production",
+    "runner",
+    "system-assembly"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:dynamic_system",
+   "type": "function",
+   "name": "dynamic_system",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "lineRange": [
+    49,
+    69
+   ],
+   "summary": "Builds the dynamic optimised System from config, data blob and capital settings.",
+   "tags": [
+    "factory",
+    "system-assembly",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:futures_system",
+   "type": "function",
+   "name": "futures_system",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "lineRange": [
+    88,
+    105
+   ],
+   "summary": "Attaches all stages required for the dynamic optimised futures system.",
+   "tags": [
+    "factory",
+    "system-assembly"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:updated_optimal_positions_for_dynamic_system",
+   "type": "function",
+   "name": "updated_optimal_positions_for_dynamic_system",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "lineRange": [
+    108,
+    140
+   ],
+   "summary": "Computes and persists updated optimal positions produced by the dynamic system.",
+   "tags": [
+    "production",
+    "positions",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:construct_optimal_position_entry",
+   "type": "function",
+   "name": "construct_optimal_position_entry",
+   "filePath": "sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "lineRange": [
+    143,
+    172
+   ],
+   "summary": "Builds an optimal-position database entry from the system's computed positions.",
+   "tags": [
+    "production",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysproduction/strategy_code/run_system_classic.py:runSystemClassic",
+   "type": "class",
+   "name": "runSystemClassic",
+   "filePath": "sysproduction/strategy_code/run_system_classic.py",
+   "lineRange": [
+    37,
+    120
+   ],
+   "summary": "Production run wrapper for the classic system that computes and records buffered positions.",
+   "tags": [
+    "production",
+    "runner",
+    "system-assembly"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_system_classic.py:production_classic_futures_system",
+   "type": "function",
+   "name": "production_classic_futures_system",
+   "filePath": "sysproduction/strategy_code/run_system_classic.py",
+   "lineRange": [
+    123,
+    143
+   ],
+   "summary": "Builds the classic production futures system from config, data blob and capital.",
+   "tags": [
+    "factory",
+    "system-assembly",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_system_classic.py:updated_buffered_positions",
+   "type": "function",
+   "name": "updated_buffered_positions",
+   "filePath": "sysproduction/strategy_code/run_system_classic.py",
+   "lineRange": [
+    146,
+    173
+   ],
+   "summary": "Computes updated buffered positions for each instrument from the classic system.",
+   "tags": [
+    "production",
+    "positions",
+    "buffering"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/strategy_code/run_system_classic.py:construct_position_entry",
+   "type": "function",
+   "name": "construct_position_entry",
+   "filePath": "sysproduction/strategy_code/run_system_classic.py",
+   "lineRange": [
+    186,
+    204
+   ],
+   "summary": "Builds an optimal-position database entry from buffered classic-system positions.",
+   "tags": [
+    "production",
+    "positions"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysquant/estimators/turnover.py:turnoverDataAcrossAssets",
+   "type": "class",
+   "name": "turnoverDataAcrossAssets",
+   "filePath": "sysquant/estimators/turnover.py",
+   "lineRange": [
+    8,
+    15
+   ],
+   "summary": "Container aggregating turnover figures across multiple assets.",
+   "tags": [
+    "data-model",
+    "turnover"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysquant/optimisation/generic_optimiser.py:genericOptimiser",
+   "type": "class",
+   "name": "genericOptimiser",
+   "filePath": "sysquant/optimisation/generic_optimiser.py",
+   "lineRange": [
+    9,
+    98
+   ],
+   "summary": "Generic optimiser orchestrating returns pre-processing and rolling weight fitting for a configured method.",
+   "tags": [
+    "optimisation",
+    "portfolio",
+    "service"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysquant/optimisation/optimise_over_time.py:optimiseWeightsOverTime",
+   "type": "class",
+   "name": "optimiseWeightsOverTime",
+   "filePath": "sysquant/optimisation/optimise_over_time.py",
+   "lineRange": [
+    14,
+    81
+   ],
+   "summary": "Fits portfolio weights across rolling fitting-date windows and assembles the resulting weight series.",
+   "tags": [
+    "optimisation",
+    "rolling",
+    "portfolio"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysquant/optimisation/pre_processing.py:returnsPreProcessor",
+   "type": "class",
+   "name": "returnsPreProcessor",
+   "filePath": "sysquant/optimisation/pre_processing.py",
+   "lineRange": [
+    14,
+    214
+   ],
+   "summary": "Pre-processes asset returns for optimisation: pooling, cost deflation, SR equalisation and frequency handling.",
+   "tags": [
+    "optimisation",
+    "preprocessing",
+    "returns"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:sysquant/returns.py:dictOfReturnsForOptimisation",
+   "type": "class",
+   "name": "dictOfReturnsForOptimisation",
+   "filePath": "sysquant/returns.py",
+   "lineRange": [
+    79,
+    137
+   ],
+   "summary": "Dictionary of per-asset returns prepared for portfolio optimisation with alignment helpers.",
+   "tags": [
+    "data-model",
+    "returns",
+    "optimisation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:sysquant/returns.py:returnsForOptimisationWithCosts",
+   "type": "class",
+   "name": "returnsForOptimisationWithCosts",
+   "filePath": "sysquant/returns.py",
+   "lineRange": [
+    262,
+    296
+   ],
+   "summary": "Returns series for optimisation bundled with associated cost information.",
+   "tags": [
+    "data-model",
+    "returns",
+    "costs"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysquant/returns.py:_get_annual_SR_for_returns_for_optimisation",
+   "type": "function",
+   "name": "_get_annual_SR_for_returns_for_optimisation",
+   "filePath": "sysquant/returns.py",
+   "lineRange": [
+    313,
+    329
+   ],
+   "summary": "Computes the annualised Sharpe ratio for a returns-for-optimisation object.",
+   "tags": [
+    "estimation",
+    "sharpe",
+    "returns"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:systems/accounts/accounts_stage.py:Account",
+   "type": "class",
+   "name": "Account",
+   "filePath": "systems/accounts/accounts_stage.py",
+   "lineRange": [
+    9,
+    12
+   ],
+   "summary": "Account stage composing trading-rule, multiplier and subsystem accounting mixins.",
+   "tags": [
+    "stage",
+    "accounting",
+    "composition"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "function:sysproduction/data/sim_data.py:get_sim_data_object_for_production",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "function:sysproduction/data/sim_data.py:get_sim_data_object_for_production",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "class:sysproduction/strategy_code/run_dynamic_optimised_system.py:runSystemCarryTrendDynamic",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "class:sysproduction/strategy_code/run_dynamic_optimised_system.py:runSystemCarryTrendDynamic",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:dynamic_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:dynamic_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:futures_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:futures_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:updated_optimal_positions_for_dynamic_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:updated_optimal_positions_for_dynamic_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:construct_optimal_position_entry",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "function:sysproduction/strategy_code/run_dynamic_optimised_system.py:construct_optimal_position_entry",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "class:sysproduction/strategy_code/run_system_classic.py:runSystemClassic",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "class:sysproduction/strategy_code/run_system_classic.py:runSystemClassic",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:production_classic_futures_system",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:production_classic_futures_system",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:updated_buffered_positions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:updated_buffered_positions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:construct_position_entry",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "function:sysproduction/strategy_code/run_system_classic.py:construct_position_entry",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/estimators/turnover.py",
+   "target": "class:sysquant/estimators/turnover.py:turnoverDataAcrossAssets",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/estimators/turnover.py",
+   "target": "class:sysquant/estimators/turnover.py:turnoverDataAcrossAssets",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "class:sysquant/optimisation/generic_optimiser.py:genericOptimiser",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "class:sysquant/optimisation/generic_optimiser.py:genericOptimiser",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "class:sysquant/optimisation/optimise_over_time.py:optimiseWeightsOverTime",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "class:sysquant/optimisation/optimise_over_time.py:optimiseWeightsOverTime",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/optimisation/pre_processing.py",
+   "target": "class:sysquant/optimisation/pre_processing.py:returnsPreProcessor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/optimisation/pre_processing.py",
+   "target": "class:sysquant/optimisation/pre_processing.py:returnsPreProcessor",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "class:sysquant/returns.py:dictOfReturnsForOptimisation",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "class:sysquant/returns.py:dictOfReturnsForOptimisation",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "class:sysquant/returns.py:returnsForOptimisationWithCosts",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "class:sysquant/returns.py:returnsForOptimisationWithCosts",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "function:sysquant/returns.py:_get_annual_SR_for_returns_for_optimisation",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "function:sysquant/returns.py:_get_annual_SR_for_returns_for_optimisation",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:systems/accounts/accounts_stage.py",
+   "target": "class:systems/accounts/accounts_stage.py:Account",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:systems/accounts/accounts_stage.py",
+   "target": "class:systems/accounts/accounts_stage.py:Account",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "file:sysdata/sim/db_futures_sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/data/sim_data.py",
+   "target": "file:sysproduction/data/production_data_objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysobjects/production/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysproduction/data/sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:sysproduction/strategy_code/run_system_classic.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/forecast_combine.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/forecast_scale_cap.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/forecasting.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/portfolio.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/positionsizing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/provided/dynamic_small_system_optimise/accounts_stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/provided/dynamic_small_system_optimise/optimised_positions_stage.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/rawdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_dynamic_optimised_system.py",
+   "target": "file:systems/risk.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysdata/config/configdata.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysobjects/production/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysobjects/production/tradeable_object.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/backtest.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/currency_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/optimal_positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:sysproduction/data/sim_data.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:systems/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/strategy_code/run_system_classic.py",
+   "target": "file:systems/provided/futures_chapter15/basesystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/estimators/turnover.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "file:sysquant/optimisation/optimise_over_time.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "file:sysquant/optimisation/pre_processing.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "file:sysquant/optimisation/SR_adjustment.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/generic_optimiser.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "file:syscore/interactive/progress_bar.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "file:sysquant/fitting_dates.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "file:sysquant/optimisation/portfolio_optimiser.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/optimise_over_time.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/pre_processing.py",
+   "target": "file:sysquant/estimators/turnover.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/optimisation/pre_processing.py",
+   "target": "file:sysquant/returns.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "file:syscore/pandas/list_of_df.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysquant/returns.py",
+   "target": "file:systems/accounts/curves/account_curve_group.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/accounts_stage.py",
+   "target": "file:systems/accounts/account_subsystem.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/accounts_stage.py",
+   "target": "file:systems/accounts/account_trading_rules.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:systems/accounts/accounts_stage.py",
+   "target": "file:systems/accounts/account_with_multiplier.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

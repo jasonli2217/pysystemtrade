@@ -1,0 +1,1504 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysdata/production/trade_limits.py",
+      "type": "file",
+      "name": "trade_limits.py",
+      "filePath": "sysdata/production/trade_limits.py",
+      "summary": "Abstract production data store for rolling trade limits per instrument and instrument-strategy, computing what trades remain possible within configured periods.",
+      "tags": [
+        "data-model",
+        "service",
+        "trading-control",
+        "business-logic"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysinit/futures/repocsv_spread_costs.py",
+      "type": "file",
+      "name": "repocsv_spread_costs.py",
+      "filePath": "sysinit/futures/repocsv_spread_costs.py",
+      "summary": "Initialisation script that copies spread cost data from CSV into Mongo, interactively confirming new, modified, and deleted instruments.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration",
+        "interactive"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "type": "file",
+      "name": "backup_arctic_to_parquet.py",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "summary": "Migration/backup script that copies every production data type from the Arctic/Mongo stores into Parquet (and CSV dumps), verifying each write round-trips.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration",
+        "backup"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "type": "file",
+      "name": "positions_from_timed_storage_to_arctic.py",
+      "filePath": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "summary": "One-off transfer script moving legacy timed-storage strategy, contract, and optimal positions from deprecated Mongo stores into Arctic.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration",
+        "positions"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "type": "file",
+      "name": "database_log.py",
+      "filePath": "syslogdiag/_DEPRECATED/database_log.py",
+      "summary": "Deprecated stub log data class retained only for backward compatibility; defines an empty database-backed log interface.",
+      "tags": [
+        "deprecated",
+        "logging",
+        "data-model"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:syslogdiag/email_control.py",
+      "type": "file",
+      "name": "email_control.py",
+      "filePath": "syslogdiag/email_control.py",
+      "summary": "Abstract data store recording when emails (and warning emails) were last sent for a given subject, used to throttle notifications.",
+      "tags": [
+        "data-model",
+        "service",
+        "email",
+        "logging"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:syslogdiag/emailing.py",
+      "type": "file",
+      "name": "emailing.py",
+      "filePath": "syslogdiag/emailing.py",
+      "summary": "Low-level emailing utilities sending plain, dataframe, file, and PDF-attachment emails over SMTP using production config credentials.",
+      "tags": [
+        "utility",
+        "email",
+        "notification",
+        "io"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:syslogdiag/log_entry.py",
+      "type": "file",
+      "name": "log_entry.py",
+      "filePath": "syslogdiag/log_entry.py",
+      "summary": "Defines the logEntry value object capturing a single log record's timestamp, level, text, and attributes, with dict serialization.",
+      "tags": [
+        "data-model",
+        "logging",
+        "serialization",
+        "value-object"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "file:syslogdiag/log_to_file.py",
+      "type": "file",
+      "name": "log_to_file.py",
+      "filePath": "syslogdiag/log_to_file.py",
+      "summary": "File-based logger implementation that writes log entries to a rolling file, emails the user on serious messages, and resolves the logging directory from config.",
+      "tags": [
+        "service",
+        "logging",
+        "io",
+        "file-handler"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Follows pysystemtrade convention of abstract <thing>Data base classes with concrete storage backends overriding `_`-prefixed private hooks."
+    },
+    {
+      "id": "class:sysdata/production/trade_limits.py:tradeLimitData",
+      "type": "class",
+      "name": "tradeLimitData",
+      "filePath": "sysdata/production/trade_limits.py",
+      "lineRange": [
+        42,
+        216
+      ],
+      "summary": "Abstract rolling trade-limit store computing remaining tradeable size within configured periods per instrument and instrument-strategy.",
+      "tags": [
+        "data-model",
+        "trading-control",
+        "business-logic"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:sysinit/futures/repocsv_spread_costs.py:copy_spread_costs_from_csv_to_mongo",
+      "type": "function",
+      "name": "copy_spread_costs_from_csv_to_mongo",
+      "filePath": "sysinit/futures/repocsv_spread_costs.py",
+      "lineRange": [
+        13,
+        40
+      ],
+      "summary": "Top-level routine that diffs CSV vs Mongo spread costs and dispatches new/modified/deleted processing.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/repocsv_spread_costs.py:process_new_instruments",
+      "type": "function",
+      "name": "process_new_instruments",
+      "filePath": "sysinit/futures/repocsv_spread_costs.py",
+      "lineRange": [
+        43,
+        64
+      ],
+      "summary": "Interactively adds spread costs for instruments present in CSV but missing in Mongo.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "interactive"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/futures/repocsv_spread_costs.py:process_modified_instruments",
+      "type": "function",
+      "name": "process_modified_instruments",
+      "filePath": "sysinit/futures/repocsv_spread_costs.py",
+      "lineRange": [
+        67,
+        102
+      ],
+      "summary": "Interactively updates Mongo spread costs where they differ from CSV.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/futures/repocsv_spread_costs.py:process_deleted_instruments",
+      "type": "function",
+      "name": "process_deleted_instruments",
+      "filePath": "sysinit/futures/repocsv_spread_costs.py",
+      "lineRange": [
+        105,
+        120
+      ],
+      "summary": "Interactively removes Mongo spread costs for instruments no longer in CSV.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "interactive"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_arctic_to_parquet",
+      "type": "function",
+      "name": "backup_arctic_to_parquet",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        55,
+        92
+      ],
+      "summary": "Entry-point orchestrating backup of every production data type from Arctic/Mongo to Parquet and CSV.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:get_data_blob",
+      "type": "function",
+      "name": "get_data_blob",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        95,
+        138
+      ],
+      "summary": "Builds the dataBlob wiring together all Arctic, Mongo, Parquet, and CSV data classes used during backup.",
+      "tags": [
+        "script",
+        "factory",
+        "data-pipeline"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_futures_contract_prices_for_contract_to_parquet",
+      "type": "function",
+      "name": "backup_futures_contract_prices_for_contract_to_parquet",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        197,
+        246
+      ],
+      "summary": "Copies and verifies per-frequency futures contract prices for one contract from Arctic into Parquet.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_contract_position_data",
+      "type": "function",
+      "name": "backup_contract_position_data",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        320,
+        360
+      ],
+      "summary": "Copies and verifies historic contract position series from Arctic into Parquet.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_strategy_position_data",
+      "type": "function",
+      "name": "backup_strategy_position_data",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        363,
+        401
+      ],
+      "summary": "Copies and verifies historic strategy position series from Arctic into Parquet.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_historical_orders",
+      "type": "function",
+      "name": "backup_historical_orders",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        404,
+        427
+      ],
+      "summary": "Backs up strategy, contract, and broker historic orders from Mongo into CSV.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_capital",
+      "type": "function",
+      "name": "backup_capital",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        430,
+        460
+      ],
+      "summary": "Copies and verifies per-strategy capital series from Arctic into Parquet.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_optimal_positions",
+      "type": "function",
+      "name": "backup_optimal_positions",
+      "filePath": "sysinit/transfer/backup_arctic_to_parquet.py",
+      "lineRange": [
+        463,
+        496
+      ],
+      "summary": "Copies and verifies optimal positions from Arctic into Parquet.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "backup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_strategy_positions",
+      "type": "function",
+      "name": "transfer_strategy_positions",
+      "filePath": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "lineRange": [
+        27,
+        49
+      ],
+      "summary": "Transfers legacy strategy positions from deprecated Mongo timed storage into Arctic.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_contract_positions",
+      "type": "function",
+      "name": "transfer_contract_positions",
+      "filePath": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "lineRange": [
+        52,
+        76
+      ],
+      "summary": "Transfers legacy contract positions from deprecated Mongo timed storage into Arctic.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_optimal_positions",
+      "type": "function",
+      "name": "transfer_optimal_positions",
+      "filePath": "sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "lineRange": [
+        79,
+        100
+      ],
+      "summary": "Transfers legacy optimal positions from deprecated Mongo timed storage into Arctic.",
+      "tags": [
+        "script",
+        "data-pipeline",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogdiag/emailing.py:MailType",
+      "type": "class",
+      "name": "MailType",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        28,
+        33
+      ],
+      "summary": "Enum of email types (e.g. standard vs warning) used to tag outgoing mail.",
+      "tags": [
+        "type-definition",
+        "email"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:send_mail_msg",
+      "type": "function",
+      "name": "send_mail_msg",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        36,
+        40
+      ],
+      "summary": "Sends a plain-text email body with the given subject and mail type.",
+      "tags": [
+        "utility",
+        "email",
+        "notification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:send_mail_dataframe",
+      "type": "function",
+      "name": "send_mail_dataframe",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        43,
+        53
+      ],
+      "summary": "Renders a dataframe to HTML and emails it.",
+      "tags": [
+        "utility",
+        "email",
+        "notification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:send_mail_pdfs",
+      "type": "function",
+      "name": "send_mail_pdfs",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        56,
+        73
+      ],
+      "summary": "Emails a preamble plus a list of PDF file attachments.",
+      "tags": [
+        "utility",
+        "email",
+        "notification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:send_mail_file",
+      "type": "function",
+      "name": "send_mail_file",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        13,
+        25
+      ],
+      "summary": "Reads a text file and emails its contents.",
+      "tags": [
+        "utility",
+        "email",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:_send_msg",
+      "type": "function",
+      "name": "_send_msg",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        76,
+        101
+      ],
+      "summary": "Internal SMTP sender that connects (optionally over SSL/TLS), authenticates, and dispatches a prepared message.",
+      "tags": [
+        "utility",
+        "email",
+        "io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogdiag/emailing.py:get_email_details",
+      "type": "function",
+      "name": "get_email_details",
+      "filePath": "syslogdiag/emailing.py",
+      "lineRange": [
+        104,
+        119
+      ],
+      "summary": "Loads SMTP server, account, and recipient details from production config.",
+      "tags": [
+        "utility",
+        "email",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogdiag/log_entry.py:logEntry",
+      "type": "class",
+      "name": "logEntry",
+      "filePath": "syslogdiag/log_entry.py",
+      "lineRange": [
+        19,
+        122
+      ],
+      "summary": "Value object for a single log record (timestamp, level, text, attributes) with dict serialization round-trip.",
+      "tags": [
+        "data-model",
+        "logging",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:syslogdiag/log_to_file.py:logToFile",
+      "type": "class",
+      "name": "logToFile",
+      "filePath": "syslogdiag/log_to_file.py",
+      "lineRange": [
+        16,
+        132
+      ],
+      "summary": "File logger writing log entries to a rolling file and emailing the user on serious messages.",
+      "tags": [
+        "service",
+        "logging",
+        "io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:syslogdiag/log_to_file.py:get_logging_directory",
+      "type": "function",
+      "name": "get_logging_directory",
+      "filePath": "syslogdiag/log_to_file.py",
+      "lineRange": [
+        135,
+        151
+      ],
+      "summary": "Resolves and ensures the logging directory exists from production config.",
+      "tags": [
+        "utility",
+        "configuration",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogdiag/_DEPRECATED/database_log.py:logData",
+      "type": "class",
+      "name": "logData",
+      "filePath": "syslogdiag/_DEPRECATED/database_log.py",
+      "lineRange": [
+        10,
+        17
+      ],
+      "summary": "Deprecated empty database log data stub kept for backward compatibility.",
+      "tags": [
+        "deprecated",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:syslogdiag/email_control.py:emailControlData",
+      "type": "class",
+      "name": "emailControlData",
+      "filePath": "syslogdiag/email_control.py",
+      "lineRange": [
+        5,
+        19
+      ],
+      "summary": "Abstract store recording when emails were last sent per subject to throttle notifications.",
+      "tags": [
+        "data-model",
+        "email",
+        "logging"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "file:sysobjects/production/trade_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:syscore/genutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:sysdata/csv/csv_spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:sysdata/futures/spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:syscore/exceptions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:syscore/interactive/input.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_spotfx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/arctic/arctic_spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/data_blob.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/mongodb/mongo_futures_contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/mongodb/mongo_historic_orders.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/mongodb/mongo_roll_state_storage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/mongodb/mongo_spread_costs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_capital.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_multiple_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_spreads.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysproduction/data/directories.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysproduction/data/strategies.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/_DEPRECATED/mongo_optimal_position_TO_DEPRECATE.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/_DEPRECATED/mongo_position_by_contract_TO_DEPRECATE.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/_DEPRECATED/mongo_positions_by_strategy_TO_DEPRECATE.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/arctic/arctic_historic_contract_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/arctic/arctic_historic_strategy_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysdata/arctic/arctic_optimal_positions.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysobjects/contracts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "file:sysobjects/production/tradeable_object.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "target": "file:syslogdiag/log_to_screen.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "target": "file:syslogdiag/pst_logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/email_control.py",
+      "target": "file:sysdata/base_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/email_control.py",
+      "target": "file:syslogging/logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_entry.py",
+      "target": "file:syscore/constants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_entry.py",
+      "target": "file:syscore/dateutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "file:syscore/fileutils.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "file:sysdata/config/production_config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "file:syslogdiag/email_via_db_interface.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "file:syslogdiag/log_entry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "file:syslogdiag/pst_logger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "class:sysdata/production/trade_limits.py:tradeLimitData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysdata/production/trade_limits.py",
+      "target": "class:sysdata/production/trade_limits.py:tradeLimitData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:copy_spread_costs_from_csv_to_mongo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:copy_spread_costs_from_csv_to_mongo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_new_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_new_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_modified_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_modified_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_deleted_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/futures/repocsv_spread_costs.py",
+      "target": "function:sysinit/futures/repocsv_spread_costs.py:process_deleted_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_arctic_to_parquet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_arctic_to_parquet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:get_data_blob",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:get_data_blob",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_futures_contract_prices_for_contract_to_parquet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_futures_contract_prices_for_contract_to_parquet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_contract_position_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_contract_position_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_strategy_position_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_strategy_position_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_historical_orders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_historical_orders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_capital",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_capital",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_optimal_positions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "function:sysinit/transfer/backup_arctic_to_parquet.py:backup_optimal_positions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_strategy_positions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_strategy_positions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_contract_positions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_contract_positions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_optimal_positions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:sysinit/transfer/positions_from_timed_storage_to_arctic.py",
+      "target": "function:sysinit/transfer/positions_from_timed_storage_to_arctic.py:transfer_optimal_positions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "class:syslogdiag/emailing.py:MailType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "class:syslogdiag/emailing.py:MailType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_msg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_msg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_dataframe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_dataframe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_pdfs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_pdfs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:send_mail_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:_send_msg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:_send_msg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:get_email_details",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/emailing.py",
+      "target": "function:syslogdiag/emailing.py:get_email_details",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/log_entry.py",
+      "target": "class:syslogdiag/log_entry.py:logEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/log_entry.py",
+      "target": "class:syslogdiag/log_entry.py:logEntry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "class:syslogdiag/log_to_file.py:logToFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "class:syslogdiag/log_to_file.py:logToFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "function:syslogdiag/log_to_file.py:get_logging_directory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "function:syslogdiag/log_to_file.py:get_logging_directory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "target": "class:syslogdiag/_DEPRECATED/database_log.py:logData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/_DEPRECATED/database_log.py",
+      "target": "class:syslogdiag/_DEPRECATED/database_log.py:logData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:syslogdiag/email_control.py",
+      "target": "class:syslogdiag/email_control.py:emailControlData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:syslogdiag/email_control.py",
+      "target": "class:syslogdiag/email_control.py:emailControlData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_adjusted_prices.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_capital.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_futures_per_contract_prices.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_historic_contract_positions.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_historic_strategy_positions.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_optimal_positions.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_spotfx_prices.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:sysinit/transfer/backup_arctic_to_parquet.py",
+      "target": "file:sysdata/parquet/parquet_spreads.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:syslogdiag/log_to_file.py",
+      "target": "class:syslogdiag/log_entry.py:logEntry",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

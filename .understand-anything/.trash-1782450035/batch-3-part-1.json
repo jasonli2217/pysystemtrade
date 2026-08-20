@@ -1,0 +1,1252 @@
+{
+ "nodes": [
+  {
+   "id": "file:dashboard/app.py",
+   "type": "file",
+   "name": "app.py",
+   "filePath": "dashboard/app.py",
+   "summary": "Flask web dashboard for the live production system, exposing routes that render capital, costs, FX, P&L, process status, reconciliation, rolls, risk and trades views backed by the reporting API.",
+   "tags": [
+    "entry-point",
+    "api-handler",
+    "dashboard",
+    "reporting",
+    "web"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Flask app using before/after request hooks (get_data/cleanup_data) and asyncio event-loop setup per request for broker calls."
+  },
+  {
+   "id": "function:dashboard/app.py:processes",
+   "type": "function",
+   "name": "processes",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    123,
+    155
+   ],
+   "summary": "Builds the process-control overview by combining config, control and process status tables plus trading-server login data into a JSON response.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:reconcile",
+   "type": "function",
+   "name": "reconcile",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    159,
+    183
+   ],
+   "summary": "Assembles a reconciliation view comparing optimal, IB broker and internal positions for the trades dashboard.",
+   "tags": [
+    "api-handler",
+    "reconciliation",
+    "positions"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:rolls_post",
+   "type": "function",
+   "name": "rolls_post",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    199,
+    256
+   ],
+   "summary": "Handles POST roll actions, computing current/updated multiple and adjusted prices and applying roll-state changes for the selected instrument.",
+   "tags": [
+    "api-handler",
+    "rolls",
+    "event-handler"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:dashboard/app.py:trades",
+   "type": "function",
+   "name": "trades",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    271,
+    297
+   ],
+   "summary": "Compiles order overview, delays and slippage tables (raw, vol, cash) into a JSON payload for the trades view.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "trades"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:dashboard/app.py:pandl",
+   "type": "function",
+   "name": "pandl",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    105,
+    119
+   ],
+   "summary": "Returns P&L tables across instruments, strategies and sectors for the dashboard P&L view.",
+   "tags": [
+    "api-handler",
+    "reporting",
+    "pandl"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "function",
+   "name": "dict_of_df_to_dict",
+   "filePath": "dashboard/app.py",
+   "lineRange": [
+    58,
+    64
+   ],
+   "summary": "Utility converting a dict of DataFrames into a JSON-serialisable nested dict using a chosen pandas orient.",
+   "tags": [
+    "utility",
+    "serialization"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysbrokers/broker_execution_stack.py",
+   "type": "file",
+   "name": "broker_execution_stack.py",
+   "filePath": "sysbrokers/broker_execution_stack.py",
+   "summary": "Abstract broker execution stack interface defining the contract for placing, matching, cancelling and modifying broker orders, to be implemented per-broker (e.g. IB).",
+   "tags": [
+    "data-model",
+    "broker",
+    "execution",
+    "abstract"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "class",
+   "name": "brokerExecutionStackData",
+   "filePath": "sysbrokers/broker_execution_stack.py",
+   "lineRange": [
+    14,
+    56
+   ],
+   "summary": "Abstract base for broker order-stack access, declaring NotImplemented methods for listing, matching, cancelling and modifying broker orders.",
+   "tags": [
+    "broker",
+    "execution",
+    "abstract",
+    "order-stack"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/list_running_pids.py",
+   "type": "file",
+   "name": "list_running_pids.py",
+   "filePath": "syscontrol/list_running_pids.py",
+   "summary": "Lists running process IDs either locally (via psutil) or remotely (via SSH subprocess) to support the production process monitor.",
+   "tags": [
+    "utility",
+    "process-control",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "function",
+   "name": "remote_list_of_running_pids",
+   "filePath": "syscontrol/list_running_pids.py",
+   "lineRange": [
+    52,
+    74
+   ],
+   "summary": "Runs an SSH command against the trading server to fetch the list of running Python PIDs over the network.",
+   "tags": [
+    "process-control",
+    "monitoring",
+    "ssh"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "function",
+   "name": "describe_trading_server_login_data",
+   "filePath": "syscontrol/list_running_pids.py",
+   "lineRange": [
+    13,
+    25
+   ],
+   "summary": "Produces a human-readable description of the configured trading-server SSH login details.",
+   "tags": [
+    "process-control",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/monitor.py",
+   "type": "file",
+   "name": "monitor.py",
+   "filePath": "syscontrol/monitor.py",
+   "summary": "Continuously monitors all production processes, updating per-process status and rendering an HTML status page for the live trading system.",
+   "tags": [
+    "monitoring",
+    "process-control",
+    "entry-point",
+    "html"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/monitor.py:processMonitor",
+   "type": "class",
+   "name": "processMonitor",
+   "filePath": "syscontrol/monitor.py",
+   "lineRange": [
+    39,
+    95
+   ],
+   "summary": "Tracks and updates the running status of every control process, logging status changes and producing HTML tables/messages.",
+   "tags": [
+    "monitoring",
+    "process-control",
+    "html"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscontrol/monitor.py:generate_html",
+   "type": "function",
+   "name": "generate_html",
+   "filePath": "syscontrol/monitor.py",
+   "lineRange": [
+    125,
+    140
+   ],
+   "summary": "Writes the monitor status HTML page combining process tables and log messages to disk.",
+   "tags": [
+    "monitoring",
+    "html",
+    "reporting"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/report_process_status.py",
+   "type": "file",
+   "name": "report_process_status.py",
+   "filePath": "syscontrol/report_process_status.py",
+   "summary": "Throttled status-logging helpers that record process wait conditions and avoid log spam by tracking last-log timing per status key.",
+   "tags": [
+    "process-control",
+    "logging",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "class",
+   "name": "reportStatus",
+   "filePath": "syscontrol/report_process_status.py",
+   "lineRange": [
+    11,
+    114
+   ],
+   "summary": "Base throttled logger that records status messages only when enough time has elapsed, tracking per-key last-log timestamps.",
+   "tags": [
+    "logging",
+    "process-control",
+    "throttling"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "class",
+   "name": "reportProcessStatus",
+   "filePath": "syscontrol/report_process_status.py",
+   "lineRange": [
+    125,
+    151
+   ],
+   "summary": "Specialises reportStatus to log and clear process wait conditions keyed by reason and condition.",
+   "tags": [
+    "logging",
+    "process-control",
+    "monitoring"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/run_process.py",
+   "type": "file",
+   "name": "run_process.py",
+   "filePath": "syscontrol/run_process.py",
+   "summary": "Core production process runner: manages start/wait gating, the main loop over timer methods, pause/stop handling and clean finish for a scheduled trading process.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "entry-point",
+    "orchestration"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Heavy use of free functions operating on a processToRun object to keep the control-flow logic flat and testable."
+  },
+  {
+   "id": "class:syscontrol/run_process.py:processToRun",
+   "type": "class",
+   "name": "processToRun",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    41,
+    164
+   ],
+   "summary": "Encapsulates a runnable production process, wiring its timer functions, control data and diagnostics and driving the run/finish lifecycle.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "orchestration"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_if_process_status_is_okay_to_run",
+   "type": "function",
+   "name": "_check_if_process_status_is_okay_to_run",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    206,
+    238
+   ],
+   "summary": "Checks control-status flags (start allowed, time, previous run) and reports wait conditions to decide whether a process may start.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_if_okay_to_wait_before_starting_process",
+   "type": "function",
+   "name": "_check_if_okay_to_wait_before_starting_process",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    301,
+    332
+   ],
+   "summary": "Determines whether the process should wait rather than start, reporting and clearing wait conditions accordingly.",
+   "tags": [
+    "process-control",
+    "scheduler"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:_check_for_stop",
+   "type": "function",
+   "name": "_check_for_stop",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    374,
+    400
+   ],
+   "summary": "Evaluates stop conditions (control-process stop, all methods finished, finish time) to decide when to end the run loop.",
+   "tags": [
+    "process-control",
+    "scheduler"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/run_process.py:wait_for_next_method_run_time",
+   "type": "function",
+   "name": "wait_for_next_method_run_time",
+   "filePath": "syscontrol/run_process.py",
+   "lineRange": [
+    338,
+    349
+   ],
+   "summary": "Sleeps until the next scheduled timer method is due, flushing stdout for log visibility.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "timing"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscontrol/strategy_tools.py",
+   "type": "file",
+   "name": "strategy_tools.py",
+   "filePath": "syscontrol/strategy_tools.py",
+   "summary": "Resolves and instantiates per-strategy class instances and methods from production config so processes can dispatch to strategy-specific logic.",
+   "tags": [
+    "process-control",
+    "strategy",
+    "factory"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "class",
+   "name": "strategyRunner",
+   "filePath": "syscontrol/strategy_tools.py",
+   "lineRange": [
+    8,
+    41
+   ],
+   "summary": "Wraps a strategy's configured class/method so a production process can invoke the right strategy code with resolved arguments.",
+   "tags": [
+    "strategy",
+    "factory",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "function",
+   "name": "get_class_object_and_other_arguments",
+   "filePath": "syscontrol/strategy_tools.py",
+   "lineRange": [
+    74,
+    89
+   ],
+   "summary": "Reads production config to resolve the strategy class object and its extra constructor arguments for a process.",
+   "tags": [
+    "strategy",
+    "factory",
+    "config"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/timer_functions.py",
+   "type": "file",
+   "name": "timer_functions.py",
+   "filePath": "syscontrol/timer_functions.py",
+   "summary": "Defines the timer abstraction that decides when each process method should run, tracking run frequency, run-on-start/exit and completion state.",
+   "tags": [
+    "process-control",
+    "scheduler",
+    "timing"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "class",
+   "name": "timerClassWithFunction",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    17,
+    308
+   ],
+   "summary": "Wraps a single process method with its scheduling parameters, deciding when to run it and tracking its last/next run and finished state.",
+   "tags": [
+    "scheduler",
+    "timing",
+    "process-control"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "class",
+   "name": "listOfTimerFunctions",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    311,
+    332
+   ],
+   "summary": "Collection of timerClassWithFunction objects with helpers for next-run timing and all-finished checks across a process.",
+   "tags": [
+    "scheduler",
+    "timing",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "function",
+   "name": "get_list_of_timer_functions",
+   "filePath": "syscontrol/timer_functions.py",
+   "lineRange": [
+    335,
+    347
+   ],
+   "summary": "Builds the list of timer functions for a named process from its configured methods and parameters.",
+   "tags": [
+    "scheduler",
+    "factory",
+    "process-control"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:syscontrol/timer_parameters.py",
+   "type": "file",
+   "name": "timer_parameters.py",
+   "filePath": "syscontrol/timer_parameters.py",
+   "summary": "Small dataclass holding the scheduling parameters (frequency, run-on-start/exit flags) for a single process timer.",
+   "tags": [
+    "data-model",
+    "scheduler",
+    "config"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/constants.py",
+   "type": "file",
+   "name": "constants.py",
+   "filePath": "syscore/constants.py",
+   "summary": "Defines named_object sentinel values and a status type used as lightweight typed constants throughout the codebase.",
+   "tags": [
+    "type-definition",
+    "utility",
+    "constants"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:syscore/interactive/date_input.py",
+   "type": "file",
+   "name": "date_input.py",
+   "filePath": "syscore/interactive/date_input.py",
+   "summary": "Interactive command-line helpers for prompting the user for report dates and datetime values with sensible defaults.",
+   "tags": [
+    "utility",
+    "interactive",
+    "date",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "function",
+   "name": "get_report_dates",
+   "filePath": "syscore/interactive/date_input.py",
+   "lineRange": [
+    12,
+    62
+   ],
+   "summary": "Interactively prompts the user to choose a reporting date range (rolling, calendar or custom) for production reports.",
+   "tags": [
+    "interactive",
+    "date",
+    "reporting",
+    "cli"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "function",
+   "name": "get_datetime_input",
+   "filePath": "syscore/interactive/date_input.py",
+   "lineRange": [
+    68,
+    93
+   ],
+   "summary": "Prompts and validates a single datetime (or date) value from the user with an optional default.",
+   "tags": [
+    "interactive",
+    "date",
+    "cli"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:syscontrol/list_running_pids.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:syscore/genutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysdata/config/control_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/broker.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/capital.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/interactive_update_roll_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "file:sysproduction/reporting/data/rolls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/order_stacks/broker_order_stack.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/orders/broker_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:sysexecution/orders/list_of_orders.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "file:syscore/exceptions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "file:sysdata/config/production_config.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscontrol/list_running_pids.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:syscore/fileutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscontrol/report_process_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscontrol/timer_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysobjects/production/process_control.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:syscore/objects.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syscontrol/report_process_status.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syscontrol/timer_parameters.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:syslogging/logger.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "file:sysproduction/data/control_process.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "file:syscore/dateutils.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:processes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:processes",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:reconcile",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:reconcile",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:rolls_post",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:rolls_post",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:trades",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:trades",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:pandl",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:pandl",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:dashboard/app.py",
+   "target": "function:dashboard/app.py:dict_of_df_to_dict",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:sysbrokers/broker_execution_stack.py",
+   "target": "class:sysbrokers/broker_execution_stack.py:brokerExecutionStackData",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:remote_list_of_running_pids",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/list_running_pids.py",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "class:syscontrol/monitor.py:processMonitor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "class:syscontrol/monitor.py:processMonitor",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "function:syscontrol/monitor.py:generate_html",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/monitor.py",
+   "target": "function:syscontrol/monitor.py:generate_html",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/report_process_status.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "class:syscontrol/run_process.py:processToRun",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "class:syscontrol/run_process.py:processToRun",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_if_process_status_is_okay_to_run",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_if_okay_to_wait_before_starting_process",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:_check_for_stop",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/run_process.py",
+   "target": "function:syscontrol/run_process.py:wait_for_next_method_run_time",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "class:syscontrol/strategy_tools.py:strategyRunner",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/strategy_tools.py",
+   "target": "function:syscontrol/strategy_tools.py:get_class_object_and_other_arguments",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:timerClassWithFunction",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/timer_functions.py:listOfTimerFunctions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_report_dates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1
+  },
+  {
+   "source": "file:syscore/interactive/date_input.py",
+   "target": "function:syscore/interactive/date_input.py:get_datetime_input",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:syscontrol/monitor.py:generate_html",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:dashboard/app.py:processes",
+   "target": "function:syscontrol/list_running_pids.py:describe_trading_server_login_data",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "class:syscontrol/run_process.py:processToRun",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "depends_on",
+   "direction": "forward",
+   "weight": 0.6
+  },
+  {
+   "source": "class:syscontrol/run_process.py:processToRun",
+   "target": "function:syscontrol/timer_functions.py:get_list_of_timer_functions",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:syscontrol/timer_functions.py",
+   "target": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "type": "depends_on",
+   "direction": "forward",
+   "weight": 0.6
+  },
+  {
+   "source": "class:syscontrol/report_process_status.py:reportProcessStatus",
+   "target": "class:syscontrol/report_process_status.py:reportStatus",
+   "type": "inherits",
+   "direction": "forward",
+   "weight": 0.9
+  }
+ ]
+}

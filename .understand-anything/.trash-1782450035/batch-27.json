@@ -1,0 +1,262 @@
+{
+  "nodes": [
+    {
+      "id": "file:sysbrokers/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysbrokers/__init__.py",
+      "summary": "Empty package marker that makes sysbrokers an importable Python package for broker integration code.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysbrokers/IB/__init__.py",
+      "summary": "Empty package marker for the Interactive Brokers integration subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/client/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysbrokers/IB/client/__init__.py",
+      "summary": "Empty package marker for the Interactive Brokers API client subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysbrokers/IB/config/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysbrokers/IB/config/__init__.py",
+      "summary": "Empty package marker for the Interactive Brokers configuration subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:sysbrokers/IB/ib_config_trading_hours.yaml",
+      "type": "config",
+      "name": "ib_config_trading_hours.yaml",
+      "filePath": "sysbrokers/IB/ib_config_trading_hours.yaml",
+      "summary": "Maps Interactive Brokers instrument trading-hours conventions to timezones and example open/close windows (e.g. US Treasuries, eurodollar) used when interpreting IB session times.",
+      "tags": ["configuration", "broker", "trading-hours", "interactive-brokers"],
+      "complexity": "simple",
+      "languageNotes": "YAML keyed by instrument/timezone examples rather than a flat settings list."
+    },
+    {
+      "id": "file:syscontrol/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syscontrol/__init__.py",
+      "summary": "Empty package marker for the syscontrol package that orchestrates scheduled production processes.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:syscontrol/control_config.yaml",
+      "type": "config",
+      "name": "control_config.yaml",
+      "filePath": "syscontrol/control_config.yaml",
+      "summary": "Production process-scheduling configuration defining start/stop times and run-method ordering for the live trading control framework.",
+      "tags": ["configuration", "scheduling", "production", "orchestration"],
+      "complexity": "moderate",
+      "languageNotes": "Three top-level blocks: process_configuration_start_time, stop_time, and methods sequencing."
+    },
+    {
+      "id": "file:syscore/interactive/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syscore/interactive/__init__.py",
+      "summary": "Empty package marker for the syscore interactive utilities subpackage (menus and user prompts).",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:syscore/tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "syscore/tests/__init__.py",
+      "summary": "Empty package marker making the syscore tests directory an importable test package.",
+      "tags": ["entry-point", "test", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/__init__.py",
+      "summary": "Empty package marker for the sysdata package providing data access abstractions across storage backends.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/_DEPRECATED/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/_DEPRECATED/__init__.py",
+      "summary": "Empty package marker for deprecated sysdata modules retained for backward compatibility.",
+      "tags": ["entry-point", "barrel", "deprecated"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/config/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/config/__init__.py",
+      "summary": "Empty package marker for the sysdata config subpackage that loads system defaults and user configuration.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:sysdata/config/defaults.yaml",
+      "type": "config",
+      "name": "defaults.yaml",
+      "filePath": "sysdata/config/defaults.yaml",
+      "summary": "Master default configuration for the entire system, supplying baseline values for backtest storage, broker/IB connectivity, MongoDB and Parquet data stores, trading rules, and capital allocation that user configs override.",
+      "tags": ["configuration", "defaults", "build-system", "backtest"],
+      "complexity": "complex",
+      "languageNotes": "71 top-level keys covering data backends, broker connection, and strategy parameters; serves as the fallback layer for all config resolution."
+    },
+    {
+      "id": "file:sysdata/csv/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/csv/__init__.py",
+      "summary": "Empty package marker for the CSV-backed data access subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/futures/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/futures/__init__.py",
+      "summary": "Empty package marker for the futures data abstractions subpackage (instruments, contracts, prices).",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/mongodb/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/mongodb/__init__.py",
+      "summary": "Empty package marker for the MongoDB-backed data access subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/parquet/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/parquet/__init__.py",
+      "summary": "Empty package marker for the Parquet-backed data access subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/production/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/production/__init__.py",
+      "summary": "Empty package marker for the production data objects subpackage used by the live trading system.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/sim/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/sim/__init__.py",
+      "summary": "Empty package marker for the simulation/backtest data sourcing subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysdata/tools/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysdata/tools/__init__.py",
+      "summary": "Empty package marker for shared sysdata helper tools.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/__init__.py",
+      "summary": "Empty package marker for the sysexecution package handling order generation and execution.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/algos/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/algos/__init__.py",
+      "summary": "Empty package marker for the execution algorithms subpackage (e.g. market and limit order algos).",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/order_stacks/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/order_stacks/__init__.py",
+      "summary": "Empty package marker for the order stacks subpackage that tracks instrument, contract, and broker order queues.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/orders/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/orders/__init__.py",
+      "summary": "Empty package marker for the order object definitions subpackage.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:sysexecution/stack_handler/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "sysexecution/stack_handler/__init__.py",
+      "summary": "Empty package marker for the stack handler subpackage that processes orders across the order stacks.",
+      "tags": ["entry-point", "barrel", "package-marker"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:sysdata/config/defaults.yaml",
+      "target": "file:sysdata/config/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:sysdata/config/defaults.yaml",
+      "target": "file:sysexecution/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:sysbrokers/IB/ib_config_trading_hours.yaml",
+      "target": "file:sysbrokers/IB/config/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:syscontrol/control_config.yaml",
+      "target": "file:syscontrol/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

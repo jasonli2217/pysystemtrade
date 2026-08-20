@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pysystemtrade course · Index</title>
+  <link rel="stylesheet" href="assets/course.css">
+  <style>
+    .part { margin-top: 2.4rem; }
+    .part h2 { border:none; margin-bottom:.2rem; }
+    .part .sub { font-family:-apple-system,system-ui,sans-serif; font-size:.85rem;
+                 color:var(--ink-soft); margin:0 0 1rem; }
+    .lesson-row { display:grid; grid-template-columns:2.2rem 1fr auto; gap:.7rem;
+                  align-items:baseline; padding:.55rem 0; border-top:1px solid var(--rule); }
+    .lesson-row:last-child { border-bottom:1px solid var(--rule); }
+    .lesson-row .n { font-family:"SF Mono",Menlo,monospace; font-size:.8rem; color:var(--accent-2); }
+    .lesson-row .t { font-size:1rem; }
+    .lesson-row .t small { display:block; color:var(--ink-soft); font-size:.82rem;
+                           font-family:-apple-system,system-ui,sans-serif; }
+    .status { font-family:-apple-system,system-ui,sans-serif; font-size:.72rem;
+              font-weight:700; letter-spacing:.05em; padding:.15rem .5rem; border-radius:99px; }
+    .ready { background:#e6f4ea; color:#1c6b3c; }
+    .soon  { background:#f4f2ec; color:#8a8577; }
+  </style>
+</head>
+<body>
+
+  <div class="eyebrow">Course syllabus</div>
+  <h1>pysystemtrade → live trading</h1>
+  <div class="mission">
+    <b>Mission:</b> run Robert Carver's systematic futures system <b>live, with real money</b>,
+    on Interactive Brokers, via pysystemtrade — understood well enough to operate and debug
+    yourself. Work the lessons top to bottom; each has a 3–5 min hands-on script you run in
+    your own repo.
+  </div>
+
+  <div class="part">
+    <h2>Part 1 · Understand the backtest</h2>
+    <p class="sub">The pipeline that turns a price into a trade — every number verified against your repo. <b>All ready now.</b></p>
+
+    <div class="lesson-row"><span class="n">01</span><span class="t"><a href="lessons/0001-the-pipeline.html">The Pipeline</a><small>the 7 stages, price → position → P&amp;L</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">02</span><span class="t"><a href="lessons/0002-the-forecast.html">The Forecast</a><small>EWMAC, scaling to 10, capping at 20</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">03</span><span class="t"><a href="lessons/0003-combining-forecasts.html">Combining Forecasts</a><small>forecast weights + the FDM</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">04</span><span class="t"><a href="lessons/0004-position-sizing.html">Forecast to Position</a><small>volatility targeting → contracts</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">05</span><span class="t"><a href="lessons/0005-portfolio.html">The Portfolio</a><small>instrument weights + the IDM</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">06</span><span class="t"><a href="lessons/0006-pnl.html">P&amp;L &amp; Sharpe</a><small>gross vs net, the diversification win</small></span><span class="status ready">READY</span></div>
+    <div class="lesson-row"><span class="n">07</span><span class="t"><a href="lessons/0007-costs.html">Costs</a><small>turnover, SR cost, cost-aware rule selection</small></span><span class="status ready">READY</span></div>
+  </div>
+
+  <div class="part">
+    <h2>Part 2 · Make it your own</h2>
+    <p class="sub">Built when you reach it — these depend on choices you'll make, so they're best written live with you.</p>
+    <div class="lesson-row"><span class="n">08</span><span class="t">Editing the YAML config<small>risk target, instruments, weights</small></span><span class="status soon">SOON</span></div>
+    <div class="lesson-row"><span class="n">09</span><span class="t">Adding &amp; removing rules<small>defining a rule in config</small></span><span class="status soon">SOON</span></div>
+    <div class="lesson-row"><span class="n">10</span><span class="t">Writing your own trading rule<small>a rule function, backtested</small></span><span class="status soon">SOON</span></div>
+  </div>
+
+  <div class="part">
+    <h2>Part 3 · Go live</h2>
+    <p class="sub">The production path. Built as you set up real infrastructure — depends on your MongoDB / IB Gateway / capital, which don't exist yet.</p>
+    <div class="lesson-row"><span class="n">11</span><span class="t">Production architecture<small>dataBlob, the order stack</small></span><span class="status soon">SOON</span></div>
+    <div class="lesson-row"><span class="n">12</span><span class="t">Data &amp; storage<small>MongoDB, Parquet, IB data</small></span><span class="status soon">SOON</span></div>
+    <div class="lesson-row"><span class="n">13</span><span class="t">The daily production scripts<small>run_systems → order generation → stack handler</small></span><span class="status soon">SOON</span></div>
+    <div class="lesson-row"><span class="n">14</span><span class="t">Paper trade, then live<small>IB paper account, verification, go live</small></span><span class="status soon">SOON</span></div>
+  </div>
+
+  <div class="callout">
+    <span class="tag">Your teacher is here</span>
+    Finished Part 1? Tell me and I'll build Part 2. Stuck on any lesson? Ask — that's the point.
+  </div>
+
+  <footer>
+    <span>pysystemtrade course</span>
+    <span>Start with → <a href="lessons/0001-the-pipeline.html">Lesson 1: The Pipeline</a></span>
+  </footer>
+
+</body>
+</html>

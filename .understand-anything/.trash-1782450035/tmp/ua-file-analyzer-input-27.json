@@ -1,0 +1,182 @@
+{
+  "projectRoot": "/Users/jasonli/Dev/FORKed repo/pysystemtrade",
+  "batchFiles": [
+    {
+      "path": "sysbrokers/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/client/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/config/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysbrokers/IB/ib_config_trading_hours.yaml",
+      "language": "yaml",
+      "sizeLines": 77,
+      "fileCategory": "config"
+    },
+    {
+      "path": "syscontrol/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscontrol/control_config.yaml",
+      "language": "yaml",
+      "sizeLines": 144,
+      "fileCategory": "config"
+    },
+    {
+      "path": "syscore/interactive/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "syscore/tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/_DEPRECATED/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/config/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/config/defaults.yaml",
+      "language": "yaml",
+      "sizeLines": 377,
+      "fileCategory": "config"
+    },
+    {
+      "path": "sysdata/csv/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/futures/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/mongodb/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/parquet/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/production/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/sim/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysdata/tools/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/algos/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/order_stacks/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/orders/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "sysexecution/stack_handler/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "sysbrokers/__init__.py": [],
+    "sysbrokers/IB/__init__.py": [],
+    "sysbrokers/IB/client/__init__.py": [],
+    "sysbrokers/IB/config/__init__.py": [],
+    "sysbrokers/IB/ib_config_trading_hours.yaml": [],
+    "syscontrol/__init__.py": [],
+    "syscontrol/control_config.yaml": [],
+    "syscore/interactive/__init__.py": [],
+    "syscore/tests/__init__.py": [],
+    "sysdata/__init__.py": [],
+    "sysdata/_DEPRECATED/__init__.py": [],
+    "sysdata/config/__init__.py": [],
+    "sysdata/config/defaults.yaml": [],
+    "sysdata/csv/__init__.py": [],
+    "sysdata/futures/__init__.py": [],
+    "sysdata/mongodb/__init__.py": [],
+    "sysdata/parquet/__init__.py": [],
+    "sysdata/production/__init__.py": [],
+    "sysdata/sim/__init__.py": [],
+    "sysdata/tools/__init__.py": [],
+    "sysexecution/__init__.py": [],
+    "sysexecution/algos/__init__.py": [],
+    "sysexecution/order_stacks/__init__.py": [],
+    "sysexecution/orders/__init__.py": [],
+    "sysexecution/stack_handler/__init__.py": []
+  }
+}

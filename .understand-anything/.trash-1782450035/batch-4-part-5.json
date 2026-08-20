@@ -1,0 +1,1461 @@
+{
+ "nodes": [
+  {
+   "id": "file:sysproduction/interactive_update_roll_status.py",
+   "type": "file",
+   "name": "interactive_update_roll_status.py",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "summary": "Interactive CLI and engine for managing futures contract roll status: manual, auto-cycle, and full-auto roll workflows that update roll state and adjusted prices.",
+   "tags": [
+    "entry-point",
+    "cli",
+    "roll",
+    "futures"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:interactive_update_roll_status",
+   "type": "function",
+   "name": "interactive_update_roll_status",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    56,
+    60
+   ],
+   "summary": "Function interactive update roll status (5 lines).",
+   "tags": [
+    "entry-point",
+    "cli",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_rolling_master_function",
+   "type": "function",
+   "name": "get_rolling_master_function",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    63,
+    87
+   ],
+   "summary": "Function get rolling master function (25 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_manual_cycle",
+   "type": "function",
+   "name": "update_roll_status_manual_cycle",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    122,
+    143
+   ],
+   "summary": "Function update roll status manual cycle (22 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_decide",
+   "type": "function",
+   "name": "update_roll_status_auto_cycle_manual_decide",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    146,
+    163
+   ],
+   "summary": "Function update roll status auto cycle manual decide (18 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_confirm",
+   "type": "function",
+   "name": "update_roll_status_auto_cycle_manual_confirm",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    166,
+    188
+   ],
+   "summary": "Function update roll status auto cycle manual confirm (23 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_full_auto",
+   "type": "function",
+   "name": "update_roll_status_full_auto",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    191,
+    213
+   ],
+   "summary": "Function update roll status full auto (23 lines).",
+   "tags": [
+    "mutation",
+    "data-access",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_days_ahead_to_consider_when_auto_cycling",
+   "type": "function",
+   "name": "get_days_ahead_to_consider_when_auto_cycling",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    216,
+    224
+   ],
+   "summary": "Function get days ahead to consider when auto cycling (9 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_list_of_instruments_to_auto_cycle",
+   "type": "function",
+   "name": "get_list_of_instruments_to_auto_cycle",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    227,
+    245
+   ],
+   "summary": "Function get list of instruments to auto cycle (19 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:include_instrument_in_auto_cycle",
+   "type": "function",
+   "name": "include_instrument_in_auto_cycle",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    248,
+    252
+   ],
+   "summary": "Function include instrument in auto cycle (5 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:days_until_earliest_expiry",
+   "type": "function",
+   "name": "days_until_earliest_expiry",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    255,
+    261
+   ],
+   "summary": "Function days until earliest expiry (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters",
+   "type": "function",
+   "name": "get_auto_roll_parameters",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    277,
+    287
+   ],
+   "summary": "Function get auto roll parameters (11 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters_potentially_using_default",
+   "type": "function",
+   "name": "get_auto_roll_parameters_potentially_using_default",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    290,
+    358
+   ],
+   "summary": "Function get auto roll parameters potentially using default (69 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:default_auto_roll_parameters",
+   "type": "function",
+   "name": "default_auto_roll_parameters",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    361,
+    369
+   ],
+   "summary": "Function default auto roll parameters (9 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:describe_roll_rules_from_parameters",
+   "type": "function",
+   "name": "describe_roll_rules_from_parameters",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    372,
+    393
+   ],
+   "summary": "Function describe roll rules from parameters (22 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_default_roll_state_if_undecided",
+   "type": "function",
+   "name": "describe_action_for_default_roll_state_if_undecided",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    396,
+    404
+   ],
+   "summary": "Function describe action for default roll state if undecided (9 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_auto_roll_expired",
+   "type": "function",
+   "name": "describe_action_for_auto_roll_expired",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    407,
+    413
+   ],
+   "summary": "Function describe action for auto roll expired (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:auto_selected_roll_state_instrument",
+   "type": "function",
+   "name": "auto_selected_roll_state_instrument",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    416,
+    442
+   ],
+   "summary": "Function auto selected roll state instrument (27 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:suggest_roll_state_for_instrument",
+   "type": "function",
+   "name": "suggest_roll_state_for_instrument",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    445,
+    489
+   ],
+   "summary": "Function suggest roll state for instrument (45 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:check_if_forward_liquid",
+   "type": "function",
+   "name": "check_if_forward_liquid",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    492,
+    513
+   ],
+   "summary": "Function check if forward liquid (22 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:check_if_getting_close_to_desired_roll_date",
+   "type": "function",
+   "name": "check_if_getting_close_to_desired_roll_date",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    516,
+    521
+   ],
+   "summary": "Function check if getting close to desired roll date (6 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:check_if_expired_and_auto_rolling_expired",
+   "type": "function",
+   "name": "check_if_expired_and_auto_rolling_expired",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    524,
+    530
+   ],
+   "summary": "Function check if expired and auto rolling expired (7 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:warn_not_rolling",
+   "type": "function",
+   "name": "warn_not_rolling",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    533,
+    537
+   ],
+   "summary": "Function warn not rolling (5 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:manually_report_and_update_roll_state_for_code",
+   "type": "function",
+   "name": "manually_report_and_update_roll_state_for_code",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    540,
+    552
+   ],
+   "summary": "Function manually report and update roll state for code (13 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:manually_update_roll_state_for_code",
+   "type": "function",
+   "name": "manually_update_roll_state_for_code",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    555,
+    593
+   ],
+   "summary": "Function manually update roll state for code (39 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:run_roll_report",
+   "type": "function",
+   "name": "run_roll_report",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    596,
+    601
+   ],
+   "summary": "Function run roll report (6 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_roll_state_required",
+   "type": "function",
+   "name": "get_roll_state_required",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    604,
+    639
+   ],
+   "summary": "Function get roll state required (36 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:setup_roll_data_with_state_reporting",
+   "type": "function",
+   "name": "setup_roll_data_with_state_reporting",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    642,
+    684
+   ],
+   "summary": "Function setup roll data with state reporting (43 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:modify_roll_state",
+   "type": "function",
+   "name": "modify_roll_state",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    687,
+    719
+   ],
+   "summary": "Function modify roll state (33 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:roll_state_was_no_open_now_something_else",
+   "type": "function",
+   "name": "roll_state_was_no_open_now_something_else",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    722,
+    727
+   ],
+   "summary": "Function roll state was no open now something else (6 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:roll_state_is_now_no_open",
+   "type": "function",
+   "name": "roll_state_is_now_no_open",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    730,
+    733
+   ],
+   "summary": "Function roll state is now no open (4 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:state_change_to_roll_adjusted_prices",
+   "type": "function",
+   "name": "state_change_to_roll_adjusted_prices",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    736,
+    764
+   ],
+   "summary": "Function state change to roll adjusted prices (29 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:roll_adjusted_and_multiple_prices",
+   "type": "function",
+   "name": "roll_adjusted_and_multiple_prices",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    767,
+    815
+   ],
+   "summary": "Function roll adjusted and multiple prices (49 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_roll_adjusted_multiple_prices_object",
+   "type": "function",
+   "name": "get_roll_adjusted_multiple_prices_object",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    818,
+    840
+   ],
+   "summary": "Function get roll adjusted multiple prices object (23 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:_get_roll_adjusted_multiple_prices_object_ffill_option",
+   "type": "function",
+   "name": "_get_roll_adjusted_multiple_prices_object_ffill_option",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    843,
+    869
+   ],
+   "summary": "Function  get roll adjusted multiple prices object ffill option (27 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:check_trading_limits_for_roll_state",
+   "type": "function",
+   "name": "check_trading_limits_for_roll_state",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    872,
+    901
+   ],
+   "summary": "Function check trading limits for roll state (30 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:calculate_abs_trades_required_for_roll",
+   "type": "function",
+   "name": "calculate_abs_trades_required_for_roll",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    904,
+    923
+   ],
+   "summary": "Function calculate abs trades required for roll (20 lines).",
+   "tags": [
+    "utility",
+    "helper",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/interactive_update_roll_status.py:get_remaining_trades_possible_today_in_contracts_for_instrument",
+   "type": "function",
+   "name": "get_remaining_trades_possible_today_in_contracts_for_instrument",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    926,
+    932
+   ],
+   "summary": "Function get remaining trades possible today in contracts for instrument (7 lines).",
+   "tags": [
+    "accessor",
+    "utility",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/interactive_update_roll_status.py:RollDataWithStateReporting",
+   "type": "class",
+   "name": "RollDataWithStateReporting",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    91,
+    119
+   ],
+   "summary": "Class RollDataWithStateReporting with 2 methods (29 lines).",
+   "tags": [
+    "service",
+    "reporting",
+    "api-handler"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "class:sysproduction/interactive_update_roll_status.py:autoRollParameters",
+   "type": "class",
+   "name": "autoRollParameters",
+   "filePath": "sysproduction/interactive_update_roll_status.py",
+   "lineRange": [
+    265,
+    271
+   ],
+   "summary": "Class autoRollParameters with 0 methods (7 lines).",
+   "tags": [
+    "class",
+    "data-model",
+    "class"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:sysproduction/reporting/account_curve_report.py",
+   "type": "file",
+   "name": "account_curve_report.py",
+   "filePath": "sysproduction/reporting/account_curve_report.py",
+   "summary": "Report generator producing account-curve plots and statistics over given date ranges.",
+   "tags": [
+    "reporting",
+    "account-curve",
+    "report"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/account_curve_report.py:account_curve_report",
+   "type": "function",
+   "name": "account_curve_report",
+   "filePath": "sysproduction/reporting/account_curve_report.py",
+   "lineRange": [
+    13,
+    28
+   ],
+   "summary": "Function account curve report (16 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_with_dates",
+   "type": "function",
+   "name": "_account_curve_report_with_dates",
+   "filePath": "sysproduction/reporting/account_curve_report.py",
+   "lineRange": [
+    31,
+    34
+   ],
+   "summary": "Function  account curve report with dates (4 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_full",
+   "type": "function",
+   "name": "_account_curve_report_full",
+   "filePath": "sysproduction/reporting/account_curve_report.py",
+   "lineRange": [
+    37,
+    47
+   ],
+   "summary": "Function  account curve report full (11 lines).",
+   "tags": [
+    "reporting",
+    "report",
+    "production"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:interactive_update_roll_status",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:interactive_update_roll_status",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_rolling_master_function",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_rolling_master_function",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_manual_cycle",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_manual_cycle",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_decide",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_decide",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_confirm",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_auto_cycle_manual_confirm",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_full_auto",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:update_roll_status_full_auto",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_days_ahead_to_consider_when_auto_cycling",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_days_ahead_to_consider_when_auto_cycling",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_list_of_instruments_to_auto_cycle",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_list_of_instruments_to_auto_cycle",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:include_instrument_in_auto_cycle",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:include_instrument_in_auto_cycle",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:days_until_earliest_expiry",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:days_until_earliest_expiry",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters_potentially_using_default",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_auto_roll_parameters_potentially_using_default",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:default_auto_roll_parameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:default_auto_roll_parameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_roll_rules_from_parameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_roll_rules_from_parameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_default_roll_state_if_undecided",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_default_roll_state_if_undecided",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_auto_roll_expired",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:describe_action_for_auto_roll_expired",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:auto_selected_roll_state_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:auto_selected_roll_state_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:suggest_roll_state_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:suggest_roll_state_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_forward_liquid",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_forward_liquid",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_getting_close_to_desired_roll_date",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_getting_close_to_desired_roll_date",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_expired_and_auto_rolling_expired",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_if_expired_and_auto_rolling_expired",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:warn_not_rolling",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:warn_not_rolling",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:manually_report_and_update_roll_state_for_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:manually_report_and_update_roll_state_for_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:manually_update_roll_state_for_code",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:manually_update_roll_state_for_code",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:run_roll_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:run_roll_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_roll_state_required",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_roll_state_required",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:setup_roll_data_with_state_reporting",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:setup_roll_data_with_state_reporting",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:modify_roll_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:modify_roll_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_state_was_no_open_now_something_else",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_state_was_no_open_now_something_else",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_state_is_now_no_open",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_state_is_now_no_open",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:state_change_to_roll_adjusted_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:state_change_to_roll_adjusted_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_adjusted_and_multiple_prices",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:roll_adjusted_and_multiple_prices",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_roll_adjusted_multiple_prices_object",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_roll_adjusted_multiple_prices_object",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:_get_roll_adjusted_multiple_prices_object_ffill_option",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:_get_roll_adjusted_multiple_prices_object_ffill_option",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_trading_limits_for_roll_state",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:check_trading_limits_for_roll_state",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:calculate_abs_trades_required_for_roll",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:calculate_abs_trades_required_for_roll",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_remaining_trades_possible_today_in_contracts_for_instrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "function:sysproduction/interactive_update_roll_status.py:get_remaining_trades_possible_today_in_contracts_for_instrument",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "class:sysproduction/interactive_update_roll_status.py:RollDataWithStateReporting",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "class:sysproduction/interactive_update_roll_status.py:RollDataWithStateReporting",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "class:sysproduction/interactive_update_roll_status.py:autoRollParameters",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "class:sysproduction/interactive_update_roll_status.py:autoRollParameters",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:syscore/interactive/display.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:syscore/interactive/input.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:syscore/interactive/menus.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysobjects/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysobjects/production/roll_state.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/data/contracts.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/data/controls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/data/positions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/data/prices.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/reporting/data/rolls.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/reporting/report_configs.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/interactive_update_roll_status.py",
+   "target": "file:sysproduction/reporting/reporting_functions.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:account_curve_report",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:account_curve_report",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_with_dates",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_with_dates",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_full",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "function:sysproduction/reporting/account_curve_report.py:_account_curve_report_full",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "file:syscore/constants.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "file:sysdata/data_blob.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:sysproduction/reporting/account_curve_report.py",
+   "target": "file:sysproduction/reporting/api.py",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

@@ -1,0 +1,608 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "sysexecution/strategies/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysexecution/tests/test_trade_qty.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 420,
+      "nonEmptyLines": 412,
+      "functions": [
+        {
+          "name": "_doc_tests1",
+          "startLine": 1,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "_doc_tests2",
+          "startLine": 89,
+          "endLine": 265,
+          "params": []
+        },
+        {
+          "name": "_doctests3",
+          "startLine": 268,
+          "endLine": 420,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_doc_tests1",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "_doc_tests2",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "_doctests3",
+          "line": 268,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/configtools/csvweights_to_yaml.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "instr_weights_csv_to_yaml",
+          "startLine": 11,
+          "endLine": 35,
+          "params": [
+            "filename_input",
+            "filename_output"
+          ]
+        },
+        {
+          "name": "forecast_weights_by_instrument_csv_to_yaml",
+          "startLine": 38,
+          "endLine": 69,
+          "params": [
+            "filename_input",
+            "filename_output"
+          ]
+        },
+        {
+          "name": "forecast_mapping_csv_to_yaml",
+          "startLine": 72,
+          "endLine": 107,
+          "params": [
+            "filename_input",
+            "filename_output"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "instr_weights_csv_to_yaml",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "forecast_weights_by_instrument_csv_to_yaml",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "forecast_mapping_csv_to_yaml",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "pd.read_csv",
+          "lineNumber": 20
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 24
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "zip",
+          "lineNumber": 27
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 30
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "open",
+          "lineNumber": 32
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "outfile.write",
+          "lineNumber": 33
+        },
+        {
+          "caller": "instr_weights_csv_to_yaml",
+          "callee": "yaml.dump",
+          "lineNumber": 33
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "pd.read_csv",
+          "lineNumber": 47
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "list",
+          "lineNumber": 49
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 58
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "float",
+          "lineNumber": 60
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "zip",
+          "lineNumber": 61
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 65
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "open",
+          "lineNumber": 66
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "outfile.write",
+          "lineNumber": 67
+        },
+        {
+          "caller": "forecast_weights_by_instrument_csv_to_yaml",
+          "callee": "yaml.dump",
+          "lineNumber": 67
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "pd.read_csv",
+          "lineNumber": 81
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 87
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 91
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "float",
+          "lineNumber": 92
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "float",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "float",
+          "lineNumber": 94
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "zip",
+          "lineNumber": 97
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "dict",
+          "lineNumber": 102
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "open",
+          "lineNumber": 104
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "outfile.write",
+          "lineNumber": 105
+        },
+        {
+          "caller": "forecast_mapping_csv_to_yaml",
+          "callee": "yaml.dump",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/roll_parameters_csv_mongo.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/futures/tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysinit/transfer/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syslogdiag/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syslogdiag/_DEPRECATED/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "syslogging/logging_prod.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "disable_existing_loggers",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "formatters",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "filters",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "handlers",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "loggers",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "root",
+          "level": 1,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "syslogging/logging_sim.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 26,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "disable_existing_loggers",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "formatters",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "filters",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "handlers",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "loggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "root",
+          "level": 1,
+          "line": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "sysobjects/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysobjects/production/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysobjects/production/trading_hours/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/_DEPRECATED/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/data/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/data/tools/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/linux/crontab",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_db_to_csv",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_mongo_data_as_dump",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": "sysproduction/linux/scripts/backup_parquet_to_remote",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    }
+  ]
+}
