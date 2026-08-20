@@ -4,11 +4,13 @@ site_description: A navigable local guide to pysystemtrade
 theme:
   name: material
   language: en
+  custom_dir: overrides
   features:
     - navigation.footer
     - navigation.indexes
     - navigation.sections
     - navigation.top
+    - toc.follow
     - search.highlight
     - search.suggest
     - content.code.copy
