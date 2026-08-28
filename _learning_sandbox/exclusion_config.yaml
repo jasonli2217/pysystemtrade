@@ -1,0 +1,129 @@
+exclude_instrument_lists:
+  bad_markets:
+  - BB3M
+  - BOVESPA
+  - BUTTER
+  - CH10
+  - CNH-onshore
+  - COAL
+  - COAL-GEORDIE
+  - CZK
+  - DJSTX-SMALL
+  - EPRA-EUROPE
+  - EU-MID
+  - EURIBOR
+  - EUROSTX-SMALL
+  - EUROSTX200-LARGE
+  - FANG
+  - FTSEINDO
+  - FTSEVIET
+  - HOUSE-US
+  - IRS
+  - MILKDRY
+  - MILKWET
+  - MSCIWORLD
+  - OMX
+  - SMI-MID
+  - STEEL
+  - SUGAR16
+  - SWISSLEAD
+  - TIN_LME
+  - VNKI
+  - WHEAT_ICE
+  - WHEY
+  trading_restrictions: []
+  ignore_instruments: []
+duplicate_instruments:
+  exclude:
+    AEX:
+    - AEX_mini
+    AUD:
+    - AUD
+    CAD:
+    - CAD
+    CHF:
+    - CHF
+    COPPER:
+    - COPPER
+    - COPPER-mini
+    CORN:
+    - CORN
+    CRUDE_W:
+    - CRUDE_W
+    - CRUDE_W_mini
+    DOW:
+    - DOW_mini
+    EUR:
+    - EUR
+    - EUR_mini
+    EUROSTX:
+    - EUROSTX-LARGE
+    GASOILINE:
+    - GASOILINE_micro
+    GAS_US:
+    - GAS_US
+    GBP:
+    - GBP
+    GOLD:
+    - GOLD
+    - GOLD-mini
+    HANG:
+    - HANG
+    HANGENT:
+    - HANGENT
+    IBEX:
+    - IBEX
+    JGB:
+    - JGB
+    JPY:
+    - JPY
+    KOSPI:
+    - KOSPI
+    KRWUSD:
+    - KRWUSD
+    NASDAQ:
+    - NASDAQ
+    RUSSELL:
+    - RUSSELL_mini
+    SGD:
+    - SGD
+    SOYBEAN:
+    - SOYBEAN
+    SP500:
+    - SP500
+    TWD:
+    - TWD-mini
+    VIX:
+    - VIX
+    WHEAT:
+    - WHEAT
+  include:
+    AEX: AEX
+    AUD: AUD_micro
+    CAD: CAD_micro
+    CHF: CHF_micro
+    COPPER: COPPER-micro
+    CORN: CORN_mini
+    CRUDE_W: CRUDE_W_micro
+    DOW: DOW
+    EUR: EUR_micro
+    EUROSTX: EUROSTX
+    GASOILINE: GASOILINE
+    GAS_US: GAS_US_mini
+    GBP: GBP_micro
+    GOLD: GOLD_micro
+    HANG: HANG_mini
+    HANGENT: HANGENT_mini
+    IBEX: IBEX_mini
+    JGB: JGB-mini
+    JPY: JPY_mini
+    KOSPI: KOSPI_mini
+    KRWUSD: KRWUSD_mini
+    NASDAQ: NASDAQ_micro
+    RUSSELL: RUSSELL
+    SGD: SGD_mini
+    SOYBEAN: SOYBEAN_mini
+    SP500: SP500_micro
+    TWD: TWD
+    VIX: VIX_mini
+    WHEAT: WHEAT_mini
